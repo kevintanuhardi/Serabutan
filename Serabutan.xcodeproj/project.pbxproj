@@ -77,6 +77,13 @@
 		185D12D026A7C10500F6105C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C78982EC26A7E5F300EB95B1 /* Login */,
+				C78982EB26A7E5EC00EB95B1 /* SignUp */,
+				C78982EA26A7E5B700EB95B1 /* Profile */,
+				C78982E926A7E57400EB95B1 /* Notification */,
+				C78982E826A7E56800EB95B1 /* Activity */,
+				C78982E726A7E54B00EB95B1 /* NewAssistance */,
+				C78982E626A7E44C00EB95B1 /* Home */,
 				185D12D426A7C16400F6105C /* HomeVC.swift */,
 				185D12D526A7C16400F6105C /* HomeVC.xib */,
 			);
@@ -121,6 +128,55 @@
 				185D12C826A7C09100F6105C /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C78982E626A7E44C00EB95B1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C78982E726A7E54B00EB95B1 /* NewAssistance */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewAssistance;
+			sourceTree = "<group>";
+		};
+		C78982E826A7E56800EB95B1 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		C78982E926A7E57400EB95B1 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		C78982EA26A7E5B700EB95B1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C78982EB26A7E5EC00EB95B1 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		C78982EC26A7E5F300EB95B1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
