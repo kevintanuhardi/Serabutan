@@ -22,14 +22,30 @@
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HXt-UA-hch">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                 </mapView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uw-o4-AVy">
+                    <rect key="frame" x="344" y="54" width="50" height="50"/>
+                    <state key="normal" image="filterButton">
+                        <attributedString key="attributedTitle"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tXv-KB-etQ">
+                    <rect key="frame" x="284" y="54" width="50" height="50"/>
+                    <state key="normal" image="searchButton">
+                        <attributedString key="attributedTitle"/>
+                    </state>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HXt-UA-hch" secondAttribute="trailing" id="Cik-Ld-viO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="HXt-UA-hch" secondAttribute="bottom" id="F3z-y9-19L"/>
+                <constraint firstItem="2uw-o4-AVy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Fb0-OC-JXJ"/>
+                <constraint firstItem="tXv-KB-etQ" firstAttribute="centerY" secondItem="2uw-o4-AVy" secondAttribute="centerY" id="J8W-Ap-93k"/>
                 <constraint firstItem="HXt-UA-hch" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RD5-rO-CXP"/>
+                <constraint firstItem="2uw-o4-AVy" firstAttribute="leading" secondItem="tXv-KB-etQ" secondAttribute="trailing" constant="10" id="Ui6-Lf-V6E"/>
                 <constraint firstItem="HXt-UA-hch" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WN9-Ha-p0G"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2uw-o4-AVy" secondAttribute="trailing" constant="20" id="hgb-4r-hJf"/>
             </constraints>
             <point key="canvasLocation" x="-136" y="130"/>
         </view>
@@ -41,6 +57,8 @@
         </button>
     </objects>
     <resources>
+        <image name="filterButton" width="50" height="50"/>
+        <image name="searchButton" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

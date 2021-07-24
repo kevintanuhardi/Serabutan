@@ -132,8 +132,28 @@ extension HomeVC: MKMapViewDelegate {
         
         if let title = annotation.title, title == "Nuruning Kucing di Atap" {
             reassigned = true
-            print("here")
-            annotationView?.image = UIImage(named: "high_urgency_radius")
+            
+            // test mulai
+            let myNewView = MapKitAnnotationCellViewController(nibName: "MapKitAnnotationCellViewController", bundle: nil)
+//            let myNewView = UIView().instanceFromNib(nibName: "MapKitAnnotationCellViewController")
+//            let myNewView=UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
+//
+//            // Change UIView background colour
+//            myNewView.backgroundColor=UIColor.lightGray
+//
+//            // Add rounded corners to UIView
+//            myNewView.layer.cornerRadius=25
+//
+//            // Add border to UIView
+//            myNewView.layer.borderWidth=2
+//
+//            // Change UIView Border Color to Red
+//            myNewView.layer.borderColor = UIColor.red.cgColor
+            
+            annotationView?.image = myNewView.view.asImage()
+            //test done
+            
+//            annotationView?.image = UIImage(named: "high_urgency_radius")
         }
         if let title = annotation.title, title == "Angkut Rongsokan" {
             reassigned = true
