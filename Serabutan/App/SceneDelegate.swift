@@ -14,6 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var activityNavigationController: UINavigationController!
     var notificationNavigationController: UINavigationController!
     var profileNavigationController: UINavigationController!
+    
+    var addJobNavigationController: UINavigationController!
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -27,19 +29,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let activityVC = UIViewController()
         let notificationVC = UIViewController()
         let profileVC = UIViewController()
+        let addJobVC = UIViewController()
+        
         homeNavigationController = UINavigationController.init(rootViewController: homeVC)
         activityNavigationController = UINavigationController.init(rootViewController: activityVC)
         notificationNavigationController = UINavigationController.init(rootViewController: notificationVC)
         profileNavigationController = UINavigationController.init(rootViewController: profileVC)
-        tabBarController.viewControllers = [homeNavigationController, activityNavigationController, notificationNavigationController, profileNavigationController]
+        addJobNavigationController = UINavigationController.init(rootViewController: addJobVC)
+        tabBarController.viewControllers = [homeNavigationController, activityNavigationController, addJobNavigationController, notificationNavigationController, profileNavigationController]
         
         let homeItem = UITabBarItem(title: "Beranda", image: UIImage(named: "homeIcon"), tag: 0)
         let activityItem = UITabBarItem(title: "Aktivitas", image: UIImage(named: "activityIcon"), tag: 1)
-        let notificationItem = UITabBarItem(title: "Notifikasi", image: UIImage(systemName: "bell.fill"), tag: 2)
-        let profileItem = UITabBarItem(title: "Profil", image: UIImage(named: "profileIcon"), tag: 3)
+        let notificationItem = UITabBarItem(title: "Notifikasi", image: UIImage(systemName: "bell.fill"), tag: 3)
+        let profileItem = UITabBarItem(title: "Profil", image: UIImage(named: "profileIcon"), tag: 4)
+        
+        let addIconItem = UITabBarItem(title: nil, image: UIImage(named: "addButton"), tag: 2)
+        addIconItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
         
         homeNavigationController.tabBarItem = homeItem
         activityNavigationController.tabBarItem = activityItem
+        addJobNavigationController.tabBarItem = addIconItem
         notificationNavigationController.tabBarItem = notificationItem
         profileNavigationController.tabBarItem = profileItem
         
