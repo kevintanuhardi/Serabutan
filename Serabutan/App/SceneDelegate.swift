@@ -10,6 +10,10 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var homeNavigationController: UINavigationController!
+    var activityNavigationController: UINavigationController!
+    var notificationNavigationController: UINavigationController!
+    var profileNavigationController: UINavigationController!
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -17,11 +21,37 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let viewController = HomeVC() // Handle Develop Here
+        
+        let tabBarController = UITabBarController()
+        let homeVC = HomeVC()
+        let activityVC = UIViewController()
+        let notificationVC = UIViewController()
+        let profileVC = UIViewController()
+        homeNavigationController = UINavigationController.init(rootViewController: homeVC)
+        activityNavigationController = UINavigationController.init(rootViewController: activityVC)
+        notificationNavigationController = UINavigationController.init(rootViewController: notificationVC)
+        profileNavigationController = UINavigationController.init(rootViewController: profileVC)
+        tabBarController.viewControllers = [homeNavigationController, activityNavigationController, notificationNavigationController, profileNavigationController]
+        
+        let homeItem = UITabBarItem(title: "Beranda", image: UIImage(named: "homeIcon"), tag: 0)
+        let activityItem = UITabBarItem(title: "Aktivitas", image: UIImage(named: "activityIcon"), tag: 1)
+        let notificationItem = UITabBarItem(title: "Notifikasi", image: UIImage(systemName: "bell.fill"), tag: 2)
+        let profileItem = UITabBarItem(title: "Profil", image: UIImage(named: "profileIcon"), tag: 3)
+        
+        homeNavigationController.tabBarItem = homeItem
+        activityNavigationController.tabBarItem = activityItem
+        notificationNavigationController.tabBarItem = notificationItem
+        profileNavigationController.tabBarItem = profileItem
+        
+        UITabBar.appearance().tintColor = UIColor.systemBlue
+        UITabBar.appearance().unselectedItemTintColor = UIColor.init(named: "silver")
+        
+        let viewController = tabBarController
         let navigationBar = UINavigationController(rootViewController: viewController)
         window?.rootViewController = navigationBar
         window?.makeKeyAndVisible()
     }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
