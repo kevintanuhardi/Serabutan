@@ -9,15 +9,18 @@ import UIKit
 import MapKit
 
 let dummyJobs = [
-    Job(title: "Nurunin Kucing dari Atap", locationName: "masih di atap situ deh", urgency: .high, price: 100000, coordinate: CLLocationCoordinate2D(latitude:  -6.302919554428814, longitude: 106.65259634329381)),
-    Job(title: "Angkut Rongsokan", locationName: "itu muka apa rongsokan", urgency: .medium, price: 100000, coordinate: CLLocationCoordinate2D(latitude:  -6.3009267573263275, longitude: 106.65268675358362)),
-    Job(title: "Bantu Sebar Kotay Syukuran", locationName: "yang penting bersyukur", urgency: .low, price: 100000, coordinate: CLLocationCoordinate2D(latitude:  -6.299640621626045, longitude: 106.65153022391823))
+    Job(title: "Nurunin Kucing dari Atap", locationName: "masih di atap situ deh", urgency: .high, price: 50000, coordinate: CLLocationCoordinate2D(latitude:  -6.302919554428814, longitude: 106.65259634329381)),
+    Job(title: "Angkut Rongsokan", locationName: "itu muka apa rongsokan", urgency: .medium, price: 75000, coordinate: CLLocationCoordinate2D(latitude:  -6.3009267573263275, longitude: 106.65268675358362)),
+    Job(title: "Bantu Sebar Kotay Syukuran", locationName: "yang penting bersyukur", urgency: .low, price: 1000000, coordinate: CLLocationCoordinate2D(latitude:  -6.299640621626045, longitude: 106.65153022391823))
 ]
 
 class HomeVC: UIViewController {
 
     private let locationManager = CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var jobListingColView: UICollectionView!
+    @IBOutlet weak var showAllButton: UIButton!
+    @IBOutlet weak var gradientView: UIView!
     
     private var currentCoordinate: CLLocationCoordinate2D?
     
@@ -27,7 +30,18 @@ class HomeVC: UIViewController {
         mapView.delegate = self
         mapView.mapType = .mutedStandard
         
+        let dummyNib = UINib(nibName: "DummyCollectionViewCell", bundle: nil)
+        jobListingColView.register(dummyNib, forCellWithReuseIdentifier: "dummyIdentifier")
+        jobListingColView.delegate = self
+        jobListingColView.dataSource = self
+        
+        showAllButton.semanticContentAttribute = UIApplication.shared
+            .userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
+
+        
         configureLocationServices()
+        
+        setGradientBackground()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +52,18 @@ class HomeVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    func setGradientBackground() {
+        let colorTop =  UIColor(red: 201.0/255.0, green: 230.0/255.0, blue: 179.0/255.0, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 201.0/255.0, green: 230.0/255.0, blue: 179.0/255.0, alpha: 0.0).cgColor
+                    
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colorTop, colorBottom]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.frame = gradientView.frame
+                
+        gradientView.layer.insertSublayer(gradientLayer, at:0)
     }
 
 
@@ -68,6 +94,25 @@ class HomeVC: UIViewController {
             mapView.addAnnotation(annotation)
         }
     }
+}
+
+extension HomeVC: UICollectionViewDataSource , UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        5
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let dummyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "dummyIdentifier", for: indexPath) as! DummyCollectionViewCell
+//
+//        dummyCell = UICollectionViewCell(frame: CGRect(x: 0, y: 0, width: 325, height: 150))
+//
+//        dummyCell.backgroundColor = UIColor.lightGray
+//
+        return dummyCell
+    }
+
+
 }
 
 extension HomeVC: CLLocationManagerDelegate {

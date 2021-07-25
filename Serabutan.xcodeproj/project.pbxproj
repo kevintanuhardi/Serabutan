@@ -11,6 +11,9 @@
 		1853414226AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853414026AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift */; };
 		1853414326AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1853414126AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib */; };
 		1853414526AC472C0027C0F3 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853414426AC472C0027C0F3 /* Job.swift */; };
+		1853414826AC68F90027C0F3 /* DummyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853414626AC68F90027C0F3 /* DummyCollectionViewCell.swift */; };
+		1853414926AC68F90027C0F3 /* DummyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1853414726AC68F90027C0F3 /* DummyCollectionViewCell.xib */; };
+		1854605326AD2AB000ABCF84 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854605226AD2AB000ABCF84 /* Utility.swift */; };
 		185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185D12BA26A7C09000F6105C /* AppDelegate.swift */; };
 		185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185D12BC26A7C09000F6105C /* SceneDelegate.swift */; };
 		185D12C426A7C09100F6105C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185D12C326A7C09100F6105C /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 		1853414026AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapKitAnnotationCellViewController.swift; path = Serabutan/Components/MapKitAnnotation/MapKitAnnotationCellViewController.swift; sourceTree = SOURCE_ROOT; };
 		1853414126AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MapKitAnnotationCellViewController.xib; path = Serabutan/Components/MapKitAnnotation/MapKitAnnotationCellViewController.xib; sourceTree = SOURCE_ROOT; };
 		1853414426AC472C0027C0F3 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Job.swift; path = Serabutan/Features/Model/Job.swift; sourceTree = SOURCE_ROOT; };
+		1853414626AC68F90027C0F3 /* DummyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DummyCollectionViewCell.swift; path = Serabutan/Components/MapKitAnnotation/DummyCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		1853414726AC68F90027C0F3 /* DummyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DummyCollectionViewCell.xib; path = Serabutan/Components/MapKitAnnotation/DummyCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		1854605226AD2AB000ABCF84 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = Serabutan/Helper/Utility.swift; sourceTree = SOURCE_ROOT; };
 		185D12B726A7C09000F6105C /* Serabutan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Serabutan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185D12BA26A7C09000F6105C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		185D12BC26A7C09000F6105C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +64,8 @@
 			children = (
 				1853414026AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift */,
 				1853414126AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib */,
+				1853414626AC68F90027C0F3 /* DummyCollectionViewCell.swift */,
+				1853414726AC68F90027C0F3 /* DummyCollectionViewCell.xib */,
 			);
 			path = MapKitAnnotation;
 			sourceTree = "<group>";
@@ -142,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				1853413C26AC23470027C0F3 /* UIImageExt.swift */,
+				1854605226AD2AB000ABCF84 /* Utility.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -267,6 +276,7 @@
 				185D12C726A7C09100F6105C /* LaunchScreen.storyboard in Resources */,
 				18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */,
 				185D12C426A7C09100F6105C /* Assets.xcassets in Resources */,
+				1853414926AC68F90027C0F3 /* DummyCollectionViewCell.xib in Resources */,
 				1853414326AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +292,8 @@
 				1853414526AC472C0027C0F3 /* Job.swift in Sources */,
 				1853413D26AC23470027C0F3 /* UIImageExt.swift in Sources */,
 				1853414226AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift in Sources */,
+				1854605326AD2AB000ABCF84 /* Utility.swift in Sources */,
+				1853414826AC68F90027C0F3 /* DummyCollectionViewCell.swift in Sources */,
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
 			);
