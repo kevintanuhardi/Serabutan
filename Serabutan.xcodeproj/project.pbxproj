@@ -13,6 +13,10 @@
 		185D12C726A7C09100F6105C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185D12C526A7C09100F6105C /* LaunchScreen.storyboard */; };
 		185D12D626A7C16400F6105C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185D12D426A7C16400F6105C /* HomeVC.swift */; };
 		185D12D726A7C16400F6105C /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185D12D526A7C16400F6105C /* HomeVC.xib */; };
+		796BC75F26AF215F00999377 /* ImageCarouselCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */; };
+		796BC76026AF215F00999377 /* ImageCarouselCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */; };
+		796BC76326AF21A900999377 /* DetailBantuanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796BC76126AF21A900999377 /* DetailBantuanVC.swift */; };
+		796BC76426AF21A900999377 /* DetailBantuanVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796BC76226AF21A900999377 /* DetailBantuanVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		185D12C826A7C09100F6105C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		185D12D426A7C16400F6105C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		185D12D526A7C16400F6105C /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCarouselCVC.swift; path = Serabutan/Features/View/ImageCarouselCVC.swift; sourceTree = SOURCE_ROOT; };
+		796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ImageCarouselCVC.xib; path = Serabutan/Features/View/ImageCarouselCVC.xib; sourceTree = SOURCE_ROOT; };
+		796BC76126AF21A900999377 /* DetailBantuanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailBantuanVC.swift; path = Serabutan/Features/View/DetailBantuanVC.swift; sourceTree = SOURCE_ROOT; };
+		796BC76226AF21A900999377 /* DetailBantuanVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DetailBantuanVC.xib; path = Serabutan/Features/View/DetailBantuanVC.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,10 @@
 				C78982E626A7E44C00EB95B1 /* Home */,
 				185D12D426A7C16400F6105C /* HomeVC.swift */,
 				185D12D526A7C16400F6105C /* HomeVC.xib */,
+				796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */,
+				796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */,
+				796BC76126AF21A900999377 /* DetailBantuanVC.swift */,
+				796BC76226AF21A900999377 /* DetailBantuanVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -236,8 +248,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				796BC76426AF21A900999377 /* DetailBantuanVC.xib in Resources */,
 				185D12C726A7C09100F6105C /* LaunchScreen.storyboard in Resources */,
 				185D12D726A7C16400F6105C /* HomeVC.xib in Resources */,
+				796BC76026AF215F00999377 /* ImageCarouselCVC.xib in Resources */,
 				185D12C426A7C09100F6105C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +265,8 @@
 			files = (
 				185D12D626A7C16400F6105C /* HomeVC.swift in Sources */,
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
+				796BC76326AF21A900999377 /* DetailBantuanVC.swift in Sources */,
+				796BC75F26AF215F00999377 /* ImageCarouselCVC.swift in Sources */,
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
