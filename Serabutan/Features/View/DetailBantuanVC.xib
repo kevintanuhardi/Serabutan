@@ -10,6 +10,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailBantuanVC" customModule="Serabutan" customModuleProvider="target">
             <connections>
+                <outlet property="backImage" destination="pqq-Y5-wl7" id="NRd-20-DYe"/>
+                <outlet property="helpStatusLabel" destination="EeN-xH-F8T" id="yEa-29-4L3"/>
+                <outlet property="jobDescLabel" destination="DZQ-Eg-kC6" id="5da-OP-eRm"/>
+                <outlet property="jobImgCarousel" destination="dmc-iy-Ru1" id="DD0-0M-JLR"/>
+                <outlet property="jobTagsCarousel" destination="a3m-7x-Oxy" id="OUc-KY-Cam"/>
+                <outlet property="jobTitleLabel" destination="A2j-rD-gUd" id="YVv-8x-B9M"/>
+                <outlet property="moreImage" destination="Dd6-Zd-wad" id="BiO-vZ-ZkP"/>
+                <outlet property="shareImage" destination="QP5-Hl-gLy" id="wz3-4D-DT1"/>
+                <outlet property="urgencyLabel" destination="Sm4-J6-86M" id="iyD-vP-qgi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

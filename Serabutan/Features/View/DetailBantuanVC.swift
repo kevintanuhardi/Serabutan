@@ -8,14 +8,26 @@
 import UIKit
 
 class DetailBantuanVC: UIViewController {
-
+    
+    @IBOutlet weak var backImage: UIImageView!
+    @IBOutlet weak var shareImage: UIImageView!
+    @IBOutlet weak var moreImage: UIImageView!
+    
+    @IBOutlet weak var urgencyLabel: UILabel!
+    @IBOutlet weak var jobTitleLabel: UILabel!
+    @IBOutlet weak var jobDescLabel: UILabel!
+    @IBOutlet weak var helpStatusLabel: UILabel!
+    
+    @IBOutlet weak var jobImgCarousel: UICollectionView!
+    @IBOutlet weak var jobTagsCarousel: UICollectionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-
+    
     /*
     // MARK: - Navigation
 
