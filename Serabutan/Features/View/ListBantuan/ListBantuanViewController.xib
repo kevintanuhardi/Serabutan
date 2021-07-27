@@ -20,10 +20,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="FVl-zy-NYr">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="CkK-Md-Hhi">
-                        <size key="itemSize" width="370" height="215"/>
+                        <size key="itemSize" width="360" height="215"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -40,7 +40,7 @@
                 <constraint firstItem="FVl-zy-NYr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="mld-WM-Wi1"/>
                 <constraint firstItem="FVl-zy-NYr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="s1D-Mc-ifS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FVl-zy-NYr" secondAttribute="trailing" id="xlc-GE-QLE"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FVl-zy-NYr" secondAttribute="bottom" id="zuy-2w-nlu"/>
+                <constraint firstAttribute="bottom" secondItem="FVl-zy-NYr" secondAttribute="bottom" id="zuy-2w-nlu"/>
             </constraints>
             <point key="canvasLocation" x="133" y="132"/>
         </view>

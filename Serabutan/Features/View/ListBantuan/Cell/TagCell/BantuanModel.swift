@@ -26,9 +26,9 @@ class BantuanModel{
 }
 
 class TagModel{
-    var name: [String]?
+    var name: String?
     
-    init(name: [String]){
+    init(name: String){
         self.name = name
     }
 }

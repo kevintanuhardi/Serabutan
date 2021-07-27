@@ -30,6 +30,7 @@ class TagCollectionViewCell: UICollectionViewCell {
         self.tagView.layer.cornerRadius = 5.0
         self.tagView.layer.borderWidth = 0.5
         self.tagView.layer.borderColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 0.50).cgColor
-        self.tagLabel.text = model.name?.description
+        
+        self.tagLabel.text = model.name
     }
 }

@@ -27,7 +27,6 @@ class BantuanCollectionViewCell: UICollectionViewCell, UICollectionViewDataSourc
     @IBOutlet weak var hubungiButton: UIButton!
     @IBOutlet weak var whatsappIcon: UIImageView!
     
-    
     static let identifier  = "BantuanCollectionViewCell"
     
     static func nib() -> UINib {
@@ -43,11 +42,17 @@ class BantuanCollectionViewCell: UICollectionViewCell, UICollectionViewDataSourc
         tagCell.dataSource = self
         tagCell.delegate = self
         
-        tagData.append(TagModel(name: ["Kuching", "Nyangkut", "Kasian"]))
+        tagData.append(TagModel(name: "Test"))
+        tagData.append(TagModel(name: "123"))
+        tagData.append(TagModel(name: "ABCDEFGHIJKL"))
+        tagData.append(TagModel(name: "ABC"))
+        tagData.append(TagModel(name: "ABC"))
+        tagData.append(TagModel(name: "ABC"))
+        tagData.append(TagModel(name: "ABC"))
     }
     
     public func configure(with model: BantuanModel){
-    
+        
         //card
         self.cardView.layer.cornerRadius = 5
         self.cardView.layer.shadowColor = UIColor.black.cgColor
@@ -57,6 +62,8 @@ class BantuanCollectionViewCell: UICollectionViewCell, UICollectionViewDataSourc
         self.cardView.layer.shadowPath = UIBezierPath(rect: cardView.bounds).cgPath
         self.cardView.layer.shouldRasterize = true
         self.cardView.layer.rasterizationScale = UIScreen.main.scale
+        self.cardView.translatesAutoresizingMaskIntoConstraints = false
+        self.cardView.heightAnchor.constraint(equalToConstant: 170).isActive = true
 
         //status
         self.statusView.layer.cornerRadius = 5
@@ -91,7 +98,8 @@ class BantuanCollectionViewCell: UICollectionViewCell, UICollectionViewDataSourc
         self.distanceLabel.text = distance
 
         //bottomView
-        self.bottomView.isHidden = false
+//      self.bottomView.removeFromSuperview()
+        //self.bottomView.isHidden = true
         self.helperProfilePicture.image = UIImage(named: "ProfileIcon")
         self.helperName.text = "Nama Helper"
         self.whatsappView.layer.cornerRadius = 5
