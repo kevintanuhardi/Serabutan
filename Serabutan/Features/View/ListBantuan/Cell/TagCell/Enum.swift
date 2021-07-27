@@ -8,44 +8,44 @@
 import Foundation
 import UIKit
 
-enum Urgency: String, CaseIterable {
-    case tinggi = "Urgensi tinggi"
-    case sedang = "Urgensi sedang"
-    case rendah = "Urgensi rendah"
-    
-    func getImage()-> UIImage{
-        switch self {
-        case .tinggi:
-            return UIImage(systemName: "circle.fill")!
-        case .sedang:
-            return UIImage(systemName: "circle.fill")!
-        default:
-            return UIImage(systemName: "circle.fill")!
-        }
-    }
-    
-    func getBGColor()-> UIColor{
-        switch self {
-        case .tinggi:
-            return UIColor(red: 0.88, green: 0.08, blue: 0.08, alpha: 0.10)
-        case .sedang:
-            return UIColor(red: 0.88, green: 0.46, blue: 0.08, alpha: 0.10)
-        default:
-            return UIColor(red: 1.00, green: 0.81, blue: 0.14, alpha: 0.10)
-        }
-    }
-    
-    func getSymbolColor()-> UIColor{
-        switch self {
-        case .tinggi:
-            return UIColor(red: 0.88, green: 0.08, blue: 0.08, alpha: 1.00)
-        case .sedang:
-            return UIColor(red: 0.88, green: 0.46, blue: 0.08, alpha: 1.00)
-        default:
-            return UIColor(red: 1.00, green: 0.81, blue: 0.14, alpha: 1.00)
-        }
-    }
-}
+//enum Urgency: String, CaseIterable {
+//    case tinggi = "Urgensi tinggi"
+//    case sedang = "Urgensi sedang"
+//    case rendah = "Urgensi rendah"
+//
+//    func getImage()-> UIImage{
+//        switch self {
+//        case .tinggi:
+//            return UIImage(systemName: "circle.fill")!
+//        case .sedang:
+//            return UIImage(systemName: "circle.fill")!
+//        default:
+//            return UIImage(systemName: "circle.fill")!
+//        }
+//    }
+//
+//    func getBGColor()-> UIColor{
+//        switch self {
+//        case .tinggi:
+//            return UIColor(red: 0.88, green: 0.08, blue: 0.08, alpha: 0.10)
+//        case .sedang:
+//            return UIColor(red: 0.88, green: 0.46, blue: 0.08, alpha: 0.10)
+//        default:
+//            return UIColor(red: 1.00, green: 0.81, blue: 0.14, alpha: 0.10)
+//        }
+//    }
+//
+//    func getSymbolColor()-> UIColor{
+//        switch self {
+//        case .tinggi:
+//            return UIColor(red: 0.88, green: 0.08, blue: 0.08, alpha: 1.00)
+//        case .sedang:
+//            return UIColor(red: 0.88, green: 0.46, blue: 0.08, alpha: 1.00)
+//        default:
+//            return UIColor(red: 1.00, green: 0.81, blue: 0.14, alpha: 1.00)
+//        }
+//    }
+//}
 
 enum Status: String, CaseIterable {
     case diberikan = "Diberikan"
