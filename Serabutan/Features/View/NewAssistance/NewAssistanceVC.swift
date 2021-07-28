@@ -55,59 +55,59 @@ class NewAssistanceVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Buat Permintaan Bantuan"
         infoCollectionView.isHidden = true
         tabBarController?.tabBar.isHidden = true
         setCustomTextField()
-        
+        setNavigationBarItems()
     }
     
     
 }
 
-extension NewAssistanceVC: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField, _button: UIButton) -> Bool {
-        if textField == titleTF {
-            descTF.becomeFirstResponder()
-        } else if textField == descTF {
-            compensationTF.becomeFirstResponder()
-        } else if textField == compensationTF {
-            genderButton.becomeFirstResponder()
-        } else if textField == genderButton {
-            ageButton.becomeFirstResponder()
-        } else if textField == ageButton {
-            infoTF.becomeFirstResponder()
-        } else if textField == infoTF {
-            mediaAddButton.becomeFirstResponder()
-        } else {
-            textField.resignFirstResponder()
-        }
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField, _ button: UIButton) {
-        if textField == titleTF {
-            newAssistanceTitle = textField.text!
-            descTF.becomeFirstResponder()
-        } else if textField == descTF {
-            newAssistanceDes = textField.text!
-            compensationTF.becomeFirstResponder()
-        } else if textField == compensationTF {
-            newAssistanceCompensation = textField.text!
-            genderButton.becomeFirstResponder()
-            //            } else if textField == genderButton {
-            //                newAssistanceGenderPref = textField.text!
-            //                ageButton.becomeFirstResponder()
-            //            } else if textField == ageButton {
-            //                newAssistanceAgePref = textField.text!
-            //                infoTF.becomeFirstResponder()
-            //            } else if textField == infoCollectionView {
-            //                newAssistanceInfo = textField.text!
-            //                mediaAddButton.becomeFirstResponder()
-            //            } else {
-            //                newAssistanceMediaImage = textField.text!
-            //                actStatusTxt.becomeFirstResponder()
-        }
-    }
-    
-}
+//extension NewAssistanceVC: UITextFieldDelegate {
+//    func textFieldShouldReturn(_ textField: UITextField, _button: UIButton) -> Bool {
+//        if textField == titleTF {
+//            descTF.becomeFirstResponder()
+//        } else if textField == descTF {
+//            compensationTF.becomeFirstResponder()
+//        } else if textField == compensationTF {
+//            genderButton.becomeFirstResponder()
+//        } else if textField == genderButton {
+//            ageButton.becomeFirstResponder()
+//        } else if textField == ageButton {
+//            infoTF.becomeFirstResponder()
+//        } else if textField == infoTF {
+//            mediaAddButton.becomeFirstResponder()
+//        } else {
+//            textField.resignFirstResponder()
+//        }
+//        return true
+//    }
+//
+//    func textFieldDidEndEditing(_ textField: UITextField, _ button: UIButton) {
+//        if textField == titleTF {
+//            newAssistanceTitle = textField.text!
+//            descTF.becomeFirstResponder()
+//        } else if textField == descTF {
+//            newAssistanceDes = textField.text!
+//            compensationTF.becomeFirstResponder()
+//        } else if textField == compensationTF {
+//            newAssistanceCompensation = textField.text!
+//            genderButton.becomeFirstResponder()
+//                        } else if textField == genderButton {
+//                            newAssistanceGenderPref = textField.text!
+//                            ageButton.becomeFirstResponder()
+//                        } else if textField == ageButton {
+//                            newAssistanceAgePref = textField.text!
+//                            infoTF.becomeFirstResponder()
+//                        } else if textField == infoCollectionView {
+//                            newAssistanceInfo = textField.text!
+//                            mediaAddButton.becomeFirstResponder()
+//                        } else {
+//                            newAssistanceMediaImage = textField.text!
+//                            actStatusTxt.becomeFirstResponder()
+//        }
+//    }
+//
+//}
