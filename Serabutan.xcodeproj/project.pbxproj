@@ -15,14 +15,11 @@
 		185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185D12BC26A7C09000F6105C /* SceneDelegate.swift */; };
 		185D12C426A7C09100F6105C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185D12C326A7C09100F6105C /* Assets.xcassets */; };
 		185D12C726A7C09100F6105C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185D12C526A7C09100F6105C /* LaunchScreen.storyboard */; };
-<<<<<<< Updated upstream
 		18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF23B26A911E10029CEA1 /* HomeVC.swift */; };
 		18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF23C26A911E10029CEA1 /* HomeVC.xib */; };
-=======
 		185D12D626A7C16400F6105C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185D12D426A7C16400F6105C /* HomeVC.swift */; };
 		185D12D726A7C16400F6105C /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185D12D526A7C16400F6105C /* HomeVC.xib */; };
 		C76047C026AF3CBB00535995 /* ListBantuanNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76047BF26AF3CBB00535995 /* ListBantuanNavigationBar.swift */; };
->>>>>>> Stashed changes
 		C7D7AE3B26AC977C000478AA /* ListBantuanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE3926AC977C000478AA /* ListBantuanViewController.swift */; };
 		C7D7AE3C26AC977C000478AA /* ListBantuanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D7AE3A26AC977C000478AA /* ListBantuanViewController.xib */; };
 		C7D7AE3F26AC97DD000478AA /* BantuanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE3D26AC97DD000478AA /* BantuanCollectionViewCell.swift */; };
@@ -45,12 +42,9 @@
 		185D12C626A7C09100F6105C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		185D12C826A7C09100F6105C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		185D12D526A7C16400F6105C /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
-<<<<<<< Updated upstream
 		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/HomeVC.swift; sourceTree = SOURCE_ROOT; };
 		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/HomeVC.xib; sourceTree = SOURCE_ROOT; };
-=======
 		C76047BF26AF3CBB00535995 /* ListBantuanNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListBantuanNavigationBar.swift; path = Serabutan/Features/View/ListBantuan/ListBantuanNavigationBar.swift; sourceTree = SOURCE_ROOT; };
->>>>>>> Stashed changes
 		C7D7AE3926AC977C000478AA /* ListBantuanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListBantuanViewController.swift; path = Serabutan/Features/View/ListBantuan/ListBantuanViewController.swift; sourceTree = SOURCE_ROOT; };
 		C7D7AE3A26AC977C000478AA /* ListBantuanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ListBantuanViewController.xib; path = Serabutan/Features/View/ListBantuan/ListBantuanViewController.xib; sourceTree = SOURCE_ROOT; };
 		C7D7AE3D26AC97DD000478AA /* BantuanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BantuanCollectionViewCell.swift; path = Serabutan/Features/View/ListBantuan/Cell/BantuanCell/BantuanCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
