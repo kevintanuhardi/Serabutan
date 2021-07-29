@@ -7,7 +7,9 @@
 
 import UIKit
 
-class ListBantuanViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ListBantuanViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
+   
+    
     
     @IBOutlet weak var bantuanCell: UICollectionView!
     
@@ -52,6 +54,15 @@ class ListBantuanViewController: UIViewController, UICollectionViewDelegate, UIC
         let cell = bantuanCell.dequeueReusableCell(withReuseIdentifier: BantuanCollectionViewCell.identifier, for: indexPath) as! BantuanCollectionViewCell
         cell.configure(with: models[indexPath.row])
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
     }
 }
 
