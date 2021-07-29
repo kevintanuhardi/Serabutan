@@ -62,8 +62,17 @@ class NewAssistanceVC: UIViewController {
         setNavigationBarItems()
     }
     
+    @IBAction func cancelButtonAction(_sender: Any){
+        let myViewController = HomeVC(nibName: "HomeVC", bundle: nil)
+        self.present(myViewController, animated: true, completion: nil)
+    }
     
+    @IBAction func shareButtonAction(_sender: Any){
+        print("Share Button Clicked")
+    }
 }
+
+
 
 //extension NewAssistanceVC: UITextFieldDelegate {
 //    func textFieldShouldReturn(_ textField: UITextField, _button: UIButton) -> Bool {

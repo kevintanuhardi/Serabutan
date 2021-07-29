@@ -68,6 +68,7 @@ extension NewAssistanceVC {
         cancelButton.setImage(UIImage(systemName: "xmark")?.withRenderingMode(.alwaysOriginal), for: .normal)
         cancelButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
         cancelButton.tintColor = UIColor.black
+        cancelButton.addTarget(self, action: #selector(cancelButtonAction(_sender:)), for: .touchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: cancelButton)
         
         let shareButton = UIButton(type: .system)
@@ -76,6 +77,7 @@ extension NewAssistanceVC {
         shareButton.frame = CGRect(x: 0, y: 0, width: 69, height: 34)
         shareButton.layer.backgroundColor = UIColor(red: 0.50, green: 0.31, blue: 0.82, alpha: 1.00).cgColor
         shareButton.layer.cornerRadius = 5
+        shareButton.addTarget(self, action: #selector(shareButtonAction(_sender:)), for: .touchUpInside)
         navigationItem.rightBarButtonItem =  UIBarButtonItem(customView: shareButton)
     }
 }
