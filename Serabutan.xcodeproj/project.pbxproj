@@ -15,15 +15,12 @@
 		185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185D12BC26A7C09000F6105C /* SceneDelegate.swift */; };
 		185D12C426A7C09100F6105C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185D12C326A7C09100F6105C /* Assets.xcassets */; };
 		185D12C726A7C09100F6105C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185D12C526A7C09100F6105C /* LaunchScreen.storyboard */; };
-
-		796BC75F26AF215F00999377 /* ImageCarouselCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */; };
-		796BC76026AF215F00999377 /* ImageCarouselCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */; };
-		796BC76326AF21A900999377 /* DetailBantuanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796BC76126AF21A900999377 /* DetailBantuanVC.swift */; };
-		796BC76426AF21A900999377 /* DetailBantuanVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796BC76226AF21A900999377 /* DetailBantuanVC.xib */; };
-
 		18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF23B26A911E10029CEA1 /* HomeVC.swift */; };
 		18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF23C26A911E10029CEA1 /* HomeVC.xib */; };
-
+		79089B1C26B300FA0053077D /* DetailBantuanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79089B1B26B300FA0053077D /* DetailBantuanVC.swift */; };
+		796BC75F26AF215F00999377 /* ImageCarouselCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */; };
+		796BC76026AF215F00999377 /* ImageCarouselCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */; };
+		796BC76426AF21A900999377 /* DetailBantuanVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796BC76226AF21A900999377 /* DetailBantuanVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,15 +34,12 @@
 		185D12C326A7C09100F6105C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		185D12C626A7C09100F6105C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		185D12C826A7C09100F6105C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-
-		796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCarouselCVC.swift; path = Serabutan/Features/View/ImageCarouselCVC.swift; sourceTree = SOURCE_ROOT; };
-		796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ImageCarouselCVC.xib; path = Serabutan/Features/View/ImageCarouselCVC.xib; sourceTree = SOURCE_ROOT; };
-		796BC76126AF21A900999377 /* DetailBantuanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailBantuanVC.swift; path = Serabutan/Features/View/DetailBantuanVC.swift; sourceTree = SOURCE_ROOT; };
-		796BC76226AF21A900999377 /* DetailBantuanVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DetailBantuanVC.xib; path = Serabutan/Features/View/DetailBantuanVC.xib; sourceTree = SOURCE_ROOT; };
-
 		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/HomeVC.swift; sourceTree = SOURCE_ROOT; };
 		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/HomeVC.xib; sourceTree = SOURCE_ROOT; };
-
+		79089B1B26B300FA0053077D /* DetailBantuanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailBantuanVC.swift; path = Serabutan/Features/View/DetailBantuan/DetailBantuanVC.swift; sourceTree = SOURCE_ROOT; };
+		796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCarouselCVC.swift; path = serabutan/Features/View/DetailBantuan/Cell/ImageCarouselCVC.swift; sourceTree = SOURCE_ROOT; };
+		796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ImageCarouselCVC.xib; path = serabutan/Features/View/DetailBantuan/Cell/ImageCarouselCVC.xib; sourceTree = SOURCE_ROOT; };
+		796BC76226AF21A900999377 /* DetailBantuanVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DetailBantuanVC.xib; path = serabutan/Features/View/DetailBantuan/DetailBantuanVC.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +111,7 @@
 		185D12D026A7C10500F6105C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				79C085F926B2585C00AE56CD /* DetailBantuan */,
 				C78982EC26A7E5F300EB95B1 /* Login */,
 				C78982EB26A7E5EC00EB95B1 /* SignUp */,
 				C78982EA26A7E5B700EB95B1 /* Profile */,
@@ -124,12 +119,6 @@
 				C78982E826A7E56800EB95B1 /* Activity */,
 				C78982E726A7E54B00EB95B1 /* NewAssistance */,
 				C78982E626A7E44C00EB95B1 /* Home */,
-
-				796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */,
-				796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */,
-				796BC76126AF21A900999377 /* DetailBantuanVC.swift */,
-				796BC76226AF21A900999377 /* DetailBantuanVC.xib */,
-
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,6 +163,41 @@
 				185D12C826A7C09100F6105C /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		79C085F926B2585C00AE56CD /* DetailBantuan */ = {
+			isa = PBXGroup;
+			children = (
+				79089B1B26B300FA0053077D /* DetailBantuanVC.swift */,
+				796BC76226AF21A900999377 /* DetailBantuanVC.xib */,
+				79C085FA26B2587C00AE56CD /* Cell */,
+			);
+			path = DetailBantuan;
+			sourceTree = "<group>";
+		};
+		79C085FA26B2587C00AE56CD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				79C085FC26B258E600AE56CD /* BottomCollectionView */,
+				79C085FB26B258D200AE56CD /* TopCollectionView */,
+				796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */,
+				796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		79C085FB26B258D200AE56CD /* TopCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TopCollectionView;
+			sourceTree = "<group>";
+		};
+		79C085FC26B258E600AE56CD /* BottomCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BottomCollectionView;
 			sourceTree = "<group>";
 		};
 		C78982E626A7E44C00EB95B1 /* Home */ = {
@@ -286,11 +310,8 @@
 			files = (
 				796BC76426AF21A900999377 /* DetailBantuanVC.xib in Resources */,
 				185D12C726A7C09100F6105C /* LaunchScreen.storyboard in Resources */,
-
 				796BC76026AF215F00999377 /* ImageCarouselCVC.xib in Resources */,
-
 				18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */,
-
 				185D12C426A7C09100F6105C /* Assets.xcassets in Resources */,
 				1853414326AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib in Resources */,
 			);
@@ -303,14 +324,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */,
 				1853414526AC472C0027C0F3 /* Job.swift in Sources */,
 				1853413D26AC23470027C0F3 /* UIImageExt.swift in Sources */,
 				1853414226AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift in Sources */,
-
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
-				796BC76326AF21A900999377 /* DetailBantuanVC.swift in Sources */,
+				79089B1C26B300FA0053077D /* DetailBantuanVC.swift in Sources */,
 				796BC75F26AF215F00999377 /* ImageCarouselCVC.swift in Sources */,
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
 			);

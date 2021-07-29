@@ -17,7 +17,7 @@ class Job: NSObject, MKAnnotation {
   let title: String?
   let locationName: String?
   let urgency: Urgency?
-let price: Int?
+  let price: Int?
   let coordinate: CLLocationCoordinate2D
 
   init(

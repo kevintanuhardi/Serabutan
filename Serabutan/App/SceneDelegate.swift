@@ -23,11 +23,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-
-        let viewController = DetailBantuanVC() // Handle Develop Here
         
         let tabBarController = UITabBarController()
-        let homeVC = HomeVC()
+        let homeVC = DetailBantuanVC()
         let activityVC = UIViewController()
         let notificationVC = UIViewController()
         let profileVC = UIViewController()
