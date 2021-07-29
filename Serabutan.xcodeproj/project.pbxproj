@@ -18,6 +18,9 @@
 		18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF23B26A911E10029CEA1 /* HomeVC.swift */; };
 		18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF23C26A911E10029CEA1 /* HomeVC.xib */; };
 		C744D7DE26B2D324009E36B7 /* AssistanceTableViewStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7DD26B2D324009E36B7 /* AssistanceTableViewStyling.swift */; };
+		C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */; };
+		C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */; };
+		C744D7E826B2F127009E36B7 /* FilterPopUpConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */; };
 		C76047C026AF3CBB00535995 /* ListBantuanNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76047BF26AF3CBB00535995 /* ListBantuanNavigationView.swift */; };
 		C7CCC24C26B1DB590005FFE3 /* AssistanceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */; };
 		C7CCC24D26B1DB590005FFE3 /* AssistanceListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */; };
@@ -46,6 +49,9 @@
 		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/HomeVC.swift; sourceTree = SOURCE_ROOT; };
 		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/HomeVC.xib; sourceTree = SOURCE_ROOT; };
 		C744D7DD26B2D324009E36B7 /* AssistanceTableViewStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceTableViewStyling.swift; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableViewStyling.swift; sourceTree = SOURCE_ROOT; };
+		C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpVC.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.swift; sourceTree = SOURCE_ROOT; };
+		C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FilterPopUpVC.xib; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.xib; sourceTree = SOURCE_ROOT; };
+		C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpConfig.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpConfig.swift; sourceTree = SOURCE_ROOT; };
 		C76047BF26AF3CBB00535995 /* ListBantuanNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListBantuanNavigationView.swift; path = Serabutan/Features/View/ListBantuan/ListBantuanNavigationView.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListVC.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListVC.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssistanceListVC.xib; path = Serabutan/Features/View/ListBantuan/AssistanceListVC.xib; sourceTree = SOURCE_ROOT; };
@@ -185,6 +191,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		C744D7E026B2D9B1009E36B7 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */,
+				C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */,
+				C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		C76047C126AFC46500535995 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +275,7 @@
 		C7D7AE3626AC96CA000478AA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				C744D7E026B2D9B1009E36B7 /* Filter */,
 				C7D7AE3826AC9735000478AA /* AssistanceCell */,
 				C7D7AE3726AC9728000478AA /* TagCell */,
 			);
@@ -347,6 +364,7 @@
 				C7CCC24D26B1DB590005FFE3 /* AssistanceListVC.xib in Resources */,
 				18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */,
 				185D12C426A7C09100F6105C /* Assets.xcassets in Resources */,
+				C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */,
 				1853414326AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib in Resources */,
 				C7CCC25126B1DBD80005FFE3 /* AssistanceTableViewCell.xib in Resources */,
 			);
@@ -360,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */,
+				C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */,
 				C7CCC25326B2490F0005FFE3 /* AssistanceListTableConfig.swift in Sources */,
 				C7CCC25026B1DBD80005FFE3 /* AssistanceTableViewCell.swift in Sources */,
 				1853414526AC472C0027C0F3 /* Job.swift in Sources */,
@@ -368,6 +387,7 @@
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
 				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,
 				C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */,
+				C744D7E826B2F127009E36B7 /* FilterPopUpConfig.swift in Sources */,
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
 				C7CCC25526B26CFA0005FFE3 /* AssistanceTableConfig.swift in Sources */,
 				C76047C026AF3CBB00535995 /* ListBantuanNavigationView.swift in Sources */,
