@@ -18,6 +18,8 @@
 		18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF23B26A911E10029CEA1 /* HomeVC.swift */; };
 		18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF23C26A911E10029CEA1 /* HomeVC.xib */; };
 		C76047C026AF3CBB00535995 /* ListBantuanNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76047BF26AF3CBB00535995 /* ListBantuanNavigationBar.swift */; };
+		C79063E626B3B40B00AE7687 /* PreferencePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79063E526B3B40B00AE7687 /* PreferencePicker.swift */; };
+		C79063E826B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79063E726B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift */; };
 		C7CCC24526B199DD0005FFE3 /* NewAssistanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */; };
 		C7CCC24626B199DD0005FFE3 /* NewAssistanceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */; };
 		C7CCC24826B19A660005FFE3 /* NewAssistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24726B19A660005FFE3 /* NewAssistanceView.swift */; };
@@ -46,6 +48,8 @@
 		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/HomeVC.swift; sourceTree = SOURCE_ROOT; };
 		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/HomeVC.xib; sourceTree = SOURCE_ROOT; };
 		C76047BF26AF3CBB00535995 /* ListBantuanNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListBantuanNavigationBar.swift; path = Serabutan/Features/View/ListBantuan/ListBantuanNavigationBar.swift; sourceTree = SOURCE_ROOT; };
+		C79063E526B3B40B00AE7687 /* PreferencePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreferencePicker.swift; path = ../../../../../../PreferencePicker.swift; sourceTree = "<group>"; };
+		C79063E726B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanCollectionViewConfig.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanCollectionViewConfig.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanceVC.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanceVC.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewAssistanceVC.xib; path = Serabutan/Features/View/NewAssistance/NewAssistanceVC.xib; sourceTree = SOURCE_ROOT; };
 		C7CCC24726B19A660005FFE3 /* NewAssistanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanceView.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanceView.swift; sourceTree = SOURCE_ROOT; };
@@ -208,6 +212,8 @@
 				C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */,
 				C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */,
 				C7CCC24726B19A660005FFE3 /* NewAssistanceView.swift */,
+				C79063E526B3B40B00AE7687 /* PreferencePicker.swift */,
+				C79063E726B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift */,
 			);
 			path = NewAssistance;
 			sourceTree = "<group>";
@@ -366,12 +372,14 @@
 				1853414226AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift in Sources */,
 				C7CCC24526B199DD0005FFE3 /* NewAssistanceVC.swift in Sources */,
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
+				C79063E626B3B40B00AE7687 /* PreferencePicker.swift in Sources */,
 				C7D7AE3B26AC977C000478AA /* ListBantuanViewController.swift in Sources */,
 				C7CCC24826B19A660005FFE3 /* NewAssistanceView.swift in Sources */,
 				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,
 				C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */,
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
 				C76047C026AF3CBB00535995 /* ListBantuanNavigationBar.swift in Sources */,
+				C79063E826B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift in Sources */,
 				C7D7AE3F26AC97DD000478AA /* BantuanCollectionViewCell.swift in Sources */,
 				C7D7AE4826AE5040000478AA /* BantuanModel.swift in Sources */,
 			);

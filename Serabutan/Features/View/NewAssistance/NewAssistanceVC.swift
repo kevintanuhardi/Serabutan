@@ -7,8 +7,7 @@
 
 import UIKit
 
-class NewAssistanceVC: UIViewController {
-    
+class NewAssistanceVC: UIViewController{
     
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var titleTFView: UIView!
@@ -24,11 +23,11 @@ class NewAssistanceVC: UIViewController {
     
     @IBOutlet weak var preferenceView: UIView!
     @IBOutlet weak var genderView: UIView!
-    @IBOutlet weak var genderButton: UIButton!
+    @IBOutlet weak var genderTF: UITextField!
     @IBOutlet weak var genderImage: UIImageView!
     
     @IBOutlet weak var ageView: UIView!
-    @IBOutlet weak var ageButton: UILabel!
+    @IBOutlet weak var ageTF: UITextField!
     @IBOutlet weak var ageImage: UIImageView!
     
     @IBOutlet weak var infoView: UIView!
@@ -39,6 +38,7 @@ class NewAssistanceVC: UIViewController {
     @IBOutlet weak var mediaView: UIView!
     @IBOutlet weak var mediaAddView: UIView!
     @IBOutlet weak var mediaAddButton: UIButton!
+    @IBOutlet weak var mediaImageCollectionView: UICollectionView!
     
     private var newAssistanceTitle: String = ""
     private var newAssistanceDes: String = ""
@@ -48,18 +48,39 @@ class NewAssistanceVC: UIViewController {
     private var newAssistanceInfo: [String] = []
     private var newAssistanceMediaImage: [String] = []
     
-    private var selectedTags: [String] = []
+    var currTags: [TagModel] = []
+    var currMediaImage: [String] = []
+    let agePreferenceData = ["Pria", "Perempuan"]
+    let genderPreferenceData = ["18-25", "25-40", "> 40"]
     
-    private var currInfo: [String] = []
-    private var currMediaImage: [String] = []
+    var genderPickerView = UIPickerView()
+    var agePickerView = UIPickerView()
+    var selectedValueGender : String?
+    var selectedValueAge : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Buat Permintaan Bantuan"
         infoCollectionView.isHidden = true
         tabBarController?.tabBar.isHidden = true
+        
+        setupView()
+        infoCollectionView.dataSource = self
+        infoCollectionView.delegate = self
+        infoCollectionView.register(TagCollectionViewCell.nib(), forCellWithReuseIdentifier: TagCollectionViewCell.identifier)
+        
+//        mediaImageCollectionView.dataSource = self
+//        mediaImageCollectionView.delegate = self
+//        mediaImageCollectionView.register(MediaCollectionViewCell.nib(), forCellWithReuseIdentifier: MediaCollectionViewCell.identifier)
+    }
+    
+    func setupView(){
         setCustomTextField()
         setNavigationBarItems()
+        createPickerGender()
+        createPickerAge()
+        
+        getTagInput()
     }
     
     @IBAction func cancelButtonAction(_sender: Any){
@@ -70,53 +91,26 @@ class NewAssistanceVC: UIViewController {
     @IBAction func shareButtonAction(_sender: Any){
         print("Share Button Clicked")
     }
+    
+    func getTagInput(){
+        
+    }
+    
+    @IBAction func addMediaImageAction(_ sender: Any) {
+        
+    }
+    
 }
 
 
+extension NewAssistanceVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField, _button: UIButton) -> Bool {
+        return true
+    }
 
-//extension NewAssistanceVC: UITextFieldDelegate {
-//    func textFieldShouldReturn(_ textField: UITextField, _button: UIButton) -> Bool {
-//        if textField == titleTF {
-//            descTF.becomeFirstResponder()
-//        } else if textField == descTF {
-//            compensationTF.becomeFirstResponder()
-//        } else if textField == compensationTF {
-//            genderButton.becomeFirstResponder()
-//        } else if textField == genderButton {
-//            ageButton.becomeFirstResponder()
-//        } else if textField == ageButton {
-//            infoTF.becomeFirstResponder()
-//        } else if textField == infoTF {
-//            mediaAddButton.becomeFirstResponder()
-//        } else {
-//            textField.resignFirstResponder()
-//        }
-//        return true
-//    }
-//
-//    func textFieldDidEndEditing(_ textField: UITextField, _ button: UIButton) {
-//        if textField == titleTF {
-//            newAssistanceTitle = textField.text!
-//            descTF.becomeFirstResponder()
-//        } else if textField == descTF {
-//            newAssistanceDes = textField.text!
-//            compensationTF.becomeFirstResponder()
-//        } else if textField == compensationTF {
-//            newAssistanceCompensation = textField.text!
-//            genderButton.becomeFirstResponder()
-//                        } else if textField == genderButton {
-//                            newAssistanceGenderPref = textField.text!
-//                            ageButton.becomeFirstResponder()
-//                        } else if textField == ageButton {
-//                            newAssistanceAgePref = textField.text!
-//                            infoTF.becomeFirstResponder()
-//                        } else if textField == infoCollectionView {
-//                            newAssistanceInfo = textField.text!
-//                            mediaAddButton.becomeFirstResponder()
-//                        } else {
-//                            newAssistanceMediaImage = textField.text!
-//                            actStatusTxt.becomeFirstResponder()
-//        }
-//    }
-//
-//}
+    func textFieldDidEndEditing(_ textField: UITextField, _ button: UIButton) {
+        
+    }
+
+}
+
