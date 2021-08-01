@@ -34,8 +34,8 @@
 		185D12C826A7C09100F6105C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/HomeVC.swift; sourceTree = SOURCE_ROOT; };
 		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/HomeVC.xib; sourceTree = SOURCE_ROOT; };
-		79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingReviewVC.swift; path = Serabutan/Features/View/RatingReviewVC.swift; sourceTree = SOURCE_ROOT; };
-		79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RatingReviewVC.xib; path = Serabutan/Features/View/RatingReviewVC.xib; sourceTree = SOURCE_ROOT; };
+		79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingReviewVC.swift; path = serabutan/Features/View/RatingReview/RatingReviewVC.swift; sourceTree = SOURCE_ROOT; };
+		79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RatingReviewVC.xib; path = serabutan/Features/View/RatingReview/RatingReviewVC.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +107,7 @@
 		185D12D026A7C10500F6105C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				79A523FB26B71274000892D8 /* RatingReview */,
 				C78982EC26A7E5F300EB95B1 /* Login */,
 				C78982EB26A7E5EC00EB95B1 /* SignUp */,
 				C78982EA26A7E5B700EB95B1 /* Profile */,
@@ -114,8 +115,6 @@
 				C78982E826A7E56800EB95B1 /* Activity */,
 				C78982E726A7E54B00EB95B1 /* NewAssistance */,
 				C78982E626A7E44C00EB95B1 /* Home */,
-				79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */,
-				79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,6 +159,15 @@
 				185D12C826A7C09100F6105C /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		79A523FB26B71274000892D8 /* RatingReview */ = {
+			isa = PBXGroup;
+			children = (
+				79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */,
+				79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */,
+			);
+			path = RatingReview;
 			sourceTree = "<group>";
 		};
 		C78982E626A7E44C00EB95B1 /* Home */ = {
