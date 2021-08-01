@@ -8,30 +8,45 @@
 import UIKit
 
 class RatingReviewVC: UIViewController, UITextViewDelegate {
+    
+    var reviewTextChecked: Bool = false
+    var bintangTapped : Bool = false
 
     @IBOutlet weak var kirimBtn: UIButton!
     @IBOutlet weak var lewatiBtn: UIButton!
-    
+   
+    @IBOutlet var bintangBtn: [UIButton]!
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var namaLbl: UILabel!
-    
-    @IBOutlet weak var viewBintang: UIView!
     
     @IBOutlet weak var reviewTextView: UITextView!
     
     @IBAction func lewatiBtn(_ sender: Any) {
     }
+    
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        print("Rated \(sender.tag) stars.")
+        
+        for button in bintangBtn{
+            if button.tag <= sender.tag{
+                button.setImage(UIImage.init(named: "bintangKuning"), for: .normal) //selected
+            }else{
+                button.setImage(UIImage.init(named: "bintangAbu"), for: .normal) //notselected
+            }
+            bintangTapped = true
+            setupKirimBtn()
+        }
+    }
+    
     @IBAction func kirimBtn(_ sender: Any) {
     }
     
-    var textView: Int = 0
-
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray{
             textView.text = nil
             textView.textColor = UIColor.black
-            kirimBtn.backgroundColor = UIColor.purple
-            kirimBtn.isEnabled = true
+            reviewTextChecked = true
+            setupKirimBtn()
         }
     }
     
@@ -39,8 +54,8 @@ class RatingReviewVC: UIViewController, UITextViewDelegate {
         if textView.text.isEmpty{
             textView.text = "Review"
             textView.textColor = UIColor.lightGray
-            kirimBtn.backgroundColor = UIColor.lightGray
-            kirimBtn.isEnabled = false
+            reviewTextChecked = false
+            setupKirimBtn()
         }
     }
     
@@ -53,6 +68,15 @@ class RatingReviewVC: UIViewController, UITextViewDelegate {
         reviewTextView.textColor = UIColor.lightGray
     }
     
+    func setupKirimBtn(){
+        kirimBtn.backgroundColor = UIColor.lightGray
+        kirimBtn.isEnabled = false
+        if reviewTextChecked == true && bintangTapped == true{
+            kirimBtn.backgroundColor = UIColor.purple
+            kirimBtn.isEnabled = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,10 +85,7 @@ class RatingReviewVC: UIViewController, UITextViewDelegate {
         
         profileImg.image = #imageLiteral(resourceName: "bintangKuning")
         namaLbl.text = "Agus Susanto"
-        
-        viewBintang.backgroundColor = .clear
-        
-        
+    
         setupReviewText()
         
         kirimBtn.layer.cornerRadius = 10
