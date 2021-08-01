@@ -11,15 +11,21 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterPopUpVC" customModule="Serabutan" customModuleProvider="target">
             <connections>
                 <outlet property="applyButton" destination="oQd-UI-2SS" id="Qev-gW-8bT"/>
-                <outlet property="closestButton" destination="BFs-ir-ytl" id="JIZ-VM-HYO"/>
-                <outlet property="higestCompensationButton" destination="txH-NY-pdO" id="t8l-Xq-Ar5"/>
-                <outlet property="lowestCompensationButton" destination="8xV-ks-2Bf" id="Ofp-18-gwD"/>
+                <outlet property="closestButton" destination="BFs-ir-ytl" id="0vG-zD-vBH"/>
+                <outlet property="highestCompensationButton" destination="txH-NY-pdO" id="TKM-QR-ADD"/>
+                <outlet property="lowestCompensationButton" destination="8xV-ks-2Bf" id="ZlG-Jd-ib9"/>
                 <outlet property="maxValTF" destination="jfr-Hi-9Mo" id="AGc-Td-9cU"/>
                 <outlet property="minValTF" destination="bib-M9-Jgk" id="Luv-vJ-xcR"/>
-                <outlet property="newestButton" destination="erN-Of-3yP" id="eC2-kO-nrz"/>
+                <outlet property="newestButton" destination="erN-Of-3yP" id="dRq-Dy-5Lm"/>
                 <outlet property="resetButton" destination="QK0-KR-PxV" id="Ozm-3R-M4q"/>
                 <outlet property="topBarView" destination="VrO-ko-kSg" id="KUH-mS-O97"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="sortByCollectionButton" destination="BFs-ir-ytl" collectionClass="NSMutableArray" id="BlK-R7-N9f"/>
+                <outletCollection property="sortByCollectionButton" destination="erN-Of-3yP" collectionClass="NSMutableArray" id="zgz-f7-glR"/>
+                <outletCollection property="sortByCollectionButton" destination="txH-NY-pdO" collectionClass="NSMutableArray" id="1Yg-Dg-UvE"/>
+                <outletCollection property="sortByCollectionButton" destination="8xV-ks-2Bf" collectionClass="NSMutableArray" id="SEF-9L-zig"/>
+                <outletCollection property="compensationCollection" destination="bib-M9-Jgk" collectionClass="NSMutableArray" id="D3H-zK-6il"/>
+                <outletCollection property="compensationCollection" destination="jfr-Hi-9Mo" collectionClass="NSMutableArray" id="vcR-Zj-q1d"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -61,6 +67,9 @@
                             <state key="normal" title="Paling Dekat">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="sortBySelected:" destination="-1" eventType="touchUpInside" id="3an-lt-Wp3"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erN-Of-3yP">
                             <rect key="frame" x="121" y="92" width="62" height="30"/>
@@ -72,6 +81,9 @@
                             <state key="normal" title="Terbaru">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="sortBySelected:" destination="-1" eventType="touchUpInside" id="cPt-Hp-as8"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txH-NY-pdO">
                             <rect key="frame" x="193" y="92" width="142" height="30"/>
@@ -83,6 +95,9 @@
                             <state key="normal" title="Kompensasi Tertinggi">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="sortBySelected:" destination="-1" eventType="touchUpInside" id="8Px-VF-pM4"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQd-UI-2SS">
                             <rect key="frame" x="20" y="326" width="374" height="50"/>
@@ -107,6 +122,9 @@
                             <state key="normal" title="Kompensasi Terendah">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="sortBySelected:" destination="-1" eventType="touchUpInside" id="AW3-LJ-wpJ"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QK0-KR-PxV">
                             <rect key="frame" x="329" y="18.5" width="65" height="27"/>
@@ -115,7 +133,7 @@
                                 <color key="titleColor" systemColor="systemIndigoColor"/>
                             </state>
                             <connections>
-                                <action selector="resetButtonAction:" destination="-1" eventType="touchUpInside" id="6h1-P9-UVD"/>
+                                <action selector="resetButtonAction:" destination="-1" eventType="touchUpInside" id="Z2u-sG-iA9"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kompensasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FP-1j-jck">

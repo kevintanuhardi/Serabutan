@@ -11,6 +11,7 @@ class TagCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var tagView: UIView!
     @IBOutlet weak var tagLabel: UILabel!
+    @IBOutlet weak var deleteImage: UIImageView!
     
     static let identifier  = "TagCollectionViewCell"
     static func nib() -> UINib {

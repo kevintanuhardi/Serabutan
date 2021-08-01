@@ -67,8 +67,4 @@ class AssistanceTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
 
     }
     
-    public func configureAssistanceCell(){ //INSERT DATA MODEL
-        //Mungkin kalo ga mau disini bisa langsung di AssistanceListVC.swift nya
-    }
-    
 }

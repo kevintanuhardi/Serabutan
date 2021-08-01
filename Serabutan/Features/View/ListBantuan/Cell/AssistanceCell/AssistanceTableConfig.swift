@@ -17,6 +17,7 @@ extension AssistanceTableViewCell {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = tagCell.dequeueReusableCell(withReuseIdentifier: TagCollectionViewCell.identifier, for: indexPath) as! TagCollectionViewCell
         cell.configureTagCell()
+        cell.deleteImage.isHidden = true
         //SET ASSISTANCE COLLECTION VIEW DATA
         return cell
     }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension AssistanceListVC {
+extension AssistanceListVC: UITextFieldDelegate {
     
     func setupView(){
         title = "Bantuan Dibutuhkan"
@@ -19,16 +19,18 @@ extension AssistanceListVC {
         ]
         UINavigationBar.appearance().titleTextAttributes = attrs
         
+        //navigationTextField()
+        initSearchBar()
+        navigationBackButton()
+        navigationFilterButton()
+        setGradientBottom()
+        
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-        tabBarController?.tabBar.isHidden = true
-        
-        navigationTextField()
-        navigationBackButton()
-        navigationFilterButton()
-        setGradientBottom()
+        self.navigationController!.navigationBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     func navigationTextField(){
@@ -41,7 +43,24 @@ extension AssistanceListVC {
         searchTextField.layer.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor
         searchTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: searchTextField.frame.height))
         searchTextField.leftViewMode = .always
+        searchTextField.delegate = self
         navigationItem.titleView = searchTextField
+        
+        assistanceTable.keyboardDismissMode = .onDrag // or .interactive
+    }
+    
+    func initSearchBar(){
+        searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: navigationController!.navigationBar.frame.width - 80, height: 34))
+        if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
+            textfield.backgroundColor = UIColor.white
+            textfield.layer.masksToBounds = true
+            textfield.layer.cornerRadius = 17
+        }
+        searchBar.placeholder = "Cari bantuan"
+        searchBar.contentMode = .scaleAspectFit
+        searchBar.searchTextField.clearButtonMode = .whileEditing
+        navigationItem.titleView = searchBar
+        assistanceTable.keyboardDismissMode = .onDrag // or .interactive
     }
     
     func navigationBackButton(){
@@ -71,3 +90,4 @@ extension AssistanceListVC {
     }
     
 }
+

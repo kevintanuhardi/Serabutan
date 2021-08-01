@@ -8,14 +8,14 @@
 import Foundation
 
 class BantuanModel{
-    var urgency: Urgency?
+    var urgency: BantuanUrgency?
     var title: String?
     var price: Int?
     var tags: [String]?
     var distance: Int?
     var status: Status?
     
-    init(urgency: Urgency, title: String, price: Int, tags: [String], distance: Int, status: Status) {
+    init(urgency: BantuanUrgency, title: String, price: Int, tags: [String], distance: Int, status: Status) {
         self.urgency = urgency
         self.title = title
         self.price = price
