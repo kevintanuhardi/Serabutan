@@ -17,6 +17,17 @@
 		185D12C726A7C09100F6105C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185D12C526A7C09100F6105C /* LaunchScreen.storyboard */; };
 		18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF23B26A911E10029CEA1 /* HomeVC.swift */; };
 		18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF23C26A911E10029CEA1 /* HomeVC.xib */; };
+		90584E2026B274A7004C225B /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90584E1E26B274A7004C225B /* ProfileVC.swift */; };
+		90584E2126B274A7004C225B /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90584E1F26B274A7004C225B /* ProfileVC.xib */; };
+		907F9DCB26B6515B00EF9F51 /* ColorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */; };
+		907F9DCD26B65C8200EF9F51 /* CustomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F9DCC26B65C8200EF9F51 /* CustomBorder.swift */; };
+		907F9DCF26B6625A00EF9F51 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F9DCE26B6625A00EF9F51 /* Review.swift */; };
+		907F9DD126B6A92E00EF9F51 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F9DD026B6A92E00EF9F51 /* DummyData.swift */; };
+		907F9DD426B6C5ED00EF9F51 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F9DD226B6C5ED00EF9F51 /* EditProfileVC.swift */; };
+		907F9DD526B6C5ED00EF9F51 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907F9DD326B6C5ED00EF9F51 /* EditProfileVC.xib */; };
+		90DCB12F26B6EAC4002145C1 /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */; };
+		90E9C98826B39DE500165319 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */; };
+		90E9C98926B39DE500165319 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +43,17 @@
 		185D12C826A7C09100F6105C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/HomeVC.swift; sourceTree = SOURCE_ROOT; };
 		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/HomeVC.xib; sourceTree = SOURCE_ROOT; };
+		90584E1E26B274A7004C225B /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = Serabutan/Features/View/Profile/ProfileVC.swift; sourceTree = SOURCE_ROOT; };
+		90584E1F26B274A7004C225B /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileVC.xib; path = Serabutan/Features/View/Profile/ProfileVC.xib; sourceTree = SOURCE_ROOT; };
+		907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorLibrary.swift; path = Serabutan/Features/ViewModel/ColorLibrary.swift; sourceTree = SOURCE_ROOT; };
+		907F9DCC26B65C8200EF9F51 /* CustomBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomBorder.swift; path = Serabutan/Features/ViewModel/CustomBorder.swift; sourceTree = SOURCE_ROOT; };
+		907F9DCE26B6625A00EF9F51 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Review.swift; path = Serabutan/Features/Model/Review.swift; sourceTree = SOURCE_ROOT; };
+		907F9DD026B6A92E00EF9F51 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DummyData.swift; path = Serabutan/Features/Model/DummyData.swift; sourceTree = SOURCE_ROOT; };
+		907F9DD226B6C5ED00EF9F51 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileVC.swift; path = Serabutan/Features/View/Profile/EditProfileVC.swift; sourceTree = SOURCE_ROOT; };
+		907F9DD326B6C5ED00EF9F51 /* EditProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EditProfileVC.xib; path = Serabutan/Features/View/Profile/EditProfileVC.xib; sourceTree = SOURCE_ROOT; };
+		90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomStackView.swift; path = Serabutan/Features/ViewModel/CustomStackView.swift; sourceTree = SOURCE_ROOT; };
+		90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewTableViewCell.swift; path = Serabutan/Features/View/Profile/ReviewTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReviewTableViewCell.xib; path = Serabutan/Features/View/Profile/ReviewTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				1853414426AC472C0027C0F3 /* Job.swift */,
+				907F9DCE26B6625A00EF9F51 /* Review.swift */,
+				907F9DD026B6A92E00EF9F51 /* DummyData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,6 +149,9 @@
 		185D12D326A7C13A00F6105C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */,
+				907F9DCC26B65C8200EF9F51 /* CustomBorder.swift */,
+				90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -189,6 +216,12 @@
 		C78982EA26A7E5B700EB95B1 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				90584E1E26B274A7004C225B /* ProfileVC.swift */,
+				90584E1F26B274A7004C225B /* ProfileVC.xib */,
+				907F9DD226B6C5ED00EF9F51 /* EditProfileVC.swift */,
+				907F9DD326B6C5ED00EF9F51 /* EditProfileVC.xib */,
+				90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */,
+				90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -267,7 +300,10 @@
 				185D12C726A7C09100F6105C /* LaunchScreen.storyboard in Resources */,
 				18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */,
 				185D12C426A7C09100F6105C /* Assets.xcassets in Resources */,
+				90E9C98926B39DE500165319 /* ReviewTableViewCell.xib in Resources */,
+				907F9DD526B6C5ED00EF9F51 /* EditProfileVC.xib in Resources */,
 				1853414326AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib in Resources */,
+				90584E2126B274A7004C225B /* ProfileVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,9 +314,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90DCB12F26B6EAC4002145C1 /* CustomStackView.swift in Sources */,
+				907F9DD126B6A92E00EF9F51 /* DummyData.swift in Sources */,
 				18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */,
+				90E9C98826B39DE500165319 /* ReviewTableViewCell.swift in Sources */,
+				907F9DCD26B65C8200EF9F51 /* CustomBorder.swift in Sources */,
 				1853414526AC472C0027C0F3 /* Job.swift in Sources */,
+				90584E2026B274A7004C225B /* ProfileVC.swift in Sources */,
+				907F9DD426B6C5ED00EF9F51 /* EditProfileVC.swift in Sources */,
 				1853413D26AC23470027C0F3 /* UIImageExt.swift in Sources */,
+				907F9DCF26B6625A00EF9F51 /* Review.swift in Sources */,
+				907F9DCB26B6515B00EF9F51 /* ColorLibrary.swift in Sources */,
 				1853414226AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift in Sources */,
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
@@ -423,7 +467,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8PNJ3DJJR6;
+				DEVELOPMENT_TEAM = S6LU55DTCY;
 				INFOPLIST_FILE = "$(SRCROOT)/serabutan/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -442,7 +486,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8PNJ3DJJR6;
+				DEVELOPMENT_TEAM = S6LU55DTCY;
 				INFOPLIST_FILE = "$(SRCROOT)/serabutan/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
