@@ -37,8 +37,8 @@
 		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/HomeVC.swift; sourceTree = SOURCE_ROOT; };
 		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/HomeVC.xib; sourceTree = SOURCE_ROOT; };
 		79089B1B26B300FA0053077D /* DetailBantuanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailBantuanVC.swift; path = Serabutan/Features/View/DetailBantuan/DetailBantuanVC.swift; sourceTree = SOURCE_ROOT; };
-		796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCarouselCVC.swift; path = serabutan/Features/View/DetailBantuan/Cell/ImageCarouselCVC.swift; sourceTree = SOURCE_ROOT; };
-		796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ImageCarouselCVC.xib; path = serabutan/Features/View/DetailBantuan/Cell/ImageCarouselCVC.xib; sourceTree = SOURCE_ROOT; };
+		796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCarouselCVC.swift; path = serabutan/Features/View/DetailBantuan/Cell/TopCollectionView/ImageCarouselCVC.swift; sourceTree = SOURCE_ROOT; };
+		796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ImageCarouselCVC.xib; path = serabutan/Features/View/DetailBantuan/Cell/TopCollectionView/ImageCarouselCVC.xib; sourceTree = SOURCE_ROOT; };
 		796BC76226AF21A900999377 /* DetailBantuanVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DetailBantuanVC.xib; path = serabutan/Features/View/DetailBantuan/DetailBantuanVC.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -180,8 +180,6 @@
 			children = (
 				79C085FC26B258E600AE56CD /* BottomCollectionView */,
 				79C085FB26B258D200AE56CD /* TopCollectionView */,
-				796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */,
-				796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -189,6 +187,8 @@
 		79C085FB26B258D200AE56CD /* TopCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */,
+				796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */,
 			);
 			path = TopCollectionView;
 			sourceTree = "<group>";
@@ -471,13 +471,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8PNJ3DJJR6;
+				DEVELOPMENT_TEAM = TM85H5FTHU;
 				INFOPLIST_FILE = "$(SRCROOT)/serabutan/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevintanuhardi.Serabutan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gilangadrian.Serabutan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -490,13 +490,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8PNJ3DJJR6;
+				DEVELOPMENT_TEAM = TM85H5FTHU;
 				INFOPLIST_FILE = "$(SRCROOT)/serabutan/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevintanuhardi.Serabutan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gilangadrian.Serabutan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
