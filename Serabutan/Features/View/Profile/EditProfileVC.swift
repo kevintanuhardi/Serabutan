@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import AVKit
+import MobileCoreServices
 
-class EditProfileVC: UIViewController, UITextViewDelegate {
+class EditProfileVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var avatarContainer: UIView!
     @IBOutlet weak var nameField: UIStackView!
@@ -58,7 +60,7 @@ class EditProfileVC: UIViewController, UITextViewDelegate {
     func navigationUI() {
         navigationController?.navigationBar.barTintColor = UIColor.ColorLibrary.lightGrey
         navigationController?.navigationBar.shadowImage = UIImage()
-
+        
         let button = UIButton(type: .system)
         button.frame = CGRect(x: 0, y: 0, width: 65, height: 30)
         button.setTitle("Simpan", for: .normal)
@@ -71,6 +73,10 @@ class EditProfileVC: UIViewController, UITextViewDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
     }
     
+    @IBAction func changeProfilePicture(_ sender: Any) {
+        self.changeProfilePictureAlert()
+    }
+    
     // Dismissing the View Controller
     @objc func dismissVC() {
         if (tempName != fullName.text) || (tempDescription != descriptionTextView.text) {
@@ -81,12 +87,36 @@ class EditProfileVC: UIViewController, UITextViewDelegate {
                                           style: .default,
                                           handler: nil))
             alert.addAction(UIAlertAction(title: "Batal",
+                                          style: .default,
+                                          handler: nil))
+            alert.addAction(UIAlertAction(title: "Keluar",
                                           style: .cancel,
                                           handler: nil))
             present(alert, animated: true, completion: nil)
         } else {
             navigationController?.popToRootViewController(animated: true)
         }
+    }
+    
+    // Change profile picture alert handler (camera, gallery, or cancel)
+    func changeProfilePictureAlert() {
+        let alert = UIAlertController(title: "Pick source",
+                                      message: "Lorem ipsum.",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ambil Foto",
+                                      style: .default,
+                                      handler: { action in
+                                        ImageHelper.startMediaBrowser(delegate: self, sourceType: .camera)
+                                      }))
+        alert.addAction(UIAlertAction(title: "Album",
+                                      style: .default,
+                                      handler: { action in
+                                        ImageHelper.startMediaBrowser(delegate: self, sourceType: .savedPhotosAlbum)
+                                      }))
+        alert.addAction(UIAlertAction(title: "Batal",
+                                      style: .cancel,
+                                      handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

@@ -33,9 +33,9 @@ class MapKitAnnotationCellViewController: UIViewController {
             titleLabel.text = title
             
             switch urgency {
-            case .high:
+            case .High:
                 urgencyIndicator.layer.backgroundColor = UIColor.init(named: "highUrgency")?.cgColor
-            case .medium:
+            case .Medium:
                 urgencyIndicator.layer.backgroundColor = UIColor.init(named: "mediumUrgency")?.cgColor
             default:
                 urgencyIndicator.layer.backgroundColor = UIColor.init(named: "lowUrgency")?.cgColor

@@ -25,6 +25,9 @@
 		907F9DD126B6A92E00EF9F51 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F9DD026B6A92E00EF9F51 /* DummyData.swift */; };
 		907F9DD426B6C5ED00EF9F51 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F9DD226B6C5ED00EF9F51 /* EditProfileVC.swift */; };
 		907F9DD526B6C5ED00EF9F51 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907F9DD326B6C5ED00EF9F51 /* EditProfileVC.xib */; };
+		9083DB1826B7913B00D1E75F /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9083DB1726B7913B00D1E75F /* ImageHelper.swift */; };
+		9083DB1A26B7B27300D1E75F /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9083DB1926B7B27300D1E75F /* UserProfile.swift */; };
+		9083DB1C26B7B4DF00D1E75F /* ProfileStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9083DB1B26B7B4DF00D1E75F /* ProfileStatistic.swift */; };
 		90DCB12F26B6EAC4002145C1 /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */; };
 		90E9C98826B39DE500165319 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */; };
 		90E9C98926B39DE500165319 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */; };
@@ -51,6 +54,9 @@
 		907F9DD026B6A92E00EF9F51 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DummyData.swift; path = Serabutan/Features/Model/DummyData.swift; sourceTree = SOURCE_ROOT; };
 		907F9DD226B6C5ED00EF9F51 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileVC.swift; path = Serabutan/Features/View/Profile/EditProfileVC.swift; sourceTree = SOURCE_ROOT; };
 		907F9DD326B6C5ED00EF9F51 /* EditProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EditProfileVC.xib; path = Serabutan/Features/View/Profile/EditProfileVC.xib; sourceTree = SOURCE_ROOT; };
+		9083DB1726B7913B00D1E75F /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = Serabutan/Helper/ImageHelper.swift; sourceTree = SOURCE_ROOT; };
+		9083DB1926B7B27300D1E75F /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserProfile.swift; path = Serabutan/Features/Model/UserProfile.swift; sourceTree = SOURCE_ROOT; };
+		9083DB1B26B7B4DF00D1E75F /* ProfileStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileStatistic.swift; path = Serabutan/Features/Model/ProfileStatistic.swift; sourceTree = SOURCE_ROOT; };
 		90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomStackView.swift; path = Serabutan/Features/ViewModel/CustomStackView.swift; sourceTree = SOURCE_ROOT; };
 		90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewTableViewCell.swift; path = Serabutan/Features/View/Profile/ReviewTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReviewTableViewCell.xib; path = Serabutan/Features/View/Profile/ReviewTableViewCell.xib; sourceTree = SOURCE_ROOT; };
@@ -141,6 +147,8 @@
 			children = (
 				1853414426AC472C0027C0F3 /* Job.swift */,
 				907F9DCE26B6625A00EF9F51 /* Review.swift */,
+				9083DB1B26B7B4DF00D1E75F /* ProfileStatistic.swift */,
+				9083DB1926B7B27300D1E75F /* UserProfile.swift */,
 				907F9DD026B6A92E00EF9F51 /* DummyData.swift */,
 			);
 			path = Model;
@@ -169,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				1853413C26AC23470027C0F3 /* UIImageExt.swift */,
+				9083DB1726B7913B00D1E75F /* ImageHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -316,6 +325,7 @@
 			files = (
 				90DCB12F26B6EAC4002145C1 /* CustomStackView.swift in Sources */,
 				907F9DD126B6A92E00EF9F51 /* DummyData.swift in Sources */,
+				9083DB1C26B7B4DF00D1E75F /* ProfileStatistic.swift in Sources */,
 				18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */,
 				90E9C98826B39DE500165319 /* ReviewTableViewCell.swift in Sources */,
 				907F9DCD26B65C8200EF9F51 /* CustomBorder.swift in Sources */,
@@ -325,6 +335,8 @@
 				1853413D26AC23470027C0F3 /* UIImageExt.swift in Sources */,
 				907F9DCF26B6625A00EF9F51 /* Review.swift in Sources */,
 				907F9DCB26B6515B00EF9F51 /* ColorLibrary.swift in Sources */,
+				9083DB1826B7913B00D1E75F /* ImageHelper.swift in Sources */,
+				9083DB1A26B7B27300D1E75F /* UserProfile.swift in Sources */,
 				1853414226AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift in Sources */,
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,

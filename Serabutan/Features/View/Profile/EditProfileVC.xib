@@ -96,6 +96,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="och-wH-JR8">
                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                             <state key="normal" title="Ubah"/>
+                            <connections>
+                                <action selector="changeProfilePicture:" destination="-1" eventType="touchUpInside" id="LKE-Ek-7UG"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

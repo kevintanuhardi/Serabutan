@@ -9,9 +9,9 @@ import UIKit
 import MapKit
 
 let dummyJobs = [
-    Job(title: "Nurunin Kucing dari Atap", locationName: "masih di atap situ deh", urgency: .high, price: 100000, coordinate: CLLocationCoordinate2D(latitude:  -6.302919554428814, longitude: 106.65259634329381)),
-    Job(title: "Angkut Rongsokan", locationName: "itu muka apa rongsokan", urgency: .medium, price: 100000, coordinate: CLLocationCoordinate2D(latitude:  -6.3009267573263275, longitude: 106.65268675358362)),
-    Job(title: "Bantu Sebar Kotay Syukuran", locationName: "yang penting bersyukur", urgency: .low, price: 100000, coordinate: CLLocationCoordinate2D(latitude:  -6.299640621626045, longitude: 106.65153022391823))
+    Job(title: "Nurunin Kucing dari Atap", locationName: "masih di atap situ deh", urgency: .High, price: 100000, coordinate: CLLocationCoordinate2D(latitude:  -6.302919554428814, longitude: 106.65259634329381)),
+    Job(title: "Angkut Rongsokan", locationName: "itu muka apa rongsokan", urgency: .Medium, price: 100000, coordinate: CLLocationCoordinate2D(latitude:  -6.3009267573263275, longitude: 106.65268675358362)),
+    Job(title: "Bantu Sebar Kotay Syukuran", locationName: "yang penting bersyukur", urgency: .Low, price: 100000, coordinate: CLLocationCoordinate2D(latitude:  -6.299640621626045, longitude: 106.65153022391823))
 ]
 
 class HomeVC: UIViewController {
