@@ -41,6 +41,15 @@ class RatingReviewVC: UIViewController, UITextViewDelegate {
     @IBAction func kirimBtn(_ sender: Any) {
     }
     
+    func setupKirimBtn(){
+        kirimBtn.backgroundColor = UIColor.lightGray
+        kirimBtn.isEnabled = false
+        if reviewTextChecked == true && bintangTapped == true{
+            kirimBtn.backgroundColor = UIColor.purple
+            kirimBtn.isEnabled = true
+        }
+    }
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray{
             textView.text = nil
@@ -66,15 +75,6 @@ class RatingReviewVC: UIViewController, UITextViewDelegate {
         reviewTextView.layer.cornerRadius = 5
         reviewTextView.text = "Review"
         reviewTextView.textColor = UIColor.lightGray
-    }
-    
-    func setupKirimBtn(){
-        kirimBtn.backgroundColor = UIColor.lightGray
-        kirimBtn.isEnabled = false
-        if reviewTextChecked == true && bintangTapped == true{
-            kirimBtn.backgroundColor = UIColor.purple
-            kirimBtn.isEnabled = true
-        }
     }
     
     override func viewDidLoad() {
