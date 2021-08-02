@@ -21,6 +21,7 @@
 		C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */; };
 		C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */; };
 		C744D7E826B2F127009E36B7 /* FilterPopUpConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */; };
+		C75E13EC26B85917007BEF41 /* AssistanceListConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E13EB26B85917007BEF41 /* AssistanceListConfig.swift */; };
 		C76047C026AF3CBB00535995 /* AssistanceListNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */; };
 		C7CCC24C26B1DB590005FFE3 /* AssistanceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */; };
 		C7CCC24D26B1DB590005FFE3 /* AssistanceListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */; };
@@ -52,6 +53,7 @@
 		C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpVC.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.swift; sourceTree = SOURCE_ROOT; };
 		C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FilterPopUpVC.xib; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.xib; sourceTree = SOURCE_ROOT; };
 		C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpConfig.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpConfig.swift; sourceTree = SOURCE_ROOT; };
+		C75E13EB26B85917007BEF41 /* AssistanceListConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListConfig.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListConfig.swift; sourceTree = SOURCE_ROOT; };
 		C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListNavigationConfig.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListVC.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListVC.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssistanceListVC.xib; path = Serabutan/Features/View/ListBantuan/AssistanceListVC.xib; sourceTree = SOURCE_ROOT; };
@@ -264,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */,
+				C75E13EB26B85917007BEF41 /* AssistanceListConfig.swift */,
 				C7CCC25226B2490F0005FFE3 /* AssistanceListTableConfig.swift */,
 				C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */,
 				C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */,
@@ -388,6 +391,7 @@
 				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,
 				C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */,
 				C744D7E826B2F127009E36B7 /* FilterPopUpConfig.swift in Sources */,
+				C75E13EC26B85917007BEF41 /* AssistanceListConfig.swift in Sources */,
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
 				C7CCC25526B26CFA0005FFE3 /* AssistanceTableConfig.swift in Sources */,
 				C76047C026AF3CBB00535995 /* AssistanceListNavigationConfig.swift in Sources */,
