@@ -17,6 +17,21 @@
 		185D12C726A7C09100F6105C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185D12C526A7C09100F6105C /* LaunchScreen.storyboard */; };
 		18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF23B26A911E10029CEA1 /* HomeVC.swift */; };
 		18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF23C26A911E10029CEA1 /* HomeVC.xib */; };
+		C744D7DE26B2D324009E36B7 /* AssistanceTableViewStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7DD26B2D324009E36B7 /* AssistanceTableViewStyling.swift */; };
+		C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */; };
+		C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */; };
+		C744D7E826B2F127009E36B7 /* FilterPopUpConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */; };
+		C76047C026AF3CBB00535995 /* AssistanceListNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */; };
+		C7CCC24C26B1DB590005FFE3 /* AssistanceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */; };
+		C7CCC24D26B1DB590005FFE3 /* AssistanceListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */; };
+		C7CCC25026B1DBD80005FFE3 /* AssistanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24E26B1DBD80005FFE3 /* AssistanceTableViewCell.swift */; };
+		C7CCC25126B1DBD80005FFE3 /* AssistanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24F26B1DBD80005FFE3 /* AssistanceTableViewCell.xib */; };
+		C7CCC25326B2490F0005FFE3 /* AssistanceListTableConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC25226B2490F0005FFE3 /* AssistanceListTableConfig.swift */; };
+		C7CCC25526B26CFA0005FFE3 /* AssistanceTableConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC25426B26CFA0005FFE3 /* AssistanceTableConfig.swift */; };
+		C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4126AC97F1000478AA /* TagCollectionViewCell.swift */; };
+		C7D7AE4426AC97F1000478AA /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D7AE4226AC97F1000478AA /* TagCollectionViewCell.xib */; };
+		C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4526AE4E83000478AA /* Enum.swift */; };
+		C7D7AE4826AE5040000478AA /* BantuanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4726AE5040000478AA /* BantuanModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +45,24 @@
 		185D12C326A7C09100F6105C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		185D12C626A7C09100F6105C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		185D12C826A7C09100F6105C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		185D12D526A7C16400F6105C /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/HomeVC.swift; sourceTree = SOURCE_ROOT; };
 		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/HomeVC.xib; sourceTree = SOURCE_ROOT; };
+		C744D7DD26B2D324009E36B7 /* AssistanceTableViewStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceTableViewStyling.swift; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableViewStyling.swift; sourceTree = SOURCE_ROOT; };
+		C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpVC.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.swift; sourceTree = SOURCE_ROOT; };
+		C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FilterPopUpVC.xib; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.xib; sourceTree = SOURCE_ROOT; };
+		C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpConfig.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpConfig.swift; sourceTree = SOURCE_ROOT; };
+		C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListNavigationConfig.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
+		C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListVC.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListVC.swift; sourceTree = SOURCE_ROOT; };
+		C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssistanceListVC.xib; path = Serabutan/Features/View/ListBantuan/AssistanceListVC.xib; sourceTree = SOURCE_ROOT; };
+		C7CCC24E26B1DBD80005FFE3 /* AssistanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceTableViewCell.swift; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		C7CCC24F26B1DBD80005FFE3 /* AssistanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssistanceTableViewCell.xib; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		C7CCC25226B2490F0005FFE3 /* AssistanceListTableConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListTableConfig.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListTableConfig.swift; sourceTree = SOURCE_ROOT; };
+		C7CCC25426B26CFA0005FFE3 /* AssistanceTableConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceTableConfig.swift; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableConfig.swift; sourceTree = SOURCE_ROOT; };
+		C7D7AE4126AC97F1000478AA /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagCollectionViewCell.swift; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/TagCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		C7D7AE4226AC97F1000478AA /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TagCollectionViewCell.xib; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/TagCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		C7D7AE4526AE4E83000478AA /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/Enum.swift; sourceTree = SOURCE_ROOT; };
+		C7D7AE4726AE5040000478AA /* BantuanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BantuanModel.swift; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/BantuanModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +98,7 @@
 			children = (
 				185D12B926A7C09000F6105C /* serabutan */,
 				185D12B826A7C09000F6105C /* Products */,
+				C76047C126AFC46500535995 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +135,7 @@
 		185D12D026A7C10500F6105C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C7D7AE3526AC969E000478AA /* ListBantuan */,
 				C78982EC26A7E5F300EB95B1 /* Login */,
 				C78982EB26A7E5EC00EB95B1 /* SignUp */,
 				C78982EA26A7E5B700EB95B1 /* Profile */,
@@ -117,6 +150,7 @@
 		185D12D126A7C12700F6105C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C7D7AE4726AE5040000478AA /* BantuanModel.swift */,
 				1853414426AC472C0027C0F3 /* Job.swift */,
 			);
 			path = Model;
@@ -141,6 +175,7 @@
 		185D12D926A7C25000F6105C /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				C7D7AE4526AE4E83000478AA /* Enum.swift */,
 				1853413C26AC23470027C0F3 /* UIImageExt.swift */,
 			);
 			path = Helper;
@@ -154,6 +189,24 @@
 				185D12C826A7C09100F6105C /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C744D7E026B2D9B1009E36B7 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */,
+				C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */,
+				C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		C76047C126AFC46500535995 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				185D12D526A7C16400F6105C /* HomeVC.xib */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		C78982E626A7E44C00EB95B1 /* Home */ = {
@@ -205,6 +258,48 @@
 			children = (
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		C7D7AE3526AC969E000478AA /* ListBantuan */ = {
+			isa = PBXGroup;
+			children = (
+				C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */,
+				C7CCC25226B2490F0005FFE3 /* AssistanceListTableConfig.swift */,
+				C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */,
+				C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */,
+				C7D7AE3626AC96CA000478AA /* Cell */,
+			);
+			path = ListBantuan;
+			sourceTree = "<group>";
+		};
+		C7D7AE3626AC96CA000478AA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C744D7E026B2D9B1009E36B7 /* Filter */,
+				C7D7AE3826AC9735000478AA /* AssistanceCell */,
+				C7D7AE3726AC9728000478AA /* TagCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C7D7AE3726AC9728000478AA /* TagCell */ = {
+			isa = PBXGroup;
+			children = (
+				C7D7AE4126AC97F1000478AA /* TagCollectionViewCell.swift */,
+				C7D7AE4226AC97F1000478AA /* TagCollectionViewCell.xib */,
+			);
+			path = TagCell;
+			sourceTree = "<group>";
+		};
+		C7D7AE3826AC9735000478AA /* AssistanceCell */ = {
+			isa = PBXGroup;
+			children = (
+				C7CCC24E26B1DBD80005FFE3 /* AssistanceTableViewCell.swift */,
+				C7CCC25426B26CFA0005FFE3 /* AssistanceTableConfig.swift */,
+				C744D7DD26B2D324009E36B7 /* AssistanceTableViewStyling.swift */,
+				C7CCC24F26B1DBD80005FFE3 /* AssistanceTableViewCell.xib */,
+			);
+			path = AssistanceCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +360,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				185D12C726A7C09100F6105C /* LaunchScreen.storyboard in Resources */,
+				C7D7AE4426AC97F1000478AA /* TagCollectionViewCell.xib in Resources */,
+				C7CCC24D26B1DB590005FFE3 /* AssistanceListVC.xib in Resources */,
 				18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */,
 				185D12C426A7C09100F6105C /* Assets.xcassets in Resources */,
+				C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */,
 				1853414326AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib in Resources */,
+				C7CCC25126B1DBD80005FFE3 /* AssistanceTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,11 +378,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */,
+				C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */,
+				C7CCC25326B2490F0005FFE3 /* AssistanceListTableConfig.swift in Sources */,
+				C7CCC25026B1DBD80005FFE3 /* AssistanceTableViewCell.swift in Sources */,
 				1853414526AC472C0027C0F3 /* Job.swift in Sources */,
 				1853413D26AC23470027C0F3 /* UIImageExt.swift in Sources */,
 				1853414226AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift in Sources */,
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
+				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,
+				C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */,
+				C744D7E826B2F127009E36B7 /* FilterPopUpConfig.swift in Sources */,
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
+				C7CCC25526B26CFA0005FFE3 /* AssistanceTableConfig.swift in Sources */,
+				C76047C026AF3CBB00535995 /* AssistanceListNavigationConfig.swift in Sources */,
+				C744D7DE26B2D324009E36B7 /* AssistanceTableViewStyling.swift in Sources */,
+				C7D7AE4826AE5040000478AA /* BantuanModel.swift in Sources */,
+				C7CCC24C26B1DB590005FFE3 /* AssistanceListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
