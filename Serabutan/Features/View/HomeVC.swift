@@ -8,11 +8,10 @@
 import UIKit
 import MapKit
 
-let dummyJobs = [
-    Job(title: "Nurunin Kucing dari Atap", locationName: "masih di atap situ deh", urgency: .high, price: 50000, coordinate: CLLocationCoordinate2D(latitude:  -6.302919554428814, longitude: 106.65259634329381)),
-    Job(title: "Angkut Rongsokan", locationName: "itu muka apa rongsokan", urgency: .medium, price: 75000, coordinate: CLLocationCoordinate2D(latitude:  -6.3009267573263275, longitude: 106.65268675358362)),
-    Job(title: "Bantu Sebar Kotay Syukuran", locationName: "yang penting bersyukur", urgency: .low, price: 1000000, coordinate: CLLocationCoordinate2D(latitude:  -6.299640621626045, longitude: 106.65153022391823))
-]
+var jobs = [Job]()
+//    Job(title: "Nurunin Kucing dari Atap", locationName: "masih di atap situ deh", urgency: .high, price: 50000, coordinate: CLLocationCoordinate2D(latitude:  -6.302919554428814, longitude: 106.65259634329381)),
+//    Job(title: "Angkut Rongsokan", locationName: "itu muka apa rongsokan", urgency: .medium, price: 75000, coordinate: CLLocationCoordinate2D(latitude:  -6.3009267573263275, longitude: 106.65268675358362)),
+//    Job(title: "Bantu Sebar Kotay Syukuran", locationName: "yang penting bersyukur", urgency: .low, price: 1000000, coordinate: CLLocationCoordinate2D(latitude:  -6.299640621626045, longitude: 106.65153022391823)]
 
 class HomeVC: UIViewController {
 
@@ -42,7 +41,12 @@ class HomeVC: UIViewController {
         configureLocationServices()
         
         setGradientBackground()
+			
+			// TODO: DELETE THIS
+			postJob()
+			
     }
+	
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -53,6 +57,40 @@ class HomeVC: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+		//this is a trial should be moved to ViewModel
+	func fetchNearbyJob(coordinate: CLLocationCoordinate2D) {
+				
+		APIManager.getNearbyJob(coordinate: coordinate){ result in
+					switch result {
+					case .success (let fetchedJobs):
+						print("result:", fetchedJobs)
+						jobs = fetchedJobs as! [Job]
+						DispatchQueue.main.async {
+							self.addAnnotations()
+						}
+					case .failure(let error):
+						print("error:", error)
+					}
+				}
+			}
+	
+	//trial to post
+	func postJob() {
+		let dummyJob = Job( id: 0, title: "IntegrateTesting", desc: "Gw bayar mahal yang bisa bantu gw please", urgency: .high, price: 100000000, coordinate: CLLocationCoordinate2D(latitude: -6.301202, longitude: 106.651777), jobPosterId: 0, status: "", genderPreference: "MALE", agePreference: "16-25", distance: 0.0)
+		
+		APIManager.postJob(jobToCreate: dummyJob){ result in
+			switch result {
+			case .success (let fetchedJobs):
+				print("result:", fetchedJobs)
+				jobs = fetchedJobs as! [Job]
+				DispatchQueue.main.async {
+					self.addAnnotations()
+				}
+			case .failure(let error):
+				print("error:", error)
+			}
+		}
+	}
     
     func setGradientBackground() {
         let colorTop =  UIColor(red: 201.0/255.0, green: 230.0/255.0, blue: 179.0/255.0, alpha: 1.0).cgColor
@@ -90,8 +128,8 @@ class HomeVC: UIViewController {
     }
     
     private func addAnnotations() {
-        for annotation in dummyJobs {
-            mapView.addAnnotation(annotation)
+        for annotation in jobs {
+					mapView.addAnnotation(annotation as! MKAnnotation)
         }
     }
 }
@@ -122,7 +160,7 @@ extension HomeVC: CLLocationManagerDelegate {
 
         if currentCoordinate == nil {
             zoomToLatestLocation(with: latestLocation.coordinate)
-            addAnnotations()
+					fetchNearbyJob(coordinate: latestLocation.coordinate)
         }
 
         currentCoordinate = latestLocation.coordinate
