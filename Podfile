@@ -7,6 +7,6 @@ target 'Serabutan' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SDWebImage'
-	pod 'SwiftyJSON', '4.0'
+  pod 'SwiftyJSON', '4.0'
 
 end

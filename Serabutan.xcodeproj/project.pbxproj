@@ -20,10 +20,11 @@
 		185D12C726A7C09100F6105C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185D12C526A7C09100F6105C /* LaunchScreen.storyboard */; };
 		189FC4AB26B69B9000662C88 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FC4AA26B69B9000662C88 /* Network.swift */; };
 		189FC4AD26B69D5500662C88 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FC4AC26B69D5500662C88 /* Constant.swift */; };
-		18A1D7EE26B6C52A009B84C7 /* StandardApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1D7ED26B6C52A009B84C7 /* StandardApiResponse.swift */; };
 		18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF23B26A911E10029CEA1 /* HomeVC.swift */; };
 		18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF23C26A911E10029CEA1 /* HomeVC.xib */; };
 		7830896AB6A17C511938A0B0 /* Pods_Serabutan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB6A465A85B221961E3FE29 /* Pods_Serabutan.framework */; };
+		79E67E7826B1B2410009F3C6 /* RatingReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */; };
+		79E67E7926B1B2410009F3C6 /* RatingReviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */; };
 		C744D7DE26B2D324009E36B7 /* AssistanceTableViewStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7DD26B2D324009E36B7 /* AssistanceTableViewStyling.swift */; };
 		C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */; };
 		C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */; };
@@ -39,8 +40,6 @@
 		C7D7AE4426AC97F1000478AA /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D7AE4226AC97F1000478AA /* TagCollectionViewCell.xib */; };
 		C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4526AE4E83000478AA /* Enum.swift */; };
 		C7D7AE4826AE5040000478AA /* BantuanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4726AE5040000478AA /* BantuanModel.swift */; };
-		79E67E7826B1B2410009F3C6 /* RatingReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */; };
-		79E67E7926B1B2410009F3C6 /* RatingReviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,16 +57,14 @@
 		185D12C326A7C09100F6105C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		185D12C626A7C09100F6105C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		185D12C826A7C09100F6105C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		185D12D526A7C16400F6105C /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		189FC4AA26B69B9000662C88 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Serabutan/Service/Network/Network.swift; sourceTree = SOURCE_ROOT; };
 		189FC4AC26B69D5500662C88 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = Serabutan/Helper/Constant.swift; sourceTree = SOURCE_ROOT; };
-		18A1D7ED26B6C52A009B84C7 /* StandardApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StandardApiResponse.swift; path = Serabutan/Features/Model/StandardApiResponse.swift; sourceTree = SOURCE_ROOT; };
 		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/HomeVC.swift; sourceTree = SOURCE_ROOT; };
 		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/HomeVC.xib; sourceTree = SOURCE_ROOT; };
 		20FD053C92B5DE81A3651602 /* Pods-Serabutan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Serabutan.debug.xcconfig"; path = "Target Support Files/Pods-Serabutan/Pods-Serabutan.debug.xcconfig"; sourceTree = "<group>"; };
-		DCCC8D7519FAA9E448178580 /* Pods-Serabutan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Serabutan.release.xcconfig"; path = "Target Support Files/Pods-Serabutan/Pods-Serabutan.release.xcconfig"; sourceTree = "<group>"; };
-		185D12D526A7C16400F6105C /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
-		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/HomeVC.swift; sourceTree = SOURCE_ROOT; };
-		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/HomeVC.xib; sourceTree = SOURCE_ROOT; };
+		79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingReviewVC.swift; path = serabutan/Features/View/RatingReview/RatingReviewVC.swift; sourceTree = SOURCE_ROOT; };
+		79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RatingReviewVC.xib; path = serabutan/Features/View/RatingReview/RatingReviewVC.xib; sourceTree = SOURCE_ROOT; };
 		C744D7DD26B2D324009E36B7 /* AssistanceTableViewStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceTableViewStyling.swift; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableViewStyling.swift; sourceTree = SOURCE_ROOT; };
 		C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpVC.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.swift; sourceTree = SOURCE_ROOT; };
 		C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FilterPopUpVC.xib; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.xib; sourceTree = SOURCE_ROOT; };
@@ -83,8 +80,7 @@
 		C7D7AE4226AC97F1000478AA /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TagCollectionViewCell.xib; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/TagCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		C7D7AE4526AE4E83000478AA /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/Enum.swift; sourceTree = SOURCE_ROOT; };
 		C7D7AE4726AE5040000478AA /* BantuanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BantuanModel.swift; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/BantuanModel.swift; sourceTree = SOURCE_ROOT; };
-		79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingReviewVC.swift; path = serabutan/Features/View/RatingReview/RatingReviewVC.swift; sourceTree = SOURCE_ROOT; };
-		79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RatingReviewVC.xib; path = serabutan/Features/View/RatingReview/RatingReviewVC.xib; sourceTree = SOURCE_ROOT; };
+		DCCC8D7519FAA9E448178580 /* Pods-Serabutan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Serabutan.release.xcconfig"; path = "Target Support Files/Pods-Serabutan/Pods-Serabutan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,7 +177,6 @@
 			children = (
 				C7D7AE4726AE5040000478AA /* BantuanModel.swift */,
 				1853414426AC472C0027C0F3 /* Job.swift */,
-				18A1D7ED26B6C52A009B84C7 /* StandardApiResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,12 +243,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		79A523FB26B71274000892D8 /* RatingReview */ = {
+			isa = PBXGroup;
+			children = (
+				79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */,
+				79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */,
+			);
+			path = RatingReview;
+			sourceTree = "<group>";
+		};
 		B620ED3491E67FAFA6936D42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				0DB6A465A85B221961E3FE29 /* Pods_Serabutan.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<unknown>";
+		};
 		C744D7E026B2D9B1009E36B7 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,14 +276,7 @@
 				185D12D526A7C16400F6105C /* HomeVC.xib */,
 			);
 			name = "Recovered References";
-		79A523FB26B71274000892D8 /* RatingReview */ = {
-			isa = PBXGroup;
-			children = (
-				79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */,
-				79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */,
-			);
-			path = RatingReview;
-			sourceTree = "<group>";
+			sourceTree = "<unknown>";
 		};
 		C78982E626A7E44C00EB95B1 /* Home */ = {
 			isa = PBXGroup;
@@ -503,7 +502,6 @@
 				1854605326AD2AB000ABCF84 /* Utility.swift in Sources */,
 				189FC4AB26B69B9000662C88 /* Network.swift in Sources */,
 				1853414826AC68F90027C0F3 /* DummyCollectionViewCell.swift in Sources */,
-				18A1D7EE26B6C52A009B84C7 /* StandardApiResponse.swift in Sources */,
 				189FC4AD26B69D5500662C88 /* Constant.swift in Sources */,
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
 				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,
