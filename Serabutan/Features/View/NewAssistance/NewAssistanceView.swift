@@ -11,6 +11,12 @@ import UIKit
 extension NewAssistanceVC {
 
     func setCustomTextField(){
+        urgencyView.layer.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor
+        urgencyTFView.layer.borderWidth = 0.25
+        urgencyTFView.layer.borderColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00).cgColor
+        urgencyTFView.layer.cornerRadius = 5
+        urgencyTF.inputView = nil
+        
         titleView.layer.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor
         titleTFView.layer.borderWidth = 0.25
         titleTFView.layer.borderColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00).cgColor
@@ -31,12 +37,14 @@ extension NewAssistanceVC {
         genderView.layer.borderWidth = 0.25
         genderView.layer.borderColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00).cgColor
         genderView.layer.cornerRadius = 5
+        genderTF.inputView = nil
         genderImage.image = UIImage(named: "Down")
         
         ageView.layer.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor
         ageView.layer.borderWidth = 0.25
         ageView.layer.borderColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00).cgColor
         ageView.layer.cornerRadius = 5
+        ageTF.inputView = nil
         ageImage.image = UIImage(named: "Down")
         
         infoView.layer.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor
@@ -44,7 +52,6 @@ extension NewAssistanceVC {
         infoTFView.layer.borderColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00).cgColor
         infoTFView.layer.cornerRadius = 5
         
-
         mediaView.layer.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor
         mediaAddView.layer.borderWidth = 0.25
         mediaAddView.layer.borderColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00).cgColor

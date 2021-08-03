@@ -8,26 +8,22 @@
 import Foundation
 import UIKit
 
-extension NewAssistanceVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension NewAssistanceVC {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == infoCollectionView{
-            return currTags.count
-        } else {
-            return currMediaImage.count
-        }
+        return tags.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if collectionView == infoCollectionView{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCollectionViewCell.identifier, for: indexPath) as! TagCollectionViewCell
-            cell.tagLabel.text = currTags[indexPath.row].name
-            return cell
-//        } else {
-//           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MediaImageCollectionViewCell.identifier, for: indexPath) as! MediaImageCollectionViewCell
-//        cell.tagLabel.text = currTags[indexPath.row]
-//        return cell
-//        }
-    }
+        
+        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCell.identifier, for: indexPath) as! TagCell
+        
+        if collectionView == infoCollectionView{
+            cell.tagLabel.text = tags[indexPath.row].name
+            print(infoCollectionView.frame)
 
+        }
+        return cell
+    }
+    
 }
