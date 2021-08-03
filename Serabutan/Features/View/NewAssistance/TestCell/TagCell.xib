@@ -11,23 +11,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TagCell" customModule="Serabutan" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+            <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CqN-G3-wSJ">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                        <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="is7-s2-RTu">
-                                <rect key="frame" x="10" y="4.5" width="42" height="21"/>
+                                <rect key="frame" x="10" y="4.5" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qJB-XL-HE0">
-                                <rect key="frame" x="62" y="7.5" width="15" height="15"/>
+                                <rect key="frame" x="105" y="7.5" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="1XQ-3V-l4K"/>
                                     <constraint firstAttribute="width" constant="15" id="sDT-R7-khC"/>
@@ -38,24 +38,26 @@
                         <constraints>
                             <constraint firstItem="qJB-XL-HE0" firstAttribute="centerY" secondItem="is7-s2-RTu" secondAttribute="centerY" id="61o-Mp-unp"/>
                             <constraint firstItem="qJB-XL-HE0" firstAttribute="leading" secondItem="is7-s2-RTu" secondAttribute="trailing" constant="10" id="GQc-A7-Yhv"/>
+                            <constraint firstAttribute="trailing" secondItem="qJB-XL-HE0" secondAttribute="trailing" constant="5" id="Kn2-8w-94Q"/>
                             <constraint firstItem="is7-s2-RTu" firstAttribute="leading" secondItem="CqN-G3-wSJ" secondAttribute="leading" constant="10" id="UYz-DD-fYG"/>
                             <constraint firstItem="is7-s2-RTu" firstAttribute="centerY" secondItem="CqN-G3-wSJ" secondAttribute="centerY" id="V9G-U2-6sX"/>
+                            <constraint firstAttribute="height" constant="30" id="X3B-mq-cwO"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="CqN-G3-wSJ" secondAttribute="trailing" id="BOQ-Do-m1W"/>
-                <constraint firstAttribute="bottom" secondItem="CqN-G3-wSJ" secondAttribute="bottom" id="FBq-Se-RJP"/>
-                <constraint firstItem="CqN-G3-wSJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Gf8-kV-Bol"/>
-                <constraint firstItem="CqN-G3-wSJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Kf2-ar-0Df"/>
+                <constraint firstAttribute="bottom" secondItem="CqN-G3-wSJ" secondAttribute="bottom" id="K9n-yf-Tka"/>
+                <constraint firstItem="CqN-G3-wSJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="QKZ-BT-J1m"/>
+                <constraint firstItem="CqN-G3-wSJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eFG-re-T7N"/>
+                <constraint firstAttribute="trailing" secondItem="CqN-G3-wSJ" secondAttribute="trailing" id="od5-R0-Zhq"/>
             </constraints>
-            <size key="customSize" width="579" height="70"/>
+            <size key="customSize" width="604" height="70"/>
             <connections>
                 <outlet property="tagLabel" destination="is7-s2-RTu" id="xJ4-J1-SE0"/>
             </connections>
-            <point key="canvasLocation" x="41.304347826086961" y="-66.964285714285708"/>
+            <point key="canvasLocation" x="48.550724637681164" y="-70.3125"/>
         </collectionViewCell>
     </objects>
     <resources>

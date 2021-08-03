@@ -7,7 +7,9 @@
 
 import UIKit
 
-class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource{
+
+
+class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate{
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var myScrollView: UIScrollView!
@@ -42,6 +44,11 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     @IBOutlet weak var infoTFView: UIView!
     @IBOutlet weak var infoTF: UITextField!
     @IBOutlet weak var infoCollectionView: UICollectionView!
+    @IBOutlet weak var infoCollectionLayout: UICollectionViewFlowLayout! {
+        didSet {
+            infoCollectionLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
+    }
     
     @IBOutlet weak var mediaView: UIView!
     @IBOutlet weak var mediaAddView: UIView!
@@ -58,8 +65,15 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     var newAssistanceMediaImage: [String] = []
     
     var tags: [TagModel] = [
+        TagModel(name: "Test12345"),
         TagModel(name: "Sakit"),
-        TagModel(name: "Bantuan")
+        TagModel(name: "Bantuan"),
+        TagModel(name: "Bukan"),
+        TagModel(name: "Main"),
+        TagModel(name: "Minta"),
+        TagModel(name: "Bantuan"),
+        TagModel(name: "Nyangkut"),
+        TagModel(name: "Sakit")
     ]
     
     var activeTextField: UITextField? = nil
@@ -81,7 +95,7 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Buat Permintaan Bantuan"
-        infoCollectionView.isHidden = true
+        //infoCollectionView.isHidden = true
         tabBarController?.tabBar.isHidden = true
         
         setupView()
@@ -101,8 +115,32 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
         ageTF.delegate = self
         infoTF.delegate = self
         
+        if let flowLayout = infoCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        
+        
+//        let flowLayout = UICollectionViewFlowLayout()
+//        flowLayout.scrollDirection = .vertical
+//        flowLayout.minimumInteritemSpacing = 0
+//        flowLayout.minimumLineSpacing = 0
+//        flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+//        infoCollectionView.setCollectionViewLayout(flowLayout, animated: true)
+        
+        let columnLayout = CustomViewFlowLayout()
+        
+        if #available(iOS 10.0, *) {
+            columnLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        } else {
+            columnLayout.estimatedItemSize = CGSize(width: 41, height: 30)
+        }
+
+        infoCollectionView.collectionViewLayout = columnLayout
+
     }
     
     func setupView(){
@@ -113,6 +151,9 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
         createPickerUrgency()
         getTagInput()
     }
+    
+    
+    
     
     @IBAction func cancelButtonAction(_sender: Any){
         let myViewController = HomeVC(nibName: "HomeVC", bundle: nil)
@@ -143,10 +184,6 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     @IBAction func addMediaImageAction(_ sender: Any) {
         
     }
-    
-    
-    
-    
 }
 
 extension NewAssistanceVC {
@@ -231,11 +268,18 @@ extension NewAssistanceVC {
         let currAge = ageTF.text!
         newAssistanceAgePref = currAge
         
-        let newTag = infoTF.text!
-        currTags = newTag
-        tags.append(TagModel(name: currTags!))
-        infoCollectionView.reloadData()
+        if textField == infoTF{
+            let newTag = infoTF.text!
+            currTags = newTag
+            tags.append(TagModel(name: currTags!))
+            infoCollectionView.reloadData()
+            infoTF.resignFirstResponder()
+            infoTF.text = ""
+        } else {
+            print("nothing insert")
+        }
     }
+    
     
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -258,5 +302,59 @@ extension NewAssistanceVC {
         myScrollView.contentInset = contentInsets
         myScrollView.scrollIndicatorInsets = contentInsets
     }
+    
 }
 
+
+
+
+class LeftEqualFlowLayout: UICollectionViewFlowLayout {
+    
+    // Left aligned equal spacing layout (maximum spacing is set)
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        let answer = super.layoutAttributesForElements(in: rect)
+        for (index,value) in (answer?.enumerated())!
+        {
+            if index > 0{
+                let currentLayoutAttributes :UICollectionViewLayoutAttributes = value
+                let prevLayoutAttributes:UICollectionViewLayoutAttributes = answer![index - 1]
+                let maximumSpacing = 15 //Set the maximum spacing here
+                let origin = prevLayoutAttributes.frame.maxX
+                if(origin + CGFloat(maximumSpacing) + currentLayoutAttributes.frame.size.width < self.collectionViewContentSize.width) {
+                    var frame = currentLayoutAttributes.frame;
+                    frame.origin.x = origin + CGFloat(maximumSpacing);
+                    currentLayoutAttributes.frame = frame;
+                }
+            }
+        }
+        return answer
+    }
+}
+
+//
+//class DynamicHeightCollectionView: UICollectionView {
+//  override func layoutSubviews() {
+//    super.layoutSubviews()
+//    if!__CGSizeEqualToSize(bounds.size,self.intrinsicContentSize){
+//      self.invalidateIntrinsicContentSize()
+//    }
+//  }
+//  override var intrinsicContentSize: CGSize {
+//    return contentSize
+//  }
+//}
+
+
+public extension CollectionCellAutoLayout where Self: UICollectionViewCell {
+ 
+    func preferredLayoutAttributes(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        setNeedsLayout()
+        layoutIfNeeded()
+        let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
+        var newFrame = layoutAttributes.frame
+        newFrame.size.width = CGFloat(ceilf(Float(size.width)))
+        layoutAttributes.frame = newFrame
+        cachedSize = newFrame.size
+        return layoutAttributes
+    }
+}

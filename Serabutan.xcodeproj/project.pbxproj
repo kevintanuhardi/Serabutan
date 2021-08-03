@@ -17,14 +17,18 @@
 		185D12C726A7C09100F6105C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185D12C526A7C09100F6105C /* LaunchScreen.storyboard */; };
 		18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF23B26A911E10029CEA1 /* HomeVC.swift */; };
 		18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF23C26A911E10029CEA1 /* HomeVC.xib */; };
+		C7377C5C26B981C5004A8C28 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7377C5B26B981C5004A8C28 /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		C7377C5E26B98A72004A8C28 /* CollectionViewAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7377C5D26B98A72004A8C28 /* CollectionViewAutoLayout.swift */; };
+		C7377C6026B98B42004A8C28 /* CustomViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7377C5F26B98B42004A8C28 /* CustomViewFlowLayout.swift */; };
 		C75E13F526B906BC007BEF41 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E13F326B906BC007BEF41 /* TagCell.swift */; };
 		C75E13F626B906BC007BEF41 /* TagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C75E13F426B906BC007BEF41 /* TagCell.xib */; };
+		C75E13FB26B973B4007BEF41 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E13FA26B973B4007BEF41 /* FlowLayout.swift */; };
 		C76047C026AF3CBB00535995 /* ListBantuanNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76047BF26AF3CBB00535995 /* ListBantuanNavigationBar.swift */; };
 		C79063E626B3B40B00AE7687 /* NewAssistancePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79063E526B3B40B00AE7687 /* NewAssistancePicker.swift */; };
 		C79063E826B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79063E726B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift */; };
 		C7CCC24526B199DD0005FFE3 /* NewAssistanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */; };
 		C7CCC24626B199DD0005FFE3 /* NewAssistanceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */; };
-		C7CCC24826B19A660005FFE3 /* NewAssistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24726B19A660005FFE3 /* NewAssistanceView.swift */; };
+		C7CCC24826B19A660005FFE3 /* NewAssistanceStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24726B19A660005FFE3 /* NewAssistanceStyle.swift */; };
 		C7D7AE3B26AC977C000478AA /* ListBantuanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE3926AC977C000478AA /* ListBantuanViewController.swift */; };
 		C7D7AE3C26AC977C000478AA /* ListBantuanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D7AE3A26AC977C000478AA /* ListBantuanViewController.xib */; };
 		C7D7AE3F26AC97DD000478AA /* BantuanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE3D26AC97DD000478AA /* BantuanCollectionViewCell.swift */; };
@@ -49,14 +53,18 @@
 		185D12D526A7C16400F6105C /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/HomeVC.swift; sourceTree = SOURCE_ROOT; };
 		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/HomeVC.xib; sourceTree = SOURCE_ROOT; };
+		C7377C5B26B981C5004A8C28 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LeftAlignedCollectionViewFlowLayout.swift; path = Serabutan/Features/View/NewAssistance/TestCell/Helper/LeftAlignedCollectionViewFlowLayout.swift; sourceTree = SOURCE_ROOT; };
+		C7377C5D26B98A72004A8C28 /* CollectionViewAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionViewAutoLayout.swift; path = Serabutan/Features/View/NewAssistance/TestCell/Helper/CollectionViewAutoLayout.swift; sourceTree = SOURCE_ROOT; };
+		C7377C5F26B98B42004A8C28 /* CustomViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomViewFlowLayout.swift; path = Serabutan/Features/View/NewAssistance/TestCell/Helper/CustomViewFlowLayout.swift; sourceTree = SOURCE_ROOT; };
 		C75E13F326B906BC007BEF41 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagCell.swift; path = Serabutan/Features/View/NewAssistance/TestCell/TagCell.swift; sourceTree = SOURCE_ROOT; };
 		C75E13F426B906BC007BEF41 /* TagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TagCell.xib; path = Serabutan/Features/View/NewAssistance/TestCell/TagCell.xib; sourceTree = SOURCE_ROOT; };
+		C75E13FA26B973B4007BEF41 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FlowLayout.swift; path = Serabutan/Features/View/NewAssistance/TestCell/Helper/FlowLayout.swift; sourceTree = SOURCE_ROOT; };
 		C76047BF26AF3CBB00535995 /* ListBantuanNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListBantuanNavigationBar.swift; path = Serabutan/Features/View/ListBantuan/ListBantuanNavigationBar.swift; sourceTree = SOURCE_ROOT; };
 		C79063E526B3B40B00AE7687 /* NewAssistancePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistancePicker.swift; path = ../../../../../../NewAssistancePicker.swift; sourceTree = "<group>"; };
 		C79063E726B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanCollectionViewConfig.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanCollectionViewConfig.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanceVC.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanceVC.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewAssistanceVC.xib; path = Serabutan/Features/View/NewAssistance/NewAssistanceVC.xib; sourceTree = SOURCE_ROOT; };
-		C7CCC24726B19A660005FFE3 /* NewAssistanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanceView.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanceView.swift; sourceTree = SOURCE_ROOT; };
+		C7CCC24726B19A660005FFE3 /* NewAssistanceStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanceStyle.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanceStyle.swift; sourceTree = SOURCE_ROOT; };
 		C7D7AE3926AC977C000478AA /* ListBantuanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListBantuanViewController.swift; path = Serabutan/Features/View/ListBantuan/ListBantuanViewController.swift; sourceTree = SOURCE_ROOT; };
 		C7D7AE3A26AC977C000478AA /* ListBantuanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ListBantuanViewController.xib; path = Serabutan/Features/View/ListBantuan/ListBantuanViewController.xib; sourceTree = SOURCE_ROOT; };
 		C7D7AE3D26AC97DD000478AA /* BantuanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BantuanCollectionViewCell.swift; path = Serabutan/Features/View/ListBantuan/Cell/BantuanCell/BantuanCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -196,10 +204,22 @@
 		C75E13ED26B9056D007BEF41 /* TestCell */ = {
 			isa = PBXGroup;
 			children = (
+				C75E13F726B96D4A007BEF41 /* Helper */,
 				C75E13F326B906BC007BEF41 /* TagCell.swift */,
 				C75E13F426B906BC007BEF41 /* TagCell.xib */,
 			);
 			path = TestCell;
+			sourceTree = "<group>";
+		};
+		C75E13F726B96D4A007BEF41 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C7377C5B26B981C5004A8C28 /* LeftAlignedCollectionViewFlowLayout.swift */,
+				C75E13FA26B973B4007BEF41 /* FlowLayout.swift */,
+				C7377C5D26B98A72004A8C28 /* CollectionViewAutoLayout.swift */,
+				C7377C5F26B98B42004A8C28 /* CustomViewFlowLayout.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		C76047C126AFC46500535995 /* Recovered References */ = {
@@ -225,7 +245,7 @@
 				C75E13ED26B9056D007BEF41 /* TestCell */,
 				C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */,
 				C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */,
-				C7CCC24726B19A660005FFE3 /* NewAssistanceView.swift */,
+				C7CCC24726B19A660005FFE3 /* NewAssistanceStyle.swift */,
 				C79063E526B3B40B00AE7687 /* NewAssistancePicker.swift */,
 				C79063E726B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift */,
 			);
@@ -384,20 +404,24 @@
 				18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */,
 				1853414526AC472C0027C0F3 /* Job.swift in Sources */,
 				1853413D26AC23470027C0F3 /* UIImageExt.swift in Sources */,
+				C75E13FB26B973B4007BEF41 /* FlowLayout.swift in Sources */,
 				1853414226AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift in Sources */,
 				C7CCC24526B199DD0005FFE3 /* NewAssistanceVC.swift in Sources */,
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
 				C79063E626B3B40B00AE7687 /* NewAssistancePicker.swift in Sources */,
+				C7377C5C26B981C5004A8C28 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				C7D7AE3B26AC977C000478AA /* ListBantuanViewController.swift in Sources */,
-				C7CCC24826B19A660005FFE3 /* NewAssistanceView.swift in Sources */,
+				C7CCC24826B19A660005FFE3 /* NewAssistanceStyle.swift in Sources */,
 				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,
 				C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */,
+				C7377C5E26B98A72004A8C28 /* CollectionViewAutoLayout.swift in Sources */,
 				C75E13F526B906BC007BEF41 /* TagCell.swift in Sources */,
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
 				C76047C026AF3CBB00535995 /* ListBantuanNavigationBar.swift in Sources */,
 				C79063E826B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift in Sources */,
 				C7D7AE3F26AC97DD000478AA /* BantuanCollectionViewCell.swift in Sources */,
 				C7D7AE4826AE5040000478AA /* BantuanModel.swift in Sources */,
+				C7377C6026B98B42004A8C28 /* CustomViewFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
