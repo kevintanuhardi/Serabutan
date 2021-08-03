@@ -7,10 +7,11 @@
 
 import MapKit
 import UIKit
+import SwiftyJSON
 
-enum Urgency {
-    case High, Medium, Low
-}
+//enum Urgency {
+//    case High, Medium, Low
+//}
 
 enum JobStatus {
     case Active, Taken, Cancelled, Done
@@ -22,35 +23,6 @@ enum Gender {
 
 enum AgePreference {
     case Adolescence, Adult, Senior
-}
-
-// This struct is used for home page
-class Job: NSObject, MKAnnotation {
-    let title: String?
-    let locationName: String?
-    let urgency: Urgency?
-    let price: Int?
-    let coordinate: CLLocationCoordinate2D
-    
-    init(
-        title: String?,
-        locationName: String?,
-        urgency: Urgency?,
-        price: Int?,
-        coordinate: CLLocationCoordinate2D
-    ) {
-        self.title = title
-        self.locationName = locationName
-        self.urgency = urgency
-        self.price = price
-        self.coordinate = coordinate
-        
-        super.init()
-    }
-    
-    var subtitle: String? {
-        return locationName
-    }
 }
 
 // This struct is used for dummy data
@@ -74,4 +46,76 @@ struct Jobs {
     // Job Preference
     let genderPreference : Gender?
     let agePreference : AgePreference?
+
+enum Urgency: String {
+    case high = "HIGH"
+    case medium = "MEDIUM"
+    case low = "LOW"
+}
+
+class Job: NSObject, MKAnnotation {
+//class Job: NSObject {
+	var id: Int?
+	var title: String?
+	var desc: String?
+	var urgency: Urgency
+	var price: Int
+	var coordinate: CLLocationCoordinate2D
+	var jobPosterId: Int?
+	var status: String?
+	var genderPreference: String
+	var agePreference: String
+	var distance: Double?
+
+  init(
+		id: Int?,
+		title: String?,
+		desc: String?,
+		urgency: Urgency,
+		price: Int,
+		coordinate: CLLocationCoordinate2D,
+		jobPosterId: Int,
+		status: String,
+		genderPreference: String,
+		agePreference: String,
+		distance: Double
+  ) {
+//		super.init()
+		
+		self.id =  id
+		self.title = title
+		self.desc = desc
+		self.urgency = urgency
+		self.price = price
+		self.coordinate = coordinate
+		self.jobPosterId = jobPosterId
+		self.status = status
+		self.genderPreference = genderPreference
+		self.agePreference = agePreference
+		self.distance = distance
+  }
+	
+	init(_ json: JSON) {
+//		super.init()
+		id = json["id"].intValue
+		title = json["title"].stringValue
+		desc = json["desc"].stringValue
+		price = json["price"].intValue
+		jobPosterId = json["jobPosterId"].intValue
+		status = json["status"].stringValue
+		genderPreference = json["genderPreference"].stringValue
+		agePreference = json["agePreference"].stringValue
+		distance = json["distance"].doubleValue
+		
+		urgency = Urgency(rawValue: json["urgency"].stringValue)!
+		coordinate = CLLocationCoordinate2D(latitude: json["coordinate"]["coordinates"][1].doubleValue, longitude: json["coordinate"]["coordinates"][0].doubleValue)
+	}
+
+  var subtitle: String? {
+    return desc
+  }
+}
+
+class Coordinate: Codable {
+	let coordinates: [Double] = []
 }
