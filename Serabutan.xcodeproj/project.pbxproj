@@ -21,6 +21,9 @@
 		796BC75F26AF215F00999377 /* ImageCarouselCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */; };
 		796BC76026AF215F00999377 /* ImageCarouselCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */; };
 		796BC76426AF21A900999377 /* DetailBantuanVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796BC76226AF21A900999377 /* DetailBantuanVC.xib */; };
+		79FAF9CF26B87682009BF31F /* DetailBantuanNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FAF9CE26B87682009BF31F /* DetailBantuanNavigationConfig.swift */; };
+		79FAF9D626B8F3AA009BF31F /* TagsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FAF9D426B8F3AA009BF31F /* TagsCVC.swift */; };
+		79FAF9D726B8F3AA009BF31F /* TagsCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79FAF9D526B8F3AA009BF31F /* TagsCVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCarouselCVC.swift; path = serabutan/Features/View/DetailBantuan/Cell/TopCollectionView/ImageCarouselCVC.swift; sourceTree = SOURCE_ROOT; };
 		796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ImageCarouselCVC.xib; path = serabutan/Features/View/DetailBantuan/Cell/TopCollectionView/ImageCarouselCVC.xib; sourceTree = SOURCE_ROOT; };
 		796BC76226AF21A900999377 /* DetailBantuanVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DetailBantuanVC.xib; path = serabutan/Features/View/DetailBantuan/DetailBantuanVC.xib; sourceTree = SOURCE_ROOT; };
+		79FAF9CE26B87682009BF31F /* DetailBantuanNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailBantuanNavigationConfig.swift; path = Serabutan/Features/View/DetailBantuan/DetailBantuanNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
+		79FAF9D426B8F3AA009BF31F /* TagsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagsCVC.swift; path = Serabutan/Features/View/DetailBantuan/Cell/BottomCollectionView/TagsCVC.swift; sourceTree = SOURCE_ROOT; };
+		79FAF9D526B8F3AA009BF31F /* TagsCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TagsCVC.xib; path = Serabutan/Features/View/DetailBantuan/Cell/BottomCollectionView/TagsCVC.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,7 @@
 			children = (
 				79089B1B26B300FA0053077D /* DetailBantuanVC.swift */,
 				796BC76226AF21A900999377 /* DetailBantuanVC.xib */,
+				79FAF9CE26B87682009BF31F /* DetailBantuanNavigationConfig.swift */,
 				79C085FA26B2587C00AE56CD /* Cell */,
 			);
 			path = DetailBantuan;
@@ -196,6 +203,8 @@
 		79C085FC26B258E600AE56CD /* BottomCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				79FAF9D426B8F3AA009BF31F /* TagsCVC.swift */,
+				79FAF9D526B8F3AA009BF31F /* TagsCVC.xib */,
 			);
 			path = BottomCollectionView;
 			sourceTree = "<group>";
@@ -313,6 +322,7 @@
 				796BC76026AF215F00999377 /* ImageCarouselCVC.xib in Resources */,
 				18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */,
 				185D12C426A7C09100F6105C /* Assets.xcassets in Resources */,
+				79FAF9D726B8F3AA009BF31F /* TagsCVC.xib in Resources */,
 				1853414326AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,7 +339,9 @@
 				1853413D26AC23470027C0F3 /* UIImageExt.swift in Sources */,
 				1853414226AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift in Sources */,
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
+				79FAF9D626B8F3AA009BF31F /* TagsCVC.swift in Sources */,
 				79089B1C26B300FA0053077D /* DetailBantuanVC.swift in Sources */,
+				79FAF9CF26B87682009BF31F /* DetailBantuanNavigationConfig.swift in Sources */,
 				796BC75F26AF215F00999377 /* ImageCarouselCVC.swift in Sources */,
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
 			);

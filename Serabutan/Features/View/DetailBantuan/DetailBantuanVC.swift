@@ -7,12 +7,13 @@
 
 import UIKit
 
-class DetailBantuanVC: UIViewController {
+class DetailBantuanVC: UIViewController{
     
-    @IBOutlet weak var backButton: UIBarButtonItem!
-    @IBOutlet weak var shareButton: UIBarButtonItem!
     
-    @IBOutlet weak var moreButton: UIButton!
+    @IBOutlet weak var topView: UIView!
+    
+    
+    
     @IBOutlet weak var helpFinishButton: UIButton!
     @IBOutlet weak var waButton: UIButton!
     
@@ -36,15 +37,18 @@ class DetailBantuanVC: UIViewController {
     @IBOutlet weak var helpStatusLabel: UILabel!
     
     @IBOutlet weak var jobImgCarousel: UICollectionView!
-    @IBOutlet weak var jobTagsCarousel: UICollectionView!
+    @IBOutlet weak var jobTagsCell: UICollectionView!
     
-    @IBAction func backButton(_ sender: Any) {
+    @objc func backButtonAction(_ sender:UIButton!){
+        navigateToListBantuan()
     }
     
-    @IBAction func shareButton(_ sender: Any) {
+    @objc func moreButtonAction(_ sender:UIButton!){
+        
     }
     
-    @IBAction func moreButton(_ sender: Any) {
+    @objc func shareButtonAction(_ sender:UIButton!){
+        
     }
     
     @IBAction func helpFinishButton(_ sender: Any) {
@@ -60,6 +64,20 @@ class DetailBantuanVC: UIViewController {
     let data: [String] = ["Urgensi tinggi", "Nurunin Kucing dari Atap", "100.000", "Yahya", "2 menit yang lalu", "600 m"]
     
     var triggerHelpButton : Bool = false
+    
+    private func navigateToListBantuan(){
+        //let homeVC = AssistanceListVC()
+        tabBarController?.tabBar.isHidden = true
+        //self.navigationController?.pushViewController(AssistanceListVC, animated: true)
+    }
+    
+    private func popUpMore(){
+        
+    }
+    
+    private func shareButton(){
+        
+    }
     
     func configureText(){
         urgencyLabel.text = data[0]
@@ -79,16 +97,23 @@ class DetailBantuanVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBarItems()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         waButton.isHidden = true
         
         helpFinishButton.frame.size = CGSize(width: 350, height: 50)
+        helpFinishButton.frame = CGRect(x: 16, y: 760, width: 350, height: 50)
+        let x_position:CGFloat = 108
+        let y_position:CGFloat = 760
         if triggerHelpButton == true{
             waButton.isHidden = false
             helpFinishButton.frame.size = CGSize(width: 266, height: 50)
+            helpFinishButton.frame = CGRect(x: x_position, y: y_position, width: helpFinishButton.frame.width, height: helpFinishButton.frame.height)
             let margin = waButton.layoutMarginsGuide
             helpFinishButton.trailingAnchor.constraint(equalTo: margin.leadingAnchor, constant: 50).isActive = true
         }
@@ -106,18 +131,30 @@ class DetailBantuanVC: UIViewController {
             return
         }
         
-        
-        
         configureText()
+        
+//        UIImage.layer.borderWidth = 1.0
+//        UIImage.layer.maskstoBounds = false
+//        UIImage.layer.borderColor = UIColor.white.cgColor
+//        UIImage.layer.cornerRadius = image.frame.size.height/2
+//        UIImage.clipsToBounds = true
+        
+        //profileImage = UIImageView(frame: CGRect(0, 0, 100, 100))
         profileImage.image = UIImage(named: "kucing1")
-    
+        
         //collection view pertama
         let imageCell = UINib(nibName: ImageCarouselCVC.identifier,  bundle: nil)
         jobImgCarousel.register(imageCell, forCellWithReuseIdentifier: ImageCarouselCVC.identifier)
         jobImgCarousel.delegate = self
         jobImgCarousel.dataSource = self
         
+        //collection view kedua
+        let tagCell = UINib(nibName: TagsCVC.identifier, bundle: nil)
+        jobTagsCell.register(tagCell, forCellWithReuseIdentifier: TagsCVC.identifier)
+        jobTagsCell.delegate = self
+        jobTagsCell.dataSource = self
         
+        //textview
         view.backgroundColor = .white
         jobDescTextView.isEditable = false
         jobDescTextView.isSelectable = false
@@ -125,37 +162,62 @@ class DetailBantuanVC: UIViewController {
         jobDescTextView.sizeToFit()
         jobDescTextView.translatesAutoresizingMaskIntoConstraints = true
         
+        //button finish
         helpFinishButton.layer.cornerRadius = 10
         helpFinishButton.setTitle("Saya bersedia membantu", for: .normal)
-
-    }
-}
-
-extension DetailBantuanVC: UICollectionViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
         
-        print("Wah gambarnya ditap")
     }
+    
 }
 
 extension DetailBantuanVC: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3 //ngetes
+        
+        if (collectionView == jobImgCarousel){
+            return 3 //blabla.count
+        } else if (collectionView == jobTagsCell){
+            return 4
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCarouselCVC.identifier, for: indexPath) as! ImageCarouselCVC
         
-        let imageName = "kucing" + "\(indexPath.row + 1)"
-        cell.configure(with: UIImage(named: imageName)!)
+        if(collectionView == jobImgCarousel){
+            let cell = jobImgCarousel.dequeueReusableCell(withReuseIdentifier: ImageCarouselCVC.identifier, for: indexPath) as! ImageCarouselCVC
+            let imageName = "kucing" + "\(indexPath.row + 1)"
+            cell.configure(with: UIImage(named: imageName)!)
+            return cell
+
+        }else if(collectionView == jobTagsCell){
+            let cell2 = jobTagsCell.dequeueReusableCell(withReuseIdentifier: TagsCVC.identifier, for: indexPath) as! TagsCVC
+            return cell2
+        }
+        return UICollectionViewCell()
+    }
+}
+
+extension DetailBantuanVC: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        collectionView.deselectItem(at: indexPath, animated: true)
         
-        return cell
+        if let tappedCell = collectionView.cellForItem(at: indexPath) as? ImageCarouselCVC{
+            print("Wah gambarnya ditap")
+        } else if let tappedCell2 = collectionView.cellForItem(at: indexPath) as? ImageCarouselCVC{
+            print("Wah tagsnya ditap")
+        }
     }
 }
 
 extension DetailBantuanVC: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if(collectionView == jobImgCarousel){
+            return CGSize(width: 130, height: 120)
+        }else if(collectionView == jobTagsCell){
+            return CGSize(width: 130, height: 120)
+        }
         return CGSize(width: 130, height: 120)
+        
     }
 }
