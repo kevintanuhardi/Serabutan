@@ -22,6 +22,9 @@
 		189FC4AD26B69D5500662C88 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FC4AC26B69D5500662C88 /* Constant.swift */; };
 		18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF23B26A911E10029CEA1 /* HomeVC.swift */; };
 		18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF23C26A911E10029CEA1 /* HomeVC.xib */; };
+		7830896AB6A17C511938A0B0 /* Pods_Serabutan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB6A465A85B221961E3FE29 /* Pods_Serabutan.framework */; };
+		79E67E7826B1B2410009F3C6 /* RatingReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */; };
+		79E67E7926B1B2410009F3C6 /* RatingReviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */; };
 		90584E2026B274A7004C225B /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90584E1E26B274A7004C225B /* ProfileVC.swift */; };
 		90584E2126B274A7004C225B /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90584E1F26B274A7004C225B /* ProfileVC.xib */; };
 		907F9DCB26B6515B00EF9F51 /* ColorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */; };
@@ -37,9 +40,6 @@
 		90E9C98826B39DE500165319 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */; };
 		90E9C98926B39DE500165319 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */; };
 		90F3A4E126B8E404001946E1 /* FontLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3A4E026B8E404001946E1 /* FontLibrary.swift */; };
-		7830896AB6A17C511938A0B0 /* Pods_Serabutan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB6A465A85B221961E3FE29 /* Pods_Serabutan.framework */; };
-		79E67E7826B1B2410009F3C6 /* RatingReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */; };
-		79E67E7926B1B2410009F3C6 /* RatingReviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */; };
 		C744D7DE26B2D324009E36B7 /* AssistanceTableViewStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7DD26B2D324009E36B7 /* AssistanceTableViewStyling.swift */; };
 		C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */; };
 		C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */; };
@@ -72,8 +72,14 @@
 		185D12C326A7C09100F6105C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		185D12C626A7C09100F6105C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		185D12C826A7C09100F6105C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		185D12D526A7C16400F6105C /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		189FC4AA26B69B9000662C88 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Serabutan/Service/Network/Network.swift; sourceTree = SOURCE_ROOT; };
+		189FC4AC26B69D5500662C88 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = Serabutan/Helper/Constant.swift; sourceTree = SOURCE_ROOT; };
 		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/Home/HomeVC.swift; sourceTree = SOURCE_ROOT; };
 		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/Home/HomeVC.xib; sourceTree = SOURCE_ROOT; };
+		20FD053C92B5DE81A3651602 /* Pods-Serabutan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Serabutan.debug.xcconfig"; path = "Target Support Files/Pods-Serabutan/Pods-Serabutan.debug.xcconfig"; sourceTree = "<group>"; };
+		79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingReviewVC.swift; path = serabutan/Features/View/RatingReview/RatingReviewVC.swift; sourceTree = SOURCE_ROOT; };
+		79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RatingReviewVC.xib; path = serabutan/Features/View/RatingReview/RatingReviewVC.xib; sourceTree = SOURCE_ROOT; };
 		90584E1E26B274A7004C225B /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = Serabutan/Features/View/Profile/ProfileVC.swift; sourceTree = SOURCE_ROOT; };
 		90584E1F26B274A7004C225B /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileVC.xib; path = Serabutan/Features/View/Profile/ProfileVC.xib; sourceTree = SOURCE_ROOT; };
 		907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorLibrary.swift; path = Serabutan/Components/Styling/ColorLibrary.swift; sourceTree = SOURCE_ROOT; };
@@ -89,14 +95,6 @@
 		90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewTableViewCell.swift; path = Serabutan/Features/View/Profile/ReviewTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReviewTableViewCell.xib; path = Serabutan/Features/View/Profile/ReviewTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		90F3A4E026B8E404001946E1 /* FontLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FontLibrary.swift; path = Serabutan/Components/Styling/FontLibrary.swift; sourceTree = SOURCE_ROOT; };
-		185D12D526A7C16400F6105C /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
-		189FC4AA26B69B9000662C88 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Serabutan/Service/Network/Network.swift; sourceTree = SOURCE_ROOT; };
-		189FC4AC26B69D5500662C88 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = Serabutan/Helper/Constant.swift; sourceTree = SOURCE_ROOT; };
-		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/HomeVC.swift; sourceTree = SOURCE_ROOT; };
-		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/HomeVC.xib; sourceTree = SOURCE_ROOT; };
-		20FD053C92B5DE81A3651602 /* Pods-Serabutan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Serabutan.debug.xcconfig"; path = "Target Support Files/Pods-Serabutan/Pods-Serabutan.debug.xcconfig"; sourceTree = "<group>"; };
-		79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingReviewVC.swift; path = serabutan/Features/View/RatingReview/RatingReviewVC.swift; sourceTree = SOURCE_ROOT; };
-		79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RatingReviewVC.xib; path = serabutan/Features/View/RatingReview/RatingReviewVC.xib; sourceTree = SOURCE_ROOT; };
 		C744D7DD26B2D324009E36B7 /* AssistanceTableViewStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceTableViewStyling.swift; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableViewStyling.swift; sourceTree = SOURCE_ROOT; };
 		C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpVC.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.swift; sourceTree = SOURCE_ROOT; };
 		C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FilterPopUpVC.xib; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.xib; sourceTree = SOURCE_ROOT; };
@@ -256,17 +254,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		90F3A4E226B9109F001946E1 /* Styling */ = {
-			isa = PBXGroup;
-			children = (
-				907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */,
-				907F9DCC26B65C8200EF9F51 /* CustomBorder.swift */,
-				90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */,
-				90F3A4E026B8E404001946E1 /* FontLibrary.swift */,
-			);
-			path = Styling;
-			sourceTree = "<group>";
-		};
 		189FC4A826B6974B00662C88 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +286,17 @@
 				79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */,
 			);
 			path = RatingReview;
+			sourceTree = "<group>";
+		};
+		90F3A4E226B9109F001946E1 /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */,
+				907F9DCC26B65C8200EF9F51 /* CustomBorder.swift */,
+				90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */,
+				90F3A4E026B8E404001946E1 /* FontLibrary.swift */,
+			);
+			path = Styling;
 			sourceTree = "<group>";
 		};
 		B620ED3491E67FAFA6936D42 /* Frameworks */ = {
