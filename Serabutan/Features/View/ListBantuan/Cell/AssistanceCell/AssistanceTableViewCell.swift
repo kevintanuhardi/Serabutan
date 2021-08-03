@@ -25,6 +25,7 @@ class AssistanceTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
     @IBOutlet weak var verifiedLogo: UIImageView!
     @IBOutlet weak var dotImage: UIImageView!
     @IBOutlet weak var timeElapsedLabel: UILabel!
+    @IBOutlet weak var mainBottomBar: UIView!
     
     @IBOutlet weak var tagView: UIView!
     @IBOutlet weak var tagSeparator: UIView!
@@ -32,6 +33,7 @@ class AssistanceTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
     
     //available state
     @IBOutlet weak var availableView: UIView!
+    @IBOutlet weak var availabelInsetView: UIView!
     @IBOutlet weak var selfImage: UIImageView!
     @IBOutlet weak var availableInsetView: UIView!
     

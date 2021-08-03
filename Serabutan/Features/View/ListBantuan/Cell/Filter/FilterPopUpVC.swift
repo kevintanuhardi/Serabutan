@@ -8,8 +8,15 @@
 import UIKit
 import Foundation
 
-class FilterPopUpVC: UIViewController {
 
+protocol FilterPopUpVCDelegate {
+    func viewControllerDidUpdate(_ controller: AssistanceListVC)
+}
+
+
+class FilterPopUpVC: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var topBarView: UIView!
     @IBOutlet var sortByCollectionButton: [UIButton]!
     @IBOutlet weak var closestButton: UIButton!
@@ -23,9 +30,11 @@ class FilterPopUpVC: UIViewController {
     @IBOutlet weak var minValTF: UITextField!
     @IBOutlet weak var maxValTF: UITextField!
     
+    //public weak var delagate: AssistanceListVCDelegate?
+    
     //Filter Vars
-    var sortBy: Any? = AssistanceSortByFilter.nearest
-    var minValue: Int? = 0
+    var sortBy: AssistanceSortByFilter?
+    var minValue: Int? = 50000
     var maxValue: Int? = 500000
     
     let tintColor = UIColor(red: 0.50, green: 0.31, blue: 0.82, alpha: 1.00)
@@ -39,10 +48,15 @@ class FilterPopUpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        minValTF.delegate = self
+        maxValTF.delegate = self
         minValTF.keyboardType = .numberPad
         maxValTF.keyboardType = .numberPad
-    }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     func priceFormatting(amount: Int) -> String{
         let currencyFormatter = NumberFormatter()
         currencyFormatter.numberStyle = .currency
@@ -53,10 +67,12 @@ class FilterPopUpVC: UIViewController {
         return currencyFormatter.string(from: NSNumber(value: amount))!
     }
     
+   
+    
     func getSortByFilter() -> AssistanceSortByFilter{
         for (index, button) in sortByCollectionButton.enumerated() {
             if button.backgroundColor == tintColor {
-                return AssistanceSortByFilter(rawValue: index) ?? .nearest
+                return AssistanceSortByFilter(rawValue: index)!
             }
         }
         return .nearest
@@ -67,6 +83,7 @@ class FilterPopUpVC: UIViewController {
         sortBy = AssistanceSortByFilter.nearest
         closestButton.layer.backgroundColor = mainColor
         closestButton.setTitleColor(.white, for: .normal)
+        
         minValue = 0
         minValTF.placeholder = "Rp " + priceFormatting(amount: minValue!)
         minValTF.text = ""
@@ -88,29 +105,45 @@ class FilterPopUpVC: UIViewController {
     }
     
     @objc func minValueDoneButtonTapped(){
-        let newMinVal = minValTF.text ?? ""
-        minValue = Int(newMinVal) ?? 0
-        minValTF.text = "Rp " + priceFormatting(amount: minValue!)
         maxValTF.becomeFirstResponder()
     }
     
     @objc func maxValueDoneButtonTapped(){
         let newMaxVal = maxValTF.text ?? ""
-        maxValue = Int(newMaxVal) ?? 500000
-        maxValTF.text = "Rp " + priceFormatting(amount: maxValue!)
+        let viewValue = Int(newMaxVal)
+        maxValTF.text = "Rp " + priceFormatting(amount: viewValue!)
         maxValTF.resignFirstResponder()
     }
     
-
     @IBAction func applyButtonAction(_ sender: Any) {
-        //let filterBy: AssistanceSortByFilter = getSortByFilter()
+        let filterBy: AssistanceSortByFilter = getSortByFilter()
+        print (filterBy)
+        print(minValue!)
+        print(maxValue!)
+        
         let listBantuanVC = AssistanceListVC()
-        listBantuanVC.sortBy = sortBy
+        listBantuanVC.sortBy = filterBy
         listBantuanVC.minValue = minValue
         listBantuanVC.maxValue = maxValue
+        listBantuanVC.applySortData()
         self.navigationController?.pushViewController(listBantuanVC, animated: true)
+        dismiss(animated: true, completion: nil)
     }
+     
     
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
 }
 
 
