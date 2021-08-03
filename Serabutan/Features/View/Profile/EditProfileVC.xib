@@ -18,6 +18,7 @@
                 <outlet property="fullName" destination="tL3-s1-FN0" id="hmR-6n-5j9"/>
                 <outlet property="nameField" destination="K7P-fO-DZ1" id="nqG-Wn-mAQ"/>
                 <outlet property="profileImage" destination="M4X-Ol-0sQ" id="pYK-RK-RYr"/>
+                <outlet property="shortDesc" destination="jy2-UE-Etk" id="Hsq-Ez-hGm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

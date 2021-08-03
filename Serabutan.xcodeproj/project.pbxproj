@@ -31,6 +31,7 @@
 		90DCB12F26B6EAC4002145C1 /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */; };
 		90E9C98826B39DE500165319 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */; };
 		90E9C98926B39DE500165319 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */; };
+		90F3A4E126B8E404001946E1 /* FontLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3A4E026B8E404001946E1 /* FontLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +49,8 @@
 		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/Home/HomeVC.xib; sourceTree = SOURCE_ROOT; };
 		90584E1E26B274A7004C225B /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = Serabutan/Features/View/Profile/ProfileVC.swift; sourceTree = SOURCE_ROOT; };
 		90584E1F26B274A7004C225B /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileVC.xib; path = Serabutan/Features/View/Profile/ProfileVC.xib; sourceTree = SOURCE_ROOT; };
-		907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorLibrary.swift; path = Serabutan/Features/ViewModel/ColorLibrary.swift; sourceTree = SOURCE_ROOT; };
-		907F9DCC26B65C8200EF9F51 /* CustomBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomBorder.swift; path = Serabutan/Features/ViewModel/CustomBorder.swift; sourceTree = SOURCE_ROOT; };
+		907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorLibrary.swift; path = Serabutan/Components/Styling/ColorLibrary.swift; sourceTree = SOURCE_ROOT; };
+		907F9DCC26B65C8200EF9F51 /* CustomBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomBorder.swift; path = Serabutan/Components/Styling/CustomBorder.swift; sourceTree = SOURCE_ROOT; };
 		907F9DCE26B6625A00EF9F51 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Review.swift; path = Serabutan/Features/Model/Review.swift; sourceTree = SOURCE_ROOT; };
 		907F9DD026B6A92E00EF9F51 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DummyData.swift; path = Serabutan/Features/Model/DummyData.swift; sourceTree = SOURCE_ROOT; };
 		907F9DD226B6C5ED00EF9F51 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileVC.swift; path = Serabutan/Features/View/Profile/EditProfileVC.swift; sourceTree = SOURCE_ROOT; };
@@ -57,9 +58,10 @@
 		9083DB1726B7913B00D1E75F /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = Serabutan/Helper/ImageHelper.swift; sourceTree = SOURCE_ROOT; };
 		9083DB1926B7B27300D1E75F /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserProfile.swift; path = Serabutan/Features/Model/UserProfile.swift; sourceTree = SOURCE_ROOT; };
 		9083DB1B26B7B4DF00D1E75F /* ProfileStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileStatistic.swift; path = Serabutan/Features/Model/ProfileStatistic.swift; sourceTree = SOURCE_ROOT; };
-		90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomStackView.swift; path = Serabutan/Features/ViewModel/CustomStackView.swift; sourceTree = SOURCE_ROOT; };
+		90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomStackView.swift; path = Serabutan/Components/Styling/CustomStackView.swift; sourceTree = SOURCE_ROOT; };
 		90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewTableViewCell.swift; path = Serabutan/Features/View/Profile/ReviewTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReviewTableViewCell.xib; path = Serabutan/Features/View/Profile/ReviewTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		90F3A4E026B8E404001946E1 /* FontLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FontLibrary.swift; path = Serabutan/Components/Styling/FontLibrary.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		1853413E26AC445D0027C0F3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				90F3A4E226B9109F001946E1 /* Styling */,
 				1853413F26AC44770027C0F3 /* MapKitAnnotation */,
 			);
 			path = Components;
@@ -157,9 +160,6 @@
 		185D12D326A7C13A00F6105C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */,
-				907F9DCC26B65C8200EF9F51 /* CustomBorder.swift */,
-				90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -190,6 +190,17 @@
 				185D12C826A7C09100F6105C /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		90F3A4E226B9109F001946E1 /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */,
+				907F9DCC26B65C8200EF9F51 /* CustomBorder.swift */,
+				90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */,
+				90F3A4E026B8E404001946E1 /* FontLibrary.swift */,
+			);
+			path = Styling;
 			sourceTree = "<group>";
 		};
 		C78982E626A7E44C00EB95B1 /* Home */ = {
@@ -325,6 +336,7 @@
 			files = (
 				90DCB12F26B6EAC4002145C1 /* CustomStackView.swift in Sources */,
 				907F9DD126B6A92E00EF9F51 /* DummyData.swift in Sources */,
+				90F3A4E126B8E404001946E1 /* FontLibrary.swift in Sources */,
 				9083DB1C26B7B4DF00D1E75F /* ProfileStatistic.swift in Sources */,
 				18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */,
 				90E9C98826B39DE500165319 /* ReviewTableViewCell.swift in Sources */,

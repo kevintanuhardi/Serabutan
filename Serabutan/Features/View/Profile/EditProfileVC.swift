@@ -17,6 +17,7 @@ class EditProfileVC: UIViewController, UITextViewDelegate, UIImagePickerControll
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var fullName: UITextField!
+    @IBOutlet weak var shortDesc: UILabel!
     
     @IBOutlet weak var buttonUbah: UIButton!
     @IBOutlet weak var charCount: UILabel!
@@ -50,6 +51,8 @@ class EditProfileVC: UIViewController, UITextViewDelegate, UIImagePickerControll
         avatarContainer.layer.cornerRadius = avatarContainer.frame.height / 2
         descriptionTextView.textContainerInset = .zero
         descriptionTextView.textContainer.lineFragmentPadding = 0
+        
+        shortDesc.font = UIFont.FontLibrary.largeTitle
         
         buttonUbah.backgroundColor = UIColor.ColorLibrary.darkGrey.withAlphaComponent(0.75)
         charCount.text = "\(descriptionTextView.text.count) / 300"
