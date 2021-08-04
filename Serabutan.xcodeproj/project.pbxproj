@@ -62,6 +62,7 @@
 		C7D7AE4426AC97F1000478AA /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D7AE4226AC97F1000478AA /* TagCollectionViewCell.xib */; };
 		C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4526AE4E83000478AA /* Enum.swift */; };
 		C7D7AE4826AE5040000478AA /* BantuanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4726AE5040000478AA /* BantuanModel.swift */; };
+		C7FE979A26BA65F900B27160 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FE979926BA65F900B27160 /* StringFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,7 @@
 		C7D7AE4226AC97F1000478AA /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TagCollectionViewCell.xib; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/TagCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		C7D7AE4526AE4E83000478AA /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/Enum.swift; sourceTree = SOURCE_ROOT; };
 		C7D7AE4726AE5040000478AA /* BantuanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BantuanModel.swift; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/BantuanModel.swift; sourceTree = SOURCE_ROOT; };
+		C7FE979926BA65F900B27160 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StringFormatter.swift; path = Serabutan/Helper/StringFormatter.swift; sourceTree = SOURCE_ROOT; };
 		DCCC8D7519FAA9E448178580 /* Pods-Serabutan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Serabutan.release.xcconfig"; path = "Target Support Files/Pods-Serabutan/Pods-Serabutan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,6 +256,7 @@
 				9083DB1726B7913B00D1E75F /* ImageHelper.swift */,
 				1854605226AD2AB000ABCF84 /* Utility.swift */,
 				189FC4AC26B69D5500662C88 /* Constant.swift */,
+				C7FE979926BA65F900B27160 /* StringFormatter.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 				1853414826AC68F90027C0F3 /* DummyCollectionViewCell.swift in Sources */,
 				189FC4AD26B69D5500662C88 /* Constant.swift in Sources */,
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
+				C7FE979A26BA65F900B27160 /* StringFormatter.swift in Sources */,
 				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,
 				C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */,
 				C744D7E826B2F127009E36B7 /* FilterPopUpConfig.swift in Sources */,

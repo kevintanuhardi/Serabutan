@@ -34,54 +34,36 @@ class HistoryActivityVC: UIViewController, UITableViewDelegate, UITableViewDataS
 }
 
 extension HistoryActivityVC {
-    
-
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dummyData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = historyActivityTable.dequeueReusableCell(withIdentifier: AssistanceTableViewCell.identifier, for: indexPath) as! AssistanceTableViewCell
-        
+        let data = dummyData[indexPath.row]
+        let poster = data.jobPosterId
+        let helper = dummyData[indexPath.row].helperId
         
         cell.tagView.isHidden = true
         cell.availableView.isHidden = true
         cell.helperView.isHidden = false
         cell.youHelperView.isHidden = true
+        cell.dotImage.tintColor = UIColor.clear
+        cell.timeElapsedLabel.textColor = UIColor.clear
         
-        cell.titleLabel.text = dummyData[indexPath.row].title
-        
-        var distance: String {
-            if dummyData[indexPath.row].distance < 1000 {
-                return "\(dummyData[indexPath.row].distance)" + " m"
-            } else {
-                return "\(dummyData[indexPath.row].distance)" + " km"
-            }
+        if data.status == .done || data.status == .cancelled {
+            
+            cell.setStatusView(urgency: data.urgency)
+            cell.titleLabel.text = data.title
+            cell.headerLabel.text = StringFormatter().dateFormatter(date: data.postingDate)
+            cell.compensationLabel.text = StringFormatter().priceFormatting(amount: data.price)
+            cell.posterImage.image = poster.avatar
+            cell.posterLabel.text = poster.name
+            cell.helperImage.image = helper?.avatar
+            cell.helperNameLabel.text = helper?.name
+        } else {
+            print("No Data")
         }
-        cell.headerLabel.text = distance
-        
-        var compensation: String {
-            priceFormatting(amount: dummyData[indexPath.row].price)
-        }
-        cell.compensationLabel.text = compensation
-        
-        cell.headerLabel.text = distance
-        let poster = dummyData[indexPath.row].jobPosterId
-        cell.posterImage.image = poster.avatar
-        cell.posterLabel.text = poster.name
-        //        var job = dummyData[indexPath.row].id
-        
-        let formatter = RelativeDateTimeFormatter()
-        formatter.unitsStyle = .full
-        formatter.locale = Locale(identifier: "id")
-        let relativeDate = formatter.localizedString(for: dummyData[indexPath.row].postingDate, relativeTo: Date())
-        
-        cell.timeElapsedLabel.text = "\(relativeDate)"
-        
-        let helper = dummyData[indexPath.row].helperId
-        cell.helperImage.image = helper?.avatar
-        cell.helperNameLabel.text = helper?.name
         
         return cell
     }
