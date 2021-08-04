@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 class DummyData {
     static let shared = DummyData()
@@ -20,15 +21,17 @@ class DummyData {
     }
     
     private func seedJobsList() {
+        // Active Jobs
         jobsList.append(Jobs(id: 0,
                            jobPosterId: userProfile[0],
                            postingDate: Date(timeInterval: -(60)*5, since: Date()),
-                           urgency: .medium,
+                           urgency: .low,
                            title: "Mencabut Rumput Liar dan Merapikan Taman di Depan Rumah",
                            desc: "Taman rumah saya terlihat jelek karena terlalu banyak rumput liar. Perlu dicabutin & dipotong rumputnya agar rapi.",
                            price: 150_000,
                            status: .active,
                            distance: 100.0,
+                           coordinate: CLLocationCoordinate2D(latitude: -6.2955619, longitude: 106.6423707),
                            tags: ["taman", "rumput", "rapiin", "potong"],
                            medias: [UIImage(named: "taman-0")!, UIImage(named: "taman-1")!, UIImage(named: "taman-2")!],
                            helperId: nil,
@@ -43,6 +46,7 @@ class DummyData {
                            price: 100_000,
                            status: .active,
                            distance: 125.0,
+                           coordinate: CLLocationCoordinate2D(latitude: -6.2941563, longitude: 106.6420227),
                            tags: ["keliling", "mobilitas", "motor", "tetangga", "syukuran"],
                            medias: [UIImage(named: "syukuran-0")!, UIImage(named: "syukuran-1")!, UIImage(named: "syukuran-2")!],
                            helperId: nil,
@@ -57,6 +61,7 @@ class DummyData {
                            price: 300_000,
                            status: .active,
                            distance: 150.0,
+                           coordinate: CLLocationCoordinate2D(latitude: -6.2898567, longitude: 106.6377652),
                            tags: ["masak", "opor", "rendang", "lebaran"],
                            medias: [UIImage(named: "opor-0")!, UIImage(named: "opor-1")!, UIImage(named: "opor-2")!],
                            helperId: nil,
@@ -71,6 +76,7 @@ class DummyData {
                            price: 100_000,
                            status: .active,
                            distance: 160.0,
+                           coordinate: CLLocationCoordinate2D(latitude: -6.2931612, longitude: 106.6376594),
                            tags: ["kucing", "terjebak", "hewan", "atap", "ketinggian", "catlovers" , "bantu", "pencintahewan"],
                            medias: [UIImage(named: "kucing-0")!, UIImage(named: "kucing-1")!, UIImage(named: "kucing-2")!, UIImage(named: "kucing-3")!],
                            helperId: nil,
@@ -85,9 +91,89 @@ class DummyData {
                            price: 300_000,
                            status: .active,
                            distance: 250.0,
+                           coordinate: CLLocationCoordinate2D(latitude: -6.2979747, longitude: 106.6371065),
                            tags: ["keliling", "mobilitas", "motor", "tetangga", "syukuran"],
                            medias: [UIImage(named: "ultah-0")!, UIImage(named: "ultah-1")!, UIImage(named: "ultah-2")!],
                            helperId: nil,
+                           genderPreference: nil,
+                           agePreference: nil))
+        
+        // Ongoing Jobs
+        jobsList.append(Jobs(id: 5,
+                           jobPosterId: userProfile[3],
+                           postingDate: Date(timeInterval: -(60)*5, since: Date()),
+                           urgency: .medium,
+                           title: "Mencabut Rumput Liar dan Merapikan Taman di Depan Rumah",
+                           desc: "Taman rumah saya terlihat jelek karena terlalu banyak rumput liar. Perlu dicabutin & dipotong rumputnya agar rapi.",
+                           price: 150_000,
+                           status: .taken,
+                           distance: 100.0,
+                           coordinate: CLLocationCoordinate2D(latitude: -6.2955619, longitude: 106.6423707),
+                           tags: ["taman", "rumput", "rapiin", "potong"],
+                           medias: [UIImage(named: "taman-0")!, UIImage(named: "taman-1")!, UIImage(named: "taman-2")!],
+                           helperId: userProfile[0],
+                           genderPreference: nil,
+                           agePreference: nil))
+        jobsList.append(Jobs(id: 6,
+                           jobPosterId: userProfile[0],
+                           postingDate: Date(timeInterval: -(60)*10, since: Date()),
+                           urgency: .medium,
+                           title: "Bantu Sebar Kotak Syukuran",
+                           desc: "Anak pertama kami baru saja lahir. Kami ingin membagi kebahagiaan kami dengan orang-orang sekitar. Kami butuh satu orang yang dapat membantu membagi-bagikan kotak makanan pada warga komplek. Diutamakan memiliki motor.",
+                           price: 100_000,
+                           status: .taken,
+                           distance: 125.0,
+                           coordinate: CLLocationCoordinate2D(latitude: -6.2941563, longitude: 106.6420227),
+                           tags: ["keliling", "mobilitas", "motor", "tetangga", "syukuran"],
+                           medias: [UIImage(named: "syukuran-0")!, UIImage(named: "syukuran-1")!, UIImage(named: "syukuran-2")!],
+                           helperId: userProfile[2],
+                           genderPreference: nil,
+                           agePreference: nil))
+        jobsList.append(Jobs(id: 7,
+                           jobPosterId: userProfile[0],
+                           postingDate: Date(timeInterval: -(60)*15, since: Date()),
+                           urgency: .high,
+                           title: "Bantuin Masak Opor Lebaran",
+                           desc: "Keluarga besar saya dadakan memutuskan untuk kumpul lebaran di rumah saya. Saya kurang bisa masak dan butuh orang buat bantu-bantu masak (semua bahan akan disediakan). Masakan yang kira-kira akan dimasak: opor, sambal ati, rendang. Rencana akan membuat 100 porsi masing-masing masakan, sehingga butuh tenaga yang kuat. Pekerjaan diharapkan jadi dalam sehari sehingga makanannya segar. Diharapkan terbiasa menggunakan bumbu sendiri tanpa MSG.",
+                           price: 300_000,
+                           status: .taken,
+                           distance: 150.0,
+                           coordinate: CLLocationCoordinate2D(latitude: -6.2898567, longitude: 106.6377652),
+                           tags: ["masak", "opor", "rendang", "lebaran"],
+                           medias: [UIImage(named: "opor-0")!, UIImage(named: "opor-1")!, UIImage(named: "opor-2")!],
+                           helperId: userProfile[1],
+                           genderPreference: nil,
+                           agePreference: nil))
+        
+        // Inactive Jobs
+        jobsList.append(Jobs(id: 8,
+                           jobPosterId: userProfile[3],
+                           postingDate: Date(timeInterval: -(60)*20, since: Date()),
+                           urgency: .high,
+                           title: "Nurunin Kucing dari Atap",
+                           desc: "Dibutuhkan orang yang berani memanjat atap tinggi sekitar 4 meter. Diutamakan yang memiliki tangga untuk memanjat (di rumah tidak ada tangga). Seceptanya mumpung kucing masih tiduran di tempat yang sama semenjak 20 menit lalu sepertinya takut untuk turun.",
+                           price: 100_000,
+                           status: .done,
+                           distance: 160.0,
+                           coordinate: CLLocationCoordinate2D(latitude: -6.2931612, longitude: 106.6376594),
+                           tags: ["kucing", "terjebak", "hewan", "atap", "ketinggian", "catlovers" , "bantu", "pencintahewan"],
+                           medias: [UIImage(named: "kucing-0")!, UIImage(named: "kucing-1")!, UIImage(named: "kucing-2")!, UIImage(named: "kucing-3")!],
+                           helperId: userProfile[0],
+                           genderPreference: nil,
+                           agePreference: nil))
+        jobsList.append(Jobs(id: 9,
+                           jobPosterId: userProfile[0],
+                           postingDate: Date(timeInterval: -(60)*25, since: Date()),
+                           urgency: .medium,
+                           title: "Bantuin Dekorasi Ulang Tahun Anak Tema Spongebob Squarepants",
+                           desc: "Anak saya ulang tahun yang ke empat 3 hari lagi. Dekornya cukup banyak karena saya dan suami ke kantor tiap hari. Butuh bantuan orang yang pernah ngedekor acara-acara, semua peralatan akan disediakan.",
+                           price: 300_000,
+                           status: .done,
+                           distance: 250.0,
+                           coordinate: CLLocationCoordinate2D(latitude: -6.2979747, longitude: 106.6371065),
+                           tags: ["keliling", "mobilitas", "motor", "tetangga", "syukuran"],
+                           medias: [UIImage(named: "ultah-0")!, UIImage(named: "ultah-1")!, UIImage(named: "ultah-2")!],
+                           helperId: userProfile[4],
                            genderPreference: nil,
                            agePreference: nil))
     }

@@ -45,6 +45,7 @@ struct Jobs {
     let price : Int
     let status : JobStatus
     let distance : Double
+    let coordinate: CLLocationCoordinate2D
     
     let tags : [String]?
     let medias : [UIImage]?

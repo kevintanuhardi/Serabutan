@@ -33,9 +33,6 @@ extension AssistanceListVC{
         //SET ASSISTANCE COLLECTION VIEW DATA
         var result: Jobs { return searchBar.isActive ? filteredResult : sortedResult }
         var distance: String { return result.distance < 1000 ? ("\(Int(result.distance))" + " m") : ("\(Int(result.distance))" + " km") }
-        var compensation: String {
-            priceFormatting(amount: result.price)
-        }
         
         cell.setStatusView(urgency: result.urgency)
         cell.headerLabel.text = distance
@@ -43,7 +40,7 @@ extension AssistanceListVC{
         cell.posterImage.image = result.jobPosterId.avatar
         cell.verifiedLogo.isHidden = !(result.jobPosterId.isVerified)
         cell.posterLabel.text = result.jobPosterId.name
-        cell.compensationLabel.text = compensation
+        cell.compensationLabel.text = priceFormatting(amount: result.price)
         
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .full
