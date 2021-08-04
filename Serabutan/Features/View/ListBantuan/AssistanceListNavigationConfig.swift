@@ -12,13 +12,8 @@ extension AssistanceListVC{
     
     func setupView(){
         title = "Bantuan Dibutuhkan"
-        view.backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1.00)
-        
-        let attrs = [
-            NSAttributedString.Key.foregroundColor: UIColor.red,
-            NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 24)!
-        ]
-        UINavigationBar.appearance().titleTextAttributes = attrs
+        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.ColorLibrary.customBlack, .font: UIFont.FontLibrary.largeTitle]
+        view.backgroundColor = .ColorLibrary.lightGrey
         
         initSearchController()
         navigationBackButton()
@@ -44,8 +39,9 @@ extension AssistanceListVC{
         navigationItem.searchController = searchBar
         navigationItem.hidesSearchBarWhenScrolling = false
         searchBar.searchBar.delegate = self
-        
         assistanceTable.keyboardDismissMode = .onDrag
+        
+        searchBar.searchBar.placeholder = "Cari Bantuan"
     }
     
     func navigationBackButton(){
