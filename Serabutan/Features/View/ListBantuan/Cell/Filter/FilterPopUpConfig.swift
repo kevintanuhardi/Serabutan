@@ -18,6 +18,15 @@ extension FilterPopUpVC{
 
         minValueTFToolbar()
         maxValueTFToolbar()
+    
+        containerView.clipsToBounds = true
+        containerView.layer.cornerRadius = 5
+        containerView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        containerView.layer.masksToBounds = true
+        
+        topBarView.layer.masksToBounds = true
+        topBarView.layer.cornerRadius = 3
+        topBarView.layer.backgroundColor = UIColor(red: 0.81, green: 0.81, blue: 0.81, alpha: 1.00).cgColor
     }
     
     func initCloseButton(){
@@ -75,6 +84,34 @@ extension FilterPopUpVC{
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(maxValueDoneButtonTapped))
         toolbar.setItems([spaceButton, doneButton], animated: true)
         maxValTF.inputAccessoryView = toolbar
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let currMinValue1 = minValTF.text?.replacingOccurrences(of: "Rp ", with: "")
+        let currMinValue = currMinValue1!.replacingOccurrences(of: ".", with: "")
+        let currMaxValue1 = maxValTF.text?.replacingOccurrences(of: "Rp ", with: "")
+        let currMaxValue = currMaxValue1!.replacingOccurrences(of: ".", with: "")
+        print("Curr MIN is:" + currMinValue)
+        print("Curr MAX is:" + currMaxValue)
+        
+        if (minValTF .isEditing) {
+            let viewMinVal = Int(currMinValue)
+            minValTF.text = "Rp " + priceFormatting(amount: viewMinVal!)
+        } else if maxValTF .isEditing{
+            let viewMaxVal = Int(currMaxValue)
+            maxValTF.text = "Rp " + priceFormatting(amount: viewMaxVal!)
+        }
+        
+        if (minValTF .endEditing(true)) {
+            let viewMinVal = Int(currMinValue) ?? minValue
+            minValTF.text = "Rp " + priceFormatting(amount: viewMinVal!)
+        } else if maxValTF .endEditing(true){
+            let viewMaxVal = Int(currMaxValue) ?? maxValue
+            maxValTF.text = "Rp " + priceFormatting(amount: viewMaxVal!)
+        }
+        
+        minValue = Int(currMinValue) ?? 50000
+        maxValue = Int(currMaxValue) ?? 500000
     }
     
 }

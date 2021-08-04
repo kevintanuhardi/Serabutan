@@ -6,7 +6,22 @@
 //
 
 import MapKit
+import UIKit
 import SwiftyJSON
+
+enum JobStatus {
+    case active, taken, cancelled, done
+}
+
+enum Gender {
+    case male, female, other
+}
+
+enum AgePreference: String {
+    case youngAdult = "18-25"
+    case middleAdult = "26-40"
+    case lateAdult = "40"
+}
 
 enum Urgency: String {
     case high = "HIGH"
@@ -14,6 +29,32 @@ enum Urgency: String {
     case low = "LOW"
 }
 
+//MARK: - Dummy Data
+// This struct is used for dummy data
+struct Jobs {
+    let id : Int
+    let jobPosterId : UserProfile
+    
+    // Job Details
+    let postingDate : Date
+    let urgency : Urgency
+    let title : String
+    let desc : String?
+    let price : Int
+    let status : JobStatus
+    let distance : Double
+    
+    let tags : [String]?
+    let medias : [UIImage]?
+    var helperId : UserProfile?
+    
+    // Job Preference
+    let genderPreference : Gender?
+    let agePreference : AgePreference?
+}
+
+//MARK: - Real Data
+//This struct is used for current homepage
 class Job: NSObject, MKAnnotation {
 //class Job: NSObject {
 	var id: Int?

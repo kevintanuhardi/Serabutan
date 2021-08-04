@@ -8,10 +8,11 @@
 import Foundation
 import UIKit
 
-extension AssistanceListVC: UITextFieldDelegate {
+extension AssistanceListVC{
     
     func setupView(){
         title = "Bantuan Dibutuhkan"
+        view.backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1.00)
         
         let attrs = [
             NSAttributedString.Key.foregroundColor: UIColor.red,
@@ -19,8 +20,7 @@ extension AssistanceListVC: UITextFieldDelegate {
         ]
         UINavigationBar.appearance().titleTextAttributes = attrs
         
-        //navigationTextField()
-        initSearchBar()
+        initSearchController()
         navigationBackButton()
         navigationFilterButton()
         setGradientBottom()
@@ -33,34 +33,19 @@ extension AssistanceListVC: UITextFieldDelegate {
         self.tabBarController?.tabBar.isHidden = true
     }
     
-    func navigationTextField(){
-        let searchTextField = UITextField(frame: CGRect(x: 0, y: 0, width: navigationController!.navigationBar.frame.width - 80, height: 34))
-        searchTextField.contentMode = .scaleAspectFit
-        searchTextField.layer.masksToBounds = true
-        searchTextField.layer.borderWidth = 0.5
-        searchTextField.layer.borderColor = UIColor(red: 0.81, green: 0.81, blue: 0.81, alpha: 1.00).cgColor
-        searchTextField.layer.cornerRadius = 17
-        searchTextField.layer.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor
-        searchTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: searchTextField.frame.height))
-        searchTextField.leftViewMode = .always
-        searchTextField.delegate = self
-        navigationItem.titleView = searchTextField
+    func initSearchController(){
+        searchBar.loadViewIfNeeded()
+        searchBar.searchResultsUpdater = self
+        searchBar.obscuresBackgroundDuringPresentation = false
+        searchBar.searchBar.enablesReturnKeyAutomatically = false
+        searchBar.searchBar.returnKeyType = UIReturnKeyType.done
+        definesPresentationContext = true
         
-        assistanceTable.keyboardDismissMode = .onDrag // or .interactive
-    }
-    
-    func initSearchBar(){
-        searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: navigationController!.navigationBar.frame.width - 80, height: 34))
-        if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
-            textfield.backgroundColor = UIColor.white
-            textfield.layer.masksToBounds = true
-            textfield.layer.cornerRadius = 17
-        }
-        searchBar.placeholder = "Cari bantuan"
-        searchBar.contentMode = .scaleAspectFit
-        searchBar.searchTextField.clearButtonMode = .whileEditing
-        navigationItem.titleView = searchBar
-        assistanceTable.keyboardDismissMode = .onDrag // or .interactive
+        navigationItem.searchController = searchBar
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchBar.searchBar.delegate = self
+        
+        assistanceTable.keyboardDismissMode = .onDrag
     }
     
     func navigationBackButton(){

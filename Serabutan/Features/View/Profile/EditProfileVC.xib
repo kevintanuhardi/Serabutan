@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditProfileVC" customModule="Serabutan" customModuleProvider="target">
+            <connections>
+                <outlet property="avatarContainer" destination="Sec-9l-aao" id="BwB-kU-arI"/>
+                <outlet property="buttonUbah" destination="och-wH-JR8" id="Q8r-Bi-nT4"/>
+                <outlet property="charCount" destination="4OX-6C-6Sk" id="33z-fi-oKQ"/>
+                <outlet property="descriptionTextView" destination="dwL-jj-sTl" id="Bde-sY-T2o"/>
+                <outlet property="fullName" destination="tL3-s1-FN0" id="hmR-6n-5j9"/>
+                <outlet property="nameField" destination="K7P-fO-DZ1" id="nqG-Wn-mAQ"/>
+                <outlet property="profileImage" destination="M4X-Ol-0sQ" id="pYK-RK-RYr"/>
+                <outlet property="shortDesc" destination="jy2-UE-Etk" id="Hsq-Ez-hGm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berikan foto terbaik anda." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jy2-UE-Etk">
+                    <rect key="frame" x="145" y="144" width="124.5" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" name="DarkGrey"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="K7P-fO-DZ1" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
+                    <rect key="frame" x="20" y="166" width="374" height="33"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama Lengkap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTa-Fo-pc6">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" name="DarkGrey"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Nama Lengkap" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tL3-s1-FN0">
+                            <rect key="frame" x="0.0" y="17" width="374" height="16"/>
+                            <attributedString key="attributedText">
+                                <fragment content="John Doe">
+                                    <attributes>
+                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <font key="NSFont" metaFont="cellTitle"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rSq-8G-8ai" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
+                    <rect key="frame" x="20" y="209" width="374" height="112"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deskripsi Singkat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7I-p1-ilj">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" name="DarkGrey"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dwL-jj-sTl">
+                            <rect key="frame" x="0.0" y="12" width="374" height="100"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="4sY-ml-d48"/>
+                            </constraints>
+                            <attributedString key="attributedText">
+                                <fragment>
+                                    <string key="content">Anak pertama kami baru saja lahir. Kami ingin membagi kebahagiaan kami dengan orang-orang sekitar. Kami butuh satu orang yang dapat membantu membagi-bagikan kotak makanan pada warga komplek. Diutamakan memiliki motor.</string>
+                                    <attributes>
+                                        <color key="NSColor" name="CustomBlack"/>
+                                        <font key="NSFont" size="12" name="SFProText-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sec-9l-aao">
+                    <rect key="frame" x="177" y="74" width="60" height="60"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="M4X-Ol-0sQ">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="och-wH-JR8">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                            <state key="normal" title="Ubah"/>
+                            <connections>
+                                <action selector="changeProfilePicture:" destination="-1" eventType="touchUpInside" id="LKE-Ek-7UG"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="och-wH-JR8" secondAttribute="trailing" id="58G-lw-pYO"/>
+                        <constraint firstAttribute="bottom" secondItem="M4X-Ol-0sQ" secondAttribute="bottom" id="Bt2-5a-55i"/>
+                        <constraint firstItem="och-wH-JR8" firstAttribute="top" secondItem="Sec-9l-aao" secondAttribute="top" id="FZ2-lb-qhE"/>
+                        <constraint firstAttribute="bottom" secondItem="och-wH-JR8" secondAttribute="bottom" id="Uqt-WY-QrZ"/>
+                        <constraint firstAttribute="width" constant="60" id="ZFK-El-seL"/>
+                        <constraint firstItem="M4X-Ol-0sQ" firstAttribute="leading" secondItem="Sec-9l-aao" secondAttribute="leading" id="b6P-gb-Zaj"/>
+                        <constraint firstAttribute="trailing" secondItem="M4X-Ol-0sQ" secondAttribute="trailing" id="dAk-cr-dZ9"/>
+                        <constraint firstAttribute="height" constant="60" id="xTe-Gj-zFH"/>
+                        <constraint firstItem="och-wH-JR8" firstAttribute="leading" secondItem="Sec-9l-aao" secondAttribute="leading" id="xpi-eQ-5tt"/>
+                        <constraint firstItem="M4X-Ol-0sQ" firstAttribute="top" secondItem="Sec-9l-aao" secondAttribute="top" id="zwd-p8-f0t"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 / 5000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OX-6C-6Sk">
+                    <rect key="frame" x="335" y="326" width="59" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" name="DarkGrey"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="LightGrey"/>
+            <constraints>
+                <constraint firstItem="jy2-UE-Etk" firstAttribute="top" secondItem="Sec-9l-aao" secondAttribute="bottom" constant="10" id="LEM-0a-oPe"/>
+                <constraint firstItem="rSq-8G-8ai" firstAttribute="top" secondItem="K7P-fO-DZ1" secondAttribute="bottom" constant="10" id="QQ8-BU-JaZ"/>
+                <constraint firstItem="K7P-fO-DZ1" firstAttribute="top" secondItem="jy2-UE-Etk" secondAttribute="bottom" constant="10" id="Qtt-6g-4Uc"/>
+                <constraint firstItem="Sec-9l-aao" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="adM-0B-MTG"/>
+                <constraint firstItem="Sec-9l-aao" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="cL1-UI-D8j"/>
+                <constraint firstItem="4OX-6C-6Sk" firstAttribute="top" secondItem="rSq-8G-8ai" secondAttribute="bottom" constant="5" id="cvl-yu-PBj"/>
+                <constraint firstItem="4OX-6C-6Sk" firstAttribute="trailing" secondItem="K7P-fO-DZ1" secondAttribute="trailing" id="jvF-LY-d1i"/>
+                <constraint firstItem="K7P-fO-DZ1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="mmS-Oi-i94"/>
+                <constraint firstItem="rSq-8G-8ai" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="oT7-KW-6K9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rSq-8G-8ai" secondAttribute="trailing" constant="20" id="rn8-7o-fmk"/>
+                <constraint firstItem="jy2-UE-Etk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xS7-Zr-pTc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="K7P-fO-DZ1" secondAttribute="trailing" constant="20" id="zc6-Nw-iqv"/>
+            </constraints>
+            <point key="canvasLocation" x="-23" y="114"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="profileIcon" width="15" height="18"/>
+        <namedColor name="CustomBlack">
+            <color red="0.18823529411764706" green="0.16078431372549021" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkGrey">
+            <color red="0.49411764705882355" green="0.49411764705882355" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightGrey">
+            <color red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
