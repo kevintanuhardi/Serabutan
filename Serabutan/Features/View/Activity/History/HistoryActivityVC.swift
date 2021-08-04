@@ -83,9 +83,18 @@ extension HistoryActivityVC {
         cell.helperImage.image = helper?.avatar
         cell.helperNameLabel.text = helper?.name
         
-        
-        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           //        performSegue(withIdentifier: "DetailAssistance", sender: self)
+       }
+       
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           //        if let destination = segue.destination as? detailAssitanceVC{
+           //            //PASSING DATA
+           //            assistanceTable.deselectRow(at: assistanceTable.indexPathForSelectedRow!, animated: true)
+           //        }
+       }
     
 }
