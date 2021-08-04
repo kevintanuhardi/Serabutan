@@ -8,7 +8,7 @@
 import UIKit
 
 
-class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate{
+class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var myScrollView: UIScrollView!
@@ -62,7 +62,7 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     var newAssistanceGenderPref: String? = ""
     var newAssistanceAgePref: String? = ""
     var newAssistanceInfo: [TagModel] = []
-    var newAssistanceMediaImage: [String] = []
+    var newAssistanceMediaImage: [UIImage] = []
     
     var tags: [TagModel] = [
         TagModel(name: "Test12345"),
@@ -79,7 +79,8 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     var activeTextField: UITextField? = nil
     
     var currTags: String?
-    var currMediaImage: [String] = []
+    var currImage: UIImage?
+    var currMediaImages: [UIImage] = []
     let urgencyPreferenceData = ["Tinggi", "Sedang", "Rendah"]
     let genderPreferenceData = ["Tidak ada preferensi", "Pria", "Perempuan"]
     let agePreferenceData = ["Tidak ada preferensi", "18-25", "25-40", "> 40"]
@@ -141,10 +142,6 @@ extension NewAssistanceVC {
     
     @IBAction func shareButtonAction(_sender: Any){
         //        let activityVC = activityVC()
-        //        listBantuanVC.sortBy = filterBy
-        //        listBantuanVC.minValue = minValue
-        //        listBantuanVC.maxValue = maxValue
-        //        listBantuanVC.applySortData()
         //        self.navigationController?.pushViewController(listBantuanVC, animated: true)
         
         print("NEW:", newAssistanceUrgency!)
@@ -154,6 +151,7 @@ extension NewAssistanceVC {
         print("NEW:", newAssistanceGenderPref!)
         print("NEW:", newAssistanceAgePref!)
         print("NEW:", tags[0].name as Any)
+        print("IMAGES count:", newAssistanceMediaImage)
     }
     
     func getTagInput(){
@@ -239,12 +237,23 @@ extension NewAssistanceVC {
     func createAlert(){
         let alert = UIAlertController(title: "Lorem", message: "Lorem Ipsum", preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Photos", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Camera",
+                                      style: .default,
+                                      handler: { action in
+                                        ImageHelper.startMediaBrowser(delegate: self, sourceType: .camera)
+                                      }))
+        
+        alert.addAction(UIAlertAction(title: "Photos",
+                                      style: .default,
+                                      handler: { action in
+                                        ImageHelper.startMediaBrowser(delegate: self, sourceType: .savedPhotosAlbum)
+                                      }))
+            
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(alert, animated: true)
     }
+    
 }
 
 //MARK: - Custom CollectionView FlowLayout

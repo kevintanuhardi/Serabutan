@@ -459,8 +459,8 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjt-OW-0fu">
                                                             <rect key="frame" x="0.0" y="0.0" width="350" height="140"/>
                                                             <subviews>
-                                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ced-zU-dNI">
-                                                                    <rect key="frame" x="0.0" y="10" width="350" height="121"/>
+                                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ced-zU-dNI">
+                                                                    <rect key="frame" x="0.0" y="10" width="350" height="120"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="120" id="zq2-kN-avD"/>
@@ -575,8 +575,8 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="7SX-S1-GQs" firstAttribute="top" secondItem="bnF-Vs-7RQ" secondAttribute="top" id="Cyc-j8-9Kp"/>
                                 <constraint firstAttribute="trailing" secondItem="7SX-S1-GQs" secondAttribute="trailing" constant="20" id="aVA-F3-7dE"/>
+                                <constraint firstItem="7SX-S1-GQs" firstAttribute="top" secondItem="bnF-Vs-7RQ" secondAttribute="top" id="gNJ-C6-CgS"/>
                                 <constraint firstItem="7SX-S1-GQs" firstAttribute="leading" secondItem="bnF-Vs-7RQ" secondAttribute="leading" constant="20" id="oD7-8Q-eVN"/>
                                 <constraint firstAttribute="height" constant="1150" id="op9-oh-8gF"/>
                             </constraints>
