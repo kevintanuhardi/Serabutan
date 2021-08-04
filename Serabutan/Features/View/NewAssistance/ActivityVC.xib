@@ -40,26 +40,36 @@
                                 <action selector="didChangeSegment:" destination="-1" eventType="valueChanged" id="Mu5-rN-UB1"/>
                             </connections>
                         </segmentedControl>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4o-Vq-IuD">
+                            <rect key="frame" x="0.0" y="159" width="414" height="0.0"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.25" id="YBp-fL-vHh"/>
+                            </constraints>
+                        </view>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="160" id="9f0-9Q-8CA"/>
+                        <constraint firstItem="g4o-Vq-IuD" firstAttribute="leading" secondItem="oUC-KZ-t9a" secondAttribute="leading" id="CzY-al-rsc"/>
                         <constraint firstItem="7vb-qD-xMy" firstAttribute="leading" secondItem="oUC-KZ-t9a" secondAttribute="leading" constant="20" id="FCd-9E-gab"/>
+                        <constraint firstAttribute="trailing" secondItem="g4o-Vq-IuD" secondAttribute="trailing" id="Ki1-WJ-cSN"/>
                         <constraint firstItem="7vb-qD-xMy" firstAttribute="top" secondItem="AZj-hh-ZOW" secondAttribute="bottom" constant="20" id="k6d-Wj-pcw"/>
                         <constraint firstAttribute="trailing" secondItem="7vb-qD-xMy" secondAttribute="trailing" constant="20" id="qfy-pX-UWq"/>
+                        <constraint firstAttribute="bottom" secondItem="g4o-Vq-IuD" secondAttribute="bottom" constant="1" id="ua8-Ug-BWJ"/>
                         <constraint firstItem="AZj-hh-ZOW" firstAttribute="leading" secondItem="7vb-qD-xMy" secondAttribute="leading" id="vRm-km-V2X"/>
                         <constraint firstAttribute="bottom" secondItem="7vb-qD-xMy" secondAttribute="bottom" constant="20" id="yit-dH-L8F"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p62-D4-Qbg" userLabel="ActivityBody View">
-                    <rect key="frame" x="0.0" y="160" width="414" height="736"/>
+                    <rect key="frame" x="0.0" y="162" width="414" height="734"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="p62-D4-Qbg" firstAttribute="top" secondItem="oUC-KZ-t9a" secondAttribute="bottom" id="0ai-iZ-58l"/>
+                <constraint firstItem="p62-D4-Qbg" firstAttribute="top" secondItem="oUC-KZ-t9a" secondAttribute="bottom" constant="2" id="0ai-iZ-58l"/>
                 <constraint firstItem="p62-D4-Qbg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QwY-em-Vb8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oUC-KZ-t9a" secondAttribute="trailing" id="Umj-Pf-KN0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="p62-D4-Qbg" secondAttribute="trailing" id="h24-hj-8yf"/>
