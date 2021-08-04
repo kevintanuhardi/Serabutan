@@ -459,13 +459,13 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjt-OW-0fu">
                                                             <rect key="frame" x="0.0" y="0.0" width="350" height="140"/>
                                                             <subviews>
-                                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ced-zU-dNI">
+                                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ced-zU-dNI">
                                                                     <rect key="frame" x="0.0" y="10" width="350" height="120"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="120" id="zq2-kN-avD"/>
+                                                                        <constraint firstAttribute="height" constant="120" id="Hgi-LS-8WG"/>
                                                                     </constraints>
-                                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GjN-Zk-Z0d">
+                                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GjN-Zk-Z0d">
                                                                         <size key="itemSize" width="200" height="30"/>
                                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -475,10 +475,10 @@
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemRedColor"/>
                                                             <constraints>
+                                                                <constraint firstItem="Ced-zU-dNI" firstAttribute="top" secondItem="Fjt-OW-0fu" secondAttribute="top" constant="10" id="4oN-CH-ysz"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Ced-zU-dNI" secondAttribute="trailing" id="5Ob-8C-dln"/>
-                                                                <constraint firstAttribute="bottom" secondItem="Ced-zU-dNI" secondAttribute="bottom" constant="10" id="62a-FV-qEZ"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Ced-zU-dNI" secondAttribute="bottom" constant="10" id="ifb-hO-1UJ"/>
                                                                 <constraint firstItem="Ced-zU-dNI" firstAttribute="leading" secondItem="Fjt-OW-0fu" secondAttribute="leading" id="jky-ac-Apz"/>
-                                                                <constraint firstItem="Ced-zU-dNI" firstAttribute="top" secondItem="Fjt-OW-0fu" secondAttribute="top" constant="10" id="mRr-fx-sVc"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anda dapat menggunakan kata kunci untuk memudahkan orang menemukan bantuan yang Anda butuhkan." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVp-OM-8Kd">

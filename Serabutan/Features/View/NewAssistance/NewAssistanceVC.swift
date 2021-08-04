@@ -64,18 +64,6 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     var newAssistanceInfo: [TagModel] = []
     var newAssistanceMediaImage: [UIImage] = []
     
-    var tags: [TagModel] = [
-        TagModel(name: "Test12345"),
-        TagModel(name: "Sakit"),
-        TagModel(name: "Bantuan"),
-        TagModel(name: "Bukan"),
-        TagModel(name: "Main"),
-        TagModel(name: "Minta"),
-        TagModel(name: "Bantuan"),
-        TagModel(name: "Nyangkut"),
-        TagModel(name: "Sakit")
-    ]
-    
     var activeTextField: UITextField? = nil
     
     var currTags: String?
@@ -150,7 +138,7 @@ extension NewAssistanceVC {
         print("NEW:", newAssistanceCompensation!)
         print("NEW:", newAssistanceGenderPref!)
         print("NEW:", newAssistanceAgePref!)
-        print("NEW:", tags[0].name as Any)
+        print("NEW:", newAssistanceInfo[0].name)
         print("IMAGES count:", newAssistanceMediaImage)
     }
     
@@ -159,7 +147,7 @@ extension NewAssistanceVC {
     }
     
     @IBAction func addMediaImageAction(_ sender: Any) {
-        createAlert()
+            createAlert()
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -223,7 +211,7 @@ extension NewAssistanceVC {
         if textField == infoTF{
             let newTag = infoTF.text!
             currTags = newTag
-            tags.append(TagModel(name: currTags!))
+            newAssistanceInfo.append(TagModel(name: currTags!))
             infoCollectionView.reloadData()
             infoTF.resignFirstResponder()
             infoTF.text = ""
@@ -250,6 +238,14 @@ extension NewAssistanceVC {
                                       }))
             
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
+    func createWarningAlert(){
+        let alert = UIAlertController(title: "Image", message: "The maximum number image that can be uploaded is up to 3 images", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         
         self.present(alert, animated: true)
     }
