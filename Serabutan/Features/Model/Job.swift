@@ -13,8 +13,10 @@ enum JobStatus {
     case active, taken, cancelled, done
 }
 
-enum Gender {
-    case male, female, other
+enum Gender: String {
+    case male = "Laki-laki"
+    case female = "Perempuan"
+    case other = "Tidak ada preferensi"
 }
 
 enum AgePreference: String {
@@ -24,9 +26,9 @@ enum AgePreference: String {
 }
 
 enum Urgency: String {
-    case high = "HIGH"
-    case medium = "MEDIUM"
-    case low = "LOW"
+    case high = "Urgensi tinggi"
+    case medium = "Urgensi sedang"
+    case low = "Urgensi rendah"
 }
 
 //MARK: - Dummy Data

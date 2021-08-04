@@ -24,10 +24,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         let tabBarController = UITabBarController()
-        let homeVC = HomeVC()
+        let homeVC = AssistanceListVC()
         let activityVC = UIViewController()
         let notificationVC = UIViewController()
-        let profileVC = UIViewController()
+        let profileVC = ProfileVC()
         let addJobVC = UIViewController()
         
         homeNavigationController = UINavigationController.init(rootViewController: homeVC)
