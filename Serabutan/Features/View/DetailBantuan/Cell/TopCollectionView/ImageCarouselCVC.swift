@@ -20,7 +20,6 @@ class ImageCarouselCVC: UICollectionViewCell {
     
     public func configure(with image: UIImage){
         imageView.image = image
-        print("muncul dong")
     }
     
     static func nib() -> UINib {

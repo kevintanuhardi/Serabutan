@@ -8,37 +8,29 @@
 import Foundation
 import UIKit
 
-extension DetailBantuanVC: UITextViewDelegate{
+extension DetailBantuanVC {
     
-    func setupNavigationBarItems(){
-        setupLeftNavItem()
-        setupRightNavItems()
-        
-        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+    func setupUI(){
+        setNavigation()
+        setNavigationItems()
+        setFont()
+        setColor()
+    }
+    
+    func setNavigation() {
+        navigationController?.navigationBar.backgroundColor = .white
+        navigationController?.navigationBar.barTintColor = .white
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.shadowImage = UIImage()
     }
     
-    func setupLeftNavItem(){
-        
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(backButtonAction(_:)))
-        backButton.tintColor = UIColor.ColorLibrary.customBlack
-        
-        navigationItem.leftBarButtonItem = backButton
-        
-    }
-    
-    func setupRightNavItems(){
-     
+    func setNavigationItems() {
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(backButtonAction))
         let moreButton = UIBarButtonItem(title: nil, image: UIImage(systemName: "ellipsis"), primaryAction: nil, menu: popUpMenu())
-        moreButton.tintColor = UIColor.black
-
         let shareButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(shareButtonAction))
-        shareButton.tintColor = UIColor.black
         
         navigationItem.rightBarButtonItems = [moreButton, shareButton]
-        
+        navigationItem.leftBarButtonItem = backButton
     }
     
     func popUpMenu() -> UIMenu{
@@ -59,17 +51,9 @@ extension DetailBantuanVC: UITextViewDelegate{
             print("Ganti Helper")
         })
         
-        let addMenuItemsHelper = UIMenu(options: .displayInline, children: [laporkan])
-        let addMenuItemsHelper2 = UIMenu(options: .displayInline, children: [batalkan])
-        
-        let addMenuItemsPoster = UIMenu(options: .displayInline, children: [hapusPermintaan])
-        let addMenuItemsPoster2 = UIMenu(options: .displayInline, children: [hapusPermintaan, gantiHelper])
+        let addMenuItemsHelper = UIMenu(options: .displayInline, children: [laporkan, batalkan, hapusPermintaan, gantiHelper])
         
         return addMenuItemsHelper
-        
-    }
-    
-    func popUpMenuOptions(){
         
     }
 }

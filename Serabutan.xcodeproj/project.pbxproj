@@ -32,6 +32,7 @@
 		79FAF9CF26B87682009BF31F /* DetailBantuanNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FAF9CE26B87682009BF31F /* DetailBantuanNavigationConfig.swift */; };
 		79FAF9D626B8F3AA009BF31F /* TagsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FAF9D426B8F3AA009BF31F /* TagsCVC.swift */; };
 		79FAF9D726B8F3AA009BF31F /* TagsCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79FAF9D526B8F3AA009BF31F /* TagsCVC.xib */; };
+		9036228F26BAF73000577D43 /* DetailBantuanStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9036228E26BAF73000577D43 /* DetailBantuanStyling.swift */; };
 		90584E2026B274A7004C225B /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90584E1E26B274A7004C225B /* ProfileVC.swift */; };
 		90584E2126B274A7004C225B /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90584E1F26B274A7004C225B /* ProfileVC.xib */; };
 		907F9DCB26B6515B00EF9F51 /* ColorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */; };
@@ -95,6 +96,7 @@
 		79FAF9CE26B87682009BF31F /* DetailBantuanNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailBantuanNavigationConfig.swift; path = Serabutan/Features/View/DetailBantuan/DetailBantuanNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
 		79FAF9D426B8F3AA009BF31F /* TagsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagsCVC.swift; path = Serabutan/Features/View/DetailBantuan/Cell/BottomCollectionView/TagsCVC.swift; sourceTree = SOURCE_ROOT; };
 		79FAF9D526B8F3AA009BF31F /* TagsCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TagsCVC.xib; path = Serabutan/Features/View/DetailBantuan/Cell/BottomCollectionView/TagsCVC.xib; sourceTree = SOURCE_ROOT; };
+		9036228E26BAF73000577D43 /* DetailBantuanStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailBantuanStyling.swift; path = Serabutan/Features/View/DetailBantuan/DetailBantuanStyling.swift; sourceTree = SOURCE_ROOT; };
 		90584E1E26B274A7004C225B /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = Serabutan/Features/View/Profile/ProfileVC.swift; sourceTree = SOURCE_ROOT; };
 		90584E1F26B274A7004C225B /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileVC.xib; path = Serabutan/Features/View/Profile/ProfileVC.xib; sourceTree = SOURCE_ROOT; };
 		907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorLibrary.swift; path = Serabutan/Components/Styling/ColorLibrary.swift; sourceTree = SOURCE_ROOT; };
@@ -309,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				79089B1B26B300FA0053077D /* DetailBantuanVC.swift */,
+				9036228E26BAF73000577D43 /* DetailBantuanStyling.swift */,
 				796BC76226AF21A900999377 /* DetailBantuanVC.xib */,
 				79FAF9CE26B87682009BF31F /* DetailBantuanNavigationConfig.swift */,
 				79C085FA26B2587C00AE56CD /* Cell */,
@@ -629,6 +632,7 @@
 				9083DB1826B7913B00D1E75F /* ImageHelper.swift in Sources */,
 				9083DB1A26B7B27300D1E75F /* UserProfile.swift in Sources */,
 				1853414226AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift in Sources */,
+				9036228F26BAF73000577D43 /* DetailBantuanStyling.swift in Sources */,
 				1854605326AD2AB000ABCF84 /* Utility.swift in Sources */,
 				189FC4AB26B69B9000662C88 /* Network.swift in Sources */,
 				1853414826AC68F90027C0F3 /* DummyCollectionViewCell.swift in Sources */,
