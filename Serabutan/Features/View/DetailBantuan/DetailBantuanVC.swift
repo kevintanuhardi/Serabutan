@@ -8,12 +8,7 @@
 import UIKit
 
 class DetailBantuanVC: UIViewController{
-    
-    
-    @IBOutlet weak var topView: UIView!
-    
-    
-    
+
     @IBOutlet weak var helpFinishButton: UIButton!
     @IBOutlet weak var waButton: UIButton!
     
@@ -44,7 +39,7 @@ class DetailBantuanVC: UIViewController{
     }
     
     @objc func moreButtonAction(_ sender:UIButton!){
-        
+       
     }
     
     @objc func shareButtonAction(_ sender:UIButton!){
@@ -69,10 +64,6 @@ class DetailBantuanVC: UIViewController{
         //let homeVC = AssistanceListVC()
         tabBarController?.tabBar.isHidden = true
         //self.navigationController?.pushViewController(AssistanceListVC, animated: true)
-    }
-    
-    private func popUpMore(){
-        
     }
     
     private func shareButton(){
@@ -104,6 +95,7 @@ class DetailBantuanVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         waButton.isHidden = true
         
         helpFinishButton.frame.size = CGSize(width: 350, height: 50)
@@ -133,12 +125,12 @@ class DetailBantuanVC: UIViewController{
         
         configureText()
         
+        //profile image
 //        UIImage.layer.borderWidth = 1.0
 //        UIImage.layer.maskstoBounds = false
 //        UIImage.layer.borderColor = UIColor.white.cgColor
 //        UIImage.layer.cornerRadius = image.frame.size.height/2
 //        UIImage.clipsToBounds = true
-        
         //profileImage = UIImageView(frame: CGRect(0, 0, 100, 100))
         profileImage.image = UIImage(named: "kucing1")
         
@@ -215,7 +207,7 @@ extension DetailBantuanVC: UICollectionViewDelegateFlowLayout{
         if(collectionView == jobImgCarousel){
             return CGSize(width: 130, height: 120)
         }else if(collectionView == jobTagsCell){
-            return CGSize(width: 130, height: 120)
+            return CGSize(width: 58, height: 37)
         }
         return CGSize(width: 130, height: 120)
         

@@ -13,33 +13,63 @@ extension DetailBantuanVC: UITextViewDelegate{
     func setupNavigationBarItems(){
         setupLeftNavItem()
         setupRightNavItems()
+        
+        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     func setupLeftNavItem(){
-        let backButton = UIButton(type: .system)
-        backButton.setImage(UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        //backButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(backButtonAction(_:)))
         backButton.tintColor = UIColor.black
-        backButton.addTarget(self, action: #selector(backButtonAction(_:)), for: .touchUpInside)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        
+        navigationItem.leftBarButtonItem = backButton
+        
     }
     
     func setupRightNavItems(){
-        let moreButton = UIButton(type: .system)
-        moreButton.setImage(UIImage(named: "more")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        //moreButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+     
+        let moreButton = UIBarButtonItem(title: nil, image: UIImage(systemName: "ellipsis"), primaryAction: nil, menu: popUpMenu())
         moreButton.tintColor = UIColor.black
-        moreButton.addTarget(self, action: #selector(moreButtonAction(_:)), for: .touchUpInside)
-        
-        let shareButton = UIButton(type: .system)
-        shareButton.setImage(UIImage(named: "Share")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        //shareButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+
+        let shareButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(shareButtonAction))
         shareButton.tintColor = UIColor.black
-        shareButton.addTarget(self, action: #selector(shareButtonAction(_:)), for: .touchUpInside)
         
-        navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: moreButton), UIBarButtonItem(customView: shareButton)]
+        navigationItem.rightBarButtonItems = [moreButton, shareButton]
         
-        navigationController?.navigationBar.backgroundColor = .white
-        navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    func popUpMenu() -> UIMenu{
+        
+        let laporkan = UIAction(title: "Laporkan", image: UIImage(), attributes: .destructive, handler: { _ in
+            print("Laporkan")
+        })
+        
+        let batalkan = UIAction(title: "Batalkan", image: UIImage(), attributes: .destructive, handler: { _ in
+            print("Batalkan")
+        })
+        
+        let hapusPermintaan = UIAction(title: "Hapus Permintaan Bantuan", image: UIImage(), attributes: .destructive, handler: { _ in
+            print("Hapus Permintaan Bantuan")
+        })
+        
+        let gantiHelper = UIAction(title: "Ganti Helper", image: UIImage(), attributes: .destructive, handler: { _ in
+            print("Ganti Helper")
+        })
+        
+        let addMenuItemsHelper = UIMenu(options: .displayInline, children: [laporkan])
+        let addMenuItemsHelper2 = UIMenu(options: .displayInline, children: [batalkan])
+        
+        let addMenuItemsPoster = UIMenu(options: .displayInline, children: [hapusPermintaan])
+        let addMenuItemsPoster2 = UIMenu(options: .displayInline, children: [hapusPermintaan, gantiHelper])
+        
+        return addMenuItemsHelper
+        
+    }
+    
+    func popUpMenuOptions(){
+        
     }
 }
