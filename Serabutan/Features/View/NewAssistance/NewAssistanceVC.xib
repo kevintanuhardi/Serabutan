@@ -25,6 +25,7 @@
                 <outlet property="genderView" destination="Gwp-vp-AI6" id="2c4-Lo-wnb"/>
                 <outlet property="infoCollectionLayout" destination="GjN-Zk-Z0d" id="RBb-uf-Nke"/>
                 <outlet property="infoCollectionView" destination="Ced-zU-dNI" id="QSS-SV-VWZ"/>
+                <outlet property="infoStackView" destination="Fjt-OW-0fu" id="oAM-ER-dMz"/>
                 <outlet property="infoTF" destination="P5V-LU-y60" id="Hbv-tv-IqK"/>
                 <outlet property="infoTFView" destination="U8z-nH-4O8" id="cIa-JU-wvd"/>
                 <outlet property="infoView" destination="Ebd-Cy-Edq" id="hjI-pZ-G9i"/>
@@ -72,8 +73,8 @@
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hnL-lx-gY6">
-                                                            <rect key="frame" x="10" y="30.333333333333329" width="10" height="10"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hnL-lx-gY6">
+                                                            <rect key="frame" x="10" y="31.333333333333329" width="10" height="8.6666666666666714"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="10" id="OHf-so-Gl9"/>
                                                                 <constraint firstAttribute="height" constant="10" id="R3Z-g1-ZPi"/>
@@ -85,7 +86,7 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XPo-0C-IO1">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Down" translatesAutoresizingMaskIntoConstraints="NO" id="XPo-0C-IO1">
                                                             <rect key="frame" x="320" y="16" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="9kx-bQ-ZqL"/>
@@ -312,7 +313,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8EC-g0-7oq">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Down" translatesAutoresizingMaskIntoConstraints="NO" id="8EC-g0-7oq">
                                                                             <rect key="frame" x="140" y="20" width="20" height="20"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="20" id="dT7-8d-4dm"/>
@@ -351,7 +352,7 @@
                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WaE-ZW-5Hp">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Down" translatesAutoresizingMaskIntoConstraints="NO" id="WaE-ZW-5Hp">
                                                                             <rect key="frame" x="140" y="20" width="20" height="20"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="20" id="wID-hD-2uZ"/>
@@ -458,9 +459,9 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjt-OW-0fu">
                                                             <rect key="frame" x="0.0" y="0.0" width="350" height="140"/>
                                                             <subviews>
-                                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ced-zU-dNI">
-                                                                    <rect key="frame" x="0.0" y="10" width="350" height="120"/>
-                                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ced-zU-dNI">
+                                                                    <rect key="frame" x="0.0" y="10" width="350" height="121"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="120" id="zq2-kN-avD"/>
                                                                     </constraints>
@@ -605,6 +606,8 @@
         </view>
     </objects>
     <resources>
+        <image name="Down" width="16" height="16.333333969116211"/>
+        <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

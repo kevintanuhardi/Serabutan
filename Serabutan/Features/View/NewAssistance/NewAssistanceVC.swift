@@ -8,7 +8,6 @@
 import UIKit
 
 
-
 class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate{
     
     @IBOutlet weak var mainView: UIView!
@@ -42,6 +41,7 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var infoTFView: UIView!
+    @IBOutlet weak var infoStackView: UIView!
     @IBOutlet weak var infoTF: UITextField!
     @IBOutlet weak var infoCollectionView: UICollectionView!
     @IBOutlet weak var infoCollectionLayout: UICollectionViewFlowLayout! {
@@ -58,7 +58,7 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     var newAssistanceUrgency: String? = ""
     var newAssistanceTitle: String? = ""
     var newAssistanceDes: String? = ""
-    var newAssistanceCompensation: String? = ""
+    var newAssistanceCompensation: Int? = 0
     var newAssistanceGenderPref: String? = ""
     var newAssistanceAgePref: String? = ""
     var newAssistanceInfo: [TagModel] = []
@@ -81,24 +81,26 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     var currTags: String?
     var currMediaImage: [String] = []
     let urgencyPreferenceData = ["Tinggi", "Sedang", "Rendah"]
-    let agePreferenceData = ["Tidak ada preferensi", "Pria", "Perempuan"]
-    let genderPreferenceData = ["Tidak ada preferensi", "18-25", "25-40", "> 40"]
+    let genderPreferenceData = ["Tidak ada preferensi", "Pria", "Perempuan"]
+    let agePreferenceData = ["Tidak ada preferensi", "18-25", "25-40", "> 40"]
     
     var urgencyPickerView = UIPickerView()
     var genderPickerView = UIPickerView()
     var agePickerView = UIPickerView()
-    var selectedValueUrgency: String?
-    var selectedValueGender : String?
-    var selectedValueAge : String?
+    var selectedValueUrgency: String? = "Tinggi"
+    var selectedValueGender : String? = "Tidak ada Preferensi"
+    var selectedValueAge : String? = "Tidak ada Preferensi"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Buat Permintaan Bantuan"
-        //infoCollectionView.isHidden = true
         tabBarController?.tabBar.isHidden = true
         
-        setupView()
+        initCollectionView()
+    }
+    
+    func initCollectionView(){
         infoCollectionView.dataSource = self
         infoCollectionView.delegate = self
         infoCollectionView.register(TagCell.nib(), forCellWithReuseIdentifier: TagCell.identifier)
@@ -107,6 +109,9 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
         //        mediaImageCollectionView.dataSource = self
         //        mediaImageCollectionView.delegate = self
         //        mediaImageCollectionView.register(MediaCollectionViewCell.nib(), forCellWithReuseIdentifier: MediaCollectionViewCell.identifier)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         urgencyTF.delegate = self
         titleTF.delegate = self
         descTV.delegate = self
@@ -115,45 +120,19 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
         ageTF.delegate = self
         infoTF.delegate = self
         
-        if let flowLayout = infoCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        
-        
-//        let flowLayout = UICollectionViewFlowLayout()
-//        flowLayout.scrollDirection = .vertical
-//        flowLayout.minimumInteritemSpacing = 0
-//        flowLayout.minimumLineSpacing = 0
-//        flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-//        infoCollectionView.setCollectionViewLayout(flowLayout, animated: true)
-        
-        let columnLayout = CustomViewFlowLayout()
-        
-        if #available(iOS 10.0, *) {
-            columnLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        } else {
-            columnLayout.estimatedItemSize = CGSize(width: 41, height: 30)
-        }
-
-        infoCollectionView.collectionViewLayout = columnLayout
-
-    }
-    
-    func setupView(){
+        initKeyboardObserver()
         setCustomTextField()
         setNavigationBarItems()
         createPickerGender()
         createPickerAge()
         createPickerUrgency()
         getTagInput()
+        initFlowLayout()
     }
     
-    
-    
+}
+
+extension NewAssistanceVC {
     
     @IBAction func cancelButtonAction(_sender: Any){
         let myViewController = HomeVC(nibName: "HomeVC", bundle: nil)
@@ -171,10 +150,10 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
         print("NEW:", newAssistanceUrgency!)
         print("NEW:", newAssistanceTitle!)
         print("NEW:", newAssistanceDes!)
-        print("NEW:", newAssistanceAgePref!)
+        print("NEW:", newAssistanceCompensation!)
         print("NEW:", newAssistanceGenderPref!)
         print("NEW:", newAssistanceAgePref!)
-        print("NEW:", tags[0].name)
+        print("NEW:", tags[0].name as Any)
     }
     
     func getTagInput(){
@@ -182,11 +161,9 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     }
     
     @IBAction func addMediaImageAction(_ sender: Any) {
-        
+        createAlert()
     }
-}
-
-extension NewAssistanceVC {
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.activeTextField = textField
     }
@@ -214,53 +191,30 @@ extension NewAssistanceVC {
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField, _ textView: UITextView) {
-        if textField == urgencyTF {
-            let currUrgency = textField.text!
-            newAssistanceUrgency = currUrgency
-            titleTF.becomeFirstResponder()
-        } else if textField == titleTF {
-            let currTitle = textField.text!
-            newAssistanceTitle = currTitle
-            descTV.becomeFirstResponder()
-        } else if textField == descTV {
-            let currDesc = textField.text!
-            newAssistanceDes = currDesc
-            compensationTF.becomeFirstResponder()
-        } else if textField == compensationTF {
-            let currComp = textField.text!
-            newAssistanceAgePref = currComp
-            genderTF.becomeFirstResponder()
-        } else if textField == genderTF {
-            let currGender = textField.text!
-            newAssistanceGenderPref = currGender
-            ageTF.becomeFirstResponder()
-        } else if textField == ageTF {
-            let currAge = textField.text!
-            newAssistanceAgePref = currAge
-            infoTF.becomeFirstResponder()
-        } else {
-            let newTag = textField.text!
-            currTags = newTag
-            tags.append(TagModel(name: currTags!))
-            infoCollectionView.reloadData()
-            
-            textField.resignFirstResponder()
-        }
-    }
-    
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         let currUrgency = urgencyTF.text!
         newAssistanceUrgency = currUrgency
-        
+     
         let currTitle = titleTF.text!
         newAssistanceTitle = currTitle
-        
+    
         let currDesc = descTV.text!
         newAssistanceDes = currDesc
         
-        let currComp = compensationTF.text!
-        newAssistanceAgePref = currComp
+        if textField == compensationTF {
+            let currComp = compensationTF.text!.replacingOccurrences(of: ".", with: "")
+            
+            if (compensationTF .isEditing) {
+                let viewComp = Int(currComp)
+                compensationTF.text = priceFormatting(amount: viewComp!)
+            }
+            
+            if (compensationTF .endEditing(true)) {
+                let viewComp = Int(currComp) ?? newAssistanceCompensation
+                compensationTF.text = priceFormatting(amount: viewComp!)
+            }
+            newAssistanceCompensation = Int(currComp) ?? 0
+        }
         
         let currGender = genderTF.text!
         newAssistanceGenderPref = currGender
@@ -278,36 +232,22 @@ extension NewAssistanceVC {
         } else {
             print("nothing insert")
         }
+        
     }
     
-    
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-        else {
-            // if keyboard size is not available for some reason, dont do anything
-            return
-        }
+    //MARK: - Create Alert for Media Button
+    func createAlert(){
+        let alert = UIAlertController(title: "Lorem", message: "Lorem Ipsum", preferredStyle: .actionSheet)
         
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height , right: 0.0)
-        myScrollView.contentInset = contentInsets
-        myScrollView.scrollIndicatorInsets = contentInsets
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Photos", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
     }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
-        
-        
-        // reset back the content inset to zero after keyboard is gone
-        myScrollView.contentInset = contentInsets
-        myScrollView.scrollIndicatorInsets = contentInsets
-    }
-    
 }
 
-
-
-
+//MARK: - Custom CollectionView FlowLayout
 class LeftEqualFlowLayout: UICollectionViewFlowLayout {
     
     // Left aligned equal spacing layout (maximum spacing is set)
@@ -331,22 +271,7 @@ class LeftEqualFlowLayout: UICollectionViewFlowLayout {
     }
 }
 
-//
-//class DynamicHeightCollectionView: UICollectionView {
-//  override func layoutSubviews() {
-//    super.layoutSubviews()
-//    if!__CGSizeEqualToSize(bounds.size,self.intrinsicContentSize){
-//      self.invalidateIntrinsicContentSize()
-//    }
-//  }
-//  override var intrinsicContentSize: CGSize {
-//    return contentSize
-//  }
-//}
-
-
 public extension CollectionCellAutoLayout where Self: UICollectionViewCell {
- 
     func preferredLayoutAttributes(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         setNeedsLayout()
         layoutIfNeeded()

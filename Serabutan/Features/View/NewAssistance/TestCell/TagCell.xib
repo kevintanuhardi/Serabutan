@@ -21,13 +21,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="is7-s2-RTu">
-                                <rect key="frame" x="10" y="4.5" width="85" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="10" y="5" width="85" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qJB-XL-HE0">
-                                <rect key="frame" x="105" y="7.5" width="15" height="15"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qJB-XL-HE0">
+                                <rect key="frame" x="105" y="8" width="15" height="14"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="1XQ-3V-l4K"/>
                                     <constraint firstAttribute="width" constant="15" id="sDT-R7-khC"/>
@@ -36,12 +37,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="is7-s2-RTu" secondAttribute="bottom" constant="5" id="3lK-ka-tEQ"/>
                             <constraint firstItem="qJB-XL-HE0" firstAttribute="centerY" secondItem="is7-s2-RTu" secondAttribute="centerY" id="61o-Mp-unp"/>
                             <constraint firstItem="qJB-XL-HE0" firstAttribute="leading" secondItem="is7-s2-RTu" secondAttribute="trailing" constant="10" id="GQc-A7-Yhv"/>
                             <constraint firstAttribute="trailing" secondItem="qJB-XL-HE0" secondAttribute="trailing" constant="5" id="Kn2-8w-94Q"/>
                             <constraint firstItem="is7-s2-RTu" firstAttribute="leading" secondItem="CqN-G3-wSJ" secondAttribute="leading" constant="10" id="UYz-DD-fYG"/>
                             <constraint firstItem="is7-s2-RTu" firstAttribute="centerY" secondItem="CqN-G3-wSJ" secondAttribute="centerY" id="V9G-U2-6sX"/>
                             <constraint firstAttribute="height" constant="30" id="X3B-mq-cwO"/>
+                            <constraint firstItem="is7-s2-RTu" firstAttribute="top" secondItem="CqN-G3-wSJ" secondAttribute="top" constant="5" id="bff-PA-zfl"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -55,12 +58,14 @@
             </constraints>
             <size key="customSize" width="604" height="70"/>
             <connections>
+                <outlet property="mainView" destination="CqN-G3-wSJ" id="h7z-6U-75f"/>
                 <outlet property="tagLabel" destination="is7-s2-RTu" id="xJ4-J1-SE0"/>
             </connections>
             <point key="canvasLocation" x="48.550724637681164" y="-70.3125"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

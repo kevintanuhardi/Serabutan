@@ -13,6 +13,7 @@ class TagCell: UICollectionViewCell, CollectionCellAutoLayout{
     
     var collectionViewFlowLayout = UICollectionViewFlowLayout()
     
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var tagLabel: UILabel!
     
     static let identifier  = "TagCell"
@@ -25,7 +26,13 @@ class TagCell: UICollectionViewCell, CollectionCellAutoLayout{
         return preferredLayoutAttributes(layoutAttributes)
     }
     
-   
+    func configTagCell(){
+        mainView.layer.masksToBounds = true
+        mainView.layer.cornerRadius = 5
+        mainView.layer.borderWidth = 0.5
+        mainView.layer.borderColor = UIColor.init(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00).cgColor
     }
+   
+}
 
 
