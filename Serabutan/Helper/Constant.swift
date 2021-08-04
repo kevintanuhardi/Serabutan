@@ -10,7 +10,7 @@ import Foundation
 struct Constants {
     struct networking {
         struct serabutan {
-            static let baseUrl = "http://localhost:3001"
+            static let baseUrl = "https://vm0r17ehxg.execute-api.ap-southeast-1.amazonaws.com/dev"
         }
     }
 }
