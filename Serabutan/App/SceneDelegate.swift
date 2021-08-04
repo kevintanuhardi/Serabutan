@@ -17,7 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var addJobNavigationController: UINavigationController!
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -43,7 +42,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let notificationItem = UITabBarItem(title: "Notifikasi", image: UIImage(systemName: "bell.fill"), tag: 3)
         let profileItem = UITabBarItem(title: "Profil", image: UIImage(named: "profileIcon"), tag: 4)
         
-        let addIconItem = UITabBarItem(title: nil, image: UIImage(named: "addButton"), tag: 2)
+        let addIconItem = UITabBarItem(title: nil, image: UIImage(named: "AddButton"), tag: 2)
         addIconItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
         
         homeNavigationController.tabBarItem = homeItem

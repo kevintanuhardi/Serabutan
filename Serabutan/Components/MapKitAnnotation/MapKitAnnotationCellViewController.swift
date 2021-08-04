@@ -41,8 +41,8 @@ class MapKitAnnotationCellViewController: UIViewController {
                 urgencyIndicator.layer.backgroundColor = UIColor.init(named: "lowUrgency")?.cgColor
             }
             
-            //TODO : format currency
-//            priceLabel = price
+//            TODO : format currency
+            priceLabel.text = "Rp \(price.formattedWithSeparator)"
         }
     }
 
