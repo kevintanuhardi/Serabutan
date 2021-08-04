@@ -8,7 +8,10 @@
 import UIKit
 
 class DetailBantuanVC: UIViewController{
-
+    
+    final private let stringWithLink = "https://www.instagram.com/yahyayyashaa/"
+    var imageShare: [UIImage] = []
+    
     @IBOutlet weak var helpFinishButton: UIButton!
     @IBOutlet weak var waButton: UIButton!
     
@@ -39,11 +42,24 @@ class DetailBantuanVC: UIViewController{
     }
     
     @objc func moreButtonAction(_ sender:UIButton!){
-       
+        
     }
     
     @objc func shareButtonAction(_ sender:UIButton!){
+        let activityController = UIActivityViewController(activityItems: [imageShare[0]], applicationActivities: nil)
         
+        activityController.completionWithItemsHandler = { (nil, completed, _, error)
+            in
+            if completed{
+                print("completed")
+            } else {
+                print("canceled")
+            }
+        }
+        
+        present(activityController, animated: true){
+            print("presented")
+        }
     }
     
     @IBAction func helpFinishButton(_ sender: Any) {
@@ -61,12 +77,13 @@ class DetailBantuanVC: UIViewController{
     var triggerHelpButton : Bool = false
     
     private func navigateToListBantuan(){
-        //let homeVC = AssistanceListVC()
-        tabBarController?.tabBar.isHidden = true
-        //self.navigationController?.pushViewController(AssistanceListVC, animated: true)
+        //        let homeVC = AssistanceListVC()
+        //        tabBarController?.tabBar.isHidden = true
+        //        self.navigationController?.pushViewController(homeVC, animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
-    private func shareButton(){
+    func posterAtauPekerja(){
         
     }
     
@@ -94,7 +111,6 @@ class DetailBantuanVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         waButton.isHidden = true
         
@@ -126,11 +142,11 @@ class DetailBantuanVC: UIViewController{
         configureText()
         
         //profile image
-//        UIImage.layer.borderWidth = 1.0
-//        UIImage.layer.maskstoBounds = false
-//        UIImage.layer.borderColor = UIColor.white.cgColor
-//        UIImage.layer.cornerRadius = image.frame.size.height/2
-//        UIImage.clipsToBounds = true
+        //        UIImage.layer.borderWidth = 1.0
+        //        UIImage.layer.maskstoBounds = false
+        //        UIImage.layer.borderColor = UIColor.white.cgColor
+        //        UIImage.layer.cornerRadius = image.frame.size.height/2
+        //        UIImage.clipsToBounds = true
         //profileImage = UIImageView(frame: CGRect(0, 0, 100, 100))
         profileImage.image = UIImage(named: "kucing1")
         
@@ -179,8 +195,9 @@ extension DetailBantuanVC: UICollectionViewDataSource{
             let cell = jobImgCarousel.dequeueReusableCell(withReuseIdentifier: ImageCarouselCVC.identifier, for: indexPath) as! ImageCarouselCVC
             let imageName = "kucing" + "\(indexPath.row + 1)"
             cell.configure(with: UIImage(named: imageName)!)
+            imageShare.append(UIImage(named: imageName) ?? UIImage())
             return cell
-
+            
         }else if(collectionView == jobTagsCell){
             let cell2 = jobTagsCell.dequeueReusableCell(withReuseIdentifier: TagsCVC.identifier, for: indexPath) as! TagsCVC
             return cell2

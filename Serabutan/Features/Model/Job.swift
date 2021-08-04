@@ -56,13 +56,7 @@ struct Jobs {
 //MARK: - Real Data
 //This struct is used for current homepage
 class Job: NSObject, MKAnnotation {
-  let title: String?
-  let locationName: String?
-  let urgency: Urgency?
-  let price: Int?
-  let coordinate: CLLocationCoordinate2D
 
-//class Job: NSObject {
 	var id: Int?
 	var title: String?
 	var desc: String?

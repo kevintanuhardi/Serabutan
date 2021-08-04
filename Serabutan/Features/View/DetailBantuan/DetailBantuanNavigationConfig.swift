@@ -23,7 +23,7 @@ extension DetailBantuanVC: UITextViewDelegate{
     func setupLeftNavItem(){
         
         let backButton = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(backButtonAction(_:)))
-        backButton.tintColor = UIColor.black
+        backButton.tintColor = UIColor.ColorLibrary.customBlack
         
         navigationItem.leftBarButtonItem = backButton
         
