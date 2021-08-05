@@ -17,7 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var addJobNavigationController: UINavigationController!
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -28,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let homeVC = HomeVC()
         let activityVC = UIViewController()
         let notificationVC = UIViewController()
-        let profileVC = UIViewController()
+        let profileVC = ProfileVC()
         let addJobVC = UIViewController()
         
         homeNavigationController = UINavigationController.init(rootViewController: homeVC)

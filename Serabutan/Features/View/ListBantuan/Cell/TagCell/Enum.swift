@@ -94,9 +94,8 @@ enum Status: String, CaseIterable {
 }
 
 enum AssistanceSortByFilter: Int{
-    case nearest
-    case newest
-    case highestCompensation
     case lowestCompensation
-    
+    case highestCompensation
+    case newest
+    case nearest
 }

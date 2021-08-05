@@ -18,42 +18,59 @@ extension FilterPopUpVC{
 
         minValueTFToolbar()
         maxValueTFToolbar()
+    
+        containerView.clipsToBounds = true
+        containerView.layer.cornerRadius = 10
+        containerView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        containerView.layer.masksToBounds = true
+        
+        topBarView.layer.masksToBounds = true
+        topBarView.layer.cornerRadius = 3
+        topBarView.layer.backgroundColor = UIColor.ColorLibrary.mediumGrey.cgColor
+        
+        minValTF.addLine(position: .bottom, color: .ColorLibrary.mediumGrey, width: 1)
+        maxValTF.addLine(position: .bottom, color: .ColorLibrary.mediumGrey, width: 1)
+        
     }
     
     func initCloseButton(){
+        closestButton.titleLabel?.font = .FontLibrary.body
         closestButton.layer.masksToBounds = true
-        closestButton.layer.borderColor = mainColor
-        closestButton.layer.backgroundColor = mainColor
-        closestButton.setTitleColor(.white, for: .normal)
-        closestButton.layer.borderWidth = 1
+        closestButton.layer.borderColor = mainColor.cgColor
+        closestButton.layer.backgroundColor = tintColor.cgColor
+        closestButton.setTitleColor(.ColorLibrary.accentColor, for: .normal)
+        closestButton.layer.borderWidth = 0.5
         closestButton.layer.cornerRadius = 5
     }
     
     
     func initNewestButton(){
+        newestButton.titleLabel?.font = .FontLibrary.body
         newestButton.layer.masksToBounds = true
-        newestButton.layer.borderColor = mainColor
-        newestButton.layer.borderWidth = 1
+        newestButton.layer.borderColor = blackColor.cgColor
+        newestButton.layer.borderWidth = 0.5
         newestButton.layer.cornerRadius = 5
     }
     
     func initHighestCompensationButton(){
+        highestCompensationButton.titleLabel?.font = .FontLibrary.body
         highestCompensationButton.layer.masksToBounds = true
-        highestCompensationButton.layer.borderColor = mainColor
-        highestCompensationButton.layer.borderWidth = 1
+        highestCompensationButton.layer.borderColor = blackColor.cgColor
+        highestCompensationButton.layer.borderWidth = 0.5
         highestCompensationButton.layer.cornerRadius = 5
     }
     
     func initLowestCompensationButton(){
+        lowestCompensationButton.titleLabel?.font = .FontLibrary.body
         lowestCompensationButton.layer.masksToBounds = true
-        lowestCompensationButton.layer.borderColor = mainColor
-        lowestCompensationButton.layer.borderWidth = 1
+        lowestCompensationButton.layer.borderColor = blackColor.cgColor
+        lowestCompensationButton.layer.borderWidth = 0.5
         lowestCompensationButton.layer.cornerRadius = 5
     }
     
     func initApplyButton(){
         applyButton.layer.masksToBounds = true
-        applyButton.layer.backgroundColor = mainColor
+        applyButton.layer.backgroundColor = mainColor.cgColor
         applyButton.layer.cornerRadius = 5
     }
     
@@ -75,6 +92,48 @@ extension FilterPopUpVC{
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(maxValueDoneButtonTapped))
         toolbar.setItems([spaceButton, doneButton], animated: true)
         maxValTF.inputAccessoryView = toolbar
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        for view in textField.subviews {
+            if view.restorationIdentifier == "Border" {
+                view.animateBorder(true, type: .color)
+            }
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let currMinValue1 = minValTF.text?.replacingOccurrences(of: "Rp ", with: "")
+        let currMinValue = currMinValue1!.replacingOccurrences(of: ".", with: "")
+        let currMaxValue1 = maxValTF.text?.replacingOccurrences(of: "Rp ", with: "")
+        let currMaxValue = currMaxValue1!.replacingOccurrences(of: ".", with: "")
+        print("Curr MIN is:" + currMinValue)
+        print("Curr MAX is:" + currMaxValue)
+        
+        if (minValTF .isEditing) {
+            let viewMinVal = Int(currMinValue)
+            minValTF.text = "Rp " + priceFormatting(amount: viewMinVal!)
+        } else if maxValTF .isEditing{
+            let viewMaxVal = Int(currMaxValue)
+            maxValTF.text = "Rp " + priceFormatting(amount: viewMaxVal!)
+        }
+        
+        if (minValTF .endEditing(true)) {
+            let viewMinVal = Int(currMinValue) ?? minValue
+            minValTF.text = "Rp " + priceFormatting(amount: viewMinVal!)
+        } else if maxValTF .endEditing(true){
+            let viewMaxVal = Int(currMaxValue) ?? maxValue
+            maxValTF.text = "Rp " + priceFormatting(amount: viewMaxVal!)
+        }
+        
+        for view in textField.subviews {
+            if view.restorationIdentifier == "Border" {
+                view.animateBorder(false, type: .color)
+            }
+        }
+        
+        minValue = Int(currMinValue) ?? 50000
+        maxValue = Int(currMaxValue) ?? 500000
     }
     
 }

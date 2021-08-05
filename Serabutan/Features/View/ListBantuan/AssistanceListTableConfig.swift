@@ -11,34 +11,55 @@ import UIKit
 extension AssistanceListVC{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredData.count
+        if(searchBar.isActive){
+            return filteredJob.count
+        }
+        return sortedJob.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = assistanceTable.dequeueReusableCell(withIdentifier: AssistanceTableViewCell.identifier, for: indexPath) as! AssistanceTableViewCell
-        cell.selectionStyle = .none
-        cell.helperView.isHidden = true
-        cell.youHelperView.isHidden = true
         
+        let filteredResult = filteredJob[indexPath.row]
+        let sortedResult = sortedJob[indexPath.row]
+        
+        cell.selectionStyle = .none
+        cell.tagView.isHidden = true
+        cell.availableView.isHidden = true
+        cell.youHelperView.isHidden = true
+        cell.helperView.isHidden = true
+        cell.mainBottomBar.isHidden = true
+
         //SET ASSISTANCE COLLECTION VIEW DATA
-        cell.statusLabel.text = filteredData[indexPath.row].urgency?.rawValue
-        cell.titleLabel.text = filteredData[indexPath.row].title
-        let compensation = filteredData[indexPath.row].price
-        cell.compensationLabel.text = ("\(compensation!)")
-        let distance = filteredData[indexPath.row].distance
-        cell.headerLabel.text = ("\(distance!)")
+        var result: Jobs { return searchBar.isActive ? filteredResult : sortedResult }
+        var distance: String { return result.distance < 1000 ? ("\(Int(result.distance))" + " m") : ("\(Int(result.distance))" + " km") }
+        
+        cell.setStatusView(urgency: result.urgency)
+        cell.headerLabel.text = distance
+        cell.titleLabel.text = result.title
+        cell.posterImage.image = result.jobPosterId.avatar
+        cell.verifiedLogo.isHidden = !(result.jobPosterId.isVerified)
+        cell.posterLabel.text = result.jobPosterId.name
+        cell.compensationLabel.text = priceFormatting(amount: result.price)
+        
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+        formatter.locale = Locale(identifier: "id")
+        let relativeDate = formatter.localizedString(for: result.postingDate, relativeTo: Date())
+        
+        cell.timeElapsedLabel.text = "\(relativeDate)"
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "DetailAssistance", sender: self)
+        //        performSegue(withIdentifier: "DetailAssistance", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as? detailAssitanceVC{
-//            //PASSING DATA
-//            assistanceTable.deselectRow(at: assistanceTable.indexPathForSelectedRow!, animated: true)
-//        }
+        //        if let destination = segue.destination as? detailAssitanceVC{
+        //            //PASSING DATA
+        //            assistanceTable.deselectRow(at: assistanceTable.indexPathForSelectedRow!, animated: true)
+        //        }
     }
 }
