@@ -9,22 +9,21 @@ import UIKit
 
 class TagsCVC: UICollectionViewCell {
     
-    @IBOutlet weak var tagView: UIView!
-    @IBOutlet weak var tagLabel: UILabel!
-    @IBOutlet weak var xMark: UIImageView!
-    
     static let identifier = "TagsCVC"
+    
+    @IBOutlet weak var tagsLabel: UILabel!
+    
     static func nib() -> UINib {
         return UINib(nibName: "TagsCVC", bundle: nil)
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-    
-    public func configureTagCell(){
-        self.tagView.layer.cornerRadius = 5.0
-        self.tagView.layer.borderWidth = 0.5
-        self.tagView.layer.borderColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 0.50).cgColor
+        self.layer.borderWidth = 0.5
+        self.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
+        self.layer.cornerRadius = 5
+        self.layer.masksToBounds = true
+        tagsLabel.font = .FontLibrary.body
+        tagsLabel.textColor = .ColorLibrary.customBlack
     }
 }

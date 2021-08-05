@@ -15,6 +15,12 @@ extension DetailBantuanVC {
         setNavigationItems()
         setFont()
         setColor()
+        configureText()
+        
+        if selectedJob.medias == nil {
+            collectionViewHeight.constant = 0.0
+            collectionViewBottomMargin.constant = 0.0
+        }
     }
     
     func setNavigation() {
@@ -22,6 +28,7 @@ extension DetailBantuanVC {
         navigationController?.navigationBar.barTintColor = .white
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.shadowImage = UIImage()
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     func setNavigationItems() {

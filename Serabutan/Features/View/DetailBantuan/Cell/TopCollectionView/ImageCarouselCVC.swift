@@ -20,6 +20,8 @@ class ImageCarouselCVC: UICollectionViewCell {
     
     public func configure(with image: UIImage){
         imageView.image = image
+        self.layer.cornerRadius = 5
+        self.layer.masksToBounds = true
     }
     
     static func nib() -> UINib {

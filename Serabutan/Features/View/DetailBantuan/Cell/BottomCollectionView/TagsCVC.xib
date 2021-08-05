@@ -4,57 +4,40 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagsCVC" id="gTV-IL-0wX" customClass="TagsCVC" customModule="Serabutan" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="58" height="37"/>
+            <rect key="frame" x="0.0" y="0.0" width="93" height="30"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="58" height="37"/>
+                <rect key="frame" x="0.0" y="0.0" width="93" height="30"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9nz-55-k55">
-                        <rect key="frame" x="0.0" y="0.0" width="58" height="37"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWU-4I-Dbb">
-                                <rect key="frame" x="8" y="10" width="42" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="WWU-4I-Dbb" firstAttribute="top" secondItem="9nz-55-k55" secondAttribute="top" constant="10" id="A2S-bf-eJ3"/>
-                            <constraint firstAttribute="bottom" secondItem="WWU-4I-Dbb" secondAttribute="bottom" constant="7" id="HfM-5b-7vA"/>
-                            <constraint firstItem="WWU-4I-Dbb" firstAttribute="leading" secondItem="9nz-55-k55" secondAttribute="leading" constant="8" id="MAY-mC-cV2"/>
-                            <constraint firstAttribute="trailing" secondItem="WWU-4I-Dbb" secondAttribute="trailing" constant="8" id="Vkt-fP-egH"/>
-                        </constraints>
-                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAY-3r-z9s">
+                        <rect key="frame" x="10" y="7" width="73" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="9nz-55-k55" secondAttribute="bottom" id="4Ub-lK-b4U"/>
-                <constraint firstItem="9nz-55-k55" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GTf-9R-Efj"/>
-                <constraint firstAttribute="trailing" secondItem="9nz-55-k55" secondAttribute="trailing" id="asJ-Ld-XKM"/>
-                <constraint firstItem="9nz-55-k55" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sPS-wb-657"/>
+                <constraint firstAttribute="trailing" secondItem="jAY-3r-z9s" secondAttribute="trailing" constant="10" id="7eZ-6p-B3w"/>
+                <constraint firstItem="jAY-3r-z9s" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="MsW-qG-k45"/>
+                <constraint firstItem="jAY-3r-z9s" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Z5V-d8-le1"/>
+                <constraint firstItem="jAY-3r-z9s" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="aQp-qT-b2S"/>
+                <constraint firstItem="jAY-3r-z9s" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="vQF-49-xbT"/>
+                <constraint firstAttribute="bottom" secondItem="jAY-3r-z9s" secondAttribute="bottom" constant="7" id="xhT-kb-kRM"/>
             </constraints>
-            <size key="customSize" width="58" height="37"/>
+            <size key="customSize" width="93" height="40"/>
             <connections>
-                <outlet property="tagLabel" destination="WWU-4I-Dbb" id="fjb-CU-lio"/>
-                <outlet property="tagView" destination="9nz-55-k55" id="4fq-jr-M7U"/>
+                <outlet property="tagsLabel" destination="jAY-3r-z9s" id="ZqE-rN-mdZ"/>
             </connections>
-            <point key="canvasLocation" x="49.230769230769226" y="126.18483412322274"/>
+            <point key="canvasLocation" x="76.153846153846146" y="127.25118483412322"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
