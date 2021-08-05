@@ -22,9 +22,9 @@ class TagCell: UICollectionViewCell, CollectionCellAutoLayout{
         return UINib(nibName: "TagCell", bundle: nil)
     }
     
-    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-        return preferredLayoutAttributes(layoutAttributes)
-    }
+//    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+//        return preferredLayoutAttributes(layoutAttributes)
+//    }
     
     func configTagCell(){
         mainView.layer.masksToBounds = true

@@ -41,72 +41,46 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     
     @IBOutlet weak var tagListHeight: NSLayoutConstraint!
     @IBOutlet weak var tagListView: TagListView!
+    @IBOutlet weak var infoSV: UIStackView!
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var infoTFView: UIView!
     @IBOutlet weak var infoStackView: UIView!
     @IBOutlet weak var infoTF: UITextField!
-    @IBOutlet weak var infoCollectionView: UICollectionView!
-    @IBOutlet weak var infoCollectionLayout: UICollectionViewFlowLayout! {
-        didSet {
-            infoCollectionLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
-    }
-    
+
     @IBOutlet weak var mediaView: UIView!
     @IBOutlet weak var mediaAddView: UIView!
     @IBOutlet weak var mediaAddButton: UIButton!
     @IBOutlet weak var mediaImageCollectionView: UICollectionView!
     
-    var newAssistanceUrgency: String? = ""
+    var newAssistanceUrgency: BantuanUrgency?
     var newAssistanceTitle: String? = ""
     var newAssistanceDes: String? = ""
     var newAssistanceCompensation: Int? = 0
-    var newAssistanceGenderPref: String? = ""
-    var newAssistanceAgePref: String? = ""
-    var newAssistanceInfo: [TagModel] = []
+    var newAssistanceGenderPref: Gender?
+    var newAssistanceAgePref: AgePreference?
+    var newAssistanceInfo: [String] = []
     var newAssistanceMediaImage: [UIImage] = []
-    
-    var activeTextField: UITextField? = nil
     
     var currTags: String?
     var currImage: UIImage?
     var currMediaImages: [UIImage] = []
-    let urgencyPreferenceData = ["Tinggi", "Sedang", "Rendah"]
-    let genderPreferenceData = ["Tidak ada preferensi", "Pria", "Perempuan"]
-    let agePreferenceData = ["Tidak ada preferensi", "18-25", "25-40", "> 40"]
+    
+    var activeTextField: UITextField? = nil
     var urgencyPickerView = UIPickerView()
     var genderPickerView = UIPickerView()
     var agePickerView = UIPickerView()
+    let urgencyPreferenceData = ["Tinggi", "Sedang", "Rendah"]
+    let genderPreferenceData = ["Tidak ada preferensi", "Laki-Laki", "Perempuan"]
+    let agePreferenceData = ["18-25", "26-40", "40"]
     var selectedValueUrgency: String? = "Tinggi"
     var selectedValueGender : String? = "Tidak ada Preferensi"
     var selectedValueAge : String? = "Tidak ada Preferensi"
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Buat Permintaan Bantuan"
         tabBarController?.tabBar.isHidden = true
         
-        tagListView.delegate = self
-        tagListView.addTag("TagListView")
-        tagListView.addTag("TEAChart")
-        tagListView.addTag("To Be Removed")
-        
-        initCollectionView()
-    }
-    
-    func initCollectionView(){
-//        infoCollectionView.dataSource = self
-//        infoCollectionView.delegate = self
-//        infoCollectionView.register(TagCell.nib(), forCellWithReuseIdentifier: TagCell.identifier)
-//        print(infoCollectionView.frame.height)
-        
-        //        mediaImageCollectionView.dataSource = self
-        //        mediaImageCollectionView.delegate = self
-        //        mediaImageCollectionView.register(MediaCollectionViewCell.nib(), forCellWithReuseIdentifier: MediaCollectionViewCell.identifier)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         urgencyTF.delegate = self
         titleTF.delegate = self
         descTV.delegate = self
@@ -114,9 +88,16 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
         genderTF.delegate = self
         ageTF.delegate = self
         infoTF.delegate = self
-        
-        
-        
+        tagListView.delegate = self
+    }
+    
+    func initCollectionView(){
+//        mediaImageCollectionView.dataSource = self
+//        mediaImageCollectionView.delegate = self
+//        mediaImageCollectionView.register(MediaCollectionViewCell.nib(), forCellWithReuseIdentifier: MediaCollectionViewCell.identifier)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         initKeyboardObserver()
         setCustomTextField()
         setNavigationBarItems()
@@ -124,10 +105,25 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
         createPickerAge()
         createPickerUrgency()
         getTagInput()
-        //initFlowLayout()
+        initCollectionView()
     }
     
-   
+    
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        if textField == urgencyTF {
+//            let currUrgency = urgencyTF.text
+//
+//            if currUrgency == "Tinggi" {
+//                urgencyIndicatorImage.tintColor = UIColor.ColorLibrary.highUrgency
+//            } else if currUrgency == "Sedang" {
+//                urgencyIndicatorImage.tintColor = UIColor.ColorLibrary.mediumUrgency
+//            } else if currUrgency == "Rendah" {
+//                urgencyIndicatorImage.tintColor = UIColor.ColorLibrary.lowUrgency
+//            }
+//        }
+//        return true
+//    }
+    
 }
 
 extension NewAssistanceVC {
@@ -147,7 +143,7 @@ extension NewAssistanceVC {
         print("NEW:", newAssistanceCompensation!)
         print("NEW:", newAssistanceGenderPref!)
         print("NEW:", newAssistanceAgePref!)
-        print("NEW:", newAssistanceInfo[0].name)
+        print("NEW:", newAssistanceInfo)
         print("IMAGES count:", newAssistanceMediaImage)
     }
     
@@ -159,8 +155,16 @@ extension NewAssistanceVC {
             createAlert()
     }
     
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.superview?.animateBorder(true, type: .border)
+    }
+    
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.activeTextField = textField
+        textField.superview?.animateBorder(true, type: .border)
+        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -187,11 +191,24 @@ extension NewAssistanceVC {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        textField.superview?.animateBorder(false, type: .border)
         
+        if textField == urgencyTF {
+            let currUrgency = urgencyTF.text!
+            
+            if currUrgency == "Tinggi"{
+                newAssistanceUrgency = BantuanUrgency.tinggi
+                //urgencyIndicatorImage.tintColor = UIColor.ColorLibrary.highUrgency
+            } else if currUrgency == "Sedang"{
+                newAssistanceUrgency = BantuanUrgency.sedang
+                //urgencyIndicatorImage.tintColor = UIColor.ColorLibrary.mediumUrgency
+            } else {
+                newAssistanceUrgency = BantuanUrgency.rendah
+                //urgencyIndicatorImage.tintColor = UIColor.ColorLibrary.lowUrgency
+            }
+            
+        }
         
-        let currUrgency = urgencyTF.text!
-        newAssistanceUrgency = currUrgency
-     
         let currTitle = titleTF.text!
         newAssistanceTitle = currTitle
     
@@ -203,33 +220,52 @@ extension NewAssistanceVC {
             
             if (compensationTF .isEditing) {
                 let viewComp = Int(currComp)
-                compensationTF.text = priceFormatting(amount: viewComp!)
+                compensationTF.text = StringFormatter().priceFormatting(amount: viewComp!)
             }
             
             if (compensationTF .endEditing(true)) {
                 let viewComp = Int(currComp) ?? newAssistanceCompensation
-                compensationTF.text = priceFormatting(amount: viewComp!)
+                compensationTF.text = StringFormatter().priceFormatting(amount: viewComp!)
             }
             newAssistanceCompensation = Int(currComp) ?? 0
         }
         
-        let currGender = genderTF.text!
-        newAssistanceGenderPref = currGender
+        if textField == genderTF {
+            let currGender = genderTF.text!
+            
+            if currGender == "Tidak ada preferensi"{
+                newAssistanceGenderPref = Gender.other
+            } else if currGender == "Laki-laki"{
+                newAssistanceGenderPref = Gender.male
+            } else {
+                newAssistanceGenderPref = Gender.female
+            }
+        }
         
-        let currAge = ageTF.text!
-        newAssistanceAgePref = currAge
+        if textField == ageTF {
+            let currAge = ageTF.text!
+            
+            if currAge == "18-25"{
+                newAssistanceAgePref = AgePreference.youngAdult
+            } else if currAge == "26-40"{
+                newAssistanceAgePref = AgePreference.middleAdult
+            } else {
+                newAssistanceAgePref = AgePreference.lateAdult
+            }
+        }
         
         if textField == infoTF{
             let newTag = infoTF.text!
             currTags = newTag
-            //newAssistanceInfo.append(TagModel(name: currTags!))
+            newAssistanceInfo.append(newTag)
             tagListView.addTag(newTag)
             infoTF.resignFirstResponder()
             infoTF.text = ""
+            
+            (newAssistanceInfo.count < 1) ? (infoSV.spacing = 0) : (infoSV.spacing = 10)
         } else {
             print("nothing insert")
         }
-        
         
     }
     
@@ -266,43 +302,12 @@ extension NewAssistanceVC {
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
         print("Tag Remove pressed: \(title), \(sender)")
         sender.removeTagView(tagView)
-    }
-    
-}
-
-//MARK: - Custom CollectionView FlowLayout
-class LeftEqualFlowLayout: UICollectionViewFlowLayout {
-    
-    // Left aligned equal spacing layout (maximum spacing is set)
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        let answer = super.layoutAttributesForElements(in: rect)
-        for (index,value) in (answer?.enumerated())!
-        {
-            if index > 0{
-                let currentLayoutAttributes :UICollectionViewLayoutAttributes = value
-                let prevLayoutAttributes:UICollectionViewLayoutAttributes = answer![index - 1]
-                let maximumSpacing = 15 //Set the maximum spacing here
-                let origin = prevLayoutAttributes.frame.maxX
-                if(origin + CGFloat(maximumSpacing) + currentLayoutAttributes.frame.size.width < self.collectionViewContentSize.width) {
-                    var frame = currentLayoutAttributes.frame;
-                    frame.origin.x = origin + CGFloat(maximumSpacing);
-                    currentLayoutAttributes.frame = frame;
-                }
+        
+        for (index, arrayTitle) in newAssistanceInfo.enumerated() {
+            if title == arrayTitle {
+                newAssistanceInfo.remove(at: index)
             }
         }
-        return answer
     }
-}
-
-public extension CollectionCellAutoLayout where Self: UICollectionViewCell {
-    func preferredLayoutAttributes(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-        setNeedsLayout()
-        layoutIfNeeded()
-        let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
-        var newFrame = layoutAttributes.frame
-        newFrame.size.width = CGFloat(ceilf(Float(size.width)))
-        layoutAttributes.frame = newFrame
-        cachedSize = newFrame.size
-        return layoutAttributes
-    }
+    
 }

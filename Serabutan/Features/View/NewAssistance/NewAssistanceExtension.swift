@@ -10,34 +10,6 @@ import UIKit
 
 extension NewAssistanceVC {
    
-//    func initFlowLayout(){
-//        if let flowLayout = infoCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-//            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-//        }
-//        
-//        let columnLayout = CustomViewFlowLayout()
-//        
-//        if #available(iOS 10.0, *) {
-//            columnLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-//        } else {
-//            columnLayout.estimatedItemSize = CGSize(width: 41, height: 15)
-//        }
-//        infoCollectionView.collectionViewLayout = columnLayout
-//    }
-    
-    //MARK: - Price Formatting
-    func priceFormatting(amount: Int) -> String{
-            let currencyFormatter = NumberFormatter()
-            currencyFormatter.numberStyle = .currency
-            currencyFormatter.locale = Locale(identifier: "id_UD")
-            currencyFormatter.groupingSeparator = "."
-            currencyFormatter.numberStyle = .decimal
-            
-            return currencyFormatter.string(from: NSNumber(value: amount))!
-        }
-    
-    
-    
     //MARK: -Keyboard Delegate
     func initKeyboardObserver(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -61,6 +33,7 @@ extension NewAssistanceVC {
         myScrollView.scrollIndicatorInsets = contentInsets
     }
     
+    //MARK: - ImagePicker Handler
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
 
