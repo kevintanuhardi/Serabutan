@@ -9,7 +9,7 @@ import UIKit
 import AVKit
 import MobileCoreServices
 
-class EditProfileVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditProfileVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var avatarContainer: UIView!
     @IBOutlet weak var nameField: UIStackView!
@@ -30,6 +30,7 @@ class EditProfileVC: UIViewController, UITextViewDelegate, UIImagePickerControll
         super.viewDidLoad()
         updateUI()
         descriptionTextView.delegate = self
+        fullName.delegate = self
         
         tempName = fullName.text
         tempDescription = descriptionTextView.text
@@ -42,9 +43,10 @@ class EditProfileVC: UIViewController, UITextViewDelegate, UIImagePickerControll
         fullName.text = user?.name
         profileImage.image = user?.avatar
         descriptionTextView.text = user?.bio
-                
+        
         // Set page UI
         self.title = "Sunting Profile"
+        
         buttonUbah.setTitleColor(.white, for: .normal)
         buttonUbah.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         avatarContainer.layer.masksToBounds = true
@@ -52,23 +54,25 @@ class EditProfileVC: UIViewController, UITextViewDelegate, UIImagePickerControll
         descriptionTextView.textContainerInset = .zero
         descriptionTextView.textContainer.lineFragmentPadding = 0
         
-        shortDesc.font = UIFont.FontLibrary.largeTitle
+        shortDesc.font = UIFont.FontLibrary.caption2
         
         buttonUbah.backgroundColor = UIColor.ColorLibrary.darkGrey.withAlphaComponent(0.75)
         charCount.text = "\(descriptionTextView.text.count) / 300"
-
+        
     }
     
     // Navigation related UI
     func navigationUI() {
-        navigationController?.navigationBar.barTintColor = UIColor.ColorLibrary.lightGrey
+        navigationController?.navigationBar.barTintColor = .ColorLibrary.lightGrey
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.ColorLibrary.customBlack]
         navigationController?.navigationBar.shadowImage = UIImage()
         
         let button = UIButton(type: .system)
         button.frame = CGRect(x: 0, y: 0, width: 65, height: 30)
         button.setTitle("Simpan", for: .normal)
+        button.titleLabel?.font = .FontLibrary.textLink1
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor.ColorLibrary.accentColor
+        button.backgroundColor = .ColorLibrary.accentColor
         button.layer.cornerRadius = 5
         button.layer.masksToBounds = true
         
@@ -126,5 +130,21 @@ class EditProfileVC: UIViewController, UITextViewDelegate, UIImagePickerControll
         charCount.text = "\(descriptionTextView.text.count) / 300"
         
         return true
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.superview?.animateBorder(true, type: .border)
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        textView.superview?.animateBorder(false, type: .border)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.superview?.animateBorder(true, type: .border)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.superview?.animateBorder(false, type: .border)
     }
 }

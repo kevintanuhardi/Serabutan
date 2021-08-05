@@ -24,6 +24,7 @@ extension UIColor {
         
         // Others
         static var greenBackground: UIColor { return UIColor(named: "GreenBackground") ?? UIColor.clear }
+        static var accentBackground: UIColor { return UIColor(named: "AccentColor")?.withAlphaComponent(0.1) ?? UIColor.clear }
         static var highUrgencyBackground: UIColor { return UIColor(named: "HighUrgencyBackground")?.withAlphaComponent(0.7) ?? UIColor.clear }
         static var mediumUrgencyBackground: UIColor { return UIColor(named: "MediumUrgencyBackground")?.withAlphaComponent(0.7) ?? UIColor.clear }
         static var lowUrgencyBackground: UIColor { return UIColor(named: "LowUrgencyground")?.withAlphaComponent(0.7) ?? UIColor.clear }
