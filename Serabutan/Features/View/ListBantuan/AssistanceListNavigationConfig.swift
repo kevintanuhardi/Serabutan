@@ -12,18 +12,13 @@ extension AssistanceListVC{
     
     func setupView(){
         title = "Bantuan Dibutuhkan"
-        view.backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1.00)
-        
-        let attrs = [
-            NSAttributedString.Key.foregroundColor: UIColor.red,
-            NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 24)!
-        ]
-        UINavigationBar.appearance().titleTextAttributes = attrs
+        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.ColorLibrary.customBlack, .font: UIFont.FontLibrary.largeTitle]
+        view.backgroundColor = .ColorLibrary.lightGrey
         
         initSearchController()
         navigationBackButton()
         navigationFilterButton()
-        setGradientBottom()
+//        setGradientBottom()
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -44,8 +39,16 @@ extension AssistanceListVC{
         navigationItem.searchController = searchBar
         navigationItem.hidesSearchBarWhenScrolling = false
         searchBar.searchBar.delegate = self
-        
         assistanceTable.keyboardDismissMode = .onDrag
+        
+        searchBar.searchBar.placeholder = "Cari Bantuan"
+        searchBar.searchBar.searchTextField.backgroundColor = .white
+        searchBar.searchBar.searchTextField.layer.borderWidth = 0.5
+        searchBar.searchBar.searchTextField.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
+        searchBar.searchBar.searchTextField.layer.cornerRadius = 18
+        searchBar.searchBar.searchTextField.layer.masksToBounds = true
+        searchBar.searchBar.setSearchFieldBackgroundImage(UIImage(), for: .normal)
+
     }
     
     func navigationBackButton(){
