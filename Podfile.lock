@@ -10,6 +10,7 @@ PODS:
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
   - SwiftyJSON (4.0.0)
+  - TagListView (1.4.1)
 
 DEPENDENCIES:
   - Alamofire (= 5.4.1)
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - RxSwift
   - SDWebImage
   - SwiftyJSON (= 4.0)
+  - TagListView (= 1.4.1)
 
 SPEC REPOS:
   trunk:
@@ -26,6 +28,7 @@ SPEC REPOS:
     - RxSwift
     - SDWebImage
     - SwiftyJSON
+    - TagListView
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
@@ -34,7 +37,8 @@ SPEC CHECKSUMS:
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
 
-PODFILE CHECKSUM: 0c7945ce1c98e14668fb2248a23c3af1601567ec
+PODFILE CHECKSUM: a7fe0b33e12943becc170e0cd4a590434351ea73
 
 COCOAPODS: 1.10.1

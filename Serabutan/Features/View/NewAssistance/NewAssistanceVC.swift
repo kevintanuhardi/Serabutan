@@ -6,9 +6,9 @@
 //
 
 import UIKit
+import TagListView
 
-
-class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TagListViewDelegate{
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var myScrollView: UIScrollView!
@@ -39,6 +39,8 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     @IBOutlet weak var ageTF: UITextField!
     @IBOutlet weak var ageImage: UIImageView!
     
+    @IBOutlet weak var tagListHeight: NSLayoutConstraint!
+    @IBOutlet weak var tagListView: TagListView!
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var infoTFView: UIView!
     @IBOutlet weak var infoStackView: UIView!
@@ -72,7 +74,6 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     let urgencyPreferenceData = ["Tinggi", "Sedang", "Rendah"]
     let genderPreferenceData = ["Tidak ada preferensi", "Pria", "Perempuan"]
     let agePreferenceData = ["Tidak ada preferensi", "18-25", "25-40", "> 40"]
-    
     var urgencyPickerView = UIPickerView()
     var genderPickerView = UIPickerView()
     var agePickerView = UIPickerView()
@@ -86,14 +87,19 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
         title = "Buat Permintaan Bantuan"
         tabBarController?.tabBar.isHidden = true
         
+        tagListView.delegate = self
+        tagListView.addTag("TagListView")
+        tagListView.addTag("TEAChart")
+        tagListView.addTag("To Be Removed")
+        
         initCollectionView()
     }
     
     func initCollectionView(){
-        infoCollectionView.dataSource = self
-        infoCollectionView.delegate = self
-        infoCollectionView.register(TagCell.nib(), forCellWithReuseIdentifier: TagCell.identifier)
-        print(infoCollectionView.frame.height)
+//        infoCollectionView.dataSource = self
+//        infoCollectionView.delegate = self
+//        infoCollectionView.register(TagCell.nib(), forCellWithReuseIdentifier: TagCell.identifier)
+//        print(infoCollectionView.frame.height)
         
         //        mediaImageCollectionView.dataSource = self
         //        mediaImageCollectionView.delegate = self
@@ -109,6 +115,8 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
         ageTF.delegate = self
         infoTF.delegate = self
         
+        
+        
         initKeyboardObserver()
         setCustomTextField()
         setNavigationBarItems()
@@ -116,9 +124,10 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
         createPickerAge()
         createPickerUrgency()
         getTagInput()
-        initFlowLayout()
+        //initFlowLayout()
     }
     
+   
 }
 
 extension NewAssistanceVC {
@@ -143,7 +152,7 @@ extension NewAssistanceVC {
     }
     
     func getTagInput(){
-        
+//        newAssistanceInfo.append()
     }
     
     @IBAction func addMediaImageAction(_ sender: Any) {
@@ -178,6 +187,8 @@ extension NewAssistanceVC {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        
+        
         let currUrgency = urgencyTF.text!
         newAssistanceUrgency = currUrgency
      
@@ -211,13 +222,14 @@ extension NewAssistanceVC {
         if textField == infoTF{
             let newTag = infoTF.text!
             currTags = newTag
-            newAssistanceInfo.append(TagModel(name: currTags!))
-            infoCollectionView.reloadData()
+            //newAssistanceInfo.append(TagModel(name: currTags!))
+            tagListView.addTag(newTag)
             infoTF.resignFirstResponder()
             infoTF.text = ""
         } else {
             print("nothing insert")
         }
+        
         
     }
     
@@ -248,6 +260,12 @@ extension NewAssistanceVC {
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         
         self.present(alert, animated: true)
+    }
+    
+    //MARK: - Tag List View Actions
+    func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        print("Tag Remove pressed: \(title), \(sender)")
+        sender.removeTagView(tagView)
     }
     
 }

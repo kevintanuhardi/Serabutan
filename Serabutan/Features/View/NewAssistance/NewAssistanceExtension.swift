@@ -10,20 +10,20 @@ import UIKit
 
 extension NewAssistanceVC {
    
-    func initFlowLayout(){
-        if let flowLayout = infoCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
-        
-        let columnLayout = CustomViewFlowLayout()
-        
-        if #available(iOS 10.0, *) {
-            columnLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        } else {
-            columnLayout.estimatedItemSize = CGSize(width: 41, height: 15)
-        }
-        infoCollectionView.collectionViewLayout = columnLayout
-    }
+//    func initFlowLayout(){
+//        if let flowLayout = infoCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+//            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+//        }
+//        
+//        let columnLayout = CustomViewFlowLayout()
+//        
+//        if #available(iOS 10.0, *) {
+//            columnLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+//        } else {
+//            columnLayout.estimatedItemSize = CGSize(width: 41, height: 15)
+//        }
+//        infoCollectionView.collectionViewLayout = columnLayout
+//    }
     
     //MARK: - Price Formatting
     func priceFormatting(amount: Int) -> String{

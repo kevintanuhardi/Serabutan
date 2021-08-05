@@ -47,6 +47,7 @@ extension NewAssistanceVC {
         ageTF.inputView = nil
         ageImage.image = UIImage(named: "Down")
         
+        tagListHeight.isActive = false
         infoView.layer.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor
         infoStackView.layer.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor
         infoTFView.layer.borderWidth = 0.25
