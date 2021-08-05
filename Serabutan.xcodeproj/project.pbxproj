@@ -40,6 +40,16 @@
 		C7D7AE4426AC97F1000478AA /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D7AE4226AC97F1000478AA /* TagCollectionViewCell.xib */; };
 		C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4526AE4E83000478AA /* Enum.swift */; };
 		C7D7AE4826AE5040000478AA /* BantuanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4726AE5040000478AA /* BantuanModel.swift */; };
+		F981FF6B26BA90EE00F0ACE5 /* MulaiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981FF6A26BA90EE00F0ACE5 /* MulaiVC.swift */; };
+		F981FF6E26BA914300F0ACE5 /* MulaiVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F981FF6D26BA914300F0ACE5 /* MulaiVC.xib */; };
+		F981FF7526BA982D00F0ACE5 /* InputNoTelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981FF7426BA982D00F0ACE5 /* InputNoTelpVC.swift */; };
+		F981FF7826BA985600F0ACE5 /* InputNoTelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F981FF7726BA985600F0ACE5 /* InputNoTelpVC.xib */; };
+		F981FF7C26BB6B4C00F0ACE5 /* VerifNoTelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981FF7B26BB6B4C00F0ACE5 /* VerifNoTelpVC.swift */; };
+		F981FF7F26BB6B5E00F0ACE5 /* VerifNoTelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F981FF7E26BB6B5E00F0ACE5 /* VerifNoTelpVC.xib */; };
+		F981FF8226BB6E7700F0ACE5 /* FormulirProfilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981FF8126BB6E7700F0ACE5 /* FormulirProfilVC.swift */; };
+		F981FF8526BB6E8600F0ACE5 /* FormulirProfilVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F981FF8426BB6E8600F0ACE5 /* FormulirProfilVC.xib */; };
+		F981FF8826BB755C00F0ACE5 /* AdditionalInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981FF8726BB755C00F0ACE5 /* AdditionalInfoVC.swift */; };
+		F981FF8B26BB757200F0ACE5 /* AdditionalInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F981FF8A26BB757200F0ACE5 /* AdditionalInfoVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +91,16 @@
 		C7D7AE4526AE4E83000478AA /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/Enum.swift; sourceTree = SOURCE_ROOT; };
 		C7D7AE4726AE5040000478AA /* BantuanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BantuanModel.swift; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/BantuanModel.swift; sourceTree = SOURCE_ROOT; };
 		DCCC8D7519FAA9E448178580 /* Pods-Serabutan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Serabutan.release.xcconfig"; path = "Target Support Files/Pods-Serabutan/Pods-Serabutan.release.xcconfig"; sourceTree = "<group>"; };
+		F981FF6A26BA90EE00F0ACE5 /* MulaiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MulaiVC.swift; path = Serabutan/Features/View/Onboarding/MulaiVC.swift; sourceTree = SOURCE_ROOT; };
+		F981FF6D26BA914300F0ACE5 /* MulaiVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MulaiVC.xib; path = Serabutan/Features/View/Onboarding/MulaiVC.xib; sourceTree = SOURCE_ROOT; };
+		F981FF7426BA982D00F0ACE5 /* InputNoTelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InputNoTelpVC.swift; path = Serabutan/Features/View/Onboarding/InputNoTelpVC.swift; sourceTree = SOURCE_ROOT; };
+		F981FF7726BA985600F0ACE5 /* InputNoTelpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InputNoTelpVC.xib; path = Serabutan/Features/View/Onboarding/InputNoTelpVC.xib; sourceTree = SOURCE_ROOT; };
+		F981FF7B26BB6B4C00F0ACE5 /* VerifNoTelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerifNoTelpVC.swift; path = Serabutan/Features/View/Onboarding/VerifNoTelpVC.swift; sourceTree = SOURCE_ROOT; };
+		F981FF7E26BB6B5E00F0ACE5 /* VerifNoTelpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = VerifNoTelpVC.xib; path = Serabutan/Features/View/Onboarding/VerifNoTelpVC.xib; sourceTree = SOURCE_ROOT; };
+		F981FF8126BB6E7700F0ACE5 /* FormulirProfilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FormulirProfilVC.swift; path = Serabutan/Features/View/Onboarding/FormulirProfilVC.swift; sourceTree = SOURCE_ROOT; };
+		F981FF8426BB6E8600F0ACE5 /* FormulirProfilVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FormulirProfilVC.xib; path = Serabutan/Features/View/Onboarding/FormulirProfilVC.xib; sourceTree = SOURCE_ROOT; };
+		F981FF8726BB755C00F0ACE5 /* AdditionalInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdditionalInfoVC.swift; path = Serabutan/Features/View/Onboarding/AdditionalInfoVC.swift; sourceTree = SOURCE_ROOT; };
+		F981FF8A26BB757200F0ACE5 /* AdditionalInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AdditionalInfoVC.xib; path = Serabutan/Features/View/Onboarding/AdditionalInfoVC.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +181,7 @@
 			children = (
 				C7D7AE3526AC969E000478AA /* ListBantuan */,
 				79A523FB26B71274000892D8 /* RatingReview */,
+				F981FF6826BA8CDC00F0ACE5 /* Onboarding */,
 				C78982EC26A7E5F300EB95B1 /* Login */,
 				C78982EB26A7E5EC00EB95B1 /* SignUp */,
 				C78982EA26A7E5B700EB95B1 /* Profile */,
@@ -371,6 +392,23 @@
 			path = AssistanceCell;
 			sourceTree = "<group>";
 		};
+		F981FF6826BA8CDC00F0ACE5 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F981FF6A26BA90EE00F0ACE5 /* MulaiVC.swift */,
+				F981FF6D26BA914300F0ACE5 /* MulaiVC.xib */,
+				F981FF7426BA982D00F0ACE5 /* InputNoTelpVC.swift */,
+				F981FF7726BA985600F0ACE5 /* InputNoTelpVC.xib */,
+				F981FF7B26BB6B4C00F0ACE5 /* VerifNoTelpVC.swift */,
+				F981FF7E26BB6B5E00F0ACE5 /* VerifNoTelpVC.xib */,
+				F981FF8126BB6E7700F0ACE5 /* FormulirProfilVC.swift */,
+				F981FF8426BB6E8600F0ACE5 /* FormulirProfilVC.xib */,
+				F981FF8726BB755C00F0ACE5 /* AdditionalInfoVC.swift */,
+				F981FF8A26BB757200F0ACE5 /* AdditionalInfoVC.xib */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -434,7 +472,12 @@
 				C7D7AE4426AC97F1000478AA /* TagCollectionViewCell.xib in Resources */,
 				C7CCC24D26B1DB590005FFE3 /* AssistanceListVC.xib in Resources */,
 				18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */,
+				F981FF7F26BB6B5E00F0ACE5 /* VerifNoTelpVC.xib in Resources */,
+				F981FF6E26BA914300F0ACE5 /* MulaiVC.xib in Resources */,
+				F981FF8B26BB757200F0ACE5 /* AdditionalInfoVC.xib in Resources */,
+				F981FF7826BA985600F0ACE5 /* InputNoTelpVC.xib in Resources */,
 				185D12C426A7C09100F6105C /* Assets.xcassets in Resources */,
+				F981FF8526BB6E8600F0ACE5 /* FormulirProfilVC.xib in Resources */,
 				1853414926AC68F90027C0F3 /* DummyCollectionViewCell.xib in Resources */,
 				C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */,
 				1853414326AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib in Resources */,
@@ -493,6 +536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */,
+				F981FF7526BA982D00F0ACE5 /* InputNoTelpVC.swift in Sources */,
 				C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */,
 				C7CCC25326B2490F0005FFE3 /* AssistanceListTableConfig.swift in Sources */,
 				C7CCC25026B1DBD80005FFE3 /* AssistanceTableViewCell.swift in Sources */,
@@ -503,7 +547,10 @@
 				189FC4AB26B69B9000662C88 /* Network.swift in Sources */,
 				1853414826AC68F90027C0F3 /* DummyCollectionViewCell.swift in Sources */,
 				189FC4AD26B69D5500662C88 /* Constant.swift in Sources */,
+				F981FF7C26BB6B4C00F0ACE5 /* VerifNoTelpVC.swift in Sources */,
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
+				F981FF8826BB755C00F0ACE5 /* AdditionalInfoVC.swift in Sources */,
+				F981FF8226BB6E7700F0ACE5 /* FormulirProfilVC.swift in Sources */,
 				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,
 				C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */,
 				C744D7E826B2F127009E36B7 /* FilterPopUpConfig.swift in Sources */,
@@ -514,6 +561,7 @@
 				C7D7AE4826AE5040000478AA /* BantuanModel.swift in Sources */,
 				C7CCC24C26B1DB590005FFE3 /* AssistanceListVC.swift in Sources */,
 				79E67E7826B1B2410009F3C6 /* RatingReviewVC.swift in Sources */,
+				F981FF6B26BA90EE00F0ACE5 /* MulaiVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,8 +702,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8PNJ3DJJR6;
+				DEVELOPMENT_TEAM = 75XT62Y27W;
 				INFOPLIST_FILE = "$(SRCROOT)/serabutan/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -674,8 +723,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8PNJ3DJJR6;
+				DEVELOPMENT_TEAM = 75XT62Y27W;
 				INFOPLIST_FILE = "$(SRCROOT)/serabutan/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
