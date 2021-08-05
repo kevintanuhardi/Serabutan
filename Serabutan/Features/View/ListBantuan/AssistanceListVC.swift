@@ -17,22 +17,31 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
     var minValue: Int?
     var maxValue: Int?
     
-    var data: [BantuanModel] = [
-        BantuanModel(urgency: .sedang, title: "Cuci Motor", price: 100000, tags: ["Cuci", "Motor"], distance: 600, status: .diberikan),
-        BantuanModel(urgency: .rendah, title: "Angkut Rongsokan", price: 100000, tags: ["Angkut", "Rongsokan"], distance: 1000, status: .diberikan),
-        BantuanModel(urgency: .rendah, title: "Bantu Sebar Kotak Syukuran", price: 100000, tags: ["Sebar", "Kotak"], distance: 0, status: .diberikan),
-        BantuanModel(urgency: .tinggi, title: "Nurunin Kucing dari Atap", price: 200000, tags: ["Kucing", "Kasian", "Nyangkut"], distance: 200, status: .diberikan)
-    ]
-    var filteredData = [BantuanModel]()
-    var sortedData = [BantuanModel]()
+    // TODO: Remove this on BE integration
+    var jobList = DummyData.shared.getJobsList()
+    var filteredJob = [Jobs]()
+    var sortedJob = [Jobs]()
+    
+//    var data: [BantuanModel] = [
+//        BantuanModel(urgency: .sedang, title: "Cuci Motor", price: 100000, tags: ["Cuci", "Motor"], distance: 600, status: .diberikan),
+//        BantuanModel(urgency: .rendah, title: "Angkut Rongsokan", price: 100000, tags: ["Angkut", "Rongsokan"], distance: 1000, status: .diberikan),
+//        BantuanModel(urgency: .rendah, title: "Bantu Sebar Kotak Syukuran", price: 100000, tags: ["Sebar", "Kotak"], distance: 0, status: .diberikan),
+//        BantuanModel(urgency: .tinggi, title: "Nurunin Kucing dari Atap", price: 200000, tags: ["Kucing", "Kasian", "Nyangkut"], distance: 200, status: .diberikan)
+//    ]
+//    var filteredData = [BantuanModel]()
+//    var sortedData = [BantuanModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         assistanceTable.delegate = self
         assistanceTable.dataSource = self
         assistanceTable.register(AssistanceTableViewCell.nib(), forCellReuseIdentifier: AssistanceTableViewCell.identifier)
-        filteredData = data
-        sortedData = data
+//        filteredData = data
+//        sortedData = data
+        
+        filteredJob = jobList
+        sortedJob = jobList
+        
         applySortData()
         assistanceTable.reloadData()
         UIApplication
@@ -68,9 +77,9 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     func filterForSearchText(searchText: String){
-        filteredData = data.filter { assistance in
+        filteredJob = jobList.filter { assistance in
             if(searchBar.searchBar.text != ""){
-                let searchTextMatch = assistance.title!.lowercased().contains(searchText.lowercased())
+                let searchTextMatch = assistance.title.lowercased().contains(searchText.lowercased())
                 return searchTextMatch
             } else {
                 return true
@@ -83,21 +92,21 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
         let sorting  = sortBy
         
         if sorting == .newest {
-            sortedData = data.sorted() { $0.distance! < $1.distance! }
+            sortedJob = jobList.sorted() { $0.distance < $1.distance }
             print("SORTED BY: Newest is used")
         } else if sorting == .highestCompensation {
-            sortedData = data.sorted() { $0.price! > $1.price! }
+            sortedJob = jobList.sorted() { $0.price > $1.price }
             print("SORTED BY: Highest is used")
         } else if sorting == .lowestCompensation {
-            sortedData = data.sorted() { $0.price! < $1.price! }
+            sortedJob = jobList.sorted() { $0.price < $1.price }
             print("SORTED BY: Lowest is used")
         } else {
-            sortedData = data.sorted() { $0.distance! < $1.distance! }
+            sortedJob = jobList.sorted() { $0.distance < $1.distance }
             print("SORTED BY: Nearest is used")
         }
         DispatchQueue.main.async {
             self.assistanceTable?.reloadData()
         }
-        print("SORTED DATA", sortedData)
+        print("SORTED DATA", sortedJob)
     }
 }

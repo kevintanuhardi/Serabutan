@@ -12,52 +12,43 @@ extension AssistanceListVC{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(searchBar.isActive){
-            return filteredData.count
+            return filteredJob.count
         }
-        return sortedData.count
+        return sortedJob.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = assistanceTable.dequeueReusableCell(withIdentifier: AssistanceTableViewCell.identifier, for: indexPath) as! AssistanceTableViewCell
+        
+        let filteredResult = filteredJob[indexPath.row]
+        let sortedResult = sortedJob[indexPath.row]
+        
         cell.selectionStyle = .none
         cell.tagView.isHidden = true
         cell.availableView.isHidden = true
         cell.youHelperView.isHidden = true
         cell.helperView.isHidden = true
         cell.mainBottomBar.isHidden = true
-        
+
         //SET ASSISTANCE COLLECTION VIEW DATA
-        if(searchBar.isActive){
-            cell.statusLabel.text = filteredData[indexPath.row].urgency?.rawValue
-            cell.titleLabel.text = filteredData[indexPath.row].title
-            var compensation: String {
-                priceFormatting(amount: filteredData[indexPath.row].price!)
-            }
-            cell.compensationLabel.text = compensation
-            var distance: String {
-                if filteredData[indexPath.row].distance! < 1000 {
-                    return "\(filteredData[indexPath.row].distance!)" + " m"
-                } else {
-                    return "\(filteredData[indexPath.row].distance!)" + " km"
-                }
-            }
-            cell.headerLabel.text = distance
-        } else {
-            cell.statusLabel.text = sortedData[indexPath.row].urgency?.rawValue
-            cell.titleLabel.text = sortedData[indexPath.row].title
-            var compensation: String {
-                priceFormatting(amount: sortedData[indexPath.row].price!)
-            }
-            cell.compensationLabel.text = compensation
-            var distance: String {
-                if sortedData[indexPath.row].distance! < 1000 {
-                    return "\(sortedData[indexPath.row].distance!)" + " m"
-                } else {
-                    return "\(sortedData[indexPath.row].distance!)" + " km"
-                }
-            }
-            cell.headerLabel.text = distance
-        }
+        var result: Jobs { return searchBar.isActive ? filteredResult : sortedResult }
+        var distance: String { return result.distance < 1000 ? ("\(Int(result.distance))" + " m") : ("\(Int(result.distance))" + " km") }
+        
+        cell.setStatusView(urgency: result.urgency)
+        cell.headerLabel.text = distance
+        cell.titleLabel.text = result.title
+        cell.posterImage.image = result.jobPosterId.avatar
+        cell.verifiedLogo.isHidden = !(result.jobPosterId.isVerified)
+        cell.posterLabel.text = result.jobPosterId.name
+        cell.compensationLabel.text = priceFormatting(amount: result.price)
+        
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+        formatter.locale = Locale(identifier: "id")
+        let relativeDate = formatter.localizedString(for: result.postingDate, relativeTo: Date())
+        
+        cell.timeElapsedLabel.text = "\(relativeDate)"
+        
         return cell
     }
     

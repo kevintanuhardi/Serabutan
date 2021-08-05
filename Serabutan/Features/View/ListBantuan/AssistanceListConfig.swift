@@ -24,6 +24,14 @@ extension AssistanceListVC{
         return true
     }
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.searchTextField.animateBorder(true, type: .border)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.searchTextField.animateBorder(false, type: .border)
+    }
+    
     func navigateToHome() {
         let homeVC = HomeVC()
         tabBarController?.tabBar.isHidden = false

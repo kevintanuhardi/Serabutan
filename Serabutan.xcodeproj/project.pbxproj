@@ -20,6 +20,7 @@
 		185D12C726A7C09100F6105C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185D12C526A7C09100F6105C /* LaunchScreen.storyboard */; };
 		189FC4AB26B69B9000662C88 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FC4AA26B69B9000662C88 /* Network.swift */; };
 		189FC4AD26B69D5500662C88 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FC4AC26B69D5500662C88 /* Constant.swift */; };
+		18B7273426B90F760005DBCA /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7273326B90F760005DBCA /* HomeVM.swift */; };
 		18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF23B26A911E10029CEA1 /* HomeVC.swift */; };
 		18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF23C26A911E10029CEA1 /* HomeVC.xib */; };
 		25E12764C12E9A95857C67A9 /* Pods_Serabutan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9D7DBC44E66EA83F59169B /* Pods_Serabutan.framework */; };
@@ -44,6 +45,12 @@
 		C7377C5E26B98A72004A8C28 /* CollectionViewAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7377C5D26B98A72004A8C28 /* CollectionViewAutoLayout.swift */; };
 		C7377C6026B98B42004A8C28 /* CustomViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7377C5F26B98B42004A8C28 /* CustomViewFlowLayout.swift */; };
 		C742289E26B9B10D003DD169 /* NewAssistanceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742289D26B9B10D003DD169 /* NewAssistanceExtension.swift */; };
+		C74228A126BA3E9F003DD169 /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742289F26BA3E9F003DD169 /* ActivityVC.swift */; };
+		C74228A226BA3E9F003DD169 /* ActivityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C74228A026BA3E9F003DD169 /* ActivityVC.xib */; };
+		C74228A726BA3ECF003DD169 /* OngoingActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74228A526BA3ECF003DD169 /* OngoingActivityVC.swift */; };
+		C74228A826BA3ECF003DD169 /* OngoingActivityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C74228A626BA3ECF003DD169 /* OngoingActivityVC.xib */; };
+		C74228AB26BA3EE8003DD169 /* HistoryActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74228A926BA3EE8003DD169 /* HistoryActivityVC.swift */; };
+		C74228AC26BA3EE8003DD169 /* HistoryActivityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C74228AA26BA3EE8003DD169 /* HistoryActivityVC.xib */; };
 		C744D7DE26B2D324009E36B7 /* AssistanceTableViewStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7DD26B2D324009E36B7 /* AssistanceTableViewStyling.swift */; };
 		C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */; };
 		C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */; };
@@ -68,6 +75,7 @@
 		C7D7AE4426AC97F1000478AA /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D7AE4226AC97F1000478AA /* TagCollectionViewCell.xib */; };
 		C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4526AE4E83000478AA /* Enum.swift */; };
 		C7D7AE4826AE5040000478AA /* BantuanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4726AE5040000478AA /* BantuanModel.swift */; };
+		C7FE979A26BA65F900B27160 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FE979926BA65F900B27160 /* StringFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +94,9 @@
 		185D12C826A7C09100F6105C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		189FC4AA26B69B9000662C88 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Serabutan/Service/Network/Network.swift; sourceTree = SOURCE_ROOT; };
 		189FC4AC26B69D5500662C88 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = Serabutan/Helper/Constant.swift; sourceTree = SOURCE_ROOT; };
+		18B7273326B90F760005DBCA /* HomeVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/HomeVC.swift; sourceTree = SOURCE_ROOT; };
+		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/HomeVC.xib; sourceTree = SOURCE_ROOT; };
 		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/Home/HomeVC.swift; sourceTree = SOURCE_ROOT; };
 		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/Home/HomeVC.xib; sourceTree = SOURCE_ROOT; };
 		79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingReviewVC.swift; path = serabutan/Features/View/RatingReview/RatingReviewVC.swift; sourceTree = SOURCE_ROOT; };
@@ -111,6 +122,12 @@
 		C7377C5D26B98A72004A8C28 /* CollectionViewAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionViewAutoLayout.swift; path = Serabutan/Features/View/NewAssistance/TestCell/Helper/CollectionViewAutoLayout.swift; sourceTree = SOURCE_ROOT; };
 		C7377C5F26B98B42004A8C28 /* CustomViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomViewFlowLayout.swift; path = Serabutan/Features/View/NewAssistance/TestCell/Helper/CustomViewFlowLayout.swift; sourceTree = SOURCE_ROOT; };
 		C742289D26B9B10D003DD169 /* NewAssistanceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanceExtension.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanceExtension.swift; sourceTree = SOURCE_ROOT; };
+		C742289F26BA3E9F003DD169 /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityVC.swift; path = Serabutan/Features/View/NewAssistance/ActivityVC.swift; sourceTree = SOURCE_ROOT; };
+		C74228A026BA3E9F003DD169 /* ActivityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ActivityVC.xib; path = Serabutan/Features/View/NewAssistance/ActivityVC.xib; sourceTree = SOURCE_ROOT; };
+		C74228A526BA3ECF003DD169 /* OngoingActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OngoingActivityVC.swift; path = Serabutan/Features/View/Activity/Ongoing/OngoingActivityVC.swift; sourceTree = SOURCE_ROOT; };
+		C74228A626BA3ECF003DD169 /* OngoingActivityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OngoingActivityVC.xib; path = Serabutan/Features/View/Activity/Ongoing/OngoingActivityVC.xib; sourceTree = SOURCE_ROOT; };
+		C74228A926BA3EE8003DD169 /* HistoryActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryActivityVC.swift; path = Serabutan/Features/View/Activity/History/HistoryActivityVC.swift; sourceTree = SOURCE_ROOT; };
+		C74228AA26BA3EE8003DD169 /* HistoryActivityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HistoryActivityVC.xib; path = Serabutan/Features/View/Activity/History/HistoryActivityVC.xib; sourceTree = SOURCE_ROOT; };
 		C744D7DD26B2D324009E36B7 /* AssistanceTableViewStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceTableViewStyling.swift; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableViewStyling.swift; sourceTree = SOURCE_ROOT; };
 		C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpVC.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.swift; sourceTree = SOURCE_ROOT; };
 		C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FilterPopUpVC.xib; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.xib; sourceTree = SOURCE_ROOT; };
@@ -136,6 +153,8 @@
 		C7D7AE4526AE4E83000478AA /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/Enum.swift; sourceTree = SOURCE_ROOT; };
 		C7D7AE4726AE5040000478AA /* BantuanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BantuanModel.swift; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/BantuanModel.swift; sourceTree = SOURCE_ROOT; };
 		FC9D7DBC44E66EA83F59169B /* Pods_Serabutan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Serabutan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7FE979926BA65F900B27160 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StringFormatter.swift; path = Serabutan/Helper/StringFormatter.swift; sourceTree = SOURCE_ROOT; };
+		DCCC8D7519FAA9E448178580 /* Pods-Serabutan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Serabutan.release.xcconfig"; path = "Target Support Files/Pods-Serabutan/Pods-Serabutan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +262,7 @@
 		185D12D326A7C13A00F6105C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				18B7273326B90F760005DBCA /* HomeVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -264,6 +284,7 @@
 				9083DB1726B7913B00D1E75F /* ImageHelper.swift */,
 				1854605226AD2AB000ABCF84 /* Utility.swift */,
 				189FC4AC26B69D5500662C88 /* Constant.swift */,
+				C7FE979926BA65F900B27160 /* StringFormatter.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -331,6 +352,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C74228A326BA3EAA003DD169 /* Ongoing */ = {
+			isa = PBXGroup;
+			children = (
+				C74228A526BA3ECF003DD169 /* OngoingActivityVC.swift */,
+				C74228A626BA3ECF003DD169 /* OngoingActivityVC.xib */,
+			);
+			path = Ongoing;
+			sourceTree = "<group>";
+		};
+		C74228A426BA3EB1003DD169 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				C74228A926BA3EE8003DD169 /* HistoryActivityVC.swift */,
+				C74228AA26BA3EE8003DD169 /* HistoryActivityVC.xib */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		C744D7E026B2D9B1009E36B7 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +427,10 @@
 		C78982E826A7E56800EB95B1 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				C742289F26BA3E9F003DD169 /* ActivityVC.swift */,
+				C74228A026BA3E9F003DD169 /* ActivityVC.xib */,
+				C74228A326BA3EAA003DD169 /* Ongoing */,
+				C74228A426BA3EB1003DD169 /* History */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -528,6 +571,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C74228A226BA3E9F003DD169 /* ActivityVC.xib in Resources */,
 				185D12C726A7C09100F6105C /* LaunchScreen.storyboard in Resources */,
 				C7D7AE4426AC97F1000478AA /* TagCollectionViewCell.xib in Resources */,
 				C75E13F626B906BC007BEF41 /* TagCell.xib in Resources */,
@@ -542,7 +586,9 @@
 				1853414926AC68F90027C0F3 /* DummyCollectionViewCell.xib in Resources */,
 				C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */,
 				1853414326AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib in Resources */,
+				C74228A826BA3ECF003DD169 /* OngoingActivityVC.xib in Resources */,
 				C7CCC25126B1DBD80005FFE3 /* AssistanceTableViewCell.xib in Resources */,
+				C74228AC26BA3EE8003DD169 /* HistoryActivityVC.xib in Resources */,
 				79E67E7926B1B2410009F3C6 /* RatingReviewVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,12 +645,15 @@
 				90DCB12F26B6EAC4002145C1 /* CustomStackView.swift in Sources */,
 				907F9DD126B6A92E00EF9F51 /* DummyData.swift in Sources */,
 				90F3A4E126B8E404001946E1 /* FontLibrary.swift in Sources */,
+				C74228A726BA3ECF003DD169 /* OngoingActivityVC.swift in Sources */,
+				C74228AB26BA3EE8003DD169 /* HistoryActivityVC.swift in Sources */,
 				9083DB1C26B7B4DF00D1E75F /* ProfileStatistic.swift in Sources */,
 				18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */,
 				90E9C98826B39DE500165319 /* ReviewTableViewCell.swift in Sources */,
 				907F9DCD26B65C8200EF9F51 /* CustomBorder.swift in Sources */,
 				C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */,
 				C7CCC25326B2490F0005FFE3 /* AssistanceListTableConfig.swift in Sources */,
+				18B7273426B90F760005DBCA /* HomeVM.swift in Sources */,
 				C7CCC25026B1DBD80005FFE3 /* AssistanceTableViewCell.swift in Sources */,
 				1853414526AC472C0027C0F3 /* Job.swift in Sources */,
 				90584E2026B274A7004C225B /* ProfileVC.swift in Sources */,
@@ -634,9 +683,11 @@
 				1853414226AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift in Sources */,
 				1854605326AD2AB000ABCF84 /* Utility.swift in Sources */,
 				189FC4AB26B69B9000662C88 /* Network.swift in Sources */,
+				C74228A126BA3E9F003DD169 /* ActivityVC.swift in Sources */,
 				1853414826AC68F90027C0F3 /* DummyCollectionViewCell.swift in Sources */,
 				189FC4AD26B69D5500662C88 /* Constant.swift in Sources */,
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
+				C7FE979A26BA65F900B27160 /* StringFormatter.swift in Sources */,
 				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,
 				C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */,
 				C744D7E826B2F127009E36B7 /* FilterPopUpConfig.swift in Sources */,
