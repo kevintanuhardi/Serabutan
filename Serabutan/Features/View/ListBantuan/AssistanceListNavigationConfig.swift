@@ -18,7 +18,7 @@ extension AssistanceListVC{
         initSearchController()
         navigationBackButton()
         navigationFilterButton()
-        setGradientBottom()
+//        setGradientBottom()
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -42,6 +42,13 @@ extension AssistanceListVC{
         assistanceTable.keyboardDismissMode = .onDrag
         
         searchBar.searchBar.placeholder = "Cari Bantuan"
+        searchBar.searchBar.searchTextField.backgroundColor = .white
+        searchBar.searchBar.searchTextField.layer.borderWidth = 0.5
+        searchBar.searchBar.searchTextField.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
+        searchBar.searchBar.searchTextField.layer.cornerRadius = 18
+        searchBar.searchBar.searchTextField.layer.masksToBounds = true
+        searchBar.searchBar.setSearchFieldBackgroundImage(UIImage(), for: .normal)
+
     }
     
     func navigationBackButton(){

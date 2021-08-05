@@ -34,7 +34,9 @@ class ProfileVC: UIViewController {
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.shadowImage = UIImage()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sunting", style: .plain, target: self, action: #selector(suntingProfile))
+        let rightBarButton = UIBarButtonItem(title: "Sunting", style: .plain, target: self, action: #selector(suntingProfile))
+        rightBarButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.FontLibrary.textLink1], for: .normal)
+        navigationItem.rightBarButtonItem = rightBarButton
     }
     
     override func viewDidLoad() {
@@ -58,7 +60,7 @@ class ProfileVC: UIViewController {
         ratingBadge.layer.masksToBounds = true
         ratingBadge.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         ratingBadge.layer.borderWidth = 0.5
-        profileInfoView.addLine(position: .Bottom, color: UIColor.ColorLibrary.mediumGrey, width: 0.5)
+        profileInfoView.addLine(position: .bottom, color: UIColor.ColorLibrary.mediumGrey, width: 0.5)
 
         // Set profile
         profileImage.image = user?.avatar
@@ -69,16 +71,16 @@ class ProfileVC: UIViewController {
         ratingTotal.text = "(\(user?.statistics?.totalReview ?? 0))"
         
         // Set profile statistic - Dibantu
-        let dibantu = NSMutableAttributedString(string: "\(user?.statistics?.dibantu ?? 0)", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)])
+        let dibantu = NSMutableAttributedString(string: "\(user?.statistics?.dibantu ?? 0)", attributes: [NSAttributedString.Key.font: UIFont.FontLibrary.bodyBold])
         
-        dibantu.append(NSAttributedString(string: " Dibantu", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]))
+        dibantu.append(NSAttributedString(string: " Dibantu", attributes: [NSAttributedString.Key.font: UIFont.FontLibrary.body]))
         
         totalDibantu.attributedText = dibantu
         
         // Set profile statistic - Membantu
-        let membantu = NSMutableAttributedString(string: "\(user?.statistics?.membantu ?? 0)", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)])
+        let membantu = NSMutableAttributedString(string: "\(user?.statistics?.membantu ?? 0)", attributes: [NSAttributedString.Key.font: UIFont.FontLibrary.bodyBold])
         
-        membantu.append(NSAttributedString(string: " Membantu", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]))
+        membantu.append(NSAttributedString(string: " Membantu", attributes: [NSAttributedString.Key.font: UIFont.FontLibrary.body]))
         
         totalMembantu.attributedText = membantu
         
@@ -109,7 +111,7 @@ extension ProfileVC: UITableViewDataSource {
         let label = UILabel()
         label.frame = CGRect.init(x: 20, y: 0, width: headerView.frame.width-40, height: headerView.frame.height)
         label.text = "AKTIVITAS & ULASAN"
-        label.font = .boldSystemFont(ofSize: 12)
+        label.font = .FontLibrary.bodyBold
         label.textColor = UIColor.ColorLibrary.customBlack
         headerView.addSubview(label)
         

@@ -14,7 +14,7 @@ extension AssistanceTableViewCell{
         myContentView.layer.backgroundColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 0.00).cgColor
         setStatusView()
         setParentView()
-        setGradientView()
+//        setGradientView()
         setAvailableAssistanceView()
         setWhatsappButtonView()
         setFont()

@@ -20,6 +20,7 @@
 		185D12C726A7C09100F6105C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185D12C526A7C09100F6105C /* LaunchScreen.storyboard */; };
 		189FC4AB26B69B9000662C88 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FC4AA26B69B9000662C88 /* Network.swift */; };
 		189FC4AD26B69D5500662C88 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FC4AC26B69D5500662C88 /* Constant.swift */; };
+		18B7273426B90F760005DBCA /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7273326B90F760005DBCA /* HomeVM.swift */; };
 		18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF23B26A911E10029CEA1 /* HomeVC.swift */; };
 		18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF23C26A911E10029CEA1 /* HomeVC.xib */; };
 		7830896AB6A17C511938A0B0 /* Pods_Serabutan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB6A465A85B221961E3FE29 /* Pods_Serabutan.framework */; };
@@ -83,6 +84,9 @@
 		185D12D526A7C16400F6105C /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		189FC4AA26B69B9000662C88 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Serabutan/Service/Network/Network.swift; sourceTree = SOURCE_ROOT; };
 		189FC4AC26B69D5500662C88 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = Serabutan/Helper/Constant.swift; sourceTree = SOURCE_ROOT; };
+		18B7273326B90F760005DBCA /* HomeVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/HomeVC.swift; sourceTree = SOURCE_ROOT; };
+		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/HomeVC.xib; sourceTree = SOURCE_ROOT; };
 		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/Home/HomeVC.swift; sourceTree = SOURCE_ROOT; };
 		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/Home/HomeVC.xib; sourceTree = SOURCE_ROOT; };
 		20FD053C92B5DE81A3651602 /* Pods-Serabutan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Serabutan.debug.xcconfig"; path = "Target Support Files/Pods-Serabutan/Pods-Serabutan.debug.xcconfig"; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 		185D12D326A7C13A00F6105C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				18B7273326B90F760005DBCA /* HomeVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -603,6 +608,7 @@
 				907F9DCD26B65C8200EF9F51 /* CustomBorder.swift in Sources */,
 				C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */,
 				C7CCC25326B2490F0005FFE3 /* AssistanceListTableConfig.swift in Sources */,
+				18B7273426B90F760005DBCA /* HomeVM.swift in Sources */,
 				C7CCC25026B1DBD80005FFE3 /* AssistanceTableViewCell.swift in Sources */,
 				1853414526AC472C0027C0F3 /* Job.swift in Sources */,
 				90584E2026B274A7004C225B /* ProfileVC.swift in Sources */,

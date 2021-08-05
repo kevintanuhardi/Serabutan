@@ -20,49 +20,57 @@ extension FilterPopUpVC{
         maxValueTFToolbar()
     
         containerView.clipsToBounds = true
-        containerView.layer.cornerRadius = 5
+        containerView.layer.cornerRadius = 10
         containerView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         containerView.layer.masksToBounds = true
         
         topBarView.layer.masksToBounds = true
         topBarView.layer.cornerRadius = 3
-        topBarView.layer.backgroundColor = UIColor(red: 0.81, green: 0.81, blue: 0.81, alpha: 1.00).cgColor
+        topBarView.layer.backgroundColor = UIColor.ColorLibrary.mediumGrey.cgColor
+        
+        minValTF.addLine(position: .bottom, color: .ColorLibrary.mediumGrey, width: 1)
+        maxValTF.addLine(position: .bottom, color: .ColorLibrary.mediumGrey, width: 1)
+        
     }
     
     func initCloseButton(){
+        closestButton.titleLabel?.font = .FontLibrary.body
         closestButton.layer.masksToBounds = true
-        closestButton.layer.borderColor = mainColor
-        closestButton.layer.backgroundColor = mainColor
-        closestButton.setTitleColor(.white, for: .normal)
-        closestButton.layer.borderWidth = 1
+        closestButton.layer.borderColor = mainColor.cgColor
+        closestButton.layer.backgroundColor = tintColor.cgColor
+        closestButton.setTitleColor(.ColorLibrary.accentColor, for: .normal)
+        closestButton.layer.borderWidth = 0.5
         closestButton.layer.cornerRadius = 5
     }
     
     
     func initNewestButton(){
+        newestButton.titleLabel?.font = .FontLibrary.body
         newestButton.layer.masksToBounds = true
-        newestButton.layer.borderColor = mainColor
-        newestButton.layer.borderWidth = 1
+        newestButton.layer.borderColor = blackColor.cgColor
+        newestButton.layer.borderWidth = 0.5
         newestButton.layer.cornerRadius = 5
     }
     
     func initHighestCompensationButton(){
+        highestCompensationButton.titleLabel?.font = .FontLibrary.body
         highestCompensationButton.layer.masksToBounds = true
-        highestCompensationButton.layer.borderColor = mainColor
-        highestCompensationButton.layer.borderWidth = 1
+        highestCompensationButton.layer.borderColor = blackColor.cgColor
+        highestCompensationButton.layer.borderWidth = 0.5
         highestCompensationButton.layer.cornerRadius = 5
     }
     
     func initLowestCompensationButton(){
+        lowestCompensationButton.titleLabel?.font = .FontLibrary.body
         lowestCompensationButton.layer.masksToBounds = true
-        lowestCompensationButton.layer.borderColor = mainColor
-        lowestCompensationButton.layer.borderWidth = 1
+        lowestCompensationButton.layer.borderColor = blackColor.cgColor
+        lowestCompensationButton.layer.borderWidth = 0.5
         lowestCompensationButton.layer.cornerRadius = 5
     }
     
     func initApplyButton(){
         applyButton.layer.masksToBounds = true
-        applyButton.layer.backgroundColor = mainColor
+        applyButton.layer.backgroundColor = mainColor.cgColor
         applyButton.layer.cornerRadius = 5
     }
     
@@ -84,6 +92,14 @@ extension FilterPopUpVC{
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(maxValueDoneButtonTapped))
         toolbar.setItems([spaceButton, doneButton], animated: true)
         maxValTF.inputAccessoryView = toolbar
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        for view in textField.subviews {
+            if view.restorationIdentifier == "Border" {
+                view.animateBorder(true, type: .color)
+            }
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -108,6 +124,12 @@ extension FilterPopUpVC{
         } else if maxValTF .endEditing(true){
             let viewMaxVal = Int(currMaxValue) ?? maxValue
             maxValTF.text = "Rp " + priceFormatting(amount: viewMaxVal!)
+        }
+        
+        for view in textField.subviews {
+            if view.restorationIdentifier == "Border" {
+                view.animateBorder(false, type: .color)
+            }
         }
         
         minValue = Int(currMinValue) ?? 50000

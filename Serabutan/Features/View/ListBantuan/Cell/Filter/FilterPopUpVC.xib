@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,7 +39,7 @@
                     <rect key="frame" x="0.0" y="496" width="414" height="400"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9f-uR-ocZ" userLabel="Main">
-                            <rect key="frame" x="0.0" y="5" width="414" height="395"/>
+                            <rect key="frame" x="0.0" y="10" width="414" height="390"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiM-bU-lyL">
                                     <rect key="frame" x="20" y="20" width="48.5" height="24"/>
@@ -95,7 +96,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQd-UI-2SS">
-                                    <rect key="frame" x="20" y="315" width="374" height="50"/>
+                                    <rect key="frame" x="20" y="310" width="374" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="HGo-4X-g7T"/>
                                     </constraints>
@@ -125,7 +126,7 @@
                                     <rect key="frame" x="329" y="18.5" width="65" height="27"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                     <state key="normal" title="Atur Ulang">
-                                        <color key="titleColor" systemColor="systemIndigoColor"/>
+                                        <color key="titleColor" name="AccentColor"/>
                                     </state>
                                     <connections>
                                         <action selector="resetButtonAction:" destination="-1" eventType="touchUpInside" id="Z2u-sG-iA9"/>
@@ -162,7 +163,6 @@
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAg-xD-xRh">
                                                             <rect key="frame" x="0.0" y="47" width="177" height="2"/>
-                                                            <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="2" id="0QN-cu-KMD"/>
                                                             </constraints>
@@ -210,7 +210,6 @@
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8C-4U-Upw">
                                                             <rect key="frame" x="0.0" y="47" width="177" height="2"/>
-                                                            <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="2" id="91W-ZX-hrz"/>
                                                             </constraints>
@@ -270,7 +269,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VrO-ko-kSg" userLabel="TopBar View">
-                            <rect key="frame" x="182" y="5" width="50" height="5"/>
+                            <rect key="frame" x="182" y="10" width="50" height="5"/>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="v4Z-Xo-35m"/>
@@ -286,7 +285,7 @@
                         <constraint firstItem="D9f-uR-ocZ" firstAttribute="top" secondItem="VrO-ko-kSg" secondAttribute="top" id="kdp-2n-ZQ0"/>
                         <constraint firstAttribute="bottom" secondItem="D9f-uR-ocZ" secondAttribute="bottom" id="odF-W1-l2R"/>
                         <constraint firstItem="VrO-ko-kSg" firstAttribute="centerX" secondItem="M6L-pb-wx7" secondAttribute="centerX" id="tcx-yX-5k3"/>
-                        <constraint firstItem="VrO-ko-kSg" firstAttribute="top" secondItem="M6L-pb-wx7" secondAttribute="top" constant="5" id="tyS-rf-uQa"/>
+                        <constraint firstItem="VrO-ko-kSg" firstAttribute="top" secondItem="M6L-pb-wx7" secondAttribute="top" constant="10" id="tyS-rf-uQa"/>
                     </constraints>
                 </view>
             </subviews>
@@ -301,11 +300,11 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.50199997425079346" green="0.3059999942779541" blue="0.82400000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

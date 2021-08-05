@@ -8,14 +8,14 @@
 import UIKit
 import MapKit
 
-var jobs = [Job]()
-//    Job(title: "Nurunin Kucing dari Atap", locationName: "masih di atap situ deh", urgency: .high, price: 50000, coordinate: CLLocationCoordinate2D(latitude:  -6.302919554428814, longitude: 106.65259634329381)),
-//    Job(title: "Angkut Rongsokan", locationName: "itu muka apa rongsokan", urgency: .medium, price: 75000, coordinate: CLLocationCoordinate2D(latitude:  -6.3009267573263275, longitude: 106.65268675358362)),
-//    Job(title: "Bantu Sebar Kotay Syukuran", locationName: "yang penting bersyukur", urgency: .low, price: 1000000, coordinate: CLLocationCoordinate2D(latitude:  -6.299640621626045, longitude: 106.65153022391823)]
 
 class HomeVC: UIViewController {
 
     private let locationManager = CLLocationManager()
+	
+		private var homeVM = HomeVM()
+		private var jobs: [Job] = []
+	
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var jobListingColView: UICollectionView!
     @IBOutlet weak var showAllButton: UIButton!
@@ -26,27 +26,12 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mapView.delegate = self
-        mapView.mapType = .mutedStandard
-        
-        let dummyNib = UINib(nibName: "DummyCollectionViewCell", bundle: nil)
-        jobListingColView.register(dummyNib, forCellWithReuseIdentifier: "dummyIdentifier")
-        jobListingColView.delegate = self
-        jobListingColView.dataSource = self
-        
-        showAllButton.semanticContentAttribute = UIApplication.shared
-            .userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
-
-        
-        configureLocationServices()
-        
-        setGradientBackground()
+		setupUI()
+		setupCollectionView()
+		setupMapView()
 			
-			// TODO: DELETE THIS
-			postJob()
-			
+		subscribeViewModel()
     }
-
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -57,39 +42,38 @@ class HomeVC: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-		//this is a trial should be moved to ViewModel
-	func fetchNearbyJob(coordinate: CLLocationCoordinate2D) {
-				
-		APIManager.getNearbyJob(coordinate: coordinate){ result in
-					switch result {
-					case .success (let fetchedJobs):
-						print("result:", fetchedJobs)
-						jobs = fetchedJobs as! [Job]
-						DispatchQueue.main.async {
-							self.addAnnotations()
-						}
-					case .failure(let error):
-						print("error:", error)
-					}
-				}
-			}
 	
-	//trial to post
-	func postJob() {
-		let dummyJob = Job( id: 0, title: "IntegrateTesting", desc: "Gw bayar mahal yang bisa bantu gw please", urgency: .high, price: 100000000, coordinate: CLLocationCoordinate2D(latitude: -6.301202, longitude: 106.651777), jobPosterId: 0, status: "", genderPreference: "MALE", agePreference: "16-25", distance: 0.0)
-		
-		APIManager.postJob(jobToCreate: dummyJob){ result in
-			switch result {
-			case .success (let fetchedJobs):
-				print("result:", fetchedJobs)
-				jobs = fetchedJobs as! [Job]
-				DispatchQueue.main.async {
-					self.addAnnotations()
+		private func subscribeViewModel() {
+				homeVM.bindCatalogueViewModelToController = {
+						self.bindData()
 				}
-			case .failure(let error):
-				print("error:", error)
-			}
 		}
+		
+		private func bindData() {
+					jobs = homeVM.nearbyJobs ?? [Job]()
+					DispatchQueue.main.async {
+						self.addAnnotations()
+					}
+		}
+	
+	func setupUI() {
+		setGradientBackground()
+		
+		showAllButton.semanticContentAttribute = UIApplication.shared
+				.userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
+	}
+	
+	func setupCollectionView() {
+		let dummyNib = UINib(nibName: "DummyCollectionViewCell", bundle: nil)
+		jobListingColView.register(dummyNib, forCellWithReuseIdentifier: "dummyIdentifier")
+		jobListingColView.delegate = self
+		jobListingColView.dataSource = self
+	}
+	
+	func setupMapView() {
+		mapView.delegate = self
+		mapView.mapType = .mutedStandard
+		configureLocationServices()
 	}
     
     func setGradientBackground() {
@@ -142,11 +126,6 @@ extension HomeVC: UICollectionViewDataSource , UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let dummyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "dummyIdentifier", for: indexPath) as! DummyCollectionViewCell
-//
-//        dummyCell = UICollectionViewCell(frame: CGRect(x: 0, y: 0, width: 325, height: 150))
-//
-//        dummyCell.backgroundColor = UIColor.lightGray
-//
         return dummyCell
     }
 
@@ -160,7 +139,7 @@ extension HomeVC: CLLocationManagerDelegate {
 
         if currentCoordinate == nil {
             zoomToLatestLocation(with: latestLocation.coordinate)
-					fetchNearbyJob(coordinate: latestLocation.coordinate)
+					homeVM.fetchNearbyJob(coordinate: latestLocation.coordinate)
         }
 
         currentCoordinate = latestLocation.coordinate

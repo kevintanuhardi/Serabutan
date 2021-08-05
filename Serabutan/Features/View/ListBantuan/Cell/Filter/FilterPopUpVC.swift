@@ -37,8 +37,9 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
     var minValue: Int? = 50000
     var maxValue: Int? = 500000
     
-    let tintColor = UIColor(red: 0.50, green: 0.31, blue: 0.82, alpha: 1.00)
-    let mainColor = UIColor(red: 0.50, green: 0.31, blue: 0.82, alpha: 1.00).cgColor
+    let tintColor = UIColor.ColorLibrary.accentBackground
+    let blackColor = UIColor.ColorLibrary.customBlack
+    let mainColor = UIColor.ColorLibrary.accentColor
     
     static let identifier  = "FilterPopUpViewVC"
     static func nib() -> UINib {
@@ -81,9 +82,7 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
     @IBAction func resetButtonAction(_ sender: Any) {
         sortBySelected(closestButton)
         sortBy = AssistanceSortByFilter.nearest
-        closestButton.layer.backgroundColor = mainColor
-        closestButton.setTitleColor(.white, for: .normal)
-        
+
         minValue = 0
         minValTF.placeholder = "Rp " + priceFormatting(amount: minValue!)
         minValTF.text = ""
@@ -94,13 +93,14 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func sortBySelected(_ sender: UIButton) {
         sortByCollectionButton.forEach({ $0.backgroundColor = .white})
-        sortByCollectionButton.forEach({ $0.setTitleColor(.black, for: .normal)})
+        sortByCollectionButton.forEach({ $0.setTitleColor(blackColor, for: .normal)})
+        sortByCollectionButton.forEach({ $0.layer.borderColor = blackColor.cgColor})
         
         sender.backgroundColor = tintColor
-        sender.setTitleColor(.white, for: .normal)
+        sender.setTitleColor(mainColor, for: .normal)
         sender.layer.masksToBounds = true
-        sender.layer.borderColor = mainColor
-        sender.layer.borderWidth = 1
+        sender.layer.borderColor = mainColor.cgColor
+        sender.layer.borderWidth = 0.5
         sender.layer.cornerRadius = 5
     }
     
@@ -129,7 +129,6 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
         self.navigationController?.pushViewController(listBantuanVC, animated: true)
         dismiss(animated: true, completion: nil)
     }
-     
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
