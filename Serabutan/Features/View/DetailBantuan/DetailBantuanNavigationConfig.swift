@@ -16,11 +16,6 @@ extension DetailBantuanVC {
         setFont()
         setColor()
         configureText()
-        
-        if selectedJob.medias == nil {
-            collectionViewHeight.constant = 0.0
-            collectionViewBottomMargin.constant = 0.0
-        }
     }
     
     func setNavigation() {

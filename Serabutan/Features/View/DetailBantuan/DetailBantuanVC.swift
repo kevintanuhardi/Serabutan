@@ -10,11 +10,11 @@ import TagListView
 
 class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    final private let stringWithLink = "https://www.instagram.com/yahyayyashaa/"
-    var imageShare: [UIImage] = []
+    private let stringWithLink = "https://www.instagram.com/yahyayyashaa/"
     
     //    var selectedJob: Jobs?
-    var selectedJob = DummyData.shared.getJobsList()[3]
+    var selectedJob = DummyData.shared.getJobsList()[2]
+    var triggerHelpButton : Bool = false
     
     @IBOutlet weak var helpFinishButton: UIButton!
     @IBOutlet weak var waButton: UIButton!
@@ -39,13 +39,10 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     
     @IBOutlet weak var jobImgCarousel: UICollectionView!
     
-    var triggerHelpButton : Bool = false
-    
-    // Collection View Constraint
-    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var collectionViewBottomMargin: NSLayoutConstraint!
-    
     @IBOutlet weak var tagView: TagListView!
+    
+    // Constraint
+    @IBOutlet weak var tagHeight: NSLayoutConstraint!
     
     @objc func backButtonAction(_ sender:UIButton!){
         navigateToListBantuan()
@@ -57,25 +54,25 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     
     func setTagList() {
         tagView.textFont = .FontLibrary.body
+        
         if selectedJob.tags != nil {
             tagView.addTags(selectedJob.tags!)
         }
     }
     
     @objc func shareButtonAction(_ sender:UIButton!){
-        let activityController = UIActivityViewController(activityItems: [imageShare[0]], applicationActivities: nil)
+        let items: [Any] = ["This app is my favorite", URL(string: "https://www.apple.com")!]
+        let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
         
-        activityController.completionWithItemsHandler = { (nil, completed, _, error)
-            in
+        activityController.completionWithItemsHandler = { (nil, completed, _, error) in
             if completed{
-                print("completed")
+                
             } else {
-                print("canceled")
+                
             }
         }
         
         present(activityController, animated: true){
-            print("presented")
         }
     }
     
@@ -88,8 +85,6 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     
     @IBAction func waButton(_ sender: Any) {
     }
-    
-    
     
     private func navigateToListBantuan(){
         self.navigationController?.popToRootViewController(animated: true)
@@ -106,6 +101,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tagHeight.isActive = false
         
         //collection view pertama
         let imageCell = UINib(nibName: ImageCarouselCVC.identifier,  bundle: nil)
@@ -115,7 +111,11 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
         
         //button finish
         helpFinishButton.layer.cornerRadius = 10
-        helpFinishButton.setTitle("Saya bersedia membantu", for: .normal)
+        helpFinishButton.setTitle("Saya Bersedia Membantu", for: .normal)
+        helpFinishButton.titleLabel?.font = .FontLibrary.button
+        
+        profileImage.layer.cornerRadius = profileImage.frame.height / 2
+        profileImage.layer.masksToBounds = true
         
         setTagList()
     }
@@ -123,13 +123,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
 
 extension DetailBantuanVC {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        var collectionCount = 0
-        
-        collectionCount = selectedJob.medias?.count ?? 0
-        
-        return collectionCount
-        
+        return selectedJob.medias?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -145,8 +139,4 @@ extension DetailBantuanVC {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         collectionView.deselectItem(at: indexPath, animated: true)
     }
-}
-
-extension DetailBantuanVC {
-    
 }
