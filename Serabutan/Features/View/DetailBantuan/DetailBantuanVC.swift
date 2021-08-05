@@ -10,36 +10,36 @@ import TagListView
 
 class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    private let stringWithLink = "https://www.instagram.com/yahyayyashaa/"
-    
     //    var selectedJob: Jobs?
     var selectedJob = DummyData.shared.getJobsList()[2]
-    var triggerHelpButton : Bool = false
     
     @IBOutlet weak var helpFinishButton: UIButton!
-    @IBOutlet weak var waButton: UIButton!
+    @IBOutlet weak var chatButton: UIButton!
     
+    // Job Related
     @IBOutlet weak var urgencyView: UIView!
-    
+    @IBOutlet weak var urgencyCircleFill: UIImageView!
     @IBOutlet weak var urgencyLabel: UILabel!
     @IBOutlet weak var jobTitleLabel: UILabel!
     @IBOutlet weak var salaryLabel: UILabel!
-    @IBOutlet weak var jobGiverLabel: UILabel!
+    
+    @IBOutlet weak var jobPosterAvatar: UIImageView!
+    @IBOutlet weak var jobPosterName: UIButton!
+    @IBOutlet weak var jobPosterVerified: UIImageView!
     @IBOutlet weak var timePostElapsed: UILabel!
     @IBOutlet weak var distanceToJob: UILabel!
-    @IBOutlet weak var helperName: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel! 
-    
-    @IBOutlet weak var urgencyCircleFill: UIImageView!
-    
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var profileImage2: UIImageView!
-    
-    @IBOutlet weak var helpStatusLabel: UILabel!
     
     @IBOutlet weak var jobImgCarousel: UICollectionView!
-    
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var tagView: TagListView!
+    
+    // Helper Related
+    @IBOutlet weak var helperAvatar: UIImageView!
+    @IBOutlet weak var helperName: UIButton!
+    @IBOutlet weak var helperVerified: UIImageView!
+    @IBOutlet weak var helpStatusLabel: UILabel!
+    @IBOutlet weak var helperView: UIView!
+    @IBOutlet weak var floatingBottom: UIView!
     
     // Constraint
     @IBOutlet weak var tagHeight: NSLayoutConstraint!
@@ -54,14 +54,13 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     
     func setTagList() {
         tagView.textFont = .FontLibrary.body
-        
         if selectedJob.tags != nil {
             tagView.addTags(selectedJob.tags!)
         }
     }
     
     @objc func shareButtonAction(_ sender:UIButton!){
-        let items: [Any] = ["This app is my favorite", URL(string: "https://www.apple.com")!]
+        let items: [Any] = [selectedJob.title, URL(string: "https://www.bantuinapp.com/qwerty") as Any]
         let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
         
         activityController.completionWithItemsHandler = { (nil, completed, _, error) in
@@ -77,13 +76,31 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     }
     
     @IBAction func helpFinishButton(_ sender: Any) {
-        helpFinishButton.setTitle("Selesai", for: .normal)
-        helpFinishButton.isHidden = false
-        triggerHelpButton = true
-        viewDidLoad()
+        selectedJob.status = .taken
+        configureHelper()
     }
     
-    @IBAction func waButton(_ sender: Any) {
+    @IBAction func goToProfile(_ sender: UIButton) {
+        let userProfile = ProfileVC()
+        if sender.tag == 0 {
+            userProfile.user = self.selectedJob.jobPosterId
+        } else {
+            userProfile.user = self.selectedJob.helperId
+        }
+        
+        self.navigationController?.pushViewController(userProfile, animated: true)
+    }
+    
+    @IBAction func sendWhatsApp(_ sender: Any) {
+        let message = """
+            Halo Pak/Bu \(selectedJob.jobPosterId.name),
+            saya *\(DummyData.shared.getUserProfile()[0].name)* dari _BantuinApp_ bersedia membantu Bapak/Ibu untuk _\(selectedJob.title)_.
+            Bagaimana saya bisa membantu? 🙂
+            """
+        let messageURL = message.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        
+        let whatsappURL = URL(string: "https://api.whatsapp.com/send?phone=+6281910077402&text=\(messageURL ?? "")")
+        UIApplication.shared.open(whatsappURL!)
     }
     
     private func navigateToListBantuan(){
@@ -108,15 +125,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
         jobImgCarousel.register(imageCell, forCellWithReuseIdentifier: ImageCarouselCVC.identifier)
         jobImgCarousel.delegate = self
         jobImgCarousel.dataSource = self
-        
-        //button finish
-        helpFinishButton.layer.cornerRadius = 10
-        helpFinishButton.setTitle("Saya Bersedia Membantu", for: .normal)
-        helpFinishButton.titleLabel?.font = .FontLibrary.button
-        
-        profileImage.layer.cornerRadius = profileImage.frame.height / 2
-        profileImage.layer.masksToBounds = true
-        
+
         setTagList()
     }
 }

@@ -10,36 +10,126 @@ import UIKit
 
 extension DetailBantuanVC {
     
+    func setupUI(){
+        setNavigation()
+        setNavigationItems()
+        setFont()
+        setColor()
+        setStyle()
+        configureText()
+        configureHelper()
+    }
+    
+    func setStyle() {
+        setStatusView(urgency: selectedJob.urgency)
+        urgencyView.layer.borderWidth = 0.5
+        urgencyView.layer.cornerRadius = urgencyView.frame.height / 2
+        urgencyView.layer.masksToBounds = true
+        
+        jobPosterAvatar.layer.cornerRadius = jobPosterAvatar.frame.height / 2
+        jobPosterAvatar.layer.masksToBounds = true
+        
+        helperAvatar.layer.cornerRadius = jobPosterAvatar.frame.height / 2
+        helperAvatar.layer.masksToBounds = true
+        
+        helpFinishButton.layer.cornerRadius = 10
+        helperView.layer.cornerRadius = 5
+        helperView.layer.masksToBounds = true
+        
+        floatingBottom.dropShadow(scale: true)
+    }
+    
     func setFont() {
         jobTitleLabel.font = .FontLibrary.largeTitle
-        jobGiverLabel.font = .FontLibrary.textLink1
+        jobPosterName.titleLabel?.font = .FontLibrary.textLink1
+        helperName.titleLabel?.font = .FontLibrary.textLink1
         salaryLabel.font = .FontLibrary.title2
         timePostElapsed.font = .FontLibrary.body
         distanceToJob.font = .FontLibrary.body
         descriptionLabel.font = .FontLibrary.headline
+        helpStatusLabel.font = .FontLibrary.body
+        helpFinishButton.titleLabel?.font = .FontLibrary.button
     }
     
     func setColor() {
         jobTitleLabel.textColor = .ColorLibrary.customBlack
-        jobGiverLabel.textColor = .ColorLibrary.customBlack
+        jobPosterName.tintColor = .ColorLibrary.customBlack
         salaryLabel.textColor = .ColorLibrary.darkGrey
         timePostElapsed.textColor = .ColorLibrary.darkGrey
         distanceToJob.textColor = .ColorLibrary.darkGrey
         descriptionLabel.textColor = .ColorLibrary.customBlack
+        helpStatusLabel.textColor = .ColorLibrary.darkGrey
     }
     
-    func configureText(){
+    func configureText() {
         urgencyLabel.text = selectedJob.urgency.rawValue
         jobTitleLabel.text = selectedJob.title
-        salaryLabel.text = selectedJob.price.formattedWithSeparator
-        jobGiverLabel.text = selectedJob.jobPosterId.name
-        profileImage.image = selectedJob.jobPosterId.avatar
-        timePostElapsed.text = "test"
-        distanceToJob.text = selectedJob.distance.formattedWithSeparator
+        salaryLabel.text = StringFormatter().priceFormatting(amount: selectedJob.price)
+        jobPosterName.titleLabel?.text = selectedJob.jobPosterId.name
+        jobPosterName.setTitle(selectedJob.jobPosterId.name, for: .normal)
+        jobPosterAvatar.image = selectedJob.jobPosterId.avatar
+        timePostElapsed.text = StringFormatter().relativeDateFormatter(date: selectedJob.postingDate)
+        distanceToJob.text = StringFormatter().distance(selectedJob.distance)
         descriptionLabel.text = selectedJob.desc
+    }
+    
+    func setStatusView(urgency: Urgency){
         
-        helpFinishButton.titleLabel?.text = "Saya Bersedia Membantu"
-        helpFinishButton.titleLabel?.font = .FontLibrary.button
+        var colorSolid = UIColor()
+        var colorTransparent = UIColor()
+        
+        switch urgency {
+        case .high :
+            colorSolid = .ColorLibrary.highUrgency
+            colorTransparent = .ColorLibrary.highUrgencyBackground
+            urgencyLabel.text = urgency.rawValue
+        case .medium:
+            colorSolid = .ColorLibrary.mediumUrgency
+            colorTransparent = .ColorLibrary.mediumUrgencyBackground
+            urgencyLabel.text = urgency.rawValue
+        case .low:
+            colorSolid = .ColorLibrary.lowUrgency
+            colorTransparent = .ColorLibrary.lowUrgencyBackground
+            urgencyLabel.text = urgency.rawValue
+        }
+        
+        urgencyCircleFill.tintColor = colorSolid
+        urgencyView.layer.borderColor = colorSolid.cgColor
+        urgencyView.layer.backgroundColor = colorTransparent.cgColor
+        
+    }
+    
+    func configureHelper() {
+        switch selectedJob.status {
+        case .taken :
+            selectedJob.helperId = DummyData.shared.getUserProfile()[0]
+            let helper = selectedJob.helperId
+            
+            helperAvatar.image = helper?.avatar
+            helperName.setTitle(helper?.name, for: .normal)
+            
+            helper!.isVerified ? (helperVerified.isHidden = true) : (helperVerified.isHidden = false)
+            
+            helperAvatar.isHidden = false
+            helperName.isHidden = false
+            chatButton.isHidden = false
+            
+            helpFinishButton.setTitle("Selesai", for: .normal)
+            helpStatusLabel.text = "bersedia membantu."
+            
+        case .active:
+            helperAvatar.isHidden = true
+            helperName.isHidden = true
+            chatButton.isHidden = true
+            helperVerified.isHidden = true
+            
+            helpFinishButton.setTitle("Saya Bersedia Membantu", for: .normal)
+            helpStatusLabel.text = "Belum ada yang bersedia membantu."
+        case .cancelled:
+            break
+        case .done:
+            break
+        }
     }
     
 }

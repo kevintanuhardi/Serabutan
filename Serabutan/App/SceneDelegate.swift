@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         let tabBarController = UITabBarController()
-        let homeVC = DetailBantuanVC()
+        let homeVC = HomeVC()
         let activityVC = UIViewController()
         let notificationVC = UIViewController()
         let profileVC = ProfileVC()
@@ -51,8 +51,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         notificationNavigationController.tabBarItem = notificationItem
         profileNavigationController.tabBarItem = profileItem
         
-        UITabBar.appearance().tintColor = UIColor.systemBlue
-        UITabBar.appearance().unselectedItemTintColor = UIColor.init(named: "silver")
+        UITabBar.appearance().tintColor = UIColor.ColorLibrary.accentColor
+        UITabBar.appearance().unselectedItemTintColor = UIColor.ColorLibrary.mediumGrey
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().shadowImage = UIImage()
         
         let viewController = tabBarController
 
@@ -60,6 +62,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationBar.isNavigationBarHidden = true
         window?.rootViewController = navigationBar
         window?.makeKeyAndVisible()
+        
+        // Setup Profile Page - Default User
+        profileVC.user = DummyData.shared.getUserProfile()[0]
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

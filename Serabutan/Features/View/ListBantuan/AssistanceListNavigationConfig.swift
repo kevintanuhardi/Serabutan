@@ -16,16 +16,20 @@ extension AssistanceListVC{
         view.backgroundColor = .ColorLibrary.lightGrey
         
         initSearchController()
-        navigationBackButton()
         navigationFilterButton()
-//        setGradientBottom()
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController!.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.backgroundColor = .ColorLibrary.lightGrey
+        self.navigationController?.navigationBar.barTintColor = .ColorLibrary.lightGrey
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         self.tabBarController?.tabBar.isHidden = true
+        
+        //Back Button
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
     }
     
     func initSearchController(){
@@ -51,21 +55,12 @@ extension AssistanceListVC{
 
     }
     
-    func navigationBackButton(){
-        let backButton = UIButton(type: .system)
-        backButton.setImage(UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        backButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
-        backButton.tintColor = UIColor.black
-        backButton.addTarget(self, action: #selector(backButtonAction(_:)), for: .touchUpInside)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
-    }
-    
     func navigationFilterButton(){
-        let filterButton = UIButton(type: .system)
-        filterButton.setImage(UIImage(named: "Filter")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        filterButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
-        filterButton.addTarget(self, action: #selector(filterButtonAction(_:)), for: .touchUpInside)
-        navigationItem.rightBarButtonItem =  UIBarButtonItem(customView: filterButton)
+//        let filterButton = UIButton(type: .system)
+//        filterButton.setImage(UIImage(named: "Filter")?.withRenderingMode(.alwaysOriginal), for: .normal)
+//        filterButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+//        filterButton.addTarget(self, action: #selector(filterButtonAction(_:)), for: .touchUpInside)
+        navigationItem.rightBarButtonItem =  UIBarButtonItem(image: UIImage(named: "Filter")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(filterButtonAction))
     }
     
     func setGradientBottom(){

@@ -22,22 +22,12 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
     var filteredJob = [Jobs]()
     var sortedJob = [Jobs]()
     
-//    var data: [BantuanModel] = [
-//        BantuanModel(urgency: .sedang, title: "Cuci Motor", price: 100000, tags: ["Cuci", "Motor"], distance: 600, status: .diberikan),
-//        BantuanModel(urgency: .rendah, title: "Angkut Rongsokan", price: 100000, tags: ["Angkut", "Rongsokan"], distance: 1000, status: .diberikan),
-//        BantuanModel(urgency: .rendah, title: "Bantu Sebar Kotak Syukuran", price: 100000, tags: ["Sebar", "Kotak"], distance: 0, status: .diberikan),
-//        BantuanModel(urgency: .tinggi, title: "Nurunin Kucing dari Atap", price: 200000, tags: ["Kucing", "Kasian", "Nyangkut"], distance: 200, status: .diberikan)
-//    ]
-//    var filteredData = [BantuanModel]()
-//    var sortedData = [BantuanModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         assistanceTable.delegate = self
         assistanceTable.dataSource = self
         assistanceTable.register(AssistanceTableViewCell.nib(), forCellReuseIdentifier: AssistanceTableViewCell.identifier)
-//        filteredData = data
-//        sortedData = data
         
         filteredJob = jobList
         sortedJob = jobList
@@ -79,8 +69,8 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
     func filterForSearchText(searchText: String){
         filteredJob = jobList.filter { assistance in
             if(searchBar.searchBar.text != ""){
-                let searchTextMatch = assistance.title.lowercased().contains(searchText.lowercased())
-                return searchTextMatch
+                let searchTextMatch = assistance.title?.lowercased().contains(searchText.lowercased())
+                return searchTextMatch!
             } else {
                 return true
             }

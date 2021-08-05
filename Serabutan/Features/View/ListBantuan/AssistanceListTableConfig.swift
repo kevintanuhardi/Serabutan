@@ -40,20 +40,16 @@ extension AssistanceListVC{
         cell.posterImage.image = result.jobPosterId.avatar
         cell.verifiedLogo.isHidden = !(result.jobPosterId.isVerified)
         cell.posterLabel.text = result.jobPosterId.name
-        cell.compensationLabel.text = priceFormatting(amount: result.price)
-        
-        let formatter = RelativeDateTimeFormatter()
-        formatter.unitsStyle = .full
-        formatter.locale = Locale(identifier: "id")
-        let relativeDate = formatter.localizedString(for: result.postingDate, relativeTo: Date())
-        
-        cell.timeElapsedLabel.text = "\(relativeDate)"
+        cell.compensationLabel.text = StringFormatter().priceFormatting(amount: result.price)
+        cell.timeElapsedLabel.text = StringFormatter().relativeDateFormatter(date: result.postingDate)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        performSegue(withIdentifier: "DetailAssistance", sender: self)
+        let detailBantuan = DetailBantuanVC()
+        detailBantuan.selectedJob = jobList[indexPath.row]
+        self.navigationController?.pushViewController(detailBantuan, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

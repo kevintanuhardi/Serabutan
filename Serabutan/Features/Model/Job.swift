@@ -33,17 +33,17 @@ enum Urgency: String {
 
 //MARK: - Dummy Data
 // This struct is used for dummy data
-struct Jobs {
+class Jobs: NSObject, MKAnnotation {
     let id : Int
     let jobPosterId : UserProfile
     
     // Job Details
     let postingDate : Date
     let urgency : Urgency
-    let title : String
+    let title : String?
     let desc : String?
     let price : Int
-    let status : JobStatus
+    var status : JobStatus
     let distance : Double
     let coordinate: CLLocationCoordinate2D
     
@@ -54,6 +54,40 @@ struct Jobs {
     // Job Preference
     let genderPreference : Gender?
     let agePreference : AgePreference?
+    
+    init(
+        id : Int,
+        jobPosterId : UserProfile,
+        postingDate : Date,
+        urgency : Urgency,
+        title : String?,
+        desc : String?,
+        price : Int,
+        status : JobStatus,
+        distance : Double,
+        coordinate: CLLocationCoordinate2D,
+        tags : [String]?,
+        medias : [UIImage]?,
+        helperId : UserProfile?,
+        genderPreference : Gender?,
+        agePreference : AgePreference?
+    ) {
+        self.id = id
+        self.jobPosterId = jobPosterId
+        self.postingDate = postingDate
+        self.urgency = urgency
+        self.title = title
+        self.desc = desc
+        self.price = price
+        self.status = status
+        self.distance = distance
+        self.coordinate = coordinate
+        self.tags = tags
+        self.medias = medias
+        self.helperId = helperId
+        self.genderPreference = genderPreference
+        self.agePreference = agePreference
+    }
 }
 
 //MARK: - Real Data

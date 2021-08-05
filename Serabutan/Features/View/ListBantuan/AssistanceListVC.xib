@@ -38,7 +38,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="LightGrey"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TjH-uD-W9L" secondAttribute="trailing" id="207-CT-vBV"/>
                 <constraint firstItem="eB0-Ek-86V" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8l2-4L-Jke"/>

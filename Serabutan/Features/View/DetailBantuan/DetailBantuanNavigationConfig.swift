@@ -10,29 +10,25 @@ import UIKit
 
 extension DetailBantuanVC {
     
-    func setupUI(){
-        setNavigation()
-        setNavigationItems()
-        setFont()
-        setColor()
-        configureText()
-    }
-    
     func setNavigation() {
-        navigationController?.navigationBar.backgroundColor = .white
-        navigationController?.navigationBar.barTintColor = .white
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = .white
+        
+        navigationItem.largeTitleDisplayMode = .never
         self.tabBarController?.tabBar.isHidden = true
+        
+        //Back Button
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
     }
     
     func setNavigationItems() {
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(backButtonAction))
+
         let moreButton = UIBarButtonItem(title: nil, image: UIImage(systemName: "ellipsis"), primaryAction: nil, menu: popUpMenu())
         let shareButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(shareButtonAction))
         
         navigationItem.rightBarButtonItems = [moreButton, shareButton]
-        navigationItem.leftBarButtonItem = backButton
     }
     
     func popUpMenu() -> UIMenu{
@@ -58,4 +54,5 @@ extension DetailBantuanVC {
         return addMenuItemsHelper
         
     }
+
 }
