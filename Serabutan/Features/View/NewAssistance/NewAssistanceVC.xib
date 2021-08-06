@@ -42,7 +42,7 @@
                 <outlet property="titleTFView" destination="CvL-5V-s6I" id="fPQ-pv-svf"/>
                 <outlet property="titleView" destination="u9v-nC-vBR" id="cRp-JQ-ThY"/>
                 <outlet property="urgencyImage" destination="XPo-0C-IO1" id="V4p-Cx-ZAe"/>
-                <outlet property="urgencyIndicatorImage" destination="hnL-lx-gY6" id="Z6P-oq-hnV"/>
+                <outlet property="urgencyIndicatorView" destination="t2r-FZ-V8T" id="n97-km-LOf"/>
                 <outlet property="urgencyTF" destination="V01-Pb-fPJ" id="lMY-Jc-83T"/>
                 <outlet property="urgencyTFView" destination="vQ4-31-5dO" id="sbx-aG-Zxz"/>
                 <outlet property="urgencyView" destination="41q-Qa-hOm" id="hcu-Iq-Iig"/>
@@ -75,16 +75,8 @@
                                                             <color key="textColor" name="DarkGrey"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hnL-lx-gY6">
-                                                            <rect key="frame" x="10" y="31.333333333333329" width="10" height="8.6666666666666714"/>
-                                                            <color key="tintColor" name="highUrgency"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="10" id="OHf-so-Gl9"/>
-                                                                <constraint firstAttribute="height" constant="10" id="R3Z-g1-ZPi"/>
-                                                            </constraints>
-                                                        </imageView>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tinggi" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V01-Pb-fPJ">
-                                                            <rect key="frame" x="25" y="27.333333333333329" width="285" height="16"/>
+                                                            <rect key="frame" x="30" y="17.333333333333329" width="280" height="26"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -96,19 +88,27 @@
                                                                 <constraint firstAttribute="width" constant="20" id="Pov-qm-KVZ"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2r-FZ-V8T">
+                                                            <rect key="frame" x="10" y="25.333333333333329" width="10" height="10"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="10" id="9Ic-5I-zfw"/>
+                                                                <constraint firstAttribute="height" constant="10" id="EwT-Ec-pZn"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="t2r-FZ-V8T" firstAttribute="leading" secondItem="Wpn-Tv-Uui" secondAttribute="leading" id="2MC-Sl-MVh"/>
                                                         <constraint firstAttribute="bottom" secondItem="V01-Pb-fPJ" secondAttribute="bottom" constant="10" id="38N-ap-XwI"/>
                                                         <constraint firstItem="Wpn-Tv-Uui" firstAttribute="top" secondItem="vQ4-31-5dO" secondAttribute="top" constant="7" id="G6f-1F-NPR"/>
-                                                        <constraint firstItem="V01-Pb-fPJ" firstAttribute="centerY" secondItem="hnL-lx-gY6" secondAttribute="centerY" id="JqH-s0-BvK"/>
                                                         <constraint firstAttribute="trailing" secondItem="V01-Pb-fPJ" secondAttribute="trailing" constant="40" id="MWr-Ru-fuo"/>
                                                         <constraint firstAttribute="trailing" secondItem="XPo-0C-IO1" secondAttribute="trailing" constant="10" id="PDx-hW-o7c"/>
-                                                        <constraint firstItem="V01-Pb-fPJ" firstAttribute="leading" secondItem="hnL-lx-gY6" secondAttribute="trailing" constant="5" id="WSf-bH-FNm"/>
-                                                        <constraint firstItem="hnL-lx-gY6" firstAttribute="top" secondItem="Wpn-Tv-Uui" secondAttribute="bottom" constant="10" id="ZOk-qf-vX6"/>
+                                                        <constraint firstItem="V01-Pb-fPJ" firstAttribute="leading" secondItem="t2r-FZ-V8T" secondAttribute="trailing" constant="10" id="YLS-Qx-eBZ"/>
                                                         <constraint firstItem="XPo-0C-IO1" firstAttribute="centerY" secondItem="vQ4-31-5dO" secondAttribute="centerY" id="crj-vc-cbr"/>
-                                                        <constraint firstItem="hnL-lx-gY6" firstAttribute="leading" secondItem="Wpn-Tv-Uui" secondAttribute="leading" id="eb8-sP-NzR"/>
+                                                        <constraint firstItem="t2r-FZ-V8T" firstAttribute="top" secondItem="Wpn-Tv-Uui" secondAttribute="bottom" constant="5" id="dOl-St-QKP"/>
                                                         <constraint firstItem="Wpn-Tv-Uui" firstAttribute="leading" secondItem="vQ4-31-5dO" secondAttribute="leading" constant="10" id="ebn-Nk-81u"/>
+                                                        <constraint firstItem="V01-Pb-fPJ" firstAttribute="centerY" secondItem="t2r-FZ-V8T" secondAttribute="centerY" id="shn-yh-cWM"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -223,10 +223,10 @@
                                             <rect key="frame" x="0.0" y="431" width="350" height="119.33333333333337"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOQ-kM-t1A" userLabel="CompensationTF View">
-                                                    <rect key="frame" x="0.0" y="10" width="350" height="55"/>
+                                                    <rect key="frame" x="0.0" y="10" width="350" height="50"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4kW-q8-q26">
-                                                            <rect key="frame" x="30.333333333333343" y="25" width="309.66666666666663" height="25"/>
+                                                            <rect key="frame" x="30.333333333333343" y="20" width="309.66666666666663" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="cJ8-Od-kRw"/>
                                                             </constraints>
@@ -234,13 +234,13 @@
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kompensasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJs-wu-jtb">
-                                                            <rect key="frame" x="10.000000000000004" y="6.9999999999999982" width="63.333333333333343" height="18.333333333333329"/>
+                                                            <rect key="frame" x="10.000000000000004" y="7.0000000000000009" width="63.333333333333343" height="13.333333333333336"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                             <color key="textColor" name="DarkGrey"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91Z-Ml-7yi">
-                                                            <rect key="frame" x="10" y="30.333333333333368" width="15.333333333333336" height="14.333333333333332"/>
+                                                            <rect key="frame" x="10" y="25.333333333333311" width="15.333333333333336" height="14.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" name="DarkGrey"/>
                                                             <nil key="highlightedColor"/>
@@ -259,7 +259,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf7-el-pAi">
-                                                    <rect key="frame" x="0.0" y="70" width="350" height="39.333333333333343"/>
+                                                    <rect key="frame" x="0.0" y="65" width="350" height="44.333333333333343"/>
                                                     <string key="text">Wujud apresiasi kepada Helper atas bantuan yang akan Anda terima. Berikan imbalan sesuai dengan tingkat kesulitan bantuan yang Anda ajukan, ya!</string>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                     <color key="textColor" name="DarkGrey"/>
@@ -625,9 +625,13 @@
             <point key="canvasLocation" x="70.769230769230774" y="331.27962085308053"/>
         </view>
     </objects>
+    <designables>
+        <designable name="Fjt-OW-0fu">
+            <size key="intrinsicContentSize" width="350" height="32"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Down" width="16" height="16.333333969116211"/>
-        <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
             <color red="0.50199997425079346" green="0.3059999942779541" blue="0.82400000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -637,9 +641,6 @@
         </namedColor>
         <namedColor name="DarkGrey">
             <color red="0.49411764705882355" green="0.49411764705882355" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="highUrgency">
-            <color red="0.8784313725490196" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

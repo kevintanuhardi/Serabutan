@@ -6,16 +6,17 @@
 //
 
 import UIKit
+import MapKit
 import TagListView
 
-class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TagListViewDelegate{
+class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TagListViewDelegate, CLLocationManagerDelegate{
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var myScrollView: UIScrollView!
     @IBOutlet weak var urgencyView: UIView!
     @IBOutlet weak var urgencyTFView: UIView!
     @IBOutlet weak var urgencyTF: UITextField!
-    @IBOutlet weak var urgencyIndicatorImage: UIImageView!
+    @IBOutlet weak var urgencyIndicatorView: UIView!
     @IBOutlet weak var urgencyImage: UIImageView!
     
     @IBOutlet weak var titleView: UIView!
@@ -52,15 +53,25 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     @IBOutlet weak var mediaAddButton: UIButton!
     @IBOutlet weak var mediaImageCollectionView: UICollectionView!
     
+    var dummyData = DummyData.shared.getJobsList()
+    let locationManager = CLLocationManager()
+    
+    var newAssistanceJobId: Int?
+    var newAssistanceJobPosterId: UserProfile?
+    var newAssistancePostDate: Date?
     var newAssistanceUrgency: BantuanUrgency?
     var newAssistanceTitle: String? = ""
     var newAssistanceDes: String? = ""
     var newAssistanceCompensation: Int? = 0
+    var newAssistanceStatus: JobStatus = .active
+    var newAssistanceDistance: Int? = nil
+    var newAssistanceCoordinate: CLLocationCoordinate2D?
+    var newAssistanceHelperId: UserProfile? = nil
     var newAssistanceGenderPref: Gender?
     var newAssistanceAgePref: AgePreference?
     var newAssistanceInfo: [String] = []
     var newAssistanceMediaImage: [UIImage] = []
-    
+   
     var currTags: String?
     var currImage: UIImage?
     var currMediaImages: [UIImage] = []
@@ -89,12 +100,14 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
         ageTF.delegate = self
         infoTF.delegate = self
         tagListView.delegate = self
-    }
-    
-    func initCollectionView(){
-//        mediaImageCollectionView.dataSource = self
-//        mediaImageCollectionView.delegate = self
-//        mediaImageCollectionView.register(MediaCollectionViewCell.nib(), forCellWithReuseIdentifier: MediaCollectionViewCell.identifier)
+        
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,25 +117,14 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
         createPickerGender()
         createPickerAge()
         createPickerUrgency()
-        getTagInput()
         initCollectionView()
     }
     
-    
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        if textField == urgencyTF {
-//            let currUrgency = urgencyTF.text
-//
-//            if currUrgency == "Tinggi" {
-//                urgencyIndicatorImage.tintColor = UIColor.ColorLibrary.highUrgency
-//            } else if currUrgency == "Sedang" {
-//                urgencyIndicatorImage.tintColor = UIColor.ColorLibrary.mediumUrgency
-//            } else if currUrgency == "Rendah" {
-//                urgencyIndicatorImage.tintColor = UIColor.ColorLibrary.lowUrgency
-//            }
-//        }
-//        return true
-//    }
+    func initCollectionView(){
+//        mediaImageCollectionView.dataSource = self
+//        mediaImageCollectionView.delegate = self
+//        mediaImageCollectionView.register(MediaCollectionViewCell.nib(), forCellWithReuseIdentifier: MediaCollectionViewCell.identifier)
+    }
     
 }
 
@@ -134,21 +136,28 @@ extension NewAssistanceVC {
     }
     
     @IBAction func shareButtonAction(_sender: Any){
+        initOtherData()
         //        let activityVC = activityVC()
         //        self.navigationController?.pushViewController(listBantuanVC, animated: true)
-        
-        print("NEW:", newAssistanceUrgency!)
-        print("NEW:", newAssistanceTitle!)
-        print("NEW:", newAssistanceDes!)
-        print("NEW:", newAssistanceCompensation!)
-        print("NEW:", newAssistanceGenderPref!)
-        print("NEW:", newAssistanceAgePref!)
-        print("NEW:", newAssistanceInfo)
-        print("IMAGES count:", newAssistanceMediaImage)
+        print("NEW JobID:", newAssistanceJobId!)
+        print("NEW Job Poster ID", newAssistanceJobPosterId!)//
+        print("NEW Post DateTime", newAssistancePostDate!)
+        print("NEW Urgency:", newAssistanceUrgency!)
+        print("NEW Title:", newAssistanceTitle!)
+        print("NEW Desc:", newAssistanceDes!)
+        print("NEW Compensation:", newAssistanceCompensation!)
+        print("NEW Status:", newAssistanceStatus)
+        print("NEW Distance:", newAssistanceDistance)
+        print("NEW Coordinate:", newAssistanceCoordinate!)
+        print("NEW HelperId:", newAssistanceHelperId)//
+        print("NEW Gender Pref:", newAssistanceGenderPref!)
+        print("NEW Age Pref:", newAssistanceAgePref!)
+        print("NEW Info Tags:", newAssistanceInfo)
+        print("NEW Images:", newAssistanceMediaImage)
     }
     
-    func getTagInput(){
-//        newAssistanceInfo.append()
+    func initCreateNewJob(){
+        
     }
     
     @IBAction func addMediaImageAction(_ sender: Any) {
@@ -157,13 +166,13 @@ extension NewAssistanceVC {
     
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        textView.superview?.animateBorder(true, type: .border)
+        //textView.superview?.animateBorder(true, type: .border)
     }
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.activeTextField = textField
-        textField.superview?.animateBorder(true, type: .border)
+        //textField.superview?.animateBorder(true, type: .border)
         
     }
     
@@ -191,20 +200,20 @@ extension NewAssistanceVC {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        textField.superview?.animateBorder(false, type: .border)
+        //textField.superview?.animateBorder(false, type: .border)
         
         if textField == urgencyTF {
             let currUrgency = urgencyTF.text!
             
             if currUrgency == "Tinggi"{
                 newAssistanceUrgency = BantuanUrgency.tinggi
-                //urgencyIndicatorImage.tintColor = UIColor.ColorLibrary.highUrgency
+                urgencyIndicatorView.layer.backgroundColor = UIColor.ColorLibrary.highUrgency.cgColor
             } else if currUrgency == "Sedang"{
                 newAssistanceUrgency = BantuanUrgency.sedang
-                //urgencyIndicatorImage.tintColor = UIColor.ColorLibrary.mediumUrgency
+                urgencyIndicatorView.layer.backgroundColor = UIColor.ColorLibrary.mediumUrgency.cgColor
             } else {
                 newAssistanceUrgency = BantuanUrgency.rendah
-                //urgencyIndicatorImage.tintColor = UIColor.ColorLibrary.lowUrgency
+                urgencyIndicatorView.layer.backgroundColor = UIColor.ColorLibrary.lowUrgency.cgColor
             }
             
         }
@@ -266,8 +275,21 @@ extension NewAssistanceVC {
         } else {
             print("nothing insert")
         }
-        
+            
     }
+    
+    func initOtherData(){
+        let newId = dummyData.count + 1
+        newAssistanceJobId = newId
+        
+        let newDate = Date(timeInterval: 60, since: Date())
+        newAssistancePostDate = newDate
+        
+        let jobPosterId = dummyData[0].jobPosterId
+        newAssistanceJobPosterId = jobPosterId
+    }
+    
+    
     
     //MARK: - Create Alert for Media Button
     func createAlert(){
@@ -308,6 +330,13 @@ extension NewAssistanceVC {
                 newAssistanceInfo.remove(at: index)
             }
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
+        newAssistanceCoordinate = locValue
     }
     
 }

@@ -11,12 +11,18 @@ import UIKit
 extension NewAssistanceVC {
 
     func setCustomTextField(){
-        urgencyView.layer.backgroundColor = UIColor.white.cgColor
+        urgencyView.backgroundColor = UIColor.white
         urgencyTFView.layer.borderWidth = 1
         urgencyTFView.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         urgencyTFView.layer.cornerRadius = 5
-        urgencyIndicatorImage.tintColor = UIColor.ColorLibrary.highUrgency
-        urgencyTF.inputView = nil
+        //urgencyTFView.isUserInteractionEnabled = false
+        urgencyIndicatorView.isHidden = false
+        urgencyIndicatorView.layer.cornerRadius = 25
+        urgencyIndicatorView.backgroundColor = UIColor.ColorLibrary.highUrgency
+        urgencyIndicatorView.layer.backgroundColor = UIColor.ColorLibrary.highUrgency.cgColor
+        urgencyIndicatorView.tintColor = UIColor.ColorLibrary.highUrgency
+        urgencyIndicatorView.layer.borderColor = UIColor.ColorLibrary.highUrgency.cgColor
+        urgencyIndicatorView.alpha = 1
         
         titleView.layer.backgroundColor = UIColor.white.cgColor
         titleTFView.layer.borderWidth = 1
