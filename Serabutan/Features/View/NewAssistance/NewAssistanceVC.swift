@@ -59,12 +59,12 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     var newAssistanceJobId: Int?
     var newAssistanceJobPosterId: UserProfile?
     var newAssistancePostDate: Date?
-    var newAssistanceUrgency: BantuanUrgency?
+    var newAssistanceUrgency: Urgency? = .high
     var newAssistanceTitle: String? = ""
     var newAssistanceDes: String? = ""
     var newAssistanceCompensation: Int? = 0
     var newAssistanceStatus: JobStatus = .active
-    var newAssistanceDistance: Int? = nil
+    var newAssistanceDistance: Double? = nil
     var newAssistanceCoordinate: CLLocationCoordinate2D?
     var newAssistanceHelperId: UserProfile? = nil
     var newAssistanceGenderPref: Gender?
@@ -131,32 +131,69 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
 extension NewAssistanceVC {
     
     @IBAction func cancelButtonAction(_sender: Any){
-        let myViewController = HomeVC(nibName: "HomeVC", bundle: nil)
-        self.present(myViewController, animated: true, completion: nil)
+        let homeVC = HomeVC()
+        self.navigationController?.pushViewController(homeVC, animated: true)
     }
     
     @IBAction func shareButtonAction(_sender: Any){
         initOtherData()
-        //        let activityVC = activityVC()
-        //        self.navigationController?.pushViewController(listBantuanVC, animated: true)
-        print("NEW JobID:", newAssistanceJobId!)
-        print("NEW Job Poster ID", newAssistanceJobPosterId!)//
-        print("NEW Post DateTime", newAssistancePostDate!)
-        print("NEW Urgency:", newAssistanceUrgency!)
-        print("NEW Title:", newAssistanceTitle!)
-        print("NEW Desc:", newAssistanceDes!)
-        print("NEW Compensation:", newAssistanceCompensation!)
-        print("NEW Status:", newAssistanceStatus)
-        print("NEW Distance:", newAssistanceDistance)
-        print("NEW Coordinate:", newAssistanceCoordinate!)
-        print("NEW HelperId:", newAssistanceHelperId)//
-        print("NEW Gender Pref:", newAssistanceGenderPref!)
-        print("NEW Age Pref:", newAssistanceAgePref!)
-        print("NEW Info Tags:", newAssistanceInfo)
-        print("NEW Images:", newAssistanceMediaImage)
+        initCreateNewJob()
+//        print("NEW JobID:", newAssistanceJobId!)
+//        print("NEW Job Poster ID", newAssistanceJobPosterId!)//
+//        print("NEW Post DateTime", newAssistancePostDate!)
+//        print("NEW Urgency:", newAssistanceUrgency!)
+//        print("NEW Title:", newAssistanceTitle!)
+//        print("NEW Desc:", newAssistanceDes!)
+//        print("NEW Compensation:", newAssistanceCompensation!)
+//        print("NEW Status:", newAssistanceStatus)
+//        print("NEW Distance:", newAssistanceDistance)
+//        print("NEW Coordinate:", newAssistanceCoordinate!)
+//        print("NEW HelperId:", newAssistanceHelperId)//
+//        print("NEW Gender Pref:", newAssistanceGenderPref!)
+//        print("NEW Age Pref:", newAssistanceAgePref!)
+//        print("NEW Info Tags:", newAssistanceInfo)
+//        print("NEW Images:", newAssistanceMediaImage)
+        let homeVC = HomeVC()
+        self.navigationController?.pushViewController(homeVC, animated: true)
+    }
+    
+    func initOtherData(){
+        let newId = dummyData.count + 1
+        newAssistanceJobId = newId
+        
+        let newDate = Date(timeInterval: 60, since: Date())
+        newAssistancePostDate = newDate
+        
+        let jobPosterId = dummyData[0].jobPosterId
+        newAssistanceJobPosterId = jobPosterId
     }
     
     func initCreateNewJob(){
+        
+        if newAssistanceTitle == ""{
+            createTitleEmpty()
+            titleTF.becomeFirstResponder()
+        } else if newAssistanceDes == ""{
+            createDescEmpty()
+            descTV.becomeFirstResponder()
+        } else {
+            dummyData.append(Jobs(id: newAssistanceJobId!,
+                                  jobPosterId: newAssistanceJobPosterId!,
+                                  postingDate: newAssistancePostDate!,
+                                  urgency: newAssistanceUrgency!,
+                                  title: newAssistanceTitle!,
+                                  desc: newAssistanceDes!,
+                                  price: newAssistanceCompensation!,
+                                  status: newAssistanceStatus,
+                                  distance: newAssistanceDistance ?? 0,
+                                  coordinate: newAssistanceCoordinate!,
+                                  tags: newAssistanceInfo,
+                                  medias: newAssistanceMediaImage,
+                                  helperId: newAssistanceHelperId,
+                                  genderPreference: newAssistanceGenderPref,
+                                  agePreference: newAssistanceAgePref))
+            print(dummyData)
+        }
         
     }
     
@@ -166,13 +203,13 @@ extension NewAssistanceVC {
     
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        //textView.superview?.animateBorder(true, type: .border)
+        textView.superview?.animateBorder(true, type: .border)
     }
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.activeTextField = textField
-        //textField.superview?.animateBorder(true, type: .border)
+        textField.superview?.animateBorder(true, type: .border)
         
     }
     
@@ -199,28 +236,26 @@ extension NewAssistanceVC {
         return true
     }
     
+    
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        //textField.superview?.animateBorder(false, type: .border)
+        textField.superview?.animateBorder(false, type: .border)
         
         if textField == urgencyTF {
             let currUrgency = urgencyTF.text!
             
             if currUrgency == "Tinggi"{
-                newAssistanceUrgency = BantuanUrgency.tinggi
+                newAssistanceUrgency = Urgency.high
                 urgencyIndicatorView.layer.backgroundColor = UIColor.ColorLibrary.highUrgency.cgColor
             } else if currUrgency == "Sedang"{
-                newAssistanceUrgency = BantuanUrgency.sedang
+                newAssistanceUrgency = Urgency.medium
                 urgencyIndicatorView.layer.backgroundColor = UIColor.ColorLibrary.mediumUrgency.cgColor
             } else {
-                newAssistanceUrgency = BantuanUrgency.rendah
+                newAssistanceUrgency = Urgency.low
                 urgencyIndicatorView.layer.backgroundColor = UIColor.ColorLibrary.lowUrgency.cgColor
             }
             
         }
         
-        let currTitle = titleTF.text!
-        newAssistanceTitle = currTitle
-    
         let currDesc = descTV.text!
         newAssistanceDes = currDesc
         
@@ -278,17 +313,6 @@ extension NewAssistanceVC {
             
     }
     
-    func initOtherData(){
-        let newId = dummyData.count + 1
-        newAssistanceJobId = newId
-        
-        let newDate = Date(timeInterval: 60, since: Date())
-        newAssistancePostDate = newDate
-        
-        let jobPosterId = dummyData[0].jobPosterId
-        newAssistanceJobPosterId = jobPosterId
-    }
-    
     
     
     //MARK: - Create Alert for Media Button
@@ -312,8 +336,16 @@ extension NewAssistanceVC {
         self.present(alert, animated: true)
     }
     
-    func createWarningAlert(){
-        let alert = UIAlertController(title: "Image", message: "The maximum number image that can be uploaded is up to 3 images", preferredStyle: .alert)
+    func createTitleEmpty(){
+        let alert = UIAlertController(title: "Judul Bantuan", message: "Judul Bantuan tidak boleh kosong", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
+    func createDescEmpty(){
+        let alert = UIAlertController(title: "Deskripsi Bantuan", message: "Judul Bantuan tidak boleh kosong", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         

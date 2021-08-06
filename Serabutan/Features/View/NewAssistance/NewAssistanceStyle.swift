@@ -15,7 +15,8 @@ extension NewAssistanceVC {
         urgencyTFView.layer.borderWidth = 1
         urgencyTFView.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         urgencyTFView.layer.cornerRadius = 5
-        //urgencyTFView.isUserInteractionEnabled = false
+        urgencyTF.inputView = nil
+        urgencyTF.isUserInteractionEnabled = true
         urgencyIndicatorView.isHidden = false
         urgencyIndicatorView.layer.cornerRadius = 25
         urgencyIndicatorView.backgroundColor = UIColor.ColorLibrary.highUrgency
@@ -68,6 +69,9 @@ extension NewAssistanceVC {
     }
     
     func setNavigationBarItems(){
+        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.ColorLibrary.customBlack, .font: UIFont.FontLibrary.largeTitle]
+        view.backgroundColor = .ColorLibrary.lightGrey
+        
         self.navigationController!.navigationBar.prefersLargeTitles = true
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController!.navigationBar.shadowImage = UIImage()

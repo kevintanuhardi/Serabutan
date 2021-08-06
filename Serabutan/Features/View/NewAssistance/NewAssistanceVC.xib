@@ -58,7 +58,7 @@
                     <rect key="frame" x="0.0" y="44" width="390" height="1246"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnF-Vs-7RQ" userLabel="Main View">
-                            <rect key="frame" x="0.0" y="0.0" width="390" height="1150"/>
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7SX-S1-GQs">
                                     <rect key="frame" x="20" y="0.0" width="350" height="1148.3333333333333"/>
@@ -223,10 +223,10 @@
                                             <rect key="frame" x="0.0" y="431" width="350" height="119.33333333333337"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOQ-kM-t1A" userLabel="CompensationTF View">
-                                                    <rect key="frame" x="0.0" y="10" width="350" height="50"/>
+                                                    <rect key="frame" x="0.0" y="10" width="350" height="55"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4kW-q8-q26">
-                                                            <rect key="frame" x="30.333333333333343" y="20" width="309.66666666666663" height="25"/>
+                                                            <rect key="frame" x="30.333333333333343" y="25" width="309.66666666666663" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="cJ8-Od-kRw"/>
                                                             </constraints>
@@ -234,13 +234,13 @@
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kompensasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJs-wu-jtb">
-                                                            <rect key="frame" x="10.000000000000004" y="7.0000000000000009" width="63.333333333333343" height="13.333333333333336"/>
+                                                            <rect key="frame" x="10.000000000000004" y="6.9999999999999982" width="63.333333333333343" height="18.333333333333329"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                             <color key="textColor" name="DarkGrey"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91Z-Ml-7yi">
-                                                            <rect key="frame" x="10" y="25.333333333333311" width="15.333333333333336" height="14.333333333333332"/>
+                                                            <rect key="frame" x="10" y="30.333333333333368" width="15.333333333333336" height="14.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" name="DarkGrey"/>
                                                             <nil key="highlightedColor"/>
@@ -259,7 +259,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf7-el-pAi">
-                                                    <rect key="frame" x="0.0" y="65" width="350" height="44.333333333333343"/>
+                                                    <rect key="frame" x="0.0" y="70" width="350" height="39.333333333333343"/>
                                                     <string key="text">Wujud apresiasi kepada Helper atas bantuan yang akan Anda terima. Berikan imbalan sesuai dengan tingkat kesulitan bantuan yang Anda ajukan, ya!</string>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                     <color key="textColor" name="DarkGrey"/>
@@ -598,7 +598,7 @@
                                 <constraint firstAttribute="trailing" secondItem="7SX-S1-GQs" secondAttribute="trailing" constant="20" id="aVA-F3-7dE"/>
                                 <constraint firstItem="7SX-S1-GQs" firstAttribute="top" secondItem="bnF-Vs-7RQ" secondAttribute="top" id="gNJ-C6-CgS"/>
                                 <constraint firstItem="7SX-S1-GQs" firstAttribute="leading" secondItem="bnF-Vs-7RQ" secondAttribute="leading" constant="20" id="oD7-8Q-eVN"/>
-                                <constraint firstAttribute="height" constant="1150" id="op9-oh-8gF"/>
+                                <constraint firstAttribute="height" constant="1000" id="op9-oh-8gF"/>
                             </constraints>
                         </view>
                     </subviews>
