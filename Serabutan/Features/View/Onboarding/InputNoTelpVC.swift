@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 class InputNoTelpVC: UIViewController {
-    
-    @IBOutlet var fieldBorder: UIStackView!
 
+    @IBOutlet weak var noTelpField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

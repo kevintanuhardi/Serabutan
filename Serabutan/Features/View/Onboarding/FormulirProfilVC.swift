@@ -10,6 +10,8 @@ import UIKit
 
 class FormulirProfilVC: UIViewController {
 
+    @IBOutlet weak var namaLengkapField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -10,6 +10,11 @@ import UIKit
 
 class VerifNoTelpVC: UIViewController {
 
+    @IBOutlet weak var codeField1: UITextField!
+    @IBOutlet weak var codeField2: UITextField!
+    @IBOutlet weak var codeField3: UITextField!
+    @IBOutlet weak var codeField4: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

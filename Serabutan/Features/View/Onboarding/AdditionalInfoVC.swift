@@ -10,6 +10,8 @@ import UIKit
 
 class AdditionalInfoVC: UIViewController {
 
+    @IBOutlet weak var deskripsiField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
