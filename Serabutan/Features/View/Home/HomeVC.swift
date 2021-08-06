@@ -15,7 +15,7 @@ class HomeVC: UIViewController {
     
     private var homeVM = HomeVM()
     private var jobs: [Job] = []
-    var jobList = DummyData.shared.getJobsList()
+    var jobList = DummyData.shared.getJobsList(.active)
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var jobListingColView: UICollectionView!
@@ -38,10 +38,10 @@ class HomeVC: UIViewController {
         
         subscribeViewModel()
         
+        UserDefaults.standard.set(currentCoordinate, forKey: "userCoordinate")
+        
         for annotation in jobList {
-            if annotation.status == .active {
-                mapView.addAnnotation(annotation)
-            }
+            mapView.addAnnotation(annotation)
         }
         
     }
@@ -75,13 +75,13 @@ class HomeVC: UIViewController {
     }
     
     func setupUI() {
-//        setGradientBackground()
+        //        setGradientBackground()
         
         showAllButton.semanticContentAttribute = UIApplication.shared
             .userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
         
         showAllButton.titleLabel?.font = .FontLibrary.textLink1
-                
+        
         blurView.layer.cornerRadius = 10
         blurView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         blurView.layer.masksToBounds = true
@@ -167,7 +167,8 @@ extension HomeVC: UICollectionViewDataSource , UICollectionViewDelegate, UIColle
         cell.posterLabel.text = selectedJob.jobPosterId.name
         cell.verifiedLogo.isHidden = !selectedJob.jobPosterId.isVerified
         
-        cell.headerLabel.text = StringFormatter().distance(selectedJob.distance)
+        cell.headerLabel.text = StringFormatter().distanceFromCoordinate(from: currentCoordinate ?? CLLocationCoordinate2D(), to: selectedJob.coordinate)
+
         cell.compensationLabel.text = StringFormatter().priceFormatting(amount: selectedJob.price)
         cell.timeElapsedLabel.text = StringFormatter().relativeDateFormatter(date: selectedJob.postingDate)
         

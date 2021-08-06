@@ -6,10 +6,18 @@
 //
 
 import Foundation
+import MapKit
 
 struct StringFormatter {
     func distance(_ distance: Double) -> String {
-        return distance < 1000 ? ("\(Int(distance))" + " m") : ("\(Int(distance))" + " km")
+        return distance < 1000 ? ("\(Int(distance))" + " m") : ("\(Int(distance / 1000))" + " km")
+    }
+    
+    func distanceFromCoordinate(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> String {
+        let start = CLLocation(latitude: from.latitude, longitude: from.longitude)
+        let end = CLLocation(latitude: to.latitude, longitude: to.longitude)
+        let distance = distance(start.distance(from: end))
+        return distance
     }
     
     func priceFormatting(amount: Int) -> String {

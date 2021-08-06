@@ -64,7 +64,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
         // Setup Profile Page - Default User
-        profileVC.user = DummyData.shared.getUserProfile()[0]
+        let userId = UserDefaults.standard.integer(forKey: "loggedUser")
+        profileVC.user = DummyData.shared.getUserProfile()[userId]
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

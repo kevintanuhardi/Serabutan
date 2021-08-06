@@ -268,10 +268,6 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="verified" translatesAutoresizingMaskIntoConstraints="NO" id="qm4-2z-zlb">
-                                    <rect key="frame" x="-13" y="-51" width="20" height="5"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="verified" translatesAutoresizingMaskIntoConstraints="NO" id="tul-yd-NZi">
                                     <rect key="frame" x="158" y="5.6666666666666572" width="15" height="15"/>
                                     <constraints>

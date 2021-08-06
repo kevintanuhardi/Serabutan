@@ -52,10 +52,4 @@ extension AssistanceListVC{
         self.navigationController?.pushViewController(detailBantuan, animated: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //        if let destination = segue.destination as? detailAssitanceVC{
-        //            //PASSING DATA
-        //            assistanceTable.deselectRow(at: assistanceTable.indexPathForSelectedRow!, animated: true)
-        //        }
-    }
 }

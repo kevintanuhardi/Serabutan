@@ -26,21 +26,25 @@ class ProfileVC: UIViewController {
     
     // Dummy Data
     let database = DummyData.shared
+    let loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")
     var user: UserProfile?
     
     override func viewWillAppear(_ animated: Bool) {
-                
+        
         self.navigationController?.navigationBar.backgroundColor = .white
         self.navigationController?.navigationBar.barTintColor = .white
         
-        //Back Button
+        // Back Button
         self.navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         
-        let rightBarButton = UIBarButtonItem(title: "Sunting", style: .plain, target: self, action: #selector(suntingProfile))
-        rightBarButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.FontLibrary.textLink1], for: .normal)
-        navigationItem.rightBarButtonItem = rightBarButton
+        // Check if profile is their own
+        if user?.id == loggedUser {
+            let rightBarButton = UIBarButtonItem(title: "Sunting", style: .plain, target: self, action: #selector(suntingProfile))
+            rightBarButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.FontLibrary.textLink1], for: .normal)
+            navigationItem.rightBarButtonItem = rightBarButton
+        }
         
     }
     
@@ -51,7 +55,7 @@ class ProfileVC: UIViewController {
         
         reviewTable.delegate = self
         reviewTable.dataSource = self
-                
+        
         updateUI()
         
     }
@@ -65,7 +69,7 @@ class ProfileVC: UIViewController {
         ratingBadge.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         ratingBadge.layer.borderWidth = 0.5
         profileInfoView.addLine(position: .bottom, color: UIColor.ColorLibrary.mediumGrey, width: 0.5)
-
+        
         // Set profile
         profileImage.image = user?.avatar
         profileName.text = user?.name

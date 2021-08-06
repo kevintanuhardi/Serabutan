@@ -18,10 +18,9 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
     var maxValue: Int?
     
     // TODO: Remove this on BE integration
-    var jobList = DummyData.shared.getJobsList()
+    var jobList = DummyData.shared.getJobsList(.active)
     var filteredJob = [Jobs]()
     var sortedJob = [Jobs]()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
