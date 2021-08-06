@@ -45,8 +45,8 @@
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mohon gunakan nomor telepon yang terhubung dengan Whatsapp. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZk-MX-Y6k">
-                    <rect key="frame" x="20" y="228" width="374" height="13.5"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                    <rect key="frame" x="20" y="228" width="374" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="highlightedColor" systemColor="labelColor"/>
                 </label>
