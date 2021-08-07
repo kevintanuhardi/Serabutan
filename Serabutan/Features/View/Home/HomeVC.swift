@@ -193,7 +193,7 @@ extension HomeVC: CLLocationManagerDelegate {
         
         if currentCoordinate == nil {
             zoomToLatestLocation(with: latestLocation.coordinate)
-            homeVM.fetchNearbyJob(coordinate: latestLocation.coordinate)
+//            homeVM.fetchNearbyJob(coordinate: latestLocation.coordinate)
         }
         
         currentCoordinate = latestLocation.coordinate
@@ -210,31 +210,37 @@ extension HomeVC: CLLocationManagerDelegate {
 extension HomeVC: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
+
         var reassigned = false
-        
+
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
-        
+
         if annotationView == nil {
+			print("yang masuk nil", annotation)
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
         }
-        
+
         if let jobAnnotation = annotation as? Jobs {
             let jobAnnotationCell = MapKitAnnotationCellViewController(nibName: "MapKitAnnotationCellViewController", bundle: nil)
-            
+
             jobAnnotationCell.job = jobAnnotation
-            
+
             annotationView?.image = jobAnnotationCell.view.asImage()
-            
+
             reassigned = true
         }
-        
+
         annotationView?.canShowCallout = true
-        
+
         return reassigned ? annotationView : nil;
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print("The annotation was selected: \(String(describing: view.annotation?.title))")
+		
+		if let jobAnnotation = view.annotation as? Jobs {
+			let detailBantuan = DetailBantuanVC()
+			detailBantuan.selectedJob = jobAnnotation
+			self.navigationController?.pushViewController(detailBantuan, animated: true)
+		}
     }
 }
