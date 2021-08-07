@@ -52,9 +52,9 @@
 		C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */; };
 		C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */; };
 		C744D7E826B2F127009E36B7 /* FilterPopUpConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */; };
+		C75CACD826BEBF420074B55D /* NewAssistancePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75CACD726BEBF420074B55D /* NewAssistancePickerView.swift */; };
 		C75E13EC26B85917007BEF41 /* AssistanceListConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E13EB26B85917007BEF41 /* AssistanceListConfig.swift */; };
 		C76047C026AF3CBB00535995 /* AssistanceListNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */; };
-		C79063E626B3B40B00AE7687 /* NewAssistancePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79063E526B3B40B00AE7687 /* NewAssistancePicker.swift */; };
 		C79063E826B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79063E726B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift */; };
 		C7CCC24526B199DD0005FFE3 /* NewAssistanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */; };
 		C7CCC24626B199DD0005FFE3 /* NewAssistanceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */; };
@@ -121,9 +121,9 @@
 		C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpVC.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.swift; sourceTree = SOURCE_ROOT; };
 		C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FilterPopUpVC.xib; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.xib; sourceTree = SOURCE_ROOT; };
 		C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpConfig.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpConfig.swift; sourceTree = SOURCE_ROOT; };
+		C75CACD726BEBF420074B55D /* NewAssistancePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistancePickerView.swift; path = Serabutan/Features/View/NewAssistance/NewAssistancePickerView.swift; sourceTree = SOURCE_ROOT; };
 		C75E13EB26B85917007BEF41 /* AssistanceListConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListConfig.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListConfig.swift; sourceTree = SOURCE_ROOT; };
 		C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListNavigationConfig.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
-		C79063E526B3B40B00AE7687 /* NewAssistancePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistancePicker.swift; path = ../../../../../../NewAssistancePicker.swift; sourceTree = "<group>"; };
 		C79063E726B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanCollectionViewConfig.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanCollectionViewConfig.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanceVC.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanceVC.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewAssistanceVC.xib; path = Serabutan/Features/View/NewAssistance/NewAssistanceVC.xib; sourceTree = SOURCE_ROOT; };
@@ -381,7 +381,7 @@
 				C742289D26B9B10D003DD169 /* NewAssistanceExtension.swift */,
 				C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */,
 				C7CCC24726B19A660005FFE3 /* NewAssistanceStyle.swift */,
-				C79063E526B3B40B00AE7687 /* NewAssistancePicker.swift */,
+				C75CACD726BEBF420074B55D /* NewAssistancePickerView.swift */,
 				C79063E726B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift */,
 			);
 			path = NewAssistance;
@@ -623,13 +623,13 @@
 				1853414226AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift in Sources */,
 				C7CCC24526B199DD0005FFE3 /* NewAssistanceVC.swift in Sources */,
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
-				C79063E626B3B40B00AE7687 /* NewAssistancePicker.swift in Sources */,
 				C7CCC24826B19A660005FFE3 /* NewAssistanceStyle.swift in Sources */,
 				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,
 				C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */,
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
 				C76047C026AF3CBB00535995 /* AssistanceListNavigationConfig.swift in Sources */,
 				C79063E826B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift in Sources */,
+				C75CACD826BEBF420074B55D /* NewAssistancePickerView.swift in Sources */,
 				C742289E26B9B10D003DD169 /* NewAssistanceExtension.swift in Sources */,
 				C7D7AE4826AE5040000478AA /* BantuanModel.swift in Sources */,
 				907F9DCF26B6625A00EF9F51 /* Review.swift in Sources */,
