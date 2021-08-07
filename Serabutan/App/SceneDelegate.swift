@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         let tabBarController = UITabBarController()
-        let homeVC = NewAssistanceVC()
+        let homeVC = HomeVC()
         let activityVC = UIViewController()
         let notificationVC = UIViewController()
         let profileVC = ProfileVC()
