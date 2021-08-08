@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let activityVC = ActivityVC()
         let notificationVC = UIViewController()
         let profileVC = ProfileVC()
-        let addJobVC = UIViewController()
+        let addJobVC = NewAssistanceVC()
         
         homeNavigationController = UINavigationController.init(rootViewController: homeVC)
         activityNavigationController = UINavigationController.init(rootViewController: activityVC)
