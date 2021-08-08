@@ -36,10 +36,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6L-pb-wx7" userLabel="Container view">
-                    <rect key="frame" x="0.0" y="496" width="414" height="400"/>
+                    <rect key="frame" x="0.0" y="446" width="414" height="450"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9f-uR-ocZ" userLabel="Main">
-                            <rect key="frame" x="0.0" y="10" width="414" height="390"/>
+                            <rect key="frame" x="0.0" y="10" width="414" height="440"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiM-bU-lyL">
                                     <rect key="frame" x="20" y="20" width="48.5" height="24"/>
@@ -96,7 +96,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQd-UI-2SS">
-                                    <rect key="frame" x="20" y="310" width="374" height="50"/>
+                                    <rect key="frame" x="20" y="335" width="374" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="HGo-4X-g7T"/>
                                     </constraints>
@@ -254,7 +254,7 @@
                                 <constraint firstItem="erN-Of-3yP" firstAttribute="centerY" secondItem="BFs-ir-ytl" secondAttribute="centerY" id="Kyw-vv-pDG"/>
                                 <constraint firstItem="BFs-ir-ytl" firstAttribute="leading" secondItem="4Qu-EE-U9p" secondAttribute="leading" id="LFo-RL-z9y"/>
                                 <constraint firstItem="6FP-1j-jck" firstAttribute="leading" secondItem="8xV-ks-2Bf" secondAttribute="leading" id="Ogv-s0-fsl"/>
-                                <constraint firstAttribute="bottom" secondItem="oQd-UI-2SS" secondAttribute="bottom" constant="30" id="Oyt-mJ-rOM"/>
+                                <constraint firstAttribute="bottom" secondItem="oQd-UI-2SS" secondAttribute="bottom" constant="55" id="Oyt-mJ-rOM"/>
                                 <constraint firstAttribute="trailing" secondItem="QK0-KR-PxV" secondAttribute="trailing" constant="20" id="PEA-4b-el9"/>
                                 <constraint firstItem="8xV-ks-2Bf" firstAttribute="leading" secondItem="BFs-ir-ytl" secondAttribute="leading" id="TBR-ik-Nxg"/>
                                 <constraint firstItem="oQd-UI-2SS" firstAttribute="leading" secondItem="D9f-uR-ocZ" secondAttribute="leading" constant="20" id="TDW-Bc-EEO"/>
@@ -280,7 +280,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="D9f-uR-ocZ" firstAttribute="leading" secondItem="M6L-pb-wx7" secondAttribute="leading" id="OhN-bK-IbX"/>
-                        <constraint firstAttribute="height" constant="400" id="bge-rC-1J1"/>
+                        <constraint firstAttribute="height" constant="450" id="bge-rC-1J1"/>
                         <constraint firstAttribute="trailing" secondItem="D9f-uR-ocZ" secondAttribute="trailing" id="dHY-4L-YaR"/>
                         <constraint firstItem="D9f-uR-ocZ" firstAttribute="top" secondItem="VrO-ko-kSg" secondAttribute="top" id="kdp-2n-ZQ0"/>
                         <constraint firstAttribute="bottom" secondItem="D9f-uR-ocZ" secondAttribute="bottom" id="odF-W1-l2R"/>
