@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class FormulirProfilVC: UIViewController {
+class FormulirProfilVC: UIViewController, UITextFieldDelegate {
     
     let menu: DropDown = {
         let menu = DropDown()
@@ -18,37 +18,48 @@ class FormulirProfilVC: UIViewController {
         return menu
     }()
     
-    let datePicker = UIDatePicker()
-
-    @IBOutlet weak var birthDateTxt: UITextField!
-    
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var namaLengkapTxt: UITextField!
-    
     @IBOutlet weak var genderTxt: UITextField!
     
     var genderPV =  UIPickerView()
-    var genderPVData: [String] = ["Laki-laki", "Perempuan", "Tidak ada preferensi"]
+    var genderPVData: [Gender] = [.male, .female, .other]
+    var selectedGender: String?
     var formulirData: Any = []
     
     var activeTextField: UITextField? = nil
-    
-    var newNamaLengkap: String? = ""
-    var newTanggalLahir: String? = ""
-    var newSelectedGender: String? = ""
-    
-    var namaLengkap: String?
-    var tanggalLahir: String?
-    var selectedGender: String?
+    var newName: String?
+    var newDOB: Date?
+    var newGender: Gender? = .male
     
     @IBAction func goToAdditionalInfo(_ sender: Any) {
-        let additionalInfoVC = AdditionalInfoVC()
-        self.navigationController?.pushViewController(additionalInfoVC, animated: true)
+        if newName == .none{
+            nameAlert()
+        } else if newDOB == .none {
+            dobAlert()
+        } else if newGender == .none {
+            genderAlert()
+        } else {
+            let additionalInfoVC = AdditionalInfoVC()
+            additionalInfoVC.onboardingName = newName
+            additionalInfoVC.onboardingDOB = newDOB
+            additionalInfoVC.onboardingGender = newGender
+            self.navigationController?.pushViewController(additionalInfoVC, animated: true)
+        }
+//        print("PASSED NAME:", newName)
+//        print("PASSED DOB:" , newDOB)
+//        print("PASSED GENDER:", newGender)
+//        print("selected Gender:", selectedGender)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        datePicker.tintColor = UIColor.ColorLibrary.mediumGrey
+        
+        namaLengkapTxt.delegate = self
+        genderTxt.delegate = self
         setNavigation()
-        createDatePicker()
+        showDatePicker()
         createPickerGender()
     }
     

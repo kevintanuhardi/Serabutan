@@ -8,81 +8,67 @@
 import Foundation
 import UIKit
 
-class AdditionalInfoVC: UIViewController {
+class AdditionalInfoVC: UIViewController, UITextViewDelegate {
     
-    var activeTextField: UITextField? = nil
+    var activeTextField: UITextField?
+    var dummy = DummyData.shared.getUserProfile()
+    var onboardingDescription: String? = ""
+    var onboardingName: String!
+    var onboardingDOB: Date!
+    var onboardingGender: Gender!
     
-    var newDescription: String? = ""
-    
-    //    var genderPV =  UIPickerView()
-    //    var genderPVData: [String] = ["Laki-laki", "Perempuan", "Tidak ada preferensi"]
-    //    var formulirData: Any = []
-    //
-    //    var newNamaLengkap: String? = ""
-    //    var newTanggalLahir: String? = ""
-    //    var newSelectedGender: String? = ""
-    //
-    //    var namaLengkap: String?
-    //    var tanggalLahir: String?
-    //    var selectedGender: String?
-    
-    @IBOutlet weak var deskripsiField: UITextField!
+    @IBOutlet weak var descTV: UITextView!
+    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        descTV.delegate = self
         setNavigation()
-    }
-}
-
-extension AdditionalInfoVC{
-    func setNavigation() {
-        navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = .white
-        
-        navigationItem.largeTitleDisplayMode = .never
-        self.tabBarController?.tabBar.isHidden = true
-        
-        //Back Button
-        self.navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
-        
-        navigationController?.navigationBar.isHidden = false
+        doneButton.backgroundColor = UIColor.ColorLibrary.mediumGrey
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.activeTextField = textField
-        textField.superview?.animateBorder(true, type: .border)
+    @IBAction func finishOnboardingDesc(sender: UIButton){
+        if onboardingDescription == "" {
+            doneButton.isUserInteractionEnabled = false
+        } else {
+            doneButton.isUserInteractionEnabled = true
+            doneButton.tintColor = UIColor.ColorLibrary.accentColor
+            //            applyDummyValue()
+            let homeVC = HomeVC()
+            self.navigationController?.pushViewController(homeVC, animated: true)
+        }
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        self.activeTextField = nil
+    @IBAction func finishOnboardingWithoutDesc(_ sender: Any){
+        //        applyDummyValue()
+        let homeVC = HomeVC()
+        self.navigationController?.pushViewController(homeVC, animated: true)
     }
     
-    //    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    //        if textField == deskripsiField {
-    //            @sesuatu@.becomeFirstResponder()
-    //        } else {
-    //            textField.resignFirstResponder()
-    //        }
-    //        return true
+    //    func applyDummyValue(){
+    //        var data  = dummy[0]
+    //
+    //        guard let name = onboardingName else { return }
+    //        data.name = name
+    //
+    //        guard let dob = onboardingDOB else { return }
+    //        data.dob = dob
+    //
+    //        guard let gender = onboardingGender else { return }
+    //        data.gender = gender
+    //
+    //        guard let bio = onboardingDescription else { return }
+    //        data.bio = bio
     //    }
     
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        textField.superview?.animateBorder(false, type: .border)
-        
-        if textField == deskripsiField{
-            let currDeskripsi = deskripsiField.text!
-            
-            if (deskripsiField .isEditing) {
-                let viewDeskripsi = String(currDeskripsi)
-                deskripsiField.text = viewDeskripsi
-            }
-            
-            if (deskripsiField .endEditing(true)) {
-                let viewDeskripsi = String(currDeskripsi) ?? newDescription
-                deskripsiField.text = viewDeskripsi
-            }
+
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            doneButton.isUserInteractionEnabled = true
+            doneButton.backgroundColor = UIColor.ColorLibrary.accentColor
+            return false
         }
+        return true
     }
 }

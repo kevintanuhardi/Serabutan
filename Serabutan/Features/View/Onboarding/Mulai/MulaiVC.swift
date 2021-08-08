@@ -21,7 +21,7 @@ class MulaiVC: UIViewController {
         let inputNoTelpVC = InputNoTelpVC()
         let formulirProfilVC = FormulirProfilVC()
         self.navigationController?.pushViewController(formulirProfilVC, animated: true)
-    
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
     }
 
 }

@@ -10,7 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdditionalInfoVC" customModule="Serabutan" customModuleProvider="target">
             <connections>
-                <outlet property="deskripsiField" destination="oEy-eG-Y1d" id="z9t-uI-PnG"/>
+                <outlet property="descTV" destination="hOt-vr-j9g" id="2l4-mu-18Q"/>
+                <outlet property="doneButton" destination="I3D-vM-kKb" id="efO-7f-m9r"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7x3-b4-bch"/>
             </connections>
         </placeholder>
@@ -20,13 +21,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lengkapi Data Diri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiY-OW-JRb">
-                    <rect key="frame" x="20" y="124" width="350" height="24"/>
+                    <rect key="frame" x="20" y="79" width="350" height="24"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5Cg-DQ-cAf" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
-                    <rect key="frame" x="20" y="168" width="350" height="55"/>
+                    <rect key="frame" x="20" y="123" width="350" height="192"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deskripsi Singkat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVa-pV-c4i">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="12"/>
@@ -34,18 +35,20 @@
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oEy-eG-Y1d">
-                            <rect key="frame" x="0.0" y="12" width="350" height="43"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hOt-vr-j9g">
+                            <rect key="frame" x="0.0" y="12" width="350" height="180"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="180" id="fau-Yq-QD8"/>
+                            </constraints>
+                            <color key="textColor" systemColor="labelColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
                     </subviews>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="55" id="JJE-kw-u2M"/>
-                    </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i9-9H-L5V">
-                    <rect key="frame" x="20" y="228" width="350" height="24"/>
+                    <rect key="frame" x="20" y="320" width="350" height="24"/>
                     <string key="text">Jelaskan sedikit tentang diri Anda, informasi ini dapat dilihat oleh orang lain. Anda dapat mengubahnya nanti di halaman profil.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -61,6 +64,9 @@
                     <state key="normal" title="Selesai">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="finishOnboardingDescWithSender:" destination="-1" eventType="touchUpInside" id="r5Q-XP-po4"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -73,7 +79,7 @@
                 <constraint firstItem="5Cg-DQ-cAf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="dGv-kv-9Gr"/>
                 <constraint firstItem="iiY-OW-JRb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="hYn-5Q-QGT"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5Cg-DQ-cAf" secondAttribute="trailing" constant="20" id="nOZ-Jn-Tdc"/>
-                <constraint firstItem="iiY-OW-JRb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="80" id="q36-Ig-Lrr"/>
+                <constraint firstItem="iiY-OW-JRb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="35" id="q36-Ig-Lrr"/>
                 <constraint firstItem="7i9-9H-L5V" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="qvW-kr-uCW"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="I3D-vM-kKb" secondAttribute="trailing" constant="20" id="uL4-sY-NP4"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7i9-9H-L5V" secondAttribute="trailing" constant="20" id="yJ3-9O-bB4"/>
@@ -83,6 +89,9 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

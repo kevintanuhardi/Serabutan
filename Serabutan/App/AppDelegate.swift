@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DummyData.shared.seedData()
         
         //Biar back button nya cuma muncul gambar backward, tulisan back ilang
-        let backButton = UIBarButtonItem.appearance()
-        backButton.setTitleTextAttributes([.foregroundColor : UIColor.clear], for: .normal)
+//        let backButton = UIBarButtonItem.appearance()
+//        backButton.setTitleTextAttributes([.foregroundColor : UIColor.clear], for: .normal)
         
         return true
     }

@@ -16,7 +16,7 @@ enum JobStatus {
 enum Gender: String {
     case male = "Laki-laki"
     case female = "Perempuan"
-    case other = "Tidak ada preferensi"
+    case other = "Lainnya"
 }
 
 enum AgePreference: String {

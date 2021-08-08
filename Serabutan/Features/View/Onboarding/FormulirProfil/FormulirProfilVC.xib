@@ -4,13 +4,14 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FormulirProfilVC" customModule="Serabutan" customModuleProvider="target">
             <connections>
-                <outlet property="birthDateTxt" destination="nh6-X9-1YX" id="dpo-bD-7d4"/>
+                <outlet property="datePicker" destination="bVK-cH-AET" id="eEO-mO-2dp"/>
                 <outlet property="genderTxt" destination="as5-HV-UMp" id="ZTw-89-0Pe"/>
                 <outlet property="namaLengkapTxt" destination="oHN-VD-BiH" id="gtx-xA-0Ki"/>
                 <outlet property="view" destination="iN0-l3-epB" id="t4h-9D-PZf"/>
@@ -22,13 +23,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Diri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wE-tj-pxw">
-                    <rect key="frame" x="20" y="124" width="350" height="24"/>
+                    <rect key="frame" x="20" y="79" width="350" height="24"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kEr-1q-XhF" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
-                    <rect key="frame" x="20" y="168" width="350" height="55"/>
+                    <rect key="frame" x="20" y="123" width="350" height="55"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama Lengkap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxW-jy-A3h">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="12"/>
@@ -47,40 +48,37 @@
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pastikan nama Anda sudah sesuai dengan KTP." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcg-kJ-SDr">
-                    <rect key="frame" x="20" y="228" width="350" height="12"/>
+                    <rect key="frame" x="20" y="183" width="350" height="12"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wri-gH-D9l" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
-                    <rect key="frame" x="20" y="260" width="350" height="55"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wri-gH-D9l" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
+                    <rect key="frame" x="20" y="215" width="350" height="239"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tanggal Lahir (dd/mm/yyyy)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8J4-ZJ-Rog">
-                            <rect key="frame" x="0.0" y="0.0" width="350" height="12"/>
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="Wle-zQ-eyh"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nh6-X9-1YX">
-                            <rect key="frame" x="0.0" y="12" width="350" height="43"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="bVK-cH-AET">
+                            <rect key="frame" x="0.0" y="23" width="350" height="216"/>
+                        </datePicker>
                     </subviews>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="55" id="egN-Uj-gCz"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="wAV-NI-MLN"/>
-                    </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM8-UX-1vM">
-                    <rect key="frame" x="20" y="320" width="350" height="24"/>
+                    <rect key="frame" x="20" y="459" width="350" height="24"/>
                     <string key="text">Untuk mendaftar, anda harus berumur minimal 18 tahun. Data ini digunakan untuk verifikasi semata, dan tidak akan dipublikasikan.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="d3q-d2-3ul" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
-                    <rect key="frame" x="20" y="364" width="350" height="55"/>
+                    <rect key="frame" x="20" y="503" width="350" height="55"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jenis Kelamin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suY-3n-Su6">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="12"/>
@@ -88,7 +86,7 @@
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="as5-HV-UMp">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Laki-laki" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="as5-HV-UMp">
                             <rect key="frame" x="0.0" y="12" width="350" height="43"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -129,14 +127,13 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wri-gH-D9l" secondAttribute="trailing" constant="20" id="4L8-aD-BhX"/>
                 <constraint firstItem="qcg-kJ-SDr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="6Ga-Vt-MKF"/>
                 <constraint firstItem="wri-gH-D9l" firstAttribute="top" secondItem="qcg-kJ-SDr" secondAttribute="bottom" constant="20" id="9a6-OK-gWE"/>
-                <constraint firstItem="9wE-tj-pxw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="80" id="AGz-Em-uBu"/>
+                <constraint firstItem="9wE-tj-pxw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="35" id="AGz-Em-uBu"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fM8-UX-1vM" secondAttribute="trailing" constant="20" id="D7u-bW-HoO"/>
                 <constraint firstItem="9wE-tj-pxw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="GZI-4j-wor"/>
                 <constraint firstItem="kEr-1q-XhF" firstAttribute="top" secondItem="9wE-tj-pxw" secondAttribute="bottom" constant="20" id="Gw8-VK-PNs"/>
                 <constraint firstItem="kEr-1q-XhF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="JFw-QM-gcV"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fHy-mP-vUi" secondAttribute="bottom" constant="20" id="MCT-8l-FZg"/>
                 <constraint firstItem="wri-gH-D9l" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="OIx-p1-J6n"/>
-                <constraint firstItem="fM8-UX-1vM" firstAttribute="top" secondItem="wri-gH-D9l" secondAttribute="bottom" constant="5" id="OqS-xR-yeN"/>
                 <constraint firstItem="qcg-kJ-SDr" firstAttribute="top" secondItem="kEr-1q-XhF" secondAttribute="bottom" constant="5" id="W1q-TA-vWr"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iLC-UH-URV" secondAttribute="trailing" constant="20" id="XRT-OV-6rf"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fHy-mP-vUi" secondAttribute="trailing" constant="20" id="Z7o-rd-Fr0"/>
