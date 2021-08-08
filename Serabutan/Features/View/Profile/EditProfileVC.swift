@@ -102,7 +102,7 @@ class EditProfileVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
                                           handler: nil))
             present(alert, animated: true, completion: nil)
         } else {
-            navigationController?.popToRootViewController(animated: true)
+            navigationController?.popViewController(animated: true)
         }
     }
     

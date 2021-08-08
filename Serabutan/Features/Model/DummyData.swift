@@ -233,32 +233,32 @@ class DummyData {
     }
     
     private func seedUserReview() {
-        userReview.append(Review(jobTitle: "Ban Sepeda Bocor di Jalan",
+        userReview.append(Review(job: jobsList[0],
                                  finishedDate: Date(timeInterval: -(60*60*24), since: Date()),
                                  reviewPoint: 4,
                                  reviewText: "Pak Agus datang dengan cepat saat ban sepeda saya bocor. Alat-alatnya lengkap, sukses terus Pak Agus!",
                                  reviewer: userProfile[2]))
-        userReview.append(Review(jobTitle: "Merapikan Rumput Liar",
+        userReview.append(Review(job: jobsList[1],
                                  finishedDate: Date(timeInterval: -(60*60*24)*3, since: Date()),
                                  reviewPoint: 5,
                                  reviewText: "Potongan rumput Bu Susi sangat rapi, taman saya menjadi cantik.",
                                  reviewer: userProfile[3]))
-        userReview.append(Review(jobTitle: "Bantu Sebar Kotak Syukuran",
+        userReview.append(Review(job: jobsList[2],
                                  finishedDate: Date(timeInterval: -(60*60*24)*5, since: Date()),
                                  reviewPoint: 3,
                                  reviewText: "Pak Tono sangat terpercaya untuk nganter berbagai macam barang. Kemarin saya butuh bantuan untuk menyebarkan kotak syukuran ke tetangga sekitar, Pak Tono gesit dan aktif sekali dalam menyebarkan, jika ada kurang apa-apa ia segera inisiatif bertanya. Pak Tono juga fleksibel orangnya dan tidak rewel, semangat bekerja walaupun matahari menyengat. Semangat terus Pak Tono!",
                                  reviewer: userProfile[4]))
-        userReview.append(Review(jobTitle: "Bantuin Masak Opor Lebaran",
+        userReview.append(Review(job: jobsList[3],
                                  finishedDate: Date(timeInterval: -(60*60*24)*10, since: Date()),
                                  reviewPoint: 4,
                                  reviewText: "Masakan Bu Ida enak dan cara masaknya sangat higienis. Sukses terus Bu Ida.",
                                  reviewer: userProfile[0]))
-        userReview.append(Review(jobTitle: "Nurunin Kucing dari Atap",
+        userReview.append(Review(job: jobsList[4],
                                  finishedDate: Date(timeInterval: -(60*60*24)*15, since: Date()),
                                  reviewPoint: 5,
                                  reviewText: "Mas Dodi gercep datang menyelamatkan kucing saya. Terima kasih Mas Dodi. Mas Dodi ternyata juga pecinta hewan jadi kucing yang diselamatkan tidak takut. Setelah ngobrol-ngobrol dengan Mas Dodi ia juga mengerti sedikit tentang pertukangan, sehingga kalau mau ada atap bocor bisa minta dia juga. Semangat kuliahnya Mas Dodi!",
                                  reviewer: userProfile[1]))
-        userReview.append(Review(jobTitle: "Bantuin Dekor Ultah Anak",
+        userReview.append(Review(job: jobsList[5],
                                  finishedDate: Date(timeInterval: -(60*60*24)*16, since: Date()),
                                  reviewPoint: 4,
                                  reviewText: "Mba Dhea baik banget dan kerjaannya rapi dan bagus!",
@@ -268,8 +268,8 @@ class DummyData {
     func seedData() {
         seedProfileStatistic()
         seedUserProfile()
-        seedUserReview()
         seedJobsList()
+        seedUserReview()
     }
     
     func getJobsList() -> [Jobs] {
@@ -295,7 +295,12 @@ class DummyData {
     }
     
     func getUserReview() -> [Review] {
-        return userReview
+        let latestReview = userReview.sorted(by: { $0.finishedDate.compare($1.finishedDate) == .orderedAscending })
+        return latestReview
+    }
+    
+    func addUserReview(job: Jobs, reviewPoint: Int, reviewText: String, reviewer: UserProfile) {
+        userReview.append(Review(job: job, finishedDate: Date(), reviewPoint: reviewPoint, reviewText: reviewText, reviewer: reviewer))
     }
     
 }

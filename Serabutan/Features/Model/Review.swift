@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct Review {
-    let jobTitle : String
+    let job : Jobs
     let finishedDate : Date
     let reviewPoint : Int
     let reviewText : String?

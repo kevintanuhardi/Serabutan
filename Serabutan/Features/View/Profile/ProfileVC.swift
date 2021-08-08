@@ -143,7 +143,7 @@ extension ProfileVC: UITableViewDataSource {
         
         cell.setRating(rating: userReview.reviewPoint)
         cell.profileImage.image = userReview.reviewer.avatar
-        cell.titleLabel.text = userReview.jobTitle
+        cell.titleLabel.text = userReview.job.title
         cell.nameLabel.text = userReview.reviewer.name
         cell.datesLabel.text = StringFormatter().dateFormatter(date: userReview.finishedDate)
         cell.reviewText.text = userReview.reviewText

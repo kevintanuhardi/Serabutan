@@ -76,7 +76,16 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     }
     
     @IBAction func helpFinishButton(_ sender: Any) {
-        selectedJob.status = .taken
+        switch selectedJob.status {
+        case .active :
+            selectedJob.status = .taken
+        case .taken :
+            selectedJob.status = .done
+        case .cancelled:
+            break
+        case .done:
+            break
+        }
         configureHelper()
     }
     
@@ -94,7 +103,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     @IBAction func sendWhatsApp(_ sender: Any) {
         let message = """
             Halo Pak/Bu \(selectedJob.jobPosterId.name),
-            saya *\(DummyData.shared.getUserProfile()[0].name)* dari _BantuinApp_ bersedia membantu Bapak/Ibu untuk _\(selectedJob.title)_.
+            saya *\(DummyData.shared.getUserProfile()[0].name)* dari _BantuinApp_ bersedia membantu Bapak/Ibu untuk _\(selectedJob.title ?? "Untitled Bantuan")_.
             Bagaimana saya bisa membantu? 🙂
             """
         let messageURL = message.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
