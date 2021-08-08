@@ -12,7 +12,9 @@ class HistoryActivityVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var historyActivityTable: UITableView!
     
-    var dummyData = DummyData.shared.getJobsList()
+    var dummyData = DummyData.shared.getJobsList().filter { job in
+        return job.status == .done || job.status == .cancelled
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
