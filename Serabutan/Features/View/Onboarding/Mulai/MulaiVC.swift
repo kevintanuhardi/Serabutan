@@ -12,17 +12,16 @@ class MulaiVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.isHidden = true
-        tabBarController?.tabBar.isHidden = true
-        
     }
     
-    @IBAction func mulai(_ sender: Any) {
+    @IBAction func btnMulai(_ sender: Any) {
         
         let inputNoTelpVC = InputNoTelpVC()
-        self.navigationController?.pushViewController(inputNoTelpVC, animated: true)
-            
-    }
+        let formulirProfilVC = FormulirProfilVC()
+        self.navigationController?.pushViewController(formulirProfilVC, animated: true)
     
+    }
+
 }

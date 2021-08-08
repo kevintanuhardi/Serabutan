@@ -29,7 +29,7 @@
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                     <state key="normal" title="Mulai"/>
                     <connections>
-                        <action selector="mulai:" destination="-1" eventType="touchUpInside" id="oKT-Le-o2x"/>
+                        <action selector="btnMulai:" destination="-1" eventType="touchUpInside" id="oKT-Le-o2x"/>
                     </connections>
                 </button>
             </subviews>

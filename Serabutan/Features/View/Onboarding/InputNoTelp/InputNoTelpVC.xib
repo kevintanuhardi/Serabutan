@@ -59,7 +59,7 @@
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                     <state key="normal" title="Lanjut"/>
                     <connections>
-                        <action selector="goToVerifNoTelp:" destination="-1" eventType="touchUpInside" id="26Z-Am-otu"/>
+                        <action selector="btnLanjut:" destination="-1" eventType="touchUpInside" id="26Z-Am-otu"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dengan klik lanjut, Anda akan menerima SMS untuk verifikasi. Tarif pesan dan data mungkin berlaku." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzx-qe-8K3">

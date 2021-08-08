@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Seeding dummy data, please remove this line on the final product.
         DummyData.shared.seedData()
         
+        //Biar back button nya cuma muncul gambar backward, tulisan back ilang
+        let backButton = UIBarButtonItem.appearance()
+        backButton.setTitleTextAttributes([.foregroundColor : UIColor.clear], for: .normal)
+        
         return true
     }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,32 +10,34 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FormulirProfilVC" customModule="Serabutan" customModuleProvider="target">
             <connections>
-                <outlet property="namaLengkapField" destination="oHN-VD-BiH" id="gtx-xA-0Ki"/>
+                <outlet property="birthDateTxt" destination="nh6-X9-1YX" id="dpo-bD-7d4"/>
+                <outlet property="genderTxt" destination="as5-HV-UMp" id="ZTw-89-0Pe"/>
+                <outlet property="namaLengkapTxt" destination="oHN-VD-BiH" id="gtx-xA-0Ki"/>
                 <outlet property="view" destination="iN0-l3-epB" id="t4h-9D-PZf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Diri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wE-tj-pxw">
-                    <rect key="frame" x="20" y="124" width="374" height="24"/>
+                    <rect key="frame" x="20" y="124" width="350" height="24"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kEr-1q-XhF" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
-                    <rect key="frame" x="20" y="168" width="374" height="55"/>
+                    <rect key="frame" x="20" y="168" width="350" height="55"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama Lengkap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxW-jy-A3h">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="12"/>
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="12"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oHN-VD-BiH">
-                            <rect key="frame" x="0.0" y="12" width="374" height="43"/>
+                            <rect key="frame" x="0.0" y="12" width="350" height="43"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
@@ -45,22 +47,22 @@
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pastikan nama Anda sudah sesuai dengan KTP." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcg-kJ-SDr">
-                    <rect key="frame" x="20" y="228" width="374" height="12"/>
+                    <rect key="frame" x="20" y="228" width="350" height="12"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wri-gH-D9l" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
-                    <rect key="frame" x="20" y="260" width="374" height="55"/>
+                    <rect key="frame" x="20" y="260" width="350" height="55"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tanggal Lahir (dd/mm/yyyy)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8J4-ZJ-Rog">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="12"/>
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="12"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nh6-X9-1YX">
-                            <rect key="frame" x="0.0" y="12" width="374" height="43"/>
+                            <rect key="frame" x="0.0" y="12" width="350" height="43"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
@@ -71,23 +73,23 @@
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM8-UX-1vM">
-                    <rect key="frame" x="20" y="320" width="374" height="24"/>
+                    <rect key="frame" x="20" y="320" width="350" height="24"/>
                     <string key="text">Untuk mendaftar, anda harus berumur minimal 18 tahun. Data ini digunakan untuk verifikasi semata, dan tidak akan dipublikasikan.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="d3q-d2-3ul" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
-                    <rect key="frame" x="20" y="364" width="374" height="55"/>
+                    <rect key="frame" x="20" y="364" width="350" height="55"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jenis Kelamin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suY-3n-Su6">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="12"/>
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="12"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="as5-HV-UMp">
-                            <rect key="frame" x="0.0" y="12" width="374" height="43"/>
+                            <rect key="frame" x="0.0" y="12" width="350" height="43"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
@@ -99,7 +101,7 @@
                     </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHy-mP-vUi" customClass="PrimaryButton" customModule="Serabutan" customModuleProvider="target">
-                    <rect key="frame" x="20" y="787" width="374" height="55"/>
+                    <rect key="frame" x="20" y="735" width="350" height="55"/>
                     <color key="backgroundColor" red="0.72549019609999998" green="0.2156862745" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="55" id="iEY-oM-6W1"/>
@@ -113,7 +115,7 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Dengan memilih Setuju dan lanjutkan, saya telah setuju dengan Syarat dan Ketentuan dan Kebijakan Privasi Bantu!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iLC-UH-URV">
-                    <rect key="frame" x="20" y="722" width="374" height="45"/>
+                    <rect key="frame" x="20" y="670.33333333333337" width="350" height="44.666666666666629"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
