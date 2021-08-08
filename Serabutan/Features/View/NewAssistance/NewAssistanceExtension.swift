@@ -36,11 +36,16 @@ extension NewAssistanceVC {
     //MARK: - ImagePicker Handler
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
-
+        print(image, "_ image")
         dismiss(animated: true)
 
         currImage = image
         newAssistanceMediaImage.append(currImage!)
+        
+        DispatchQueue.main.async {
+            self.mediaImageCollectionView.reloadData()
+        }
     }
+    
     
 }

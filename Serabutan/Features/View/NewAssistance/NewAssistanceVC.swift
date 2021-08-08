@@ -81,11 +81,11 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     var genderPickerView = UIPickerView()
     var agePickerView = UIPickerView()
     let urgencyPreferenceData = ["Tinggi", "Sedang", "Rendah"]
-    let genderPreferenceData = ["Tidak ada preferensi", "Laki-Laki", "Perempuan"]
+    let genderPreferenceData = ["Tidak ada preferensi", "Laki-laki", "Perempuan"]
     let agePreferenceData = ["18-25", "26-40", "40"]
-    var selectedValueUrgency: String? = "Tinggi"
-    var selectedValueGender : String? = "Tidak ada Preferensi"
-    var selectedValueAge : String? = "Tidak ada Preferensi"
+    var selectedValueUrgency : String? = "Tinggi"
+    var selectedValueGender : String? = "Tidak ada preferensi"
+    var selectedValueAge : String? = "Tidak ada preferensi"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,9 +121,9 @@ class NewAssistanceVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     }
     
     func initCollectionView(){
-//        mediaImageCollectionView.dataSource = self
-//        mediaImageCollectionView.delegate = self
-//        mediaImageCollectionView.register(MediaCollectionViewCell.nib(), forCellWithReuseIdentifier: MediaCollectionViewCell.identifier)
+        mediaImageCollectionView.dataSource = self
+        mediaImageCollectionView.delegate = self
+        mediaImageCollectionView.register(ImageCarouselCVC.nib(), forCellWithReuseIdentifier: ImageCarouselCVC.identifier)
     }
     
 }
@@ -138,21 +138,21 @@ extension NewAssistanceVC {
     @IBAction func shareButtonAction(_sender: Any){
         initOtherData()
         initCreateNewJob()
-//        print("NEW JobID:", newAssistanceJobId!)
-//        print("NEW Job Poster ID", newAssistanceJobPosterId!)//
-//        print("NEW Post DateTime", newAssistancePostDate!)
-//        print("NEW Urgency:", newAssistanceUrgency!)
-//        print("NEW Title:", newAssistanceTitle!)
-//        print("NEW Desc:", newAssistanceDes!)
-//        print("NEW Compensation:", newAssistanceCompensation!)
-//        print("NEW Status:", newAssistanceStatus)
-//        print("NEW Distance:", newAssistanceDistance)
-//        print("NEW Coordinate:", newAssistanceCoordinate!)
-//        print("NEW HelperId:", newAssistanceHelperId)//
-//        print("NEW Gender Pref:", newAssistanceGenderPref!)
-//        print("NEW Age Pref:", newAssistanceAgePref!)
-//        print("NEW Info Tags:", newAssistanceInfo)
-//        print("NEW Images:", newAssistanceMediaImage)
+        print("NEW JobID:", newAssistanceJobId!)
+        print("NEW Job Poster ID", newAssistanceJobPosterId!)//
+        print("NEW Post DateTime", newAssistancePostDate!)
+        print("NEW Urgency:", newAssistanceUrgency!)
+        print("NEW Title:", newAssistanceTitle!)
+        print("NEW Desc:", newAssistanceDes!)
+        print("NEW Compensation:", newAssistanceCompensation!)
+        print("NEW Status:", newAssistanceStatus)
+        print("NEW Distance:", newAssistanceDistance)
+        print("NEW Coordinate:", newAssistanceCoordinate)
+        print("NEW HelperId:", newAssistanceHelperId)//
+        print("NEW Gender Pref:", newAssistanceGenderPref)
+        print("NEW Age Pref:", newAssistanceAgePref)
+        print("NEW Info Tags:", newAssistanceInfo)
+        print("NEW Images:", newAssistanceMediaImage)
         let homeVC = HomeVC()
         self.navigationController?.pushViewController(homeVC, animated: true)
     }
@@ -206,6 +206,10 @@ extension NewAssistanceVC {
         textView.superview?.animateBorder(true, type: .border)
     }
     
+    func textViewDidEndEditing(_ textView: UITextView) {
+        textView.superview?.animateBorder(false, type: .border)
+    }
+    
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.activeTextField = textField
@@ -213,9 +217,9 @@ extension NewAssistanceVC {
         
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        self.activeTextField = nil
-    }
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        self.activeTextField = nil
+//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == urgencyTF {
@@ -255,6 +259,10 @@ extension NewAssistanceVC {
             }
             
         }
+        
+        
+        let currTitle = titleTF.text!
+        newAssistanceTitle = currTitle
         
         let currDesc = descTV.text!
         newAssistanceDes = currDesc
@@ -317,7 +325,7 @@ extension NewAssistanceVC {
     
     //MARK: - Create Alert for Media Button
     func createAlert(){
-        let alert = UIAlertController(title: "Lorem", message: "Lorem Ipsum", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Tambahkan Media", message: "", preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Camera",
                                       style: .default,
