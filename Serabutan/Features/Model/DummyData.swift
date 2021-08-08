@@ -201,26 +201,33 @@ class DummyData {
                                        isVerified: false,
                                        statistics: profileStatistic[2]))
         userProfile.append(UserProfile(id: 3,
-                                       name: "Ida Kusuma",
-                                       avatar: UIImage(named: "avatar-3"),
-                                       bio: "Terbiasa memasak, bisa bantu-bantu kalau lebaran atau ada syukuran yang butuh tenaga masak.",
+                                       name: "Dodi Sujarwo",
+                                       avatar: UIImage(named: "avatar-4"),
+                                       bio: "Mahasiswa biasa saja yang mencari tambahan di sela-sela waktu. Bisa bantu apa saja asal pekerjaannya tidak susah dan spesifik.",
                                        joinDate: Date(timeInterval: -(60*60*24)*20, since: Date()),
                                        isVerified: true,
                                        statistics: profileStatistic[3]))
         userProfile.append(UserProfile(id: 4,
-                                       name: "Dodi Sujarwo",
-                                       avatar: UIImage(named: "avatar-4"),
-                                       bio: "Mahasiswa biasa saja yang mencari tambahan di sela-sela waktu. Bisa bantu apa saja asal pekerjaannya tidak susah dan spesifik.",
+                                       name: "Dhea Aninda",
+                                       avatar: UIImage(named: "avatar-5"),
+                                       bio: "Baru lulus kuliah jadi banyak waktu luang. Suka hal-hal berbau seni. Berpengalaman dekor acara-acara di kampus, tapi bisa bantu apa aja asal ga berat-berat.",
                                        joinDate: Date(timeInterval: -(60*60*24)*9, since: Date()),
                                        isVerified: false,
                                        statistics: profileStatistic[4]))
         userProfile.append(UserProfile(id: 5,
-                                       name: "Dhea Aninda",
-                                       avatar: UIImage(named: "avatar-5"),
-                                       bio: "Baru lulus kuliah jadi banyak waktu luang. Suka hal-hal berbau seni. Berpengalaman dekor acara-acara di kampus, tapi bisa bantu apa aja asal ga berat-berat.",
+                                       name: "Ida Kusuma",
+                                       avatar: UIImage(named: "avatar-3"),
+                                       bio: "Terbiasa memasak, bisa bantu-bantu kalau lebaran atau ada syukuran yang butuh tenaga masak.",
                                        joinDate: Date(timeInterval: -(60*60*24)*11, since: Date()),
                                        isVerified: false,
                                        statistics: profileStatistic[5]))
+        userProfile.append(UserProfile(id: 6,
+                                       name: "Budi Wiyarno",
+                                       avatar: UIImage(named: "avatar-6"),
+                                       bio: "Ngapain aja bisa. Saya udah bekerja serabutan bantu-bantu tetangga sejak 10 tahun lalu. Mulai dari pertukangan, ngurus taman, masak, otomatif, InsyaAllah kalau ga susah susah banget saya mau membantu. ",
+                                       joinDate: Date(timeInterval: -(60*60*24)*18, since: Date()),
+                                       isVerified: false,
+                                       statistics: profileStatistic[6]))
     }
     
     private func seedProfileStatistic() {
@@ -228,8 +235,9 @@ class DummyData {
         profileStatistic.append(ProfileStatistic(reviewAggregate: 4.0, totalReview: 3, dibantu: 2, membantu: 1))
         profileStatistic.append(ProfileStatistic(reviewAggregate: 4.5, totalReview: 3, dibantu: 3, membantu: 0))
         profileStatistic.append(ProfileStatistic(reviewAggregate: 4.2, totalReview: 3, dibantu: 0, membantu: 3))
-        profileStatistic.append(ProfileStatistic(reviewAggregate: 4.9, totalReview: 3, dibantu: 1, membantu: 1))
-        profileStatistic.append(ProfileStatistic(reviewAggregate: 5.0, totalReview: 3, dibantu: 2, membantu: 1))
+        profileStatistic.append(ProfileStatistic(reviewAggregate: 4.9, totalReview: 3, dibantu: 1, membantu: 2))
+        profileStatistic.append(ProfileStatistic(reviewAggregate: 4.7, totalReview: 3, dibantu: 2, membantu: 1))
+        profileStatistic.append(ProfileStatistic(reviewAggregate: 4.2, totalReview: 3, dibantu: 1, membantu: 2))
     }
     
     private func seedUserReview() {
@@ -328,6 +336,44 @@ class DummyData {
                                  reviewText: "Mba Dhea gercep orangnya. H-1 event organizer saya cancel dateng terus Mba Dhea ternyata bisa dan cepet kerjanya. Keren Mba Dhea!",
                                  reviewer: userProfile[2],
                                  reviewee: userProfile[4]))
+        
+        userReview.append(Review(job: jobsList[0],
+                                 finishedDate: Date(timeInterval: -(60*60*24)*10, since: Date()),
+                                 reviewPoint: 4,
+                                 reviewText: "Masakan Bu Ida enak dan cara masaknya sangat higienis. Sukses terus Bu Ida. ",
+                                 reviewer: userProfile[6],
+                                 reviewee: userProfile[5]))
+        userReview.append(Review(job: jobsList[3],
+                                 finishedDate: Date(timeInterval: -(60*60*24)*2, since: Date()),
+                                 reviewPoint: 4,
+                                 reviewText: "Bu Idaaaa saya paling suka kalo dibantu masak sama Bu Ida. Anak saya hari ini ulang tahun terus karena ada bantuan Bu Ida kita bisa bagi-bagi nasi kotak ke temen kelasnya. Makasih Bu Ida. ",
+                                 reviewer: userProfile[4],
+                                 reviewee: userProfile[5]))
+        userReview.append(Review(job: jobsList[5],
+                                 finishedDate: Date(timeInterval: -(60*60*24)*3, since: Date()),
+                                 reviewPoint: 5,
+                                 reviewText: "Bu Idaaaa saya paling suka kalo dibantu masak sama Bu Ida. Anak saya hari ini ulang tahun terus karena ada bantuan Bu Ida kita bisa bagi-bagi nasi kotak ke temen kelasnya. Makasih Bu Ida. ",
+                                 reviewer: userProfile[2],
+                                 reviewee: userProfile[5]))
+        
+        userReview.append(Review(job: jobsList[0],
+                                 finishedDate: Date(timeInterval: -(60*60*24)*5, since: Date()),
+                                 reviewPoint: 4,
+                                 reviewText: "Pak Budi sangat semangat dalam bekerja. Taman saya rapi sekejap dan Pak Budi langsung datang ketika kami sudah sepakat. Alat yang dimiliki Pak Budi juga lengkap jadi saya ga harus nyediain apapun. Semangat Pak Budi!",
+                                 reviewer: userProfile[5],
+                                 reviewee: userProfile[6]))
+        userReview.append(Review(job: jobsList[3],
+                                 finishedDate: Date(timeInterval: -(60*60*24)*11, since: Date()),
+                                 reviewPoint: 4,
+                                 reviewText: "Pak Budi ini emang serba bisa. Tadi mainan anak saya nyangkut di pohon tinggi saya bingung banget mau minta tolong siapa, ada aja Pak Budi dengan bantuannya. Pak Budi bawa tangga dan naik terus anak saya stop nangis. Makasih banget Pak Budi. ",
+                                 reviewer: userProfile[3],
+                                 reviewee: userProfile[6]))
+        userReview.append(Review(job: jobsList[5],
+                                 finishedDate: Date(timeInterval: -(60*60*24)*3, since: Date()),
+                                 reviewPoint: 5,
+                                 reviewText: "Pak Budi ternyata bisa dikit-dikit tentang perbengkelan. Tadi motor saya mogok di komplek terus Pak Budi dateng benerin bentar banget langsung bisa jalan. Makasih Pak Budi!",
+                                 reviewer: userProfile[2],
+                                 reviewee: userProfile[6]))
     }
     
     func seedData() {

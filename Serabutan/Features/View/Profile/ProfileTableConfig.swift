@@ -37,13 +37,14 @@ extension ProfileVC {
     // TableView Content Setup
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Profile page will only show the 5 latest reviews
-        return 5
+        return database.getUserReview(reviewee: user!).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = reviewTable.dequeueReusableCell(withIdentifier: ReviewTableViewCell.identifier, for: indexPath) as! ReviewTableViewCell
         
-        let userReview = database.getUserReview()[indexPath.row]
+        //let userReview = database.getUserReview()[indexPath.row]
+        let userReview = database.getUserReview(reviewee: user!)[indexPath.row]
         cell.selectionStyle = .none
         
         userReview.reviewer.isVerified ? (cell.isVerified.isHidden = true) : (cell.isVerified.isHidden = false)
