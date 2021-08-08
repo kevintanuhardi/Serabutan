@@ -295,7 +295,7 @@ class DummyData {
     }
     
     func getUserReview() -> [Review] {
-        let latestReview = userReview.sorted(by: { $0.finishedDate.compare($1.finishedDate) == .orderedAscending })
+        let latestReview = userReview.sorted(by: { $0.finishedDate.compare($1.finishedDate) == .orderedDescending })
         return latestReview
     }
     

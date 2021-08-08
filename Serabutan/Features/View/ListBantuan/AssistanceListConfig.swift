@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension AssistanceListVC{
+extension AssistanceListVC {
     
     internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
