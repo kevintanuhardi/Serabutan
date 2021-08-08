@@ -44,6 +44,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let addIconItem = UITabBarItem(title: nil, image: UIImage(named: "AddButton"), tag: 2)
         addIconItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
+		
+		let attributes: [NSAttributedString.Key: AnyObject] = [
+			NSAttributedString.Key.foregroundColor: UIColor.clear
+		]
+		
+		addIconItem.setTitleTextAttributes(attributes, for: .normal)
         
         homeNavigationController.tabBarItem = homeItem
         activityNavigationController.tabBarItem = activityItem
