@@ -26,17 +26,26 @@ class ProfileVC: UIViewController {
     
     // Dummy Data
     let database = DummyData.shared
+    let loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")
     var user: UserProfile?
     
     override func viewWillAppear(_ animated: Bool) {
-        // Setup navigation
-        navigationController?.navigationBar.barTintColor = .white
-        navigationController?.navigationBar.backgroundColor = .white
-        navigationController?.navigationBar.shadowImage = UIImage()
         
-        let rightBarButton = UIBarButtonItem(title: "Sunting", style: .plain, target: self, action: #selector(suntingProfile))
-        rightBarButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.FontLibrary.textLink1], for: .normal)
-        navigationItem.rightBarButtonItem = rightBarButton
+        self.navigationController?.navigationBar.backgroundColor = .white
+        self.navigationController?.navigationBar.barTintColor = .white
+        
+        // Back Button
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+        
+        // Check if profile is their own
+        if user?.id == loggedUser {
+            let rightBarButton = UIBarButtonItem(title: "Sunting", style: .plain, target: self, action: #selector(suntingProfile))
+            rightBarButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.FontLibrary.textLink1], for: .normal)
+            navigationItem.rightBarButtonItem = rightBarButton
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -47,9 +56,8 @@ class ProfileVC: UIViewController {
         reviewTable.delegate = self
         reviewTable.dataSource = self
         
-        user = database.getUserProfile()[5]
-        
         updateUI()
+        
     }
     
     func updateUI() {
@@ -61,11 +69,11 @@ class ProfileVC: UIViewController {
         ratingBadge.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         ratingBadge.layer.borderWidth = 0.5
         profileInfoView.addLine(position: .bottom, color: UIColor.ColorLibrary.mediumGrey, width: 0.5)
-
+        
         // Set profile
         profileImage.image = user?.avatar
         profileName.text = user?.name
-        profileJoinDate.text = "Bergabung \(customDateFormatter(dateInput: user?.joinDate ?? Date()))"
+        profileJoinDate.text = "Bergabung \(StringFormatter().dateFormatter(date: user?.joinDate ?? Date()))"
         profileBio.text = user?.bio
         ratingAggregate.text = "\(user?.statistics?.reviewAggregate ?? 0)"
         ratingTotal.text = "(\(user?.statistics?.totalReview ?? 0))"
@@ -137,20 +145,9 @@ extension ProfileVC: UITableViewDataSource {
         cell.profileImage.image = userReview.reviewer.avatar
         cell.titleLabel.text = userReview.jobTitle
         cell.nameLabel.text = userReview.reviewer.name
-        cell.datesLabel.text = customDateFormatter(dateInput: userReview.finishedDate)
+        cell.datesLabel.text = StringFormatter().dateFormatter(date: userReview.finishedDate)
         cell.reviewText.text = userReview.reviewText
         
         return cell
     }
-}
-
-func customDateFormatter(dateInput: Date) -> String {
-    var date = ""
-    
-    let formatter = DateFormatter()
-    formatter.locale = Locale(identifier: "en_GB")
-    formatter.setLocalizedDateFormatFromTemplate("ddMMMyyyy")
-    date = formatter.string(from: dateInput)
-    
-    return date
 }

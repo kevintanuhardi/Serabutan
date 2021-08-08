@@ -63,9 +63,10 @@ class EditProfileVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
     
     // Navigation related UI
     func navigationUI() {
+        
         navigationController?.navigationBar.barTintColor = .ColorLibrary.lightGrey
+        
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.ColorLibrary.customBlack]
-        navigationController?.navigationBar.shadowImage = UIImage()
         
         let button = UIButton(type: .system)
         button.frame = CGRect(x: 0, y: 0, width: 65, height: 30)

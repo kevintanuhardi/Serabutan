@@ -29,7 +29,7 @@ class HomeVM: NSObject {
 					switch result {
 					case .success (let fetchedJobs):
 						print("success", fetchedJobs)
-						self.nearbyJobs = fetchedJobs as! [Job]
+						self.nearbyJobs = fetchedJobs as? [Job]
 					case .failure(let error):
 						print("error:", error)
 					}

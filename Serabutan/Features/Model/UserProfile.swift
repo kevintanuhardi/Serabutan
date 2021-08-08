@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct UserProfile {
+    let id : Int
     var name : String
     var avatar : UIImage?
     var bio :  String?

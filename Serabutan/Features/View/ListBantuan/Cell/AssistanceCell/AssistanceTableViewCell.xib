@@ -405,9 +405,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="availabelInsetView" destination="cQo-Ls-zJo" id="yIb-CL-P7y"/>
-                <outlet property="availableInsetView" destination="9jj-kz-5dv" id="Kug-MC-cGK"/>
-                <outlet property="availableView" destination="9jj-kz-5dv" id="b6b-uZ-AIq"/>
+                <outlet property="availabelInsetView1" destination="cQo-Ls-zJo" id="obQ-tm-m9A"/>
+                <outlet property="availableInsetView" destination="9jj-kz-5dv" id="MSP-Yk-aeD"/>
+                <outlet property="availableView" destination="IBU-AY-ys7" id="V6g-9u-xhf"/>
                 <outlet property="compensationLabel" destination="V84-E8-MyC" id="1eO-gw-Ejc"/>
                 <outlet property="dotImage" destination="mpw-Rn-HGi" id="mgM-LN-YuZ"/>
                 <outlet property="gradientView" destination="6g9-og-fyQ" id="mkT-qp-Z25"/>

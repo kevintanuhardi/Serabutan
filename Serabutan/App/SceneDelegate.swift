@@ -25,10 +25,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tabBarController = UITabBarController()
         let homeVC = HomeVC()
-        let activityVC = UIViewController()
+        let activityVC = ActivityVC()
         let notificationVC = UIViewController()
         let profileVC = ProfileVC()
-        let addJobVC = UIViewController()
+        let addJobVC = NewAssistanceVC()
         
         homeNavigationController = UINavigationController.init(rootViewController: homeVC)
         activityNavigationController = UINavigationController.init(rootViewController: activityVC)
@@ -51,14 +51,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         notificationNavigationController.tabBarItem = notificationItem
         profileNavigationController.tabBarItem = profileItem
         
-        UITabBar.appearance().tintColor = UIColor.systemBlue
-        UITabBar.appearance().unselectedItemTintColor = UIColor.init(named: "silver")
+        UITabBar.appearance().tintColor = UIColor.ColorLibrary.accentColor
+        UITabBar.appearance().unselectedItemTintColor = UIColor.ColorLibrary.mediumGrey
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().shadowImage = UIImage()
         
         let viewController = tabBarController
+
         let navigationBar = UINavigationController(rootViewController: viewController)
         navigationBar.isNavigationBarHidden = true
         window?.rootViewController = navigationBar
         window?.makeKeyAndVisible()
+        
+        // Setup Profile Page - Default User
+        let userId = UserDefaults.standard.integer(forKey: "loggedUser")
+        profileVC.user = DummyData.shared.getUserProfile()[userId]
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
