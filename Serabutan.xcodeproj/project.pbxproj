@@ -53,7 +53,7 @@
 		90E9C98826B39DE500165319 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */; };
 		90E9C98926B39DE500165319 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */; };
 		90F3A4E126B8E404001946E1 /* FontLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3A4E026B8E404001946E1 /* FontLibrary.swift */; };
-		C742289E26B9B10D003DD169 /* NewAssistanceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742289D26B9B10D003DD169 /* NewAssistanceExtension.swift */; };
+		C742289E26B9B10D003DD169 /* NAKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742289D26B9B10D003DD169 /* NAKeyboardObserver.swift */; };
 		C74228A126BA3E9F003DD169 /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742289F26BA3E9F003DD169 /* ActivityVC.swift */; };
 		C74228A226BA3E9F003DD169 /* ActivityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C74228A026BA3E9F003DD169 /* ActivityVC.xib */; };
 		C74228A726BA3ECF003DD169 /* OngoingActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74228A526BA3ECF003DD169 /* OngoingActivityVC.swift */; };
@@ -64,13 +64,16 @@
 		C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */; };
 		C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */; };
 		C744D7E826B2F127009E36B7 /* FilterPopUpConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */; };
-		C75CACD826BEBF420074B55D /* NewAssistancePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75CACD726BEBF420074B55D /* NewAssistancePickerView.swift */; };
+		C75CACD826BEBF420074B55D /* NAPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75CACD726BEBF420074B55D /* NAPickerView.swift */; };
 		C75E13EC26B85917007BEF41 /* AssistanceListConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E13EB26B85917007BEF41 /* AssistanceListConfig.swift */; };
 		C76047C026AF3CBB00535995 /* AssistanceListNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */; };
-		C79063E826B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79063E726B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift */; };
+		C79063E826B3BE7500AE7687 /* NACollectionViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79063E726B3BE7500AE7687 /* NACollectionViewConfig.swift */; };
+		C7BD8BAE26C02B7B00A0399C /* NATextFieldAndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BAD26C02B7B00A0399C /* NATextFieldAndView.swift */; };
+		C7BD8BB026C02BD800A0399C /* NADataConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BAF26C02BD800A0399C /* NADataConfig.swift */; };
+		C7BD8BB426C02D7600A0399C /* NAAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BB326C02D7600A0399C /* NAAlert.swift */; };
 		C7CCC24526B199DD0005FFE3 /* NewAssistanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */; };
 		C7CCC24626B199DD0005FFE3 /* NewAssistanceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */; };
-		C7CCC24826B19A660005FFE3 /* NewAssistanceStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24726B19A660005FFE3 /* NewAssistanceStyle.swift */; };
+		C7CCC24826B19A660005FFE3 /* NAStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24726B19A660005FFE3 /* NAStyle.swift */; };
 		C7CCC24C26B1DB590005FFE3 /* AssistanceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */; };
 		C7CCC24D26B1DB590005FFE3 /* AssistanceListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */; };
 		C7CCC25026B1DBD80005FFE3 /* AssistanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24E26B1DBD80005FFE3 /* AssistanceTableViewCell.swift */; };
@@ -134,7 +137,7 @@
 		90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReviewTableViewCell.xib; path = Serabutan/Features/View/Profile/ReviewTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		90F3A4E026B8E404001946E1 /* FontLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FontLibrary.swift; path = Serabutan/Components/Styling/FontLibrary.swift; sourceTree = SOURCE_ROOT; };
 		B5280E9AC63B1FC4AC9E66C0 /* Pods-Serabutan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Serabutan.debug.xcconfig"; path = "Target Support Files/Pods-Serabutan/Pods-Serabutan.debug.xcconfig"; sourceTree = "<group>"; };
-		C742289D26B9B10D003DD169 /* NewAssistanceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanceExtension.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanceExtension.swift; sourceTree = SOURCE_ROOT; };
+		C742289D26B9B10D003DD169 /* NAKeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NAKeyboardObserver.swift; path = serabutan/Features/View/NewAssistance/Utils/NAKeyboardObserver.swift; sourceTree = SOURCE_ROOT; };
 		C742289F26BA3E9F003DD169 /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityVC.swift; path = Serabutan/Features/View/NewAssistance/ActivityVC.swift; sourceTree = SOURCE_ROOT; };
 		C74228A026BA3E9F003DD169 /* ActivityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ActivityVC.xib; path = Serabutan/Features/View/NewAssistance/ActivityVC.xib; sourceTree = SOURCE_ROOT; };
 		C74228A526BA3ECF003DD169 /* OngoingActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OngoingActivityVC.swift; path = Serabutan/Features/View/Activity/Ongoing/OngoingActivityVC.swift; sourceTree = SOURCE_ROOT; };
@@ -145,13 +148,16 @@
 		C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpVC.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.swift; sourceTree = SOURCE_ROOT; };
 		C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FilterPopUpVC.xib; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.xib; sourceTree = SOURCE_ROOT; };
 		C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpConfig.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpConfig.swift; sourceTree = SOURCE_ROOT; };
-		C75CACD726BEBF420074B55D /* NewAssistancePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistancePickerView.swift; path = Serabutan/Features/View/NewAssistance/NewAssistancePickerView.swift; sourceTree = SOURCE_ROOT; };
+		C75CACD726BEBF420074B55D /* NAPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NAPickerView.swift; path = serabutan/Features/View/NewAssistance/Objects/NAPickerView.swift; sourceTree = SOURCE_ROOT; };
 		C75E13EB26B85917007BEF41 /* AssistanceListConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListConfig.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListConfig.swift; sourceTree = SOURCE_ROOT; };
 		C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListNavigationConfig.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
-		C79063E726B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanCollectionViewConfig.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanCollectionViewConfig.swift; sourceTree = SOURCE_ROOT; };
+		C79063E726B3BE7500AE7687 /* NACollectionViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NACollectionViewConfig.swift; path = serabutan/Features/View/NewAssistance/Objects/NACollectionViewConfig.swift; sourceTree = SOURCE_ROOT; };
+		C7BD8BAD26C02B7B00A0399C /* NATextFieldAndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NATextFieldAndView.swift; path = Serabutan/Features/View/NewAssistance/NATextFieldAndView.swift; sourceTree = SOURCE_ROOT; };
+		C7BD8BAF26C02BD800A0399C /* NADataConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NADataConfig.swift; path = Serabutan/Features/View/NewAssistance/NADataConfig.swift; sourceTree = SOURCE_ROOT; };
+		C7BD8BB326C02D7600A0399C /* NAAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NAAlert.swift; path = Serabutan/Features/View/NewAssistance/Utils/NAAlert.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanceVC.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanceVC.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewAssistanceVC.xib; path = Serabutan/Features/View/NewAssistance/NewAssistanceVC.xib; sourceTree = SOURCE_ROOT; };
-		C7CCC24726B19A660005FFE3 /* NewAssistanceStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanceStyle.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanceStyle.swift; sourceTree = SOURCE_ROOT; };
+		C7CCC24726B19A660005FFE3 /* NAStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NAStyle.swift; path = serabutan/Features/View/NewAssistance/Utils/NAStyle.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListVC.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListVC.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssistanceListVC.xib; path = Serabutan/Features/View/ListBantuan/AssistanceListVC.xib; sourceTree = SOURCE_ROOT; };
 		C7CCC24E26B1DBD80005FFE3 /* AssistanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceTableViewCell.swift; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -453,12 +459,12 @@
 		C78982E726A7E54B00EB95B1 /* NewAssistance */ = {
 			isa = PBXGroup;
 			children = (
-				C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */,
-				C742289D26B9B10D003DD169 /* NewAssistanceExtension.swift */,
 				C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */,
-				C7CCC24726B19A660005FFE3 /* NewAssistanceStyle.swift */,
-				C75CACD726BEBF420074B55D /* NewAssistancePickerView.swift */,
-				C79063E726B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift */,
+				C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */,
+				C7BD8BAF26C02BD800A0399C /* NADataConfig.swift */,
+				C7BD8BAD26C02B7B00A0399C /* NATextFieldAndView.swift */,
+				C7BD8BB226C02D2600A0399C /* Utils */,
+				C7BD8BB126C02D0000A0399C /* Objects */,
 			);
 			path = NewAssistance;
 			sourceTree = "<group>";
@@ -506,6 +512,25 @@
 			children = (
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		C7BD8BB126C02D0000A0399C /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				C75CACD726BEBF420074B55D /* NAPickerView.swift */,
+				C79063E726B3BE7500AE7687 /* NACollectionViewConfig.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		C7BD8BB226C02D2600A0399C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C7CCC24726B19A660005FFE3 /* NAStyle.swift */,
+				C742289D26B9B10D003DD169 /* NAKeyboardObserver.swift */,
+				C7BD8BB326C02D7600A0399C /* NAAlert.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		C7D7AE3526AC969E000478AA /* ListBantuan */ = {
@@ -692,6 +717,7 @@
 				18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */,
 				90E9C98826B39DE500165319 /* ReviewTableViewCell.swift in Sources */,
 				907F9DCD26B65C8200EF9F51 /* CustomBorder.swift in Sources */,
+				C7BD8BB026C02BD800A0399C /* NADataConfig.swift in Sources */,
 				C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */,
 				C7CCC25326B2490F0005FFE3 /* AssistanceListTableConfig.swift in Sources */,
 				18B7273426B90F760005DBCA /* HomeVM.swift in Sources */,
@@ -703,14 +729,15 @@
 				1853413D26AC23470027C0F3 /* UIImageExt.swift in Sources */,
 				C7CCC24526B199DD0005FFE3 /* NewAssistanceVC.swift in Sources */,
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
-				C7CCC24826B19A660005FFE3 /* NewAssistanceStyle.swift in Sources */,
+				C7CCC24826B19A660005FFE3 /* NAStyle.swift in Sources */,
 				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,
+				C7BD8BB426C02D7600A0399C /* NAAlert.swift in Sources */,
 				C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */,
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
 				C76047C026AF3CBB00535995 /* AssistanceListNavigationConfig.swift in Sources */,
-				C79063E826B3BE7500AE7687 /* NewAssistanCollectionViewConfig.swift in Sources */,
-				C75CACD826BEBF420074B55D /* NewAssistancePickerView.swift in Sources */,
-				C742289E26B9B10D003DD169 /* NewAssistanceExtension.swift in Sources */,
+				C79063E826B3BE7500AE7687 /* NACollectionViewConfig.swift in Sources */,
+				C75CACD826BEBF420074B55D /* NAPickerView.swift in Sources */,
+				C742289E26B9B10D003DD169 /* NAKeyboardObserver.swift in Sources */,
 				C7D7AE4826AE5040000478AA /* BantuanModel.swift in Sources */,
 				9036229126BB7E2000577D43 /* CustomCollectionView.swift in Sources */,
 				907F9DCF26B6625A00EF9F51 /* Review.swift in Sources */,
@@ -720,6 +747,7 @@
 				1853414226AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift in Sources */,
 				9036228F26BAF73000577D43 /* DetailBantuanStyling.swift in Sources */,
 				1854605326AD2AB000ABCF84 /* Utility.swift in Sources */,
+				C7BD8BAE26C02B7B00A0399C /* NATextFieldAndView.swift in Sources */,
 				189FC4AB26B69B9000662C88 /* Network.swift in Sources */,
 				C74228A126BA3E9F003DD169 /* ActivityVC.swift in Sources */,
 				1853414826AC68F90027C0F3 /* DummyCollectionViewCell.swift in Sources */,
