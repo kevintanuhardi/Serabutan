@@ -9,7 +9,7 @@ import UIKit
 import AVKit
 import MobileCoreServices
 
-class EditProfileVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditProfileVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var avatarContainer: UIView!
     @IBOutlet weak var nameField: UIStackView!

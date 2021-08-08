@@ -44,6 +44,7 @@
 		9060D42326BFF147002243BC /* ProfileTableConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9060D42226BFF147002243BC /* ProfileTableConfig.swift */; };
 		9060D42526C0088C002243BC /* EditProfileStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9060D42426C0088C002243BC /* EditProfileStyling.swift */; };
 		9060D42726C008B3002243BC /* EditProfileNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9060D42626C008B3002243BC /* EditProfileNavigationConfig.swift */; };
+		9060D42926C015EF002243BC /* EditProfileExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9060D42826C015EF002243BC /* EditProfileExtension.swift */; };
 		907F9DCB26B6515B00EF9F51 /* ColorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */; };
 		907F9DCD26B65C8200EF9F51 /* CustomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F9DCC26B65C8200EF9F51 /* CustomBorder.swift */; };
 		907F9DCF26B6625A00EF9F51 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F9DCE26B6625A00EF9F51 /* Review.swift */; };
@@ -127,6 +128,7 @@
 		9060D42226BFF147002243BC /* ProfileTableConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileTableConfig.swift; path = Serabutan/Features/View/Profile/ProfileTableConfig.swift; sourceTree = SOURCE_ROOT; };
 		9060D42426C0088C002243BC /* EditProfileStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileStyling.swift; path = Serabutan/Features/View/Profile/EditProfile/EditProfileStyling.swift; sourceTree = SOURCE_ROOT; };
 		9060D42626C008B3002243BC /* EditProfileNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileNavigationConfig.swift; path = Serabutan/Features/View/Profile/EditProfile/EditProfileNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
+		9060D42826C015EF002243BC /* EditProfileExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileExtension.swift; path = Serabutan/Features/View/Profile/EditProfile/EditProfileExtension.swift; sourceTree = SOURCE_ROOT; };
 		907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorLibrary.swift; path = Serabutan/Components/Styling/ColorLibrary.swift; sourceTree = SOURCE_ROOT; };
 		907F9DCC26B65C8200EF9F51 /* CustomBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomBorder.swift; path = Serabutan/Components/Styling/CustomBorder.swift; sourceTree = SOURCE_ROOT; };
 		907F9DCE26B6625A00EF9F51 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Review.swift; path = Serabutan/Features/Model/Review.swift; sourceTree = SOURCE_ROOT; };
@@ -395,6 +397,7 @@
 				9060D42426C0088C002243BC /* EditProfileStyling.swift */,
 				907F9DD326B6C5ED00EF9F51 /* EditProfileVC.xib */,
 				9060D42626C008B3002243BC /* EditProfileNavigationConfig.swift */,
+				9060D42826C015EF002243BC /* EditProfileExtension.swift */,
 			);
 			path = EditProfile;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				796BC75F26AF215F00999377 /* ImageCarouselCVC.swift in Sources */,
 				9060D41926BFECE4002243BC /* RatingReviewNavigationSetup.swift in Sources */,
 				9060D42326BFF147002243BC /* ProfileTableConfig.swift in Sources */,
+				9060D42926C015EF002243BC /* EditProfileExtension.swift in Sources */,
 				C7FE979A26BA65F900B27160 /* StringFormatter.swift in Sources */,
 				90A0AF0326BC2CCA00510A8E /* JobListViewStyle.swift in Sources */,
 				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,

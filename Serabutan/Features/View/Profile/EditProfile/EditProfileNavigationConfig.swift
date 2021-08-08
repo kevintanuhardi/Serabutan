@@ -38,14 +38,13 @@ extension EditProfileVC {
             let alert = UIAlertController(title: "Perubahan Belum Disimpan",
                                           message: "Anda memiliki perubahan yang belum disimpan. Anda yakin ingin membatalkan?",
                                           preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Simpan",
+            alert.addAction(UIAlertAction(title: "Ya, batalkan",
+                                          style: .destructive,
+                                          handler: { action in
+                                            self.navigationController?.popViewController(animated: true)
+                                          }))
+            alert.addAction(UIAlertAction(title: "Tidak",
                                           style: .default,
-                                          handler: nil))
-            alert.addAction(UIAlertAction(title: "Batal",
-                                          style: .default,
-                                          handler: nil))
-            alert.addAction(UIAlertAction(title: "Keluar",
-                                          style: .cancel,
                                           handler: nil))
             present(alert, animated: true, completion: nil)
         } else {
@@ -55,22 +54,37 @@ extension EditProfileVC {
     
     // Change profile picture alert handler (camera, gallery, or cancel)
     func changeProfilePictureAlert() {
-        let alert = UIAlertController(title: "Pick source",
-                                      message: "Lorem ipsum.",
-                                      preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ambil Foto",
-                                      style: .default,
-                                      handler: { action in
-                                        ImageHelper.startMediaBrowser(delegate: self, sourceType: .camera)
-                                      }))
-        alert.addAction(UIAlertAction(title: "Album",
-                                      style: .default,
-                                      handler: { action in
-                                        ImageHelper.startMediaBrowser(delegate: self, sourceType: .savedPhotosAlbum)
-                                      }))
-        alert.addAction(UIAlertAction(title: "Batal",
-                                      style: .cancel,
-                                      handler: nil))
+        let alert = UIAlertController(title: "Ganti Foto Profil",
+                                      message: nil,
+                                      preferredStyle: .actionSheet)
+        let delete = UIAlertAction(title: "Hapus Foto Saat Ini",
+                                  style: .default,
+                                  handler: { action in
+                                    self.user?.avatar = nil
+                                  })
+        let camera = UIAlertAction(title: "Ambil Foto",
+                                   style: .default,
+                                   handler: { action in
+                                     ImageHelper.startMediaBrowser(delegate: self, sourceType: .camera)
+                                   })
+        let gallery = UIAlertAction(title: "Pilih dari Galeri",
+                                    style: .default,
+                                    handler: { action in
+                                      ImageHelper.startMediaBrowser(delegate: self, sourceType: .savedPhotosAlbum)
+                                    })
+        let cancel = UIAlertAction(title: "Batal",
+                                   style: .cancel,
+                                   handler: nil)
+        
+        // Delete option if user already set their avatar
+        if user?.avatar != nil {
+            alert.addAction(delete)
+        }
+        
+        alert.addAction(camera)
+        alert.addAction(gallery)
+        alert.addAction(cancel)
+        
         present(alert, animated: true, completion: nil)
     }
 }

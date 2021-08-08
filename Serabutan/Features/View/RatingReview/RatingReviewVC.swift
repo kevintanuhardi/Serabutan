@@ -42,7 +42,7 @@ class RatingReviewVC: UIViewController, UITextViewDelegate {
             } else {
                 button.setImage(UIImage.init(named: "bintangAbu"), for: .normal) //notselected
             }
-            reviewPoint = sender.tag + 1
+            reviewPoint = sender.tag
             bintangTapped = true
             
             setupKirimBtn()
