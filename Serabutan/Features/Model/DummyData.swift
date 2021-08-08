@@ -224,45 +224,110 @@ class DummyData {
     }
     
     private func seedProfileStatistic() {
-        profileStatistic.append(ProfileStatistic(reviewAggregate: 4.8, totalReview: 30, dibantu: 15, membantu: 15))
-        profileStatistic.append(ProfileStatistic(reviewAggregate: 4.0, totalReview: 10, dibantu: 10, membantu: 0))
-        profileStatistic.append(ProfileStatistic(reviewAggregate: 4.5, totalReview: 5, dibantu: 0, membantu: 5))
-        profileStatistic.append(ProfileStatistic(reviewAggregate: 4.2, totalReview: 2, dibantu: 2, membantu: 0))
-        profileStatistic.append(ProfileStatistic(reviewAggregate: 4.9, totalReview: 10, dibantu: 6, membantu: 4))
-        profileStatistic.append(ProfileStatistic(reviewAggregate: 5.0, totalReview: 4, dibantu: 4, membantu: 0))
+        profileStatistic.append(ProfileStatistic(reviewAggregate: 4.8, totalReview: 3, dibantu: 1, membantu: 2))
+        profileStatistic.append(ProfileStatistic(reviewAggregate: 4.0, totalReview: 3, dibantu: 2, membantu: 1))
+        profileStatistic.append(ProfileStatistic(reviewAggregate: 4.5, totalReview: 3, dibantu: 3, membantu: 0))
+        profileStatistic.append(ProfileStatistic(reviewAggregate: 4.2, totalReview: 3, dibantu: 0, membantu: 3))
+        profileStatistic.append(ProfileStatistic(reviewAggregate: 4.9, totalReview: 3, dibantu: 1, membantu: 1))
+        profileStatistic.append(ProfileStatistic(reviewAggregate: 5.0, totalReview: 3, dibantu: 2, membantu: 1))
     }
     
     private func seedUserReview() {
+        
         userReview.append(Review(job: jobsList[0],
                                  finishedDate: Date(timeInterval: -(60*60*24), since: Date()),
-                                 reviewPoint: 4,
-                                 reviewText: "Pak Agus datang dengan cepat saat ban sepeda saya bocor. Alat-alatnya lengkap, sukses terus Pak Agus!",
-                                 reviewer: userProfile[2]))
-        userReview.append(Review(job: jobsList[1],
-                                 finishedDate: Date(timeInterval: -(60*60*24)*3, since: Date()),
                                  reviewPoint: 5,
-                                 reviewText: "Potongan rumput Bu Susi sangat rapi, taman saya menjadi cantik.",
-                                 reviewer: userProfile[3]))
+                                 reviewText: "Pak Agus datang dengan cepat saat ban sepeda saya bocor. Alat-alatnya lengkap, sukses terus Pak Agus!",
+                                 reviewer: userProfile[4],
+                                 reviewee: userProfile[0]))
+        userReview.append(Review(job: jobsList[1],
+                                 finishedDate: Date(timeInterval: -(60*60*24)*2, since: Date()),
+                                 reviewPoint: 4,
+                                 reviewText: "Aki saya mati tiba-tiba di jalan dan Pak Agus dengan cepat membawa peralatan untuk benerinnya. Semangat Pak Agus!",
+                                 reviewer: userProfile[3],
+                                 reviewee: userProfile[0]))
         userReview.append(Review(job: jobsList[2],
                                  finishedDate: Date(timeInterval: -(60*60*24)*5, since: Date()),
-                                 reviewPoint: 3,
-                                 reviewText: "Pak Tono sangat terpercaya untuk nganter berbagai macam barang. Kemarin saya butuh bantuan untuk menyebarkan kotak syukuran ke tetangga sekitar, Pak Tono gesit dan aktif sekali dalam menyebarkan, jika ada kurang apa-apa ia segera inisiatif bertanya. Pak Tono juga fleksibel orangnya dan tidak rewel, semangat bekerja walaupun matahari menyengat. Semangat terus Pak Tono!",
-                                 reviewer: userProfile[4]))
+                                 reviewPoint: 5,
+                                 reviewText: "Spion saya patah dan Pak Agus punya sparepartnya. Pak Agus jujur orangnya buat beli-beli keperluan sparepart lain. Terima kasih Pak Agus!",
+                                 reviewer: userProfile[5],
+                                 reviewee: userProfile[0]))
+        
         userReview.append(Review(job: jobsList[3],
+                                 finishedDate: Date(timeInterval: -(60*60*24), since: Date()),
+                                 reviewPoint: 5,
+                                 reviewText: "Masakan Bu Susi seperti masakan hotel bintang 5. Masakannya rapi dan sehat juga. Sukses Bu Susi! Oiya, cepet banget masaknya.",
+                                 reviewer: userProfile[0],
+                                 reviewee: userProfile[1]))
+        userReview.append(Review(job: jobsList[4],
+                                 finishedDate: Date(timeInterval: -(60*60*24)*2, since: Date()),
+                                 reviewPoint: 5,
+                                 reviewText: "Acara ulang tahun saya langganan masaknya sama Bu Susi. Saya suka masakan Jepang jadi Bu Susi masakin sushi, takoyaki, teriyaki, dll, enak semua! Kapan-kapan masakin lagi ya Bu Susi.",
+                                 reviewer: userProfile[3],
+                                 reviewee: userProfile[1]))
+        userReview.append(Review(job: jobsList[5],
                                  finishedDate: Date(timeInterval: -(60*60*24)*10, since: Date()),
                                  reviewPoint: 4,
-                                 reviewText: "Masakan Bu Ida enak dan cara masaknya sangat higienis. Sukses terus Bu Ida.",
-                                 reviewer: userProfile[0]))
-        userReview.append(Review(job: jobsList[4],
-                                 finishedDate: Date(timeInterval: -(60*60*24)*15, since: Date()),
+                                 reviewText: "Masakan Padang Bu Susi emang selalu nagih. Saya minta masakin rendang sama nasi kapau lainnya udah berasa kayak di Padang beneran. Bu Susi emang top. ",
+                                 reviewer: userProfile[2],
+                                 reviewee: userProfile[1]))
+        
+        userReview.append(Review(job: jobsList[9],
+                                 finishedDate: Date(timeInterval: -(60*60*24)*6, since: Date()),
+                                 reviewPoint: 4,
+                                 reviewText: "Pak Tono sangat terpercaya untuk nganter berbagai macam barang. Kemarin saya butuh bantuan untuk menyebarkan kotak syukuran ke tetangga sekitar, Pak Tono gesit dan aktif sekali dalam menyebarkan, jika ada kurang apa-apa ia segera inisiatif bertanya. Pak Tono juga fleksibel orangnya dan tidak rewel, semangat bekerja walaupun matahari menyengat. Semangat terus Pak Tono!",
+                                 reviewer: userProfile[1],
+                                 reviewee: userProfile[2]))
+        userReview.append(Review(job: jobsList[8],
+                                 finishedDate: Date(timeInterval: -(60*60*24)*5, since: Date()),
+                                 reviewPoint: 4,
+                                 reviewText: "Saya biasa pake jasa Pak Tono buat nganter-nganter cepet yang ga usah banyak koordinasi. Tadi anak saya pianikanya ketinggalan terus Pak Tono langsung bisa datang dan mengantarkannya. Terima kasih Pak Tono.",
+                                 reviewer: userProfile[4],
+                                 reviewee: userProfile[2]))
+        userReview.append(Review(job: jobsList[7],
+                                 finishedDate: Date(timeInterval: -(60*60*24)*2, since: Date()),
                                  reviewPoint: 5,
-                                 reviewText: "Mas Dodi gercep datang menyelamatkan kucing saya. Terima kasih Mas Dodi. Mas Dodi ternyata juga pecinta hewan jadi kucing yang diselamatkan tidak takut. Setelah ngobrol-ngobrol dengan Mas Dodi ia juga mengerti sedikit tentang pertukangan, sehingga kalau mau ada atap bocor bisa minta dia juga. Semangat kuliahnya Mas Dodi!",
-                                 reviewer: userProfile[1]))
+                                 reviewText: "Pak Tono sangat bisa diandalkan kalau buat hal-hal gercep. Tadi saya butuh beli materai cepet terus Pak Tono langsung bisa nganter dan nyariin. Makasih Pak Tono!",
+                                 reviewer: userProfile[3],
+                                 reviewee: userProfile[2]))
+        
+        userReview.append(Review(job: jobsList[3],
+                                 finishedDate: Date(timeInterval: -(60*60*24), since: Date()),
+                                 reviewPoint: 5,
+                                 reviewText: "Mas Dodi gercep datang menyelamatkan kucing saya. Terima kasih Mas Dodi. Mas Dodi ternyata juga pecinta hewan jadi kucing yang diselamatkan tidak takut. Setelah ngobrol-ngobrol dengan Mas Dodi ia juga mengerti sedikit tentang pertukangan, sehingga kalau mau ada atap bocor bisa minta dia juga. Semangat kuliahnya Mas Dodi! ",
+                                 reviewer: userProfile[4],
+                                 reviewee: userProfile[3]))
         userReview.append(Review(job: jobsList[5],
-                                 finishedDate: Date(timeInterval: -(60*60*24)*16, since: Date()),
+                                 finishedDate: Date(timeInterval: -(60*60*24)*2, since: Date()),
+                                 reviewPoint: 5,
+                                 reviewText: "Mas Dodi tadi bantu saya ngecat tembok rumah sederhana. Orangnya mau belajar dan tidak rewel. Keren Mas Dodi kuliah sambil kerja. ",
+                                 reviewer: userProfile[0],
+                                 reviewee: userProfile[3]))
+        userReview.append(Review(job: jobsList[8],
+                                 finishedDate: Date(timeInterval: -(60*60*24)*5, since: Date()),
+                                 reviewPoint: 5,
+                                 reviewText: "Mas Dodi paling tau kalo masalah percetakan. Tadi saya perlu cepet ngeprint dan jilid buat urusan kantor langsung jadi diurusin Mas Dodi. Thanks Mas Dodi. ",
+                                 reviewer: userProfile[2],
+                                 reviewee: userProfile[3]))
+        
+        userReview.append(Review(job: jobsList[0],
+                                 finishedDate: Date(timeInterval: -(60*60*24)*7, since: Date()),
                                  reviewPoint: 4,
                                  reviewText: "Mba Dhea baik banget dan kerjaannya rapi dan bagus!",
-                                 reviewer: userProfile[2]))
+                                 reviewer: userProfile[0],
+                                 reviewee: userProfile[4]))
+        userReview.append(Review(job: jobsList[3],
+                                 finishedDate: Date(timeInterval: -(60*60*24)*15, since: Date()),
+                                 reviewPoint: 4,
+                                 reviewText: "Mba Dhea kreatif banget orangnya, dekorasi ultah anak saya jadi cantik banget!",
+                                 reviewer: userProfile[1],
+                                 reviewee: userProfile[4]))
+        userReview.append(Review(job: jobsList[5],
+                                 finishedDate: Date(timeInterval: -(60*60*24), since: Date()),
+                                 reviewPoint: 5,
+                                 reviewText: "Mba Dhea gercep orangnya. H-1 event organizer saya cancel dateng terus Mba Dhea ternyata bisa dan cepet kerjanya. Keren Mba Dhea!",
+                                 reviewer: userProfile[2],
+                                 reviewee: userProfile[4]))
     }
     
     func seedData() {
@@ -299,8 +364,14 @@ class DummyData {
         return latestReview
     }
     
-    func addUserReview(job: Jobs, reviewPoint: Int, reviewText: String, reviewer: UserProfile) {
-        userReview.append(Review(job: job, finishedDate: Date(), reviewPoint: reviewPoint, reviewText: reviewText, reviewer: reviewer))
+    func getUserReview(reviewee: UserProfile) -> [Review] {
+        var filtered = userReview.filter{ $0.reviewee.id == reviewee.id}
+        filtered = filtered.sorted(by: { $0.finishedDate.compare($1.finishedDate) == .orderedDescending })
+        return filtered
+    }
+    
+    func addUserReview(job: Jobs, reviewPoint: Int, reviewText: String, reviewer: UserProfile, reviewee: UserProfile) {
+        userReview.append(Review(job: job, finishedDate: Date(), reviewPoint: reviewPoint, reviewText: reviewText, reviewer: reviewer, reviewee: reviewee))
     }
     
 }

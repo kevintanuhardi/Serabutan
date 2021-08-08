@@ -31,7 +31,7 @@ extension RatingReviewVC {
     
     // 'Kirim' Button Action
     @IBAction func kirimBtn(_ sender: Any) {
-        DummyData.shared.addUserReview(job: selectedJob!, reviewPoint: reviewPoint ?? 0, reviewText: reviewTextView.text, reviewer: reviewer!)
+        DummyData.shared.addUserReview(job: selectedJob!, reviewPoint: reviewPoint ?? 0, reviewText: reviewTextView.text, reviewer: reviewer!, reviewee: reviewee!)
         self.navigationController?.popToRootViewController(animated: true)
     }
 }
