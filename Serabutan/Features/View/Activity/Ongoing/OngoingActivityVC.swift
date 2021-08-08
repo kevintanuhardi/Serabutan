@@ -39,6 +39,10 @@ extension OngoingActivityVC {
         
         cell.tagView.isHidden = true
         cell.availableView.isHidden = false
+        
+        let newView = cell.availabelInsetView1
+        newView!.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
         cell.helperView.isHidden = true
         cell.youHelperView.isHidden = true
         
