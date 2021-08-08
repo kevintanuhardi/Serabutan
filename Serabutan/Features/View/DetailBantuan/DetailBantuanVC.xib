@@ -369,7 +369,7 @@
                                     </constraints>
                                     <state key="normal" image="buttonWhatsappImg"/>
                                     <connections>
-                                        <action selector="sendWhatsApp:" destination="-1" eventType="touchUpInside" id="aYa-HZ-Xh6"/>
+                                        <action selector="whatsappButton:" destination="-1" eventType="touchUpInside" id="aYa-HZ-Xh6"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd9-VT-277">

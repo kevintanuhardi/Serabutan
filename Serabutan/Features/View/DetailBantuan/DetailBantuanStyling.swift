@@ -100,17 +100,11 @@ extension DetailBantuanVC {
     }
     
     func configureHelper() {
+        
+        checkUser()
+        
         switch selectedJob.status {
         case .taken :
-            selectedJob.helperId = DummyData.shared.getUserProfile()[0]
-            let helper = selectedJob.helperId
-            
-            helperAvatar.image = helper?.avatar
-            helperName.setTitle(helper?.name, for: .normal)
-            
-            helper!.isVerified ? (helperVerified.isHidden = true) : (helperVerified.isHidden = false)
-            
-            helperAvatar.isHidden = false
             helperName.isHidden = false
             chatButton.isHidden = false
             
@@ -128,7 +122,33 @@ extension DetailBantuanVC {
         case .cancelled:
             break
         case .done:
-            break
+            helpFinishButton.setTitle("Bantuan Telah Selesai", for: .normal)
+            helpFinishButton.backgroundColor = .systemGreen
+            chatButton.isHidden = true
+        }
+    }
+    
+    func checkUser() {
+        var helper : UserProfile?
+        let currentUser = UserDefaults.standard.value(forKey: "loggedUser") as! Int
+        
+        if selectedJob.helperId == nil || selectedJob.helperId?.id == currentUser {
+            // If the job is taken by current user or is currently nil
+            selectedJob.helperId = DummyData.shared.getUserProfile()[0]
+            helper = selectedJob.helperId
+            helperAvatar.isHidden = true
+            helperVerified.isHidden = true
+            helperName.setTitle("Anda", for: .normal)
+            
+        } else {
+            // If the job was taken by other user
+            helperAvatar.image = helper?.avatar
+            helperName.setTitle(helper?.name, for: .normal)
+            helperAvatar.isHidden = false
+            helperAvatar.isHidden = false
+            helperVerified.isHidden = false
+            helper!.isVerified ? (helperVerified.isHidden = true) : (helperVerified.isHidden = false)
+            
         }
     }
     

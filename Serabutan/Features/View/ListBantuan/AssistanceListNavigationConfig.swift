@@ -18,9 +18,7 @@ extension AssistanceListVC{
         initSearchController()
         navigationFilterButton()
         
-        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.view.backgroundColor = .white
-        self.navigationController?.navigationBar.backgroundColor = .white
         self.navigationController?.navigationBar.barTintColor = .white
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.tabBarController?.tabBar.isHidden = true
@@ -45,7 +43,6 @@ extension AssistanceListVC{
         assistanceTable.keyboardDismissMode = .onDrag
         
         searchBar.searchBar.placeholder = "Cari Bantuan"
-        searchBar.searchBar.searchTextField.backgroundColor = .white
         searchBar.searchBar.searchTextField.layer.borderWidth = 0.5
         searchBar.searchBar.searchTextField.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         searchBar.searchBar.searchTextField.layer.cornerRadius = 18
@@ -55,10 +52,6 @@ extension AssistanceListVC{
     }
     
     func navigationFilterButton(){
-//        let filterButton = UIButton(type: .system)
-//        filterButton.setImage(UIImage(named: "Filter")?.withRenderingMode(.alwaysOriginal), for: .normal)
-//        filterButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
-//        filterButton.addTarget(self, action: #selector(filterButtonAction(_:)), for: .touchUpInside)
         navigationItem.rightBarButtonItem =  UIBarButtonItem(image: UIImage(named: "filterIcon"), style: .plain, target: self, action: #selector(filterButtonAction))
         navigationItem.rightBarButtonItem?.tintColor = .ColorLibrary.accentColor
     }

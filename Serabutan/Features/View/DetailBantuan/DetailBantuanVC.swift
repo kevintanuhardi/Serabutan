@@ -60,7 +60,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     }
     
     @objc func shareButtonAction(_ sender:UIButton!){
-        let items: [Any] = [selectedJob.title, URL(string: "https://www.bantuinapp.com/qwerty") as Any]
+        let items: [Any] = [selectedJob.title!, URL(string: "https://www.bantuinapp.com/qwerty") as Any]
         let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
         
         activityController.completionWithItemsHandler = { (nil, completed, _, error) in
@@ -76,7 +76,16 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     }
     
     @IBAction func helpFinishButton(_ sender: Any) {
-        selectedJob.status = .taken
+        switch selectedJob.status {
+        case .active :
+            whatsappAlert()
+        case .taken :
+            finishedAlert()
+        case .cancelled:
+            break
+        case .done:
+            break
+        }
         configureHelper()
     }
     
@@ -91,16 +100,68 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
         self.navigationController?.pushViewController(userProfile, animated: true)
     }
     
-    @IBAction func sendWhatsApp(_ sender: Any) {
-        let message = """
+    @IBAction func whatsappButton(_ sender: Any) {
+        sendWhatsApp(template: false)
+    }
+    
+    func sendWhatsApp(template: Bool) {
+        var message: String?
+        let phoneNumber: Int = 6281910077402
+        
+        if template {
+            message = """
             Halo Pak/Bu \(selectedJob.jobPosterId.name),
-            saya *\(DummyData.shared.getUserProfile()[0].name)* dari _BantuinApp_ bersedia membantu Bapak/Ibu untuk _\(selectedJob.title)_.
+            saya \(DummyData.shared.getUserProfile()[0].name) dari BantuinApp bersedia membantu Bapak/Ibu untuk \(selectedJob.title ?? "Untitled Bantuan").
             Bagaimana saya bisa membantu? 🙂
             """
-        let messageURL = message.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            message = message?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        }
         
-        let whatsappURL = URL(string: "https://api.whatsapp.com/send?phone=+6281910077402&text=\(messageURL ?? "")")
+        let whatsappURL = URL(string: "https://api.whatsapp.com/send?phone=+\(phoneNumber)&text=\(message ?? "")")
         UIApplication.shared.open(whatsappURL!)
+        
+    }
+    
+    func finishedAlert() {
+        let alert = UIAlertController(title: "Bantuan Telah Selesai?",
+                                      message: "Mohon pastikan bantuan anda telah selesai.",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Tidak",
+                                      style: .default,
+                                      handler: nil))
+        alert.addAction(UIAlertAction(title: "Ya",
+                                      style: .cancel,
+                                      handler: { action in
+                                        self.selectedJob.status = .done
+                                        self.configureHelper()
+                                        self.rateProfile()
+                                      }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func whatsappAlert() {
+        let alert = UIAlertController(title: "Bantu Helpee?",
+                                      message: "Dengan pilih Ya anda akan diarahkan ke Whatsapp.",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ya",
+                                      style: .default,
+                                      handler: { action in
+                                        self.selectedJob.status = .taken
+                                        self.configureHelper()
+                                        self.sendWhatsApp(template: true)
+                                      }))
+        alert.addAction(UIAlertAction(title: "Tidak",
+                                      style: .destructive,
+                                      handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func rateProfile() {
+        let rateProfile = RatingReviewVC()
+        rateProfile.reviewee = selectedJob.jobPosterId
+        rateProfile.reviewer = selectedJob.helperId!
+        rateProfile.selectedJob = self.selectedJob
+        self.navigationController?.pushViewController(rateProfile, animated: true)
     }
     
     private func navigateToListBantuan(){
@@ -125,7 +186,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
         jobImgCarousel.register(imageCell, forCellWithReuseIdentifier: ImageCarouselCVC.identifier)
         jobImgCarousel.delegate = self
         jobImgCarousel.dataSource = self
-
+        
         setTagList()
     }
 }
