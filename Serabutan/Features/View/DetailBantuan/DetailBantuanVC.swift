@@ -192,6 +192,10 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
         setTagList()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+    }
+    
 }
 
 extension DetailBantuanVC {
