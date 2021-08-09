@@ -13,27 +13,12 @@ import MapKit
 extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
     
     @IBAction func cancelButtonAction(_sender: Any){
-        self.navigationController?.popToRootViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func shareButtonAction(_sender: Any){
         initOtherData()
         initCreateNewJob()
-        print("NEW JobID:", newAssistanceJobId!)
-        print("NEW Job Poster ID", newAssistanceJobPosterId!)//
-        print("NEW Post DateTime", newAssistancePostDate!)
-        print("NEW Urgency:", newAssistanceUrgency!)
-        print("NEW Title:", newAssistanceTitle!)
-        print("NEW Desc:", newAssistanceDes!)
-        print("NEW Compensation:", newAssistanceCompensation!)
-        print("NEW Status:", newAssistanceStatus)
-        print("NEW Distance:", newAssistanceDistance)
-        print("NEW Coordinate:", newAssistanceCoordinate)
-        print("NEW HelperId:", newAssistanceHelperId)//
-        print("NEW Gender Pref:", newAssistanceGenderPref)
-        print("NEW Age Pref:", newAssistanceAgePref)
-        print("NEW Info Tags:", newAssistanceInfo)
-        print("NEW Images:", newAssistanceMediaImage)
         self.navigationController?.popViewController(animated: true)
     }
     

@@ -120,8 +120,7 @@ class NewAssistanceVC: UIViewController, UINavigationControllerDelegate, CLLocat
     
     override func viewWillAppear(_ animated: Bool) {
         initKeyboardObserver()
-        setCustomTextField()
-        setNavigationBarItems()
+        initStyling()
         createPickerGender()
         createPickerAge()
         createPickerUrgency()
