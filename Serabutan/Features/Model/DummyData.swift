@@ -186,7 +186,7 @@ class DummyData {
                                        avatar: UIImage(named: "avatar-0"),
                                        bio: "Suka bantu-bantu orang, bisa apa saja. Pernah kerja di bengkel sepeda dan motor, jadi lumayan tahu tentang otomotif.",
                                        joinDate: Date(timeInterval: -(60*60*24)*10, since: Date()),
-                                       isVerified: true,
+                                       isVerified: false,
                                        statistics: profileStatistic[0]))
         userProfile.append(UserProfile(id: 1,
                                        name: "Susi Susanti",
@@ -195,7 +195,7 @@ class DummyData {
                                        avatar: UIImage(named: "avatar-1"),
                                        bio: "Suka bantuin tugas-tugas rumah dan taman.",
                                        joinDate: Date(timeInterval: -(60*60*24)*15, since: Date()),
-                                       isVerified: true,
+                                       isVerified: false,
                                        statistics: profileStatistic[1]))
         userProfile.append(UserProfile(id: 2,
                                        name: "Tono Wiyarto",
@@ -213,7 +213,7 @@ class DummyData {
                                        avatar: UIImage(named: "avatar-4"),
                                        bio: "Mahasiswa biasa saja yang mencari tambahan di sela-sela waktu. Bisa bantu apa saja asal pekerjaannya tidak susah dan spesifik.",
                                        joinDate: Date(timeInterval: -(60*60*24)*20, since: Date()),
-                                       isVerified: true,
+                                       isVerified: false,
                                        statistics: profileStatistic[3]))
         userProfile.append(UserProfile(id: 4,
                                        name: "Dhea Aninda",
@@ -312,7 +312,6 @@ class DummyData {
                                  reviewText: "Pak Tono sangat bisa diandalkan kalau buat hal-hal gercep. Tadi saya butuh beli materai cepet terus Pak Tono langsung bisa nganter dan nyariin. Makasih Pak Tono!",
                                  reviewer: userProfile[3],
                                  reviewee: userProfile[2]))
-        
         userReview.append(Review(job: jobsList[3],
                                  finishedDate: Date(timeInterval: -(60*60*24), since: Date()),
                                  reviewPoint: 5,
@@ -350,7 +349,6 @@ class DummyData {
                                  reviewText: "Mba Dhea gercep orangnya. H-1 event organizer saya cancel dateng terus Mba Dhea ternyata bisa dan cepet kerjanya. Keren Mba Dhea!",
                                  reviewer: userProfile[2],
                                  reviewee: userProfile[4]))
-        
         userReview.append(Review(job: jobsList[0],
                                  finishedDate: Date(timeInterval: -(60*60*24)*10, since: Date()),
                                  reviewPoint: 4,
@@ -434,4 +432,7 @@ class DummyData {
         userReview.append(Review(job: job, finishedDate: Date(), reviewPoint: reviewPoint, reviewText: reviewText, reviewer: reviewer, reviewee: reviewee))
     }
     
+    func addProfile(user: UserProfile) {
+        userProfile.append(user)
+    }
 }

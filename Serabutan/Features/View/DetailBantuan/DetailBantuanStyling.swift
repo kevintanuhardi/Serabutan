@@ -37,6 +37,7 @@ extension DetailBantuanVC {
         helperView.layer.masksToBounds = true
         
         floatingBottom.dropShadow(scale: true)
+        separatorHeight.constant = 0.5
     }
     
     func setFont() {
@@ -134,7 +135,7 @@ extension DetailBantuanVC {
         
         if selectedJob.helperId == nil || selectedJob.helperId?.id == currentUser {
             // If the job is taken by current user or is currently nil
-            selectedJob.helperId = DummyData.shared.getUserProfile()[0]
+            selectedJob.helperId = DummyData.shared.getUserProfile()[currentUser]
             helper = selectedJob.helperId
             helperAvatar.isHidden = true
             helperVerified.isHidden = true

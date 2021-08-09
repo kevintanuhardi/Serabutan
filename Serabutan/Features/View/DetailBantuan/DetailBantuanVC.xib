@@ -27,6 +27,7 @@
                 <outlet property="jobPosterVerified" destination="tul-yd-NZi" id="Gvt-vV-Rtt"/>
                 <outlet property="jobTitleLabel" destination="A2j-rD-gUd" id="YVv-8x-B9M"/>
                 <outlet property="salaryLabel" destination="ayV-bj-wjx" id="80G-pV-Wrs"/>
+                <outlet property="separatorHeight" destination="K8F-zT-pAj" id="COj-25-TEk"/>
                 <outlet property="tagHeight" destination="Xdi-dI-sXm" id="d4s-fb-0qP"/>
                 <outlet property="tagView" destination="FWc-3s-fE1" id="3a7-1M-11F"/>
                 <outlet property="timePostElapsed" destination="P1h-ts-l9C" id="r8m-ir-qo1"/>
@@ -122,12 +123,6 @@
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYI-J8-d8E">
                                             <rect key="frame" x="0.0" y="120" width="350" height="1"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TRZ-N7-y0i">
-                                                    <rect key="frame" x="75" y="-54.666666666666686" width="200" height="110"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </stackView>
-                                            </subviews>
                                             <color key="backgroundColor" name="MediumGrey"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="K8F-zT-pAj"/>
@@ -422,7 +417,7 @@
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="verified" width="15" height="15.333333015441895"/>
         <namedColor name="AccentColor">
-            <color red="0.50199997425079346" green="0.3059999942779541" blue="0.82400000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.72549019607843135" green="0.21568627450980393" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="CustomBlack">
             <color red="0.18823529411764706" green="0.16078431372549021" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

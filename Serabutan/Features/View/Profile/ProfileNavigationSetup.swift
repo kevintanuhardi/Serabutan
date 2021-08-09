@@ -9,6 +9,7 @@ import UIKit
 
 extension ProfileVC {
     func navigationSetup() {
+        
         self.navigationController?.navigationBar.backgroundColor = .white
         self.navigationController?.navigationBar.barTintColor = .white
         

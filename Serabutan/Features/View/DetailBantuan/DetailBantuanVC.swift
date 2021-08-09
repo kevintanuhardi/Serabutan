@@ -43,6 +43,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     
     // Constraint
     @IBOutlet weak var tagHeight: NSLayoutConstraint!
+    @IBOutlet weak var separatorHeight: NSLayoutConstraint!
     
     @objc func backButtonAction(_ sender:UIButton!){
         navigateToListBantuan()
@@ -50,18 +51,6 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     
     @objc func moreButtonAction(_ sender:UIButton!){
         
-    }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let tabBar = self.tabBarController as! TabBarController
-        tabBar.hide()
-    }
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        let tabBar = self.tabBarController as! TabBarController
-        tabBar.show()
     }
     
     func setTagList() {
@@ -117,13 +106,14 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     }
     
     func sendWhatsApp(template: Bool) {
+        let loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")
         var message: String?
         let phoneNumber: Int = 6281910077402
         
         if template {
             message = """
             Halo Pak/Bu \(selectedJob.jobPosterId.name),
-            saya \(DummyData.shared.getUserProfile()[0].name) dari BantuinApp bersedia membantu Bapak/Ibu untuk \(selectedJob.title ?? "Untitled Bantuan").
+            saya \(DummyData.shared.getUserProfile()[loggedUser].name) dari BantuinApp bersedia membantu Bapak/Ibu untuk \(selectedJob.title ?? "Untitled Bantuan").
             Bagaimana saya bisa membantu? 🙂
             """
             message = message?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
