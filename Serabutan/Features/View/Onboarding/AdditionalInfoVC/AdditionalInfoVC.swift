@@ -33,35 +33,37 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         } else {
             doneButton.isUserInteractionEnabled = true
             doneButton.tintColor = UIColor.ColorLibrary.accentColor
-            //            applyDummyValue()
+            applyDummyValue()
             let homeVC = HomeVC()
             self.navigationController?.pushViewController(homeVC, animated: true)
+            print("DUMMY 0:", dummy[0])
         }
     }
     
     @IBAction func finishOnboardingWithoutDesc(_ sender: Any){
-        //        applyDummyValue()
+        applyDummyValue()
         let homeVC = HomeVC()
         self.navigationController?.pushViewController(homeVC, animated: true)
+        print("DUMMY 0:", dummy[0])
     }
     
-    //    func applyDummyValue(){
-    //        var data  = dummy[0]
-    //
-    //        guard let name = onboardingName else { return }
-    //        data.name = name
-    //
-    //        guard let dob = onboardingDOB else { return }
-    //        data.dob = dob
-    //
-    //        guard let gender = onboardingGender else { return }
-    //        data.gender = gender
-    //
-    //        guard let bio = onboardingDescription else { return }
-    //        data.bio = bio
-    //    }
+    func applyDummyValue(){
+        var data  = dummy[0]
+        
+        guard let name = onboardingName else { return }
+        data.name = name
+        
+        guard let dob = onboardingDOB else { return }
+        data.dob = dob
+        
+        guard let gender = onboardingGender else { return }
+        data.gender = gender
+        
+        guard let bio = onboardingDescription else { return }
+        data.bio = bio
+    }
     
-
+    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {
             textView.resignFirstResponder()

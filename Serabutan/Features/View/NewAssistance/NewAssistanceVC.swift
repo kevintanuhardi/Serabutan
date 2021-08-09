@@ -40,7 +40,7 @@ class NewAssistanceVC: UIViewController, UINavigationControllerDelegate, CLLocat
     @IBOutlet weak var ageTF: UITextField!
     @IBOutlet weak var ageImage: UIImageView!
     
-    @IBOutlet weak var tagListHeight: NSLayoutConstraint!
+    @IBOutlet weak var tagListHeight: NSLayoutConstraint?
     @IBOutlet weak var tagListView: TagListView!
     @IBOutlet weak var infoSV: UIStackView!
     @IBOutlet weak var infoView: UIView!
@@ -55,6 +55,8 @@ class NewAssistanceVC: UIViewController, UINavigationControllerDelegate, CLLocat
     
     var dummyData = DummyData.shared.getJobsList()
     let locationManager = CLLocationManager()
+    //var tagHeight = self.tagListHeight
+    
     
     var newAssistanceJobId: Int?
     var newAssistanceJobPosterId: UserProfile?
@@ -124,6 +126,7 @@ class NewAssistanceVC: UIViewController, UINavigationControllerDelegate, CLLocat
         createPickerAge()
         createPickerUrgency()
         initCollectionView()
+        tagListHeight?.isActive = false
     }
     
     func initCollectionView(){

@@ -33,7 +33,7 @@ class FormulirProfilVC: UIViewController, UITextFieldDelegate {
     var newGender: Gender? = .male
     
     @IBAction func goToAdditionalInfo(_ sender: Any) {
-        if newName == .none{
+        if newName == .none {
             nameAlert()
         } else if newDOB == .none {
             dobAlert()
@@ -44,6 +44,9 @@ class FormulirProfilVC: UIViewController, UITextFieldDelegate {
             additionalInfoVC.onboardingName = newName
             additionalInfoVC.onboardingDOB = newDOB
             additionalInfoVC.onboardingGender = newGender
+        
+            UserDefaults.standard.set(true, forKey: "doneOnboarding")
+            
             self.navigationController?.pushViewController(additionalInfoVC, animated: true)
         }
 //        print("PASSED NAME:", newName)
@@ -54,13 +57,12 @@ class FormulirProfilVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        datePicker.tintColor = UIColor.ColorLibrary.mediumGrey
-        
         namaLengkapTxt.delegate = self
         genderTxt.delegate = self
         setNavigation()
         showDatePicker()
         createPickerGender()
+        UserDefaults.standard.set(false, forKey: "doneOnboarding")
     }
     
 }

@@ -18,7 +18,7 @@ extension NewAssistanceVC {
         urgencyTF.inputView = nil
         urgencyTF.isUserInteractionEnabled = true
         urgencyIndicatorView.isHidden = false
-        urgencyIndicatorView.layer.cornerRadius = 25
+        urgencyIndicatorView.layer.cornerRadius = 5
         urgencyIndicatorView.backgroundColor = UIColor.ColorLibrary.highUrgency
         urgencyIndicatorView.layer.backgroundColor = UIColor.ColorLibrary.highUrgency.cgColor
         urgencyIndicatorView.tintColor = UIColor.ColorLibrary.highUrgency
@@ -55,7 +55,6 @@ extension NewAssistanceVC {
         ageTF.inputView = nil
         ageImage.image = UIImage(named: "Down")
         
-        tagListHeight.constant = 0
         infoView.layer.backgroundColor = UIColor.white.cgColor
         infoStackView.layer.backgroundColor = UIColor.white.cgColor
         infoTFView.layer.borderWidth = 1
@@ -70,7 +69,7 @@ extension NewAssistanceVC {
     
     func setNavigationBarItems(){
         navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.ColorLibrary.customBlack, .font: UIFont.FontLibrary.largeTitle]
-        view.backgroundColor = .ColorLibrary.lightGrey
+        view.backgroundColor = .white
         
         self.navigationController!.navigationBar.prefersLargeTitles = true
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -89,7 +88,7 @@ extension NewAssistanceVC {
         shareButton.setTitle("Bagikan", for: .normal)
         shareButton.setTitleColor(.white, for: .normal)
         shareButton.frame = CGRect(x: 0, y: 0, width: 69, height: 34)
-        shareButton.layer.backgroundColor = UIColor(red: 0.50, green: 0.31, blue: 0.82, alpha: 1.00).cgColor
+        shareButton.layer.backgroundColor = UIColor.ColorLibrary.accentColor.cgColor
         shareButton.layer.cornerRadius = 5
         shareButton.addTarget(self, action: #selector(shareButtonAction(_sender:)), for: .touchUpInside)
         navigationItem.rightBarButtonItem =  UIBarButtonItem(customView: shareButton)
