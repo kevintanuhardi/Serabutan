@@ -76,7 +76,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tinggi" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V01-Pb-fPJ">
-                                                            <rect key="frame" x="25" y="18.333333333333329" width="285" height="25"/>
+                                                            <rect key="frame" x="22" y="20.333333333333329" width="288" height="23"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -89,11 +89,11 @@
                                                             </constraints>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2r-FZ-V8T">
-                                                            <rect key="frame" x="10" y="28.333333333333329" width="5" height="5"/>
+                                                            <rect key="frame" x="10" y="28.333333333333329" width="7" height="7"/>
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="5" id="9Ic-5I-zfw"/>
-                                                                <constraint firstAttribute="height" constant="5" id="EwT-Ec-pZn"/>
+                                                                <constraint firstAttribute="width" constant="7" id="9Ic-5I-zfw"/>
+                                                                <constraint firstAttribute="height" constant="7" id="EwT-Ec-pZn"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -104,7 +104,7 @@
                                                         <constraint firstItem="Wpn-Tv-Uui" firstAttribute="top" secondItem="vQ4-31-5dO" secondAttribute="top" constant="5" id="G6f-1F-NPR"/>
                                                         <constraint firstAttribute="trailing" secondItem="V01-Pb-fPJ" secondAttribute="trailing" constant="40" id="MWr-Ru-fuo"/>
                                                         <constraint firstAttribute="trailing" secondItem="XPo-0C-IO1" secondAttribute="trailing" constant="10" id="PDx-hW-o7c"/>
-                                                        <constraint firstItem="V01-Pb-fPJ" firstAttribute="leading" secondItem="t2r-FZ-V8T" secondAttribute="trailing" constant="10" id="YLS-Qx-eBZ"/>
+                                                        <constraint firstItem="V01-Pb-fPJ" firstAttribute="leading" secondItem="t2r-FZ-V8T" secondAttribute="trailing" constant="5" id="YLS-Qx-eBZ"/>
                                                         <constraint firstItem="XPo-0C-IO1" firstAttribute="centerY" secondItem="vQ4-31-5dO" secondAttribute="centerY" id="crj-vc-cbr"/>
                                                         <constraint firstItem="t2r-FZ-V8T" firstAttribute="top" secondItem="Wpn-Tv-Uui" secondAttribute="bottom" constant="10" id="dOl-St-QKP"/>
                                                         <constraint firstItem="Wpn-Tv-Uui" firstAttribute="leading" secondItem="vQ4-31-5dO" secondAttribute="leading" constant="10" id="ebn-Nk-81u"/>
@@ -223,10 +223,10 @@
                                             <rect key="frame" x="0.0" y="431" width="350" height="119.33333333333337"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOQ-kM-t1A" userLabel="CompensationTF View">
-                                                    <rect key="frame" x="0.0" y="10" width="350" height="55"/>
+                                                    <rect key="frame" x="0.0" y="10" width="350" height="48"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4kW-q8-q26">
-                                                            <rect key="frame" x="30.333333333333343" y="25" width="309.66666666666663" height="25"/>
+                                                            <rect key="frame" x="30.333333333333343" y="18" width="309.66666666666663" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="cJ8-Od-kRw"/>
                                                             </constraints>
@@ -234,13 +234,13 @@
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kompensasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJs-wu-jtb">
-                                                            <rect key="frame" x="10.000000000000004" y="5" width="63.333333333333343" height="20.333333333333332"/>
+                                                            <rect key="frame" x="10.000000000000004" y="5.0000000000000009" width="63.333333333333343" height="13.333333333333336"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                             <color key="textColor" name="DarkGrey"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91Z-Ml-7yi">
-                                                            <rect key="frame" x="10" y="30.333333333333368" width="15.333333333333336" height="14.333333333333332"/>
+                                                            <rect key="frame" x="10" y="23.333333333333314" width="15.333333333333336" height="14.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" name="DarkGrey"/>
                                                             <nil key="highlightedColor"/>
@@ -259,7 +259,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf7-el-pAi">
-                                                    <rect key="frame" x="0.0" y="70" width="350" height="39.333333333333343"/>
+                                                    <rect key="frame" x="0.0" y="63" width="350" height="46.333333333333343"/>
                                                     <string key="text">Wujud apresiasi kepada Helper atas bantuan yang akan Anda terima. Berikan imbalan sesuai dengan tingkat kesulitan bantuan yang Anda ajukan, ya!</string>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                     <color key="textColor" name="DarkGrey"/>

@@ -18,7 +18,7 @@ extension NewAssistanceVC {
         urgencyTF.inputView = nil
         urgencyTF.isUserInteractionEnabled = true
         urgencyIndicatorView.isHidden = false
-        urgencyIndicatorView.layer.cornerRadius = 5
+        urgencyIndicatorView.layer.cornerRadius = 4
         urgencyIndicatorView.backgroundColor = UIColor.ColorLibrary.highUrgency
         urgencyIndicatorView.layer.backgroundColor = UIColor.ColorLibrary.highUrgency.cgColor
         urgencyIndicatorView.tintColor = UIColor.ColorLibrary.highUrgency
