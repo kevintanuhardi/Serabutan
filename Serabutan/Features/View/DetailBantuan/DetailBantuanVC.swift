@@ -158,7 +158,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     
     func rateProfile() {
         let rateProfile = RatingReviewVC()
-        rateProfile.reviewedUser = selectedJob.jobPosterId
+        rateProfile.reviewee = selectedJob.jobPosterId
         rateProfile.reviewer = selectedJob.helperId!
         rateProfile.selectedJob = self.selectedJob
         self.navigationController?.pushViewController(rateProfile, animated: true)

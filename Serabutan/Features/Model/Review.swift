@@ -14,4 +14,5 @@ struct Review {
     let reviewPoint : Int
     let reviewText : String?
     let reviewer : UserProfile
+    let reviewee : UserProfile
 }

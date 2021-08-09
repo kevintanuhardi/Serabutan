@@ -11,10 +11,10 @@ extension RatingReviewVC {
     func setupUser() {
         profileImg.layer.cornerRadius = profileImg.frame.height / 2
         profileImg.layer.masksToBounds = true
-        profileImg.image = reviewedUser?.avatar
+        profileImg.image = reviewee?.avatar
         
         namaLbl.font = .FontLibrary.title1
-        namaLbl.text = reviewedUser?.name
+        namaLbl.text = reviewee?.name
     }
     
     func setupTextView() {

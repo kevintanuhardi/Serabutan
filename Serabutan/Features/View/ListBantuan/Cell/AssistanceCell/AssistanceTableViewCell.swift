@@ -33,7 +33,7 @@ class AssistanceTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
     
     //available state
     @IBOutlet weak var availableView: UIView!
-    @IBOutlet weak var availabelInsetView: UIView!
+    @IBOutlet weak var availabelInsetView1: UIView!
     @IBOutlet weak var selfImage: UIImageView!
     @IBOutlet weak var availableInsetView: UIView!
     

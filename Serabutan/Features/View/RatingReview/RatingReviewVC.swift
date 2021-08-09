@@ -9,7 +9,7 @@ import UIKit
 
 class RatingReviewVC: UIViewController, UITextViewDelegate {
     
-    var reviewedUser: UserProfile?
+    var reviewee: UserProfile?
     var reviewer: UserProfile?
     var selectedJob: Jobs?
     
