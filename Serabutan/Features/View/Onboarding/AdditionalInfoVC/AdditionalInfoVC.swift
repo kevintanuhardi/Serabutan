@@ -35,7 +35,7 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         } else {
             doneButton.isUserInteractionEnabled = true
             doneButton.tintColor = UIColor.ColorLibrary.accentColor
-            applyDummyValue()
+            applyDummyValue(bio: true)
             let homeVC = TabBarController()
             homeVC.modalPresentationStyle = .overFullScreen
             self.navigationController?.present(homeVC, animated: true)
@@ -43,13 +43,13 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func finishOnboardingWithoutDesc(_ sender: Any){
-        applyDummyValue()
+        applyDummyValue(bio: false)
         let homeVC = TabBarController()
         homeVC.modalPresentationStyle = .overFullScreen
         self.navigationController?.present(homeVC, animated: true)
     }
     
-    func applyDummyValue(){
+    func applyDummyValue(bio: Bool){
         let id = DummyData.shared.getUserProfile().count
         let statistics = ProfileStatistic(reviewAggregate: 0, totalReview: 0, dibantu: 0, membantu: 0)
         
@@ -64,8 +64,10 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         guard let gender = onboardingGender else { return }
         user.gender = gender
         
-        guard let bio = onboardingDescription else { return }
-        user.bio = bio
+        if bio {
+            guard let bio = onboardingDescription else { return }
+            user.bio = bio
+        }
         
         DummyData.shared.addProfile(user: user)
         UserDefaults.standard.set(user.id, forKey: "loggedUser")
