@@ -28,6 +28,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = TabBarController()
         let mulaiVC = MulaiVC()
         
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().shadowImage = UIImage()
+        
         mulaiController = UINavigationController.init(rootViewController: mulaiVC)
 
         

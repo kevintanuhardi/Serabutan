@@ -9,13 +9,13 @@ import Foundation
 import UIKit
 
 struct UserProfile {
-    let id : Int
+    var id : Int
     var name : String
     var dob : Date
     var gender : Gender
     var avatar : UIImage?
     var bio :  String?
-    let joinDate : Date
+    var joinDate : Date
     var isVerified : Bool
     var statistics : ProfileStatistic?
 }

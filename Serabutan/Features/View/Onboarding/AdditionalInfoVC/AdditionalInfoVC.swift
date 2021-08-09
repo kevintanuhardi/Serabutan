@@ -50,19 +50,25 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
     }
     
     func applyDummyValue(){
-        var data  = dummy[0]
+        let id = DummyData.shared.getUserProfile().count
+        let statistics = ProfileStatistic(reviewAggregate: 0, totalReview: 0, dibantu: 0, membantu: 0)
         
+        var user = UserProfile(id: id, name: "", dob: Date(), gender: .other, avatar: UIImage(), bio: "", joinDate: Date(), isVerified: false, statistics: statistics)
+
         guard let name = onboardingName else { return }
-        data.name = name
+        user.name = name
         
         guard let dob = onboardingDOB else { return }
-        data.dob = dob
+        user.dob = dob
         
         guard let gender = onboardingGender else { return }
-        data.gender = gender
+        user.gender = gender
         
         guard let bio = onboardingDescription else { return }
-        data.bio = bio
+        user.bio = bio
+        
+        DummyData.shared.addProfile(user: user)
+        UserDefaults.standard.set(user.id, forKey: "loggedUser")
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

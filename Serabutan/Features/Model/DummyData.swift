@@ -434,4 +434,8 @@ class DummyData {
         userReview.append(Review(job: job, finishedDate: Date(), reviewPoint: reviewPoint, reviewText: reviewText, reviewer: reviewer, reviewee: reviewee))
     }
     
+    func addProfile(user: UserProfile) {
+        userProfile.append(user)
+    }
+    
 }
