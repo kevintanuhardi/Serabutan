@@ -66,7 +66,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41q-Qa-hOm" userLabel="Urgency View">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="73.333333333333329"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQ4-31-5dO" userLabel="UrgencyTF View">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQ4-31-5dO" userLabel="UrgencyTF View" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="10.000000000000004" width="350" height="53.333333333333343"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Urgensi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpn-Tv-Uui">
@@ -123,7 +123,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9v-nC-vBR" userLabel="Title View">
                                             <rect key="frame" x="0.0" y="73.333333333333314" width="350" height="72.666666666666686"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CvL-5V-s6I" userLabel="TitleTF View">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CvL-5V-s6I" userLabel="TitleTF View" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="9.9999999999999964" width="350" height="52.666666666666657"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mhI-Mh-xkN">
@@ -172,7 +172,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0KD-rl-w2F" userLabel="Description View">
                                             <rect key="frame" x="0.0" y="146" width="350" height="285"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTz-hL-rgW" userLabel="DescriptionTF View">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTz-hL-rgW" userLabel="DescriptionTF View" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="10" width="350" height="265"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deskripsi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2I-Bg-Kue">
@@ -222,7 +222,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r1v-RW-1Ee" userLabel="Compensation View">
                                             <rect key="frame" x="0.0" y="431" width="350" height="119.33333333333337"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOQ-kM-t1A" userLabel="CompensationTF View">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOQ-kM-t1A" userLabel="CompensationTF View" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="10" width="350" height="48"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4kW-q8-q26">
@@ -292,7 +292,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQc-Pc-IX3" userLabel="GenderContainer View">
                                                             <rect key="frame" x="0.0" y="0.0" width="175" height="60"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gwp-vp-AI6" userLabel="Gender View">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gwp-vp-AI6" userLabel="Gender View" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="170" height="60"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jenis Kelamin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kd3-dH-ku3" userLabel="Jenis Kelamin">
@@ -337,7 +337,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxy-yJ-tOf" userLabel="AgeContainer View">
                                                             <rect key="frame" x="175" y="0.0" width="175" height="60"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAP-FM-bJo" userLabel="Age View">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAP-FM-bJo" userLabel="Age View" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
                                                                     <rect key="frame" x="5" y="0.0" width="170" height="60"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXA-m2-87Z" userLabel="Usia">
@@ -420,7 +420,7 @@
                                                     <color key="textColor" name="DarkGrey"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8z-nH-4O8" userLabel="ViewTF View">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8z-nH-4O8" userLabel="ViewTF View" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="27.000000000000004" width="350" height="53.333333333333343"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kata Kunci" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJG-qU-TNp">

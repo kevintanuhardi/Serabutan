@@ -21,12 +21,22 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         setupMiddleButton()
     }
     
+    func show() {
+        self.tabBar.isHidden = true
+        self.menuButton.isHidden = true
+    }
+    
+    func hide() {
+        self.tabBar.isHidden = false
+        self.menuButton.isHidden = false
+    }
+    
     override func viewDidLayoutSubviews() {
             super.viewDidLayoutSubviews()
             menuButton.frame.origin.y = self.view.bounds.height - menuButton.frame.height - self.view.safeAreaInsets.bottom
         }
     
-    func setupVCs() {
+    private func setupVCs() {
         viewControllers = [
             createNavController(for: HomeVC(), title: "Home", image: UIImage(named: "homeIcon")!, tag: 0),
             createNavController(for: ActivityVC(), title: "Aktivitas", image: UIImage(named: "activityIcon")!, tag: 1),
@@ -36,7 +46,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         ]
     }
     
-    func setupMiddleButton() {
+    private func setupMiddleButton() {
         let numberOfItems = CGFloat(tabBar.items!.count)
         let tabBarItemSize = CGSize(width: tabBar.frame.width / numberOfItems, height: tabBar.frame.height)
         menuButton.frame = CGRect(x: 0, y: 0, width: tabBarItemSize.width, height: tabBar.frame.size.height)
@@ -46,8 +56,16 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         menuButton.imageView?.contentMode = .scaleAspectFill
         menuButton.imageEdgeInsets = .init(top: 0, left: 0, bottom: -10, right: 0)
         menuButton.setImage(UIImage(named: "AddButton"), for: .normal)
+        menuButton.addTarget(self, action: #selector(buatPermohonan), for: .touchUpInside)
         self.view.addSubview(menuButton)
         self.view.layoutIfNeeded()
+    }
+    
+    @objc private func buatPermohonan() {
+        let buatPermohonan = NewAssistanceVC()
+        let buatPermohonanController = UINavigationController.init(rootViewController: buatPermohonan)
+        self.navigationController?.pushViewController(buatPermohonanController, animated: true)
+        self.show(buatPermohonanController, sender: self)
     }
     
     fileprivate func createNavController(for rootViewController: UIViewController,
@@ -60,14 +78,5 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         navController.navigationBar.prefersLargeTitles = false
         rootViewController.navigationItem.title = title
         return navController
-    }
-    
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        // If 'Buat Permohonan' is pressed
-        if item.tag == 2 {
-            let editProfile = EditProfileVC()
-            self.navigationController?.pushViewController(editProfile, animated: true)
-            self.show(editProfile, sender: self)
-        }
     }
 }
