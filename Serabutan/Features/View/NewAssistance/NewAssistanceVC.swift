@@ -55,8 +55,7 @@ class NewAssistanceVC: UIViewController, UINavigationControllerDelegate, CLLocat
     
     var dummyData = DummyData.shared.getJobsList()
     let locationManager = CLLocationManager()
-    //var tagHeight = self.tagListHeight
-    
+    var userDefault = UserDefaults.standard.integer(forKey: "loggedUser")
     
     var newAssistanceJobId: Int?
     var newAssistanceJobPosterId: UserProfile?
@@ -93,7 +92,6 @@ class NewAssistanceVC: UIViewController, UINavigationControllerDelegate, CLLocat
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Buat Permintaan Bantuan"
-        tabBarController?.tabBar.isHidden = true
         
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
@@ -120,8 +118,7 @@ class NewAssistanceVC: UIViewController, UINavigationControllerDelegate, CLLocat
     
     override func viewWillAppear(_ animated: Bool) {
         initKeyboardObserver()
-        setCustomTextField()
-        setNavigationBarItems()
+        initStyling()
         createPickerGender()
         createPickerAge()
         createPickerUrgency()

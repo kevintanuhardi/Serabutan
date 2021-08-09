@@ -409,6 +409,24 @@ class DummyData {
         return list
     }
     
+    func getJobsList(_ user : UserProfile, _ status : JobStatus) -> [Jobs] {
+        var list = [Jobs]()
+        
+        for job in jobsList {
+            switch status {
+            case .active, .cancelled:
+                if user.id == job.jobPosterId.id && job.status == status {
+                    list.append(job)
+                }
+            case .taken, .done:
+                if (user.id == job.jobPosterId.id || user.id == job.helperId?.id) && job.status == status {
+                    list.append(job)
+                }
+            }
+        }
+        return list
+    }
+    
     func getUserProfile() -> [UserProfile] {
         return userProfile
     }
@@ -434,5 +452,9 @@ class DummyData {
     
     func addProfile(user: UserProfile) {
         userProfile.append(user)
+    }
+    
+    func addNewJob(job: Jobs){
+        jobsList.append(job)
     }
 }

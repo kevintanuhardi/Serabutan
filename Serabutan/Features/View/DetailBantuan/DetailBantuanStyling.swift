@@ -148,6 +148,7 @@ extension DetailBantuanVC {
             helperAvatar.isHidden = false
             helperAvatar.isHidden = false
             helperVerified.isHidden = false
+            print(helper)
             helper!.isVerified ? (helperVerified.isHidden = true) : (helperVerified.isHidden = false)
             
         }

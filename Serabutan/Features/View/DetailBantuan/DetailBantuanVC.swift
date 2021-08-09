@@ -191,6 +191,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
         
         setTagList()
     }
+    
 }
 
 extension DetailBantuanVC {

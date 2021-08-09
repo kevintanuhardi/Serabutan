@@ -10,6 +10,14 @@ import UIKit
 
 extension NewAssistanceVC {
 
+    func initStyling(){
+        setCustomTextField()
+        setNavigationBarItems()
+        initCancelButton()
+        initShareButton()
+    }
+    
+    
     func setCustomTextField(){
         urgencyView.backgroundColor = UIColor.white
         urgencyTFView.layer.borderWidth = 1
@@ -66,24 +74,28 @@ extension NewAssistanceVC {
         mediaAddView.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         mediaAddView.layer.cornerRadius = 5
     }
-    
+        
     func setNavigationBarItems(){
         navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.ColorLibrary.customBlack, .font: UIFont.FontLibrary.largeTitle]
         view.backgroundColor = .white
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(UIColor.clear.as1ptImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIColor.ColorLibrary.mediumGrey.as1ptImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.title = "Buat Permintaan Bantuan"
-          
+    }
+    
+    func initCancelButton(){
         let cancelButton = UIButton(type: .system)
         cancelButton.setImage(UIImage(systemName: "xmark")?.withRenderingMode(.alwaysOriginal), for: .normal)
         cancelButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
         cancelButton.tintColor = UIColor.black
         cancelButton.addTarget(self, action: #selector(cancelButtonAction(_sender:)), for: .touchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: cancelButton)
-        
+    }
+    
+    func initShareButton(){
         let shareButton = UIButton(type: .system)
         shareButton.setTitle("Bagikan", for: .normal)
         shareButton.setTitleColor(.white, for: .normal)
@@ -93,6 +105,15 @@ extension NewAssistanceVC {
         shareButton.addTarget(self, action: #selector(shareButtonAction(_sender:)), for: .touchUpInside)
         navigationItem.rightBarButtonItem =  UIBarButtonItem(customView: shareButton)
     }
-    
 }
 
+extension UIColor {
+    func as1ptImage() -> UIImage {
+        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+        setFill()
+        UIGraphicsGetCurrentContext()?.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+        let image = UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
+        UIGraphicsEndImageContext()
+        return image
+    }
+}

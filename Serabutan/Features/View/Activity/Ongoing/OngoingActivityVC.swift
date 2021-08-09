@@ -11,20 +11,21 @@ class OngoingActivityVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var ongoingActivityTable: UITableView!
     
-    var dummyData = DummyData.shared.getJobsList().filter { job in
-        return job.status == .taken
-    }
+    var user = UserDefaults.standard.integer(forKey: "loggedUser")
+    var dummyData = [Jobs]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let userProfile = DummyData.shared.getUserProfile()[user]
+        let activeJobs = DummyData.shared.getJobsList(userProfile, .active)
+        let takenJobs = DummyData.shared.getJobsList(userProfile, .taken)
+        dummyData = takenJobs + activeJobs
         
         ongoingActivityTable.delegate = self
         ongoingActivityTable.dataSource = self
         ongoingActivityTable.register(AssistanceTableViewCell.nib(), forCellReuseIdentifier: AssistanceTableViewCell.identifier)
     }
-    
-    
     
 }
 
@@ -36,6 +37,7 @@ extension OngoingActivityVC {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ongoingActivityTable.dequeueReusableCell(withIdentifier: AssistanceTableViewCell.identifier, for: indexPath) as! AssistanceTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         let data = dummyData[indexPath.row]
         let poster = data.jobPosterId
         
@@ -48,30 +50,20 @@ extension OngoingActivityVC {
         cell.helperView.isHidden = true
         cell.youHelperView.isHidden = true
         
-        if data.status == .taken{
-            cell.setStatusView(urgency: data.urgency)
-            cell.titleLabel.text = data.title
-            cell.headerLabel.text = StringFormatter().distance(data.distance)
-            cell.compensationLabel.text = StringFormatter().priceFormatting(amount: data.price)
-            cell.posterImage.image = poster.avatar
-            cell.posterLabel.text = poster.name
-            cell.timeElapsedLabel.text = StringFormatter().relativeDateFormatter(date: data.postingDate)
-            return cell
-        } else {
-            print("No Data")
-        }
-        
-        return UITableViewCell()
+        cell.setStatusView(urgency: data.urgency)
+        cell.titleLabel.text = data.title
+        cell.headerLabel.text = StringFormatter().distance(data.distance)
+        cell.compensationLabel.text = StringFormatter().priceFormatting(amount: data.price)
+        cell.posterImage.image = poster.avatar
+        cell.posterLabel.text = poster.name
+        cell.timeElapsedLabel.text = StringFormatter().relativeDateFormatter(date: data.postingDate)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        performSegue(withIdentifier: "DetailAssistance", sender: self)
+        let detailBantuan = DetailBantuanVC()
+        detailBantuan.selectedJob = dummyData[indexPath.row]
+        self.navigationController?.pushViewController(detailBantuan, animated: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //        if let destination = segue.destination as? detailAssitanceVC{
-        //            //PASSING DATA
-        //            assistanceTable.deselectRow(at: assistanceTable.indexPathForSelectedRow!, animated: true)
-        //        }
-    }
 }

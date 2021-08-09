@@ -13,38 +13,23 @@ import MapKit
 extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
     
     @IBAction func cancelButtonAction(_sender: Any){
-        self.navigationController?.popToRootViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func shareButtonAction(_sender: Any){
         initOtherData()
         initCreateNewJob()
-        print("NEW JobID:", newAssistanceJobId!)
-        print("NEW Job Poster ID", newAssistanceJobPosterId!)//
-        print("NEW Post DateTime", newAssistancePostDate!)
-        print("NEW Urgency:", newAssistanceUrgency!)
-        print("NEW Title:", newAssistanceTitle!)
-        print("NEW Desc:", newAssistanceDes!)
-        print("NEW Compensation:", newAssistanceCompensation!)
-        print("NEW Status:", newAssistanceStatus)
-        print("NEW Distance:", newAssistanceDistance)
-        print("NEW Coordinate:", newAssistanceCoordinate)
-        print("NEW HelperId:", newAssistanceHelperId)//
-        print("NEW Gender Pref:", newAssistanceGenderPref)
-        print("NEW Age Pref:", newAssistanceAgePref)
-        print("NEW Info Tags:", newAssistanceInfo)
-        print("NEW Images:", newAssistanceMediaImage)
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func initOtherData(){
-        let newId = dummyData.count + 1
+        let newId = dummyData.count
         newAssistanceJobId = newId
         
-        let newDate = Date(timeInterval: 60, since: Date())
+        let newDate = Date()
         newAssistancePostDate = newDate
         
-        let jobPosterId = dummyData[0].jobPosterId
+        let jobPosterId = DummyData.shared.getUserProfile()[userDefault]
         newAssistanceJobPosterId = jobPosterId
     }
     
@@ -56,22 +41,25 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
             createDescEmpty()
             descTV.becomeFirstResponder()
         } else {
-            dummyData.append(Jobs(id: newAssistanceJobId!,
-                                  jobPosterId: newAssistanceJobPosterId!,
-                                  postingDate: newAssistancePostDate!,
-                                  urgency: newAssistanceUrgency!,
-                                  title: newAssistanceTitle!,
-                                  desc: newAssistanceDes!,
-                                  price: newAssistanceCompensation!,
-                                  status: newAssistanceStatus,
-                                  distance: newAssistanceDistance ?? 0,
-                                  coordinate: newAssistanceCoordinate!,
-                                  tags: newAssistanceInfo,
-                                  medias: newAssistanceMediaImage,
-                                  helperId: newAssistanceHelperId,
-                                  genderPreference: newAssistanceGenderPref,
-                                  agePreference: newAssistanceAgePref))
-            print(dummyData)
+            guard let jobPosterId = newAssistanceJobPosterId else { return }
+            
+            let job = Jobs(id: newAssistanceJobId!,
+                           jobPosterId: jobPosterId,
+                           postingDate: newAssistancePostDate!,
+                           urgency: newAssistanceUrgency!,
+                           title: newAssistanceTitle!,
+                           desc: newAssistanceDes!,
+                           price: newAssistanceCompensation!,
+                           status: newAssistanceStatus,
+                           distance: newAssistanceDistance ?? 0,
+                           coordinate: newAssistanceCoordinate!,
+                           tags: newAssistanceInfo,
+                           medias: newAssistanceMediaImage,
+                           helperId: newAssistanceHelperId,
+                           genderPreference: newAssistanceGenderPref,
+                           agePreference: newAssistanceAgePref)
+            
+            DummyData.shared.addNewJob(job: job)
         }
         
     }
@@ -151,7 +139,7 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
         
         let currTitle = titleTF.text!
         newAssistanceTitle = currTitle
- 
+        
         if textField == compensationTF {
             let currComp = compensationTF.text!.replacingOccurrences(of: ".", with: "")
             

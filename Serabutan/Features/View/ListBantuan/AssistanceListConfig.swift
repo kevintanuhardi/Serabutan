@@ -25,7 +25,7 @@ extension AssistanceListVC {
     
     func navigateToHome() {
         let homeVC = HomeVC()
-        tabBarController?.tabBar.isHidden = false
+        //tabBarController?.tabBar.isHidden = false
         self.navigationController?.pushViewController(homeVC, animated: true)
     }
     
