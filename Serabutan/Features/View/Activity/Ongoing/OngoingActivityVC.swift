@@ -57,6 +57,7 @@ extension OngoingActivityVC {
         cell.posterImage.image = poster.avatar
         cell.posterLabel.text = poster.name
         cell.timeElapsedLabel.text = StringFormatter().relativeDateFormatter(date: data.postingDate)
+        cell.verifiedLogo.isHidden = !data.jobPosterId.isVerified
         return cell
     }
     

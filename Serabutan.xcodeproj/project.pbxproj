@@ -24,13 +24,12 @@
 		18B7273426B90F760005DBCA /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7273326B90F760005DBCA /* HomeVM.swift */; };
 		18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF23B26A911E10029CEA1 /* HomeVC.swift */; };
 		18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF23C26A911E10029CEA1 /* HomeVC.xib */; };
-		7830896AB6A17C511938A0B0 /* Pods_Serabutan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB6A465A85B221961E3FE29 /* Pods_Serabutan.framework */; };
-		7997654326BEC0190054460A /* FormulirProfilExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7997654226BEC0190054460A /* FormulirProfilExtension.swift */; };
-		79DD925A26BCF08D002BDA22 /* OnboardingNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DD925926BCF08D002BDA22 /* OnboardingNavigationConfig.swift */; };
 		79089B1C26B300FA0053077D /* DetailBantuanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79089B1B26B300FA0053077D /* DetailBantuanVC.swift */; };
 		796BC75F26AF215F00999377 /* ImageCarouselCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */; };
 		796BC76026AF215F00999377 /* ImageCarouselCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */; };
 		796BC76426AF21A900999377 /* DetailBantuanVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796BC76226AF21A900999377 /* DetailBantuanVC.xib */; };
+		7997654326BEC0190054460A /* FormulirProfilExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7997654226BEC0190054460A /* FormulirProfilExtension.swift */; };
+		79DD925A26BCF08D002BDA22 /* OnboardingNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DD925926BCF08D002BDA22 /* OnboardingNavigationConfig.swift */; };
 		79E67E7826B1B2410009F3C6 /* RatingReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */; };
 		79E67E7926B1B2410009F3C6 /* RatingReviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */; };
 		79FAF9CF26B87682009BF31F /* DetailBantuanNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FAF9CE26B87682009BF31F /* DetailBantuanNavigationConfig.swift */; };
@@ -79,9 +78,9 @@
 		C75CACD826BEBF420074B55D /* NAPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75CACD726BEBF420074B55D /* NAPickerView.swift */; };
 		C75E13EC26B85917007BEF41 /* AssistanceListConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E13EB26B85917007BEF41 /* AssistanceListConfig.swift */; };
 		C76047C026AF3CBB00535995 /* AssistanceListNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */; };
+		C79063E826B3BE7500AE7687 /* NACollectionViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79063E726B3BE7500AE7687 /* NACollectionViewConfig.swift */; };
 		C7BD8BA826BFF8BE00A0399C /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BA726BFF8BE00A0399C /* GenderPicker.swift */; };
 		C7BD8BAC26C001AE00A0399C /* AdditionalInfoExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BAB26C001AE00A0399C /* AdditionalInfoExtenstion.swift */; };
-		C79063E826B3BE7500AE7687 /* NACollectionViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79063E726B3BE7500AE7687 /* NACollectionViewConfig.swift */; };
 		C7BD8BAE26C02B7B00A0399C /* NATextFieldAndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BAD26C02B7B00A0399C /* NATextFieldAndView.swift */; };
 		C7BD8BB026C02BD800A0399C /* NADataConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BAF26C02BD800A0399C /* NADataConfig.swift */; };
 		C7BD8BB426C02D7600A0399C /* NAAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BB326C02D7600A0399C /* NAAlert.swift */; };
@@ -131,13 +130,12 @@
 		18B7273326B90F760005DBCA /* HomeVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/Home/HomeVC.swift; sourceTree = SOURCE_ROOT; };
 		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/Home/HomeVC.xib; sourceTree = SOURCE_ROOT; };
-		20FD053C92B5DE81A3651602 /* Pods-Serabutan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Serabutan.debug.xcconfig"; path = "Target Support Files/Pods-Serabutan/Pods-Serabutan.debug.xcconfig"; sourceTree = "<group>"; };
-		7997654226BEC0190054460A /* FormulirProfilExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FormulirProfilExtension.swift; path = Serabutan/Features/View/Onboarding/FormulirProfil/FormulirProfilExtension.swift; sourceTree = SOURCE_ROOT; };
-		79DD925926BCF08D002BDA22 /* OnboardingNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingNavigationConfig.swift; path = Serabutan/Features/View/Onboarding/OnboardingNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
 		79089B1B26B300FA0053077D /* DetailBantuanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailBantuanVC.swift; path = Serabutan/Features/View/DetailBantuan/DetailBantuanVC.swift; sourceTree = SOURCE_ROOT; };
 		796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCarouselCVC.swift; path = serabutan/Features/View/DetailBantuan/Cell/TopCollectionView/ImageCarouselCVC.swift; sourceTree = SOURCE_ROOT; };
 		796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ImageCarouselCVC.xib; path = serabutan/Features/View/DetailBantuan/Cell/TopCollectionView/ImageCarouselCVC.xib; sourceTree = SOURCE_ROOT; };
 		796BC76226AF21A900999377 /* DetailBantuanVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DetailBantuanVC.xib; path = serabutan/Features/View/DetailBantuan/DetailBantuanVC.xib; sourceTree = SOURCE_ROOT; };
+		7997654226BEC0190054460A /* FormulirProfilExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FormulirProfilExtension.swift; path = Serabutan/Features/View/Onboarding/FormulirProfil/FormulirProfilExtension.swift; sourceTree = SOURCE_ROOT; };
+		79DD925926BCF08D002BDA22 /* OnboardingNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingNavigationConfig.swift; path = Serabutan/Features/View/Onboarding/OnboardingNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
 		79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingReviewVC.swift; path = serabutan/Features/View/RatingReview/RatingReviewVC.swift; sourceTree = SOURCE_ROOT; };
 		79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RatingReviewVC.xib; path = serabutan/Features/View/RatingReview/RatingReviewVC.xib; sourceTree = SOURCE_ROOT; };
 		79FAF9CE26B87682009BF31F /* DetailBantuanNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailBantuanNavigationConfig.swift; path = Serabutan/Features/View/DetailBantuan/DetailBantuanNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
@@ -188,9 +186,9 @@
 		C75CACD726BEBF420074B55D /* NAPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NAPickerView.swift; path = serabutan/Features/View/NewAssistance/Objects/NAPickerView.swift; sourceTree = SOURCE_ROOT; };
 		C75E13EB26B85917007BEF41 /* AssistanceListConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListConfig.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListConfig.swift; sourceTree = SOURCE_ROOT; };
 		C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListNavigationConfig.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
+		C79063E726B3BE7500AE7687 /* NACollectionViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NACollectionViewConfig.swift; path = serabutan/Features/View/NewAssistance/Objects/NACollectionViewConfig.swift; sourceTree = SOURCE_ROOT; };
 		C7BD8BA726BFF8BE00A0399C /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GenderPicker.swift; path = Serabutan/Features/View/Onboarding/FormulirProfil/GenderPicker.swift; sourceTree = SOURCE_ROOT; };
 		C7BD8BAB26C001AE00A0399C /* AdditionalInfoExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdditionalInfoExtenstion.swift; path = Serabutan/Features/View/Onboarding/AdditionalInfoVC/AdditionalInfoExtenstion.swift; sourceTree = SOURCE_ROOT; };
-		C79063E726B3BE7500AE7687 /* NACollectionViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NACollectionViewConfig.swift; path = serabutan/Features/View/NewAssistance/Objects/NACollectionViewConfig.swift; sourceTree = SOURCE_ROOT; };
 		C7BD8BAD26C02B7B00A0399C /* NATextFieldAndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NATextFieldAndView.swift; path = Serabutan/Features/View/NewAssistance/NATextFieldAndView.swift; sourceTree = SOURCE_ROOT; };
 		C7BD8BAF26C02BD800A0399C /* NADataConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NADataConfig.swift; path = Serabutan/Features/View/NewAssistance/NADataConfig.swift; sourceTree = SOURCE_ROOT; };
 		C7BD8BB326C02D7600A0399C /* NAAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NAAlert.swift; path = Serabutan/Features/View/NewAssistance/Utils/NAAlert.swift; sourceTree = SOURCE_ROOT; };
@@ -208,7 +206,6 @@
 		C7D7AE4526AE4E83000478AA /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/Enum.swift; sourceTree = SOURCE_ROOT; };
 		C7D7AE4726AE5040000478AA /* BantuanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BantuanModel.swift; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/BantuanModel.swift; sourceTree = SOURCE_ROOT; };
 		C7FE979926BA65F900B27160 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StringFormatter.swift; path = Serabutan/Helper/StringFormatter.swift; sourceTree = SOURCE_ROOT; };
-		DCCC8D7519FAA9E448178580 /* Pods-Serabutan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Serabutan.release.xcconfig"; path = "Target Support Files/Pods-Serabutan/Pods-Serabutan.release.xcconfig"; sourceTree = "<group>"; };
 		F981FF6A26BA90EE00F0ACE5 /* MulaiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MulaiVC.swift; path = serabutan/Features/View/Onboarding/Mulai/MulaiVC.swift; sourceTree = SOURCE_ROOT; };
 		F981FF6D26BA914300F0ACE5 /* MulaiVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MulaiVC.xib; path = serabutan/Features/View/Onboarding/Mulai/MulaiVC.xib; sourceTree = SOURCE_ROOT; };
 		F981FF7426BA982D00F0ACE5 /* InputNoTelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InputNoTelpVC.swift; path = serabutan/Features/View/Onboarding/InputNoTelp/InputNoTelpVC.swift; sourceTree = SOURCE_ROOT; };
@@ -384,17 +381,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		79A523FB26B71274000892D8 /* RatingReview */ = {
-			isa = PBXGroup;
-			children = (
-				79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */,
-				79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */,
-				9060D41826BFECE4002243BC /* RatingReviewNavigationSetup.swift */,
-				9060D41A26BFEE48002243BC /* RatingReviewStyling.swift */,
-			);
-			path = RatingReview;
-			sourceTree = "<group>";
-		};
 		7997653D26BEB8F30054460A /* Mulai */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +427,17 @@
 				C7BD8BAB26C001AE00A0399C /* AdditionalInfoExtenstion.swift */,
 			);
 			path = AdditionalInfoVC;
+			sourceTree = "<group>";
+		};
+		79A523FB26B71274000892D8 /* RatingReview */ = {
+			isa = PBXGroup;
+			children = (
+				79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */,
+				79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */,
+				9060D41826BFECE4002243BC /* RatingReviewNavigationSetup.swift */,
+				9060D41A26BFEE48002243BC /* RatingReviewStyling.swift */,
+			);
+			path = RatingReview;
 			sourceTree = "<group>";
 		};
 		79C085F926B2585C00AE56CD /* DetailBantuan */ = {
@@ -1073,7 +1070,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TM85H5FTHU;
+				DEVELOPMENT_TEAM = S6LU55DTCY;
 				INFOPLIST_FILE = "$(SRCROOT)/serabutan/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
