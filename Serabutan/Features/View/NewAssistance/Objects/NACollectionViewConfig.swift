@@ -11,15 +11,13 @@ import UIKit
 extension NewAssistanceVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //            return newAssistanceMediaImage.count
-        return 0
+        return newAssistanceMediaImage.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = jobImgCarousel.dequeueReusableCell(withReuseIdentifier: ImageCarouselCVC.identifier, for: indexPath) as! ImageCarouselCVC
-//        cell.configure(with: UIImage(newAssistanceMediaImage)!)
-//        return cell
-        return UICollectionViewCell()
+        let cell = mediaImageCollectionView.dequeueReusableCell(withReuseIdentifier: ImageCarouselCVC.identifier, for: indexPath) as! ImageCarouselCVC
+        cell.imageView.image = newAssistanceMediaImage[indexPath.row]
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
