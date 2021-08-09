@@ -55,6 +55,7 @@ extension ProfileVC {
         cell.nameLabel.text = userReview.reviewer.name
         cell.datesLabel.text = StringFormatter().dateFormatter(date: userReview.finishedDate)
         cell.reviewText.text = userReview.reviewText
+        cell.isVerified.isHidden = !userReview.reviewer.isVerified
         
         return cell
     }

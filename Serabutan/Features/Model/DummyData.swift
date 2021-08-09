@@ -237,7 +237,7 @@ class DummyData {
                                        name: "Budi Wiyarno",
                                        dob: Date(timeInterval: -(60*60*24*365)*30, since: Date()),
                                        gender: .male,
-                                       avatar: UIImage(named: "avatar-6")!,
+                                       avatar: UIImage(named: "avatar-5")!,
                                        bio: "Ngapain aja bisa. Saya udah bekerja serabutan bantu-bantu tetangga sejak 10 tahun lalu. Mulai dari pertukangan, ngurus taman, masak, otomatif, InsyaAllah kalau ga susah susah banget saya mau membantu. ",
                                        joinDate: Date(timeInterval: -(60*60*24)*18, since: Date()),
                                        isVerified: false,

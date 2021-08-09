@@ -32,10 +32,10 @@ class UserProfile {
         self.name = name
         self.dob = dob
         self.gender = gender
-        self.avatar = UIImage(named: "Avatar")
+        self.avatar = avatar
         self.bio = bio
         self.joinDate = Date()
-        self.isVerified = false
+        self.isVerified = isVerified
         self.statistics = ProfileStatistic(reviewAggregate: 0.0, totalReview: 0, dibantu: 0, membantu: 0)
     }
 }

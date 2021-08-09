@@ -34,7 +34,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         mulaiController = UINavigationController.init(rootViewController: mulaiVC)
         
         defaults ? (window?.rootViewController = tabBarController) : (window?.rootViewController = mulaiController)
-//        window?.rootViewController = mulaiController
         window?.makeKeyAndVisible()
     }
     
@@ -65,6 +64,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }

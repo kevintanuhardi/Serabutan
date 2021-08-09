@@ -36,6 +36,6 @@ extension ProfileVC {
         totalMembantu.attributedText = StringFormatter().styleCombiner(firstWord: "\(user?.statistics?.membantu ?? 0)",
                                                                       secondWord: " Membantu",
                                                                       style: .dualStyle)
-        profileVerified.isHidden = user!.isVerified
+        profileVerified.isHidden = !user!.isVerified
     }
 }
