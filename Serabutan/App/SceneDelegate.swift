@@ -60,7 +60,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let navigationBar = UINavigationController(rootViewController: viewController)
         navigationBar.isNavigationBarHidden = true
-        window?.rootViewController = navigationBar
+        window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
         
         // Setup Profile Page - Default User
