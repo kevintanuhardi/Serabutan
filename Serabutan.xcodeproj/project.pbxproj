@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11EC56E678AF0B94071C08C9 /* Pods_Serabutan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9D7DBC44E66EA83F59169B /* Pods_Serabutan.framework */; };
 		1853413D26AC23470027C0F3 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853413C26AC23470027C0F3 /* UIImageExt.swift */; };
 		1853414226AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853414026AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift */; };
 		1853414326AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1853414126AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib */; };
@@ -26,10 +27,27 @@
 		7830896AB6A17C511938A0B0 /* Pods_Serabutan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB6A465A85B221961E3FE29 /* Pods_Serabutan.framework */; };
 		7997654326BEC0190054460A /* FormulirProfilExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7997654226BEC0190054460A /* FormulirProfilExtension.swift */; };
 		79DD925A26BCF08D002BDA22 /* OnboardingNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DD925926BCF08D002BDA22 /* OnboardingNavigationConfig.swift */; };
+		79089B1C26B300FA0053077D /* DetailBantuanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79089B1B26B300FA0053077D /* DetailBantuanVC.swift */; };
+		796BC75F26AF215F00999377 /* ImageCarouselCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */; };
+		796BC76026AF215F00999377 /* ImageCarouselCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */; };
+		796BC76426AF21A900999377 /* DetailBantuanVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796BC76226AF21A900999377 /* DetailBantuanVC.xib */; };
 		79E67E7826B1B2410009F3C6 /* RatingReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */; };
 		79E67E7926B1B2410009F3C6 /* RatingReviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */; };
+		79FAF9CF26B87682009BF31F /* DetailBantuanNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FAF9CE26B87682009BF31F /* DetailBantuanNavigationConfig.swift */; };
+		79FAF9D626B8F3AA009BF31F /* TagsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FAF9D426B8F3AA009BF31F /* TagsCVC.swift */; };
+		79FAF9D726B8F3AA009BF31F /* TagsCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79FAF9D526B8F3AA009BF31F /* TagsCVC.xib */; };
+		9036228F26BAF73000577D43 /* DetailBantuanStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9036228E26BAF73000577D43 /* DetailBantuanStyling.swift */; };
+		9036229126BB7E2000577D43 /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9036229026BB7E2000577D43 /* CustomCollectionView.swift */; };
 		90584E2026B274A7004C225B /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90584E1E26B274A7004C225B /* ProfileVC.swift */; };
 		90584E2126B274A7004C225B /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90584E1F26B274A7004C225B /* ProfileVC.xib */; };
+		9060D41926BFECE4002243BC /* RatingReviewNavigationSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9060D41826BFECE4002243BC /* RatingReviewNavigationSetup.swift */; };
+		9060D41B26BFEE48002243BC /* RatingReviewStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9060D41A26BFEE48002243BC /* RatingReviewStyling.swift */; };
+		9060D41D26BFEFC3002243BC /* ProfileNavigationSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9060D41C26BFEFC3002243BC /* ProfileNavigationSetup.swift */; };
+		9060D42126BFF101002243BC /* ProfileStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9060D42026BFF101002243BC /* ProfileStyling.swift */; };
+		9060D42326BFF147002243BC /* ProfileTableConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9060D42226BFF147002243BC /* ProfileTableConfig.swift */; };
+		9060D42526C0088C002243BC /* EditProfileStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9060D42426C0088C002243BC /* EditProfileStyling.swift */; };
+		9060D42726C008B3002243BC /* EditProfileNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9060D42626C008B3002243BC /* EditProfileNavigationConfig.swift */; };
+		9060D42926C015EF002243BC /* EditProfileExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9060D42826C015EF002243BC /* EditProfileExtension.swift */; };
 		907F9DCB26B6515B00EF9F51 /* ColorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */; };
 		907F9DCD26B65C8200EF9F51 /* CustomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F9DCC26B65C8200EF9F51 /* CustomBorder.swift */; };
 		907F9DCF26B6625A00EF9F51 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F9DCE26B6625A00EF9F51 /* Review.swift */; };
@@ -39,10 +57,14 @@
 		9083DB1826B7913B00D1E75F /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9083DB1726B7913B00D1E75F /* ImageHelper.swift */; };
 		9083DB1A26B7B27300D1E75F /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9083DB1926B7B27300D1E75F /* UserProfile.swift */; };
 		9083DB1C26B7B4DF00D1E75F /* ProfileStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9083DB1B26B7B4DF00D1E75F /* ProfileStatistic.swift */; };
+		90A0AF0026BC270200510A8E /* JobListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0AEFE26BC270200510A8E /* JobListCell.swift */; };
+		90A0AF0126BC270200510A8E /* JobListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A0AEFF26BC270200510A8E /* JobListCell.xib */; };
+		90A0AF0326BC2CCA00510A8E /* JobListViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0AF0226BC2CCA00510A8E /* JobListViewStyle.swift */; };
 		90DCB12F26B6EAC4002145C1 /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */; };
 		90E9C98826B39DE500165319 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */; };
 		90E9C98926B39DE500165319 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */; };
 		90F3A4E126B8E404001946E1 /* FontLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3A4E026B8E404001946E1 /* FontLibrary.swift */; };
+		C742289E26B9B10D003DD169 /* NAKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742289D26B9B10D003DD169 /* NAKeyboardObserver.swift */; };
 		C74228A126BA3E9F003DD169 /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742289F26BA3E9F003DD169 /* ActivityVC.swift */; };
 		C74228A226BA3E9F003DD169 /* ActivityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C74228A026BA3E9F003DD169 /* ActivityVC.xib */; };
 		C74228A726BA3ECF003DD169 /* OngoingActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74228A526BA3ECF003DD169 /* OngoingActivityVC.swift */; };
@@ -53,10 +75,18 @@
 		C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */; };
 		C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */; };
 		C744D7E826B2F127009E36B7 /* FilterPopUpConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */; };
+		C75CACD826BEBF420074B55D /* NAPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75CACD726BEBF420074B55D /* NAPickerView.swift */; };
 		C75E13EC26B85917007BEF41 /* AssistanceListConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E13EB26B85917007BEF41 /* AssistanceListConfig.swift */; };
 		C76047C026AF3CBB00535995 /* AssistanceListNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */; };
 		C7BD8BA826BFF8BE00A0399C /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BA726BFF8BE00A0399C /* GenderPicker.swift */; };
 		C7BD8BAC26C001AE00A0399C /* AdditionalInfoExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BAB26C001AE00A0399C /* AdditionalInfoExtenstion.swift */; };
+		C79063E826B3BE7500AE7687 /* NACollectionViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79063E726B3BE7500AE7687 /* NACollectionViewConfig.swift */; };
+		C7BD8BAE26C02B7B00A0399C /* NATextFieldAndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BAD26C02B7B00A0399C /* NATextFieldAndView.swift */; };
+		C7BD8BB026C02BD800A0399C /* NADataConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BAF26C02BD800A0399C /* NADataConfig.swift */; };
+		C7BD8BB426C02D7600A0399C /* NAAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BB326C02D7600A0399C /* NAAlert.swift */; };
+		C7CCC24526B199DD0005FFE3 /* NewAssistanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */; };
+		C7CCC24626B199DD0005FFE3 /* NewAssistanceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */; };
+		C7CCC24826B19A660005FFE3 /* NAStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24726B19A660005FFE3 /* NAStyle.swift */; };
 		C7CCC24C26B1DB590005FFE3 /* AssistanceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */; };
 		C7CCC24D26B1DB590005FFE3 /* AssistanceListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */; };
 		C7CCC25026B1DBD80005FFE3 /* AssistanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24E26B1DBD80005FFE3 /* AssistanceTableViewCell.swift */; };
@@ -82,7 +112,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0DB6A465A85B221961E3FE29 /* Pods_Serabutan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Serabutan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1853413C26AC23470027C0F3 /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIImageExt.swift; path = Serabutan/Helper/UIImageExt.swift; sourceTree = SOURCE_ROOT; };
 		1853414026AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapKitAnnotationCellViewController.swift; path = Serabutan/Components/MapKitAnnotation/MapKitAnnotationCellViewController.swift; sourceTree = SOURCE_ROOT; };
 		1853414126AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MapKitAnnotationCellViewController.xib; path = Serabutan/Components/MapKitAnnotation/MapKitAnnotationCellViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -96,7 +125,6 @@
 		185D12C326A7C09100F6105C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		185D12C626A7C09100F6105C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		185D12C826A7C09100F6105C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		185D12D526A7C16400F6105C /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		189FC4AA26B69B9000662C88 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Serabutan/Service/Network/Network.swift; sourceTree = SOURCE_ROOT; };
 		189FC4AC26B69D5500662C88 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = Serabutan/Helper/Constant.swift; sourceTree = SOURCE_ROOT; };
 		18B7273326B90F760005DBCA /* HomeVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
@@ -105,23 +133,46 @@
 		20FD053C92B5DE81A3651602 /* Pods-Serabutan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Serabutan.debug.xcconfig"; path = "Target Support Files/Pods-Serabutan/Pods-Serabutan.debug.xcconfig"; sourceTree = "<group>"; };
 		7997654226BEC0190054460A /* FormulirProfilExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FormulirProfilExtension.swift; path = Serabutan/Features/View/Onboarding/FormulirProfil/FormulirProfilExtension.swift; sourceTree = SOURCE_ROOT; };
 		79DD925926BCF08D002BDA22 /* OnboardingNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingNavigationConfig.swift; path = Serabutan/Features/View/Onboarding/OnboardingNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
+		79089B1B26B300FA0053077D /* DetailBantuanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailBantuanVC.swift; path = Serabutan/Features/View/DetailBantuan/DetailBantuanVC.swift; sourceTree = SOURCE_ROOT; };
+		796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCarouselCVC.swift; path = serabutan/Features/View/DetailBantuan/Cell/TopCollectionView/ImageCarouselCVC.swift; sourceTree = SOURCE_ROOT; };
+		796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ImageCarouselCVC.xib; path = serabutan/Features/View/DetailBantuan/Cell/TopCollectionView/ImageCarouselCVC.xib; sourceTree = SOURCE_ROOT; };
+		796BC76226AF21A900999377 /* DetailBantuanVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DetailBantuanVC.xib; path = serabutan/Features/View/DetailBantuan/DetailBantuanVC.xib; sourceTree = SOURCE_ROOT; };
 		79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingReviewVC.swift; path = serabutan/Features/View/RatingReview/RatingReviewVC.swift; sourceTree = SOURCE_ROOT; };
 		79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RatingReviewVC.xib; path = serabutan/Features/View/RatingReview/RatingReviewVC.xib; sourceTree = SOURCE_ROOT; };
+		79FAF9CE26B87682009BF31F /* DetailBantuanNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailBantuanNavigationConfig.swift; path = Serabutan/Features/View/DetailBantuan/DetailBantuanNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
+		79FAF9D426B8F3AA009BF31F /* TagsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagsCVC.swift; path = Serabutan/Features/View/DetailBantuan/Cell/BottomCollectionView/TagsCVC.swift; sourceTree = SOURCE_ROOT; };
+		79FAF9D526B8F3AA009BF31F /* TagsCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TagsCVC.xib; path = Serabutan/Features/View/DetailBantuan/Cell/BottomCollectionView/TagsCVC.xib; sourceTree = SOURCE_ROOT; };
+		8CE000EDDAF48E365323C7C4 /* Pods-Serabutan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Serabutan.release.xcconfig"; path = "Target Support Files/Pods-Serabutan/Pods-Serabutan.release.xcconfig"; sourceTree = "<group>"; };
+		9036228E26BAF73000577D43 /* DetailBantuanStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailBantuanStyling.swift; path = Serabutan/Features/View/DetailBantuan/DetailBantuanStyling.swift; sourceTree = SOURCE_ROOT; };
+		9036229026BB7E2000577D43 /* CustomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomCollectionView.swift; path = Serabutan/Components/Styling/CustomCollectionView.swift; sourceTree = SOURCE_ROOT; };
 		90584E1E26B274A7004C225B /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = Serabutan/Features/View/Profile/ProfileVC.swift; sourceTree = SOURCE_ROOT; };
 		90584E1F26B274A7004C225B /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileVC.xib; path = Serabutan/Features/View/Profile/ProfileVC.xib; sourceTree = SOURCE_ROOT; };
+		9060D41826BFECE4002243BC /* RatingReviewNavigationSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingReviewNavigationSetup.swift; path = Serabutan/Features/View/RatingReview/RatingReviewNavigationSetup.swift; sourceTree = SOURCE_ROOT; };
+		9060D41A26BFEE48002243BC /* RatingReviewStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingReviewStyling.swift; path = Serabutan/Features/View/RatingReview/RatingReviewStyling.swift; sourceTree = SOURCE_ROOT; };
+		9060D41C26BFEFC3002243BC /* ProfileNavigationSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileNavigationSetup.swift; path = Serabutan/Features/View/Profile/ProfileNavigationSetup.swift; sourceTree = SOURCE_ROOT; };
+		9060D42026BFF101002243BC /* ProfileStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileStyling.swift; path = Serabutan/Features/View/Profile/ProfileStyling.swift; sourceTree = SOURCE_ROOT; };
+		9060D42226BFF147002243BC /* ProfileTableConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileTableConfig.swift; path = Serabutan/Features/View/Profile/ProfileTableConfig.swift; sourceTree = SOURCE_ROOT; };
+		9060D42426C0088C002243BC /* EditProfileStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileStyling.swift; path = Serabutan/Features/View/Profile/EditProfile/EditProfileStyling.swift; sourceTree = SOURCE_ROOT; };
+		9060D42626C008B3002243BC /* EditProfileNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileNavigationConfig.swift; path = Serabutan/Features/View/Profile/EditProfile/EditProfileNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
+		9060D42826C015EF002243BC /* EditProfileExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileExtension.swift; path = Serabutan/Features/View/Profile/EditProfile/EditProfileExtension.swift; sourceTree = SOURCE_ROOT; };
 		907F9DCA26B6515B00EF9F51 /* ColorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorLibrary.swift; path = Serabutan/Components/Styling/ColorLibrary.swift; sourceTree = SOURCE_ROOT; };
 		907F9DCC26B65C8200EF9F51 /* CustomBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomBorder.swift; path = Serabutan/Components/Styling/CustomBorder.swift; sourceTree = SOURCE_ROOT; };
 		907F9DCE26B6625A00EF9F51 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Review.swift; path = Serabutan/Features/Model/Review.swift; sourceTree = SOURCE_ROOT; };
 		907F9DD026B6A92E00EF9F51 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DummyData.swift; path = Serabutan/Features/Model/DummyData.swift; sourceTree = SOURCE_ROOT; };
-		907F9DD226B6C5ED00EF9F51 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileVC.swift; path = Serabutan/Features/View/Profile/EditProfileVC.swift; sourceTree = SOURCE_ROOT; };
-		907F9DD326B6C5ED00EF9F51 /* EditProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EditProfileVC.xib; path = Serabutan/Features/View/Profile/EditProfileVC.xib; sourceTree = SOURCE_ROOT; };
+		907F9DD226B6C5ED00EF9F51 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileVC.swift; path = serabutan/Features/View/Profile/EditProfile/EditProfileVC.swift; sourceTree = SOURCE_ROOT; };
+		907F9DD326B6C5ED00EF9F51 /* EditProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EditProfileVC.xib; path = serabutan/Features/View/Profile/EditProfile/EditProfileVC.xib; sourceTree = SOURCE_ROOT; };
 		9083DB1726B7913B00D1E75F /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = Serabutan/Helper/ImageHelper.swift; sourceTree = SOURCE_ROOT; };
 		9083DB1926B7B27300D1E75F /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserProfile.swift; path = Serabutan/Features/Model/UserProfile.swift; sourceTree = SOURCE_ROOT; };
 		9083DB1B26B7B4DF00D1E75F /* ProfileStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileStatistic.swift; path = Serabutan/Features/Model/ProfileStatistic.swift; sourceTree = SOURCE_ROOT; };
+		90A0AEFE26BC270200510A8E /* JobListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JobListCell.swift; path = Serabutan/Features/View/Home/Cell/JobListCell.swift; sourceTree = SOURCE_ROOT; };
+		90A0AEFF26BC270200510A8E /* JobListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = JobListCell.xib; path = Serabutan/Features/View/Home/Cell/JobListCell.xib; sourceTree = SOURCE_ROOT; };
+		90A0AF0226BC2CCA00510A8E /* JobListViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JobListViewStyle.swift; path = Serabutan/Features/View/Home/Cell/JobListViewStyle.swift; sourceTree = SOURCE_ROOT; };
 		90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomStackView.swift; path = Serabutan/Components/Styling/CustomStackView.swift; sourceTree = SOURCE_ROOT; };
-		90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewTableViewCell.swift; path = Serabutan/Features/View/Profile/ReviewTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReviewTableViewCell.xib; path = Serabutan/Features/View/Profile/ReviewTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewTableViewCell.swift; path = serabutan/Features/View/Profile/Cell/ReviewTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReviewTableViewCell.xib; path = serabutan/Features/View/Profile/Cell/ReviewTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		90F3A4E026B8E404001946E1 /* FontLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FontLibrary.swift; path = Serabutan/Components/Styling/FontLibrary.swift; sourceTree = SOURCE_ROOT; };
+		B5280E9AC63B1FC4AC9E66C0 /* Pods-Serabutan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Serabutan.debug.xcconfig"; path = "Target Support Files/Pods-Serabutan/Pods-Serabutan.debug.xcconfig"; sourceTree = "<group>"; };
+		C742289D26B9B10D003DD169 /* NAKeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NAKeyboardObserver.swift; path = serabutan/Features/View/NewAssistance/Utils/NAKeyboardObserver.swift; sourceTree = SOURCE_ROOT; };
 		C742289F26BA3E9F003DD169 /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityVC.swift; path = Serabutan/Features/View/NewAssistance/ActivityVC.swift; sourceTree = SOURCE_ROOT; };
 		C74228A026BA3E9F003DD169 /* ActivityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ActivityVC.xib; path = Serabutan/Features/View/NewAssistance/ActivityVC.xib; sourceTree = SOURCE_ROOT; };
 		C74228A526BA3ECF003DD169 /* OngoingActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OngoingActivityVC.swift; path = Serabutan/Features/View/Activity/Ongoing/OngoingActivityVC.swift; sourceTree = SOURCE_ROOT; };
@@ -132,10 +183,18 @@
 		C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpVC.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.swift; sourceTree = SOURCE_ROOT; };
 		C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FilterPopUpVC.xib; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.xib; sourceTree = SOURCE_ROOT; };
 		C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpConfig.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpConfig.swift; sourceTree = SOURCE_ROOT; };
+		C75CACD726BEBF420074B55D /* NAPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NAPickerView.swift; path = serabutan/Features/View/NewAssistance/Objects/NAPickerView.swift; sourceTree = SOURCE_ROOT; };
 		C75E13EB26B85917007BEF41 /* AssistanceListConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListConfig.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListConfig.swift; sourceTree = SOURCE_ROOT; };
 		C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListNavigationConfig.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
 		C7BD8BA726BFF8BE00A0399C /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GenderPicker.swift; path = Serabutan/Features/View/Onboarding/FormulirProfil/GenderPicker.swift; sourceTree = SOURCE_ROOT; };
 		C7BD8BAB26C001AE00A0399C /* AdditionalInfoExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdditionalInfoExtenstion.swift; path = Serabutan/Features/View/Onboarding/AdditionalInfoVC/AdditionalInfoExtenstion.swift; sourceTree = SOURCE_ROOT; };
+		C79063E726B3BE7500AE7687 /* NACollectionViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NACollectionViewConfig.swift; path = serabutan/Features/View/NewAssistance/Objects/NACollectionViewConfig.swift; sourceTree = SOURCE_ROOT; };
+		C7BD8BAD26C02B7B00A0399C /* NATextFieldAndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NATextFieldAndView.swift; path = Serabutan/Features/View/NewAssistance/NATextFieldAndView.swift; sourceTree = SOURCE_ROOT; };
+		C7BD8BAF26C02BD800A0399C /* NADataConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NADataConfig.swift; path = Serabutan/Features/View/NewAssistance/NADataConfig.swift; sourceTree = SOURCE_ROOT; };
+		C7BD8BB326C02D7600A0399C /* NAAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NAAlert.swift; path = Serabutan/Features/View/NewAssistance/Utils/NAAlert.swift; sourceTree = SOURCE_ROOT; };
+		C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanceVC.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanceVC.swift; sourceTree = SOURCE_ROOT; };
+		C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewAssistanceVC.xib; path = Serabutan/Features/View/NewAssistance/NewAssistanceVC.xib; sourceTree = SOURCE_ROOT; };
+		C7CCC24726B19A660005FFE3 /* NAStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NAStyle.swift; path = serabutan/Features/View/NewAssistance/Utils/NAStyle.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListVC.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListVC.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssistanceListVC.xib; path = Serabutan/Features/View/ListBantuan/AssistanceListVC.xib; sourceTree = SOURCE_ROOT; };
 		C7CCC24E26B1DBD80005FFE3 /* AssistanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceTableViewCell.swift; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -159,6 +218,7 @@
 		F981FF8726BB755C00F0ACE5 /* AdditionalInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdditionalInfoVC.swift; path = serabutan/Features/View/Onboarding/AdditionalInfoVC/AdditionalInfoVC.swift; sourceTree = SOURCE_ROOT; };
 		F981FF8A26BB757200F0ACE5 /* AdditionalInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AdditionalInfoVC.xib; path = serabutan/Features/View/Onboarding/AdditionalInfoVC/AdditionalInfoVC.xib; sourceTree = SOURCE_ROOT; };
 		F9C858E826BCD0BE00EDE9A9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Serabutan/Components/Styling/CustomButton.swift; sourceTree = SOURCE_ROOT; };
+		FC9D7DBC44E66EA83F59169B /* Pods_Serabutan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Serabutan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7830896AB6A17C511938A0B0 /* Pods_Serabutan.framework in Frameworks */,
+				11EC56E678AF0B94071C08C9 /* Pods_Serabutan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,9 +258,8 @@
 			children = (
 				185D12B926A7C09000F6105C /* serabutan */,
 				185D12B826A7C09000F6105C /* Products */,
-				1C22404C4E389ED86476195A /* Pods */,
-				B620ED3491E67FAFA6936D42 /* Frameworks */,
-				C76047C126AFC46500535995 /* Recovered References */,
+				9758A392095AD71ADA30D234 /* Pods */,
+				BBB17BC4925ACD1E037ACBF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -238,6 +297,7 @@
 		185D12D026A7C10500F6105C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				79C085F926B2585C00AE56CD /* DetailBantuan */,
 				C7D7AE3526AC969E000478AA /* ListBantuan */,
 				79A523FB26B71274000892D8 /* RatingReview */,
 				F981FF6826BA8CDC00F0ACE5 /* Onboarding */,
@@ -321,13 +381,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		1C22404C4E389ED86476195A /* Pods */ = {
+		79A523FB26B71274000892D8 /* RatingReview */ = {
 			isa = PBXGroup;
 			children = (
-				20FD053C92B5DE81A3651602 /* Pods-Serabutan.debug.xcconfig */,
-				DCCC8D7519FAA9E448178580 /* Pods-Serabutan.release.xcconfig */,
+				79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */,
+				79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */,
+				9060D41826BFECE4002243BC /* RatingReviewNavigationSetup.swift */,
+				9060D41A26BFEE48002243BC /* RatingReviewStyling.swift */,
 			);
-			path = Pods;
+			path = RatingReview;
 			sourceTree = "<group>";
 		};
 		7997653D26BEB8F30054460A /* Mulai */ = {
@@ -378,13 +440,74 @@
 			path = AdditionalInfoVC;
 			sourceTree = "<group>";
 		};
-		79A523FB26B71274000892D8 /* RatingReview */ = {
+		79C085F926B2585C00AE56CD /* DetailBantuan */ = {
 			isa = PBXGroup;
 			children = (
-				79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */,
-				79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */,
+				79089B1B26B300FA0053077D /* DetailBantuanVC.swift */,
+				9036228E26BAF73000577D43 /* DetailBantuanStyling.swift */,
+				796BC76226AF21A900999377 /* DetailBantuanVC.xib */,
+				79FAF9CE26B87682009BF31F /* DetailBantuanNavigationConfig.swift */,
+				79C085FA26B2587C00AE56CD /* Cell */,
 			);
-			path = RatingReview;
+			path = DetailBantuan;
+			sourceTree = "<group>";
+		};
+		79C085FA26B2587C00AE56CD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				79C085FC26B258E600AE56CD /* BottomCollectionView */,
+				79C085FB26B258D200AE56CD /* TopCollectionView */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		79C085FB26B258D200AE56CD /* TopCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				796BC75D26AF215F00999377 /* ImageCarouselCVC.swift */,
+				796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */,
+			);
+			path = TopCollectionView;
+			sourceTree = "<group>";
+		};
+		79C085FC26B258E600AE56CD /* BottomCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				79FAF9D426B8F3AA009BF31F /* TagsCVC.swift */,
+				79FAF9D526B8F3AA009BF31F /* TagsCVC.xib */,
+			);
+			path = BottomCollectionView;
+			sourceTree = "<group>";
+		};
+		9060D41E26BFF08E002243BC /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				907F9DD226B6C5ED00EF9F51 /* EditProfileVC.swift */,
+				9060D42426C0088C002243BC /* EditProfileStyling.swift */,
+				907F9DD326B6C5ED00EF9F51 /* EditProfileVC.xib */,
+				9060D42626C008B3002243BC /* EditProfileNavigationConfig.swift */,
+				9060D42826C015EF002243BC /* EditProfileExtension.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		9060D41F26BFF0A1002243BC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */,
+				90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		90A0AEF726BC25B600510A8E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				90A0AEFE26BC270200510A8E /* JobListCell.swift */,
+				90A0AF0226BC2CCA00510A8E /* JobListViewStyle.swift */,
+				90A0AEFF26BC270200510A8E /* JobListCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		90F3A4E226B9109F001946E1 /* Styling */ = {
@@ -395,17 +518,27 @@
 				90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */,
 				90F3A4E026B8E404001946E1 /* FontLibrary.swift */,
 				F9C858E826BCD0BE00EDE9A9 /* CustomButton.swift */,
+				9036229026BB7E2000577D43 /* CustomCollectionView.swift */,
 			);
 			path = Styling;
 			sourceTree = "<group>";
 		};
-		B620ED3491E67FAFA6936D42 /* Frameworks */ = {
+		9758A392095AD71ADA30D234 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0DB6A465A85B221961E3FE29 /* Pods_Serabutan.framework */,
+				B5280E9AC63B1FC4AC9E66C0 /* Pods-Serabutan.debug.xcconfig */,
+				8CE000EDDAF48E365323C7C4 /* Pods-Serabutan.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BBB17BC4925ACD1E037ACBF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC9D7DBC44E66EA83F59169B /* Pods_Serabutan.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<unknown>";
+			sourceTree = "<group>";
 		};
 		C74228A326BA3EAA003DD169 /* Ongoing */ = {
 			isa = PBXGroup;
@@ -435,17 +568,10 @@
 			path = Filter;
 			sourceTree = "<group>";
 		};
-		C76047C126AFC46500535995 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				185D12D526A7C16400F6105C /* HomeVC.xib */,
-			);
-			name = "Recovered References";
-			sourceTree = "<unknown>";
-		};
 		C78982E626A7E44C00EB95B1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				90A0AEF726BC25B600510A8E /* Cell */,
 				18BEF23B26A911E10029CEA1 /* HomeVC.swift */,
 				18BEF23C26A911E10029CEA1 /* HomeVC.xib */,
 			);
@@ -455,6 +581,12 @@
 		C78982E726A7E54B00EB95B1 /* NewAssistance */ = {
 			isa = PBXGroup;
 			children = (
+				C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */,
+				C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */,
+				C7BD8BAF26C02BD800A0399C /* NADataConfig.swift */,
+				C7BD8BAD26C02B7B00A0399C /* NATextFieldAndView.swift */,
+				C7BD8BB226C02D2600A0399C /* Utils */,
+				C7BD8BB126C02D0000A0399C /* Objects */,
 			);
 			path = NewAssistance;
 			sourceTree = "<group>";
@@ -480,12 +612,13 @@
 		C78982EA26A7E5B700EB95B1 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				9060D41F26BFF0A1002243BC /* Cell */,
+				9060D41E26BFF08E002243BC /* EditProfile */,
 				90584E1E26B274A7004C225B /* ProfileVC.swift */,
+				9060D41C26BFEFC3002243BC /* ProfileNavigationSetup.swift */,
+				9060D42026BFF101002243BC /* ProfileStyling.swift */,
 				90584E1F26B274A7004C225B /* ProfileVC.xib */,
-				907F9DD226B6C5ED00EF9F51 /* EditProfileVC.swift */,
-				907F9DD326B6C5ED00EF9F51 /* EditProfileVC.xib */,
-				90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */,
-				90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */,
+				9060D42226BFF147002243BC /* ProfileTableConfig.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -502,6 +635,25 @@
 			children = (
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		C7BD8BB126C02D0000A0399C /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				C75CACD726BEBF420074B55D /* NAPickerView.swift */,
+				C79063E726B3BE7500AE7687 /* NACollectionViewConfig.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		C7BD8BB226C02D2600A0399C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C7CCC24726B19A660005FFE3 /* NAStyle.swift */,
+				C742289D26B9B10D003DD169 /* NAKeyboardObserver.swift */,
+				C7BD8BB326C02D7600A0399C /* NAAlert.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		C7D7AE3526AC969E000478AA /* ListBantuan */ = {
@@ -567,11 +719,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 185D12CB26A7C09100F6105C /* Build configuration list for PBXNativeTarget "Serabutan" */;
 			buildPhases = (
-				15DFFE41B0A1C5978CDD3186 /* [CP] Check Pods Manifest.lock */,
+				841132F8882E81E8D3E68A9D /* [CP] Check Pods Manifest.lock */,
 				185D12B326A7C09000F6105C /* Sources */,
 				185D12B426A7C09000F6105C /* Frameworks */,
 				185D12B526A7C09000F6105C /* Resources */,
-				65F992ABC8B704A35E7B5D8C /* [CP] Embed Pods Frameworks */,
+				375F392DD854073D8EA02817 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -619,10 +771,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				796BC76426AF21A900999377 /* DetailBantuanVC.xib in Resources */,
 				C74228A226BA3E9F003DD169 /* ActivityVC.xib in Resources */,
 				185D12C726A7C09100F6105C /* LaunchScreen.storyboard in Resources */,
-				C7D7AE4426AC97F1000478AA /* TagCollectionViewCell.xib in Resources */,
-				C7CCC24D26B1DB590005FFE3 /* AssistanceListVC.xib in Resources */,
+				796BC76026AF215F00999377 /* ImageCarouselCVC.xib in Resources */,
 				18BEF23E26A911E10029CEA1 /* HomeVC.xib in Resources */,
 				F981FF7F26BB6B5E00F0ACE5 /* VerifNoTelpVC.xib in Resources */,
 				F981FF6E26BA914300F0ACE5 /* MulaiVC.xib in Resources */,
@@ -630,24 +782,46 @@
 				F981FF7826BA985600F0ACE5 /* InputNoTelpVC.xib in Resources */,
 				185D12C426A7C09100F6105C /* Assets.xcassets in Resources */,
 				F981FF8526BB6E8600F0ACE5 /* FormulirProfilVC.xib in Resources */,
+				C7CCC24626B199DD0005FFE3 /* NewAssistanceVC.xib in Resources */,
+				185D12C426A7C09100F6105C /* Assets.xcassets in Resources */,
+				79FAF9D726B8F3AA009BF31F /* TagsCVC.xib in Resources */,
+				C7D7AE4426AC97F1000478AA /* TagCollectionViewCell.xib in Resources */,
+				C7CCC24D26B1DB590005FFE3 /* AssistanceListVC.xib in Resources */,
 				90E9C98926B39DE500165319 /* ReviewTableViewCell.xib in Resources */,
 				907F9DD526B6C5ED00EF9F51 /* EditProfileVC.xib in Resources */,
 				1853414326AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib in Resources */,
 				90584E2126B274A7004C225B /* ProfileVC.xib in Resources */,
 				1853414926AC68F90027C0F3 /* DummyCollectionViewCell.xib in Resources */,
 				C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */,
-				1853414326AC46EF0027C0F3 /* MapKitAnnotationCellViewController.xib in Resources */,
 				C74228A826BA3ECF003DD169 /* OngoingActivityVC.xib in Resources */,
 				C7CCC25126B1DBD80005FFE3 /* AssistanceTableViewCell.xib in Resources */,
 				C74228AC26BA3EE8003DD169 /* HistoryActivityVC.xib in Resources */,
 				79E67E7926B1B2410009F3C6 /* RatingReviewVC.xib in Resources */,
+				90A0AF0126BC270200510A8E /* JobListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		15DFFE41B0A1C5978CDD3186 /* [CP] Check Pods Manifest.lock */ = {
+		375F392DD854073D8EA02817 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Serabutan/Pods-Serabutan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Serabutan/Pods-Serabutan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Serabutan/Pods-Serabutan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		841132F8882E81E8D3E68A9D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -669,23 +843,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		65F992ABC8B704A35E7B5D8C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Serabutan/Pods-Serabutan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Serabutan/Pods-Serabutan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Serabutan/Pods-Serabutan-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -693,8 +850,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9060D42526C0088C002243BC /* EditProfileStyling.swift in Sources */,
 				90DCB12F26B6EAC4002145C1 /* CustomStackView.swift in Sources */,
 				7997654326BEC0190054460A /* FormulirProfilExtension.swift in Sources */,
+				9060D42126BFF101002243BC /* ProfileStyling.swift in Sources */,
 				907F9DD126B6A92E00EF9F51 /* DummyData.swift in Sources */,
 				90F3A4E126B8E404001946E1 /* FontLibrary.swift in Sources */,
 				C74228A726BA3ECF003DD169 /* OngoingActivityVC.swift in Sources */,
@@ -702,10 +861,12 @@
 				9083DB1C26B7B4DF00D1E75F /* ProfileStatistic.swift in Sources */,
 				18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */,
 				F981FF7526BA982D00F0ACE5 /* InputNoTelpVC.swift in Sources */,
+				9060D41D26BFEFC3002243BC /* ProfileNavigationSetup.swift in Sources */,
 				90E9C98826B39DE500165319 /* ReviewTableViewCell.swift in Sources */,
 				C7BD8BA826BFF8BE00A0399C /* GenderPicker.swift in Sources */,
 				C7BD8BAC26C001AE00A0399C /* AdditionalInfoExtenstion.swift in Sources */,
 				907F9DCD26B65C8200EF9F51 /* CustomBorder.swift in Sources */,
+				C7BD8BB026C02BD800A0399C /* NADataConfig.swift in Sources */,
 				C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */,
 				C7CCC25326B2490F0005FFE3 /* AssistanceListTableConfig.swift in Sources */,
 				18B7273426B90F760005DBCA /* HomeVM.swift in Sources */,
@@ -713,36 +874,60 @@
 				1853414526AC472C0027C0F3 /* Job.swift in Sources */,
 				90584E2026B274A7004C225B /* ProfileVC.swift in Sources */,
 				907F9DD426B6C5ED00EF9F51 /* EditProfileVC.swift in Sources */,
+				90A0AF0026BC270200510A8E /* JobListCell.swift in Sources */,
 				1853413D26AC23470027C0F3 /* UIImageExt.swift in Sources */,
+				C7CCC24526B199DD0005FFE3 /* NewAssistanceVC.swift in Sources */,
+				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
+				C7CCC24826B19A660005FFE3 /* NAStyle.swift in Sources */,
+				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,
+				C7BD8BB426C02D7600A0399C /* NAAlert.swift in Sources */,
+				C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */,
+				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
+				C76047C026AF3CBB00535995 /* AssistanceListNavigationConfig.swift in Sources */,
+				C79063E826B3BE7500AE7687 /* NACollectionViewConfig.swift in Sources */,
+				C75CACD826BEBF420074B55D /* NAPickerView.swift in Sources */,
+				C742289E26B9B10D003DD169 /* NAKeyboardObserver.swift in Sources */,
+				C7D7AE4826AE5040000478AA /* BantuanModel.swift in Sources */,
+				9036229126BB7E2000577D43 /* CustomCollectionView.swift in Sources */,
 				907F9DCF26B6625A00EF9F51 /* Review.swift in Sources */,
 				907F9DCB26B6515B00EF9F51 /* ColorLibrary.swift in Sources */,
 				9083DB1826B7913B00D1E75F /* ImageHelper.swift in Sources */,
 				9083DB1A26B7B27300D1E75F /* UserProfile.swift in Sources */,
+				9060D42726C008B3002243BC /* EditProfileNavigationConfig.swift in Sources */,
 				1853414226AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift in Sources */,
+				9036228F26BAF73000577D43 /* DetailBantuanStyling.swift in Sources */,
 				1854605326AD2AB000ABCF84 /* Utility.swift in Sources */,
+				C7BD8BAE26C02B7B00A0399C /* NATextFieldAndView.swift in Sources */,
 				189FC4AB26B69B9000662C88 /* Network.swift in Sources */,
 				C74228A126BA3E9F003DD169 /* ActivityVC.swift in Sources */,
 				1853414826AC68F90027C0F3 /* DummyCollectionViewCell.swift in Sources */,
 				189FC4AD26B69D5500662C88 /* Constant.swift in Sources */,
 				F981FF7C26BB6B4C00F0ACE5 /* VerifNoTelpVC.swift in Sources */,
-				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
 				F981FF8826BB755C00F0ACE5 /* AdditionalInfoVC.swift in Sources */,
 				F981FF8226BB6E7700F0ACE5 /* FormulirProfilVC.swift in Sources */,
 				C7FE979A26BA65F900B27160 /* StringFormatter.swift in Sources */,
+				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
+				79FAF9D626B8F3AA009BF31F /* TagsCVC.swift in Sources */,
+				79089B1C26B300FA0053077D /* DetailBantuanVC.swift in Sources */,
+				79FAF9CF26B87682009BF31F /* DetailBantuanNavigationConfig.swift in Sources */,
+				796BC75F26AF215F00999377 /* ImageCarouselCVC.swift in Sources */,
+				9060D41926BFECE4002243BC /* RatingReviewNavigationSetup.swift in Sources */,
+				9060D42326BFF147002243BC /* ProfileTableConfig.swift in Sources */,
+				9060D42926C015EF002243BC /* EditProfileExtension.swift in Sources */,
+				90A0AF0326BC2CCA00510A8E /* JobListViewStyle.swift in Sources */,
 				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,
 				C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */,
 				C744D7E826B2F127009E36B7 /* FilterPopUpConfig.swift in Sources */,
 				79DD925A26BCF08D002BDA22 /* OnboardingNavigationConfig.swift in Sources */,
 				C75E13EC26B85917007BEF41 /* AssistanceListConfig.swift in Sources */,
-				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
 				C7CCC25526B26CFA0005FFE3 /* AssistanceTableConfig.swift in Sources */,
 				C76047C026AF3CBB00535995 /* AssistanceListNavigationConfig.swift in Sources */,
 				F9C858E926BCD0BE00EDE9A9 /* CustomButton.swift in Sources */,
 				C744D7DE26B2D324009E36B7 /* AssistanceTableViewStyling.swift in Sources */,
-				C7D7AE4826AE5040000478AA /* BantuanModel.swift in Sources */,
 				C7CCC24C26B1DB590005FFE3 /* AssistanceListVC.swift in Sources */,
 				79E67E7826B1B2410009F3C6 /* RatingReviewVC.swift in Sources */,
 				F981FF6B26BA90EE00F0ACE5 /* MulaiVC.swift in Sources */,
+				9060D41B26BFEE48002243BC /* RatingReviewStyling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,7 +1063,7 @@
 		};
 		185D12CC26A7C09100F6105C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20FD053C92B5DE81A3651602 /* Pods-Serabutan.debug.xcconfig */;
+			baseConfigurationReference = B5280E9AC63B1FC4AC9E66C0 /* Pods-Serabutan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -899,7 +1084,7 @@
 		};
 		185D12CD26A7C09100F6105C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DCCC8D7519FAA9E448178580 /* Pods-Serabutan.release.xcconfig */;
+			baseConfigurationReference = 8CE000EDDAF48E365323C7C4 /* Pods-Serabutan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

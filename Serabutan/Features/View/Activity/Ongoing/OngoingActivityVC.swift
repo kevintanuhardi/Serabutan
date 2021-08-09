@@ -11,7 +11,9 @@ class OngoingActivityVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var ongoingActivityTable: UITableView!
     
-    var dummyData = DummyData.shared.getJobsList()
+    var dummyData = DummyData.shared.getJobsList().filter { job in
+        return job.status == .taken
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,10 @@ extension OngoingActivityVC {
         
         cell.tagView.isHidden = true
         cell.availableView.isHidden = false
+        
+        let newView = cell.availabelInsetView1
+        newView!.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
         cell.helperView.isHidden = true
         cell.youHelperView.isHidden = true
         
@@ -50,11 +56,12 @@ extension OngoingActivityVC {
             cell.posterImage.image = poster.avatar
             cell.posterLabel.text = poster.name
             cell.timeElapsedLabel.text = StringFormatter().relativeDateFormatter(date: data.postingDate)
+            return cell
         } else {
             print("No Data")
         }
         
-        return cell
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

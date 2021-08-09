@@ -24,11 +24,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         let tabBarController = UITabBarController()
-        let homeVC = MulaiVC()
-        let activityVC = UIViewController()
+        let homeVC = HomeVC()
+        let activityVC = ActivityVC()
         let notificationVC = UIViewController()
         let profileVC = ProfileVC()
-        let addJobVC = UIViewController()
+        let addJobVC = NewAssistanceVC()
         
         homeNavigationController = UINavigationController.init(rootViewController: homeVC)
         activityNavigationController = UINavigationController.init(rootViewController: activityVC)
@@ -44,6 +44,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let addIconItem = UITabBarItem(title: nil, image: UIImage(named: "AddButton"), tag: 2)
         addIconItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
+		
+		let attributes: [NSAttributedString.Key: AnyObject] = [
+			NSAttributedString.Key.foregroundColor: UIColor.clear
+		]
+		
+		addIconItem.setTitleTextAttributes(attributes, for: .normal)
         
         homeNavigationController.tabBarItem = homeItem
         activityNavigationController.tabBarItem = activityItem
@@ -51,14 +57,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         notificationNavigationController.tabBarItem = notificationItem
         profileNavigationController.tabBarItem = profileItem
         
-        UITabBar.appearance().tintColor = UIColor.systemBlue
-        UITabBar.appearance().unselectedItemTintColor = UIColor.init(named: "silver")
+        UITabBar.appearance().tintColor = UIColor.ColorLibrary.accentColor
+        UITabBar.appearance().unselectedItemTintColor = UIColor.ColorLibrary.mediumGrey
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().shadowImage = UIImage()
         
         let viewController = tabBarController
+
         let navigationBar = UINavigationController(rootViewController: viewController)
         navigationBar.isNavigationBarHidden = true
         window?.rootViewController = navigationBar
         window?.makeKeyAndVisible()
+        
+        // Setup Profile Page - Default User
+        let userId = UserDefaults.standard.integer(forKey: "loggedUser")
+        profileVC.user = DummyData.shared.getUserProfile()[userId]
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

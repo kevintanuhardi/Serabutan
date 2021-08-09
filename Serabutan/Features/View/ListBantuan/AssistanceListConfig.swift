@@ -8,16 +8,7 @@
 import Foundation
 import UIKit
 
-extension AssistanceListVC{
-    
-    func priceFormatting(amount: Int) -> String{
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.numberStyle = .currency
-        currencyFormatter.locale = Locale(identifier: "id_UD")
-        currencyFormatter.groupingSeparator = "."
-        currencyFormatter.numberStyle = .decimal
-        return currencyFormatter.string(from: NSNumber(value: amount))!
-    }
+extension AssistanceListVC {
     
     internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

@@ -23,7 +23,7 @@ extension AssistanceTableViewCell{
     func setStatusView(){
         statusView.layer.masksToBounds = true
         statusView.layer.borderWidth = 0.5
-        statusView.layer.cornerRadius = 5
+        statusView.layer.cornerRadius = statusView.frame.height / 2
         
         posterImage.layer.masksToBounds = true
         posterImage.layer.cornerRadius = posterImage.frame.height / 2

@@ -22,7 +22,4 @@ extension AssistanceTableViewCell {
         return cell
     }
     
-    
-    
-    
 }
