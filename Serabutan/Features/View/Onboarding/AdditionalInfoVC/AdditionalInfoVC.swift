@@ -29,7 +29,7 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         descTV.textContainer.lineFragmentPadding = 0
     }
     
-    @IBAction func finishOnboardingDesc(sender: UIButton){
+    @IBAction func finishOnboardingDesc(_ sender: Any){
         if onboardingDescription == "" {
             doneButton.isUserInteractionEnabled = false
         } else {
@@ -53,8 +53,8 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         let id = DummyData.shared.getUserProfile().count
         let statistics = ProfileStatistic(reviewAggregate: 0, totalReview: 0, dibantu: 0, membantu: 0)
         
-        var user = UserProfile(id: id, name: "", dob: Date(), gender: .other, avatar: UIImage(), bio: "", joinDate: Date(), isVerified: false, statistics: statistics)
-
+        let user = UserProfile(id: id, name: "", dob: Date(), gender: .other, avatar: UIImage(), bio: "", joinDate: Date(), isVerified: false, statistics: statistics)
+        
         guard let name = onboardingName else { return }
         user.name = name
         

@@ -32,7 +32,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UINavigationBar.appearance().shadowImage = UIImage()
         
         mulaiController = UINavigationController.init(rootViewController: mulaiVC)
-
         
         defaults ? (window?.rootViewController = tabBarController) : (window?.rootViewController = mulaiController)
 //        window?.rootViewController = mulaiController
