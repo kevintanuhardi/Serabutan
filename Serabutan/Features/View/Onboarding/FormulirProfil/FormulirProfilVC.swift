@@ -44,15 +44,11 @@ class FormulirProfilVC: UIViewController, UITextFieldDelegate {
             additionalInfoVC.onboardingName = newName
             additionalInfoVC.onboardingDOB = newDOB
             additionalInfoVC.onboardingGender = newGender
-        
+            
             UserDefaults.standard.set(true, forKey: "doneOnboarding")
             
             self.navigationController?.pushViewController(additionalInfoVC, animated: true)
         }
-//        print("PASSED NAME:", newName)
-//        print("PASSED DOB:" , newDOB)
-//        print("PASSED GENDER:", newGender)
-//        print("selected Gender:", selectedGender)
     }
     
     override func viewDidLoad() {

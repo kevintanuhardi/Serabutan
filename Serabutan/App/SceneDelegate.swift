@@ -14,6 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var activityNavigationController: UINavigationController!
     var notificationNavigationController: UINavigationController!
     var profileNavigationController: UINavigationController!
+    var mulaiController: UINavigationController!
+    let defaults: Bool = UserDefaults.standard.bool(forKey: "doneOnboarding")
     
     var addJobNavigationController: UINavigationController!
 
@@ -23,55 +25,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-        let tabBarController = UITabBarController()
-        let homeVC = HomeVC()
-        let activityVC = ActivityVC()
-        let notificationVC = UIViewController()
-        let profileVC = ProfileVC()
-        let addJobVC = NewAssistanceVC()
+        let tabBarController = TabBarController()
+        let mulaiVC = MulaiVC()
         
-        homeNavigationController = UINavigationController.init(rootViewController: homeVC)
-        activityNavigationController = UINavigationController.init(rootViewController: activityVC)
-        notificationNavigationController = UINavigationController.init(rootViewController: notificationVC)
-        profileNavigationController = UINavigationController.init(rootViewController: profileVC)
-        addJobNavigationController = UINavigationController.init(rootViewController: addJobVC)
-        tabBarController.viewControllers = [homeNavigationController, activityNavigationController, addJobNavigationController, notificationNavigationController, profileNavigationController]
-        
-        let homeItem = UITabBarItem(title: "Beranda", image: UIImage(named: "homeIcon"), tag: 0)
-        let activityItem = UITabBarItem(title: "Aktivitas", image: UIImage(named: "activityIcon"), tag: 1)
-        let notificationItem = UITabBarItem(title: "Notifikasi", image: UIImage(systemName: "bell.fill"), tag: 3)
-        let profileItem = UITabBarItem(title: "Profil", image: UIImage(named: "profileIcon"), tag: 4)
-        
-        let addIconItem = UITabBarItem(title: nil, image: UIImage(named: "AddButton"), tag: 2)
-        addIconItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
-		
-		let attributes: [NSAttributedString.Key: AnyObject] = [
-			NSAttributedString.Key.foregroundColor: UIColor.clear
-		]
-		
-		addIconItem.setTitleTextAttributes(attributes, for: .normal)
-        
-        homeNavigationController.tabBarItem = homeItem
-        activityNavigationController.tabBarItem = activityItem
-        addJobNavigationController.tabBarItem = addIconItem
-        notificationNavigationController.tabBarItem = notificationItem
-        profileNavigationController.tabBarItem = profileItem
-        
-        UITabBar.appearance().tintColor = UIColor.ColorLibrary.accentColor
-        UITabBar.appearance().unselectedItemTintColor = UIColor.ColorLibrary.mediumGrey
-        UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().shadowImage = UIImage()
-        
-        let viewController = tabBarController
+        mulaiController = UINavigationController.init(rootViewController: mulaiVC)
 
-        let navigationBar = UINavigationController(rootViewController: viewController)
-        navigationBar.isNavigationBarHidden = true
-        window?.rootViewController = TabBarController()
-        window?.makeKeyAndVisible()
         
-        // Setup Profile Page - Default User
-        let userId = UserDefaults.standard.integer(forKey: "loggedUser")
-        profileVC.user = DummyData.shared.getUserProfile()[userId]
+        defaults ? (window?.rootViewController = tabBarController) : (window?.rootViewController = mulaiController)
+//        window?.rootViewController = mulaiController
+        window?.makeKeyAndVisible()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

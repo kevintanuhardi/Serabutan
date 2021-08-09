@@ -52,6 +52,18 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
         
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let tabBar = self.tabBarController as! TabBarController
+        tabBar.hide()
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        let tabBar = self.tabBarController as! TabBarController
+        tabBar.show()
+    }
+    
     func setTagList() {
         tagView.textFont = .FontLibrary.body
         if selectedJob.tags != nil {

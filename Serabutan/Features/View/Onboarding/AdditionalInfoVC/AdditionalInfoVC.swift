@@ -25,6 +25,8 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         descTV.delegate = self
         setNavigation()
         doneButton.backgroundColor = UIColor.ColorLibrary.mediumGrey
+        descTV.textContainerInset = .zero
+        descTV.textContainer.lineFragmentPadding = 0
     }
     
     @IBAction func finishOnboardingDesc(sender: UIButton){
@@ -34,17 +36,17 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
             doneButton.isUserInteractionEnabled = true
             doneButton.tintColor = UIColor.ColorLibrary.accentColor
             applyDummyValue()
-            let homeVC = HomeVC()
-            self.navigationController?.pushViewController(homeVC, animated: true)
-            print("DUMMY 0:", dummy[0])
+            let homeVC = TabBarController()
+            homeVC.modalPresentationStyle = .overFullScreen
+            self.navigationController?.present(homeVC, animated: true)
         }
     }
     
     @IBAction func finishOnboardingWithoutDesc(_ sender: Any){
         applyDummyValue()
-        let homeVC = HomeVC()
-        self.navigationController?.pushViewController(homeVC, animated: true)
-        print("DUMMY 0:", dummy[0])
+        let homeVC = TabBarController()
+        homeVC.modalPresentationStyle = .overFullScreen
+        self.navigationController?.present(homeVC, animated: true)
     }
     
     func applyDummyValue(){
@@ -62,7 +64,6 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         guard let bio = onboardingDescription else { return }
         data.bio = bio
     }
-    
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {

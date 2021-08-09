@@ -22,27 +22,32 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func show() {
-        self.tabBar.isHidden = true
-        self.menuButton.isHidden = true
-    }
-    
-    func hide() {
         self.tabBar.isHidden = false
         self.menuButton.isHidden = false
     }
     
+    func hide() {
+        self.tabBar.isHidden = true
+        self.menuButton.isHidden = true
+    }
+    
     override func viewDidLayoutSubviews() {
-            super.viewDidLayoutSubviews()
-            menuButton.frame.origin.y = self.view.bounds.height - menuButton.frame.height - self.view.safeAreaInsets.bottom
-        }
+        super.viewDidLayoutSubviews()
+        menuButton.frame.origin.y = self.view.bounds.height - menuButton.frame.height - self.view.safeAreaInsets.bottom
+    }
     
     private func setupVCs() {
+        
+        let loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")
+        let profileVC = ProfileVC()
+        profileVC.user = DummyData.shared.getUserProfile()[loggedUser]
+        
         viewControllers = [
             createNavController(for: HomeVC(), title: "Home", image: UIImage(named: "homeIcon")!, tag: 0),
             createNavController(for: ActivityVC(), title: "Aktivitas", image: UIImage(named: "activityIcon")!, tag: 1),
             createNavController(for: HomeVC(), title: "", image: UIImage(), tag: 2),
             createNavController(for: UIViewController(), title: "Notifikasi", image: UIImage(systemName: "bell.fill")!, tag: 3),
-            createNavController(for: ProfileVC(), title: "Profil", image: UIImage(named: "profileIcon")!, tag: 4)
+            createNavController(for: profileVC, title: "Profil", image: UIImage(named: "profileIcon")!, tag: 4)
         ]
     }
     
@@ -79,4 +84,10 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         rootViewController.navigationItem.title = title
         return navController
     }
+    
+//    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+//        if item.tag == 4 {
+//
+//        }
+//    }
 }
