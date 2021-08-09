@@ -12,12 +12,16 @@ class HistoryActivityVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var historyActivityTable: UITableView!
     
-    var dummyData = DummyData.shared.getJobsList().filter { job in
-        return job.status == .done || job.status == .cancelled
-    }
+    var user = UserDefaults.standard.integer(forKey: "loggedUser")
+    var dummyData = [Jobs]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let userProfile = DummyData.shared.getUserProfile()[user]
+        let doneJobs = DummyData.shared.getJobsList(userProfile, .done)
+        let cancelledJobs = DummyData.shared.getJobsList(userProfile, .cancelled)
+        dummyData = doneJobs + cancelledJobs
         
         historyActivityTable.delegate = self
         historyActivityTable.dataSource = self
@@ -54,19 +58,14 @@ extension HistoryActivityVC {
         cell.dotImage.tintColor = UIColor.clear
         cell.timeElapsedLabel.textColor = UIColor.clear
         
-        if data.status == .done || data.status == .cancelled {
-            
-            cell.setStatusView(urgency: data.urgency)
-            cell.titleLabel.text = data.title
-            cell.headerLabel.text = StringFormatter().dateFormatter(date: data.postingDate)
-            cell.compensationLabel.text = StringFormatter().priceFormatting(amount: data.price)
-            cell.posterImage.image = poster.avatar
-            cell.posterLabel.text = poster.name
-            cell.helperImage.image = helper?.avatar
-            cell.helperNameLabel.text = helper?.name
-        } else {
-            print("No Data")
-        }
+        cell.setStatusView(urgency: data.urgency)
+        cell.titleLabel.text = data.title
+        cell.headerLabel.text = StringFormatter().dateFormatter(date: data.postingDate)
+        cell.compensationLabel.text = StringFormatter().priceFormatting(amount: data.price)
+        cell.posterImage.image = poster.avatar
+        cell.posterLabel.text = poster.name
+        cell.helperImage.image = helper?.avatar
+        cell.helperNameLabel.text = helper?.name
         
         return cell
     }

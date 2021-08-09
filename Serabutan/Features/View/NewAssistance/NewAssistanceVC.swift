@@ -55,8 +55,7 @@ class NewAssistanceVC: UIViewController, UINavigationControllerDelegate, CLLocat
     
     var dummyData = DummyData.shared.getJobsList()
     let locationManager = CLLocationManager()
-    //var tagHeight = self.tagListHeight
-    
+    var userDefault = UserDefaults.standard.integer(forKey: "loggedUser")
     
     var newAssistanceJobId: Int?
     var newAssistanceJobPosterId: UserProfile?

@@ -20,21 +20,8 @@ class ActivityVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        title = ""
-        // Do any additional setup after loading the view.
     }
     
-//    override func viewDidDisappear(_ animated: Bool) {
-//        navigationController?.navigationBar.isHidden = false
-//        title = .none
-//    }
-//
-//    override func viewWillAppear(_ animated: Bool) {
-//        tabBarController?.tabBar.isHidden = false
-//        navigationController?.navigationBar.isHidden = true
-//        title = ""
-//    }
-
     private func setup(){
         addChild(historyVC)
         addChild(ongoingVC)
@@ -47,7 +34,6 @@ class ActivityVC: UIViewController {
         historyVC.view.frame = self.activityBodyView.bounds
         ongoingVC.view.frame = self.activityBodyView.bounds
     }
-    
     
     @IBAction func didChangeSegment(_ sender: UISegmentedControl){
         ongoingVC.view.isHidden = true
