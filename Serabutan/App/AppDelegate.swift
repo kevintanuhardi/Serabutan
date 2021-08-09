@@ -19,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DummyData.shared.seedData()
         UserDefaults.standard.setValue(DummyData.shared.getUserProfile()[0].id, forKey: "loggedUser")
         
+        //Biar back button nya cuma muncul gambar backward, tulisan back ilang
+//        let backButton = UIBarButtonItem.appearance()
+//        backButton.setTitleTextAttributes([.foregroundColor : UIColor.clear], for: .normal)
+        
         return true
     }
     

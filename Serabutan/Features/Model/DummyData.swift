@@ -181,6 +181,8 @@ class DummyData {
     private func seedUserProfile() {
         userProfile.append(UserProfile(id: 0,
                                        name: "Agus Susanto",
+                                       dob: Date(timeInterval: -(60*60*24*365)*30, since: Date()),
+                                       gender : .male,
                                        avatar: UIImage(named: "avatar-0"),
                                        bio: "Suka bantu-bantu orang, bisa apa saja. Pernah kerja di bengkel sepeda dan motor, jadi lumayan tahu tentang otomotif.",
                                        joinDate: Date(timeInterval: -(60*60*24)*10, since: Date()),
@@ -188,6 +190,8 @@ class DummyData {
                                        statistics: profileStatistic[0]))
         userProfile.append(UserProfile(id: 1,
                                        name: "Susi Susanti",
+                                       dob: Date(timeInterval: -(60*60*24*365)*30, since: Date()),
+                                       gender: .female,
                                        avatar: UIImage(named: "avatar-1"),
                                        bio: "Suka bantuin tugas-tugas rumah dan taman.",
                                        joinDate: Date(timeInterval: -(60*60*24)*15, since: Date()),
@@ -195,6 +199,8 @@ class DummyData {
                                        statistics: profileStatistic[1]))
         userProfile.append(UserProfile(id: 2,
                                        name: "Tono Wiyarto",
+                                       dob: Date(timeInterval: -(60*60*24*365)*30, since: Date()),
+                                       gender: .male,
                                        avatar: UIImage(named: "avatar-2"),
                                        bio: "Sehari-hari driver ojek online tapi terbuka untuk membantu orang sekitar. Bisa bantu urusan nganter-nganter, dll.",
                                        joinDate: Date(timeInterval: -(60*60*24)*35, since: Date()),
@@ -202,6 +208,8 @@ class DummyData {
                                        statistics: profileStatistic[2]))
         userProfile.append(UserProfile(id: 3,
                                        name: "Dodi Sujarwo",
+                                       dob: Date(timeInterval: -(60*60*24*365)*30, since: Date()),
+                                       gender: .male,
                                        avatar: UIImage(named: "avatar-4"),
                                        bio: "Mahasiswa biasa saja yang mencari tambahan di sela-sela waktu. Bisa bantu apa saja asal pekerjaannya tidak susah dan spesifik.",
                                        joinDate: Date(timeInterval: -(60*60*24)*20, since: Date()),
@@ -209,6 +217,8 @@ class DummyData {
                                        statistics: profileStatistic[3]))
         userProfile.append(UserProfile(id: 4,
                                        name: "Dhea Aninda",
+                                       dob: Date(timeInterval: -(60*60*24*365)*30, since: Date()),
+                                       gender: .female,
                                        avatar: UIImage(named: "avatar-5"),
                                        bio: "Baru lulus kuliah jadi banyak waktu luang. Suka hal-hal berbau seni. Berpengalaman dekor acara-acara di kampus, tapi bisa bantu apa aja asal ga berat-berat.",
                                        joinDate: Date(timeInterval: -(60*60*24)*9, since: Date()),
@@ -216,6 +226,8 @@ class DummyData {
                                        statistics: profileStatistic[4]))
         userProfile.append(UserProfile(id: 5,
                                        name: "Ida Kusuma",
+                                       dob: Date(timeInterval: -(60*60*24*365)*30, since: Date()),
+                                       gender: .male,
                                        avatar: UIImage(named: "avatar-3"),
                                        bio: "Terbiasa memasak, bisa bantu-bantu kalau lebaran atau ada syukuran yang butuh tenaga masak.",
                                        joinDate: Date(timeInterval: -(60*60*24)*11, since: Date()),
@@ -223,6 +235,8 @@ class DummyData {
                                        statistics: profileStatistic[5]))
         userProfile.append(UserProfile(id: 6,
                                        name: "Budi Wiyarno",
+                                       dob: Date(timeInterval: -(60*60*24*365)*30, since: Date()),
+                                       gender: .male,
                                        avatar: UIImage(named: "avatar-6"),
                                        bio: "Ngapain aja bisa. Saya udah bekerja serabutan bantu-bantu tetangga sejak 10 tahun lalu. Mulai dari pertukangan, ngurus taman, masak, otomatif, InsyaAllah kalau ga susah susah banget saya mau membantu. ",
                                        joinDate: Date(timeInterval: -(60*60*24)*18, since: Date()),

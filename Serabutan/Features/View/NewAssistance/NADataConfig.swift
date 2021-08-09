@@ -34,7 +34,7 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
         print("NEW Age Pref:", newAssistanceAgePref)
         print("NEW Info Tags:", newAssistanceInfo)
         print("NEW Images:", newAssistanceMediaImage)
-        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func initOtherData(){
@@ -49,7 +49,6 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
     }
     
     func initCreateNewJob(){
-        
         if newAssistanceTitle == ""{
             createTitleEmpty()
             titleTF.becomeFirstResponder()
@@ -88,7 +87,6 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        
         textView.superview?.animateBorder(false, type: .border)
         
         let currDesc = descTV.text!
@@ -107,12 +105,9 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.activeTextField = textField
         textField.superview?.animateBorder(true, type: .border)
-        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
-
         self.activeTextField = nil
         textField.superview?.animateBorder(false, type: .border)
     }
@@ -136,7 +131,6 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
         return true
     }
     
-    
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         textField.superview?.animateBorder(false, type: .border)
         
@@ -157,9 +151,7 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
         
         let currTitle = titleTF.text!
         newAssistanceTitle = currTitle
-        
-        
-        
+ 
         if textField == compensationTF {
             let currComp = compensationTF.text!.replacingOccurrences(of: ".", with: "")
             
@@ -207,7 +199,7 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
             infoTF.resignFirstResponder()
             infoTF.text = ""
             
-            (newAssistanceInfo.count < 1) ? (infoSV.spacing = 0) : (infoSV.spacing = 10)
+            (newAssistanceInfo.count < 1) ? (infoSV.spacing = 0) : (infoSV.spacing = 5)
         } else {
             print("nothing insert")
         }
@@ -222,6 +214,7 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
         for (index, arrayTitle) in newAssistanceInfo.enumerated() {
             if title == arrayTitle {
                 newAssistanceInfo.remove(at: index)
+                (newAssistanceInfo.count < 1) ? (infoSV.spacing = 0) : (infoSV.spacing = 5)
             }
         }
     }

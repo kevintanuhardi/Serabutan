@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdditionalInfoVC" customModule="Serabutan" customModuleProvider="target">
+            <connections>
+                <outlet property="descTV" destination="hOt-vr-j9g" id="2l4-mu-18Q"/>
+                <outlet property="doneButton" destination="I3D-vM-kKb" id="efO-7f-m9r"/>
+                <outlet property="view" destination="iN0-l3-epB" id="7x3-b4-bch"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lengkapi Data Diri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiY-OW-JRb">
+                    <rect key="frame" x="20" y="79" width="350" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5Cg-DQ-cAf" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
+                    <rect key="frame" x="20" y="123" width="350" height="192"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deskripsi Singkat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVa-pV-c4i">
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hOt-vr-j9g">
+                            <rect key="frame" x="0.0" y="12" width="350" height="180"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="180" id="fau-Yq-QD8"/>
+                            </constraints>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i9-9H-L5V">
+                    <rect key="frame" x="20" y="320" width="350" height="24"/>
+                    <string key="text">Jelaskan sedikit tentang diri Anda, informasi ini dapat dilihat oleh orang lain. Anda dapat mengubahnya nanti di halaman profil.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3D-vM-kKb" customClass="PrimaryButton" customModule="Serabutan" customModuleProvider="target">
+                    <rect key="frame" x="20" y="735" width="350" height="55"/>
+                    <color key="backgroundColor" red="0.72549019609999998" green="0.2156862745" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="oCH-GB-Szw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <state key="normal" title="Selesai">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="finishOnboardingDescWithSender:" destination="-1" eventType="touchUpInside" id="r5Q-XP-po4"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="I3D-vM-kKb" secondAttribute="bottom" constant="20" id="AZh-2S-tD3"/>
+                <constraint firstItem="5Cg-DQ-cAf" firstAttribute="top" secondItem="iiY-OW-JRb" secondAttribute="bottom" constant="20" id="Fxk-ci-Zr0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iiY-OW-JRb" secondAttribute="trailing" constant="20" id="RiW-Vd-3CN"/>
+                <constraint firstItem="7i9-9H-L5V" firstAttribute="top" secondItem="5Cg-DQ-cAf" secondAttribute="bottom" constant="5" id="a9X-1E-4J0"/>
+                <constraint firstItem="5Cg-DQ-cAf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="dGv-kv-9Gr"/>
+                <constraint firstItem="iiY-OW-JRb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="hYn-5Q-QGT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5Cg-DQ-cAf" secondAttribute="trailing" constant="20" id="nOZ-Jn-Tdc"/>
+                <constraint firstItem="iiY-OW-JRb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="35" id="q36-Ig-Lrr"/>
+                <constraint firstItem="7i9-9H-L5V" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="qvW-kr-uCW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="I3D-vM-kKb" secondAttribute="trailing" constant="20" id="uL4-sY-NP4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7i9-9H-L5V" secondAttribute="trailing" constant="20" id="yJ3-9O-bB4"/>
+                <constraint firstItem="I3D-vM-kKb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="zIY-KE-toR"/>
+            </constraints>
+            <point key="canvasLocation" x="-196" y="146"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
