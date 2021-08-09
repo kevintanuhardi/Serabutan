@@ -18,13 +18,10 @@ class OngoingActivityVC: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         ongoingActivityTable.delegate = self
         ongoingActivityTable.dataSource = self
         ongoingActivityTable.register(AssistanceTableViewCell.nib(), forCellReuseIdentifier: AssistanceTableViewCell.identifier)
     }
-    
-    
     
 }
 
@@ -36,6 +33,7 @@ extension OngoingActivityVC {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ongoingActivityTable.dequeueReusableCell(withIdentifier: AssistanceTableViewCell.identifier, for: indexPath) as! AssistanceTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         let data = dummyData[indexPath.row]
         let poster = data.jobPosterId
         
@@ -65,13 +63,9 @@ extension OngoingActivityVC {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        performSegue(withIdentifier: "DetailAssistance", sender: self)
+        let detailBantuan = DetailBantuanVC()
+        detailBantuan.selectedJob = dummyData[indexPath.row]
+        self.navigationController?.pushViewController(detailBantuan, animated: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //        if let destination = segue.destination as? detailAssitanceVC{
-        //            //PASSING DATA
-        //            assistanceTable.deselectRow(at: assistanceTable.indexPathForSelectedRow!, animated: true)
-        //        }
-    }
 }

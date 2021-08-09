@@ -93,7 +93,6 @@ class NewAssistanceVC: UIViewController, UINavigationControllerDelegate, CLLocat
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Buat Permintaan Bantuan"
-        tabBarController?.tabBar.isHidden = true
         
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)

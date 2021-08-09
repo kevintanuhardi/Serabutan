@@ -22,13 +22,13 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func show() {
-        self.tabBar.isHidden = true
-        self.menuButton.isHidden = true
+        self.tabBar.isHidden = false
+        self.menuButton.isHidden = false
     }
     
     func hide() {
-        self.tabBar.isHidden = false
-        self.menuButton.isHidden = false
+        self.tabBar.isHidden = true
+        self.menuButton.isHidden = true
     }
     
     override func viewDidLayoutSubviews() {

@@ -20,10 +20,20 @@ class ActivityVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        navigationController?.navigationBar.isHidden = true
+        title = ""
         // Do any additional setup after loading the view.
     }
-
+    
+//    override func viewDidDisappear(_ animated: Bool) {
+//        navigationController?.navigationBar.isHidden = false
+//        title = .none
+//    }
+//
+//    override func viewWillAppear(_ animated: Bool) {
+//        tabBarController?.tabBar.isHidden = false
+//        navigationController?.navigationBar.isHidden = true
+//        title = ""
+//    }
 
     private func setup(){
         addChild(historyVC)

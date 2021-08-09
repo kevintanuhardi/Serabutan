@@ -74,7 +74,7 @@ extension NewAssistanceVC {
         mediaAddView.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         mediaAddView.layer.cornerRadius = 5
     }
-    
+        
     func setNavigationBarItems(){
         navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.ColorLibrary.customBlack, .font: UIFont.FontLibrary.largeTitle]
         view.backgroundColor = .white

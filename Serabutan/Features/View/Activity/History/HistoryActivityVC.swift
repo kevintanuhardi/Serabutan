@@ -42,6 +42,7 @@ extension HistoryActivityVC {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = historyActivityTable.dequeueReusableCell(withIdentifier: AssistanceTableViewCell.identifier, for: indexPath) as! AssistanceTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         let data = dummyData[indexPath.row]
         let poster = data.jobPosterId
         let helper = dummyData[indexPath.row].helperId
@@ -71,14 +72,9 @@ extension HistoryActivityVC {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           //        performSegue(withIdentifier: "DetailAssistance", sender: self)
-       }
-       
-       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           //        if let destination = segue.destination as? detailAssitanceVC{
-           //            //PASSING DATA
-           //            assistanceTable.deselectRow(at: assistanceTable.indexPathForSelectedRow!, animated: true)
-           //        }
-       }
+        let detailBantuan = DetailBantuanVC()
+        detailBantuan.selectedJob = dummyData[indexPath.row]
+        self.navigationController?.pushViewController(detailBantuan, animated: true)
+    }
     
 }

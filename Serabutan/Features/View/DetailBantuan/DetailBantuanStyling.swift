@@ -21,6 +21,9 @@ extension DetailBantuanVC {
     }
     
     func setStyle() {
+        let tabBar = self.tabBarController as! TabBarController
+        tabBar.hide()
+        
         setStatusView(urgency: selectedJob.urgency)
         urgencyView.layer.borderWidth = 0.5
         urgencyView.layer.cornerRadius = urgencyView.frame.height / 2
