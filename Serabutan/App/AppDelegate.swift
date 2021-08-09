@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Seeding dummy data, please remove this line on the final product.
         DummyData.shared.seedData()
-        UserDefaults.standard.setValue(DummyData.shared.getUserProfile()[0].id, forKey: "loggedUser")
+//        UserDefaults.standard.setValue(DummyData.shared.getUserProfile().count, forKey: "loggedUser")
         
         //Biar back button nya cuma muncul gambar backward, tulisan back ilang
 //        let backButton = UIBarButtonItem.appearance()

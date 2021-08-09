@@ -23,6 +23,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var ratingBadge: UIView!
     @IBOutlet weak var profileBio: UILabel!
+    @IBOutlet weak var profileVerified: UIImageView!
     
     // Dummy Data
     var database = DummyData.shared

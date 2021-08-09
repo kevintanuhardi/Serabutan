@@ -28,6 +28,7 @@ extension DetailBantuanVC {
         
         jobPosterAvatar.layer.cornerRadius = jobPosterAvatar.frame.height / 2
         jobPosterAvatar.layer.masksToBounds = true
+        jobPosterVerified.isHidden = !selectedJob.jobPosterId.isVerified
         
         helperAvatar.layer.cornerRadius = jobPosterAvatar.frame.height / 2
         helperAvatar.layer.masksToBounds = true
@@ -148,7 +149,6 @@ extension DetailBantuanVC {
             helperAvatar.isHidden = false
             helperAvatar.isHidden = false
             helperVerified.isHidden = false
-            print(helper)
             helper!.isVerified ? (helperVerified.isHidden = true) : (helperVerified.isHidden = false)
             
         }
