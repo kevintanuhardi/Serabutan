@@ -161,13 +161,15 @@ extension HomeVC: UICollectionViewDataSource , UICollectionViewDelegate, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JobListCell.identifier, for: indexPath) as! JobListCell
         let selectedJob = jobList[indexPath.row]
         
+        DispatchQueue.main.async {
+            cell.headerLabel.text = StringFormatter().distanceFromCoordinate(from: self.currentCoordinate ?? CLLocationCoordinate2D(), to: selectedJob.coordinate)
+        }
+        
         cell.setStatusView(urgency: selectedJob.urgency)
         cell.titleLabel.text = selectedJob.title
         cell.posterImage.image = selectedJob.jobPosterId.avatar
         cell.posterLabel.text = selectedJob.jobPosterId.name
         cell.verifiedLogo.isHidden = !selectedJob.jobPosterId.isVerified
-        
-        cell.headerLabel.text = StringFormatter().distanceFromCoordinate(from: currentCoordinate ?? CLLocationCoordinate2D(), to: selectedJob.coordinate)
 
         cell.compensationLabel.text = StringFormatter().priceFormatting(amount: selectedJob.price)
         cell.timeElapsedLabel.text = StringFormatter().relativeDateFormatter(date: selectedJob.postingDate)

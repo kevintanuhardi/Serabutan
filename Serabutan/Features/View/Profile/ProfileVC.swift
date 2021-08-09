@@ -25,13 +25,15 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var profileBio: UILabel!
     
     // Dummy Data
-    let database = DummyData.shared
+    var database = DummyData.shared
     let loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")
     var user: UserProfile?
     
     override func viewWillAppear(_ animated: Bool) {
         navigationSetup()
         checkLoggedUser()
+        print("Database : ", DummyData.shared.getUserProfile()[0].name)
+        reviewTable.reloadData()
     }
     
     override func viewDidLoad() {

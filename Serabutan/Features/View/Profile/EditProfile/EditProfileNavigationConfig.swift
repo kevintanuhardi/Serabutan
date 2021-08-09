@@ -25,9 +25,34 @@ extension EditProfileVC {
         button.backgroundColor = .ColorLibrary.accentColor
         button.layer.cornerRadius = 5
         button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(saveUpdates), for: .touchUpInside)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(dismissVC))
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+
+    }
+    
+    // MARK: - Segue
+    
+    @IBAction func changeProfilePicture(_ sender: Any) {
+        self.changeProfilePictureAlert()
+    }
+    
+    @objc func saveUpdates() {
+        var database = DummyData.shared.getUserProfile()[0]
+        print("Before : ", user?.name as Any)
+        print("Before : ", database.name)
+        
+        user?.avatar = profileImage.image
+        user?.name = fullName.text!
+        user?.bio = descriptionTextView.text
+        database.avatar = profileImage.image
+        database.name = fullName.text!
+        database.bio = descriptionTextView.text
+        
+        print("After : ", user?.name as Any)
+        print("After : ", database.name)
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Alert
@@ -60,7 +85,7 @@ extension EditProfileVC {
         let delete = UIAlertAction(title: "Hapus Foto Saat Ini",
                                   style: .default,
                                   handler: { action in
-                                    self.user?.avatar = nil
+                                    self.profileImage.image = nil
                                   })
         let camera = UIAlertAction(title: "Ambil Foto",
                                    style: .default,

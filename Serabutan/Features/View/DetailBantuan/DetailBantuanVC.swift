@@ -127,10 +127,10 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
                                       message: "Mohon pastikan bantuan anda telah selesai.",
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Tidak",
-                                      style: .default,
+                                      style: .destructive,
                                       handler: nil))
         alert.addAction(UIAlertAction(title: "Ya",
-                                      style: .cancel,
+                                      style: .default,
                                       handler: { action in
                                         self.selectedJob.status = .done
                                         self.configureHelper()
@@ -141,8 +141,11 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     
     func whatsappAlert() {
         let alert = UIAlertController(title: "Bantu Helpee?",
-                                      message: "Dengan pilih Ya anda akan diarahkan ke Whatsapp.",
+                                      message: "Dengan pilih Ya anda akan diarahkan ke Whatsapp Messenger.",
                                       preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Tidak",
+                                      style: .destructive,
+                                      handler: nil))
         alert.addAction(UIAlertAction(title: "Ya",
                                       style: .default,
                                       handler: { action in
@@ -150,9 +153,6 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
                                         self.configureHelper()
                                         self.sendWhatsApp(template: true)
                                       }))
-        alert.addAction(UIAlertAction(title: "Tidak",
-                                      style: .destructive,
-                                      handler: nil))
         present(alert, animated: true, completion: nil)
     }
     

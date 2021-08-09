@@ -24,6 +24,7 @@ extension ProfileVC {
             // If visited profile is their own, 'Sunting' button will appear
             let rightBarButton = UIBarButtonItem(title: "Sunting", style: .plain, target: self, action: #selector(suntingProfile))
             rightBarButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.FontLibrary.textLink1], for: .normal)
+            rightBarButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.FontLibrary.textLink1], for: .application)
             navigationItem.rightBarButtonItem = rightBarButton
         }
     }

@@ -21,6 +21,8 @@ extension RatingReviewVC {
         reviewTextView.delegate = self
         reviewTextView.text = "Tulis review anda disini"
         reviewTextView.textColor = .ColorLibrary.mediumGrey
+        reviewTextView.textContainerInset = .zero
+        reviewTextView.textContainer.lineFragmentPadding = 0
     }
     
     func setupKirimBtn() {

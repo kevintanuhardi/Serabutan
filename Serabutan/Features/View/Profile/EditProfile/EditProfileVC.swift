@@ -61,30 +61,4 @@ class EditProfileVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
         charCount.text = "\(descriptionTextView.text.count) / 300"
         
     }
-    
-    @IBAction func changeProfilePicture(_ sender: Any) {
-        self.changeProfilePictureAlert()
-    }
-    
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        charCount.text = "\(descriptionTextView.text.count) / 300"
-        
-        return true
-    }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        textView.superview?.animateBorder(true, type: .border)
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        textView.superview?.animateBorder(false, type: .border)
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.superview?.animateBorder(true, type: .border)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.superview?.animateBorder(false, type: .border)
-    }
 }

@@ -32,27 +32,44 @@ extension DetailBantuanVC {
     }
     
     func popUpMenu() -> UIMenu{
-        
-        let laporkan = UIAction(title: "Laporkan", image: UIImage(), attributes: .destructive, handler: { _ in
-            print("Laporkan")
-        })
-        
-        let batalkan = UIAction(title: "Batalkan", image: UIImage(), attributes: .destructive, handler: { _ in
-            print("Batalkan")
-        })
-        
-        let hapusPermintaan = UIAction(title: "Hapus Permintaan Bantuan", image: UIImage(), attributes: .destructive, handler: { _ in
-            print("Hapus Permintaan Bantuan")
-        })
+        var menu = UIMenu()
+        let loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")
+        let currentUser = DummyData.shared.getUserProfile()[loggedUser].id
+        let jobPoster = selectedJob.jobPosterId.id
         
         let gantiHelper = UIAction(title: "Ganti Helper", image: UIImage(), attributes: .destructive, handler: { _ in
             print("Ganti Helper")
         })
-        
-        let addMenuItemsHelper = UIMenu(options: .displayInline, children: [laporkan, batalkan, hapusPermintaan, gantiHelper])
-        
-        return addMenuItemsHelper
-        
+        let hapusPermintaan = UIAction(title: "Hapus Bantuan", image: UIImage(), attributes: .destructive, handler: { _ in
+            print("Hapus Bantuan")
+        })
+        let batalkan = UIAction(title: "Batalkan Lamaran", image: UIImage(), attributes: .destructive, handler: { _ in
+            print("Batalkan Lamaran")
+        })
+        let laporkan = UIAction(title: "Laporkan", image: UIImage(), attributes: .destructive, handler: { _ in
+            print("Laporkan")
+        })
+    
+        switch selectedJob.status {
+        case .taken :
+            if jobPoster == currentUser {
+                menu = UIMenu(options: .displayInline, children: [gantiHelper, hapusPermintaan])
+            } else {
+                menu = UIMenu(options: .displayInline, children: [batalkan, laporkan])
+            }
+        case .active :
+            if jobPoster == currentUser {
+                menu = UIMenu(options: .displayInline, children: [hapusPermintaan])
+            } else {
+                menu = UIMenu(options: .displayInline, children: [laporkan])
+            }
+        case .cancelled :
+            break
+        case .done :
+            break
+        }
+                
+        return menu
     }
 
 }
