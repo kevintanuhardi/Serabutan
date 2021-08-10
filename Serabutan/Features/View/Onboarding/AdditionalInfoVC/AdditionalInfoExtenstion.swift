@@ -26,7 +26,7 @@ extension AdditionalInfoVC {
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         textField.superview?.animateBorder(false, type: .border)
-        let currDesc = descTV.text! ?? ""
+        let currDesc = descTV.text!
         onboardingDescription = currDesc
     }
     

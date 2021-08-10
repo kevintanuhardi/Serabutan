@@ -29,24 +29,12 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         descTV.textContainer.lineFragmentPadding = 0
     }
     
-    @IBAction func finishOnboardingDesc(_ sender: Any){
-        if onboardingDescription == "" {
-            doneButton.isUserInteractionEnabled = false
-        } else {
-            doneButton.isUserInteractionEnabled = true
-            doneButton.tintColor = UIColor.ColorLibrary.accentColor
-            applyDummyValue(bio: true)
-            let homeVC = TabBarController()
-            homeVC.modalPresentationStyle = .overFullScreen
-            self.navigationController?.present(homeVC, animated: true)
-        }
+    @IBAction func testFunction(_ sender: Any) {
+        applyDummyValue(bio: true)
     }
     
-    @IBAction func finishOnboardingWithoutDesc(_ sender: Any){
+    @objc func finishOnboardingWithoutDesc(_ sender: Any){
         applyDummyValue(bio: false)
-        let homeVC = TabBarController()
-        homeVC.modalPresentationStyle = .overFullScreen
-        self.navigationController?.present(homeVC, animated: true)
     }
     
     func applyDummyValue(bio: Bool){
@@ -71,6 +59,12 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         
         DummyData.shared.addProfile(user: user)
         UserDefaults.standard.set(user.id, forKey: "loggedUser")
+        
+        // Segue
+        let homeVC = TabBarController()
+        homeVC.modalPresentationStyle = .overFullScreen
+        self.navigationController?.present(homeVC, animated: true)
+        
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -82,4 +76,5 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         }
         return true
     }
+    
 }

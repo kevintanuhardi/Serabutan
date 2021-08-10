@@ -22,8 +22,11 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     private func setupVCs() {
         
-        let loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")
+        var loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")
         let profileVC = ProfileVC()
+        
+        (loggedUser > DummyData.shared.getUserProfile().count) ? (loggedUser -= 1) : (loggedUser += 0)
+        
         profileVC.user = DummyData.shared.getUserProfile()[loggedUser]
         
         viewControllers = [
