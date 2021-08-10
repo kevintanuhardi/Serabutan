@@ -23,5 +23,4 @@ class MulaiVC: UIViewController {
         self.navigationController?.pushViewController(formulirProfilVC, animated: true)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
     }
-
 }

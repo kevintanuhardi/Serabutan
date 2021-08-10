@@ -76,5 +76,4 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         }
         return true
     }
-    
 }
