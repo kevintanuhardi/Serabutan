@@ -9,5 +9,6 @@ target 'Serabutan' do
   pod 'SDWebImage'
   pod 'SwiftyJSON', '4.0'
   pod 'DropDown'
+  pod 'TagListView', '1.4.1'
 
 end

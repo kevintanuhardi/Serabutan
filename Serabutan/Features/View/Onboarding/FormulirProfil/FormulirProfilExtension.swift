@@ -62,7 +62,6 @@ extension FormulirProfilVC: UIPickerViewDataSource {
             } else {
                 newGender = Gender.other
             }
-            print("SELECTED GENDER: ", newGender)
         }
         
     }

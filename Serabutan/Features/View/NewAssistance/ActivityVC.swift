@@ -20,11 +20,8 @@ class ActivityVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        navigationController?.navigationBar.isHidden = true
-        // Do any additional setup after loading the view.
     }
-
-
+    
     private func setup(){
         addChild(historyVC)
         addChild(ongoingVC)
@@ -37,7 +34,6 @@ class ActivityVC: UIViewController {
         historyVC.view.frame = self.activityBodyView.bounds
         ongoingVC.view.frame = self.activityBodyView.bounds
     }
-    
     
     @IBAction func didChangeSegment(_ sender: UISegmentedControl){
         ongoingVC.view.isHidden = true

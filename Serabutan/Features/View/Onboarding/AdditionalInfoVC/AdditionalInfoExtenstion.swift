@@ -26,7 +26,7 @@ extension AdditionalInfoVC {
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         textField.superview?.animateBorder(false, type: .border)
-        let currDesc = descTV.text! ?? ""
+        let currDesc = descTV.text!
         onboardingDescription = currDesc
     }
     
@@ -47,17 +47,10 @@ extension AdditionalInfoVC {
     }
     
     func initSkipButton(){
-        let button = UIButton(type: .system)
-        button.frame = CGRect(x: 0, y: 0, width: 65, height: 30)
-        button.setTitle("Simpan", for: .normal)
-        button.setTitle("Simpan", for: .application)
-        button.titleLabel?.font = .FontLibrary.textLink1
-        button.setTitleColor(UIColor.ColorLibrary.accentColor, for: .normal)
-        button.setTitleColor(UIColor.ColorLibrary.accentColor, for: .application)
-        button.backgroundColor = .white
-        button.layer.cornerRadius = 5
-        button.layer.masksToBounds = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Simpan", style: .plain, target: self, action: #selector(finishOnboardingWithoutDesc))
+        let rightBarButton = UIBarButtonItem(title: "Lewati", style: .plain, target: self, action: #selector(finishOnboardingWithoutDesc))
+        navigationItem.rightBarButtonItem = rightBarButton
+        rightBarButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.FontLibrary.textLink1], for: .normal)
+        rightBarButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.FontLibrary.textLink1], for: .application)
     }
     
 }

@@ -16,6 +16,7 @@
                 <outlet property="profileInfoView" destination="7D0-0G-LzV" id="VEd-pp-uWP"/>
                 <outlet property="profileJoinDate" destination="AdT-Do-RB8" id="2dk-wf-7ZJ"/>
                 <outlet property="profileName" destination="Hz7-am-gCu" id="lKt-aB-TGl"/>
+                <outlet property="profileVerified" destination="t0b-UK-cST" id="gsp-NA-oBH"/>
                 <outlet property="ratingAggregate" destination="HoU-dg-M5O" id="JWG-qy-4IQ"/>
                 <outlet property="ratingBadge" destination="uKS-Eq-5EQ" id="Ema-lU-YD1"/>
                 <outlet property="ratingTotal" destination="ha2-bW-F2N" id="QIY-AG-Ohc"/>

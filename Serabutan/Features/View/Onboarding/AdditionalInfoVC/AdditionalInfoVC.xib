@@ -65,7 +65,7 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="finishOnboardingDescWithSender:" destination="-1" eventType="touchUpInside" id="r5Q-XP-po4"/>
+                        <action selector="testFunction:" destination="-1" eventType="touchUpInside" id="ghw-VO-veE"/>
                     </connections>
                 </button>
             </subviews>

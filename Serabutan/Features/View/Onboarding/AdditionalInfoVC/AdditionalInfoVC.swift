@@ -25,43 +25,48 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         descTV.delegate = self
         setNavigation()
         doneButton.backgroundColor = UIColor.ColorLibrary.mediumGrey
+        descTV.textContainerInset = .zero
+        descTV.textContainer.lineFragmentPadding = 0
     }
     
-    @IBAction func finishOnboardingDesc(sender: UIButton){
-        if onboardingDescription == "" {
-            doneButton.isUserInteractionEnabled = false
-        } else {
-            doneButton.isUserInteractionEnabled = true
-            doneButton.tintColor = UIColor.ColorLibrary.accentColor
-            //            applyDummyValue()
-            let homeVC = HomeVC()
-            self.navigationController?.pushViewController(homeVC, animated: true)
+    @IBAction func testFunction(_ sender: Any) {
+        applyDummyValue(bio: true)
+    }
+    
+    @objc func finishOnboardingWithoutDesc(_ sender: Any){
+        applyDummyValue(bio: false)
+    }
+    
+    func applyDummyValue(bio: Bool){
+        let id = DummyData.shared.getUserProfile().count
+        let statistics = ProfileStatistic(reviewAggregate: 0, totalReview: 0, dibantu: 0, membantu: 0)
+        
+        let user = UserProfile(id: id, name: "", dob: Date(), gender: .other, avatar: UIImage(named: "Avatar")!, bio: "", joinDate: Date(), isVerified: false, statistics: statistics)
+        
+        guard let name = onboardingName else { return }
+        user.name = name
+        
+        guard let dob = onboardingDOB else { return }
+        user.dob = dob
+        
+        guard let gender = onboardingGender else { return }
+        user.gender = gender
+        
+        if bio {
+            guard let bio = onboardingDescription else { return }
+            user.bio = bio
         }
+        
+        DummyData.shared.addProfile(user: user)
+        UserDefaults.standard.set(user.id, forKey: "loggedUser")
+        
+        // Segue
+        let homeVC = TabBarController()
+        homeVC.modalPresentationStyle = .overFullScreen
+        self.navigationController?.present(homeVC, animated: true)
+        
     }
     
-    @IBAction func finishOnboardingWithoutDesc(_ sender: Any){
-        //        applyDummyValue()
-        let homeVC = HomeVC()
-        self.navigationController?.pushViewController(homeVC, animated: true)
-    }
-    
-    //    func applyDummyValue(){
-    //        var data  = dummy[0]
-    //
-    //        guard let name = onboardingName else { return }
-    //        data.name = name
-    //
-    //        guard let dob = onboardingDOB else { return }
-    //        data.dob = dob
-    //
-    //        guard let gender = onboardingGender else { return }
-    //        data.gender = gender
-    //
-    //        guard let bio = onboardingDescription else { return }
-    //        data.bio = bio
-    //    }
-    
-
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {
             textView.resignFirstResponder()
