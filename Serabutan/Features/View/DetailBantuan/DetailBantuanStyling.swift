@@ -40,6 +40,9 @@ extension DetailBantuanVC {
         floatingBottom.dropShadow(scale: true)
         separatorHeight.constant = 0.5
         
+        jobImgCarousel.isHidden = (selectedJob.medias?.isEmpty ?? false)
+        tagView.isHidden = (selectedJob.tags?.isEmpty ?? false)
+        
     }
     
     func setFont() {
