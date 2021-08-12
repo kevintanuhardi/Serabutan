@@ -39,6 +39,7 @@ extension DetailBantuanVC {
         
         floatingBottom.dropShadow(scale: true)
         separatorHeight.constant = 0.5
+        
     }
     
     func setFont() {

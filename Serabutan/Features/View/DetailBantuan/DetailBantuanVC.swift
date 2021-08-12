@@ -25,6 +25,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     @IBOutlet weak var jobTitleLabel: UILabel!
     @IBOutlet weak var salaryLabel: UILabel!
     
+    @IBOutlet weak var posterStackView: UIStackView!
     @IBOutlet weak var jobPosterAvatar: UIImageView!
     @IBOutlet weak var jobPosterName: UIButton!
     @IBOutlet weak var jobPosterVerified: UIImageView!
