@@ -13,7 +13,7 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
     @IBOutlet weak var assistanceTable: UITableView!
     
     let searchBar  = UISearchController()
-    var sortBy: AssistanceSortByFilter?
+    var sortBy: AssistanceSortByFilter? = .nearest
     var minValue: Int?
     var maxValue: Int?
     
@@ -22,17 +22,14 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
     var filteredJob = [Jobs]()
     var sortedJob = [Jobs]()
     
+    var user = UserDefaults.standard.integer(forKey: "loggedUser")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        assistanceTable.delegate = self
-        assistanceTable.dataSource = self
-        assistanceTable.register(AssistanceTableViewCell.nib(), forCellReuseIdentifier: AssistanceTableViewCell.identifier)
-        
+        registerTable()
         filteredJob = jobList
         sortedJob = jobList
         
-        applySortData()
-        assistanceTable.reloadData()
         UIApplication
             .shared
             .sendAction(#selector(UIApplication.resignFirstResponder),
@@ -42,21 +39,47 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         assistanceTable.reloadData()
-        loadAssistanceData()
         setupView()
-    }
-    
-    private func loadAssistanceData(){
-        //GET DATA FROM NETWORK
+        initListData()
+        //filterCompensation(minCompensation: minValue!, maxCompensation: maxValue!)
     }
     
     @objc func filterButtonAction(_ sender:UIButton!){
-        let myViewController = FilterPopUpVC(nibName: "FilterPopUpVC", bundle: nil)
-        self.present(myViewController, animated: true, completion: nil)
+        let destination = FilterPopUpVC(nibName: "FilterPopUpVC", bundle: nil)
+        print("Destination Sort BY: ", destination.sortBy as Any)
+        self.present(destination, animated: true, completion: nil)
     }
     
     @objc func backButtonAction(_ sender:UIButton!){
         navigateToHome()
+    }
+    
+}
+
+extension AssistanceListVC {
+    
+    func registerTable() {
+        assistanceTable.delegate = self
+        assistanceTable.dataSource = self
+        assistanceTable.register(AssistanceTableViewCell.nib(), forCellReuseIdentifier: AssistanceTableViewCell.identifier)
+    }
+    
+    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.searchTextField.animateBorder(true, type: .border)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.searchTextField.animateBorder(false, type: .border)
+    }
+    
+    func navigateToHome() {
+        let homeVC = HomeVC()
+        self.navigationController?.pushViewController(homeVC, animated: true)
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -66,7 +89,7 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     func filterForSearchText(searchText: String){
-        filteredJob = jobList.filter { assistance in
+        filteredJob = sortedJob.filter { assistance in
             if(searchBar.searchBar.text != ""){
                 let searchTextMatch = assistance.title?.lowercased().contains(searchText.lowercased())
                 return searchTextMatch!
@@ -77,25 +100,51 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
         assistanceTable.reloadData()
     }
     
-    func applySortData(){
-        let sorting  = sortBy
+    func initListData(){
+        guard let sort = sortBy else { return }
+        print("SORT will be applied: ", sort)
         
-        if sorting == .newest {
-            sortedJob = jobList.sorted() { $0.distance < $1.distance }
-            print("SORTED BY: Newest is used")
-        } else if sorting == .highestCompensation {
-            sortedJob = jobList.sorted() { $0.price > $1.price }
-            print("SORTED BY: Highest is used")
-        } else if sorting == .lowestCompensation {
-            sortedJob = jobList.sorted() { $0.price < $1.price }
-            print("SORTED BY: Lowest is used")
-        } else {
-            sortedJob = jobList.sorted() { $0.distance < $1.distance }
-            print("SORTED BY: Nearest is used")
+        if sort == .nearest {
+            sortedJob = jobList.sorted { (lhs, rhs) -> Bool in
+                return (lhs.distance) < (rhs.distance)
+            }
+        } else if sort == .newest {
+            sortedJob = jobList.sorted { (lhs, rhs) -> Bool in
+                return (lhs.postingDate) < (rhs.postingDate)
+            }
+        } else if sort == .highestCompensation {
+            sortedJob = jobList.sorted { (lhs, rhs) -> Bool in
+                return (lhs.price) > (rhs.price)
+            }
+        } else if sort == .lowestCompensation {
+            sortedJob = jobList.sorted { (lhs, rhs) -> Bool in
+                return (lhs.distance) < (rhs.distance)
+            }
         }
+        print("Before Applied: ", jobList)
+        print("SORT Applied: ", sortedJob)
+        
         DispatchQueue.main.async {
             self.assistanceTable?.reloadData()
         }
-        print("SORTED DATA", sortedJob)
+    }
+    
+    func filterCompensation(minCompensation: Int, maxCompensation: Int){
+        sortedJob = sortedJob.filter { assistance in
+            if(minCompensation == .zero) {
+                let result = assistance.price >= minCompensation
+                return result
+            } else if(maxCompensation == .zero) {
+                let result = assistance.price <= maxCompensation
+                return result
+            } else if(minCompensation != .zero && maxCompensation != .zero) {
+                let result = assistance.price >= minCompensation && assistance.price <= maxCompensation
+                return result
+            } else {
+                return true
+            }
+        }
+        print("PRICE RANGE: ", sortedJob)
+        assistanceTable?.reloadData()
     }
 }

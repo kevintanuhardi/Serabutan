@@ -8,11 +8,9 @@
 import UIKit
 import Foundation
 
-
 protocol FilterPopUpVCDelegate {
     func viewControllerDidUpdate(_ controller: AssistanceListVC)
 }
-
 
 class FilterPopUpVC: UIViewController, UITextFieldDelegate {
     
@@ -33,9 +31,13 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
     //public weak var delagate: AssistanceListVCDelegate?
     
     //Filter Vars
-    var sortBy: AssistanceSortByFilter?
-    var minValue: Int? = 50000
-    var maxValue: Int? = 500000
+    var sortBy : AssistanceSortByFilter?
+    var minValue : Int? = 50000
+    var maxValue : Int? = 500000
+    
+    var currSort : AssistanceListVC?
+    var currMinValue : Int?
+    var currMaxValue : Int?
     
     let tintColor = UIColor.ColorLibrary.accentBackground
     let blackColor = UIColor.ColorLibrary.customBlack
@@ -58,6 +60,13 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+//    func setPersistanceSelection(){
+//        currSort = sortBy
+//        currMinValue = minValue
+//        currMaxValue = maxValue
+//
+//    }
+    
     func priceFormatting(amount: Int) -> String{
         let currencyFormatter = NumberFormatter()
         currencyFormatter.numberStyle = .currency
@@ -67,8 +76,6 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
         
         return currencyFormatter.string(from: NSNumber(value: amount))!
     }
-    
-   
     
     func getSortByFilter() -> AssistanceSortByFilter{
         for (index, button) in sortByCollectionButton.enumerated() {
@@ -83,9 +90,10 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
         sortBySelected(closestButton)
         sortBy = AssistanceSortByFilter.nearest
 
-        minValue = 0
+        minValue = 50000
         minValTF.placeholder = "Rp " + priceFormatting(amount: minValue!)
         minValTF.text = ""
+        
         maxValue = 500000
         maxValTF.text = ""
         maxValTF.placeholder = "Rp " + priceFormatting(amount: maxValue!)
@@ -125,7 +133,8 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
         listBantuanVC.sortBy = filterBy
         listBantuanVC.minValue = minValue
         listBantuanVC.maxValue = maxValue
-        listBantuanVC.applySortData()
+        listBantuanVC.initListData()
+        listBantuanVC.filterCompensation(minCompensation: minValue!, maxCompensation: maxValue!)
         self.navigationController?.pushViewController(listBantuanVC, animated: true)
         dismiss(animated: true, completion: nil)
     }
