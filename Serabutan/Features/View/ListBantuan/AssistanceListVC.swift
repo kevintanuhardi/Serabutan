@@ -40,8 +40,7 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
         super.viewWillAppear(animated)
         assistanceTable.reloadData()
         setupView()
-        initListData()
-        //filterCompensation(minCompensation: minValue!, maxCompensation: maxValue!)
+        setSortData()
     }
     
     @objc func filterButtonAction(_ sender:UIButton!){
@@ -69,6 +68,7 @@ extension AssistanceListVC {
         return true
     }
     
+    //MARK: - Search Function
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.searchTextField.animateBorder(true, type: .border)
     }
@@ -81,6 +81,7 @@ extension AssistanceListVC {
         let homeVC = HomeVC()
         self.navigationController?.pushViewController(homeVC, animated: true)
     }
+    
     
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
@@ -100,7 +101,8 @@ extension AssistanceListVC {
         assistanceTable.reloadData()
     }
     
-    func initListData(){
+    //MARK: - Sorting and Filtering from Pop UP
+    func setSortData(){
         guard let sort = sortBy else { return }
         print("SORT will be applied: ", sort)
         
@@ -129,7 +131,7 @@ extension AssistanceListVC {
         }
     }
     
-    func filterCompensation(minCompensation: Int, maxCompensation: Int){
+    func setPriceRange(minCompensation: Int, maxCompensation: Int){
         sortedJob = sortedJob.filter { assistance in
             if(minCompensation == .zero) {
                 let result = assistance.price >= minCompensation
@@ -145,6 +147,9 @@ extension AssistanceListVC {
             }
         }
         print("PRICE RANGE: ", sortedJob)
-        assistanceTable?.reloadData()
+        
+        DispatchQueue.main.async {
+            self.assistanceTable?.reloadData()
+        }
     }
 }

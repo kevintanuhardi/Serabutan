@@ -103,27 +103,27 @@ extension FilterPopUpVC{
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        let currMinValue1 = minValTF.text?.replacingOccurrences(of: "Rp ", with: "")
-        let currMinValue = currMinValue1!.replacingOccurrences(of: ".", with: "")
-        let currMaxValue1 = maxValTF.text?.replacingOccurrences(of: "Rp ", with: "")
-        let currMaxValue = currMaxValue1!.replacingOccurrences(of: ".", with: "")
+        guard let currMinValue1 = minValTF.text?.replacingOccurrences(of: "Rp ", with: "") else { return }
+        let currMinValue = currMinValue1.replacingOccurrences(of: ".", with: "")
+        guard let currMaxValue1 = maxValTF.text?.replacingOccurrences(of: "Rp ", with: "") else { return }
+        let currMaxValue = currMaxValue1.replacingOccurrences(of: ".", with: "")
         print("Curr MIN is:" + currMinValue)
         print("Curr MAX is:" + currMaxValue)
         
         if (minValTF .isEditing) {
-            let viewMinVal = Int(currMinValue)
-            minValTF.text = "Rp " + priceFormatting(amount: viewMinVal!)
+            guard let viewMinVal = Int(currMinValue) else { return }
+            minValTF.text = "Rp " + priceFormatting(amount: viewMinVal)
         } else if maxValTF .isEditing{
-            let viewMaxVal = Int(currMaxValue)
-            maxValTF.text = "Rp " + priceFormatting(amount: viewMaxVal!)
+            guard let viewMaxVal = Int(currMaxValue) else { return }
+            maxValTF.text = "Rp " + priceFormatting(amount: viewMaxVal)
         }
         
         if (minValTF .endEditing(true)) {
-            let viewMinVal = Int(currMinValue) ?? minValue
-            minValTF.text = "Rp " + priceFormatting(amount: viewMinVal!)
+            guard let viewMinVal = Int(currMinValue) ?? minValue else { return }
+            minValTF.text = "Rp " + priceFormatting(amount: viewMinVal)
         } else if maxValTF .endEditing(true){
-            let viewMaxVal = Int(currMaxValue) ?? maxValue
-            maxValTF.text = "Rp " + priceFormatting(amount: viewMaxVal!)
+            guard let viewMaxVal = Int(currMaxValue) ?? maxValue else { return }
+            maxValTF.text = "Rp " + priceFormatting(amount: viewMaxVal)
         }
         
         for view in textField.subviews {
