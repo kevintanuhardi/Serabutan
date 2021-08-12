@@ -31,6 +31,21 @@ extension DetailBantuanVC {
         navigationItem.rightBarButtonItems = [moreButton, shareButton]
     }
     
+    // MARK: - Navigation Bar Menu (Share & More)
+    
+    @objc func shareButtonAction(_ sender:UIButton!){
+        let items: [Any] = [selectedJob.title!, URL(string: "https://www.bantuinapp.com/qwerty") as Any]
+        let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        
+        activityController.completionWithItemsHandler = { (nil, completed, _, error) in
+            if completed{
+            } else {
+            }
+        }
+        present(activityController, animated: true){
+        }
+    }
+    
     func popUpMenu() -> UIMenu{
         var menu = UIMenu()
         let loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")

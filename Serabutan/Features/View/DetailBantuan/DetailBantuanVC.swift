@@ -7,6 +7,7 @@
 
 import UIKit
 import TagListView
+import NotificationBannerSwift
 
 class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -45,34 +46,10 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     @IBOutlet weak var tagHeight: NSLayoutConstraint!
     @IBOutlet weak var separatorHeight: NSLayoutConstraint!
     
-    @objc func backButtonAction(_ sender:UIButton!){
-        navigateToListBantuan()
-    }
-    
-    @objc func moreButtonAction(_ sender:UIButton!){
-        
-    }
-    
     func setTagList() {
         tagView.textFont = .FontLibrary.body
         if selectedJob.tags != nil {
             tagView.addTags(selectedJob.tags!)
-        }
-    }
-    
-    @objc func shareButtonAction(_ sender:UIButton!){
-        let items: [Any] = [selectedJob.title!, URL(string: "https://www.bantuinapp.com/qwerty") as Any]
-        let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        
-        activityController.completionWithItemsHandler = { (nil, completed, _, error) in
-            if completed{
-                
-            } else {
-                
-            }
-        }
-        
-        present(activityController, animated: true){
         }
     }
     
@@ -124,40 +101,6 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
         
     }
     
-    func finishedAlert() {
-        let alert = UIAlertController(title: "Bantuan Telah Selesai?",
-                                      message: "Mohon pastikan bantuan anda telah selesai.",
-                                      preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Tidak",
-                                      style: .destructive,
-                                      handler: nil))
-        alert.addAction(UIAlertAction(title: "Ya",
-                                      style: .default,
-                                      handler: { action in
-                                        self.selectedJob.status = .done
-                                        self.configureHelper()
-                                        self.rateProfile()
-                                      }))
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func whatsappAlert() {
-        let alert = UIAlertController(title: "Bantu Helpee?",
-                                      message: "Dengan pilih Ya anda akan diarahkan ke Whatsapp Messenger.",
-                                      preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Tidak",
-                                      style: .destructive,
-                                      handler: nil))
-        alert.addAction(UIAlertAction(title: "Ya",
-                                      style: .default,
-                                      handler: { action in
-                                        self.selectedJob.status = .taken
-                                        self.configureHelper()
-                                        self.sendWhatsApp(template: true)
-                                      }))
-        present(alert, animated: true, completion: nil)
-    }
-    
     func rateProfile() {
         let rateProfile = RatingReviewVC()
         rateProfile.reviewee = selectedJob.jobPosterId
@@ -168,10 +111,6 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     
     private func navigateToListBantuan(){
         self.navigationController?.popToRootViewController(animated: true)
-    }
-    
-    func posterAtauPekerja(){
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
