@@ -19,7 +19,11 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        onboardingName = "Yahya Ayyash"
+        onboardingDOB = Date()
+        onboardingGender = .male
+        
         descTV.delegate = self
         setNavigation()
         doneButton.backgroundColor = UIColor.ColorLibrary.mediumGrey
@@ -64,5 +68,6 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         homeVC.modalPresentationStyle = .overFullScreen
         self.navigationController?.present(homeVC, animated: true)
         
+        print("Segue")
     }
 }

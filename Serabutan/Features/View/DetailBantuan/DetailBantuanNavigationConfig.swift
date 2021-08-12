@@ -50,7 +50,7 @@ extension DetailBantuanVC {
         var menu = UIMenu()
         let loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")
         let currentUser = DummyData.shared.getUserProfile()[loggedUser].id
-        let jobPoster = selectedJob.jobPosterId.id
+        let jobPoster = selectedJob.jobPosterId.id        
         
         let gantiHelper = UIAction(title: "Ganti Helper", image: UIImage(), attributes: .destructive, handler: { _ in
             print("Ganti Helper")
@@ -83,8 +83,6 @@ extension DetailBantuanVC {
         case .done :
             break
         }
-                
         return menu
     }
-
 }

@@ -10,7 +10,7 @@ import UIKit
 
 extension DetailBantuanVC {
     // Shown when user tap on 'Finish' button
-    private func finishedAlert() {
+    func finishedAlert() {
         let alert = UIAlertController(title: "Bantuan Telah Selesai?",
                                       message: "Mohon pastikan bantuan anda telah selesai.",
                                       preferredStyle: .alert)
@@ -28,7 +28,7 @@ extension DetailBantuanVC {
     }
     
     // Shown when user applying for the job
-    private func whatsappAlert() {
+    func whatsappAlert() {
         let alert = UIAlertController(title: "Bantu Helpee?",
                                       message: "Dengan pilih Ya anda akan diarahkan ke Whatsapp Messenger.",
                                       preferredStyle: .alert)

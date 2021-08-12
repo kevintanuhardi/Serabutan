@@ -13,6 +13,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     
     //    var selectedJob: Jobs?
     var selectedJob = DummyData.shared.getJobsList()[2]
+    let currentUser = UserDefaults.standard.value(forKey: "loggedUser") as! Int
     
     @IBOutlet weak var helpFinishButton: UIButton!
     @IBOutlet weak var chatButton: UIButton!
@@ -46,13 +47,6 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     @IBOutlet weak var tagHeight: NSLayoutConstraint!
     @IBOutlet weak var separatorHeight: NSLayoutConstraint!
     
-    func setTagList() {
-        tagView.textFont = .FontLibrary.body
-        if selectedJob.tags != nil {
-            tagView.addTags(selectedJob.tags!)
-        }
-    }
-    
     @IBAction func helpFinishButton(_ sender: Any) {
         switch selectedJob.status {
         case .active :
@@ -74,43 +68,11 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
         } else {
             userProfile.user = self.selectedJob.helperId
         }
-        
         self.navigationController?.pushViewController(userProfile, animated: true)
     }
     
     @IBAction func whatsappButton(_ sender: Any) {
         sendWhatsApp(template: false)
-    }
-    
-    func sendWhatsApp(template: Bool) {
-        let loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")
-        var message: String?
-        let phoneNumber: Int = 6281910077402
-        
-        if template {
-            message = """
-            Halo Pak/Bu \(selectedJob.jobPosterId.name),
-            saya \(DummyData.shared.getUserProfile()[loggedUser].name) dari BantuinApp bersedia membantu Bapak/Ibu untuk \(selectedJob.title ?? "Untitled Bantuan").
-            Bagaimana saya bisa membantu? 🙂
-            """
-            message = message?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        }
-        
-        let whatsappURL = URL(string: "https://api.whatsapp.com/send?phone=+\(phoneNumber)&text=\(message ?? "")")
-        UIApplication.shared.open(whatsappURL!)
-        
-    }
-    
-    func rateProfile() {
-        let rateProfile = RatingReviewVC()
-        rateProfile.reviewee = selectedJob.jobPosterId
-        rateProfile.reviewer = selectedJob.helperId!
-        rateProfile.selectedJob = self.selectedJob
-        self.navigationController?.pushViewController(rateProfile, animated: true)
-    }
-    
-    private func navigateToListBantuan(){
-        self.navigationController?.popToRootViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -129,30 +91,28 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
         jobImgCarousel.dataSource = self
         
         setTagList()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+            self.triggerHelper()
+        })
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
     
-}
-
-extension DetailBantuanVC {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return selectedJob.medias?.count ?? 0
+    func triggerHelper() {
+        // Auto assign helper
+        guard (selectedJob.status == .active) && (selectedJob.jobPosterId.id == currentUser) else { return }
+        
+        let helperIndex = Int.random(in: 0..<DummyData.shared.getUserProfile().count)
+        selectedJob.status = .taken
+        selectedJob.helperId = DummyData.shared.getUserProfile()[helperIndex]
+        configureHelper()
+        
+        // Show floating notification
+        FloatingNotification.shared.showNotification(title: "Ini Adalah Test Notification",
+                                                     subtitle: "Ini adalah penjelasan dari notificationnya yang cukup panjang ...",
+                                                     image: UIImage(named: "avatar-0") ?? UIImage())
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = jobImgCarousel.dequeueReusableCell(withReuseIdentifier: ImageCarouselCVC.identifier, for: indexPath) as! ImageCarouselCVC
-        cell.imageView.image = selectedJob.medias?[indexPath.row]
-        return cell
-        
-    }
-}
-
-extension DetailBantuanVC {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-        collectionView.deselectItem(at: indexPath, animated: true)
-    }
 }

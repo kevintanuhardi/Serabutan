@@ -132,7 +132,6 @@ extension DetailBantuanVC {
     
     func checkUser() {
         var helper : UserProfile?
-        let currentUser = UserDefaults.standard.value(forKey: "loggedUser") as! Int
         
         if selectedJob.helperId == nil || selectedJob.helperId?.id == currentUser {
             // If the job is taken by current user or is currently nil
@@ -149,7 +148,7 @@ extension DetailBantuanVC {
             helperAvatar.isHidden = false
             helperAvatar.isHidden = false
             helperVerified.isHidden = false
-            helper!.isVerified ? (helperVerified.isHidden = true) : (helperVerified.isHidden = false)
+            (helper?.isVerified ?? false) ? (helperVerified.isHidden = true) : (helperVerified.isHidden = false)
             
         }
     }
