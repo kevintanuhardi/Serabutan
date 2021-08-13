@@ -55,6 +55,23 @@ struct StringFormatter {
         return formatter.string(from: date)
     }
     
+    // A function to shorten user full name
+    func shortenedName(fullName: String) -> String {
+        let separatedName = fullName.components(separatedBy: " ")
+        
+        if (separatedName.count > 1) && (separatedName[0].count + separatedName[1].count > 15) {
+            // Return shortened name if the full name is more than 15 char
+            // Uvuvwevwevwe Onyetenvewve Ugwemubwem Ossas -> Uvuvwevwevwe O.
+            return separatedName[0] + " " + separatedName[1].prefix(1) + "."
+        } else if (separatedName.count > 1) && (separatedName[0].count + separatedName[1].count <= 15) {
+            // Return shortened name if the full name is more than 15 char
+            // Yahya Ayyash -> Yahya Ayyash
+            return separatedName[0] + " " + separatedName[1]
+        } else {
+            return fullName
+        }
+    }
+    
     func styleCombiner(firstWord: String, secondWord: String, style: textStyle) -> NSAttributedString {
         
         var firstFont: UIFont

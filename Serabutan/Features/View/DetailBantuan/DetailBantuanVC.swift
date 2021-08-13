@@ -13,7 +13,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     
     //    var selectedJob: Jobs?
     var selectedJob = DummyData.shared.getJobsList()[2]
-    let currentUser = UserDefaults.standard.value(forKey: "loggedUser") as! Int
+    let currentUser = UserDefaults.standard.integer(forKey: "loggedUser")
     
     @IBOutlet weak var helpFinishButton: UIButton!
     @IBOutlet weak var chatButton: UIButton!
@@ -93,6 +93,8 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
         
         setTagList()
         DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+            // Make sure that the job is still taken
+            guard self.selectedJob.status == .taken else { return }
             self.triggerHelper()
         })
     }
@@ -111,9 +113,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
         configureHelper()
         
         // Show floating notification
-        FloatingNotification.shared.showNotification(title: "Ini Adalah Test Notification",
-                                                     subtitle: "Ini adalah penjelasan dari notificationnya yang cukup panjang ...",
-                                                     image: UIImage(named: "avatar-0") ?? UIImage())
+        FloatingNotification.shared.showNotification(type: .helpeeAssigned, job: selectedJob)
     }
     
 }

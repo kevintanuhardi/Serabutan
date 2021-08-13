@@ -13,6 +13,10 @@ enum JobStatus {
     case active, taken, cancelled, done
 }
 
+enum JobAction {
+    case message, change, cancel, finished
+}
+
 enum Gender: String {
     case male = "Laki-laki"
     case female = "Perempuan"

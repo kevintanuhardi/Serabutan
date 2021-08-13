@@ -108,6 +108,7 @@ extension DetailBantuanVC {
     func configureHelper() {
         
         checkUser()
+        floatingBottom.isHidden = false
         
         switch selectedJob.status {
         case .taken :
@@ -123,6 +124,8 @@ extension DetailBantuanVC {
             chatButton.isHidden = true
             helperVerified.isHidden = true
             
+            floatingBottom.isHidden = (selectedJob.jobPosterId.id == currentUser)
+            
             helpFinishButton.setTitle("Saya Bersedia Membantu", for: .normal)
             helpStatusLabel.text = "Belum ada yang bersedia membantu."
         case .cancelled:
@@ -135,25 +138,19 @@ extension DetailBantuanVC {
     }
     
     func checkUser() {
-        var helper : UserProfile?
-        
         if selectedJob.helperId == nil || selectedJob.helperId?.id == currentUser {
             // If the job is taken by current user or is currently nil
             selectedJob.helperId = DummyData.shared.getUserProfile()[currentUser]
-            helper = selectedJob.helperId
             helperAvatar.isHidden = true
             helperVerified.isHidden = true
             helperName.setTitle("Anda", for: .normal)
-            
         } else {
             // If the job was taken by other user
-            helperAvatar.image = helper?.avatar
-            helperName.setTitle(helper?.name, for: .normal)
+            helperAvatar.image = selectedJob.helperId?.avatar
+            helperName.setTitle(selectedJob.helperId?.name, for: .normal)
             helperAvatar.isHidden = false
             helperAvatar.isHidden = false
-            helperVerified.isHidden = false
-            (helper?.isVerified ?? false) ? (helperVerified.isHidden = true) : (helperVerified.isHidden = false)
-            
+            helperVerified.isHidden = !(selectedJob.helperId?.isVerified ?? false)
         }
     }
     
