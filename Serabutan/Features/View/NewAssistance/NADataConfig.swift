@@ -19,9 +19,11 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
     @IBAction func shareButtonAction(_sender: Any){
         initOtherData()
         initCreateNewJob()
+		let latestDummyData = DummyData.shared.getJobsList()
+		print(latestDummyData.last?.price)
         self.dismiss(animated: true, completion: {
-            //self.navigationController?.popToRootViewController(animated: true)
-            self.presentingViewController?.navigationController?.present(DetailBantuanVC(), animated: true, completion: nil)
+			guard let lastJob = latestDummyData.last else {return}
+			self.delegate?.navigateToDetailProduct(job: lastJob)
         })
     }
     

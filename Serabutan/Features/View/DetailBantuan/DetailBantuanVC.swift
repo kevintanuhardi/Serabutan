@@ -12,7 +12,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     
     static let identifier = "DetailBantuanVC"
     
-    //    var selectedJob: Jobs?
+//        var selectedJob: Jobs?
     var selectedJob = DummyData.shared.getJobsList()[2]
     
     @IBOutlet weak var helpFinishButton: UIButton!
