@@ -106,7 +106,7 @@ extension DetailBantuanVC {
     }
     
     func configureHelper() {
-        
+        setNavigationItems()
         checkUser()
         floatingBottom.isHidden = false
         
@@ -114,22 +114,20 @@ extension DetailBantuanVC {
         case .taken :
             helperName.isHidden = false
             chatButton.isHidden = false
-            
             helpFinishButton.setTitle("Selesai", for: .normal)
             helpStatusLabel.text = "bersedia membantu."
-            
         case .active:
             helperAvatar.isHidden = true
             helperName.isHidden = true
             chatButton.isHidden = true
             helperVerified.isHidden = true
-            
             floatingBottom.isHidden = (selectedJob.jobPosterId.id == currentUser)
-            
             helpFinishButton.setTitle("Saya Bersedia Membantu", for: .normal)
             helpStatusLabel.text = "Belum ada yang bersedia membantu."
         case .cancelled:
-            break
+            helpFinishButton.setTitle("Bantuan Dibatalkan", for: .normal)
+            helpFinishButton.backgroundColor = .ColorLibrary.mediumGrey
+            chatButton.isHidden = true
         case .done:
             helpFinishButton.setTitle("Bantuan Telah Selesai", for: .normal)
             helpFinishButton.backgroundColor = .systemGreen

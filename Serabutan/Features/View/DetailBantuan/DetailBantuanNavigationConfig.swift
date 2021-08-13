@@ -29,6 +29,10 @@ extension DetailBantuanVC {
         let shareButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(shareButtonAction))
         
         navigationItem.rightBarButtonItems = [moreButton, shareButton]
+        
+        if selectedJob.status == .cancelled || selectedJob.status == .done {
+            navigationItem.rightBarButtonItems?.removeAll()
+        }
     }
     
     // MARK: - Navigation Bar Menu (Share & More)
@@ -61,7 +65,7 @@ extension DetailBantuanVC {
             self.changeHelpee()
         })
         let hapusPermintaan = UIAction(title: "Hapus Bantuan", image: UIImage(), attributes: .destructive, handler: { _ in
-            print("Hapus Bantuan")
+            self.cancelJob()
         })
         let batalkan = UIAction(title: "Batalkan Lamaran", image: UIImage(), attributes: .destructive, handler: { _ in
             self.cancelHelpee()

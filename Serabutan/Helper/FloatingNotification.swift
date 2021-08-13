@@ -48,16 +48,20 @@ class FloatingNotification {
         
         // Show notification banner
         banner.show(bannerPosition: .top,
-                     queue: .default,
-                     edgeInsets: UIEdgeInsets(top: 25, left: 10, bottom: 0, right: 10),
-                     shadowColor: UIColor.ColorLibrary.mediumGrey,
-                     shadowOpacity: 0.5,
-                     shadowBlurRadius: 15,
-                     shadowCornerRadius: 10,
-                     shadowOffset: UIOffset(horizontal: 0, vertical: 10))
+                    queue: .default,
+                    edgeInsets: UIEdgeInsets(top: 25, left: 10, bottom: 0, right: 10),
+                    shadowColor: UIColor.ColorLibrary.mediumGrey,
+                    shadowOpacity: 0.5,
+                    shadowBlurRadius: 15,
+                    shadowCornerRadius: 10,
+                    shadowOffset: UIOffset(horizontal: 0, vertical: 10))
         
         banner.onTap = {
-            print("Banner Tapped")
+            let detailJob = DetailBantuanVC()
+            let detailJobController = UINavigationController.init(rootViewController: detailJob)
+            detailJob.selectedJob = job
+            detailJob.modalPresentationStyle = .fullScreen
+            UIApplication.shared.windows.first?.rootViewController?.present(detailJobController, animated: true)
         }
     }
 }

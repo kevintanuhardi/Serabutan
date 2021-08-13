@@ -93,8 +93,6 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
         
         setTagList()
         DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-            // Make sure that the job is still taken
-            guard self.selectedJob.status == .taken else { return }
             self.triggerHelper()
         })
     }

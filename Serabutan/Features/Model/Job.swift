@@ -48,7 +48,7 @@ class Jobs: NSObject, MKAnnotation {
     let desc : String?
     let price : Int
     var status : JobStatus
-    let distance : Double
+    var distance : Double
     let coordinate: CLLocationCoordinate2D
     
     let tags : [String]?

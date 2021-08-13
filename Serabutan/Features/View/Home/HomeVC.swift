@@ -162,7 +162,8 @@ extension HomeVC: UICollectionViewDataSource , UICollectionViewDelegate, UIColle
         let selectedJob = jobList[indexPath.row]
         
         DispatchQueue.main.async {
-            cell.headerLabel.text = StringFormatter().distanceFromCoordinate(from: self.currentCoordinate ?? CLLocationCoordinate2D(), to: selectedJob.coordinate)
+            selectedJob.distance = StringFormatter().distanceFromCoordinate(from: self.currentCoordinate ?? CLLocationCoordinate2D(), to: selectedJob.coordinate)
+            cell.headerLabel.text = StringFormatter().distance(selectedJob.distance)
         }
         
         cell.setStatusView(urgency: selectedJob.urgency)

@@ -22,7 +22,6 @@ extension DetailBantuanVC {
                                       handler: { action in
                                         self.selectedJob.status = .done
                                         self.configureHelper()
-                                        self.setNavigationItems()
                                         self.rateProfile()
                                       }))
         present(alert, animated: true, completion: nil)
@@ -41,7 +40,6 @@ extension DetailBantuanVC {
                                       handler: { action in
                                         self.selectedJob.status = .taken
                                         self.configureHelper()
-                                        self.setNavigationItems()
                                         self.sendWhatsApp(template: true)
                                       }))
         present(alert, animated: true, completion: nil)
@@ -61,6 +59,22 @@ extension DetailBantuanVC {
                                         self.selectedJob.status = .active
                                         self.selectedJob.helperId = nil
                                         self.configureHelper()
+                                      }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // Shown when user (helpee) want to withdraw their application
+    func cancelJob() {
+        let alert = UIAlertController(title: "Hapus Bantuan?",
+                                      message: "Anda yakin ingin menghapus bantuan? Aksi ini tidak dapat dibatalkan.",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Tidak",
+                                      style: .destructive,
+                                      handler: nil))
+        alert.addAction(UIAlertAction(title: "Ya",
+                                      style: .default,
+                                      handler: { action in
+                                        self.selectedJob.status = .cancelled
                                         self.setNavigationItems()
                                       }))
         present(alert, animated: true, completion: nil)
@@ -80,7 +94,6 @@ extension DetailBantuanVC {
                                         self.selectedJob.status = .active
                                         self.selectedJob.helperId = nil
                                         self.configureHelper()
-                                        self.setNavigationItems()
                                       }))
         present(alert, animated: true, completion: nil)
     }
