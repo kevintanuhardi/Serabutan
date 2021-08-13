@@ -9,14 +9,15 @@ import UIKit
 import Foundation
 
 protocol FilterPopUpVCDelegate {
-	func setSortDataInvoke(assignedSortBy: AssistanceSortByFilter)
-	func setPriceRangeInvoke(minCompensation: Int, maxCompensation: Int)
-	
+    func setSortDataInvoke(assignedSortBy: AssistanceSortByFilter)
+    func setPriceRangeInvoke(minCompensation: Int, maxCompensation: Int)
+    
 }
 
 class FilterPopUpVC: UIViewController, UITextFieldDelegate {
-	
-	var delegate: FilterPopUpVCDelegate?
+    
+    var delegate: FilterPopUpVCDelegate?
+    var activeTextField: UITextField? = nil
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var topBarView: UIView!
@@ -34,8 +35,8 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
     
     //Filter Vars
     var sortBy : AssistanceSortByFilter?
-    var minValue : Int? = 50000
-    var maxValue : Int? = 500000
+    var minValue : Int? = 0
+    var maxValue : Int? = Int.max
     
     let tintColor = UIColor.ColorLibrary.accentBackground
     let blackColor = UIColor.ColorLibrary.customBlack
@@ -56,21 +57,20 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
         setKeyboardNotification()
     }
     
-    
     @IBAction func resetButtonAction(_ sender: Any) {
         sortBySelected(closestButton)
         sortBy = AssistanceSortByFilter.nearest
         
-        minValue = 50000
-        minValTF.placeholder = "Rp " + priceFormatting(amount: minValue!)
+        minValue = 0
+        minValTF.placeholder = "Rp 50.000"
         minValTF.text = ""
         
-        maxValue = 500000
+        maxValue = Int.max
         maxValTF.text = ""
-        maxValTF.placeholder = "Rp " + priceFormatting(amount: maxValue!)
+        maxValTF.placeholder = "Rp 500.000"
     }
     
-    //Button Collection: Nearest, Newset, Highest Price, Lowest Price
+    //Button Collection: Nearest, Newest, Highest Price, Lowest Price
     @IBAction func sortBySelected(_ sender: UIButton) {
         sortByCollectionButton.forEach({ $0.backgroundColor = .white})
         sortByCollectionButton.forEach({ $0.setTitleColor(blackColor, for: .normal)})
@@ -90,8 +90,8 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
         guard let maxCompensation = maxValue else { return }
         
         let listBantuanVC = AssistanceListVC()
-		delegate?.setSortDataInvoke(assignedSortBy: filterBy)
-		delegate?.setPriceRangeInvoke(minCompensation: 0, maxCompensation: 200000)
+        delegate?.setSortDataInvoke(assignedSortBy: filterBy)
+        delegate?.setPriceRangeInvoke(minCompensation: minCompensation, maxCompensation: maxCompensation)
         self.navigationController?.pushViewController(listBantuanVC, animated: true)
         dismiss(animated: true, completion: nil)
     }
@@ -100,16 +100,60 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
 
 extension FilterPopUpVC {
     
-    func priceFormatting(amount: Int) -> String{
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.numberStyle = .currency
-        currencyFormatter.locale = Locale(identifier: "id_UD")
-        currencyFormatter.groupingSeparator = "."
-        currencyFormatter.numberStyle = .decimal
-        
-        return currencyFormatter.string(from: NSNumber(value: amount))!
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        for view in textField.subviews {
+            if view.restorationIdentifier == "Border" {
+                view.animateBorder(true, type: .color)
+            }
+        }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == minValTF {
+            maxValTF.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == minValTF {
+            guard let currMinValue1 = minValTF.text?.replacingOccurrences(of: "Rp ", with: "") else { return }
+            let currMinValue = currMinValue1.replacingOccurrences(of: ".", with: "")
+            
+            if (minValTF == .none) {
+                guard let viewMinVal = Int(currMinValue) ?? minValue else { return }
+                minValTF.text = "Rp " + priceFormatting(amount: viewMinVal)
+            }
+            else if (minValTF .endEditing(true)) {
+                guard let viewMinVal = Int(currMinValue) else { return }
+                minValTF.text = "Rp " + priceFormatting(amount: viewMinVal)
+            }
+            minValue = Int(currMinValue)
+        }
+        
+        if textField == maxValTF {
+            guard let currMaxValue1 = maxValTF.text?.replacingOccurrences(of: "Rp ", with: "") else { return }
+            let currMaxValue = currMaxValue1.replacingOccurrences(of: ".", with: "")
+            
+            if maxValTF == .none{
+                guard let viewMaxVal = Int(currMaxValue) ?? maxValue else { return }
+                maxValTF.text = "Rp " + priceFormatting(amount: viewMaxVal)
+            } else if maxValTF .endEditing(true){
+                guard let viewMaxVal = Int(currMaxValue) else { return }
+                maxValTF.text = "Rp " + priceFormatting(amount: viewMaxVal)
+            }
+            maxValue = Int(currMaxValue)
+        }
+        
+        for view in textField.subviews {
+            if view.restorationIdentifier == "Border" {
+                view.animateBorder(false, type: .color)
+            }
+        }
+    }
+
     func getSortByFilter() -> AssistanceSortByFilter{
         for (index, button) in sortByCollectionButton.enumerated() {
             if button.backgroundColor == tintColor {
@@ -124,9 +168,6 @@ extension FilterPopUpVC {
     }
     
     @objc func maxValueDoneButtonTapped(){
-        let newMaxVal = maxValTF.text ?? ""
-        let viewValue = Int(newMaxVal)
-        maxValTF.text = "Rp " + priceFormatting(amount: viewValue!)
         maxValTF.resignFirstResponder()
     }
     
@@ -148,6 +189,18 @@ extension FilterPopUpVC {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
+    }
+}
+
+extension FilterPopUpVC {
+    func priceFormatting(amount: Int) -> String{
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale(identifier: "id_UD")
+        currencyFormatter.groupingSeparator = "."
+        currencyFormatter.numberStyle = .decimal
+        
+        return currencyFormatter.string(from: NSNumber(value: amount))!
     }
 }
 

@@ -19,8 +19,6 @@ extension AssistanceListVC {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = assistanceTable.dequeueReusableCell(withIdentifier: AssistanceTableViewCell.identifier, for: indexPath) as! AssistanceTableViewCell
-		print(sortedJob[0].price)
-        
         let filteredResult = filteredJob[indexPath.row]
         let sortedResult = sortedJob[indexPath.row]
         

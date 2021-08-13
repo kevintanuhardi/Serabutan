@@ -47,7 +47,6 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
     @objc func filterButtonAction(_ sender:UIButton!){
         let destination = FilterPopUpVC(nibName: "FilterPopUpVC", bundle: nil)
 		destination.delegate = self
-        print("Destination Sort BY: ", destination.sortBy as Any)
         self.present(destination, animated: true, completion: nil)
     }
     
@@ -113,7 +112,7 @@ extension AssistanceListVC {
             }
         } else if sort == .newest {
             sortedJob = jobList.sorted { (lhs, rhs) -> Bool in
-                return (lhs.postingDate) < (rhs.postingDate)
+                return (lhs.postingDate) > (rhs.postingDate)
             }
         } else if sort == .highestCompensation {
             sortedJob = jobList.sorted { (lhs, rhs) -> Bool in
@@ -121,7 +120,7 @@ extension AssistanceListVC {
             }
         } else if sort == .lowestCompensation {
             sortedJob = jobList.sorted { (lhs, rhs) -> Bool in
-                return (lhs.distance) < (rhs.distance)
+                return (lhs.price) < (rhs.price)
             }
         }
         
@@ -157,9 +156,11 @@ extension AssistanceListVC: FilterPopUpVCDelegate {
 	
 	func setSortDataInvoke(assignedSortBy: AssistanceSortByFilter){
 		sortBy = assignedSortBy
+        print("SORT BY", sortBy)
 		setSortData()
 	}
 	func setPriceRangeInvoke(minCompensation: Int, maxCompensation: Int) {
 		setPriceRange(minCompensation: minCompensation, maxCompensation: maxCompensation)
+        print("MIN", minCompensation, "MAX", maxCompensation)
 	}
 }
