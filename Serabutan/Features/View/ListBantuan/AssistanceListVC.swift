@@ -41,10 +41,12 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
         assistanceTable.reloadData()
         setupView()
         setSortData()
+		
     }
     
     @objc func filterButtonAction(_ sender:UIButton!){
         let destination = FilterPopUpVC(nibName: "FilterPopUpVC", bundle: nil)
+		destination.delegate = self
         print("Destination Sort BY: ", destination.sortBy as Any)
         self.present(destination, animated: true, completion: nil)
     }
@@ -104,7 +106,6 @@ extension AssistanceListVC {
     //MARK: - Sorting and Filtering from Pop UP
     func setSortData(){
         guard let sort = sortBy else { return }
-        print("SORT will be applied: ", sort)
         
         if sort == .nearest {
             sortedJob = jobList.sorted { (lhs, rhs) -> Bool in
@@ -123,8 +124,6 @@ extension AssistanceListVC {
                 return (lhs.distance) < (rhs.distance)
             }
         }
-        print("Before Applied: ", jobList)
-        print("SORT Applied: ", sortedJob)
         
         DispatchQueue.main.async {
             self.assistanceTable?.reloadData()
@@ -132,6 +131,7 @@ extension AssistanceListVC {
     }
     
     func setPriceRange(minCompensation: Int, maxCompensation: Int){
+		// TODO DIMAS: check filter
         sortedJob = sortedJob.filter { assistance in
             if(minCompensation == .zero) {
                 let result = assistance.price >= minCompensation
@@ -146,10 +146,20 @@ extension AssistanceListVC {
                 return true
             }
         }
-        print("PRICE RANGE: ", sortedJob)
         
         DispatchQueue.main.async {
             self.assistanceTable?.reloadData()
         }
     }
+}
+
+extension AssistanceListVC: FilterPopUpVCDelegate {
+	
+	func setSortDataInvoke(assignedSortBy: AssistanceSortByFilter){
+		sortBy = assignedSortBy
+		setSortData()
+	}
+	func setPriceRangeInvoke(minCompensation: Int, maxCompensation: Int) {
+		setPriceRange(minCompensation: minCompensation, maxCompensation: maxCompensation)
+	}
 }

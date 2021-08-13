@@ -9,10 +9,14 @@ import UIKit
 import Foundation
 
 protocol FilterPopUpVCDelegate {
-    func viewControllerDidUpdate(_ controller: AssistanceListVC)
+	func setSortDataInvoke(assignedSortBy: AssistanceSortByFilter)
+	func setPriceRangeInvoke(minCompensation: Int, maxCompensation: Int)
+	
 }
 
 class FilterPopUpVC: UIViewController, UITextFieldDelegate {
+	
+	var delegate: FilterPopUpVCDelegate?
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var topBarView: UIView!
@@ -85,14 +89,9 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
         guard let minCompensation = minValue else { return }
         guard let maxCompensation = maxValue else { return }
         
-        print (filterBy)
-        print(minCompensation)
-        print(maxCompensation)
-        
         let listBantuanVC = AssistanceListVC()
-        listBantuanVC.sortBy = filterBy
-        listBantuanVC.setSortData()
-        listBantuanVC.setPriceRange(minCompensation: minCompensation, maxCompensation: maxCompensation)
+		delegate?.setSortDataInvoke(assignedSortBy: filterBy)
+		delegate?.setPriceRangeInvoke(minCompensation: 0, maxCompensation: 200000)
         self.navigationController?.pushViewController(listBantuanVC, animated: true)
         dismiss(animated: true, completion: nil)
     }

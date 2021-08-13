@@ -103,12 +103,11 @@ extension FilterPopUpVC{
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+		//TODO DIMAS: text field end update is not working as it was supposed to
         guard let currMinValue1 = minValTF.text?.replacingOccurrences(of: "Rp ", with: "") else { return }
         let currMinValue = currMinValue1.replacingOccurrences(of: ".", with: "")
         guard let currMaxValue1 = maxValTF.text?.replacingOccurrences(of: "Rp ", with: "") else { return }
         let currMaxValue = currMaxValue1.replacingOccurrences(of: ".", with: "")
-        print("Curr MIN is:" + currMinValue)
-        print("Curr MAX is:" + currMaxValue)
         
         if (minValTF .isEditing) {
             guard let viewMinVal = Int(currMinValue) else { return }
