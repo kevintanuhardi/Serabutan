@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -64,7 +63,7 @@
                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="sortBySelected:" destination="-1" eventType="touchUpInside" id="3an-lt-Wp3"/>
+                                        <action selector="sortBySelectedButton:" destination="-1" eventType="touchUpInside" id="3an-lt-Wp3"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erN-Of-3yP">
@@ -78,7 +77,7 @@
                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="sortBySelected:" destination="-1" eventType="touchUpInside" id="cPt-Hp-as8"/>
+                                        <action selector="sortBySelectedButton:" destination="-1" eventType="touchUpInside" id="cPt-Hp-as8"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txH-NY-pdO">
@@ -92,7 +91,7 @@
                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="sortBySelected:" destination="-1" eventType="touchUpInside" id="8Px-VF-pM4"/>
+                                        <action selector="sortBySelectedButton:" destination="-1" eventType="touchUpInside" id="8Px-VF-pM4"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQd-UI-2SS">
@@ -105,7 +104,7 @@
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="applyButtonAction:" destination="-1" eventType="touchUpInside" id="N0y-x3-gYz"/>
+                                        <action selector="applyButtonTapped:" destination="-1" eventType="touchUpInside" id="N0y-x3-gYz"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xV-ks-2Bf">
@@ -119,7 +118,7 @@
                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="sortBySelected:" destination="-1" eventType="touchUpInside" id="AW3-LJ-wpJ"/>
+                                        <action selector="sortBySelectedButton:" destination="-1" eventType="touchUpInside" id="AW3-LJ-wpJ"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QK0-KR-PxV">
@@ -129,7 +128,7 @@
                                         <color key="titleColor" name="AccentColor"/>
                                     </state>
                                     <connections>
-                                        <action selector="resetButtonAction:" destination="-1" eventType="touchUpInside" id="Z2u-sG-iA9"/>
+                                        <action selector="resetButtonTapped:" destination="-1" eventType="touchUpInside" id="Z2u-sG-iA9"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kompensasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FP-1j-jck">

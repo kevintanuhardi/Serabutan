@@ -33,7 +33,6 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var minValTF: UITextField!
     @IBOutlet weak var maxValTF: UITextField!
     
-    //Filter Vars
     var sortBy : AssistanceSortByFilter?
     var minValue : Int? = 0
     var maxValue : Int? = Int.max
@@ -57,8 +56,8 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
         setKeyboardNotification()
     }
     
-    @IBAction func resetButtonAction(_ sender: Any) {
-        sortBySelected(closestButton)
+    @IBAction func resetButtonTapped(_ sender: Any) {
+        sortBySelectedButton(closestButton)
         sortBy = AssistanceSortByFilter.nearest
         
         minValue = 0
@@ -70,8 +69,7 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
         maxValTF.placeholder = "Rp 500.000"
     }
     
-    //Button Collection: Nearest, Newest, Highest Price, Lowest Price
-    @IBAction func sortBySelected(_ sender: UIButton) {
+    @IBAction func sortBySelectedButton(_ sender: UIButton) {
         sortByCollectionButton.forEach({ $0.backgroundColor = .white})
         sortByCollectionButton.forEach({ $0.setTitleColor(blackColor, for: .normal)})
         sortByCollectionButton.forEach({ $0.layer.borderColor = blackColor.cgColor})
@@ -84,7 +82,7 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
         sender.layer.cornerRadius = 5
     }
     
-    @IBAction func applyButtonAction(_ sender: Any) {
+    @IBAction func applyButtonTapped(_ sender: Any) {
         let filterBy: AssistanceSortByFilter = getSortByFilter()
         guard let minCompensation = minValue else { return }
         guard let maxCompensation = maxValue else { return }
@@ -171,7 +169,6 @@ extension FilterPopUpVC {
         maxValTF.resignFirstResponder()
     }
     
-    //MARK: - Keyboard Observer
     func setKeyboardNotification(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -190,9 +187,11 @@ extension FilterPopUpVC {
             self.view.frame.origin.y = 0
         }
     }
+    
 }
 
 extension FilterPopUpVC {
+    
     func priceFormatting(amount: Int) -> String{
         let currencyFormatter = NumberFormatter()
         currencyFormatter.numberStyle = .currency
@@ -202,6 +201,7 @@ extension FilterPopUpVC {
         
         return currencyFormatter.string(from: NSNumber(value: amount))!
     }
+    
 }
 
 

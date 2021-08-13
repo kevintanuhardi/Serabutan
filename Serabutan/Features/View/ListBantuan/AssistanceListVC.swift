@@ -19,16 +19,16 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
     
     // TODO: Remove this on BE integration
     var jobList = DummyData.shared.getJobsList(.active)
-    var filteredJob = [Jobs]()
-    var sortedJob = [Jobs]()
+    var searchResultJob = [Jobs]()
+    var sortedFilteredJob = [Jobs]()
     
     var user = UserDefaults.standard.integer(forKey: "loggedUser")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTable()
-        filteredJob = jobList
-        sortedJob = jobList
+        searchResultJob = jobList
+        sortedFilteredJob = jobList
         
         UIApplication
             .shared
@@ -41,16 +41,15 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
         assistanceTable.reloadData()
         setupView()
         setSortData()
-		
     }
     
-    @objc func filterButtonAction(_ sender:UIButton!){
+    @objc func filterButtonTapped(_ sender:UIButton!){
         let destination = FilterPopUpVC(nibName: "FilterPopUpVC", bundle: nil)
 		destination.delegate = self
         self.present(destination, animated: true, completion: nil)
     }
     
-    @objc func backButtonAction(_ sender:UIButton!){
+    @objc func backButtonTapped(_ sender:UIButton!){
         navigateToHome()
     }
     
@@ -69,7 +68,6 @@ extension AssistanceListVC {
         return true
     }
     
-    //MARK: - Search Function
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.searchTextField.animateBorder(true, type: .border)
     }
@@ -91,7 +89,7 @@ extension AssistanceListVC {
     }
     
     func filterForSearchText(searchText: String){
-        filteredJob = sortedJob.filter { assistance in
+        searchResultJob = sortedFilteredJob.filter { assistance in
             if(searchBar.searchBar.text != ""){
                 let searchTextMatch = assistance.title?.lowercased().contains(searchText.lowercased())
                 return searchTextMatch!
@@ -102,24 +100,23 @@ extension AssistanceListVC {
         assistanceTable.reloadData()
     }
     
-    //MARK: - Sorting and Filtering from Pop UP
     func setSortData(){
         guard let sort = sortBy else { return }
         
         if sort == .nearest {
-            sortedJob = jobList.sorted { (lhs, rhs) -> Bool in
+            sortedFilteredJob = jobList.sorted { (lhs, rhs) -> Bool in
                 return (lhs.distance) < (rhs.distance)
             }
         } else if sort == .newest {
-            sortedJob = jobList.sorted { (lhs, rhs) -> Bool in
+            sortedFilteredJob = jobList.sorted { (lhs, rhs) -> Bool in
                 return (lhs.postingDate) > (rhs.postingDate)
             }
         } else if sort == .highestCompensation {
-            sortedJob = jobList.sorted { (lhs, rhs) -> Bool in
+            sortedFilteredJob = jobList.sorted { (lhs, rhs) -> Bool in
                 return (lhs.price) > (rhs.price)
             }
         } else if sort == .lowestCompensation {
-            sortedJob = jobList.sorted { (lhs, rhs) -> Bool in
+            sortedFilteredJob = jobList.sorted { (lhs, rhs) -> Bool in
                 return (lhs.price) < (rhs.price)
             }
         }
@@ -130,8 +127,7 @@ extension AssistanceListVC {
     }
     
     func setPriceRange(minCompensation: Int, maxCompensation: Int){
-		// TODO DIMAS: check filter
-        sortedJob = sortedJob.filter { assistance in
+        sortedFilteredJob = sortedFilteredJob.filter { assistance in
             if(minCompensation == .zero) {
                 let result = assistance.price >= minCompensation
                 return result
@@ -156,11 +152,9 @@ extension AssistanceListVC: FilterPopUpVCDelegate {
 	
 	func setSortDataInvoke(assignedSortBy: AssistanceSortByFilter){
 		sortBy = assignedSortBy
-        print("SORT BY", sortBy)
 		setSortData()
 	}
 	func setPriceRangeInvoke(minCompensation: Int, maxCompensation: Int) {
 		setPriceRange(minCompensation: minCompensation, maxCompensation: maxCompensation)
-        print("MIN", minCompensation, "MAX", maxCompensation)
 	}
 }

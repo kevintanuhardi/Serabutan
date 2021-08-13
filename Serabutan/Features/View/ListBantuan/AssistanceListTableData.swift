@@ -12,15 +12,15 @@ extension AssistanceListVC {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(searchBar.isActive){
-            return filteredJob.count
+            return searchResultJob.count
         }
-        return sortedJob.count
+        return sortedFilteredJob.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = assistanceTable.dequeueReusableCell(withIdentifier: AssistanceTableViewCell.identifier, for: indexPath) as! AssistanceTableViewCell
-        let filteredResult = filteredJob[indexPath.row]
-        let sortedResult = sortedJob[indexPath.row]
+        let searchedJob = searchResultJob[indexPath.row]
+        let sortedFiltered = sortedFilteredJob[indexPath.row]
         
         cell.selectionStyle = .none
         cell.tagView.isHidden = true
@@ -29,8 +29,7 @@ extension AssistanceListVC {
         cell.helperView.isHidden = true
         cell.mainBottomBar.isHidden = true
 
-        //SET ASSISTANCE COLLECTION VIEW DATA
-        var result: Jobs { return searchBar.isActive ? filteredResult : sortedResult }
+        var result: Jobs { return searchBar.isActive ? searchedJob : sortedFiltered }
         var distance: String { return result.distance < 1000 ? ("\(Int(result.distance))" + " m") : ("\(Int(result.distance))" + " km") }
         
         cell.setStatusView(urgency: result.urgency)

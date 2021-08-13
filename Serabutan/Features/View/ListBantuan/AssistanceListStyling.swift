@@ -28,7 +28,7 @@ extension AssistanceListVC{
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         
         //Setup Right Navigation
-        navigationItem.rightBarButtonItem =  UIBarButtonItem(image: UIImage(named: "filterIcon"), style: .plain, target: self, action: #selector(filterButtonAction))
+        navigationItem.rightBarButtonItem =  UIBarButtonItem(image: UIImage(named: "filterIcon"), style: .plain, target: self, action: #selector(filterButtonTapped))
         navigationItem.rightBarButtonItem?.tintColor = .ColorLibrary.accentColor
     }
     
