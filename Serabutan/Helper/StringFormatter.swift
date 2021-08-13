@@ -18,15 +18,15 @@ enum textStyle {
 
 struct StringFormatter {
     func distance(_ distance: Double) -> String {
-        return distance < 1000 ? ("\(Int(distance))" + " m") : ("\(Int(distance / 1000))" + " km")
+        var finalDistance: Double
+        if distance < 1000 {
+            finalDistance = (round(10*distance))/10
+        } else {
+            finalDistance = distance / 1000
+            finalDistance = (round(10*finalDistance))/10
+        }
+        return distance < 1000 ? ("\(finalDistance)" + " m") : ("\(finalDistance)" + " km")
     }
-    
-//    func distanceFromCoordinate(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> String {
-//        let start = CLLocation(latitude: from.latitude, longitude: from.longitude)
-//        let end = CLLocation(latitude: to.latitude, longitude: to.longitude)
-//        let finalDistance = distance(start.distance(from: end))
-//        return finalDistance
-//    }
     
     func distanceFromCoordinate(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> Double {
         let start = CLLocation(latitude: from.latitude, longitude: from.longitude)

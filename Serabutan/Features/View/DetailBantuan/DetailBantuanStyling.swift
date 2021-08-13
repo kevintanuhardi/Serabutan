@@ -37,7 +37,7 @@ extension DetailBantuanVC {
         helperView.layer.cornerRadius = 5
         helperView.layer.masksToBounds = true
         
-        floatingBottom.dropShadow(scale: true)
+        floatingBottom.dropShadow(opacity: 0.25, offset: -5, scale: true)
         separatorHeight.constant = 0.5
         
         jobImgCarousel.isHidden = (selectedJob.medias?.isEmpty ?? false)

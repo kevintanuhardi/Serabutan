@@ -171,7 +171,7 @@ extension HomeVC: UICollectionViewDataSource , UICollectionViewDelegate, UIColle
         cell.posterImage.image = selectedJob.jobPosterId.avatar
         cell.posterLabel.text = selectedJob.jobPosterId.name
         cell.verifiedLogo.isHidden = !selectedJob.jobPosterId.isVerified
-
+        
         cell.compensationLabel.text = StringFormatter().priceFormatting(amount: selectedJob.price)
         cell.timeElapsedLabel.text = StringFormatter().relativeDateFormatter(date: selectedJob.postingDate)
         
@@ -179,9 +179,12 @@ extension HomeVC: UICollectionViewDataSource , UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailBantuan = DetailBantuanVC()
-        detailBantuan.selectedJob = jobList[indexPath.row]
-        self.navigationController?.pushViewController(detailBantuan, animated: true)
+        mapView.setCenter(jobList[indexPath.row].coordinate, animated: true)
+        DispatchQueue.main.async {
+            let detailBantuan = DetailBantuanVC()
+            detailBantuan.selectedJob = self.jobList[indexPath.row]
+            self.navigationController?.pushViewController(detailBantuan, animated: true)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -196,7 +199,7 @@ extension HomeVC: CLLocationManagerDelegate {
         
         if currentCoordinate == nil {
             zoomToLatestLocation(with: latestLocation.coordinate)
-//            homeVM.fetchNearbyJob(coordinate: latestLocation.coordinate)
+            //            homeVM.fetchNearbyJob(coordinate: latestLocation.coordinate)
         }
         
         currentCoordinate = latestLocation.coordinate
@@ -213,37 +216,37 @@ extension HomeVC: CLLocationManagerDelegate {
 extension HomeVC: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-
+        
         var reassigned = false
-
+        
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
-
+        
         if annotationView == nil {
-			print("yang masuk nil", annotation)
+            print("yang masuk nil", annotation)
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
         }
-
+        
         if let jobAnnotation = annotation as? Jobs {
             let jobAnnotationCell = MapKitAnnotationCellViewController(nibName: "MapKitAnnotationCellViewController", bundle: nil)
-
+            
             jobAnnotationCell.job = jobAnnotation
-
+            
             annotationView?.image = jobAnnotationCell.view.asImage()
-
+            
             reassigned = true
         }
-
+        
         annotationView?.canShowCallout = true
-
+        
         return reassigned ? annotationView : nil;
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-		
-		if let jobAnnotation = view.annotation as? Jobs {
-			let detailBantuan = DetailBantuanVC()
-			detailBantuan.selectedJob = jobAnnotation
-			self.navigationController?.pushViewController(detailBantuan, animated: true)
-		}
+        
+        if let jobAnnotation = view.annotation as? Jobs {
+            let detailBantuan = DetailBantuanVC()
+            detailBantuan.selectedJob = jobAnnotation
+            self.navigationController?.pushViewController(detailBantuan, animated: true)
+        }
     }
 }

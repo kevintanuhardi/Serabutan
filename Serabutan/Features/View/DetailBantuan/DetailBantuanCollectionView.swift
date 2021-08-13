@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import TagListView
 
 extension DetailBantuanVC {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -21,5 +22,23 @@ extension DetailBantuanVC {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         collectionView.deselectItem(at: indexPath, animated: true)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < 0 {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.floatingTopView.dropShadow(opacity: 0, offset: 0, scale: true)
+            })
+        } else if scrollView.contentOffset.y > 0 {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.floatingTopView.dropShadow(opacity: 0.25, offset: 5, scale: true)
+            })
+        }
+    }
+    
+    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
+//        let showAll = AssistanceListVC()
+//        showAll.searchQuery = title
+//        self.navigationController?.pushViewController(showAll, animated: true)
     }
 }

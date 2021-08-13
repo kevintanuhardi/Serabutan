@@ -9,7 +9,7 @@ import UIKit
 import TagListView
 import NotificationBannerSwift
 
-class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
+class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, TagListViewDelegate {
     
     //    var selectedJob: Jobs?
     var selectedJob = DummyData.shared.getJobsList()[2]
@@ -17,6 +17,8 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     
     @IBOutlet weak var helpFinishButton: UIButton!
     @IBOutlet weak var chatButton: UIButton!
+    @IBOutlet weak var floatingTopView: UIView!
+    @IBOutlet weak var contentScrollView: UIScrollView!
     
     // Job Related
     @IBOutlet weak var urgencyView: UIView!
@@ -90,6 +92,8 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
         jobImgCarousel.register(imageCell, forCellWithReuseIdentifier: ImageCarouselCVC.identifier)
         jobImgCarousel.delegate = self
         jobImgCarousel.dataSource = self
+        contentScrollView.delegate = self
+        tagView.delegate = self
         
         setTagList()
         DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
