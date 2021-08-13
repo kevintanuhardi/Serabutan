@@ -10,6 +10,8 @@ import TagListView
 
 class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    static let identifier = "DetailBantuanVC"
+    
     //    var selectedJob: Jobs?
     var selectedJob = DummyData.shared.getJobsList()[2]
     
@@ -181,6 +183,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.modalPresentationStyle = .fullScreen
         tagHeight.isActive = false
         
         //collection view pertama

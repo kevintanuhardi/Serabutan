@@ -19,7 +19,10 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
     @IBAction func shareButtonAction(_sender: Any){
         initOtherData()
         initCreateNewJob()
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: {
+            //self.navigationController?.popToRootViewController(animated: true)
+            self.presentingViewController?.navigationController?.present(DetailBantuanVC(), animated: true, completion: nil)
+        })
     }
     
     func initOtherData(){
