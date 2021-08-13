@@ -54,7 +54,7 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         
         if bio {
             guard let bio = onboardingDescription else { return }
-            user.bio = bio
+			user.bio = descTV.text
         }
         
         DummyData.shared.addProfile(user: user)

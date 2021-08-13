@@ -33,6 +33,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewWillAppear(_ animated: Bool) {
         navigationSetup()
         checkLoggedUser()
+		setProfileContent()
         reviewTable.reloadData()
     }
     

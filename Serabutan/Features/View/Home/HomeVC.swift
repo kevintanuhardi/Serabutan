@@ -232,7 +232,7 @@ extension HomeVC: MKMapViewDelegate {
             reassigned = true
         }
 
-        annotationView?.canShowCallout = true
+        annotationView?.canShowCallout = false
 
         return reassigned ? annotationView : nil;
     }
