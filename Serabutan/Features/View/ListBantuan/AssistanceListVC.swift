@@ -40,7 +40,6 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
         super.viewWillAppear(animated)
         assistanceTable.reloadData()
         setupView()
-        setSortData()
     }
     
     @objc func filterButtonTapped(_ sender:UIButton!){
@@ -100,8 +99,7 @@ extension AssistanceListVC {
         assistanceTable.reloadData()
     }
     
-    func setSortData(){
-        guard let sort = sortBy else { return }
+    func setSortData(sort: AssistanceSortByFilter) {
         
         if sort == .nearest {
             sortedFilteredJob = jobList.sorted { (lhs, rhs) -> Bool in
@@ -112,7 +110,7 @@ extension AssistanceListVC {
                 return (lhs.postingDate) > (rhs.postingDate)
             }
         } else if sort == .highestCompensation {
-            sortedFilteredJob = jobList.sorted { (lhs, rhs) -> Bool in
+            sortedFilteredJob =  jobList.sorted { (lhs, rhs) -> Bool in
                 return (lhs.price) > (rhs.price)
             }
         } else if sort == .lowestCompensation {
@@ -152,7 +150,7 @@ extension AssistanceListVC: FilterPopUpVCDelegate {
 	
 	func setSortDataInvoke(assignedSortBy: AssistanceSortByFilter){
 		sortBy = assignedSortBy
-		setSortData()
+        setSortData(sort: sortBy!)
 	}
 	func setPriceRangeInvoke(minCompensation: Int, maxCompensation: Int) {
 		setPriceRange(minCompensation: minCompensation, maxCompensation: maxCompensation)
