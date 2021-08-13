@@ -30,11 +30,10 @@ extension AssistanceListVC {
         cell.mainBottomBar.isHidden = true
 
         var result: Jobs { return searchBar.isActive ? searchedJob : sortedFiltered }
-        var distance: String { return result.distance < 1000 ? ("\(Int(result.distance))" + " m") : ("\(Int(result.distance))" + " km") }
-        
+    
         cell.setStatusView(urgency: result.urgency)
-        cell.headerLabel.text = distance
         cell.titleLabel.text = result.title
+        cell.headerLabel.text =  StringFormatter().distance(result.distance)
         cell.posterImage.image = result.jobPosterId.avatar
         cell.verifiedLogo.isHidden = !(result.jobPosterId.isVerified)
         cell.posterLabel.text = result.jobPosterId.name
@@ -46,7 +45,8 @@ extension AssistanceListVC {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailBantuan = DetailBantuanVC()
-        detailBantuan.selectedJob = jobList[indexPath.row]
+        let currentList = searchBar.isActive ? searchResultJob : sortedFilteredJob
+        detailBantuan.selectedJob = currentList[indexPath.row]
         self.navigationController?.pushViewController(detailBantuan, animated: true)
     }
     
