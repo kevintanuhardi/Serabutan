@@ -35,7 +35,7 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
     
     var sortBy : AssistanceSortByFilter?
     var minValue : Int? = 0
-    var maxValue : Int? = Int.max
+    var maxValue : Int? = 1000000
     
     let tintColor = UIColor.ColorLibrary.accentBackground
     let blackColor = UIColor.ColorLibrary.customBlack
@@ -64,7 +64,7 @@ class FilterPopUpVC: UIViewController, UITextFieldDelegate {
         minValTF.placeholder = "Rp 50.000"
         minValTF.text = ""
         
-        maxValue = Int.max
+        maxValue = 1000000
         maxValTF.text = ""
         maxValTF.placeholder = "Rp 500.000"
     }
