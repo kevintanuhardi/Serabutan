@@ -13,6 +13,8 @@ import MapKit
 extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
     
     @IBAction func cancelButtonAction(_sender: Any){
+        guard let text = titleTF.text, text.isEmpty else { dismissAlert(); return }
+        guard let text = descTV.text, text.isEmpty else { dismissAlert(); return }
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -23,36 +25,30 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
     }
     
     func initOtherData(){
-        let newId = dummyData.count
-        newAssistanceJobId = newId
-        
-        let newDate = Date()
-        newAssistancePostDate = newDate
-        
         let jobPosterId = DummyData.shared.getUserProfile()[userDefault]
         newAssistanceJobPosterId = jobPosterId
     }
     
     func initCreateNewJob(){
-        if newAssistanceTitle == ""{
+        if (titleTF.text?.isEmpty ?? true) || titleTF.text == "" || titleTF.text == "\n" {
             createTitleEmpty()
             titleTF.becomeFirstResponder()
-        } else if newAssistanceDes == ""{
+        } else if (descTV.text?.isEmpty ?? true) || descTV.text == "" || descTV.text == "\n" {
             createDescEmpty()
             descTV.becomeFirstResponder()
         } else {
             guard let jobPosterId = newAssistanceJobPosterId else { return }
             
-            let job = Jobs(id: newAssistanceJobId!,
+            let job = Jobs(id: DummyData.shared.getJobsList().count,
                            jobPosterId: jobPosterId,
-                           postingDate: newAssistancePostDate!,
-                           urgency: newAssistanceUrgency!,
-                           title: newAssistanceTitle!,
-                           desc: newAssistanceDes!,
-                           price: newAssistanceCompensation!,
+                           postingDate: Date(),
+                           urgency: newAssistanceUrgency,
+                           title: titleTF.text,
+                           desc: descTV.text,
+                           price: newAssistanceCompensation,
                            status: newAssistanceStatus,
-                           distance: newAssistanceDistance ?? 0,
-                           coordinate: newAssistanceCoordinate!,
+                           distance: 0.0,
+                           coordinate: newAssistanceCoordinate ?? CLLocationCoordinate2D(),
                            tags: newAssistanceInfo,
                            medias: newAssistanceMediaImage,
                            helperId: newAssistanceHelperId,
@@ -70,23 +66,11 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
     
     //MARK: - TextView
     func textViewDidBeginEditing(_ textView: UITextView) {
-        self.activeTextView = textView
         textView.superview?.animateBorder(true, type: .border)
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         textView.superview?.animateBorder(false, type: .border)
-        
-        let currDesc = descTV.text!
-        newAssistanceDes = currDesc
-    }
-    
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if(text == "\n") {
-            textView.resignFirstResponder()
-            return false
-        }
-        return true
     }
     
     //MARK: - TextField
@@ -98,6 +82,35 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.activeTextField = nil
         textField.superview?.animateBorder(false, type: .border)
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        switch textField {
+        case compensationTF :
+            let text: NSString = (textField.text ?? "") as NSString
+            var finalString = text.replacingCharacters(in: range, with: string)
+            
+            finalString = finalString.replacingOccurrences(of: ".", with: "")
+            newAssistanceCompensation = Int(finalString) ?? 0
+            compensationTF.text = StringFormatter().priceFormatting(amount: newAssistanceCompensation )
+            return false
+            
+        case infoTF :
+            let acceptableChar = "abcdefghijklmnopqrstuvwxyz"
+            let cs = NSCharacterSet(charactersIn: acceptableChar).inverted
+            let filtered = string.components(separatedBy: cs).joined(separator: "")
+            
+            if string == " " {
+                addTag()
+            }
+            return (string == filtered)
+            
+        default :
+            break
+            
+        }
+        return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -113,8 +126,10 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
             ageTF.becomeFirstResponder()
         } else if textField == ageTF {
             infoTF.becomeFirstResponder()
+        } else if textField == infoTF {
+            addTag()
         } else {
-            textField.resignFirstResponder()
+            textField.becomeFirstResponder()
         }
         return true
     }
@@ -122,81 +137,73 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         textField.superview?.animateBorder(false, type: .border)
         
-        if textField == urgencyTF {
-            let currUrgency = urgencyTF.text!
+        switch textField {
+        case urgencyTF :
+            let currUrgency = urgencyTF.text ?? ""
             
-            if currUrgency == "Tinggi"{
+            if currUrgency == "Tinggi" {
                 newAssistanceUrgency = Urgency.high
                 urgencyIndicatorView.layer.backgroundColor = UIColor.ColorLibrary.highUrgency.cgColor
-            } else if currUrgency == "Sedang"{
+            } else if currUrgency == "Sedang" {
                 newAssistanceUrgency = Urgency.medium
                 urgencyIndicatorView.layer.backgroundColor = UIColor.ColorLibrary.mediumUrgency.cgColor
             } else {
                 newAssistanceUrgency = Urgency.low
                 urgencyIndicatorView.layer.backgroundColor = UIColor.ColorLibrary.lowUrgency.cgColor
             }
-        }
-        
-        let currTitle = titleTF.text!
-        newAssistanceTitle = currTitle
-        
-        if textField == compensationTF {
-            let currComp = compensationTF.text!.replacingOccurrences(of: ".", with: "")
             
-            if (compensationTF .isEditing) {
-                let viewComp = Int(currComp)
-                compensationTF.text = StringFormatter().priceFormatting(amount: viewComp!)
-            }
+        case genderTF :
+            let currGender = genderTF.text ?? ""
             
-            if (compensationTF .endEditing(true)) {
-                let viewComp = Int(currComp) ?? newAssistanceCompensation
-                compensationTF.text = StringFormatter().priceFormatting(amount: viewComp!)
-            }
-            newAssistanceCompensation = Int(currComp) ?? 0
-        }
-        
-        if textField == genderTF {
-            let currGender = genderTF.text!
-            
-            if currGender == "Tidak ada preferensi"{
-                newAssistanceGenderPref = Gender.other
-            } else if currGender == "Laki-laki"{
+            if currGender == Gender.male.rawValue {
                 newAssistanceGenderPref = Gender.male
-            } else {
+            } else if currGender == Gender.female.rawValue {
                 newAssistanceGenderPref = Gender.female
-            }
-        }
-        
-        if textField == ageTF {
-            let currAge = ageTF.text!
-            
-            if currAge == "18-25"{
-                newAssistanceAgePref = AgePreference.youngAdult
-            } else if currAge == "26-40"{
-                newAssistanceAgePref = AgePreference.middleAdult
             } else {
-                newAssistanceAgePref = AgePreference.lateAdult
+                newAssistanceGenderPref = nil
             }
-        }
-        
-        if textField == infoTF{
-            let newTag = infoTF.text!
-            currTags = newTag
-            newAssistanceInfo.append(newTag)
-            tagListView.addTag(newTag)
-            infoTF.resignFirstResponder()
-            infoTF.text = ""
             
-            (newAssistanceInfo.count < 1) ? (infoSV.spacing = 0) : (infoSV.spacing = 5)
-        } else {
-            print("nothing insert")
+        case ageTF :
+            let currAge = ageTF.text ?? ""
+            
+            if currAge == AgePreference.youngAdult.rawValue {
+                newAssistanceAgePref = AgePreference.youngAdult
+            } else if currAge == AgePreference.middleAdult.rawValue {
+                newAssistanceAgePref = AgePreference.middleAdult
+            } else if currAge == AgePreference.lateAdult.rawValue {
+                newAssistanceAgePref = AgePreference.lateAdult
+            } else {
+                newAssistanceAgePref = nil
+            }
+
+        default :
+            break
         }
-        
     }
     
     //MARK: - Tag List View Actions
+    func addTag() {
+        var duplicate: Bool = false
+        let newTag = infoTF.text!
+        
+        for tag in newAssistanceInfo {
+            if newTag == tag {
+                duplicate = true
+            }
+        }
+        
+        guard !duplicate else { return }
+        
+        currTags = newTag
+        newAssistanceInfo.append(newTag)
+        tagListView.addTag(newTag)
+        infoTF.resignFirstResponder()
+        infoTF.text = ""
+        
+        (newAssistanceInfo.count < 1) ? (infoSV.spacing = 0) : (infoSV.spacing = 5)
+    }
+    
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
-        print("Tag Remove pressed: \(title), \(sender)")
         sender.removeTagView(tagView)
         
         for (index, arrayTitle) in newAssistanceInfo.enumerated() {
@@ -210,8 +217,6 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
     //MARK: - Get Current location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
         newAssistanceCoordinate = locValue
     }
-    
 }

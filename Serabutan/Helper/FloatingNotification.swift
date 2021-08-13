@@ -60,7 +60,6 @@ class FloatingNotification {
             let detailJob = DetailBantuanVC()
             let detailJobController = UINavigationController.init(rootViewController: detailJob)
             detailJob.selectedJob = job
-            detailJob.modalPresentationStyle = .fullScreen
             UIApplication.shared.windows.first?.rootViewController?.present(detailJobController, animated: true)
         }
     }

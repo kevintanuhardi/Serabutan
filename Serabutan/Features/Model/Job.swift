@@ -26,13 +26,13 @@ enum Gender: String {
 enum AgePreference: String {
     case youngAdult = "18-25"
     case middleAdult = "26-40"
-    case lateAdult = "40"
+    case lateAdult = "40+"
 }
 
 enum Urgency: String {
-    case high = "Urgensi tinggi"
-    case medium = "Urgensi sedang"
-    case low = "Urgensi rendah"
+    case high = "Urgensi Tinggi"
+    case medium = "Urgensi Sedang"
+    case low = "Urgensi Rendah"
 }
 
 //MARK: - Dummy Data
