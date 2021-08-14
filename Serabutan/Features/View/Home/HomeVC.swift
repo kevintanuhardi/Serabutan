@@ -117,8 +117,15 @@ class HomeVC: UIViewController {
         gradientView.layer.insertSublayer(gradientLayer, at:0)
     }
     
+    @IBAction func searchBarTapped(_ sender: Any) {
+        //TODO: Navigation Convention Refactor
+        let showAll = AssistanceListVC()
+        showAll.searchBar.becomeFirstResponder()
+        self.navigationController?.pushViewController(showAll, animated: true)
+    }
     
     @IBAction func showAll(_ sender: Any) {
+        //TODO: Navigation Convention Refactor
         let showAll = AssistanceListVC()
         self.navigationController?.pushViewController(showAll, animated: true)
     }
