@@ -20,7 +20,7 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        onboardingName = "Yahya Ayyash"
+        onboardingName = "John Doe"
         onboardingDOB = Date()
         onboardingGender = .male
         
