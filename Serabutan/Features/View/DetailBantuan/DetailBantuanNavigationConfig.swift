@@ -29,27 +29,51 @@ extension DetailBantuanVC {
         let shareButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(shareButtonAction))
         
         navigationItem.rightBarButtonItems = [moreButton, shareButton]
+        
+        if selectedJob.status == .cancelled || selectedJob.status == .done {
+            navigationItem.rightBarButtonItems?.removeAll()
+        }
+    }
+    
+    // MARK: - Navigation Bar Menu (Share & More)
+    
+    @objc func shareButtonAction(_ sender:UIButton!){
+        let items: [Any] = [selectedJob.title!, URL(string: "https://www.bantuinapp.com/qwerty") as Any]
+        let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        
+        activityController.completionWithItemsHandler = { (nil, completed, _, error) in
+            if completed{
+                print("Page is being shared.")
+            } else {
+                print("There was an error, ", error as Any)
+            }
+        }
+        present(activityController, animated: true){
+        }
     }
     
     func popUpMenu() -> UIMenu{
         var menu = UIMenu()
         let loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")
         let currentUser = DummyData.shared.getUserProfile()[loggedUser].id
-        let jobPoster = selectedJob.jobPosterId.id
+        let jobPoster = selectedJob.jobPosterId.id        
         
+        let editPermintaan = UIAction(title: "Edit Bantuan", image: UIImage(), attributes: .destructive, handler: { _ in
+            print("Laporkan")
+        })
         let gantiHelper = UIAction(title: "Ganti Helper", image: UIImage(), attributes: .destructive, handler: { _ in
-            print("Ganti Helper")
+            self.changeHelpee()
         })
         let hapusPermintaan = UIAction(title: "Hapus Bantuan", image: UIImage(), attributes: .destructive, handler: { _ in
-            print("Hapus Bantuan")
+            self.cancelJob()
         })
         let batalkan = UIAction(title: "Batalkan Lamaran", image: UIImage(), attributes: .destructive, handler: { _ in
-            print("Batalkan Lamaran")
+            self.cancelHelpee()
         })
         let laporkan = UIAction(title: "Laporkan", image: UIImage(), attributes: .destructive, handler: { _ in
             print("Laporkan")
         })
-    
+        
         switch selectedJob.status {
         case .taken :
             if jobPoster == currentUser {
@@ -59,7 +83,7 @@ extension DetailBantuanVC {
             }
         case .active :
             if jobPoster == currentUser {
-                menu = UIMenu(options: .displayInline, children: [hapusPermintaan])
+                menu = UIMenu(options: .displayInline, children: [editPermintaan, hapusPermintaan])
             } else {
                 menu = UIMenu(options: .displayInline, children: [laporkan])
             }
@@ -68,8 +92,6 @@ extension DetailBantuanVC {
         case .done :
             break
         }
-                
         return menu
     }
-
 }

@@ -15,27 +15,25 @@ extension AdditionalInfoVC {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        self.activeTextField = nil
+        textView.superview?.animateBorder(false, type: .border)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        resignFirstResponder()
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        textField.superview?.animateBorder(false, type: .border)
-        let currDesc = descTV.text!
-        onboardingDescription = currDesc
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.isEmpty || textView.text == "" || textView.text == "\n" {
+            doneButton.isUserInteractionEnabled = false
+            doneButton.backgroundColor = UIColor.ColorLibrary.mediumGrey
+        } else {
+            doneButton.isUserInteractionEnabled = true
+            doneButton.backgroundColor = UIColor.ColorLibrary.accentColor
+        }
     }
     
     func setNavigation() {
         initSkipButton()
         
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController!.navigationBar.shadowImage = UIImage()
-        self.navigationController!.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
         navigationItem.largeTitleDisplayMode = .never
         self.tabBarController?.tabBar.isHidden = true
         

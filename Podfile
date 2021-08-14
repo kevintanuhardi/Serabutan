@@ -10,5 +10,6 @@ target 'Serabutan' do
   pod 'SwiftyJSON', '4.0'
   pod 'DropDown'
   pod 'TagListView', '1.4.1'
+pod 'NotificationBannerSwift', ' 3.0.6'
 
 end

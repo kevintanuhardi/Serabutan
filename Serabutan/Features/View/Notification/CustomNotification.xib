@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomNotification" customModule="Serabutan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-0" translatesAutoresizingMaskIntoConstraints="NO" id="Vnv-35-cpz">
+                    <rect key="frame" x="12" y="12" width="34" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Vnv-35-cpz" secondAttribute="height" multiplier="1:1" id="gDd-EX-Vow"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TTZ-ab-7E9">
+                    <rect key="frame" x="58" y="6" width="344" height="46"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trN-Yn-oVx">
+                            <rect key="frame" x="0.0" y="0.0" width="344" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W70-mf-wwl">
+                            <rect key="frame" x="0.0" y="25.5" width="344" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TTZ-ab-7E9" secondAttribute="trailing" constant="12" id="BgY-wE-u0M"/>
+                <constraint firstItem="TTZ-ab-7E9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Dg4-bl-gNh"/>
+                <constraint firstItem="Vnv-35-cpz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="W5a-7F-6Ok"/>
+                <constraint firstItem="Vnv-35-cpz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="q2V-Ya-g9i"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Vnv-35-cpz" secondAttribute="bottom" constant="12" id="s5m-eK-WDD"/>
+                <constraint firstItem="TTZ-ab-7E9" firstAttribute="leading" secondItem="Vnv-35-cpz" secondAttribute="trailing" constant="12" id="xNP-bu-Q1h"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="leftImage" destination="Vnv-35-cpz" id="wJA-Y2-lc7"/>
+                <outlet property="subtitleLabel" destination="W70-mf-wwl" id="VRL-x9-DJA"/>
+                <outlet property="titleLabel" destination="trN-Yn-oVx" id="OKZ-Xr-h7t"/>
+            </connections>
+            <point key="canvasLocation" x="-46.376811594202906" y="159.70982142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="avatar-0" width="100" height="100"/>
+    </resources>
+</document>

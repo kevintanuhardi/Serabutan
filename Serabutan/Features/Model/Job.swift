@@ -13,6 +13,10 @@ enum JobStatus {
     case active, taken, cancelled, done
 }
 
+enum JobAction {
+    case message, change, cancel, finished
+}
+
 enum Gender: String {
     case male = "Laki-laki"
     case female = "Perempuan"
@@ -22,13 +26,13 @@ enum Gender: String {
 enum AgePreference: String {
     case youngAdult = "18-25"
     case middleAdult = "26-40"
-    case lateAdult = "40"
+    case lateAdult = "40+"
 }
 
 enum Urgency: String {
-    case high = "Urgensi tinggi"
-    case medium = "Urgensi sedang"
-    case low = "Urgensi rendah"
+    case high = "Urgensi Tinggi"
+    case medium = "Urgensi Sedang"
+    case low = "Urgensi Rendah"
 }
 
 //MARK: - Dummy Data
@@ -44,7 +48,7 @@ class Jobs: NSObject, MKAnnotation {
     let desc : String?
     let price : Int
     var status : JobStatus
-    let distance : Double
+    var distance : Double
     let coordinate: CLLocationCoordinate2D
     
     let tags : [String]?

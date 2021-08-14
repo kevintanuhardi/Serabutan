@@ -37,8 +37,12 @@ extension DetailBantuanVC {
         helperView.layer.cornerRadius = 5
         helperView.layer.masksToBounds = true
         
-        floatingBottom.dropShadow(scale: true)
+        floatingBottom.dropShadow(opacity: 0.25, offset: -5, scale: true)
         separatorHeight.constant = 0.5
+        
+        jobImgCarousel.isHidden = (selectedJob.medias?.isEmpty ?? false)
+        tagView.isHidden = (selectedJob.tags?.isEmpty ?? false)
+        
     }
     
     func setFont() {
@@ -102,27 +106,28 @@ extension DetailBantuanVC {
     }
     
     func configureHelper() {
-        
+        setNavigationItems()
         checkUser()
+        floatingBottom.isHidden = false
         
         switch selectedJob.status {
         case .taken :
             helperName.isHidden = false
             chatButton.isHidden = false
-            
             helpFinishButton.setTitle("Selesai", for: .normal)
             helpStatusLabel.text = "bersedia membantu."
-            
         case .active:
             helperAvatar.isHidden = true
             helperName.isHidden = true
             chatButton.isHidden = true
             helperVerified.isHidden = true
-            
+            floatingBottom.isHidden = (selectedJob.jobPosterId.id == currentUser)
             helpFinishButton.setTitle("Saya Bersedia Membantu", for: .normal)
             helpStatusLabel.text = "Belum ada yang bersedia membantu."
         case .cancelled:
-            break
+            helpFinishButton.setTitle("Bantuan Dibatalkan", for: .normal)
+            helpFinishButton.backgroundColor = .ColorLibrary.mediumGrey
+            chatButton.isHidden = true
         case .done:
             helpFinishButton.setTitle("Bantuan Telah Selesai", for: .normal)
             helpFinishButton.backgroundColor = .systemGreen
@@ -131,26 +136,19 @@ extension DetailBantuanVC {
     }
     
     func checkUser() {
-        var helper : UserProfile?
-        let currentUser = UserDefaults.standard.value(forKey: "loggedUser") as! Int
-        
         if selectedJob.helperId == nil || selectedJob.helperId?.id == currentUser {
             // If the job is taken by current user or is currently nil
             selectedJob.helperId = DummyData.shared.getUserProfile()[currentUser]
-            helper = selectedJob.helperId
             helperAvatar.isHidden = true
             helperVerified.isHidden = true
             helperName.setTitle("Anda", for: .normal)
-            
         } else {
             // If the job was taken by other user
-            helperAvatar.image = helper?.avatar
-            helperName.setTitle(helper?.name, for: .normal)
+            helperAvatar.image = selectedJob.helperId?.avatar
+            helperName.setTitle(selectedJob.helperId?.name, for: .normal)
             helperAvatar.isHidden = false
             helperAvatar.isHidden = false
-            helperVerified.isHidden = false
-            helper!.isVerified ? (helperVerified.isHidden = true) : (helperVerified.isHidden = false)
-            
+            helperVerified.isHidden = !(selectedJob.helperId?.isVerified ?? false)
         }
     }
     
