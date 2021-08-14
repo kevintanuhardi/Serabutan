@@ -34,8 +34,8 @@ class UserProfile {
         self.gender = gender
         self.avatar = avatar
         self.bio = bio
-        self.joinDate = Date()
+        self.joinDate = joinDate
         self.isVerified = isVerified
-        self.statistics = ProfileStatistic(reviewAggregate: 0.0, totalReview: 0, dibantu: 0, membantu: 0)
+        self.statistics = statistics
     }
 }

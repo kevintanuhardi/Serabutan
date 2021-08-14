@@ -65,7 +65,7 @@ extension NewAssistanceVC {
         genderView.layer.cornerRadius = 5
         genderTF.font = .FontLibrary.body
         genderTF.inputView = nil
-        genderImage.image = UIImage(named: "Down")
+        genderImage.image = UIImage(systemName: "chevron.down")
         
         ageTitle.font = .FontLibrary.caption1
         ageView.layer.backgroundColor = UIColor.white.cgColor
@@ -73,7 +73,7 @@ extension NewAssistanceVC {
         ageView.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         ageView.layer.cornerRadius = 5
         ageTF.inputView = nil
-        ageImage.image = UIImage(named: "Down")
+        ageImage.image = UIImage(named: "chevron.down")
         
         tagTitle.font = .FontLibrary.caption1
         infoView.layer.backgroundColor = UIColor.white.cgColor

@@ -44,7 +44,7 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         let id = DummyData.shared.getUserProfile().count
         let statistics = ProfileStatistic(reviewAggregate: 0, totalReview: 0, dibantu: 0, membantu: 0)
         
-        let user = UserProfile(id: id, name: "", dob: Date(), gender: .other, avatar: UIImage(named: "Avatar")!, bio: "", joinDate: Date(), isVerified: false, statistics: statistics)
+        let user = UserProfile(id: id, name: "", dob: Date(), gender: .other, avatar: UIImage(named: "avatarIcon")!, bio: "", joinDate: Date(), isVerified: false, statistics: statistics)
         
         guard let name = onboardingName else { return }
         user.name = name
@@ -68,6 +68,5 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         homeVC.modalPresentationStyle = .overFullScreen
         self.navigationController?.present(homeVC, animated: true)
         
-        print("Segue")
     }
 }
