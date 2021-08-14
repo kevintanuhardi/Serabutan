@@ -10,9 +10,6 @@ import UIKit
 
 class AdditionalInfoVC: UIViewController, UITextViewDelegate {
     
-    var activeTextField: UITextField?
-    var dummy = DummyData.shared.getUserProfile()
-    var onboardingDescription: String? = ""
     var onboardingName: String!
     var onboardingDOB: Date!
     var onboardingGender: Gender!
@@ -22,11 +19,17 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        onboardingName = "Yahya Ayyash"
+        onboardingDOB = Date()
+        onboardingGender = .male
+        
         descTV.delegate = self
         setNavigation()
         doneButton.backgroundColor = UIColor.ColorLibrary.mediumGrey
         descTV.textContainerInset = .zero
         descTV.textContainer.lineFragmentPadding = 0
+        
     }
     
     @IBAction func testFunction(_ sender: Any) {
@@ -53,7 +56,7 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         user.gender = gender
         
         if bio {
-            guard let bio = onboardingDescription else { return }
+            guard let bio = descTV.text else { return }
             user.bio = bio
         }
         
@@ -65,15 +68,6 @@ class AdditionalInfoVC: UIViewController, UITextViewDelegate {
         homeVC.modalPresentationStyle = .overFullScreen
         self.navigationController?.present(homeVC, animated: true)
         
-    }
-    
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if(text == "\n") {
-            textView.resignFirstResponder()
-            doneButton.isUserInteractionEnabled = true
-            doneButton.backgroundColor = UIColor.ColorLibrary.accentColor
-            return false
-        }
-        return true
+        print("Segue")
     }
 }

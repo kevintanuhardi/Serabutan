@@ -16,19 +16,27 @@ class OngoingActivityVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let userProfile = DummyData.shared.getUserProfile()[user]
-        let activeJobs = DummyData.shared.getJobsList(userProfile, .active)
-        let takenJobs = DummyData.shared.getJobsList(userProfile, .taken)
-        dummyData = takenJobs + activeJobs
-        
         ongoingActivityTable.delegate = self
         ongoingActivityTable.dataSource = self
         ongoingActivityTable.register(AssistanceTableViewCell.nib(), forCellReuseIdentifier: AssistanceTableViewCell.identifier)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setOngoingData()
+    }
+    
+    func setOngoingData(){
+        let userProfile = DummyData.shared.getUserProfile()[user]
+        let activeJobs = DummyData.shared.getJobsList(userProfile, .active)
+        let takenJobs = DummyData.shared.getJobsList(userProfile, .taken)
+        dummyData = takenJobs + activeJobs
+        print(dummyData)
+        
+        DispatchQueue.main.async {
+            self.ongoingActivityTable.reloadData()
+        }
+    }
 }
-
 
 extension OngoingActivityVC {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

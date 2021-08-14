@@ -20,11 +20,13 @@ extension NewAssistanceVC {
     
     func setCustomTextField(){
         urgencyView.backgroundColor = UIColor.white
-        urgencyTFView.layer.borderWidth = 1
+        urgencyTFView.layer.borderWidth = 0.5
         urgencyTFView.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         urgencyTFView.layer.cornerRadius = 5
         urgencyTF.inputView = nil
+        urgencyTF.font = .FontLibrary.body
         urgencyTF.isUserInteractionEnabled = true
+        urgencyTitle.font = .FontLibrary.caption1
         urgencyIndicatorView.isHidden = false
         urgencyIndicatorView.layer.cornerRadius = 4
         urgencyIndicatorView.backgroundColor = UIColor.ColorLibrary.highUrgency
@@ -33,44 +35,55 @@ extension NewAssistanceVC {
         urgencyIndicatorView.layer.borderColor = UIColor.ColorLibrary.highUrgency.cgColor
         urgencyIndicatorView.alpha = 1
         
+        titleTitle.font = .FontLibrary.caption1
+        titleTF.font = .FontLibrary.body
         titleView.layer.backgroundColor = UIColor.white.cgColor
-        titleTFView.layer.borderWidth = 1
+        titleTFView.layer.borderWidth = 0.5
         titleTFView.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         titleTFView.layer.cornerRadius = 5
         
+        descTitle.font = .FontLibrary.caption1
         descView.layer.backgroundColor = UIColor.white.cgColor
-        decTFView.layer.borderWidth = 1
+        descTV.textContainerInset = .zero
+        descTV.textContainer.lineFragmentPadding = 0
+        decTFView.layer.borderWidth = 0.5
         decTFView.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         decTFView.layer.cornerRadius = 5
         
+        compensationTitle.font = .FontLibrary.caption1
         compensationView.layer.backgroundColor = UIColor.white.cgColor
-        compensationTFView.layer.borderWidth = 1
+        compensationTF.font = .FontLibrary.body
+        compensationTFView.layer.borderWidth = 0.5
         compensationTFView.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         compensationTFView.layer.cornerRadius = 5
         
         preferenceView.layer.backgroundColor = UIColor.white.cgColor
+        genderTitle.font = .FontLibrary.caption1
         genderView.layer.backgroundColor = UIColor.white.cgColor
-        genderView.layer.borderWidth = 1
+        genderView.layer.borderWidth = 0.5
         genderView.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         genderView.layer.cornerRadius = 5
+        genderTF.font = .FontLibrary.body
         genderTF.inputView = nil
         genderImage.image = UIImage(named: "Down")
         
+        ageTitle.font = .FontLibrary.caption1
         ageView.layer.backgroundColor = UIColor.white.cgColor
-        ageView.layer.borderWidth = 1
+        ageView.layer.borderWidth = 0.5
         ageView.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         ageView.layer.cornerRadius = 5
         ageTF.inputView = nil
         ageImage.image = UIImage(named: "Down")
         
+        tagTitle.font = .FontLibrary.caption1
         infoView.layer.backgroundColor = UIColor.white.cgColor
         infoStackView.layer.backgroundColor = UIColor.white.cgColor
-        infoTFView.layer.borderWidth = 1
+        infoTFView.layer.borderWidth = 0.5
         infoTFView.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         infoTFView.layer.cornerRadius = 5
         
         mediaView.layer.backgroundColor = UIColor.white.cgColor
-        mediaAddView.layer.borderWidth = 1
+        mediaAddView.layer.borderWidth = 0.5
         mediaAddView.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         mediaAddView.layer.cornerRadius = 5
     }
@@ -97,21 +110,22 @@ extension NewAssistanceVC {
     
     func initShareButton(){
         let shareButton = UIButton(type: .system)
+        shareButton.frame = CGRect(x: 0, y: 0, width: 65, height: 30)
         shareButton.setTitle("Bagikan", for: .normal)
+        shareButton.titleLabel?.font = .FontLibrary.textLink1
         shareButton.setTitleColor(.white, for: .normal)
-        shareButton.frame = CGRect(x: 0, y: 0, width: 69, height: 34)
-        shareButton.layer.backgroundColor = UIColor.ColorLibrary.accentColor.cgColor
+        shareButton.backgroundColor = UIColor.ColorLibrary.accentColor
         shareButton.layer.cornerRadius = 5
-        shareButton.addTarget(self, action: #selector(shareButtonAction(_sender:)), for: .touchUpInside)
+        shareButton.addTarget(self, action: #selector(shareButtonAction), for: .touchUpInside)
         navigationItem.rightBarButtonItem =  UIBarButtonItem(customView: shareButton)
     }
 }
 
 extension UIColor {
     func as1ptImage() -> UIImage {
-        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+        UIGraphicsBeginImageContext(CGSize(width: 0.5, height: 0.5))
         setFill()
-        UIGraphicsGetCurrentContext()?.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+        UIGraphicsGetCurrentContext()?.fill(CGRect(x: 0, y: 0, width: 0.5, height: 0.5))
         let image = UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
         UIGraphicsEndImageContext()
         return image

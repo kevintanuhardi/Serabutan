@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -22,12 +21,12 @@
                 <outlet property="resetButton" destination="QK0-KR-PxV" id="Ozm-3R-M4q"/>
                 <outlet property="topBarView" destination="VrO-ko-kSg" id="KUH-mS-O97"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="sortByCollectionButton" destination="8xV-ks-2Bf" collectionClass="NSMutableArray" id="SEF-9L-zig"/>
-                <outletCollection property="sortByCollectionButton" destination="txH-NY-pdO" collectionClass="NSMutableArray" id="1Yg-Dg-UvE"/>
-                <outletCollection property="sortByCollectionButton" destination="BFs-ir-ytl" collectionClass="NSMutableArray" id="BlK-R7-N9f"/>
-                <outletCollection property="sortByCollectionButton" destination="erN-Of-3yP" collectionClass="NSMutableArray" id="zgz-f7-glR"/>
                 <outletCollection property="compensationCollection" destination="bib-M9-Jgk" collectionClass="NSMutableArray" id="D3H-zK-6il"/>
                 <outletCollection property="compensationCollection" destination="jfr-Hi-9Mo" collectionClass="NSMutableArray" id="vcR-Zj-q1d"/>
+                <outletCollection property="sortByCollectionButton" destination="8xV-ks-2Bf" collectionClass="NSMutableArray" id="zpm-PG-r4L"/>
+                <outletCollection property="sortByCollectionButton" destination="txH-NY-pdO" collectionClass="NSMutableArray" id="TIb-QF-3XW"/>
+                <outletCollection property="sortByCollectionButton" destination="erN-Of-3yP" collectionClass="NSMutableArray" id="qb2-RI-Bad"/>
+                <outletCollection property="sortByCollectionButton" destination="BFs-ir-ytl" collectionClass="NSMutableArray" id="XwR-UZ-eeP"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -64,7 +63,7 @@
                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="sortBySelected:" destination="-1" eventType="touchUpInside" id="3an-lt-Wp3"/>
+                                        <action selector="sortBySelectedButton:" destination="-1" eventType="touchUpInside" id="3an-lt-Wp3"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erN-Of-3yP">
@@ -78,7 +77,7 @@
                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="sortBySelected:" destination="-1" eventType="touchUpInside" id="cPt-Hp-as8"/>
+                                        <action selector="sortBySelectedButton:" destination="-1" eventType="touchUpInside" id="cPt-Hp-as8"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txH-NY-pdO">
@@ -92,7 +91,7 @@
                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="sortBySelected:" destination="-1" eventType="touchUpInside" id="8Px-VF-pM4"/>
+                                        <action selector="sortBySelectedButton:" destination="-1" eventType="touchUpInside" id="8Px-VF-pM4"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQd-UI-2SS">
@@ -105,7 +104,7 @@
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="applyButtonAction:" destination="-1" eventType="touchUpInside" id="N0y-x3-gYz"/>
+                                        <action selector="applyButtonTapped:" destination="-1" eventType="touchUpInside" id="N0y-x3-gYz"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xV-ks-2Bf">
@@ -119,7 +118,7 @@
                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="sortBySelected:" destination="-1" eventType="touchUpInside" id="AW3-LJ-wpJ"/>
+                                        <action selector="sortBySelectedButton:" destination="-1" eventType="touchUpInside" id="AW3-LJ-wpJ"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QK0-KR-PxV">
@@ -129,7 +128,7 @@
                                         <color key="titleColor" name="AccentColor"/>
                                     </state>
                                     <connections>
-                                        <action selector="resetButtonAction:" destination="-1" eventType="touchUpInside" id="Z2u-sG-iA9"/>
+                                        <action selector="resetButtonTapped:" destination="-1" eventType="touchUpInside" id="Z2u-sG-iA9"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kompensasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FP-1j-jck">
@@ -301,7 +300,7 @@
     </objects>
     <resources>
         <namedColor name="AccentColor">
-            <color red="0.50199997425079346" green="0.3059999942779541" blue="0.82400000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.72549019607843135" green="0.21568627450980393" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

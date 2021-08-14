@@ -1,6 +1,10 @@
 PODS:
   - Alamofire (5.4.1)
   - DropDown (2.3.13)
+  - MarqueeLabel (4.0.5)
+  - NotificationBannerSwift (3.0.6):
+    - MarqueeLabel (~> 4.0.5)
+    - SnapKit (~> 5.0.1)
   - RxCocoa (6.2.0):
     - RxRelay (= 6.2.0)
     - RxSwift (= 6.2.0)
@@ -10,12 +14,14 @@ PODS:
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
+  - SnapKit (5.0.1)
   - SwiftyJSON (4.0.0)
   - TagListView (1.4.1)
 
 DEPENDENCIES:
   - Alamofire (= 5.4.1)
   - DropDown
+  - NotificationBannerSwift (= 3.0.6)
   - RxCocoa
   - RxSwift
   - SDWebImage
@@ -26,23 +32,29 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - DropDown
+    - MarqueeLabel
+    - NotificationBannerSwift
     - RxCocoa
     - RxRelay
     - RxSwift
     - SDWebImage
+    - SnapKit
     - SwiftyJSON
     - TagListView
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
+  NotificationBannerSwift: 7021be2338f8f29cf424b0aca43da462bf9e2a1a
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
 
-PODFILE CHECKSUM: 1bad4a44f308c83f968374e779ef3602df4ef286
+PODFILE CHECKSUM: 7ced673ecddc08942849da6e262ae35c1e503993
 
 COCOAPODS: 1.10.1

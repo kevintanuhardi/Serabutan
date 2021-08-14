@@ -18,14 +18,20 @@ enum textStyle {
 
 struct StringFormatter {
     func distance(_ distance: Double) -> String {
-        return distance < 1000 ? ("\(Int(distance))" + " m") : ("\(Int(distance / 1000))" + " km")
+        var finalDistance: Double
+        if distance < 1000 {
+            finalDistance = (round(10*distance))/10
+        } else {
+            finalDistance = distance / 1000
+            finalDistance = (round(10*finalDistance))/10
+        }
+        return distance < 1000 ? ("\(finalDistance)" + " m") : ("\(finalDistance)" + " km")
     }
     
-    func distanceFromCoordinate(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> String {
+    func distanceFromCoordinate(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> Double {
         let start = CLLocation(latitude: from.latitude, longitude: from.longitude)
         let end = CLLocation(latitude: to.latitude, longitude: to.longitude)
-        let finalDistance = distance(start.distance(from: end))
-        return finalDistance
+        return start.distance(from: end)
     }
     
     func priceFormatting(amount: Int) -> String {
@@ -53,6 +59,23 @@ struct StringFormatter {
         formatter.setLocalizedDateFormatFromTemplate("ddMMMyyyy")
         
         return formatter.string(from: date)
+    }
+    
+    // A function to shorten user full name
+    func shortenedName(fullName: String) -> String {
+        let separatedName = fullName.components(separatedBy: " ")
+        
+        if (separatedName.count > 1) && (separatedName[0].count + separatedName[1].count > 15) {
+            // Return shortened name if the full name is more than 15 char
+            // Uvuvwevwevwe Onyetenvewve Ugwemubwem Ossas -> Uvuvwevwevwe O.
+            return separatedName[0] + " " + separatedName[1].prefix(1) + "."
+        } else if (separatedName.count > 1) && (separatedName[0].count + separatedName[1].count <= 15) {
+            // Return shortened name if the full name is more than 15 char
+            // Yahya Ayyash -> Yahya Ayyash
+            return separatedName[0] + " " + separatedName[1]
+        } else {
+            return fullName
+        }
     }
     
     func styleCombiner(firstWord: String, secondWord: String, style: textStyle) -> NSAttributedString {
