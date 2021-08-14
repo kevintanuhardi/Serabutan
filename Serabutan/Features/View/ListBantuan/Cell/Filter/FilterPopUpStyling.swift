@@ -93,47 +93,4 @@ extension FilterPopUpVC{
         toolbar.setItems([spaceButton, doneButton], animated: true)
         maxValTF.inputAccessoryView = toolbar
     }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        for view in textField.subviews {
-            if view.restorationIdentifier == "Border" {
-                view.animateBorder(true, type: .color)
-            }
-        }
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        let currMinValue1 = minValTF.text?.replacingOccurrences(of: "Rp ", with: "")
-        let currMinValue = currMinValue1!.replacingOccurrences(of: ".", with: "")
-        let currMaxValue1 = maxValTF.text?.replacingOccurrences(of: "Rp ", with: "")
-        let currMaxValue = currMaxValue1!.replacingOccurrences(of: ".", with: "")
-        print("Curr MIN is:" + currMinValue)
-        print("Curr MAX is:" + currMaxValue)
-        
-        if (minValTF .isEditing) {
-            let viewMinVal = Int(currMinValue)
-            minValTF.text = "Rp " + priceFormatting(amount: viewMinVal!)
-        } else if maxValTF .isEditing{
-            let viewMaxVal = Int(currMaxValue)
-            maxValTF.text = "Rp " + priceFormatting(amount: viewMaxVal!)
-        }
-        
-        if (minValTF .endEditing(true)) {
-            let viewMinVal = Int(currMinValue) ?? minValue
-            minValTF.text = "Rp " + priceFormatting(amount: viewMinVal!)
-        } else if maxValTF .endEditing(true){
-            let viewMaxVal = Int(currMaxValue) ?? maxValue
-            maxValTF.text = "Rp " + priceFormatting(amount: viewMaxVal!)
-        }
-        
-        for view in textField.subviews {
-            if view.restorationIdentifier == "Border" {
-                view.animateBorder(false, type: .color)
-            }
-        }
-        
-        minValue = Int(currMinValue) ?? 50000
-        maxValue = Int(currMaxValue) ?? 500000
-    }
-    
 }
