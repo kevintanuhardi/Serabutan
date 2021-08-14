@@ -10,19 +10,15 @@ import UIKit
 
 class AdditionalInfoVC: UIViewController, UITextViewDelegate {
     
-    var onboardingName: String!
-    var onboardingDOB: Date!
-    var onboardingGender: Gender!
+    var onboardingName: String?
+    var onboardingDOB: Date?
+    var onboardingGender: Gender?
     
     @IBOutlet weak var descTV: UITextView!
     @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        onboardingName = "John Doe"
-        onboardingDOB = Date()
-        onboardingGender = .male
         
         descTV.delegate = self
         setNavigation()
