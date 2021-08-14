@@ -17,7 +17,6 @@ extension NewAssistanceVC {
         initShareButton()
     }
     
-    
     func setCustomTextField(){
         urgencyView.backgroundColor = UIColor.white
         urgencyTFView.layer.borderWidth = 0.5
@@ -65,7 +64,6 @@ extension NewAssistanceVC {
         genderView.layer.cornerRadius = 5
         genderTF.font = .FontLibrary.body
         genderTF.inputView = nil
-        genderImage.image = UIImage(systemName: "chevron.down")
         
         ageTitle.font = .FontLibrary.caption1
         ageView.layer.backgroundColor = UIColor.white.cgColor
@@ -73,7 +71,6 @@ extension NewAssistanceVC {
         ageView.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         ageView.layer.cornerRadius = 5
         ageTF.inputView = nil
-        ageImage.image = UIImage(named: "chevron.down")
         
         tagTitle.font = .FontLibrary.caption1
         infoView.layer.backgroundColor = UIColor.white.cgColor
@@ -104,7 +101,7 @@ extension NewAssistanceVC {
         cancelButton.setImage(UIImage(systemName: "xmark")?.withRenderingMode(.alwaysOriginal), for: .normal)
         cancelButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
         cancelButton.tintColor = UIColor.black
-        cancelButton.addTarget(self, action: #selector(cancelButtonAction(_sender:)), for: .touchUpInside)
+        cancelButton.addTarget(self, action: #selector(cancelButtonAction), for: .touchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: cancelButton)
     }
     
