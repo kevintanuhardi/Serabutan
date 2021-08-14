@@ -48,7 +48,8 @@ class ReviewTableViewCell: UITableViewCell {
     // Set the amount of filled stars in each review
     func setRating(rating: Int) {
         for i in 0 ... (rating - 1) {
-            starRating[i].image = UIImage(named: "star-filled")
+            starRating[i].image = UIImage(systemName: "star.fill")
+            starRating[i].tintColor = .systemYellow
         }
     }
     

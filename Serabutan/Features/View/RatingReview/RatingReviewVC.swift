@@ -38,9 +38,11 @@ class RatingReviewVC: UIViewController, UITextViewDelegate {
         for button in bintangBtn {
             button.imageView?.contentMode = .scaleToFill
             if button.tag <= sender.tag {
-                button.setImage(UIImage.init(named: "bintangKuning"), for: .normal) //selected
+                button.setImage(UIImage.init(named: "star.fill"), for: .normal)
+                button.tintColor = .systemYellow
             } else {
-                button.setImage(UIImage.init(named: "bintangAbu"), for: .normal) //notselected
+                button.setImage(UIImage.init(named: "star.fill"), for: .normal)
+                button.tintColor = .ColorLibrary.mediumGrey
             }
             reviewPoint = sender.tag
             bintangTapped = true

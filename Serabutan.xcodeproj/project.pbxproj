@@ -71,6 +71,11 @@
 		90DCB12F26B6EAC4002145C1 /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */; };
 		90E9C98826B39DE500165319 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */; };
 		90E9C98926B39DE500165319 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */; };
+		90EF604726C790D000CF5973 /* AssistanceListTableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC25226B2490F0005FFE3 /* AssistanceListTableData.swift */; };
+		90EF604826C790D000CF5973 /* AssistanceListStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76047BF26AF3CBB00535995 /* AssistanceListStyling.swift */; };
+		90EF604926C790D700CF5973 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4126AC97F1000478AA /* TagCollectionViewCell.swift */; };
+		90EF604A26C790DB00CF5973 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4526AE4E83000478AA /* Enum.swift */; };
+		90EF604B26C790E000CF5973 /* FilterPopUpStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E726B2F127009E36B7 /* FilterPopUpStyling.swift */; };
 		90F3A4E126B8E404001946E1 /* FontLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3A4E026B8E404001946E1 /* FontLibrary.swift */; };
 		C742289E26B9B10D003DD169 /* NAKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742289D26B9B10D003DD169 /* NAKeyboardObserver.swift */; };
 		C74228A126BA3E9F003DD169 /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742289F26BA3E9F003DD169 /* ActivityVC.swift */; };
@@ -82,9 +87,7 @@
 		C744D7DE26B2D324009E36B7 /* AssistanceTableViewStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7DD26B2D324009E36B7 /* AssistanceTableViewStyling.swift */; };
 		C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */; };
 		C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */; };
-		C744D7E826B2F127009E36B7 /* FilterPopUpStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E726B2F127009E36B7 /* FilterPopUpStyling.swift */; };
 		C75CACD826BEBF420074B55D /* NAPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75CACD726BEBF420074B55D /* NAPickerView.swift */; };
-		C76047C026AF3CBB00535995 /* AssistanceListStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76047BF26AF3CBB00535995 /* AssistanceListStyling.swift */; };
 		C79063E826B3BE7500AE7687 /* NACollectionViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79063E726B3BE7500AE7687 /* NACollectionViewConfig.swift */; };
 		C7BD8BA826BFF8BE00A0399C /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BA726BFF8BE00A0399C /* GenderPicker.swift */; };
 		C7BD8BAC26C001AE00A0399C /* AdditionalInfoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BAB26C001AE00A0399C /* AdditionalInfoExtension.swift */; };
@@ -98,11 +101,8 @@
 		C7CCC24D26B1DB590005FFE3 /* AssistanceListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */; };
 		C7CCC25026B1DBD80005FFE3 /* AssistanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24E26B1DBD80005FFE3 /* AssistanceTableViewCell.swift */; };
 		C7CCC25126B1DBD80005FFE3 /* AssistanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24F26B1DBD80005FFE3 /* AssistanceTableViewCell.xib */; };
-		C7CCC25326B2490F0005FFE3 /* AssistanceListTableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC25226B2490F0005FFE3 /* AssistanceListTableData.swift */; };
 		C7CCC25526B26CFA0005FFE3 /* AssistanceTableConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC25426B26CFA0005FFE3 /* AssistanceTableConfig.swift */; };
-		C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4126AC97F1000478AA /* TagCollectionViewCell.swift */; };
 		C7D7AE4426AC97F1000478AA /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D7AE4226AC97F1000478AA /* TagCollectionViewCell.xib */; };
-		C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4526AE4E83000478AA /* Enum.swift */; };
 		C7D7AE4826AE5040000478AA /* BantuanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4726AE5040000478AA /* BantuanModel.swift */; };
 		C7FE979A26BA65F900B27160 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FE979926BA65F900B27160 /* StringFormatter.swift */; };
 		F981FF6B26BA90EE00F0ACE5 /* MulaiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981FF6A26BA90EE00F0ACE5 /* MulaiVC.swift */; };
@@ -804,7 +804,6 @@
 				185D12C426A7C09100F6105C /* Assets.xcassets in Resources */,
 				F981FF8526BB6E8600F0ACE5 /* FormulirProfilVC.xib in Resources */,
 				C7CCC24626B199DD0005FFE3 /* NewAssistanceVC.xib in Resources */,
-				185D12C426A7C09100F6105C /* Assets.xcassets in Resources */,
 				79FAF9D726B8F3AA009BF31F /* TagsCVC.xib in Resources */,
 				C7D7AE4426AC97F1000478AA /* TagCollectionViewCell.xib in Resources */,
 				C7CCC24D26B1DB590005FFE3 /* AssistanceListVC.xib in Resources */,
@@ -872,6 +871,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90EF604B26C790E000CF5973 /* FilterPopUpStyling.swift in Sources */,
+				90EF604A26C790DB00CF5973 /* Enum.swift in Sources */,
+				90EF604926C790D700CF5973 /* TagCollectionViewCell.swift in Sources */,
+				90EF604726C790D000CF5973 /* AssistanceListTableData.swift in Sources */,
+				90EF604826C790D000CF5973 /* AssistanceListStyling.swift in Sources */,
 				9060D42526C0088C002243BC /* EditProfileStyling.swift in Sources */,
 				90DCB12F26B6EAC4002145C1 /* CustomStackView.swift in Sources */,
 				7997654326BEC0190054460A /* FormulirProfilExtension.swift in Sources */,
@@ -893,8 +897,6 @@
 				C7BD8BB026C02BD800A0399C /* NADataConfig.swift in Sources */,
 				C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */,
 				90D9B44426C4ADDF00CABA6F /* CustomNotification.swift in Sources */,
-				C7CCC25326B2490F0005FFE3 /* AssistanceListTableConfig.swift in Sources */,
-				C7CCC25326B2490F0005FFE3 /* AssistanceListTableData.swift in Sources */,
 				18B7273426B90F760005DBCA /* HomeVM.swift in Sources */,
 				C7CCC25026B1DBD80005FFE3 /* AssistanceTableViewCell.swift in Sources */,
 				1853414526AC472C0027C0F3 /* Job.swift in Sources */,
@@ -905,13 +907,9 @@
 				C7CCC24526B199DD0005FFE3 /* NewAssistanceVC.swift in Sources */,
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
 				C7CCC24826B19A660005FFE3 /* NAStyle.swift in Sources */,
-				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,
 				C7BD8BB426C02D7600A0399C /* NAAlert.swift in Sources */,
-				C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */,
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
 				90D9B43626C4A05900CABA6F /* DetailBantuanCollectionView.swift in Sources */,
-				C76047C026AF3CBB00535995 /* AssistanceListNavigationConfig.swift in Sources */,
-				C76047C026AF3CBB00535995 /* AssistanceListStyling.swift in Sources */,
 				C79063E826B3BE7500AE7687 /* NACollectionViewConfig.swift in Sources */,
 				90D9B43226C495ED00CABA6F /* DoneKeyboardButton.swift in Sources */,
 				C75CACD826BEBF420074B55D /* NAPickerView.swift in Sources */,
@@ -935,7 +933,6 @@
 				F981FF8826BB755C00F0ACE5 /* AdditionalInfoVC.swift in Sources */,
 				F981FF8226BB6E7700F0ACE5 /* FormulirProfilVC.swift in Sources */,
 				C7FE979A26BA65F900B27160 /* StringFormatter.swift in Sources */,
-				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
 				79FAF9D626B8F3AA009BF31F /* TagsCVC.swift in Sources */,
 				79089B1C26B300FA0053077D /* DetailBantuanVC.swift in Sources */,
 				79FAF9CF26B87682009BF31F /* DetailBantuanNavigationConfig.swift in Sources */,
@@ -945,14 +942,9 @@
 				9060D42926C015EF002243BC /* EditProfileExtension.swift in Sources */,
 				90A0AF0326BC2CCA00510A8E /* JobListViewStyle.swift in Sources */,
 				90D9B44626C4E0C700CABA6F /* CustomNotificationStyling.swift in Sources */,
-				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,
-				C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */,
-				C744D7E826B2F127009E36B7 /* FilterPopUpStyling.swift in Sources */,
 				79DD925A26BCF08D002BDA22 /* OnboardingNavigationConfig.swift in Sources */,
 				9037FAD826C0D9DC00CBF7AD /* TabBarController.swift in Sources */,
-				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
 				C7CCC25526B26CFA0005FFE3 /* AssistanceTableConfig.swift in Sources */,
-				C76047C026AF3CBB00535995 /* AssistanceListStyling.swift in Sources */,
 				F9C858E926BCD0BE00EDE9A9 /* CustomButton.swift in Sources */,
 				C744D7DE26B2D324009E36B7 /* AssistanceTableViewStyling.swift in Sources */,
 				C7CCC24C26B1DB590005FFE3 /* AssistanceListVC.swift in Sources */,
