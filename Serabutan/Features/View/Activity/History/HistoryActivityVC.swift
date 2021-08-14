@@ -17,15 +17,24 @@ class HistoryActivityVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        historyActivityTable.delegate = self
+        historyActivityTable.dataSource = self
+        historyActivityTable.register(AssistanceTableViewCell.nib(), forCellReuseIdentifier: AssistanceTableViewCell.identifier)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setHistoryData()
+    }
+    
+    func setHistoryData(){
         let userProfile = DummyData.shared.getUserProfile()[user]
         let doneJobs = DummyData.shared.getJobsList(userProfile, .done)
         let cancelledJobs = DummyData.shared.getJobsList(userProfile, .cancelled)
         dummyData = doneJobs + cancelledJobs
         
-        historyActivityTable.delegate = self
-        historyActivityTable.dataSource = self
-        historyActivityTable.register(AssistanceTableViewCell.nib(), forCellReuseIdentifier: AssistanceTableViewCell.identifier)
+        DispatchQueue.main.async {
+            self.historyActivityTable.reloadData()
+        }
     }
     
     func priceFormatting(amount: Int) -> String{
