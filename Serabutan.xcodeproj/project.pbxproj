@@ -82,10 +82,9 @@
 		C744D7DE26B2D324009E36B7 /* AssistanceTableViewStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7DD26B2D324009E36B7 /* AssistanceTableViewStyling.swift */; };
 		C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */; };
 		C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */; };
-		C744D7E826B2F127009E36B7 /* FilterPopUpConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */; };
+		C744D7E826B2F127009E36B7 /* FilterPopUpStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E726B2F127009E36B7 /* FilterPopUpStyling.swift */; };
 		C75CACD826BEBF420074B55D /* NAPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75CACD726BEBF420074B55D /* NAPickerView.swift */; };
-		C75E13EC26B85917007BEF41 /* AssistanceListConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E13EB26B85917007BEF41 /* AssistanceListConfig.swift */; };
-		C76047C026AF3CBB00535995 /* AssistanceListNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */; };
+		C76047C026AF3CBB00535995 /* AssistanceListStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76047BF26AF3CBB00535995 /* AssistanceListStyling.swift */; };
 		C79063E826B3BE7500AE7687 /* NACollectionViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79063E726B3BE7500AE7687 /* NACollectionViewConfig.swift */; };
 		C7BD8BA826BFF8BE00A0399C /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BA726BFF8BE00A0399C /* GenderPicker.swift */; };
 		C7BD8BAC26C001AE00A0399C /* AdditionalInfoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BAB26C001AE00A0399C /* AdditionalInfoExtension.swift */; };
@@ -99,7 +98,7 @@
 		C7CCC24D26B1DB590005FFE3 /* AssistanceListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */; };
 		C7CCC25026B1DBD80005FFE3 /* AssistanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24E26B1DBD80005FFE3 /* AssistanceTableViewCell.swift */; };
 		C7CCC25126B1DBD80005FFE3 /* AssistanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24F26B1DBD80005FFE3 /* AssistanceTableViewCell.xib */; };
-		C7CCC25326B2490F0005FFE3 /* AssistanceListTableConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC25226B2490F0005FFE3 /* AssistanceListTableConfig.swift */; };
+		C7CCC25326B2490F0005FFE3 /* AssistanceListTableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC25226B2490F0005FFE3 /* AssistanceListTableData.swift */; };
 		C7CCC25526B26CFA0005FFE3 /* AssistanceTableConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC25426B26CFA0005FFE3 /* AssistanceTableConfig.swift */; };
 		C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4126AC97F1000478AA /* TagCollectionViewCell.swift */; };
 		C7D7AE4426AC97F1000478AA /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D7AE4226AC97F1000478AA /* TagCollectionViewCell.xib */; };
@@ -198,10 +197,9 @@
 		C744D7DD26B2D324009E36B7 /* AssistanceTableViewStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceTableViewStyling.swift; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableViewStyling.swift; sourceTree = SOURCE_ROOT; };
 		C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpVC.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.swift; sourceTree = SOURCE_ROOT; };
 		C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FilterPopUpVC.xib; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpVC.xib; sourceTree = SOURCE_ROOT; };
-		C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpConfig.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpConfig.swift; sourceTree = SOURCE_ROOT; };
+		C744D7E726B2F127009E36B7 /* FilterPopUpStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpStyling.swift; path = Serabutan/Features/View/ListBantuan/Cell/Filter/FilterPopUpStyling.swift; sourceTree = SOURCE_ROOT; };
 		C75CACD726BEBF420074B55D /* NAPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NAPickerView.swift; path = serabutan/Features/View/NewAssistance/Objects/NAPickerView.swift; sourceTree = SOURCE_ROOT; };
-		C75E13EB26B85917007BEF41 /* AssistanceListConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListConfig.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListConfig.swift; sourceTree = SOURCE_ROOT; };
-		C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListNavigationConfig.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
+		C76047BF26AF3CBB00535995 /* AssistanceListStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListStyling.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListStyling.swift; sourceTree = SOURCE_ROOT; };
 		C79063E726B3BE7500AE7687 /* NACollectionViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NACollectionViewConfig.swift; path = serabutan/Features/View/NewAssistance/Objects/NACollectionViewConfig.swift; sourceTree = SOURCE_ROOT; };
 		C7BD8BA726BFF8BE00A0399C /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GenderPicker.swift; path = Serabutan/Features/View/Onboarding/FormulirProfil/GenderPicker.swift; sourceTree = SOURCE_ROOT; };
 		C7BD8BAB26C001AE00A0399C /* AdditionalInfoExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdditionalInfoExtension.swift; path = Serabutan/Features/View/Onboarding/AdditionalInfoVC/AdditionalInfoExtension.swift; sourceTree = SOURCE_ROOT; };
@@ -215,7 +213,7 @@
 		C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssistanceListVC.xib; path = Serabutan/Features/View/ListBantuan/AssistanceListVC.xib; sourceTree = SOURCE_ROOT; };
 		C7CCC24E26B1DBD80005FFE3 /* AssistanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceTableViewCell.swift; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24F26B1DBD80005FFE3 /* AssistanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssistanceTableViewCell.xib; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableViewCell.xib; sourceTree = SOURCE_ROOT; };
-		C7CCC25226B2490F0005FFE3 /* AssistanceListTableConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListTableConfig.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListTableConfig.swift; sourceTree = SOURCE_ROOT; };
+		C7CCC25226B2490F0005FFE3 /* AssistanceListTableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListTableData.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListTableData.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC25426B26CFA0005FFE3 /* AssistanceTableConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceTableConfig.swift; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableConfig.swift; sourceTree = SOURCE_ROOT; };
 		C7D7AE4126AC97F1000478AA /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagCollectionViewCell.swift; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/TagCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C7D7AE4226AC97F1000478AA /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TagCollectionViewCell.xib; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/TagCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
@@ -582,9 +580,9 @@
 		C744D7E026B2D9B1009E36B7 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */,
-				C744D7E726B2F127009E36B7 /* FilterPopUpConfig.swift */,
 				C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */,
+				C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */,
+				C744D7E726B2F127009E36B7 /* FilterPopUpStyling.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -683,11 +681,10 @@
 		C7D7AE3526AC969E000478AA /* ListBantuan */ = {
 			isa = PBXGroup;
 			children = (
-				C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */,
-				C75E13EB26B85917007BEF41 /* AssistanceListConfig.swift */,
-				C7CCC25226B2490F0005FFE3 /* AssistanceListTableConfig.swift */,
 				C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */,
-				C76047BF26AF3CBB00535995 /* AssistanceListNavigationConfig.swift */,
+				C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */,
+				C7CCC25226B2490F0005FFE3 /* AssistanceListTableData.swift */,
+				C76047BF26AF3CBB00535995 /* AssistanceListStyling.swift */,
 				C7D7AE3626AC96CA000478AA /* Cell */,
 			);
 			path = ListBantuan;
@@ -896,6 +893,7 @@
 				C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */,
 				90D9B44426C4ADDF00CABA6F /* CustomNotification.swift in Sources */,
 				C7CCC25326B2490F0005FFE3 /* AssistanceListTableConfig.swift in Sources */,
+				C7CCC25326B2490F0005FFE3 /* AssistanceListTableData.swift in Sources */,
 				18B7273426B90F760005DBCA /* HomeVM.swift in Sources */,
 				C7CCC25026B1DBD80005FFE3 /* AssistanceTableViewCell.swift in Sources */,
 				1853414526AC472C0027C0F3 /* Job.swift in Sources */,
@@ -912,6 +910,7 @@
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
 				90D9B43626C4A05900CABA6F /* DetailBantuanCollectionView.swift in Sources */,
 				C76047C026AF3CBB00535995 /* AssistanceListNavigationConfig.swift in Sources */,
+				C76047C026AF3CBB00535995 /* AssistanceListStyling.swift in Sources */,
 				C79063E826B3BE7500AE7687 /* NACollectionViewConfig.swift in Sources */,
 				90D9B43226C495ED00CABA6F /* DoneKeyboardButton.swift in Sources */,
 				C75CACD826BEBF420074B55D /* NAPickerView.swift in Sources */,
@@ -945,10 +944,13 @@
 				90A0AF0326BC2CCA00510A8E /* JobListViewStyle.swift in Sources */,
 				90D9B44626C4E0C700CABA6F /* CustomNotificationStyling.swift in Sources */,
 				C744D7E826B2F127009E36B7 /* FilterPopUpConfig.swift in Sources */,
+				C7D7AE4326AC97F1000478AA /* TagCollectionViewCell.swift in Sources */,
+				C7D7AE4626AE4E83000478AA /* Enum.swift in Sources */,
+				C744D7E826B2F127009E36B7 /* FilterPopUpStyling.swift in Sources */,
 				79DD925A26BCF08D002BDA22 /* OnboardingNavigationConfig.swift in Sources */,
-				C75E13EC26B85917007BEF41 /* AssistanceListConfig.swift in Sources */,
 				9037FAD826C0D9DC00CBF7AD /* TabBarController.swift in Sources */,
 				C7CCC25526B26CFA0005FFE3 /* AssistanceTableConfig.swift in Sources */,
+				C76047C026AF3CBB00535995 /* AssistanceListStyling.swift in Sources */,
 				F9C858E926BCD0BE00EDE9A9 /* CustomButton.swift in Sources */,
 				C744D7DE26B2D324009E36B7 /* AssistanceTableViewStyling.swift in Sources */,
 				C7CCC24C26B1DB590005FFE3 /* AssistanceListVC.swift in Sources */,
@@ -1096,7 +1098,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S6LU55DTCY;
+				DEVELOPMENT_TEAM = TM85H5FTHU;
 				INFOPLIST_FILE = "$(SRCROOT)/serabutan/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (

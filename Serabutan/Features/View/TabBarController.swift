@@ -51,8 +51,10 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     @objc private func buatPermohonan() {
         let buatPermohonan = NewAssistanceVC()
+		buatPermohonan.delegate = self
         let buatPermohonanController = UINavigationController.init(rootViewController: buatPermohonan)
-        self.navigationController?.pushViewController(buatPermohonanController, animated: true)
+		print(buatPermohonan.navigationController, "navControl")
+//        self.navigationController?.pushViewController(buatPermohonanController, animated: true)
         self.show(buatPermohonanController, sender: self)
     }
     
@@ -67,4 +69,15 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 //        rootViewController.navigationItem.title = title
         return navController
     }
+}
+
+extension TabBarController: NewAssitanceDelegate {
+	func navigateToDetailProduct(job: Jobs) {
+		self.selectedIndex = 1
+
+		let detailVC = DetailBantuanVC()
+		detailVC.selectedJob = job
+		(self.selectedViewController as! UINavigationController ).pushViewController(detailVC, animated: true)
+	}
+	
 }

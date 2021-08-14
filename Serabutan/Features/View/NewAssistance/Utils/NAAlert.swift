@@ -13,19 +13,19 @@ extension NewAssistanceVC {
     func createAlert(){
         let alert = UIAlertController(title: "Tambahkan Media", message: "", preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "Camera",
+        alert.addAction(UIAlertAction(title: "Ambil Foto",
                                       style: .default,
                                       handler: { action in
                                         ImageHelper.startMediaBrowser(delegate: self, sourceType: .camera)
                                       }))
         
-        alert.addAction(UIAlertAction(title: "Photos",
+        alert.addAction(UIAlertAction(title: "Pilih dari Galeri",
                                       style: .default,
                                       handler: { action in
                                         ImageHelper.startMediaBrowser(delegate: self, sourceType: .savedPhotosAlbum)
                                       }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Batalkan", style: .cancel, handler: nil))
         
         self.present(alert, animated: true)
     }

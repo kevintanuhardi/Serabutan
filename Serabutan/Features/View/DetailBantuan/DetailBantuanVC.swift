@@ -11,7 +11,9 @@ import NotificationBannerSwift
 
 class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, TagListViewDelegate {
     
-    //    var selectedJob: Jobs?
+    static let identifier = "DetailBantuanVC"
+    
+//        var selectedJob: Jobs?
     var selectedJob = DummyData.shared.getJobsList()[2]
     let currentUser = UserDefaults.standard.integer(forKey: "loggedUser")
     
@@ -85,6 +87,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.modalPresentationStyle = .fullScreen
         tagHeight.isActive = false
         
         //collection view pertama
