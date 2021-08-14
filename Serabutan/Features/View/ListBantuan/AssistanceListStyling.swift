@@ -12,12 +12,11 @@ extension AssistanceListVC{
     
     func setupView(){
         title = "Bantuan Dibutuhkan"
-        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.ColorLibrary.customBlack, .font: UIFont.FontLibrary.largeTitle]
-        view.backgroundColor = .white
-        
         initSearchController()
-        navigationFilterButton()
         
+        //Setup Navigation Appearance
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.ColorLibrary.customBlack, .font: UIFont.FontLibrary.largeTitle]
+        self.view.backgroundColor = .white
         self.navigationController?.view.backgroundColor = .white
         self.navigationController?.navigationBar.barTintColor = .white
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -27,9 +26,14 @@ extension AssistanceListVC{
         self.navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+        
+        //Setup Right Navigation
+        navigationItem.rightBarButtonItem =  UIBarButtonItem(image: UIImage(named: "filterIcon"), style: .plain, target: self, action: #selector(filterButtonTapped))
+        navigationItem.rightBarButtonItem?.tintColor = .ColorLibrary.accentColor
     }
     
     func initSearchController(){
+        //Setup Search Bar
         searchBar.loadViewIfNeeded()
         searchBar.searchResultsUpdater = self
         searchBar.obscuresBackgroundDuringPresentation = false
@@ -48,12 +52,6 @@ extension AssistanceListVC{
         searchBar.searchBar.searchTextField.layer.cornerRadius = 18
         searchBar.searchBar.searchTextField.layer.masksToBounds = true
         searchBar.searchBar.setSearchFieldBackgroundImage(UIImage(), for: .normal)
-
-    }
-    
-    func navigationFilterButton(){
-        navigationItem.rightBarButtonItem =  UIBarButtonItem(image: UIImage(named: "filterIcon"), style: .plain, target: self, action: #selector(filterButtonAction))
-        navigationItem.rightBarButtonItem?.tintColor = .ColorLibrary.accentColor
     }
     
     func setGradientBottom(){
