@@ -26,15 +26,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         let tabBarController = TabBarController()
-        let mulaiVC = AdditionalInfoVC()
+        let mulaiVC = MulaiVC()
         
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().shadowImage = UIImage()
         
         mulaiController = UINavigationController.init(rootViewController: mulaiVC)
         
-        window?.rootViewController = mulaiController
-//        defaults ? (window?.rootViewController = tabBarController) : (window?.rootViewController = mulaiController)
+        //window?.rootViewController = mulaiController
+        defaults ? (window?.rootViewController = tabBarController) : (window?.rootViewController = mulaiController)
         window?.makeKeyAndVisible()
     }
     

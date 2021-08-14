@@ -400,6 +400,11 @@
             <point key="canvasLocation" x="95.384615384615387" y="103.7914691943128"/>
         </view>
     </objects>
+    <designables>
+        <designable name="FWc-3s-fE1">
+            <size key="intrinsicContentSize" width="350" height="32"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Avatar" width="20" height="20"/>
         <image name="buttonWhatsappImg" width="50" height="50"/>

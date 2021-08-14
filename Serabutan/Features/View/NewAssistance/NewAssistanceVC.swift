@@ -9,6 +9,10 @@ import UIKit
 import MapKit
 import TagListView
 
+protocol NewAssitanceDelegate {
+	func navigateToDetailProduct(job: Jobs)
+}
+
 class NewAssistanceVC: UIViewController, UINavigationControllerDelegate, CLLocationManagerDelegate, UIAdaptivePresentationControllerDelegate{
     
     @IBOutlet weak var mainView: UIView!
@@ -62,7 +66,9 @@ class NewAssistanceVC: UIViewController, UINavigationControllerDelegate, CLLocat
     @IBOutlet weak var mediaAddView: UIView!
     @IBOutlet weak var mediaAddButton: UIButton!
     @IBOutlet weak var mediaImageCollectionView: UICollectionView!
-    
+	
+	var delegate: NewAssitanceDelegate?
+	
     var dummyData = DummyData.shared.getJobsList()
     let locationManager = CLLocationManager()
     var userDefault = UserDefaults.standard.integer(forKey: "loggedUser")

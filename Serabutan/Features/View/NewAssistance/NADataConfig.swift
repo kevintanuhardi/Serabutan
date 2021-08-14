@@ -21,7 +21,12 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
     @IBAction func shareButtonAction(_sender: Any){
         initOtherData()
         initCreateNewJob()
-        self.dismiss(animated: true, completion: nil)
+		let latestDummyData = DummyData.shared.getJobsList()
+		print(latestDummyData.last?.price)
+        self.dismiss(animated: true, completion: {
+			guard let lastJob = latestDummyData.last else {return}
+			self.delegate?.navigateToDetailProduct(job: lastJob)
+        })
     }
     
     func initOtherData(){
