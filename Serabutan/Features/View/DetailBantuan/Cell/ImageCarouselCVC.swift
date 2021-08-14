@@ -9,9 +9,9 @@ import UIKit
 
 class ImageCarouselCVC: UICollectionViewCell {
 
-    @IBOutlet var imageView: UIImageView!
-    
     static let identifier = "ImageCarouselCVC"
+    
+    @IBOutlet var imageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,12 +19,8 @@ class ImageCarouselCVC: UICollectionViewCell {
         imageView.layer.masksToBounds = true
     }
     
-    public func configure(with image: UIImage){
-        imageView.image = image
-    }
-    
     static func nib() -> UINib {
-        return UINib(nibName: "ImageCarouselCVC", bundle: nil)
+        return UINib(nibName: self.identifier, bundle: nil)
     }
 
 }

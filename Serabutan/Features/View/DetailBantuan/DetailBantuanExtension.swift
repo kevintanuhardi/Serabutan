@@ -5,44 +5,32 @@
 //  Created by Yahya Ayyash on 12/08/21.
 //
 
-import Foundation
 import UIKit
+import TagListView
 
 extension DetailBantuanVC {
-    // WhatsApp API
-    func sendWhatsApp(template: Bool) {
-        let loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")
-        var message: String?
-        let phoneNumber: Int = 6281910077402
-        
-        if template {
-            message = """
-            Halo Pak/Bu \(selectedJob.jobPosterId.name),
-            saya \(DummyData.shared.getUserProfile()[loggedUser].name) dari BantuinApp bersedia membantu Bapak/Ibu untuk \(selectedJob.title ?? "Untitled Bantuan").
-            Bagaimana saya bisa membantu? 🙂
-            """
-            message = message?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        }
-        
-        let whatsappURL = URL(string: "https://api.whatsapp.com/send?phone=+\(phoneNumber)&text=\(message ?? "")")
-        UIApplication.shared.open(whatsappURL!)
-        
+    
+    // MARK: - Collection View
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return selectedJob?.medias?.count ?? 0
     }
     
-    // Set tag list view
-    func setTagList() {
-        tagView.textFont = .FontLibrary.body
-        if selectedJob.tags != nil {
-            tagView.addTags(selectedJob.tags!)
-        }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = jobImgCarousel.dequeueReusableCell(withReuseIdentifier: ImageCarouselCVC.identifier, for: indexPath) as! ImageCarouselCVC
+        cell.imageView.image = selectedJob?.medias?[indexPath.row]
+        return cell
     }
     
-    // Go to rate profile after finishing the job
-    func rateProfile() {
-        let rateProfile = RatingReviewVC()
-        rateProfile.reviewee = selectedJob.jobPosterId
-        rateProfile.reviewer = selectedJob.helperId!
-        rateProfile.selectedJob = self.selectedJob
-        self.navigationController?.pushViewController(rateProfile, animated: true)
+    // MARK: - Scroll View
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 0 {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.floatingTopView.dropShadow(opacity: 0.25, offset: 5, scale: true)
+            })
+        } else {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.floatingTopView.dropShadow(opacity: 0, offset: 0, scale: true)
+            })
+        }
     }
 }

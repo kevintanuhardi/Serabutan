@@ -12,12 +12,10 @@ import NotificationBannerSwift
 class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, TagListViewDelegate {
     
     static let identifier = "DetailBantuanVC"
-    
-//        var selectedJob: Jobs?
-    var selectedJob = DummyData.shared.getJobsList()[2]
     let currentUser = UserDefaults.standard.integer(forKey: "loggedUser")
+    var selectedJob: Jobs?
     
-    @IBOutlet weak var helpFinishButton: UIButton!
+    @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var chatButton: UIButton!
     @IBOutlet weak var floatingTopView: UIView!
     @IBOutlet weak var contentScrollView: UIScrollView!
@@ -52,53 +50,36 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     @IBOutlet weak var tagHeight: NSLayoutConstraint!
     @IBOutlet weak var separatorHeight: NSLayoutConstraint!
     
-    @IBAction func helpFinishButton(_ sender: Any) {
-        switch selectedJob.status {
-        case .active :
-            whatsappAlert()
-        case .taken :
-            finishedAlert()
-        case .cancelled:
-            break
-        case .done:
-            break
-        }
-        configureHelper()
+    // MARK: - IBActiom
+    @IBAction func actionButton(_ sender: Any) {
+        confirmationAlert(status: selectedJob?.status ?? .active)
     }
     
-    @IBAction func goToProfile(_ sender: UIButton) {
-        let userProfile = ProfileVC()
-        if sender.tag == 0 {
-            userProfile.user = self.selectedJob.jobPosterId
-        } else {
-            userProfile.user = self.selectedJob.helperId
-        }
-        self.navigationController?.pushViewController(userProfile, animated: true)
+    @IBAction func profileButton(_ sender: UIButton) {
+        goToProfile(sender: sender.tag)
     }
     
     @IBAction func whatsappButton(_ sender: Any) {
         sendWhatsApp(template: false)
     }
     
+    // MARK: - View Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupUI()
+        setNavigation()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.modalPresentationStyle = .fullScreen
-        tagHeight.isActive = false
+        setupUI()
         
-        //collection view pertama
-        let imageCell = UINib(nibName: ImageCarouselCVC.identifier,  bundle: nil)
-        jobImgCarousel.register(imageCell, forCellWithReuseIdentifier: ImageCarouselCVC.identifier)
+        jobImgCarousel.register(ImageCarouselCVC.nib(), forCellWithReuseIdentifier: ImageCarouselCVC.identifier)
         jobImgCarousel.delegate = self
         jobImgCarousel.dataSource = self
         contentScrollView.delegate = self
         tagView.delegate = self
         
-        setTagList()
+        // TODO: - Remove this, only used in TestFlight to trigger dummy helper
         DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
             self.triggerHelper()
         })
@@ -107,18 +88,4 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     override func viewWillDisappear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
-    
-    func triggerHelper() {
-        // Auto assign helper
-        guard (selectedJob.status == .active) && (selectedJob.jobPosterId.id == currentUser) else { return }
-        
-        let helperIndex = Int.random(in: 0..<DummyData.shared.getUserProfile().count)
-        selectedJob.status = .taken
-        selectedJob.helperId = DummyData.shared.getUserProfile()[helperIndex]
-        configureHelper()
-        
-        // Show floating notification
-        FloatingNotification.shared.showNotification(type: .helpeeAssigned, job: selectedJob)
-    }
-    
 }
