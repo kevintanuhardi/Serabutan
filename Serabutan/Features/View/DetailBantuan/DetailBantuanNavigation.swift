@@ -1,5 +1,5 @@
 //
-//  DetailBantuanNavigationConfig.swift
+//  DetailBantuanNavigation.swift
 //  Serabutan
 //
 //  Created by Gilang Adrian on 03/08/21.

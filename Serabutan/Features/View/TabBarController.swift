@@ -47,14 +47,13 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
         tabBar.addSubview(button)
         tabBar.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
+        tabBar.centerYAnchor.constraint(equalTo: tabBar.centerYAnchor).isActive = true
     }
     
     @objc private func buatPermohonan() {
         let buatPermohonan = NewAssistanceVC()
 		buatPermohonan.delegate = self
         let buatPermohonanController = UINavigationController.init(rootViewController: buatPermohonan)
-		print(buatPermohonan.navigationController, "navControl")
-//        self.navigationController?.pushViewController(buatPermohonanController, animated: true)
         self.show(buatPermohonanController, sender: self)
     }
     
@@ -66,7 +65,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let navController = UINavigationController(rootViewController: rootViewController)
         navController.tabBarItem = UITabBarItem(title: title, image: image, tag: tag)
         navController.navigationBar.prefersLargeTitles = false
-//        rootViewController.navigationItem.title = title
         return navController
     }
 }

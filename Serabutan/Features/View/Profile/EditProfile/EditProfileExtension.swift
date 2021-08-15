@@ -9,10 +9,10 @@ import UIKit
 
 extension EditProfileVC {
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        charCount.text = "\(descriptionTextView.text.count) / 300"
-        
-        return true
+    // MARK: - Text View
+    func textViewDidChange(_ textView: UITextView) {
+        textView.text = String(textView.text.prefix(300))
+        charCount.text = "\(textView.text.count) / 300"
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -23,6 +23,7 @@ extension EditProfileVC {
         textView.superview?.animateBorder(false, type: .border)
     }
     
+    // MARK: - Text Field
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if textField.text?.isEmpty == true {
             navigationItem.rightBarButtonItem?.isEnabled = false
@@ -42,12 +43,10 @@ extension EditProfileVC {
     }
     
     // MARK: - ImagePicker
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
         dismiss(animated: true)
-        
         profileImage.image = image
-        user?.avatar = image
     }
 }

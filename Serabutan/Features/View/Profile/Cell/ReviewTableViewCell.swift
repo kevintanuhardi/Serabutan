@@ -26,16 +26,14 @@ class ReviewTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        updateUI()
+        setStyle()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
     
-    func updateUI() {
+    func setStyle() {
         cellView.layer.borderWidth = 0.5
         cellView.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         cellView.layer.cornerRadius = 5.0
@@ -53,4 +51,7 @@ class ReviewTableViewCell: UITableViewCell {
         }
     }
     
+    static func nib() -> UINib {
+        return UINib(nibName: self.identifier, bundle: nil)
+    }
 }

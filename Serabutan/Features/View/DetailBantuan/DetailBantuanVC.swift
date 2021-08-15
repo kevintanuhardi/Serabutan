@@ -73,19 +73,9 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
         super.viewDidLoad()
         setupUI()
         
-        jobImgCarousel.register(ImageCarouselCVC.nib(), forCellWithReuseIdentifier: ImageCarouselCVC.identifier)
-        jobImgCarousel.delegate = self
-        jobImgCarousel.dataSource = self
-        contentScrollView.delegate = self
-        tagView.delegate = self
-        
         // TODO: - Remove this, only used in TestFlight to trigger dummy helper
         DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
             self.triggerHelper()
         })
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        tabBarController?.tabBar.isHidden = false
     }
 }

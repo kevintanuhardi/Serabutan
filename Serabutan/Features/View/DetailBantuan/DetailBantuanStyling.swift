@@ -55,6 +55,13 @@ extension DetailBantuanVC {
     
     // MARK: - Static UI
     func setStyle() {
+        // Delegate
+        jobImgCarousel.register(ImageCarouselCVC.nib(), forCellWithReuseIdentifier: ImageCarouselCVC.identifier)
+        jobImgCarousel.delegate = self
+        jobImgCarousel.dataSource = self
+        contentScrollView.delegate = self
+        tagView.delegate = self
+        
         urgencyView.layer.borderWidth = 0.5
         urgencyView.layer.cornerRadius = urgencyView.frame.height / 2
         urgencyView.layer.masksToBounds = true
