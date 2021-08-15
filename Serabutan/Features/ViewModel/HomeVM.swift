@@ -10,8 +10,9 @@ import MapKit
 
 class HomeVM: NSObject {
 
-	
-		private(set) var nearbyJobs: [Job]? {
+/* Change the setter for integrated apps */
+//		private(set) var nearbyJobs: [Job]? {
+		private(set) var nearbyJobs: [Jobs]? {
 				didSet {
 						self.bindCatalogueViewModelToController()
 				}
@@ -24,15 +25,17 @@ class HomeVM: NSObject {
 		}
 
 	func fetchNearbyJob(coordinate: CLLocationCoordinate2D) {
+		self.nearbyJobs = DummyData.shared.getJobsList(.active)
 				
-		APIManager.getNearbyJob(coordinate: coordinate){ result in
-					switch result {
-					case .success (let fetchedJobs):
-						print("success", fetchedJobs)
-						self.nearbyJobs = fetchedJobs as? [Job]
-					case .failure(let error):
-						print("error:", error)
-					}
-				}
-			}
+/* Change the setter for integrated apps */
+//		APIManager.getNearbyJob(coordinate: coordinate){ result in
+//					switch result {
+//					case .success (let fetchedJobs):
+//						print("success", fetchedJobs)
+//						self.nearbyJobs = fetchedJobs as? [Job]
+//					case .failure(let error):
+//						print("error:", error)
+//					}
+//				}
+	}
 }
