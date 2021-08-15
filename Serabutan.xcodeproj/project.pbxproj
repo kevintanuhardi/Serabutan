@@ -108,6 +108,7 @@
 		C7D7AE4826AE5040000478AA /* BantuanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4726AE5040000478AA /* BantuanModel.swift */; };
 		C7E3402326C9527300410C7F /* AssistanceListNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3402226C9527300410C7F /* AssistanceListNavigation.swift */; };
 		C7E3402526C954B600410C7F /* AssistanceListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3402426C954B600410C7F /* AssistanceListVM.swift */; };
+		C7E3402726C9673600410C7F /* FilterPopUpNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3402626C9673600410C7F /* FilterPopUpNavigation.swift */; };
 		C7FE979A26BA65F900B27160 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FE979926BA65F900B27160 /* StringFormatter.swift */; };
 		F981FF6B26BA90EE00F0ACE5 /* MulaiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981FF6A26BA90EE00F0ACE5 /* MulaiVC.swift */; };
 		F981FF6E26BA914300F0ACE5 /* MulaiVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F981FF6D26BA914300F0ACE5 /* MulaiVC.xib */; };
@@ -227,6 +228,7 @@
 		C7D7AE4726AE5040000478AA /* BantuanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BantuanModel.swift; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/BantuanModel.swift; sourceTree = SOURCE_ROOT; };
 		C7E3402226C9527300410C7F /* AssistanceListNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListNavigation.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListNavigation.swift; sourceTree = SOURCE_ROOT; };
 		C7E3402426C954B600410C7F /* AssistanceListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListVM.swift; path = Serabutan/Features/ViewModel/AssistanceListVM.swift; sourceTree = SOURCE_ROOT; };
+		C7E3402626C9673600410C7F /* FilterPopUpNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpNavigation.swift; path = Serabutan/Features/View/ListBantuan/Filter/FilterPopUpNavigation.swift; sourceTree = SOURCE_ROOT; };
 		C7FE979926BA65F900B27160 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StringFormatter.swift; path = Serabutan/Helper/StringFormatter.swift; sourceTree = SOURCE_ROOT; };
 		F981FF6A26BA90EE00F0ACE5 /* MulaiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MulaiVC.swift; path = serabutan/Features/View/Onboarding/Mulai/MulaiVC.swift; sourceTree = SOURCE_ROOT; };
 		F981FF6D26BA914300F0ACE5 /* MulaiVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MulaiVC.xib; path = serabutan/Features/View/Onboarding/Mulai/MulaiVC.xib; sourceTree = SOURCE_ROOT; };
@@ -727,6 +729,7 @@
 			children = (
 				C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */,
 				C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */,
+				C7E3402626C9673600410C7F /* FilterPopUpNavigation.swift */,
 				C744D7E726B2F127009E36B7 /* FilterPopUpStyling.swift */,
 			);
 			path = Filter;
@@ -933,6 +936,7 @@
 				907F9DCB26B6515B00EF9F51 /* ColorLibrary.swift in Sources */,
 				9083DB1826B7913B00D1E75F /* ImageHelper.swift in Sources */,
 				9083DB1A26B7B27300D1E75F /* UserProfile.swift in Sources */,
+				C7E3402726C9673600410C7F /* FilterPopUpNavigation.swift in Sources */,
 				9060D42726C008B3002243BC /* EditProfileNavigationConfig.swift in Sources */,
 				1853414226AC46EF0027C0F3 /* MapKitAnnotationCellViewController.swift in Sources */,
 				9036228F26BAF73000577D43 /* DetailBantuanStyling.swift in Sources */,
