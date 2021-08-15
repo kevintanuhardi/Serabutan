@@ -40,7 +40,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     private func setupMiddleButton() {
         let button = UIButton()
-        button.setImage(UIImage(named: "addButton"), for: .normal)
+        button.setImage(UIImage(named: "AddButton"), for: .normal)
         button.sizeToFit()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(buatPermohonan), for: .touchUpInside)
@@ -53,7 +53,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let buatPermohonan = NewAssistanceVC()
 		buatPermohonan.delegate = self
         let buatPermohonanController = UINavigationController.init(rootViewController: buatPermohonan)
-		print(buatPermohonan.navigationController, "navControl")
 //        self.navigationController?.pushViewController(buatPermohonanController, animated: true)
         self.show(buatPermohonanController, sender: self)
     }
