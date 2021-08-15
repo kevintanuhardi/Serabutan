@@ -63,13 +63,13 @@ extension EditProfileVC {
     }
     
     func configureText() {
-        // Temporary Variables
-        tempName = fullName.text
-        tempDescription = descriptionTextView.text
-
         fullName.text = user?.name
         profileImage.image = user?.avatar
         descriptionTextView.text = user?.bio
+        
+        // Temporary Variables
+        tempName = fullName.text
+        tempDescription = descriptionTextView.text
     }
     
     // MARK: - Alert
