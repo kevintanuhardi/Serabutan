@@ -16,7 +16,6 @@ class ActivityVC: UIViewController {
     let historyVC = HistoryActivityVC()
     let ongoingVC = OngoingActivityVC()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()

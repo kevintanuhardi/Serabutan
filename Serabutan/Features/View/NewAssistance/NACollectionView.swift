@@ -24,7 +24,6 @@ extension NewAssistanceVC: UICollectionViewDataSource, UICollectionViewDelegate,
         //        self.newAssistanceMediaImage.remove(at: indexPath.row)
         //        self.mediaImageCollectionView.deleteItems(at: [indexPath])
         //        self.mediaImageCollectionView.reloadData()
-        //        print("IMPORTED IMAGE:", newAssistanceMediaImage)
     }
         
 }

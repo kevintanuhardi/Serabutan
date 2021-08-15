@@ -14,6 +14,11 @@ class HistoryActivityVC: UIViewController {
     var user = UserDefaults.standard.integer(forKey: "loggedUser")
     var dummyData = [Jobs]()
     
+    var userProfile : UserProfile!
+    var doneJobs = [Jobs]()
+    var cancelledJobs = [Jobs]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         historyActivityTable.delegate = self
@@ -26,9 +31,9 @@ class HistoryActivityVC: UIViewController {
     }
     
     func setHistoryData(){
-        let userProfile = DummyData.shared.getUserProfile()[user]
-        let doneJobs = DummyData.shared.getJobsList(userProfile, .done)
-        let cancelledJobs = DummyData.shared.getJobsList(userProfile, .cancelled)
+        userProfile = DummyData.shared.getUserProfile()[user]
+        doneJobs = DummyData.shared.getJobsList(userProfile, .done)
+        cancelledJobs = DummyData.shared.getJobsList(userProfile, .cancelled)
         dummyData = doneJobs + cancelledJobs
         
         DispatchQueue.main.async {
