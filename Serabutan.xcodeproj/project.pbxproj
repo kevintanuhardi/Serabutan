@@ -109,6 +109,8 @@
 		C7E3402326C9527300410C7F /* AssistanceListNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3402226C9527300410C7F /* AssistanceListNavigation.swift */; };
 		C7E3402526C954B600410C7F /* AssistanceListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3402426C954B600410C7F /* AssistanceListVM.swift */; };
 		C7E3402726C9673600410C7F /* FilterPopUpNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3402626C9673600410C7F /* FilterPopUpNavigation.swift */; };
+		C7E3402926C9696600410C7F /* OngoingActivityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3402826C9696600410C7F /* OngoingActivityTableView.swift */; };
+		C7E3402B26C969EB00410C7F /* HistoryActivityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3402A26C969EB00410C7F /* HistoryActivityTableView.swift */; };
 		C7FE979A26BA65F900B27160 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FE979926BA65F900B27160 /* StringFormatter.swift */; };
 		F981FF6B26BA90EE00F0ACE5 /* MulaiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981FF6A26BA90EE00F0ACE5 /* MulaiVC.swift */; };
 		F981FF6E26BA914300F0ACE5 /* MulaiVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F981FF6D26BA914300F0ACE5 /* MulaiVC.xib */; };
@@ -229,6 +231,8 @@
 		C7E3402226C9527300410C7F /* AssistanceListNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListNavigation.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListNavigation.swift; sourceTree = SOURCE_ROOT; };
 		C7E3402426C954B600410C7F /* AssistanceListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListVM.swift; path = Serabutan/Features/ViewModel/AssistanceListVM.swift; sourceTree = SOURCE_ROOT; };
 		C7E3402626C9673600410C7F /* FilterPopUpNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpNavigation.swift; path = Serabutan/Features/View/ListBantuan/Filter/FilterPopUpNavigation.swift; sourceTree = SOURCE_ROOT; };
+		C7E3402826C9696600410C7F /* OngoingActivityTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OngoingActivityTableView.swift; path = Serabutan/Features/View/Activity/Ongoing/OngoingActivityTableView.swift; sourceTree = SOURCE_ROOT; };
+		C7E3402A26C969EB00410C7F /* HistoryActivityTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryActivityTableView.swift; path = Serabutan/Features/View/Activity/History/HistoryActivityTableView.swift; sourceTree = SOURCE_ROOT; };
 		C7FE979926BA65F900B27160 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StringFormatter.swift; path = Serabutan/Helper/StringFormatter.swift; sourceTree = SOURCE_ROOT; };
 		F981FF6A26BA90EE00F0ACE5 /* MulaiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MulaiVC.swift; path = serabutan/Features/View/Onboarding/Mulai/MulaiVC.swift; sourceTree = SOURCE_ROOT; };
 		F981FF6D26BA914300F0ACE5 /* MulaiVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MulaiVC.xib; path = serabutan/Features/View/Onboarding/Mulai/MulaiVC.xib; sourceTree = SOURCE_ROOT; };
@@ -573,6 +577,7 @@
 			isa = PBXGroup;
 			children = (
 				C74228A526BA3ECF003DD169 /* OngoingActivityVC.swift */,
+				C7E3402826C9696600410C7F /* OngoingActivityTableView.swift */,
 				C74228A626BA3ECF003DD169 /* OngoingActivityVC.xib */,
 			);
 			path = Ongoing;
@@ -582,6 +587,7 @@
 			isa = PBXGroup;
 			children = (
 				C74228A926BA3EE8003DD169 /* HistoryActivityVC.swift */,
+				C7E3402A26C969EB00410C7F /* HistoryActivityTableView.swift */,
 				C74228AA26BA3EE8003DD169 /* HistoryActivityVC.xib */,
 			);
 			path = History;
@@ -905,6 +911,7 @@
 				18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */,
 				F981FF7526BA982D00F0ACE5 /* InputNoTelpVC.swift in Sources */,
 				90D9B43426C49DAD00CABA6F /* DetailBantuanAlert.swift in Sources */,
+				C7E3402B26C969EB00410C7F /* HistoryActivityTableView.swift in Sources */,
 				9060D41D26BFEFC3002243BC /* ProfileNavigationSetup.swift in Sources */,
 				90E9C98826B39DE500165319 /* ReviewTableViewCell.swift in Sources */,
 				C7BD8BA826BFF8BE00A0399C /* GenderPicker.swift in Sources */,
@@ -925,6 +932,7 @@
 				C7BD8BB426C02D7600A0399C /* NAAlert.swift in Sources */,
 				C7E3402526C954B600410C7F /* AssistanceListVM.swift in Sources */,
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
+				C7E3402926C9696600410C7F /* OngoingActivityTableView.swift in Sources */,
 				90D9B43626C4A05900CABA6F /* DetailBantuanCollectionView.swift in Sources */,
 				C79063E826B3BE7500AE7687 /* NACollectionViewConfig.swift in Sources */,
 				90D9B43226C495ED00CABA6F /* DoneKeyboardButton.swift in Sources */,
