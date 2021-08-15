@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension AssistanceListVC {
+extension AssistanceListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(searchBar.isActive){
