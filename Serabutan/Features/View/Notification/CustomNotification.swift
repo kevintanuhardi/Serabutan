@@ -18,8 +18,11 @@ class CustomNotification: UIView {
     }
     
     class func createCustomNotification() -> CustomNotification {
-        guard let myClassNib = UINib(nibName: "CustomNotification", bundle: nil) else { return }
-        return myClassNib.instantiate(withOwner: nil, options: nil).first as? CustomNotification
+        let myClassNib = UINib(nibName: "CustomNotification", bundle: nil)
+        guard let notif = myClassNib.instantiate(withOwner: nil, options: nil).first as? CustomNotification
+        else {
+            fatalError("Instantiate CustomNotification failed while casting.")
+        }
+        return notif
     }
-    
 }
