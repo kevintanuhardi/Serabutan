@@ -16,7 +16,12 @@ extension DetailBantuanVC {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = jobImgCarousel.dequeueReusableCell(withReuseIdentifier: ImageCarouselCVC.identifier, for: indexPath) as! ImageCarouselCVC
+        guard let cell = jobImgCarousel.dequeueReusableCell(withReuseIdentifier: ImageCarouselCVC.identifier,
+                                                            for: indexPath) as? ImageCarouselCVC
+        else {
+            fatalError("DequeueReusableCell failed while casting.")
+        }
+        
         cell.imageView.image = selectedJob?.medias?[indexPath.row]
         return cell
     }

@@ -9,11 +9,11 @@ import UIKit
 
 extension DetailBantuanVC {
     
-    @objc func shareButtonAction(_ sender:UIButton!) {
+    @objc func shareButtonAction(_ sender: UIButton!) {
         let items: [Any] = [selectedJob?.title ?? "Share Bantuan", URL(string: "https://www.bantuinapp.com/testflight") as Any]
         let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
         
-        activityController.completionWithItemsHandler = { (activity, success, items, error) in
+        activityController.completionWithItemsHandler = { (_, success, _, error) in
             if success {
                 print("Page is being shared.")
             } else {

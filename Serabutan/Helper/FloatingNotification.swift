@@ -17,7 +17,7 @@ enum NotificationType {
 class FloatingNotification {
     static let shared = FloatingNotification()
     
-    init(){
+    init() {
     }
     
     func showNotification(type: NotificationType, job: Jobs) {
@@ -55,7 +55,6 @@ class FloatingNotification {
                     shadowBlurRadius: 15,
                     shadowCornerRadius: 10,
                     shadowOffset: UIOffset(horizontal: 0, vertical: 10))
-        
         banner.onTap = {
             let detailJob = DetailBantuanVC()
             let detailJobController = UINavigationController.init(rootViewController: detailJob)

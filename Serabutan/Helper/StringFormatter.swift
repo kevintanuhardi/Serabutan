@@ -11,7 +11,7 @@ import MapKit
 // Defining enum for StyleCombiner function
 // - Mandatory : Adding red (*) after inputted text
 // - dualStyle : Bold the first text, normalize the second text
-enum textStyle {
+enum TextStyle {
     case mandatory
     case dualStyle
 }
@@ -78,7 +78,7 @@ struct StringFormatter {
         }
     }
     
-    func styleCombiner(firstWord: String, secondWord: String, style: textStyle) -> NSAttributedString {
+    func styleCombiner(firstWord: String, secondWord: String, style: TextStyle) -> NSAttributedString {
         
         var firstFont: UIFont
         var secondFont: UIFont

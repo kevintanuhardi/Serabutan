@@ -17,7 +17,7 @@ class DummyData {
     private var profileStatistic = [ProfileStatistic]()
     private var userReview = [Review]()
     
-    init(){
+    init() {
     }
     
     private func seedJobsList() {
@@ -77,7 +77,7 @@ class DummyData {
                              status: .active,
                              distance: 160.0,
                              coordinate: CLLocationCoordinate2D(latitude: -6.2931612, longitude: 106.6376594),
-                             tags: ["kucing", "terjebak", "hewan", "atap", "ketinggian", "catlovers" , "bantu", "pencintahewan"],
+                             tags: ["kucing", "terjebak", "hewan", "atap", "ketinggian", "catlovers", "bantu", "pencintahewan"],
                              medias: [UIImage(named: "kucing-0")!, UIImage(named: "kucing-1")!, UIImage(named: "kucing-2")!, UIImage(named: "kucing-3")!],
                              helperId: nil,
                              genderPreference: nil,
@@ -156,7 +156,7 @@ class DummyData {
                              status: .done,
                              distance: 160.0,
                              coordinate: CLLocationCoordinate2D(latitude: -6.2931612, longitude: 106.6376594),
-                             tags: ["kucing", "terjebak", "hewan", "atap", "ketinggian", "catlovers" , "bantu", "pencintahewan"],
+                             tags: ["kucing", "terjebak", "hewan", "atap", "ketinggian", "catlovers", "bantu", "pencintahewan"],
                              medias: [UIImage(named: "kucing-0")!, UIImage(named: "kucing-1")!, UIImage(named: "kucing-2")!, UIImage(named: "kucing-3")!],
                              helperId: userProfile[0],
                              genderPreference: nil,
@@ -182,7 +182,7 @@ class DummyData {
         userProfile.append(UserProfile(id: 0,
                                        name: "Agus Susanto",
                                        dob: Date(timeInterval: -(60*60*24*365)*30, since: Date()),
-                                       gender : .male,
+                                       gender: .male,
                                        avatar: UIImage(named: "avatar-0")!,
                                        bio: "Suka bantu-bantu orang, bisa apa saja. Pernah kerja di bengkel sepeda dan motor, jadi lumayan tahu tentang otomotif.",
                                        joinDate: Date(timeInterval: -(60*60*24)*10, since: Date()),
@@ -243,7 +243,6 @@ class DummyData {
                                        isVerified: false,
                                        statistics: profileStatistic[6]))
     }
-    
     private func seedProfileStatistic() {
         profileStatistic.append(ProfileStatistic(reviewAggregate: 4.8, totalReview: 3, dibantu: 1, membantu: 2))
         profileStatistic.append(ProfileStatistic(reviewAggregate: 4.0, totalReview: 3, dibantu: 2, membantu: 1))
@@ -253,9 +252,7 @@ class DummyData {
         profileStatistic.append(ProfileStatistic(reviewAggregate: 4.7, totalReview: 3, dibantu: 2, membantu: 1))
         profileStatistic.append(ProfileStatistic(reviewAggregate: 4.2, totalReview: 3, dibantu: 1, membantu: 2))
     }
-    
     private func seedUserReview() {
-        
         userReview.append(Review(job: jobsList[0],
                                  finishedDate: Date(timeInterval: -(60*60*24), since: Date()),
                                  reviewPoint: 5,
@@ -274,7 +271,6 @@ class DummyData {
                                  reviewText: "Spion saya patah dan Pak Agus punya sparepartnya. Pak Agus jujur orangnya buat beli-beli keperluan sparepart lain. Terima kasih Pak Agus!",
                                  reviewer: userProfile[5],
                                  reviewee: userProfile[0]))
-        
         userReview.append(Review(job: jobsList[3],
                                  finishedDate: Date(timeInterval: -(60*60*24), since: Date()),
                                  reviewPoint: 5,
@@ -293,7 +289,6 @@ class DummyData {
                                  reviewText: "Masakan Padang Bu Susi emang selalu nagih. Saya minta masakin rendang sama nasi kapau lainnya udah berasa kayak di Padang beneran. Bu Susi emang top. ",
                                  reviewer: userProfile[2],
                                  reviewee: userProfile[1]))
-        
         userReview.append(Review(job: jobsList[9],
                                  finishedDate: Date(timeInterval: -(60*60*24)*6, since: Date()),
                                  reviewPoint: 4,
@@ -330,7 +325,6 @@ class DummyData {
                                  reviewText: "Mas Dodi paling tau kalo masalah percetakan. Tadi saya perlu cepet ngeprint dan jilid buat urusan kantor langsung jadi diurusin Mas Dodi. Thanks Mas Dodi. ",
                                  reviewer: userProfile[2],
                                  reviewee: userProfile[3]))
-        
         userReview.append(Review(job: jobsList[0],
                                  finishedDate: Date(timeInterval: -(60*60*24)*7, since: Date()),
                                  reviewPoint: 4,
@@ -367,7 +361,6 @@ class DummyData {
                                  reviewText: "Bu Idaaaa saya paling suka kalo dibantu masak sama Bu Ida. Anak saya hari ini ulang tahun terus karena ada bantuan Bu Ida kita bisa bagi-bagi nasi kotak ke temen kelasnya. Makasih Bu Ida. ",
                                  reviewer: userProfile[2],
                                  reviewee: userProfile[5]))
-        
         userReview.append(Review(job: jobsList[0],
                                  finishedDate: Date(timeInterval: -(60*60*24)*5, since: Date()),
                                  reviewPoint: 4,
@@ -399,19 +392,16 @@ class DummyData {
         return jobsList
     }
     
-    func getJobsList(_ status : JobStatus) -> [Jobs] {
+    func getJobsList(_ status: JobStatus) -> [Jobs] {
         var list = [Jobs]()
-        for job in jobsList {
-            if job.status == status {
-                list.append(job)
-            }
+        for job in jobsList where job.status == status {
+            list.append(job)
         }
         return list
     }
     
-    func getJobsList(_ user : UserProfile, _ status : JobStatus) -> [Jobs] {
+    func getJobsList(_ user: UserProfile, _ status: JobStatus) -> [Jobs] {
         var list = [Jobs]()
-        
         for job in jobsList {
             switch status {
             case .active, .cancelled:
@@ -427,10 +417,9 @@ class DummyData {
         return list
     }
     
-    func getJobsList(_ status : JobStatus, _ sort : AssistanceSortByFilter) -> [Jobs] {
+    func getJobsList(_ status: JobStatus, _ sort: AssistanceSortByFilter) -> [Jobs] {
         //TODO: distance
         var list = [Jobs]()
-        
         for job in jobsList {
             switch sort {
             case .nearest:
@@ -463,7 +452,6 @@ class DummyData {
                 }
             }
         }
-        
         return list
     }
     
@@ -481,7 +469,7 @@ class DummyData {
     }
     
     func getUserReview(reviewee: UserProfile) -> [Review] {
-        var filtered = userReview.filter{ $0.reviewee.id == reviewee.id}
+        var filtered = userReview.filter { $0.reviewee.id == reviewee.id }
         filtered = filtered.sorted(by: { $0.finishedDate.compare($1.finishedDate) == .orderedDescending })
         return filtered
     }
@@ -494,7 +482,7 @@ class DummyData {
         userProfile.append(user)
     }
     
-    func addNewJob(job: Jobs){
+    func addNewJob(job: Jobs) {
         jobsList.append(job)
     }
 }

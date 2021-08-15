@@ -101,7 +101,6 @@ extension DetailBantuanVC {
         
         guard let urgency = selectedJob?.urgency else { return }
         setStatusView(urgency: urgency)
-        
         guard tagHeight != nil else { return }
         tagHeight.isActive = false
     }
@@ -123,7 +122,7 @@ extension DetailBantuanVC {
     }
     
     // MARK: - Dynamic UI
-    func setStatusView(urgency: Urgency){
+    func setStatusView(urgency: Urgency) {
         var colorSolid = UIColor()
         var colorTransparent = UIColor()
         

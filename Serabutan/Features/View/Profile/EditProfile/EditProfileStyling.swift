@@ -72,7 +72,7 @@ extension EditProfileVC {
         descriptionTextView.text = user?.bio
     }
     
-    //MARK: - Alert
+    // MARK: - Alert
     @objc func dismissVC() {
         if (tempName != fullName.text) || (tempDescription != descriptionTextView.text) {
             let alert = UIAlertController(title: "Perubahan Belum Disimpan",
@@ -80,7 +80,7 @@ extension EditProfileVC {
                                           preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ya, batalkan",
                                           style: .destructive,
-                                          handler: { action in
+                                          handler: { _ in
                                             self.navigationController?.popViewController(animated: true)
                                           }))
             alert.addAction(UIAlertAction(title: "Tidak",
@@ -99,17 +99,17 @@ extension EditProfileVC {
                                       preferredStyle: .actionSheet)
         let delete = UIAlertAction(title: "Hapus Foto",
                                   style: .destructive,
-                                  handler: { action in
+                                  handler: { _ in
                                     self.profileImage.image = UIImage(named: "avatarIcon")
                                   })
         let camera = UIAlertAction(title: "Ambil Foto",
                                    style: .default,
-                                   handler: { action in
+                                   handler: { _ in
                                      ImageHelper.startMediaBrowser(delegate: self, sourceType: .camera)
                                    })
         let gallery = UIAlertAction(title: "Pilih dari Galeri",
                                     style: .default,
-                                    handler: { action in
+                                    handler: { _ in
                                       ImageHelper.startMediaBrowser(delegate: self, sourceType: .savedPhotosAlbum)
                                     })
         let cancel = UIAlertAction(title: "Batal",

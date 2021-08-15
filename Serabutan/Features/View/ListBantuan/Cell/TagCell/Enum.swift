@@ -13,7 +13,7 @@ enum BantuanUrgency: String, CaseIterable {
     case sedang = "Urgensi sedang"
     case rendah = "Urgensi rendah"
 
-    func getImage()-> UIImage{
+    func getImage() -> UIImage{
         switch self {
         case .tinggi:
             return UIImage(systemName: "circle.fill")!
@@ -24,7 +24,7 @@ enum BantuanUrgency: String, CaseIterable {
         }
     }
 
-    func getBGColor()-> UIColor{
+    func getBGColor() -> UIColor{
         switch self {
         case .tinggi:
             return UIColor(red: 0.88, green: 0.08, blue: 0.08, alpha: 0.10)
@@ -35,7 +35,7 @@ enum BantuanUrgency: String, CaseIterable {
         }
     }
 
-    func getSymbolColor()-> UIColor{
+    func getSymbolColor() -> UIColor{
         switch self {
         case .tinggi:
             return UIColor(red: 0.88, green: 0.08, blue: 0.08, alpha: 1.00)
@@ -53,7 +53,7 @@ enum Status: String, CaseIterable {
     case selesai = "Selesai"
     case dibatalkan = "Dibatalkan"
     
-    func getImage()-> UIImage{
+    func getImage() -> UIImage{
         switch self {
         case .diberikan:
             return UIImage(systemName: "arrow.up")!
@@ -66,7 +66,7 @@ enum Status: String, CaseIterable {
         }
     }
     
-    func getBGColor()-> UIColor{
+    func getBGColor() -> UIColor{
         switch self {
         case .diberikan:
             return UIColor(red: 0.97, green: 0.98, blue: 0.98, alpha: 1.00)
@@ -79,7 +79,7 @@ enum Status: String, CaseIterable {
         }
     }
     
-    func getSymbolColor()-> UIColor{
+    func getSymbolColor() -> UIColor{
         switch self {
         case .diberikan:
             return UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00)
@@ -93,7 +93,7 @@ enum Status: String, CaseIterable {
     }
 }
 
-enum AssistanceSortByFilter: Int{
+enum AssistanceSortByFilter: Int {
     case lowestCompensation
     case highestCompensation
     case newest

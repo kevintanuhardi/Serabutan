@@ -18,8 +18,8 @@ class CustomNotification: UIView {
     }
     
     class func createCustomNotification() -> CustomNotification {
-        let myClassNib = UINib(nibName: "CustomNotification", bundle: nil)
-        return myClassNib.instantiate(withOwner: nil, options: nil).first as! CustomNotification
+        guard let myClassNib = UINib(nibName: "CustomNotification", bundle: nil) else { return }
+        return myClassNib.instantiate(withOwner: nil, options: nil).first as? CustomNotification
     }
     
 }

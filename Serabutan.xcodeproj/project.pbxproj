@@ -65,6 +65,7 @@
 		90D9B44626C4E0C700CABA6F /* CustomNotificationStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D9B44526C4E0C700CABA6F /* CustomNotificationStyling.swift */; };
 		90D9B44A26C5108F00CABA6F /* FloatingNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D9B44926C5108F00CABA6F /* FloatingNotification.swift */; };
 		90DCB12F26B6EAC4002145C1 /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */; };
+		90E4588A26C8E00C00BE0A3F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 90E4588926C8E00C00BE0A3F /* .swiftlint.yml */; };
 		90E9C98826B39DE500165319 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */; };
 		90E9C98926B39DE500165319 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */; };
 		90EF604726C790D000CF5973 /* AssistanceListTableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC25226B2490F0005FFE3 /* AssistanceListTableData.swift */; };
@@ -175,6 +176,7 @@
 		90D9B44526C4E0C700CABA6F /* CustomNotificationStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomNotificationStyling.swift; path = Serabutan/Features/View/Notification/CustomNotificationStyling.swift; sourceTree = SOURCE_ROOT; };
 		90D9B44926C5108F00CABA6F /* FloatingNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FloatingNotification.swift; path = Serabutan/Helper/FloatingNotification.swift; sourceTree = SOURCE_ROOT; };
 		90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomStackView.swift; path = Serabutan/Components/Styling/CustomStackView.swift; sourceTree = SOURCE_ROOT; };
+		90E4588926C8E00C00BE0A3F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewTableViewCell.swift; path = serabutan/Features/View/Profile/Cell/ReviewTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReviewTableViewCell.xib; path = serabutan/Features/View/Profile/Cell/ReviewTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		90F3A4E026B8E404001946E1 /* FontLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FontLibrary.swift; path = Serabutan/Components/Styling/FontLibrary.swift; sourceTree = SOURCE_ROOT; };
@@ -261,6 +263,7 @@
 		185D12AE26A7C09000F6105C = {
 			isa = PBXGroup;
 			children = (
+				90E4588926C8E00C00BE0A3F /* .swiftlint.yml */,
 				185D12B926A7C09000F6105C /* serabutan */,
 				185D12B826A7C09000F6105C /* Products */,
 				9758A392095AD71ADA30D234 /* Pods */,
@@ -713,6 +716,7 @@
 			buildConfigurationList = 185D12CB26A7C09100F6105C /* Build configuration list for PBXNativeTarget "Serabutan" */;
 			buildPhases = (
 				841132F8882E81E8D3E68A9D /* [CP] Check Pods Manifest.lock */,
+				90E4588826C8DFBF00BE0A3F /* ShellScript */,
 				185D12B326A7C09000F6105C /* Sources */,
 				185D12B426A7C09000F6105C /* Frameworks */,
 				185D12B526A7C09000F6105C /* Resources */,
@@ -773,6 +777,7 @@
 				F981FF6E26BA914300F0ACE5 /* MulaiVC.xib in Resources */,
 				F981FF8B26BB757200F0ACE5 /* AdditionalInfoVC.xib in Resources */,
 				F981FF7826BA985600F0ACE5 /* InputNoTelpVC.xib in Resources */,
+				90E4588A26C8E00C00BE0A3F /* .swiftlint.yml in Resources */,
 				185D12C426A7C09100F6105C /* Assets.xcassets in Resources */,
 				F981FF8526BB6E8600F0ACE5 /* FormulirProfilVC.xib in Resources */,
 				C7CCC24626B199DD0005FFE3 /* NewAssistanceVC.xib in Resources */,
@@ -834,6 +839,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		90E4588826C8DFBF00BE0A3F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

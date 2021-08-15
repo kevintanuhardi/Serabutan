@@ -75,7 +75,6 @@ extension TabBarController: NewAssitanceDelegate {
 
 		let detailVC = DetailBantuanVC()
 		detailVC.selectedJob = job
-		(self.selectedViewController as! UINavigationController ).pushViewController(detailVC, animated: true)
+        (self.selectedViewController as? UINavigationController)?.pushViewController(detailVC, animated: true)
 	}
-	
 }
