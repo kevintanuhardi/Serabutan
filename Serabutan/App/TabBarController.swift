@@ -40,7 +40,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     private func setupMiddleButton() {
         let button = UIButton()
-        button.setImage(UIImage(named: "AddButton"), for: .normal)
+        button.setImage(UIImage(named: "addButton"), for: .normal)
         button.sizeToFit()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(buatPermohonan), for: .touchUpInside)
