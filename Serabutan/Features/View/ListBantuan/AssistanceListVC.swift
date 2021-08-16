@@ -30,9 +30,7 @@ class AssistanceListVC: UIViewController, AssistanceListViewModelDelegate {
         
         searchResultJob = jobList
         sortedFilteredJob = jobList
-        
-        print("Hewoo")
-        
+
         UIApplication
             .shared
             .sendAction(#selector(UIApplication.resignFirstResponder),
@@ -65,7 +63,6 @@ extension AssistanceListVC {
         assistanceTable.delegate = self
         assistanceTable.dataSource = self
         assistanceTable.register(AssistanceTableViewCell.nib(), forCellReuseIdentifier: AssistanceTableViewCell.identifier)
-        print("TABLE REGISTERED")
     }
     
     private func setSortData(sort: AssistanceSortByFilter) {
@@ -134,7 +131,7 @@ extension AssistanceListVC: UITextFieldDelegate, UISearchBarDelegate, UISearchRe
     
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
-        let searchText = searchBar.text!
+        let searchText = searchBar.text ?? ""
         
         filterForSearchText(searchText: searchText)
     }
@@ -144,7 +141,7 @@ extension AssistanceListVC: UITextFieldDelegate, UISearchBarDelegate, UISearchRe
             if(searchBar.searchBar.text != "") {
                 let searchTextMatch = assistance.title?.lowercased().contains(searchText.lowercased())
                 
-                return searchTextMatch!
+                return searchTextMatch ?? false
             } else {
                 return true
             }
@@ -159,7 +156,8 @@ extension AssistanceListVC: FilterPopUpVCDelegate {
     
     func setSortDataInvoke(assignedSortBy: AssistanceSortByFilter) {
         sortBy = assignedSortBy
-        setSortData(sort: sortBy!)
+        guard let sort = sortBy else { return }
+        setSortData(sort: sort)
     }
     
     func setPriceRangeInvoke(minCompensation: Int, maxCompensation: Int) {

@@ -15,7 +15,7 @@ extension OngoingActivityVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ongoingActivityTable.dequeueReusableCell(withIdentifier: AssistanceTableViewCell.identifier, for: indexPath) as! AssistanceTableViewCell
+        guard let cell = ongoingActivityTable.dequeueReusableCell(withIdentifier: AssistanceTableViewCell.identifier, for: indexPath) as? AssistanceTableViewCell else { fatalError("Table View Dequeue Error") }
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         let data = dummyData[indexPath.row]
         let poster = data.jobPosterId
@@ -25,7 +25,7 @@ extension OngoingActivityVC: UITableViewDelegate, UITableViewDataSource {
         cell.helperView.isHidden = true
         cell.youHelperView.isHidden = true
         let newView = cell.availabelInsetView1
-        newView!.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        newView?.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         cell.setStatusView(urgency: data.urgency)
         cell.titleLabel.text = data.title

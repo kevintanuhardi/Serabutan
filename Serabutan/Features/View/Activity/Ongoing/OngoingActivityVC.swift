@@ -31,7 +31,6 @@ class OngoingActivityVC: UIViewController {
         let activeJobs = DummyData.shared.getJobsList(userProfile, .active)
         let takenJobs = DummyData.shared.getJobsList(userProfile, .taken)
         dummyData = takenJobs + activeJobs
-        print(dummyData)
         
         DispatchQueue.main.async {
             self.ongoingActivityTable.reloadData()

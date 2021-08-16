@@ -106,11 +106,11 @@ extension FilterPopUpVC: UITextFieldDelegate {
             
             if (minValTF == .none) {
                 guard let viewMinVal = Int(currMinValue) ?? minValue else { return }
-                minValTF.text = "Rp " + priceFormatting(amount: viewMinVal)
+                minValTF.text = "Rp " + StringFormatter().priceFormatting(amount: viewMinVal)
             }
             else if (minValTF .endEditing(true)) {
                 guard let viewMinVal = Int(currMinValue) else { return }
-                minValTF.text = "Rp " + priceFormatting(amount: viewMinVal)
+                minValTF.text = "Rp " +  StringFormatter().priceFormatting(amount: viewMinVal)
             }
             minValue = Int(currMinValue)
         }
@@ -122,10 +122,10 @@ extension FilterPopUpVC: UITextFieldDelegate {
             
             if maxValTF == .none{
                 guard let viewMaxVal = Int(currMaxValue) ?? maxValue else { return }
-                maxValTF.text = "Rp " + priceFormatting(amount: viewMaxVal)
+                maxValTF.text = "Rp " + StringFormatter().priceFormatting(amount: viewMaxVal)
             } else if maxValTF .endEditing(true){
                 guard let viewMaxVal = Int(currMaxValue) else { return }
-                maxValTF.text = "Rp " + priceFormatting(amount: viewMaxVal)
+                maxValTF.text = "Rp " + StringFormatter().priceFormatting(amount: viewMaxVal)
             }
             maxValue = Int(currMaxValue)
         }
@@ -166,7 +166,7 @@ extension FilterPopUpVC {
     func getSortByFilter() -> AssistanceSortByFilter {
         for (index, button) in sortByCollectionButton.enumerated() {
             if button.backgroundColor == tintColor {
-                return AssistanceSortByFilter(rawValue: index)!
+                return AssistanceSortByFilter(rawValue: index) ?? .nearest
             }
         }
         
@@ -190,16 +190,6 @@ extension FilterPopUpVC {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
-    }
-    
-    func priceFormatting(amount: Int) -> String {
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.numberStyle = .currency
-        currencyFormatter.locale = Locale(identifier: "id_UD")
-        currencyFormatter.groupingSeparator = "."
-        currencyFormatter.numberStyle = .decimal
-        
-        return currencyFormatter.string(from: NSNumber(value: amount))!
     }
     
 }

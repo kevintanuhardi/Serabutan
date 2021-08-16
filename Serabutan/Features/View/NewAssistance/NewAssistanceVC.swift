@@ -336,7 +336,7 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
     //MARK: - Tag List View Actions
     func addTag() {
         var duplicate: Bool = false
-        let newTag = infoTF.text!
+        guard let newTag = infoTF.text else { return }
         
         for tag in newAssistanceInfo {
             if newTag == tag {
@@ -384,11 +384,11 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
     //MARK: - ImagePicker Handler
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
-        print(image, "_ image")
         dismiss(animated: true)
 
         currImage = image
-        newAssistanceMediaImage.append(currImage!)
+        guard let newImage = currImage else { return }
+        newAssistanceMediaImage.append(newImage)
         
         DispatchQueue.main.async {
             self.mediaImageCollectionView.reloadData()
