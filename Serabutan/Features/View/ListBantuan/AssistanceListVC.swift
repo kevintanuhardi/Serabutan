@@ -12,7 +12,8 @@ class AssistanceListVC: UIViewController, AssistanceListViewModelDelegate {
     @IBOutlet weak var assistanceTable: UITableView!
     
     var assistanceListVM = AssistanceListVM()
-    var jobList = [Jobs]()
+    // TODO: Remove this on BE integration
+    var jobList = DummyData.shared.getJobsList(.active)
     var searchResultJob = [Jobs]()
     var sortedFilteredJob = [Jobs]()
     
@@ -21,17 +22,11 @@ class AssistanceListVC: UIViewController, AssistanceListViewModelDelegate {
     var minValue: Int?
     var maxValue: Int?
     
-    // TODO: Remove this on BE integration
-    //var jobList = DummyData.shared.getJobsList(.active)
-
-    
     var user = UserDefaults.standard.integer(forKey: "loggedUser")
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTable()
-        subscribeViewModel()
         
         searchResultJob = jobList
         sortedFilteredJob = jobList
@@ -48,24 +43,6 @@ class AssistanceListVC: UIViewController, AssistanceListViewModelDelegate {
         super.viewWillAppear(animated)
         assistanceTable.reloadData()
         setupView()
-    }
-    
-    private func subscribeViewModel() {
-        assistanceListVM.bindAssistanceListViewModelToController = {
-            self.bindData()
-            print("BindData:")
-        }
-    }
-    
-    private func bindData() {
-        if let parsedAssistance = assistanceListVM.assistanceList {
-            print("PARSED:", parsedAssistance.count)
-            jobList = parsedAssistance
-            print("JOB LIST:",jobList.count)
-            DispatchQueue.main.async {
-                self.assistanceTable.reloadData()
-            }
-        }
     }
     
     func callFinished() {
