@@ -7,29 +7,30 @@
 
 import UIKit
 
-class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchResultsUpdating, UITextFieldDelegate {
+class AssistanceListVC: UIViewController, AssistanceListViewModelDelegate {
     
-    @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var assistanceTable: UITableView!
+    
+    var assistanceListVM = AssistanceListVM()
+    // TODO: Remove this on BE integration
+    var jobList = DummyData.shared.getJobsList(.active)
+    var searchResultJob = [Jobs]()
+    var sortedFilteredJob = [Jobs]()
     
     let searchBar  = UISearchController()
     var sortBy: AssistanceSortByFilter? = .nearest
     var minValue: Int?
     var maxValue: Int?
     
-    // TODO: Remove this on BE integration
-    var jobList = DummyData.shared.getJobsList(.active)
-    var searchResultJob = [Jobs]()
-    var sortedFilteredJob = [Jobs]()
-    
     var user = UserDefaults.standard.integer(forKey: "loggedUser")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTable()
+        
         searchResultJob = jobList
         sortedFilteredJob = jobList
-        
+
         UIApplication
             .shared
             .sendAction(#selector(UIApplication.resignFirstResponder),
@@ -42,13 +43,15 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
         setupView()
     }
     
-    @objc func filterButtonTapped(_ sender:UIButton!){
-        let destination = FilterPopUpVC(nibName: "FilterPopUpVC", bundle: nil)
-		destination.delegate = self
-        self.present(destination, animated: true, completion: nil)
+    func callFinished() {
+        self.assistanceTable.reloadData()
     }
     
-    @objc func backButtonTapped(_ sender:UIButton!){
+    @objc func filterButtonTapped(_ sender:UIButton!) {
+        navigateToFilter()
+    }
+    
+    @objc func backButtonTapped(_ sender:UIButton!) {
         navigateToHome()
     }
     
@@ -56,50 +59,13 @@ class AssistanceListVC: UIViewController, UITableViewDataSource, UITableViewDele
 
 extension AssistanceListVC {
     
-    func registerTable() {
+    private func registerTable() {
         assistanceTable.delegate = self
         assistanceTable.dataSource = self
         assistanceTable.register(AssistanceTableViewCell.nib(), forCellReuseIdentifier: AssistanceTableViewCell.identifier)
     }
     
-    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchBar.searchTextField.animateBorder(true, type: .border)
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchBar.searchTextField.animateBorder(false, type: .border)
-    }
-    
-    func navigateToHome() {
-        let homeVC = HomeVC()
-        self.navigationController?.pushViewController(homeVC, animated: true)
-    }
-    
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        let searchText = searchBar.text!
-        filterForSearchText(searchText: searchText)
-    }
-    
-    func filterForSearchText(searchText: String){
-        searchResultJob = sortedFilteredJob.filter { assistance in
-            if(searchBar.searchBar.text != ""){
-                let searchTextMatch = assistance.title?.lowercased().contains(searchText.lowercased())
-                return searchTextMatch!
-            } else {
-                return true
-            }
-        }
-        assistanceTable.reloadData()
-    }
-    
-    func setSortData(sort: AssistanceSortByFilter) {
+    private func setSortData(sort: AssistanceSortByFilter) {
         
         if sort == .nearest {
             sortedFilteredJob = jobList.sorted { (lhs, rhs) -> Bool in
@@ -124,8 +90,9 @@ extension AssistanceListVC {
         }
     }
     
-    func setPriceRange(minCompensation: Int, maxCompensation: Int){
+    private func setPriceRange(minCompensation: Int, maxCompensation: Int) {
         sortedFilteredJob = sortedFilteredJob.filter { assistance in
+            
             if(minCompensation == .zero) {
                 let result = assistance.price >= minCompensation
                 return result
@@ -144,15 +111,57 @@ extension AssistanceListVC {
             self.assistanceTable?.reloadData()
         }
     }
+    
+}
+
+extension AssistanceListVC: UITextFieldDelegate, UISearchBarDelegate, UISearchResultsUpdating {
+    
+    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.searchTextField.animateBorder(true, type: .border)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.searchTextField.animateBorder(false, type: .border)
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let searchText = searchBar.text ?? ""
+        
+        filterForSearchText(searchText: searchText)
+    }
+    
+    func filterForSearchText(searchText: String) {
+        searchResultJob = sortedFilteredJob.filter { assistance in
+            if(searchBar.searchBar.text != "") {
+                let searchTextMatch = assistance.title?.lowercased().contains(searchText.lowercased())
+                
+                return searchTextMatch ?? false
+            } else {
+                return true
+            }
+        }
+        
+        assistanceTable.reloadData()
+    }
+    
 }
 
 extension AssistanceListVC: FilterPopUpVCDelegate {
-	
-	func setSortDataInvoke(assignedSortBy: AssistanceSortByFilter){
-		sortBy = assignedSortBy
-        setSortData(sort: sortBy!)
-	}
-	func setPriceRangeInvoke(minCompensation: Int, maxCompensation: Int) {
-		setPriceRange(minCompensation: minCompensation, maxCompensation: maxCompensation)
-	}
+    
+    func setSortDataInvoke(assignedSortBy: AssistanceSortByFilter) {
+        sortBy = assignedSortBy
+        guard let sort = sortBy else { return }
+        setSortData(sort: sort)
+    }
+    
+    func setPriceRangeInvoke(minCompensation: Int, maxCompensation: Int) {
+        setPriceRange(minCompensation: minCompensation, maxCompensation: maxCompensation)
+    }
+    
 }
