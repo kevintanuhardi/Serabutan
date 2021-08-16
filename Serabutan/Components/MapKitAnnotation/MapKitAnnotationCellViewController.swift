@@ -48,18 +48,14 @@ class MapKitAnnotationCellViewController: UIViewController {
     func setStatusView(urgency: Urgency){
         
         var colorSolid = UIColor()
-        var colorTransparent = UIColor()
         
         switch urgency {
         case .high :
             colorSolid = .ColorLibrary.highUrgency
-            colorTransparent = .ColorLibrary.highUrgencyBackground
         case .medium:
             colorSolid = .ColorLibrary.mediumUrgency
-            colorTransparent = .ColorLibrary.mediumUrgencyBackground
         case .low:
             colorSolid = .ColorLibrary.lowUrgency
-            colorTransparent = .ColorLibrary.lowUrgencyBackground
         }
         
         urgencyIndicator.backgroundColor = colorSolid

@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kucing1" translatesAutoresizingMaskIntoConstraints="NO" id="hyi-2f-xFH">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-0" translatesAutoresizingMaskIntoConstraints="NO" id="hyi-2f-xFH">
                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="hyi-2f-xFH" secondAttribute="height" multiplier="1:1" id="6vA-b2-60q"/>
@@ -38,6 +38,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="kucing1" width="120" height="120"/>
+        <image name="avatar-0" width="100" height="100"/>
     </resources>
 </document>

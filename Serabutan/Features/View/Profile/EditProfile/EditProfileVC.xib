@@ -28,13 +28,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berikan foto terbaik anda." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jy2-UE-Etk">
-                    <rect key="frame" x="145" y="144" width="124.5" height="12"/>
+                    <rect key="frame" x="145" y="184" width="124.5" height="12"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" name="DarkGrey"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="K7P-fO-DZ1" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
-                    <rect key="frame" x="20" y="166" width="374" height="33"/>
+                    <rect key="frame" x="20" y="206" width="374" height="33"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama Lengkap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTa-Fo-pc6">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="12"/>
@@ -59,7 +59,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rSq-8G-8ai" customClass="CustomStackView" customModule="Serabutan" customModuleProvider="target">
-                    <rect key="frame" x="20" y="209" width="374" height="112"/>
+                    <rect key="frame" x="20" y="249" width="374" height="112"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deskripsi Singkat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7I-p1-ilj">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="12"/>
@@ -89,13 +89,13 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sec-9l-aao">
-                    <rect key="frame" x="177" y="74" width="60" height="60"/>
+                    <rect key="frame" x="157" y="74" width="100" height="100"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="M4X-Ol-0sQ">
-                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-0" translatesAutoresizingMaskIntoConstraints="NO" id="M4X-Ol-0sQ">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="och-wH-JR8">
-                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                            <rect key="frame" x="0.0" y="70" width="100" height="30"/>
                             <state key="normal" title="Ubah"/>
                             <connections>
                                 <action selector="changeProfilePicture:" destination="-1" eventType="touchUpInside" id="LKE-Ek-7UG"/>
@@ -106,18 +106,18 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="och-wH-JR8" secondAttribute="trailing" id="58G-lw-pYO"/>
                         <constraint firstAttribute="bottom" secondItem="M4X-Ol-0sQ" secondAttribute="bottom" id="Bt2-5a-55i"/>
-                        <constraint firstItem="och-wH-JR8" firstAttribute="top" secondItem="Sec-9l-aao" secondAttribute="top" id="FZ2-lb-qhE"/>
                         <constraint firstAttribute="bottom" secondItem="och-wH-JR8" secondAttribute="bottom" id="Uqt-WY-QrZ"/>
-                        <constraint firstAttribute="width" constant="60" id="ZFK-El-seL"/>
+                        <constraint firstAttribute="width" constant="100" id="ZFK-El-seL"/>
                         <constraint firstItem="M4X-Ol-0sQ" firstAttribute="leading" secondItem="Sec-9l-aao" secondAttribute="leading" id="b6P-gb-Zaj"/>
                         <constraint firstAttribute="trailing" secondItem="M4X-Ol-0sQ" secondAttribute="trailing" id="dAk-cr-dZ9"/>
-                        <constraint firstAttribute="height" constant="60" id="xTe-Gj-zFH"/>
+                        <constraint firstItem="och-wH-JR8" firstAttribute="height" secondItem="Sec-9l-aao" secondAttribute="height" multiplier="0.3" id="wkA-H0-bXL"/>
+                        <constraint firstAttribute="height" constant="100" id="xTe-Gj-zFH"/>
                         <constraint firstItem="och-wH-JR8" firstAttribute="leading" secondItem="Sec-9l-aao" secondAttribute="leading" id="xpi-eQ-5tt"/>
                         <constraint firstItem="M4X-Ol-0sQ" firstAttribute="top" secondItem="Sec-9l-aao" secondAttribute="top" id="zwd-p8-f0t"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 / 5000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OX-6C-6Sk">
-                    <rect key="frame" x="335" y="326" width="59" height="12"/>
+                    <rect key="frame" x="335" y="366" width="59" height="12"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" name="DarkGrey"/>
                     <nil key="highlightedColor"/>
@@ -143,7 +143,7 @@
         </view>
     </objects>
     <resources>
-        <image name="profileIcon" width="15" height="18"/>
+        <image name="avatar-0" width="100" height="100"/>
         <namedColor name="CustomBlack">
             <color red="0.18823529411764706" green="0.16078431372549021" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

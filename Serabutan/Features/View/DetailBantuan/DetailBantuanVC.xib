@@ -11,13 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailBantuanVC">
             <connections>
+                <outlet property="actionButton" destination="xd9-VT-277" id="8gi-UJ-CI2"/>
                 <outlet property="chatButton" destination="9MF-XI-e5I" id="BjG-3u-mkV"/>
                 <outlet property="contentScrollView" destination="Aet-b5-QwL" id="MaP-hN-oA2"/>
                 <outlet property="descriptionLabel" destination="Yld-UM-2lK" id="bgv-KY-AYq"/>
                 <outlet property="distanceToJob" destination="2QZ-Rn-jLv" id="iqW-O6-OXP"/>
                 <outlet property="floatingBottom" destination="pIM-83-XmS" id="80Y-9M-ty2"/>
                 <outlet property="floatingTopView" destination="hYd-Y6-Il3" id="5N5-l1-3FS"/>
-                <outlet property="helpFinishButton" destination="xd9-VT-277" id="8gi-UJ-CI2"/>
                 <outlet property="helpStatusLabel" destination="EeN-xH-F8T" id="yEa-29-4L3"/>
                 <outlet property="helperAvatar" destination="y9v-a0-dPa" id="acF-Rz-iOD"/>
                 <outlet property="helperName" destination="FDw-it-fQb" id="2a7-Gi-vXw"/>
@@ -152,7 +152,7 @@
                                                                     <accessibility key="accessibilityConfiguration" identifier="helperProfile"/>
                                                                     <state key="normal" title="Nama Helper"/>
                                                                     <connections>
-                                                                        <action selector="goToProfile:" destination="-1" eventType="touchUpInside" id="NQv-50-K67"/>
+                                                                        <action selector="profileButton:" destination="-1" eventType="touchUpInside" id="NQv-50-K67"/>
                                                                     </connections>
                                                                 </button>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" image="checkmark.seal.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AkC-Yr-bAo">
@@ -278,11 +278,11 @@
                                         <constraint firstAttribute="height" constant="20" id="Ud8-R7-38Z"/>
                                     </constraints>
                                     <state key="normal" title=" Nama Poster">
-                                        <color key="titleColor" name="CustomBlack"/>
+                                        <color key="titleColor" name="AccentColor"/>
                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                     </state>
                                     <connections>
-                                        <action selector="goToProfile:" destination="-1" eventType="touchUpInside" id="o4R-s0-WQC"/>
+                                        <action selector="profileButton:" destination="-1" eventType="touchUpInside" id="o4R-s0-WQC"/>
                                     </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" image="checkmark.seal.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tul-yd-NZi">
@@ -368,7 +368,7 @@
                                     <color key="tintColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="Selesai"/>
                                     <connections>
-                                        <action selector="helpFinishButton:" destination="-1" eventType="touchUpInside" id="Ngz-b9-f2p"/>
+                                        <action selector="actionButton:" destination="-1" eventType="touchUpInside" id="Ngz-b9-f2p"/>
                                     </connections>
                                 </button>
                             </subviews>
