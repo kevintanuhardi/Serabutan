@@ -8,12 +8,45 @@
 import UIKit
 
 extension ProfileVC {
-    func updateUI() {
-        setProfileStyle()
-        setProfileContent()
+    
+    // MARK: - Navigation Items
+    func setNavigation() {
+        navigationController?.navigationBar.barTintColor = .white
+        navigationItem.largeTitleDisplayMode = .never
+        
+        // Back Button
+        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
+                                                           style: UIBarButtonItem.Style.plain,
+                                                           target: nil,
+                                                           action: nil)
+        
+        // Check if the visited profile is their own
+        setNavigationItems()
     }
     
-    func setProfileStyle() {
+    func setNavigationItems() {
+        guard user?.id == loggedUser else { return }
+        
+        let rightBarButton = UIBarButtonItem(title: "Sunting",
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(goToEditProfile))
+        rightBarButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.FontLibrary.textLink1],
+                                              for: .normal)
+        rightBarButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.FontLibrary.textLink1],
+                                              for: .application)
+        navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    // MARK: - Static UI
+    func setStyle() {
+        // Delegate
+        reviewTable.register(ReviewTableViewCell.nib(), forCellReuseIdentifier: ReviewTableViewCell.identifier)
+        reviewTable.delegate = self
+        reviewTable.dataSource = self
+        
         profileImage.layer.cornerRadius = profileImage.frame.height / 2
         profileImage.layer.masksToBounds = true
         ratingBadge.layer.cornerRadius = ratingBadge.frame.height / 2
@@ -23,7 +56,7 @@ extension ProfileVC {
         profileInfoView.addLine(position: .bottom, color: UIColor.ColorLibrary.mediumGrey, width: 0.5)
     }
     
-    func setProfileContent() {
+    func configureText() {
         profileImage.image = user?.avatar
         profileName.text = user?.name
         profileJoinDate.text = "Bergabung \(StringFormatter().dateFormatter(date: user?.joinDate ?? Date()))"
@@ -34,8 +67,8 @@ extension ProfileVC {
                                                                       secondWord: " Dibantu",
                                                                       style: .dualStyle)
         totalMembantu.attributedText = StringFormatter().styleCombiner(firstWord: "\(user?.statistics?.membantu ?? 0)",
-                                                                      secondWord: " Membantu",
-                                                                      style: .dualStyle)
-        profileVerified.isHidden = !user!.isVerified
+                                                                       secondWord: " Membantu",
+                                                                       style: .dualStyle)
+        profileVerified.isHidden = !(user?.isVerified ?? false)
     }
 }
