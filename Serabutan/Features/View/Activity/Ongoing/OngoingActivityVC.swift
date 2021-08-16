@@ -12,28 +12,33 @@ class OngoingActivityVC: UIViewController {
     @IBOutlet weak var ongoingActivityTable: UITableView!
     
     var ongoingVM = OngoingActivityVM()
-    var user = UserDefaults.standard.integer(forKey: "loggedUser")
     var dummyData = [Jobs]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        subscribeViewModel()
+        ongoingVM.fetchOngoingActivity()
         ongoingActivityTable.delegate = self
         ongoingActivityTable.dataSource = self
         ongoingActivityTable.register(AssistanceTableViewCell.nib(), forCellReuseIdentifier: AssistanceTableViewCell.identifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setOngoingData()
+        ongoingVM.fetchOngoingActivity()
     }
     
-    func setOngoingData(){
-        let userProfile = DummyData.shared.getUserProfile()[user]
-        let activeJobs = DummyData.shared.getJobsList(userProfile, .active)
-        let takenJobs = DummyData.shared.getJobsList(userProfile, .taken)
-        dummyData = takenJobs + activeJobs
-        
-        DispatchQueue.main.async {
-            self.ongoingActivityTable.reloadData()
+    func subscribeViewModel(){
+        ongoingVM.bindOngoingActivityViewModelToController = {
+            self.bindData()
+        }
+    }
+    
+    func bindData() {
+        if let parsedActivity = ongoingVM.ongoingActivity {
+            dummyData = parsedActivity
+            DispatchQueue.main.async {
+                self.ongoingActivityTable.reloadData()
+            }
         }
     }
     

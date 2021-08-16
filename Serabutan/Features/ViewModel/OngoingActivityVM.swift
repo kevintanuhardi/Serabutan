@@ -21,7 +21,6 @@ class OngoingActivityVM: NSObject {
     
     override init() {
         super.init()
-        fetchOngoingActivity()
     }
     
     func fetchOngoingActivity() {

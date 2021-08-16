@@ -11,33 +11,34 @@ class HistoryActivityVC: UIViewController {
     
     @IBOutlet weak var historyActivityTable: UITableView!
     
-    var user = UserDefaults.standard.integer(forKey: "loggedUser")
+    var historyVM = HistoryActivityVM()
     var dummyData = [Jobs]()
-    
-    var userProfile : UserProfile!
-    var doneJobs = [Jobs]()
-    var cancelledJobs = [Jobs]()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        subscribeViewModel()
+        historyVM.fetchHistoryActivity()
         historyActivityTable.delegate = self
         historyActivityTable.dataSource = self
         historyActivityTable.register(AssistanceTableViewCell.nib(), forCellReuseIdentifier: AssistanceTableViewCell.identifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setHistoryData()
+        historyVM.fetchHistoryActivity()
     }
     
-    func setHistoryData(){
-        userProfile = DummyData.shared.getUserProfile()[user]
-        doneJobs = DummyData.shared.getJobsList(userProfile, .done)
-        cancelledJobs = DummyData.shared.getJobsList(userProfile, .cancelled)
-        dummyData = doneJobs + cancelledJobs
-        
-        DispatchQueue.main.async {
-            self.historyActivityTable.reloadData()
+    func subscribeViewModel(){
+        historyVM.bindHistoryActivityViewModelToController = {
+            self.bindData()
+        }
+    }
+    
+    func bindData() {
+        if let parsedActivity = historyVM.historyActivity {
+            dummyData = parsedActivity
+            DispatchQueue.main.async {
+                self.historyActivityTable.reloadData()
+            }
         }
     }
     

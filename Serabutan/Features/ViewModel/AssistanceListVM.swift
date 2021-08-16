@@ -15,6 +15,7 @@ class AssistanceListVM: NSObject {
     
     private(set) var assistanceList: [Jobs]? {
         didSet {
+            print("did set")
             self.bindAssistanceListViewModelToController()
         }
     }
@@ -23,10 +24,10 @@ class AssistanceListVM: NSObject {
     
     override init() {
         super.init()
-        //fetchAssistanceList()
     }
     
     func fetchAssistanceList() {
+        print("fetching assistance")
         self.assistanceList = DummyData.shared.getJobsList(.active)
     }
 }
