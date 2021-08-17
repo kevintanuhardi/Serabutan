@@ -368,6 +368,7 @@ extension DetailBantuanVC {
         alert.addAction(UIAlertAction(title: "Ya",
                                       style: .default,
                                       handler: { _ in
+                                        self.assignSelf = false
                                         self.selectedJob?.status = .active
                                         self.selectedJob?.helperId = nil
                                         self.configureHelper()
