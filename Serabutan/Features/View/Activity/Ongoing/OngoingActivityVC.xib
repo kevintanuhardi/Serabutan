@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OngoingActivityVC" customModule="Serabutan" customModuleProvider="target">
             <connections>
+                <outlet property="noOngoingActivityLabel" destination="h4V-8a-sLy" id="5yP-46-lxt"/>
                 <outlet property="ongoingActivityTable" destination="si3-6k-X4I" id="XJd-5e-54b"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,14 +24,22 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tidak ada aktivitas yang sedang berlangsung" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4V-8a-sLy">
+                    <rect key="frame" x="79.5" y="269" width="255" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="si3-6k-X4I" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="M4R-1L-jTe"/>
+                <constraint firstItem="h4V-8a-sLy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QI7-D2-QfV"/>
                 <constraint firstItem="si3-6k-X4I" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="URY-4T-12c"/>
                 <constraint firstItem="si3-6k-X4I" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="YFV-73-3IM"/>
                 <constraint firstItem="si3-6k-X4I" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="bWn-BR-g2O"/>
+                <constraint firstItem="h4V-8a-sLy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="225" id="xTU-bb-lkY"/>
             </constraints>
             <point key="canvasLocation" x="114" y="132"/>
         </view>

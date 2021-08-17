@@ -13,7 +13,8 @@ class AssistanceListVC: UIViewController, AssistanceListViewModelDelegate {
     
     var assistanceListVM = AssistanceListVM()
     // TODO: Remove this on BE integration
-    var jobList = DummyData.shared.getJobsList(.active)
+//    var jobList = DummyData.shared.getJobsList(.active)
+    var jobList = [Jobs]()
     var searchResultJob = [Jobs]()
     var sortedFilteredJob = [Jobs]()
     
@@ -27,7 +28,8 @@ class AssistanceListVC: UIViewController, AssistanceListViewModelDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTable()
-        
+        subscribeViewModel()
+        assistanceListVM.fetchAssistanceList()
         searchResultJob = jobList
         sortedFilteredJob = jobList
 
@@ -41,6 +43,21 @@ class AssistanceListVC: UIViewController, AssistanceListViewModelDelegate {
         super.viewWillAppear(animated)
         assistanceTable.reloadData()
         setupView()
+    }
+    
+    func subscribeViewModel(){
+        assistanceListVM.bindAssistanceListViewModelToController = {
+            self.bindData()
+        }
+    }
+    
+    func bindData() {
+        if let parsedAssistance = assistanceListVM.assistanceList {
+            jobList = parsedAssistance
+            DispatchQueue.main.async {
+                self.assistanceTable.reloadData()
+            }
+        }
     }
     
     func callFinished() {

@@ -9,7 +9,7 @@ import Foundation
 
 class OngoingActivityVM: NSObject {
     
-    var user = UserDefaults.standard.integer(forKey: "loggedUser")
+    
     
     private(set) var ongoingActivity: [Jobs]? {
         didSet {
@@ -21,10 +21,10 @@ class OngoingActivityVM: NSObject {
     
     override init() {
         super.init()
-        fetchOngoingActivity()
     }
     
     func fetchOngoingActivity() {
+        let user = UserDefaults.standard.integer(forKey: "loggedUser")
         let userProfile = DummyData.shared.getUserProfile()[user]
         let activeJobs = DummyData.shared.getJobsList(userProfile, .active)
         let takenJobs = DummyData.shared.getJobsList(userProfile, .taken)

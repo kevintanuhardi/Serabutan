@@ -17,14 +17,15 @@ extension HistoryActivityVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = historyActivityTable.dequeueReusableCell(withIdentifier: AssistanceTableViewCell.identifier, for: indexPath) as? AssistanceTableViewCell else { fatalError("Table View Dequeue Error") }
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        
         let data = dummyData[indexPath.row]
         let poster = data.jobPosterId
         let helper = dummyData[indexPath.row].helperId
         
         cell.tagView.isHidden = true
         cell.availableView.isHidden = true
-        cell.helperView.isHidden = false
-        cell.youHelperView.isHidden = true
+        cell.historyHelperView.isHidden = false
+        cell.ongoingHelperView.isHidden = true
         cell.dotImage.tintColor = UIColor.clear
         cell.timeElapsedLabel.textColor = UIColor.clear
         
@@ -34,8 +35,8 @@ extension HistoryActivityVC: UITableViewDelegate, UITableViewDataSource {
         cell.compensationLabel.text = StringFormatter().priceFormatting(amount: data.price)
         cell.posterImage.image = poster.avatar
         cell.posterLabel.text = poster.name
-        cell.helperImage.image = helper?.avatar
-        cell.helperNameLabel.text = helper?.name
+        cell.historyHelperImage.image = helper?.avatar
+        cell.historyHelperNameLabel.text = helper?.name
         
         return cell
     }

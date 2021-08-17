@@ -25,8 +25,8 @@ extension AssistanceListVC: UITableViewDataSource, UITableViewDelegate {
         cell.selectionStyle = .none
         cell.tagView.isHidden = true
         cell.availableView.isHidden = true
-        cell.youHelperView.isHidden = true
-        cell.helperView.isHidden = true
+        cell.ongoingHelperView.isHidden = true
+        cell.historyHelperView.isHidden = true
         cell.mainBottomBar.isHidden = true
 
         var result: Jobs { return searchBar.isActive ? searchedJob : sortedFiltered }

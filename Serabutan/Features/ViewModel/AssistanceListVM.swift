@@ -23,7 +23,6 @@ class AssistanceListVM: NSObject {
     
     override init() {
         super.init()
-        //fetchAssistanceList()
     }
     
     func fetchAssistanceList() {

@@ -34,20 +34,21 @@ class AssistanceTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
     //available state
     @IBOutlet weak var availableView: UIView!
     @IBOutlet weak var availabelInsetView1: UIView!
-    @IBOutlet weak var selfImage: UIImageView!
     @IBOutlet weak var availableInsetView: UIView!
     
     //assigned by you state
-    @IBOutlet weak var youHelperView: UIView!
+    @IBOutlet weak var ongoingHelperView: UIView!
+    @IBOutlet weak var ongoingHelperImage: UIImageView!
+    @IBOutlet weak var ongoingHelperNameLabel: UILabel!
     @IBOutlet weak var whatsappView: UIView!
     @IBOutlet weak var whatsappImage: UIImageView!
     @IBOutlet weak var whatsappButton: UIButton!
     
     //assigned by other helper state
-    @IBOutlet weak var helperView: UIView!
-    @IBOutlet weak var helperImage: UIImageView!
-    @IBOutlet weak var helperNameLabel: UILabel!
-    @IBOutlet weak var verifiedLogo1: UIImageView!
+    @IBOutlet weak var historyHelperView: UIView!
+    @IBOutlet weak var historyHelperImage: UIImageView!
+    @IBOutlet weak var historyHelperNameLabel: UILabel!
+    @IBOutlet weak var historyHelperVerifiedLogo: UIImageView!
     
     @IBOutlet weak var tagCell: UICollectionView!
     

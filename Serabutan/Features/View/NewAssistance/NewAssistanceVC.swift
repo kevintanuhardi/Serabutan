@@ -204,7 +204,7 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
                            coordinate: newAssistanceCoordinate ?? CLLocationCoordinate2D(),
                            tags: newAssistanceInfo,
                            medias: newAssistanceMediaImage,
-                           helperId: newAssistanceHelperId,
+                           helperId: nil,
                            genderPreference: newAssistanceGenderPref,
                            agePreference: newAssistanceAgePref)
             

@@ -169,7 +169,6 @@ extension FilterPopUpVC {
                 return AssistanceSortByFilter(rawValue: index) ?? .nearest
             }
         }
-        
         return .nearest
     }
     
