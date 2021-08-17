@@ -13,7 +13,7 @@ extension DetailBantuanVC {
     func setupUI(){
         setStyle()
         configureText()
-        configureHelper()
+        configureHelper(check: false)
     }
     
     // MARK: - Navigation Items
@@ -61,7 +61,6 @@ extension DetailBantuanVC {
         jobImgCarousel.dataSource = self
         contentScrollView.delegate = self
         tagView.delegate = self
-        
         
         urgencyView.layer.borderWidth = 0.5
         urgencyView.layer.cornerRadius = urgencyView.frame.height / 2
@@ -165,9 +164,9 @@ extension DetailBantuanVC {
         }
     }
     
-    func configureHelper() {
+    func configureHelper(check: Bool) {
+        check ? checkUser() : ()
         setNavigationItems()
-        checkUser()
         floatingBottom.isHidden = false
         
         switch selectedJob?.status {
@@ -208,7 +207,7 @@ extension DetailBantuanVC {
         case .done :
             break
         }
-        configureHelper()
+        configureHelper(check: true)
     }
     
     func triggerHelper() {
@@ -218,7 +217,7 @@ extension DetailBantuanVC {
         let helperIndex = Int.random(in: 0..<(DummyData.shared.getUserProfile().count - 1))
         assignedNotif.status = .taken
         assignedNotif.helperId = DummyData.shared.getUserProfile()[helperIndex]
-        configureHelper()
+        configureHelper(check: true)
         
         FloatingNotification.shared.showNotification(type: .helpeeAssigned, job: assignedNotif )
     }
@@ -298,7 +297,7 @@ extension DetailBantuanVC {
                                       style: .default,
                                       handler: { _ in
                                         self.selectedJob?.status = .done
-                                        self.configureHelper()
+                                        self.configureHelper(check: true)
                                         self.goToRateProfile()
                                       }))
         present(alert, animated: true, completion: nil)
@@ -316,7 +315,7 @@ extension DetailBantuanVC {
                                       style: .default,
                                       handler: { _ in
                                         self.selectedJob?.status = .taken
-                                        self.configureHelper()
+                                        self.configureHelper(check: true)
                                         self.sendWhatsApp(template: true)
                                       }))
         present(alert, animated: true, completion: nil)
@@ -335,7 +334,7 @@ extension DetailBantuanVC {
                                       handler: { _ in
                                         self.selectedJob?.status = .active
                                         self.selectedJob?.helperId = nil
-                                        self.configureHelper()
+                                        self.configureHelper(check: true)
                                       }))
         present(alert, animated: true, completion: nil)
     }
@@ -370,7 +369,7 @@ extension DetailBantuanVC {
                                       handler: { _ in
                                         self.selectedJob?.status = .active
                                         self.selectedJob?.helperId = nil
-                                        self.configureHelper()
+                                        self.configureHelper(check: true)
                                       }))
         present(alert, animated: true, completion: nil)
     }
