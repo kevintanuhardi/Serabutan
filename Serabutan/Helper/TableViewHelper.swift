@@ -11,7 +11,7 @@ import UIKit
 extension UITableView {
     
     func EmptyMessage(_ message: String) {
-        let rect = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
+        let rect = CGRect(x: 0, y: 0, width: self.frame.width, height: self.bounds.height / 1.5)
         let messageLabel = UILabel(frame: rect)
         messageLabel.text = message
         messageLabel.textColor = .ColorLibrary.darkGrey
@@ -19,7 +19,7 @@ extension UITableView {
         messageLabel.textAlignment = .center
         messageLabel.font = .FontLibrary.bodyBold
         
-        self.backgroundView = messageLabel
+        self.tableFooterView = messageLabel
         
     }
 }

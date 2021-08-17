@@ -59,8 +59,12 @@ class FloatingNotification {
             let detailJob = DetailBantuanVC()
             detailJob.selectedJob = job
             
-            let rootVC = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController as? TabBarController
+            var rootVC = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController as? TabBarController
             let currentVC = (rootVC?.selectedViewController as? UINavigationController)?.visibleViewController
+            
+            if rootVC == nil {
+                rootVC = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController?.presentedViewController as? TabBarController
+            }
             
             if (currentVC is DetailBantuanVC) && ((currentVC as? DetailBantuanVC)?.selectedJob?.id != job.id) || !(currentVC is DetailBantuanVC) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {

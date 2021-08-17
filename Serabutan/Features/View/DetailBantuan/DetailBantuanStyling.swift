@@ -111,7 +111,7 @@ extension DetailBantuanVC {
         salaryLabel.text = StringFormatter().priceFormatting(amount: selectedJob?.price ?? 0)
         jobPosterName.titleLabel?.text = selectedJob?.jobPosterId.name
         jobPosterName.setTitle(selectedJob?.jobPosterId.name, for: .normal)
-        jobPosterAvatar.image = selectedJob?.jobPosterId.avatar
+        jobPosterAvatar.image = selectedJob?.jobPosterId.avatar ?? UIImage(named: "avatarIcon")
         timePostElapsed.text = StringFormatter().relativeDateFormatter(date: selectedJob?.postingDate ?? Date())
         distanceToJob.text = StringFormatter().distance(selectedJob?.distance ?? 0.0)
         descriptionLabel.text = selectedJob?.desc
@@ -156,7 +156,7 @@ extension DetailBantuanVC {
             helperName.setTitle("Anda", for: .normal)
         } else {
             // If the job was taken by other user
-            helperAvatar.image = selectedJob?.helperId?.avatar
+            helperAvatar.image = selectedJob?.helperId?.avatar ?? UIImage(named: "avatarIcon")
             helperName.setTitle(selectedJob?.helperId?.name, for: .normal)
             helperAvatar.isHidden = false
             helperAvatar.isHidden = false
