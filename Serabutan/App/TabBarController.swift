@@ -28,13 +28,13 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         (loggedUser >= DummyData.shared.getUserProfile().count) ? (loggedUser -= 1) : (loggedUser += 0)
         UserDefaults.standard.set(loggedUser, forKey: "loggedUser")
         profileVC.user = DummyData.shared.getUserProfile()[loggedUser]
-        
+                
         viewControllers = [
-            createNavController(for: HomeVC(), title: "Home", image: UIImage(systemName: "house")!, tag: 0),
-            createNavController(for: ActivityVC(), title: "Aktivitas", image: UIImage(systemName: "text.book.closed")!, tag: 1),
+            createNavController(for: HomeVC(), title: "Home", image: UIImage(systemName: "house"), tag: 0),
+            createNavController(for: ActivityVC(), title: "Aktivitas", image: UIImage(systemName: "text.book.closed"), tag: 1),
             createNavController(for: HomeVC(), title: "", image: UIImage(), tag: 2),
-            createNavController(for: UIViewController(), title: "Notifikasi", image: UIImage(systemName: "bell")!, tag: 3),
-            createNavController(for: profileVC, title: "Profil", image: UIImage(systemName: "person")!, tag: 4)
+            createNavController(for: UIViewController(), title: "Notifikasi", image: UIImage(systemName: "bell"), tag: 3),
+            createNavController(for: profileVC, title: "Profil", image: UIImage(systemName: "person"), tag: 4)
         ]
     }
     
@@ -59,7 +59,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     fileprivate func createNavController(for rootViewController: UIViewController,
                                          title: String,
-                                         image: UIImage,
+                                         image: UIImage?,
                                          tag: Int) -> UIViewController {
         
         let navController = UINavigationController(rootViewController: rootViewController)

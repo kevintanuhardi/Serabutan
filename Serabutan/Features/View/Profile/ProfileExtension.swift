@@ -15,34 +15,46 @@ extension ProfileVC {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
         let label = UILabel()
-
-        label.frame = CGRect.init(x: 20, y: 0, width: headerView.frame.width-40, height: headerView.frame.height)
+        let headerView = UIView()
+        label.frame = CGRect(x: 20, y: 0, width: tableView.bounds.width, height: 50)
         label.text = "AKTIVITAS & ULASAN"
         label.font = .FontLibrary.bodyBold
-        label.textColor = .ColorLibrary.customBlack
-        headerView.addSubview(label)
+        label.textColor = .ColorLibrary.darkGrey
         headerView.backgroundColor = .ColorLibrary.lightGrey
-
+        headerView.addSubview(label)
+        headerView.tag = 99
         return headerView
     }
     
     // MARK: - Table Content
+    func numberOfSections(in tableView: UITableView) -> Int {
+        guard let reviewee = user else { fatalError("No user was found.") }
+        let reviewCount = database.getUserReview(reviewee: reviewee).count
+        if reviewCount > 0{
+            return 1
+        } else {
+            tableView.EmptyMessage("Belum ada aktivitas")
+            return 1
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Profile page will only show the latest 5 reviews
-        guard let reviewee = user else { return 0 }
-        return database.getUserReview(reviewee: reviewee).count
+        guard let reviewee = user else { fatalError("No user was found.") }
+        let reviewCount = database.getUserReview(reviewee: reviewee).count
+        return reviewCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = reviewTable.dequeueReusableCell(withIdentifier: ReviewTableViewCell.identifier,
-                                                         for: indexPath) as? ReviewTableViewCell
+                                                         for: indexPath) as? ReviewTableViewCell,
+              let reviewee = user
         else {
             fatalError("DequeueReusableCell failed while casting.")
         }
         
-        let userReview = database.getUserReview(reviewee: user!)[indexPath.row]
+        let userReview = database.getUserReview(reviewee: reviewee)[indexPath.row]
         cell.selectionStyle = .none
         
         cell.setRating(rating: userReview.reviewPoint)
@@ -56,11 +68,32 @@ extension ProfileVC {
         return cell
     }
     
+    // MARK: - Scroll View
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let headerCell = reviewTable.viewWithTag(99)
+
         if scrollView.contentOffset.y > 0 {
-            reviewTable.headerView(forSection: 0)?.contentView.backgroundColor = .clear
-            reviewTable.headerView(forSection: 0)?.backgroundView?.backgroundColor = .clear
+            UIView.animate(withDuration: 0.1, animations: {
+                headerCell?.dropShadow(opacity: 0.25, offset: 5, scale: true)
+            })
         } else {
+            UIView.animate(withDuration: 0.1, animations: {
+                headerCell?.dropShadow(opacity: 0, offset: 0, scale: true)
+            })
+        }
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView.contentOffset.y > 0 {
+            bottomConstraint.constant = -(profileBio.frame.height + totalDibantu.frame.height + 5)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.view.layoutIfNeeded()
+            })
+        } else {
+            bottomConstraint.constant = 20
+            UIView.animate(withDuration: 0.25, animations: {
+                self.view.layoutIfNeeded()
+            })
         }
     }
 }

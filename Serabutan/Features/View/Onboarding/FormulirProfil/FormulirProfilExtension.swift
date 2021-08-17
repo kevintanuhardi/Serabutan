@@ -44,13 +44,16 @@ extension FormulirProfilVC: UIPickerViewDataSource {
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        textField.superview?.animateBorder(false, type: .border)
-        
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == namaLengkapTxt {
             let currName = namaLengkapTxt.text!
             newName = currName
         }
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        textField.superview?.animateBorder(false, type: .border)
         
         if textField == genderTxt {
             let currGender = genderTxt.text
@@ -63,7 +66,6 @@ extension FormulirProfilVC: UIPickerViewDataSource {
                 newGender = Gender.other
             }
         }
-        
     }
     
     //MARK: - Create Date Picker

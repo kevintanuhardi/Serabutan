@@ -53,12 +53,22 @@ extension EditProfileVC {
         buttonUbah.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         avatarContainer.layer.masksToBounds = true
         avatarContainer.layer.cornerRadius = avatarContainer.frame.height / 2
+        fullName.font = .FontLibrary.body
+        fullName.textColor = .ColorLibrary.customBlack
+        descriptionTextView.font = .FontLibrary.body
+        descriptionTextView.textColor = .ColorLibrary.customBlack
         descriptionTextView.textContainerInset = .zero
         descriptionTextView.textContainer.lineFragmentPadding = 0
-        shortDesc.font = UIFont.FontLibrary.caption2
+        shortDesc.font = .FontLibrary.caption2
         
-        buttonUbah.backgroundColor = UIColor.ColorLibrary.accentColor.withAlphaComponent(0.75)
+        buttonUbah.backgroundColor = .ColorLibrary.accentColor.withAlphaComponent(0.75)
         charCount.text = "\(user?.bio?.count ?? 0) / 300"
+        
+        // Avatar background image
+        let backgroundImage = UIImageView(frame: avatarContainer.bounds)
+        backgroundImage.image = UIImage(named: "avatarIcon")
+        backgroundImage.contentMode =  UIView.ContentMode.scaleAspectFill
+        avatarContainer.insertSubview(backgroundImage, at: 0)
         
     }
     
@@ -69,12 +79,13 @@ extension EditProfileVC {
         
         // Temporary Variables
         tempName = fullName.text
+        tempAvatar = profileImage.image
         tempDescription = descriptionTextView.text
     }
     
     // MARK: - Alert
     @objc func dismissVC() {
-        if (tempName != fullName.text) || (tempDescription != descriptionTextView.text) {
+        if (tempName != fullName.text) || (tempDescription != descriptionTextView.text) || (tempAvatar != profileImage.image) {
             let alert = UIAlertController(title: "Perubahan Belum Disimpan",
                                           message: "Anda memiliki perubahan yang belum disimpan. Anda yakin ingin membatalkan?",
                                           preferredStyle: .alert)
@@ -100,7 +111,7 @@ extension EditProfileVC {
         let delete = UIAlertAction(title: "Hapus Foto",
                                   style: .destructive,
                                   handler: { _ in
-                                    self.profileImage.image = UIImage(named: "avatarIcon")
+                                    self.profileImage.image = nil
                                   })
         let camera = UIAlertAction(title: "Ambil Foto",
                                    style: .default,

@@ -17,7 +17,7 @@ class HomeVM: NSObject {
 						self.bindCatalogueViewModelToController()
 				}
 		}
-
+    
 		var bindCatalogueViewModelToController: (() -> ()) = {}
 		
 		override init() {
