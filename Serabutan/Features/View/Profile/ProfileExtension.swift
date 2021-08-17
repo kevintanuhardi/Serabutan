@@ -31,7 +31,8 @@ extension ProfileVC {
     func numberOfSections(in tableView: UITableView) -> Int {
         guard let reviewee = user else { fatalError("No user was found.") }
         let reviewCount = database.getUserReview(reviewee: reviewee).count
-        if reviewCount > 0{
+        if reviewCount > 0 {
+            tableView.tableFooterView = nil
             return 1
         } else {
             tableView.EmptyMessage("Belum ada aktivitas")

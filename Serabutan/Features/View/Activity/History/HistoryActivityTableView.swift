@@ -11,6 +11,7 @@ import UIKit
 extension HistoryActivityVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         if dummyData.count > 0 {
+            tableView.tableFooterView = nil
             return 1
         } else {
             tableView.EmptyMessage("Belum ada aktivitas")

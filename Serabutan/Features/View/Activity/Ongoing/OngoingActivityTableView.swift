@@ -11,6 +11,7 @@ import UIKit
 extension OngoingActivityVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         if dummyData.count > 0 {
+            tableView.tableFooterView = nil
             return 1
         } else {
             tableView.EmptyMessage("Tidak ada aktivitas yang sedang berlangsung")
