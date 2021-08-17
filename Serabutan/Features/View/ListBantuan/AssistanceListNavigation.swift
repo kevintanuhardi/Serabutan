@@ -17,6 +17,7 @@ extension AssistanceListVC {
     func navigateToFilter() {
         let destination = FilterPopUpVC(nibName: "FilterPopUpVC", bundle: nil)
         destination.delegate = self
+        destination.sortBy = sortBy
         self.present(destination, animated: true, completion: nil)
     }
     

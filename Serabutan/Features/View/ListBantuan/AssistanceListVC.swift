@@ -13,7 +13,6 @@ class AssistanceListVC: UIViewController, AssistanceListViewModelDelegate {
     
     var assistanceListVM = AssistanceListVM()
     // TODO: Remove this on BE integration
-//    var jobList = DummyData.shared.getJobsList(.active)
     var jobList = [Jobs]()
     var searchResultJob = [Jobs]()
     var sortedFilteredJob = [Jobs]()
@@ -32,7 +31,7 @@ class AssistanceListVC: UIViewController, AssistanceListViewModelDelegate {
         assistanceListVM.fetchAssistanceList()
         searchResultJob = jobList
         sortedFilteredJob = jobList
-
+        setSortData(sort: .nearest)
         UIApplication
             .shared
             .sendAction(#selector(UIApplication.resignFirstResponder),
@@ -43,6 +42,7 @@ class AssistanceListVC: UIViewController, AssistanceListViewModelDelegate {
         super.viewWillAppear(animated)
         assistanceTable.reloadData()
         setupView()
+        
     }
     
     func subscribeViewModel(){
