@@ -23,6 +23,7 @@ class ActivityVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBackButton()
         setup()
     }
     
@@ -51,3 +52,13 @@ class ActivityVC: UIViewController {
     }
 }
 
+extension ActivityVC {
+    func setupBackButton() {
+        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
+                                                           style: UIBarButtonItem.Style.plain,
+                                                           target: nil,
+                                                           action: nil)
+    }
+}

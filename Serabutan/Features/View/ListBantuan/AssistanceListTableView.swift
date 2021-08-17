@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension AssistanceListVC {
+extension AssistanceListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(searchBar.isActive){
@@ -18,15 +18,15 @@ extension AssistanceListVC {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = assistanceTable.dequeueReusableCell(withIdentifier: AssistanceTableViewCell.identifier, for: indexPath) as! AssistanceTableViewCell
+        guard let cell = assistanceTable.dequeueReusableCell(withIdentifier: AssistanceTableViewCell.identifier, for: indexPath) as? AssistanceTableViewCell else { fatalError("Table View Dequeue Error") }
         let searchedJob = searchResultJob[indexPath.row]
         let sortedFiltered = sortedFilteredJob[indexPath.row]
         
         cell.selectionStyle = .none
         cell.tagView.isHidden = true
         cell.availableView.isHidden = true
-        cell.youHelperView.isHidden = true
-        cell.helperView.isHidden = true
+        cell.ongoingHelperView.isHidden = true
+        cell.historyHelperView.isHidden = true
         cell.mainBottomBar.isHidden = true
 
         var result: Jobs { return searchBar.isActive ? searchedJob : sortedFiltered }

@@ -15,7 +15,7 @@ extension NewAssistanceVC: UICollectionViewDataSource, UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = mediaImageCollectionView.dequeueReusableCell(withReuseIdentifier: ImageCarouselCVC.identifier, for: indexPath) as! ImageCarouselCVC
+        guard let cell = mediaImageCollectionView.dequeueReusableCell(withReuseIdentifier: ImageCarouselCVC.identifier, for: indexPath) as? ImageCarouselCVC else { fatalError("Table View Dequeue Error")}
         cell.imageView.image = newAssistanceMediaImage[indexPath.row]
         return cell
     }
@@ -24,7 +24,6 @@ extension NewAssistanceVC: UICollectionViewDataSource, UICollectionViewDelegate,
         //        self.newAssistanceMediaImage.remove(at: indexPath.row)
         //        self.mediaImageCollectionView.deleteItems(at: [indexPath])
         //        self.mediaImageCollectionView.reloadData()
-        //        print("IMPORTED IMAGE:", newAssistanceMediaImage)
     }
         
 }

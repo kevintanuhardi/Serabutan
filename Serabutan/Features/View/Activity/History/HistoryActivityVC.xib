@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryActivityVC" customModule="Serabutan" customModuleProvider="target">
             <connections>
                 <outlet property="historyActivityTable" destination="7iK-Br-gV5" id="rb7-D6-1Qx"/>
+                <outlet property="noHistoryActivityLabel" destination="YjM-Ja-EYF" id="S8O-SW-6UJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,6 +24,12 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belum ada riwayat aktivitas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjM-Ja-EYF">
+                    <rect key="frame" x="130.5" y="269" width="153.5" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -31,6 +38,8 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7iK-Br-gV5" secondAttribute="trailing" id="0fL-NB-9SV"/>
                 <constraint firstItem="7iK-Br-gV5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="81I-6V-689"/>
                 <constraint firstAttribute="bottom" secondItem="7iK-Br-gV5" secondAttribute="bottom" id="MlL-4D-4PW"/>
+                <constraint firstItem="YjM-Ja-EYF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="225" id="fCQ-Cf-OOi"/>
+                <constraint firstItem="YjM-Ja-EYF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kH3-fg-jnq"/>
             </constraints>
             <point key="canvasLocation" x="132" y="132"/>
         </view>

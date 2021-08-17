@@ -331,7 +331,7 @@
                                             <constraint firstAttribute="height" constant="50" id="zgi-nd-LKq"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eY6-DP-zcC">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eY6-DP-zcC" userLabel="History Helper View">
                                         <rect key="frame" x="0.0" y="283" width="378" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="d9B-u8-TxP">
@@ -412,17 +412,20 @@
                 <outlet property="compensationLabel" destination="V84-E8-MyC" id="1eO-gw-Ejc"/>
                 <outlet property="dotImage" destination="mpw-Rn-HGi" id="mgM-LN-YuZ"/>
                 <outlet property="gradientView" destination="6g9-og-fyQ" id="mkT-qp-Z25"/>
-                <outlet property="headerLabel" destination="4eL-dN-lPU" id="NwZ-ub-NHG"/>
-                <outlet property="helperImage" destination="9Lp-WW-Qjc" id="Yhm-fa-lhS"/>
-                <outlet property="helperNameLabel" destination="alU-qx-wch" id="1wK-xs-pAF"/>
-                <outlet property="helperView" destination="eY6-DP-zcC" id="R25-Bj-gLA"/>
+                <outlet property="headerLabel" destination="4eL-dN-lPU" id="eaR-FO-dK6"/>
+                <outlet property="historyHelperImage" destination="9Lp-WW-Qjc" id="Exh-eD-Qm8"/>
+                <outlet property="historyHelperNameLabel" destination="alU-qx-wch" id="0HS-Bh-lov"/>
+                <outlet property="historyHelperVerifiedLogo" destination="W5k-sH-pZw" id="khp-Cf-OGV"/>
+                <outlet property="historyHelperView" destination="eY6-DP-zcC" id="WFF-7K-Zft"/>
                 <outlet property="mainBottomBar" destination="UUu-Ky-gaR" id="zE3-Lm-FER"/>
                 <outlet property="mainView" destination="5Qi-fv-4i4" id="aZ1-Jt-fkj"/>
                 <outlet property="myContentView" destination="H2p-sc-9uM" id="kgA-YU-NJV"/>
+                <outlet property="ongoingHelperImage" destination="bVo-kQ-yVC" id="asb-sf-VsY"/>
+                <outlet property="ongoingHelperNameLabel" destination="1L4-pL-eKD" id="qz3-fY-Xuk"/>
+                <outlet property="ongoingHelperView" destination="Ppu-Hq-mRn" id="nyG-qn-o46"/>
                 <outlet property="parentView" destination="f0t-qK-e8W" id="wXv-oF-bFV"/>
                 <outlet property="posterImage" destination="P2p-vG-v6u" id="x5h-mo-LJu"/>
                 <outlet property="posterLabel" destination="Chf-Vd-Gge" id="TUT-xD-D4P"/>
-                <outlet property="selfImage" destination="bVo-kQ-yVC" id="7B2-u0-ZHJ"/>
                 <outlet property="statusImage" destination="kpI-rJ-Y4N" id="vZd-WU-9SU"/>
                 <outlet property="statusLabel" destination="P0j-DE-11H" id="0fb-ga-V4c"/>
                 <outlet property="statusView" destination="xvv-U3-73u" id="pcI-FF-Yx1"/>
@@ -433,11 +436,9 @@
                 <outlet property="timeElapsedLabel" destination="G5r-3r-uFO" id="LZx-u9-hpU"/>
                 <outlet property="titleLabel" destination="lUr-Pn-hs5" id="Wjd-L1-diB"/>
                 <outlet property="verifiedLogo" destination="ISC-8c-8kp" id="9lH-ZU-tI5"/>
-                <outlet property="verifiedLogo1" destination="W5k-sH-pZw" id="1f4-MC-y9C"/>
                 <outlet property="whatsappButton" destination="lan-o1-bx4" id="PJq-dc-HTw"/>
                 <outlet property="whatsappImage" destination="iS3-b4-7Xn" id="RoY-vq-wGY"/>
                 <outlet property="whatsappView" destination="44I-Hh-F9Z" id="PSc-53-nrn"/>
-                <outlet property="youHelperView" destination="Ppu-Hq-mRn" id="Yf4-6B-OX1"/>
             </connections>
             <point key="canvasLocation" x="-10.144927536231885" y="229.35267857142856"/>
         </tableViewCell>
