@@ -68,7 +68,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
         super.viewWillAppear(animated)
         setNavigation()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()

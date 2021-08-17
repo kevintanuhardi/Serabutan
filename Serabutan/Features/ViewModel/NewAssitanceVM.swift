@@ -9,6 +9,8 @@ import Foundation
 
 class NewAssistanceVM: NSObject {
     
+    var user = UserDefaults.standard.integer(forKey: "loggedUser")
+    
     private(set) var newAssistance: [Jobs]? {
         didSet {
             self.bindNewAssistanceViewModelToController()

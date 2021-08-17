@@ -10,6 +10,7 @@ import UIKit
 class HistoryActivityVC: UIViewController {
     
     @IBOutlet weak var historyActivityTable: UITableView!
+    @IBOutlet weak var noHistoryActivityLabel: UILabel!
     
     var historyVM = HistoryActivityVM()
     var dummyData = [Jobs]()
@@ -25,6 +26,7 @@ class HistoryActivityVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         historyVM.fetchHistoryActivity()
+        setupView()
     }
     
     func subscribeViewModel(){
@@ -40,6 +42,25 @@ class HistoryActivityVC: UIViewController {
                 self.historyActivityTable.reloadData()
             }
         }
+    }
+    
+}
+
+extension HistoryActivityVC {
+    
+    func setupView() {
+        setupHistoryActivityLabel()
+        
+        if dummyData.count != 0 {
+            noHistoryActivityLabel.isHidden = true
+        } else {
+            noHistoryActivityLabel.isHidden = false
+        }
+    }
+    
+    func setupHistoryActivityLabel() {
+        noHistoryActivityLabel.font = UIFont.FontLibrary.body
+        noHistoryActivityLabel.textColor = UIColor.ColorLibrary.customBlack
     }
     
 }

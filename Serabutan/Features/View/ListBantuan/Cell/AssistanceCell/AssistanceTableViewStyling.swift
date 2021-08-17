@@ -28,11 +28,11 @@ extension AssistanceTableViewCell{
         posterImage.layer.masksToBounds = true
         posterImage.layer.cornerRadius = posterImage.frame.height / 2
         
-        helperImage.layer.masksToBounds = true
-        helperImage.layer.cornerRadius = helperImage.frame.height/2
+        historyHelperImage.layer.masksToBounds = true
+        historyHelperImage.layer.cornerRadius = historyHelperImage.frame.height/2
         
-        selfImage.layer.masksToBounds = true
-        selfImage.layer.cornerRadius = selfImage.frame.height/2
+        ongoingHelperImage.layer.masksToBounds = true
+        ongoingHelperImage.layer.cornerRadius = ongoingHelperImage.frame.height/2
     }
     
     func setStatusView(urgency: Urgency){
@@ -82,7 +82,7 @@ extension AssistanceTableViewCell{
         // Anda bersedia membantu
         
         // Helper bersedia membantu
-        helperNameLabel.font = .FontLibrary.textLink1
+        historyHelperNameLabel.font = .FontLibrary.textLink1
         timeElapsedLabel.font = .FontLibrary.body
     }
     
