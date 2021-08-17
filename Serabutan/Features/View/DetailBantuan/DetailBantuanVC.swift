@@ -14,6 +14,7 @@ class DetailBantuanVC: UIViewController, UITextViewDelegate, UICollectionViewDel
     static let identifier = "DetailBantuanVC"
     let currentUser = UserDefaults.standard.integer(forKey: "loggedUser")
     var selectedJob: Jobs?
+    var assignSelf: Bool = false
     
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var chatButton: UIButton!
