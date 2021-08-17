@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="Serabutan" customModuleProvider="target">
             <connections>
                 <outlet property="blurView" destination="tzE-8V-MLj" id="FMq-vn-gIS"/>
-                <outlet property="gradientView" destination="9cg-Mn-Ng5" id="cxQ-Cy-gf0"/>
                 <outlet property="jobListingColView" destination="oeA-LH-5QS" id="crR-pp-y53"/>
                 <outlet property="mapView" destination="HXt-UA-hch" id="Qa3-53-cry"/>
                 <outlet property="showAllButton" destination="meb-V3-mEf" id="INa-qo-XZL"/>
@@ -28,13 +27,6 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </mapView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cg-Mn-Ng5" userLabel="Gradient View">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="210"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="210" id="gZ1-C8-v88"/>
-                    </constraints>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uw-o4-AVy">
                     <rect key="frame" x="344" y="54" width="50" height="50"/>
                     <state key="normal" image="filterButton">
@@ -107,14 +99,11 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tzE-8V-MLj" secondAttribute="bottom" id="30I-q9-2eE"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9cg-Mn-Ng5" secondAttribute="trailing" id="9HG-Ke-lV7"/>
                 <constraint firstItem="tzE-8V-MLj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Dix-X6-XNW"/>
                 <constraint firstItem="2uw-o4-AVy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Fb0-OC-JXJ"/>
-                <constraint firstItem="9cg-Mn-Ng5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HJs-QB-6WK"/>
                 <constraint firstItem="tXv-KB-etQ" firstAttribute="centerY" secondItem="2uw-o4-AVy" secondAttribute="centerY" id="J8W-Ap-93k"/>
                 <constraint firstItem="2uw-o4-AVy" firstAttribute="leading" secondItem="tXv-KB-etQ" secondAttribute="trailing" constant="10" id="Ui6-Lf-V6E"/>
                 <constraint firstItem="tzE-8V-MLj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="baB-Fn-bC4"/>
-                <constraint firstItem="9cg-Mn-Ng5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gcx-tt-660"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2uw-o4-AVy" secondAttribute="trailing" constant="20" id="hgb-4r-hJf"/>
             </constraints>
             <point key="canvasLocation" x="-136.23188405797103" y="129.91071428571428"/>

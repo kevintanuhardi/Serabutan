@@ -62,6 +62,7 @@ extension DetailBantuanVC {
         contentScrollView.delegate = self
         tagView.delegate = self
         
+        
         urgencyView.layer.borderWidth = 0.5
         urgencyView.layer.cornerRadius = urgencyView.frame.height / 2
         urgencyView.layer.masksToBounds = true
@@ -214,7 +215,7 @@ extension DetailBantuanVC {
         guard let assignedNotif = selectedJob else { return }
         guard (assignedNotif.status == .active) && (assignedNotif.jobPosterId.id == currentUser) else { return }
         
-        let helperIndex = Int.random(in: 0..<DummyData.shared.getUserProfile().count)
+        let helperIndex = Int.random(in: 0..<(DummyData.shared.getUserProfile().count - 1))
         assignedNotif.status = .taken
         assignedNotif.helperId = DummyData.shared.getUserProfile()[helperIndex]
         configureHelper()

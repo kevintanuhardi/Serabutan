@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -61,6 +62,9 @@
                                 </fragment>
                             </attributedString>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </textView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,7 +79,10 @@
                                 <constraint firstAttribute="width" constant="30" id="uEU-RW-ELN"/>
                             </constraints>
                             <color key="tintColor" name="MediumGrey"/>
-                            <state key="normal" image="star.fill" catalog="system"/>
+                            <state key="normal">
+                                <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </state>
                             <connections>
                                 <action selector="buttonTapped:" destination="-1" eventType="touchDown" id="ayx-BD-lUM"/>
                             </connections>
@@ -87,7 +94,10 @@
                                 <constraint firstAttribute="height" constant="30" id="xkg-vz-ENJ"/>
                             </constraints>
                             <color key="tintColor" name="MediumGrey"/>
-                            <state key="normal" image="star.fill" catalog="system"/>
+                            <state key="normal">
+                                <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </state>
                             <connections>
                                 <action selector="buttonTapped:" destination="-1" eventType="touchDown" id="G9P-E5-s1u"/>
                             </connections>
@@ -99,7 +109,10 @@
                                 <constraint firstAttribute="width" constant="30" id="taX-j6-yhu"/>
                             </constraints>
                             <color key="tintColor" name="MediumGrey"/>
-                            <state key="normal" image="star.fill" catalog="system"/>
+                            <state key="normal">
+                                <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </state>
                             <connections>
                                 <action selector="buttonTapped:" destination="-1" eventType="touchDown" id="NzU-pK-8GM"/>
                             </connections>
@@ -111,7 +124,9 @@
                                 <constraint firstAttribute="height" constant="30" id="YQe-wg-UVU"/>
                             </constraints>
                             <color key="tintColor" name="MediumGrey"/>
-                            <state key="normal" image="star.fill" catalog="system"/>
+                            <state key="normal">
+                                <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
+                            </state>
                             <connections>
                                 <action selector="buttonTapped:" destination="-1" eventType="touchDown" id="oAO-lX-ELG"/>
                             </connections>
@@ -123,7 +138,9 @@
                                 <constraint firstAttribute="width" constant="30" id="Doo-cT-4oH"/>
                             </constraints>
                             <color key="tintColor" name="MediumGrey"/>
-                            <state key="normal" image="star.fill" catalog="system"/>
+                            <state key="normal">
+                                <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
+                            </state>
                             <connections>
                                 <action selector="buttonTapped:" destination="-1" eventType="touchDown" id="K8b-rX-eXo"/>
                             </connections>

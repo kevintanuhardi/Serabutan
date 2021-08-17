@@ -32,10 +32,10 @@
 		796BC76026AF215F00999377 /* ImageCarouselCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */; };
 		796BC76426AF21A900999377 /* DetailBantuanVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796BC76226AF21A900999377 /* DetailBantuanVC.xib */; };
 		7997654326BEC0190054460A /* FormulirProfilExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7997654226BEC0190054460A /* FormulirProfilExtension.swift */; };
-		79DD925A26BCF08D002BDA22 /* OnboardingNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DD925926BCF08D002BDA22 /* OnboardingNavigationConfig.swift */; };
 		79E67E7826B1B2410009F3C6 /* RatingReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */; };
 		79E67E7926B1B2410009F3C6 /* RatingReviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */; };
 		79FAF9CF26B87682009BF31F /* DetailBantuanNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FAF9CE26B87682009BF31F /* DetailBantuanNavigation.swift */; };
+		902E92FD26CB56770009B17F /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902E92FC26CB56770009B17F /* TableViewHelper.swift */; };
 		9036228F26BAF73000577D43 /* DetailBantuanStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9036228E26BAF73000577D43 /* DetailBantuanStyling.swift */; };
 		9036229126BB7E2000577D43 /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9036229026BB7E2000577D43 /* CustomCollectionView.swift */; };
 		9037FAD826C0D9DC00CBF7AD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9037FAD726C0D9DC00CBF7AD /* TabBarController.swift */; };
@@ -143,11 +143,11 @@
 		796BC75E26AF215F00999377 /* ImageCarouselCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ImageCarouselCVC.xib; path = serabutan/Features/View/DetailBantuan/Cell/ImageCarouselCVC.xib; sourceTree = SOURCE_ROOT; };
 		796BC76226AF21A900999377 /* DetailBantuanVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DetailBantuanVC.xib; path = serabutan/Features/View/DetailBantuan/DetailBantuanVC.xib; sourceTree = SOURCE_ROOT; };
 		7997654226BEC0190054460A /* FormulirProfilExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FormulirProfilExtension.swift; path = Serabutan/Features/View/Onboarding/FormulirProfil/FormulirProfilExtension.swift; sourceTree = SOURCE_ROOT; };
-		79DD925926BCF08D002BDA22 /* OnboardingNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingNavigationConfig.swift; path = Serabutan/Features/View/Onboarding/OnboardingNavigationConfig.swift; sourceTree = SOURCE_ROOT; };
 		79E67E7626B1B2410009F3C6 /* RatingReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingReviewVC.swift; path = serabutan/Features/View/RatingReview/RatingReviewVC.swift; sourceTree = SOURCE_ROOT; };
 		79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RatingReviewVC.xib; path = serabutan/Features/View/RatingReview/RatingReviewVC.xib; sourceTree = SOURCE_ROOT; };
 		79FAF9CE26B87682009BF31F /* DetailBantuanNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailBantuanNavigation.swift; path = Serabutan/Features/View/DetailBantuan/DetailBantuanNavigation.swift; sourceTree = SOURCE_ROOT; };
 		8CE000EDDAF48E365323C7C4 /* Pods-Serabutan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Serabutan.release.xcconfig"; path = "Target Support Files/Pods-Serabutan/Pods-Serabutan.release.xcconfig"; sourceTree = "<group>"; };
+		902E92FC26CB56770009B17F /* TableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewHelper.swift; path = Serabutan/Helper/TableViewHelper.swift; sourceTree = SOURCE_ROOT; };
 		9036228E26BAF73000577D43 /* DetailBantuanStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailBantuanStyling.swift; path = Serabutan/Features/View/DetailBantuan/DetailBantuanStyling.swift; sourceTree = SOURCE_ROOT; };
 		9036229026BB7E2000577D43 /* CustomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomCollectionView.swift; path = Serabutan/Components/Styling/CustomCollectionView.swift; sourceTree = SOURCE_ROOT; };
 		9037FAD726C0D9DC00CBF7AD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = serabutan/App/TabBarController.swift; sourceTree = SOURCE_ROOT; };
@@ -362,6 +362,7 @@
 				189FC4AC26B69D5500662C88 /* Constant.swift */,
 				C7FE979926BA65F900B27160 /* StringFormatter.swift */,
 				90D9B44926C5108F00CABA6F /* FloatingNotification.swift */,
+				902E92FC26CB56770009B17F /* TableViewHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -706,7 +707,6 @@
 				7997653F26BEB90D0054460A /* VerifNoTelp */,
 				7997653E26BEB9040054460A /* InputNoTelp */,
 				7997653D26BEB8F30054460A /* Mulai */,
-				79DD925926BCF08D002BDA22 /* OnboardingNavigationConfig.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -851,6 +851,7 @@
 				90EF604B26C790E000CF5973 /* FilterPopUpStyling.swift in Sources */,
 				90EF604A26C790DB00CF5973 /* Enum.swift in Sources */,
 				90EF604926C790D700CF5973 /* TagCollectionViewCell.swift in Sources */,
+				902E92FD26CB56770009B17F /* TableViewHelper.swift in Sources */,
 				90EF604726C790D000CF5973 /* AssistanceListTableData.swift in Sources */,
 				90EF604826C790D000CF5973 /* AssistanceListStyling.swift in Sources */,
 				9060D42526C0088C002243BC /* EditProfileStyling.swift in Sources */,
@@ -917,7 +918,6 @@
 				9060D42926C015EF002243BC /* EditProfileExtension.swift in Sources */,
 				90A0AF0326BC2CCA00510A8E /* JobListViewStyle.swift in Sources */,
 				90D9B44626C4E0C700CABA6F /* CustomNotificationStyling.swift in Sources */,
-				79DD925A26BCF08D002BDA22 /* OnboardingNavigationConfig.swift in Sources */,
 				18C477C626C8BCFE007D89E8 /* HomeMapView.swift in Sources */,
 				9037FAD826C0D9DC00CBF7AD /* TabBarController.swift in Sources */,
 				C7CCC25526B26CFA0005FFE3 /* AssistanceTableConfig.swift in Sources */,

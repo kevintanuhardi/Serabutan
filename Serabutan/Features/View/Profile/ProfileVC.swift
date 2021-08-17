@@ -28,6 +28,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var ratingBadge: UIView!
     @IBOutlet weak var profileBio: UILabel!
     @IBOutlet weak var profileVerified: UIImageView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

@@ -38,10 +38,10 @@ class RatingReviewVC: UIViewController, UITextViewDelegate {
         for button in bintangBtn {
             button.imageView?.contentMode = .scaleToFill
             if button.tag <= sender.tag {
-                button.setImage(UIImage.init(named: "star.fill"), for: .normal)
+                button.setImage(UIImage.init(systemName: "star.fill"), for: .normal)
                 button.tintColor = .systemYellow
             } else {
-                button.setImage(UIImage.init(named: "star.fill"), for: .normal)
+                button.setImage(UIImage.init(systemName: "star.fill"), for: .normal)
                 button.tintColor = .ColorLibrary.mediumGrey
             }
             reviewPoint = sender.tag

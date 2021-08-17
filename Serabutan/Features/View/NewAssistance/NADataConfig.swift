@@ -22,7 +22,6 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
         initOtherData()
         initCreateNewJob()
 		let latestDummyData = DummyData.shared.getJobsList()
-		print(latestDummyData.last?.price)
         self.dismiss(animated: true, completion: {
 			guard let lastJob = latestDummyData.last else {return}
 			self.delegate?.navigateToDetailProduct(job: lastJob)
