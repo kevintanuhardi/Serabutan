@@ -57,9 +57,16 @@ class FloatingNotification {
                     shadowOffset: UIOffset(horizontal: 0, vertical: 10))
         banner.onTap = {
             let detailJob = DetailBantuanVC()
-            let detailJobController = UINavigationController.init(rootViewController: detailJob)
             detailJob.selectedJob = job
-            UIApplication.shared.windows.first?.rootViewController?.present(detailJobController, animated: true)
+            
+            let rootVC = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController as? TabBarController
+            let currentVC = (rootVC?.selectedViewController as? UINavigationController)?.visibleViewController
+            
+            if (currentVC is DetailBantuanVC) && ((currentVC as? DetailBantuanVC)?.selectedJob?.id != job.id) || !(currentVC is DetailBantuanVC) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                    (rootVC?.selectedViewController as? UINavigationController)?.pushViewController(detailJob, animated: true)
+                })
+            }
         }
     }
 }

@@ -47,6 +47,8 @@ extension ProfileVC {
         reviewTable.delegate = self
         reviewTable.dataSource = self
         
+        reviewTable.tableFooterView = UIView()
+        reviewTable.tableFooterView?.frame = CGRect(x: 0, y: 0, width: reviewTable.frame.width, height: 20)
         profileImage.layer.cornerRadius = profileImage.frame.height / 2
         profileImage.layer.masksToBounds = true
         ratingBadge.layer.cornerRadius = ratingBadge.frame.height / 2
@@ -54,10 +56,11 @@ extension ProfileVC {
         ratingBadge.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
         ratingBadge.layer.borderWidth = 0.5
         profileInfoView.addLine(position: .bottom, color: UIColor.ColorLibrary.mediumGrey, width: 0.5)
+        
     }
     
     func configureText() {
-        profileImage.image = user?.avatar
+        profileImage.image = user?.avatar ?? UIImage(named: "avatarIcon")
         profileName.text = user?.name
         profileJoinDate.text = "Bergabung \(StringFormatter().dateFormatter(date: user?.joinDate ?? Date()))"
         profileBio.text = user?.bio

@@ -160,5 +160,5 @@ class Job: NSObject, MKAnnotation {
 }
 
 class Coordinate: Codable {
-	let coordinates: [Double] = []
+	var coordinates: [Double] = []
 }

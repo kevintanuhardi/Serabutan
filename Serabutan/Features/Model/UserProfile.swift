@@ -23,8 +23,8 @@ class UserProfile {
          name : String,
          dob : Date,
          gender : Gender,
-         avatar : UIImage,
-         bio : String,
+         avatar : UIImage?,
+         bio : String?,
          joinDate : Date,
          isVerified : Bool,
          statistics : ProfileStatistic){

@@ -148,7 +148,7 @@ extension DetailBantuanVC {
     }
     
     func checkUser() {
-        if selectedJob?.helperId == nil || selectedJob?.helperId?.id == currentUser {
+        if (selectedJob?.helperId == nil || selectedJob?.helperId?.id == currentUser) && assignSelf == true {
             // If the job is taken by current user or is currently nil
             selectedJob?.helperId = DummyData.shared.getUserProfile()[currentUser]
             helperAvatar.isHidden = true
@@ -214,7 +214,7 @@ extension DetailBantuanVC {
         guard let assignedNotif = selectedJob else { return }
         guard (assignedNotif.status == .active) && (assignedNotif.jobPosterId.id == currentUser) else { return }
         
-        let helperIndex = Int.random(in: 0..<DummyData.shared.getUserProfile().count)
+        let helperIndex = Int.random(in: 0..<(DummyData.shared.getUserProfile().count - 1))
         assignedNotif.status = .taken
         assignedNotif.helperId = DummyData.shared.getUserProfile()[helperIndex]
         configureHelper()
@@ -314,6 +314,7 @@ extension DetailBantuanVC {
         alert.addAction(UIAlertAction(title: "Ya",
                                       style: .default,
                                       handler: { _ in
+                                        self.assignSelf = true
                                         self.selectedJob?.status = .taken
                                         self.configureHelper()
                                         self.sendWhatsApp(template: true)
@@ -367,6 +368,7 @@ extension DetailBantuanVC {
         alert.addAction(UIAlertAction(title: "Ya",
                                       style: .default,
                                       handler: { _ in
+                                        self.assignSelf = false
                                         self.selectedJob?.status = .active
                                         self.selectedJob?.helperId = nil
                                         self.configureHelper()

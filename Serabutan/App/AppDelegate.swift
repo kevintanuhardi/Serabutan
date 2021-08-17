@@ -15,13 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Seeding dummy data, please remove this line on the final product.
+        // TODO: - Seeding dummy data, please remove this line on the final product.
         DummyData.shared.seedData()
-//        UserDefaults.standard.setValue(DummyData.shared.getUserProfile().count, forKey: "loggedUser")
-        
-        //Biar back button nya cuma muncul gambar backward, tulisan back ilang
-//        let backButton = UIBarButtonItem.appearance()
-//        backButton.setTitleTextAttributes([.foregroundColor : UIColor.clear], for: .normal)
         
         return true
     }

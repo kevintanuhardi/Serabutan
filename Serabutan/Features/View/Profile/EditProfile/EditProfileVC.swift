@@ -14,6 +14,7 @@ class EditProfileVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
     var user: UserProfile?
     var tempName: String?
     var tempDescription: String?
+    var tempAvatar: UIImage?
     let currentUser = UserDefaults.standard.integer(forKey: "loggedUser")
     
     @IBOutlet weak var avatarContainer: UIView!
