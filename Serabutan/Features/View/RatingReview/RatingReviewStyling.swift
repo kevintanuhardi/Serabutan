@@ -15,6 +15,7 @@ extension RatingReviewVC {
         
         namaLbl.font = .FontLibrary.title1
         namaLbl.text = reviewee?.name
+        verified.isHidden = !(reviewee?.isVerified ?? false)
     }
     
     func setupTextView() {

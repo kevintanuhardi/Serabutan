@@ -16,6 +16,7 @@
                 <outlet property="namaLbl" destination="wEi-eR-39A" id="WpL-2m-eja"/>
                 <outlet property="profileImg" destination="LX1-mc-5aV" id="ydK-Zb-z7c"/>
                 <outlet property="reviewTextView" destination="Wy3-mI-g8x" id="2Bk-G3-byK"/>
+                <outlet property="verified" destination="9YE-cj-vCk" id="im5-bf-qrh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="bintangBtn" destination="z1B-KD-U5Z" collectionClass="NSMutableArray" id="4Sn-Hv-uQg"/>
                 <outletCollection property="bintangBtn" destination="83E-c0-8cU" collectionClass="NSMutableArray" id="ogF-Nw-qGe"/>
