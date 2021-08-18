@@ -11,7 +11,7 @@ extension RatingReviewVC {
     func setupUser() {
         profileImg.layer.cornerRadius = profileImg.frame.height / 2
         profileImg.layer.masksToBounds = true
-        profileImg.image = reviewee?.avatar
+        profileImg.image = reviewee?.avatar ?? UIImage(named: "avatarIcon")
         
         namaLbl.font = .FontLibrary.title1
         namaLbl.text = reviewee?.name

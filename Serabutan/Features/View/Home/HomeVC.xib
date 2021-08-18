@@ -32,6 +32,9 @@
                     <state key="normal" image="searchButton">
                         <attributedString key="attributedTitle"/>
                     </state>
+                    <connections>
+                        <action selector="searchBarTapped:" destination="-1" eventType="touchUpInside" id="Z5c-mU-giT"/>
+                    </connections>
                 </button>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzE-8V-MLj">
                     <rect key="frame" x="0.0" y="642" width="414" height="220"/>

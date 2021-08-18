@@ -46,8 +46,7 @@ extension FormulirProfilVC: UIPickerViewDataSource {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == namaLengkapTxt {
-            let currName = namaLengkapTxt.text!
-            newName = currName
+           newName = namaLengkapTxt.text
         }
         return true
     }
