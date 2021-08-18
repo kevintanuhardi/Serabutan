@@ -679,10 +679,10 @@
 		C7D7AE3826AC9735000478AA /* AssistanceCell */ = {
 			isa = PBXGroup;
 			children = (
+				C7CCC24F26B1DBD80005FFE3 /* AssistanceTableViewCell.xib */,
 				C7CCC24E26B1DBD80005FFE3 /* AssistanceTableViewCell.swift */,
 				C7CCC25426B26CFA0005FFE3 /* AssistanceTableConfig.swift */,
 				C744D7DD26B2D324009E36B7 /* AssistanceTableViewStyling.swift */,
-				C7CCC24F26B1DBD80005FFE3 /* AssistanceTableViewCell.xib */,
 			);
 			path = AssistanceCell;
 			sourceTree = "<group>";
@@ -851,7 +851,7 @@
 				90EF604A26C790DB00CF5973 /* Enum.swift in Sources */,
 				90EF604926C790D700CF5973 /* TagCollectionViewCell.swift in Sources */,
 				902E92FD26CB56770009B17F /* TableViewHelper.swift in Sources */,
-				90EF604726C790D000CF5973 /* AssistanceListTableData.swift in Sources */,
+				90EF604726C790D000CF5973 /* AssistanceListTableView.swift in Sources */,
 				90EF604726C790D000CF5973 /* AssistanceListTableView.swift in Sources */,
 				90EF604826C790D000CF5973 /* AssistanceListStyling.swift in Sources */,
 				9060D42526C0088C002243BC /* EditProfileStyling.swift in Sources */,

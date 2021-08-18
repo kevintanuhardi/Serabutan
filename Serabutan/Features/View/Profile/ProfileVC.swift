@@ -11,7 +11,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Dummy Data
     var database = DummyData.shared
-    let loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")
+    var loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")
     var user: UserProfile?
     
     @IBOutlet weak var profileInfoView: UIView!

@@ -9,6 +9,15 @@ import Foundation
 import UIKit
 
 extension OngoingActivityVC: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if dummyData.count > 0 {
+            tableView.tableFooterView = nil
+            return 1
+        } else {
+            tableView.EmptyMessage("Tidak ada aktivitas yang sedang berlangsung")
+            return 1
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dummyData.count
@@ -17,9 +26,6 @@ extension OngoingActivityVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = ongoingActivityTable.dequeueReusableCell(withIdentifier: AssistanceTableViewCell.identifier, for: indexPath) as? AssistanceTableViewCell else { fatalError("Table View Dequeue Error") }
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        
-//        let userDefault = UserDefaults.standard.integer(forKey: "loggedUser")
-//        let signedUserId = DummyData.shared.getUserProfile()[userDefault]
 
         let data = dummyData[indexPath.row]
         let poster = data.jobPosterId
@@ -36,9 +42,7 @@ extension OngoingActivityVC: UITableViewDelegate, UITableViewDataSource {
         cell.posterLabel.text = poster.name
         cell.timeElapsedLabel.text = StringFormatter().relativeDateFormatter(date: data.postingDate)
         cell.verifiedLogo.isHidden = !data.jobPosterId.isVerified
-//        cell.ongoingHelperImage.image = helper?.avatar
-//        cell.ongoingHelperNameLabel.text = helper?.name
-        
+       
         if data.helperId == nil {
             cell.availableView.isHidden = false
             cell.ongoingHelperView.isHidden = true

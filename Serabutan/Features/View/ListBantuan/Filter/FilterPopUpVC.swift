@@ -31,7 +31,7 @@ class FilterPopUpVC: UIViewController {
     var delegate: FilterPopUpVCDelegate?
     var activeTextField: UITextField? = nil
     
-    var sortBy : AssistanceSortByFilter?
+    var sortBy : AssistanceSortByFilter? = .nearest
     var minValue : Int? = 0
     var maxValue : Int? = 1000000
     
@@ -52,7 +52,10 @@ class FilterPopUpVC: UIViewController {
         maxValTF.delegate = self
         minValTF.keyboardType = .numberPad
         maxValTF.keyboardType = .numberPad
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupSelectedButton()
     }
     
     @IBAction func resetButtonTapped(_ sender: Any) {
@@ -64,12 +67,7 @@ class FilterPopUpVC: UIViewController {
         sortByCollectionButton.forEach({ $0.setTitleColor(blackColor, for: .normal)})
         sortByCollectionButton.forEach({ $0.layer.borderColor = blackColor.cgColor})
         
-        sender.backgroundColor = tintColor
-        sender.setTitleColor(mainColor, for: .normal)
-        sender.layer.masksToBounds = true
-        sender.layer.borderColor = mainColor.cgColor
-        sender.layer.borderWidth = 0.5
-        sender.layer.cornerRadius = 5
+        setButtonColor(button: sender)
     }
     
     @IBAction func applyButtonTapped(_ sender: Any) {
@@ -163,6 +161,29 @@ extension FilterPopUpVC {
         maxValTF.placeholder = "Rp 500.000"
     }
     
+    func setupSelectedButton() {
+        guard let sort = sortBy else { return }
+        
+        if sort == .nearest {
+            setButtonColor(button: closestButton)
+        } else if sort == .newest {
+            setButtonColor(button: newestButton)
+        } else if sort == .highestCompensation {
+            setButtonColor(button: highestCompensationButton)
+        } else if sort == .lowestCompensation {
+            setButtonColor(button: lowestCompensationButton)
+        }
+    }
+    
+    func setButtonColor(button: UIButton) {
+        button.backgroundColor = tintColor
+        button.setTitleColor(mainColor, for: .normal)
+        button.layer.masksToBounds = true
+        button.layer.borderColor = mainColor.cgColor
+        button.layer.borderWidth = 0.5
+        button.layer.cornerRadius = 5
+    }
+    
     func getSortByFilter() -> AssistanceSortByFilter {
         for (index, button) in sortByCollectionButton.enumerated() {
             if button.backgroundColor == tintColor {
@@ -192,5 +213,3 @@ extension FilterPopUpVC {
     }
     
 }
-
-

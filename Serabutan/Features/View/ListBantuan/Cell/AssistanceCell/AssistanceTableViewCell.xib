@@ -270,14 +270,14 @@
                                                             <constraint firstAttribute="width" constant="20" id="bPS-cI-zSR"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1L4-pL-eKD">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Anda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1L4-pL-eKD">
                                                         <rect key="frame" x="45" y="18" width="31.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bersedia membantu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQP-Xn-h6n">
-                                                        <rect key="frame" x="81.5" y="18" width="112.5" height="14.5"/>
+                                                        <rect key="frame" x="81.5" y="18" width="151.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                                         <nil key="highlightedColor"/>
@@ -315,6 +315,7 @@
                                                     <constraint firstItem="GQP-Xn-h6n" firstAttribute="leading" secondItem="1L4-pL-eKD" secondAttribute="trailing" constant="5" id="D08-XH-6jM"/>
                                                     <constraint firstItem="bVo-kQ-yVC" firstAttribute="leading" secondItem="a1l-FW-GXC" secondAttribute="leading" constant="20" id="IZX-Um-CpK"/>
                                                     <constraint firstItem="1L4-pL-eKD" firstAttribute="leading" secondItem="bVo-kQ-yVC" secondAttribute="trailing" constant="5" id="NGz-f7-u47"/>
+                                                    <constraint firstItem="44I-Hh-F9Z" firstAttribute="leading" secondItem="GQP-Xn-h6n" secondAttribute="trailing" constant="10" id="TIz-vj-eRi"/>
                                                     <constraint firstItem="GQP-Xn-h6n" firstAttribute="centerY" secondItem="1L4-pL-eKD" secondAttribute="centerY" id="cVq-yM-vw4"/>
                                                     <constraint firstItem="bVo-kQ-yVC" firstAttribute="centerY" secondItem="a1l-FW-GXC" secondAttribute="centerY" id="lls-W1-L3x"/>
                                                     <constraint firstItem="44I-Hh-F9Z" firstAttribute="centerY" secondItem="a1l-FW-GXC" secondAttribute="centerY" id="w94-jV-Wi8"/>

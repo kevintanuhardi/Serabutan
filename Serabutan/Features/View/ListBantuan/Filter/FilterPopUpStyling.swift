@@ -36,13 +36,10 @@ extension FilterPopUpVC{
     func initCloseButton(){
         closestButton.titleLabel?.font = .FontLibrary.body
         closestButton.layer.masksToBounds = true
-        closestButton.layer.borderColor = mainColor.cgColor
-        closestButton.layer.backgroundColor = tintColor.cgColor
-        closestButton.setTitleColor(.ColorLibrary.accentColor, for: .normal)
+        newestButton.layer.borderColor = blackColor.cgColor
         closestButton.layer.borderWidth = 0.5
         closestButton.layer.cornerRadius = 5
     }
-    
     
     func initNewestButton(){
         newestButton.titleLabel?.font = .FontLibrary.body

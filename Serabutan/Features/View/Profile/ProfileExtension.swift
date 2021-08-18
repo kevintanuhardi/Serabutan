@@ -31,7 +31,8 @@ extension ProfileVC {
     func numberOfSections(in tableView: UITableView) -> Int {
         guard let reviewee = user else { fatalError("No user was found.") }
         let reviewCount = database.getUserReview(reviewee: reviewee).count
-        if reviewCount > 0{
+        if reviewCount > 0 {
+            tableView.tableFooterView = nil
             return 1
         } else {
             tableView.EmptyMessage("Belum ada aktivitas")
@@ -70,6 +71,8 @@ extension ProfileVC {
     
     // MARK: - Scroll View
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let reviewee = user, database.getUserReview(reviewee: reviewee).count > 0 else { return }
+        
         let headerCell = reviewTable.viewWithTag(99)
 
         if scrollView.contentOffset.y > 0 {
@@ -84,6 +87,7 @@ extension ProfileVC {
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        guard let reviewee = user, database.getUserReview(reviewee: reviewee).count > 0 else { return }
         if scrollView.contentOffset.y > 0 {
             bottomConstraint.constant = -(profileBio.frame.height + totalDibantu.frame.height + 5)
             UIView.animate(withDuration: 0.5, animations: {

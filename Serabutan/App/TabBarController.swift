@@ -27,6 +27,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         
         (loggedUser >= DummyData.shared.getUserProfile().count) ? (loggedUser -= 1) : (loggedUser += 0)
         UserDefaults.standard.set(loggedUser, forKey: "loggedUser")
+        profileVC.loggedUser = loggedUser
         profileVC.user = DummyData.shared.getUserProfile()[loggedUser]
                 
         viewControllers = [
