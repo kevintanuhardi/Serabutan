@@ -67,12 +67,7 @@ class FilterPopUpVC: UIViewController {
         sortByCollectionButton.forEach({ $0.setTitleColor(blackColor, for: .normal)})
         sortByCollectionButton.forEach({ $0.layer.borderColor = blackColor.cgColor})
         
-        sender.backgroundColor = tintColor
-        sender.setTitleColor(mainColor, for: .normal)
-        sender.layer.masksToBounds = true
-        sender.layer.borderColor = mainColor.cgColor
-        sender.layer.borderWidth = 0.5
-        sender.layer.cornerRadius = 5
+        setButtonColor(button: sender)
     }
     
     @IBAction func applyButtonTapped(_ sender: Any) {
@@ -170,34 +165,23 @@ extension FilterPopUpVC {
         guard let sort = sortBy else { return }
         
         if sort == .nearest {
-            closestButton.backgroundColor = tintColor
-            closestButton.setTitleColor(mainColor, for: .normal)
-            closestButton.layer.masksToBounds = true
-            closestButton.layer.borderColor = mainColor.cgColor
-            closestButton.layer.borderWidth = 0.5
-            closestButton.layer.cornerRadius = 5
+            setButtonColor(button: closestButton)
         } else if sort == .newest {
-            newestButton.backgroundColor = tintColor
-            newestButton.setTitleColor(mainColor, for: .normal)
-            newestButton.layer.masksToBounds = true
-            newestButton.layer.borderColor = mainColor.cgColor
-            newestButton.layer.borderWidth = 0.5
-            newestButton.layer.cornerRadius = 5
+            setButtonColor(button: newestButton)
         } else if sort == .highestCompensation {
-            highestCompensationButton.backgroundColor = tintColor
-            highestCompensationButton.setTitleColor(mainColor, for: .normal)
-            highestCompensationButton.layer.masksToBounds = true
-            highestCompensationButton.layer.borderColor = mainColor.cgColor
-            highestCompensationButton.layer.borderWidth = 0.5
-            highestCompensationButton.layer.cornerRadius = 5
+            setButtonColor(button: highestCompensationButton)
         } else if sort == .lowestCompensation {
-            lowestCompensationButton.backgroundColor = tintColor
-            lowestCompensationButton.setTitleColor(mainColor, for: .normal)
-            lowestCompensationButton.layer.masksToBounds = true
-            lowestCompensationButton.layer.borderColor = mainColor.cgColor
-            lowestCompensationButton.layer.borderWidth = 0.5
-            lowestCompensationButton.layer.cornerRadius = 5
+            setButtonColor(button: lowestCompensationButton)
         }
+    }
+    
+    func setButtonColor(button: UIButton) {
+        button.backgroundColor = tintColor
+        button.setTitleColor(mainColor, for: .normal)
+        button.layer.masksToBounds = true
+        button.layer.borderColor = mainColor.cgColor
+        button.layer.borderWidth = 0.5
+        button.layer.cornerRadius = 5
     }
     
     func getSortByFilter() -> AssistanceSortByFilter {
