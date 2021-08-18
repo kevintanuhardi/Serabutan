@@ -73,6 +73,7 @@ class HomeVC: UIViewController {
 		if let parsedJobs = homeVM.nearbyJobs {
 			jobList = parsedJobs 
 			DispatchQueue.main.async {
+                self.mapView.removeAnnotations(self.mapView.annotations)
 				self.addAnnotations()
 				self.jobListingColView.reloadData()
 			}
