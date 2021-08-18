@@ -48,7 +48,6 @@ extension HomeVC: CLLocationManagerDelegate {
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-		print("The status changed")
 		if status == .authorizedAlways || status == .authorizedWhenInUse {
 			beginLocationUpdates(locationManager: manager)
 		}

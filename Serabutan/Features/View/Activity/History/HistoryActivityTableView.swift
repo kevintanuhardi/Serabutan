@@ -42,10 +42,10 @@ extension HistoryActivityVC: UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel.text = data.title
         cell.headerLabel.text = StringFormatter().dateFormatter(date: data.postingDate)
         cell.compensationLabel.text = StringFormatter().priceFormatting(amount: data.price)
-        cell.posterImage.image = poster.avatar
+        cell.posterImage.image = poster.avatar ?? UIImage(named: "avatarIcon")
         cell.posterLabel.text = poster.name
         cell.verifiedLogo.isHidden = !poster.isVerified
-        cell.historyHelperImage.image = helper?.avatar
+        cell.historyHelperImage.image = helper?.avatar ?? UIImage(named: "avatarIcon")
         cell.historyHelperNameLabel.text = helper?.name
         cell.historyHelperVerifiedLogo.isHidden = !(helper?.isVerified ?? false)
         

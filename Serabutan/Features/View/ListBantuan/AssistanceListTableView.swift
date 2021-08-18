@@ -34,7 +34,7 @@ extension AssistanceListVC: UITableViewDataSource, UITableViewDelegate {
         cell.setStatusView(urgency: result.urgency)
         cell.titleLabel.text = result.title
         cell.headerLabel.text =  StringFormatter().distance(result.distance)
-        cell.posterImage.image = result.jobPosterId.avatar
+        cell.posterImage.image = result.jobPosterId.avatar ?? UIImage(named: "avatarIcon")
         cell.verifiedLogo.isHidden = !(result.jobPosterId.isVerified)
         cell.posterLabel.text = result.jobPosterId.name
         cell.compensationLabel.text = StringFormatter().priceFormatting(amount: result.price)
