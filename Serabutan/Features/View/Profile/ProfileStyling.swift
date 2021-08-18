@@ -11,7 +11,7 @@ extension ProfileVC {
     
     // MARK: - Navigation Items
     func setNavigation() {
-        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.barTintColor = .ColorLibrary.white
         navigationItem.largeTitleDisplayMode = .never
         
         // Back Button
@@ -47,8 +47,6 @@ extension ProfileVC {
         reviewTable.delegate = self
         reviewTable.dataSource = self
         
-        reviewTable.tableFooterView = UIView()
-        reviewTable.tableFooterView?.frame = CGRect(x: 0, y: 0, width: reviewTable.frame.width, height: 20)
         profileImage.layer.cornerRadius = profileImage.frame.height / 2
         profileImage.layer.masksToBounds = true
         ratingBadge.layer.cornerRadius = ratingBadge.frame.height / 2
@@ -57,6 +55,8 @@ extension ProfileVC {
         ratingBadge.layer.borderWidth = 0.5
         profileInfoView.addLine(position: .bottom, color: UIColor.ColorLibrary.mediumGrey, width: 0.5)
         
+        // Custom View for Dark Mode
+        setDarkView()
     }
     
     func configureText() {
@@ -73,5 +73,11 @@ extension ProfileVC {
                                                                        secondWord: " Membantu",
                                                                        style: .dualStyle)
         profileVerified.isHidden = !(user?.isVerified ?? false)
+    }
+    
+    func setDarkView() {
+        if traitCollection.userInterfaceStyle == .dark {
+            reviewTable.backgroundColor = .ColorLibrary.customBlackBackground
+        }
     }
 }

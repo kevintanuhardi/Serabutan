@@ -148,7 +148,7 @@ extension DetailBantuanVC {
     }
     
     func checkUser() {
-        if (selectedJob?.helperId == nil || selectedJob?.helperId?.id == currentUser) && assignSelf == true {
+        if (selectedJob?.helperId == nil && assignSelf == true) || (selectedJob?.helperId?.id == currentUser) {
             // If the job is taken by current user or is currently nil
             selectedJob?.helperId = DummyData.shared.getUserProfile()[currentUser]
             helperAvatar.isHidden = true

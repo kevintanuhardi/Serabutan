@@ -43,5 +43,4 @@ class EditProfileVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
         super.viewWillDisappear(animated)
         tabBarController?.tabBar.isHidden = false
     }
-
 }

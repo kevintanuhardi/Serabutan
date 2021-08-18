@@ -13,9 +13,11 @@ extension UIColor {
         // Main Color
         static var accentColor: UIColor { return UIColor(named: "AccentColor") ?? UIColor.clear }
         static var customBlack: UIColor { return UIColor(named: "CustomBlack") ?? UIColor.clear }
+        static var customBlackBackground: UIColor { return UIColor(named: "CustomBlackBackground") ?? UIColor.clear }
         static var lightGrey: UIColor { return UIColor(named: "LightGrey") ?? UIColor.clear }
         static var mediumGrey: UIColor { return UIColor(named: "MediumGrey") ?? UIColor.clear }
         static var darkGrey: UIColor { return UIColor(named: "DarkGrey") ?? UIColor.clear }
+        static var white: UIColor { return UIColor(named: "White") ?? UIColor.clear }
         
         // Jobs Urgency Color
         static var highUrgency: UIColor { return UIColor(named: "HighUrgency") ?? UIColor.clear }

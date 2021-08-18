@@ -75,7 +75,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="aaK-p9-7Or" firstAttribute="centerY" secondItem="yk3-Bq-9qT" secondAttribute="centerY" id="6h3-cV-owX"/>
                                 <constraint firstAttribute="height" constant="15" id="8ys-x6-1KO"/>
@@ -159,7 +159,7 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="AdT-Do-RB8" firstAttribute="centerY" secondItem="uKS-Eq-5EQ" secondAttribute="centerY" id="HkT-Hr-0Li"/>
                                 <constraint firstItem="0cK-dY-HEu" firstAttribute="top" secondItem="eod-rD-0qr" secondAttribute="top" constant="5" id="K7K-f8-5OP"/>
@@ -188,7 +188,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" name="White"/>
                     <constraints>
                         <constraint firstItem="rx4-AL-txq" firstAttribute="top" secondItem="7D0-0G-LzV" secondAttribute="top" constant="20" id="2Rx-fS-TOG"/>
                         <constraint firstItem="rx4-AL-txq" firstAttribute="leading" secondItem="7D0-0G-LzV" secondAttribute="leading" constant="20" id="AWX-pc-ymd"/>
@@ -209,7 +209,7 @@
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="White"/>
             <constraints>
                 <constraint firstItem="7D0-0G-LzV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0Pn-Ic-aDE"/>
                 <constraint firstItem="fhx-9u-kph" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="325-7F-j09"/>
@@ -238,9 +238,9 @@
         <namedColor name="LightGrey">
             <color red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

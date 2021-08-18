@@ -11,13 +11,21 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        UITabBar.appearance().barTintColor = .systemBackground
-        tabBar.tintColor = .ColorLibrary.accentColor
-        tabBar.unselectedItemTintColor = .ColorLibrary.mediumGrey
         self.delegate = self
         setupVCs()
+        setupUI()
         setupMiddleButton()
+    }
+    
+    private func setupUI() {
+        view.backgroundColor = .ColorLibrary.white
+        UITabBar.appearance().barTintColor = .ColorLibrary.white
+        tabBar.tintColor = .ColorLibrary.accentColor
+        tabBar.unselectedItemTintColor = .ColorLibrary.mediumGrey
+        
+        if traitCollection.userInterfaceStyle == .dark {
+            tabBar.unselectedItemTintColor = .ColorLibrary.darkGrey
+        }
     }
     
     private func setupVCs() {
@@ -29,7 +37,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         UserDefaults.standard.set(loggedUser, forKey: "loggedUser")
         profileVC.loggedUser = loggedUser
         profileVC.user = DummyData.shared.getUserProfile()[loggedUser]
-                
+        
         viewControllers = [
             createNavController(for: HomeVC(), title: "Home", image: UIImage(systemName: "house"), tag: 0),
             createNavController(for: ActivityVC(), title: "Aktivitas", image: UIImage(systemName: "text.book.closed"), tag: 1),
@@ -45,7 +53,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         button.sizeToFit()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(buatPermohonan), for: .touchUpInside)
-
+        
         tabBar.addSubview(button)
         tabBar.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
         tabBar.centerYAnchor.constraint(equalTo: tabBar.centerYAnchor).isActive = true
@@ -53,7 +61,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     @objc private func buatPermohonan() {
         let buatPermohonan = NewAssistanceVC()
-		buatPermohonan.delegate = self
+        buatPermohonan.delegate = self
         let buatPermohonanController = UINavigationController.init(rootViewController: buatPermohonan)
         self.show(buatPermohonanController, sender: self)
     }
@@ -71,11 +79,11 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 }
 
 extension TabBarController: NewAssitanceDelegate {
-	func navigateToDetailProduct(job: Jobs) {
-		self.selectedIndex = 1
-
-		let detailVC = DetailBantuanVC()
-		detailVC.selectedJob = job
+    func navigateToDetailProduct(job: Jobs) {
+        self.selectedIndex = 1
+        
+        let detailVC = DetailBantuanVC()
+        detailVC.selectedJob = job
         (self.selectedViewController as? UINavigationController)?.pushViewController(detailVC, animated: true)
-	}
+    }
 }

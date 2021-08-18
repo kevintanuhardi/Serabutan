@@ -15,8 +15,8 @@ class ImageCarouselCVC: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageView.layer.cornerRadius = 5
-        imageView.layer.masksToBounds = true
+        self.layer.cornerRadius = 5
+        self.layer.masksToBounds = true
     }
     
     static func nib() -> UINib {

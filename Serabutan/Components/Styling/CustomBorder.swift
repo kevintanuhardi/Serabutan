@@ -80,9 +80,13 @@ extension UIView {
         layer.shadowOpacity = opacity
         layer.shadowOffset = CGSize(width: 0.0, height: offset)
         layer.shadowRadius = 10
-
+        
         layer.shadowPath = UIBezierPath(rect: bounds).cgPath
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
-      }
+        
+        if traitCollection.userInterfaceStyle == .dark {
+            layer.shadowColor = UIColor.ColorLibrary.white.cgColor
+        }
+    }
 }
