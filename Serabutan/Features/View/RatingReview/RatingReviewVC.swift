@@ -13,6 +13,8 @@ class RatingReviewVC: UIViewController, UITextViewDelegate {
     var reviewer: UserProfile?
     var selectedJob: Jobs?
     
+    var user = UserDefaults.standard.integer(forKey: "loggedUser")
+    
     var reviewTextChecked: Bool = false
     var bintangTapped: Bool = false
     var reviewPoint: Int?

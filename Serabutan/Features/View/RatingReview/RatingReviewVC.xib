@@ -62,7 +62,7 @@
                                     </attributes>
                                 </fragment>
                             </attributedString>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
                             </userDefinedRuntimeAttributes>

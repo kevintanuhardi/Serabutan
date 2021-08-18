@@ -11,11 +11,14 @@ extension RatingReviewVC {
     func setupUser() {
         profileImg.layer.cornerRadius = profileImg.frame.height / 2
         profileImg.layer.masksToBounds = true
-        profileImg.image = reviewee?.avatar ?? UIImage(named: "avatarIcon")
-        
         namaLbl.font = .FontLibrary.title1
-        namaLbl.text = reviewee?.name
-        verified.isHidden = !(reviewee?.isVerified ?? false)
+        
+        guard let reviewProfile = ((reviewee?.id == user) ? reviewer : reviewee) else { return }
+        
+        namaLbl.text = reviewProfile.name
+        verified.isHidden = !reviewProfile.isVerified
+        profileImg.image = reviewProfile.avatar ?? UIImage(named: "avatarIcon")
+        
     }
     
     func setupTextView() {
