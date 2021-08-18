@@ -20,7 +20,6 @@ class HomeVC: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var jobListingColView: UICollectionView!
     @IBOutlet weak var showAllButton: UIButton!
-    @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var blurView: UIVisualEffectView!
     
     var currentCoordinate: CLLocationCoordinate2D?

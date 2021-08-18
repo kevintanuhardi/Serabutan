@@ -9,8 +9,12 @@ import UIKit
 
 class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var profileInfoView: UIView!
+    // Dummy Data
+    var database = DummyData.shared
+    let loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")
+    var user: UserProfile?
     
+    @IBOutlet weak var profileInfoView: UIView!
     @IBOutlet weak var reviewTable: UITableView!
     @IBOutlet weak var profileImage: UIImageView!
     
@@ -24,22 +28,16 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var ratingBadge: UIView!
     @IBOutlet weak var profileBio: UILabel!
     @IBOutlet weak var profileVerified: UIImageView!
-    
-    // Dummy Data
-    var database = DummyData.shared
-    let loggedUser = UserDefaults.standard.integer(forKey: "loggedUser")
-    var user: UserProfile?
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationSetup()
-        checkLoggedUser()
-        reviewTable.reloadData()
+        super.viewWillAppear(animated)
+        setNavigation()
+        configureText()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
-        updateUI()
+        setStyle()
     }
 }
-

@@ -17,7 +17,7 @@ class HomeVM: NSObject {
 						self.bindCatalogueViewModelToController()
 				}
 		}
-
+    
 		var bindCatalogueViewModelToController: (() -> ()) = {}
 		
 		override init() {
@@ -26,7 +26,6 @@ class HomeVM: NSObject {
 
 	func fetchNearbyJob(coordinate: CLLocationCoordinate2D) {
 		self.nearbyJobs = DummyData.shared.getJobsList(.active)
-		print("di vm", DummyData.shared.getJobsList(.active).count)
 				
 /* Change the setter for integrated apps */
 //		APIManager.getNearbyJob(coordinate: coordinate){ result in

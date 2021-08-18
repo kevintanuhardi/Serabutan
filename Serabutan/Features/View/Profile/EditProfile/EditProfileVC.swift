@@ -11,6 +11,12 @@ import MobileCoreServices
 
 class EditProfileVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    var user: UserProfile?
+    var tempName: String?
+    var tempDescription: String?
+    var tempAvatar: UIImage?
+    let currentUser = UserDefaults.standard.integer(forKey: "loggedUser")
+    
     @IBOutlet weak var avatarContainer: UIView!
     @IBOutlet weak var nameField: UIStackView!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -22,43 +28,20 @@ class EditProfileVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
     @IBOutlet weak var buttonUbah: UIButton!
     @IBOutlet weak var charCount: UILabel!
     
-    var user: UserProfile?
-    var tempName: String?
-    var tempDescription: String?
+    // MARK: - View Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNavigation()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationSetup()
-        updateUI()
-        
-        descriptionTextView.delegate = self
-        fullName.delegate = self
-        
-        tempName = fullName.text
-        tempDescription = descriptionTextView.text
+        setupUI()
     }
     
-    func updateUI() {
-        
-        // Set user
-        fullName.text = user?.name
-        profileImage.image = user?.avatar
-        descriptionTextView.text = user?.bio
-        
-        // Set page UI
-        self.title = "Sunting Profile"
-        
-        buttonUbah.setTitleColor(.white, for: .normal)
-        buttonUbah.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
-        avatarContainer.layer.masksToBounds = true
-        avatarContainer.layer.cornerRadius = avatarContainer.frame.height / 2
-        descriptionTextView.textContainerInset = .zero
-        descriptionTextView.textContainer.lineFragmentPadding = 0
-        
-        shortDesc.font = UIFont.FontLibrary.caption2
-        
-        buttonUbah.backgroundColor = UIColor.ColorLibrary.darkGrey.withAlphaComponent(0.75)
-        charCount.text = "\(descriptionTextView.text.count) / 300"
-        
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
     }
+
 }

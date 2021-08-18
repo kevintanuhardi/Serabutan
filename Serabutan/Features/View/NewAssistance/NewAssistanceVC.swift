@@ -109,47 +109,17 @@ class NewAssistanceVC: UIViewController, UINavigationControllerDelegate, CLLocat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTextFieldDelegate()
+        setupKeyboardDismissMethod()
+        setupLocationManager()
+        
         title = "Buat Permintaan Bantuan"
-        
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tap)
-        myScrollView.keyboardDismissMode = .onDrag // or .interactive
-        urgencyIndicatorView.backgroundColor = UIColor.systemBlue
-        
         self.navigationController?.presentationController?.delegate = self
         self.presentationController?.delegate = self
-        urgencyTF.delegate = self
-        titleTF.delegate = self
-        descTV.delegate = self
-        compensationTF.delegate = self
-        genderTF.delegate = self
-        ageTF.delegate = self
-        infoTF.delegate = self
-        tagListView.delegate = self
-        
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        initKeyboardObserver()
-        initStyling()
-        createPickerGender()
-        createPickerAge()
-        createPickerUrgency()
-        initCollectionView()
-        tagListHeight?.isActive = false
-    }
-    
-    func initCollectionView(){
-        mediaImageCollectionView.dataSource = self
-        mediaImageCollectionView.delegate = self
-        mediaImageCollectionView.register(ImageCarouselCVC.nib(), forCellWithReuseIdentifier: ImageCarouselCVC.identifier)
+        setupView()
     }
     
     func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
@@ -160,6 +130,309 @@ class NewAssistanceVC: UIViewController, UINavigationControllerDelegate, CLLocat
     
     func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
         dismissAlert()
+    }
+
+}
+
+extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
+    
+    func setupView() {
+        setupKeyboardObserver()
+        initStyling()
+        createPickerGender()
+        createPickerAge()
+        createPickerUrgency()
+        setupCollectionView()
+        tagListHeight?.isActive = false
+    }
+    
+    func setupTextFieldDelegate(){
+        urgencyTF.delegate = self
+        titleTF.delegate = self
+        descTV.delegate = self
+        compensationTF.delegate = self
+        genderTF.delegate = self
+        ageTF.delegate = self
+        infoTF.delegate = self
+        tagListView.delegate = self
+    }
+    
+    func setupCollectionView(){
+        mediaImageCollectionView.dataSource = self
+        mediaImageCollectionView.delegate = self
+        mediaImageCollectionView.register(ImageCarouselCVC.nib(), forCellWithReuseIdentifier: ImageCarouselCVC.identifier)
+    }
+    
+    @IBAction func cancelButtonAction(_sender: Any){
+       navigateCancel()
+    }
+    
+    @IBAction func shareButtonAction(_sender: Any){
+        setupOtherData()
+        createNewJob()
+        let latestDummyData = DummyData.shared.getJobsList()
+        self.dismiss(animated: true, completion: {
+            guard let lastJob = latestDummyData.last else {return}
+            self.delegate?.navigateToDetailProduct(job: lastJob)
+        })
+    }
+    
+    func setupOtherData(){
+        let jobPosterId = DummyData.shared.getUserProfile()[userDefault]
+        newAssistanceJobPosterId = jobPosterId
+    }
+    
+    func createNewJob(){
+        if (titleTF.text?.isEmpty ?? true) || titleTF.text == "" || titleTF.text == "\n" {
+            createTitleEmpty()
+            titleTF.becomeFirstResponder()
+        } else if (descTV.text?.isEmpty ?? true) || descTV.text == "" || descTV.text == "\n" {
+            createDescEmpty()
+            descTV.becomeFirstResponder()
+        } else {
+            guard let jobPosterId = newAssistanceJobPosterId else { return }
+            
+            let job = Jobs(id: DummyData.shared.getJobsList().count,
+                           jobPosterId: jobPosterId,
+                           postingDate: Date(),
+                           urgency: newAssistanceUrgency,
+                           title: titleTF.text,
+                           desc: descTV.text,
+                           price: newAssistanceCompensation,
+                           status: newAssistanceStatus,
+                           distance: 0.0,
+                           coordinate: newAssistanceCoordinate ?? CLLocationCoordinate2D(),
+                           tags: newAssistanceInfo,
+                           medias: newAssistanceMediaImage,
+                           helperId: nil,
+                           genderPreference: newAssistanceGenderPref,
+                           agePreference: newAssistanceAgePref)
+            
+            DummyData.shared.addNewJob(job: job)
+        }
+    }
+    
+    @IBAction func addMediaImageAction(_ sender: Any) {
+        createAlert()
+    }
+    
+    //MARK: - TextView
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.superview?.animateBorder(true, type: .border)
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        textView.superview?.animateBorder(false, type: .border)
+    }
+    
+    //MARK: - TextField
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.activeTextField = textField
+        textField.superview?.animateBorder(true, type: .border)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.activeTextField = nil
+        textField.superview?.animateBorder(false, type: .border)
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        switch textField {
+        case compensationTF :
+            let text: NSString = (textField.text ?? "") as NSString
+            var finalString = text.replacingCharacters(in: range, with: string)
+            
+            finalString = finalString.replacingOccurrences(of: ".", with: "")
+            newAssistanceCompensation = Int(finalString) ?? 0
+            compensationTF.text = StringFormatter().priceFormatting(amount: newAssistanceCompensation )
+            return false
+            
+        case infoTF :
+            let acceptableChar = "abcdefghijklmnopqrstuvwxyz"
+            let cs = NSCharacterSet(charactersIn: acceptableChar).inverted
+            let filtered = string.components(separatedBy: cs).joined(separator: "")
+            
+            if string == " " {
+                addTag()
+            }
+            return (string == filtered)
+            
+        default :
+            break
+            
+        }
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == urgencyTF {
+            titleTF.becomeFirstResponder()
+        } else if textField == titleTF {
+            descTV.becomeFirstResponder()
+        } else if textField == descTV {
+            compensationTF.becomeFirstResponder()
+        } else if textField == compensationTF {
+            genderTF.becomeFirstResponder()
+        } else if textField == genderTF {
+            ageTF.becomeFirstResponder()
+        } else if textField == ageTF {
+            infoTF.becomeFirstResponder()
+        } else if textField == infoTF {
+            addTag()
+        } else {
+            textField.becomeFirstResponder()
+        }
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        textField.superview?.animateBorder(false, type: .border)
+        
+        switch textField {
+        case urgencyTF :
+            let currUrgency = urgencyTF.text ?? ""
+            
+            if currUrgency == "Tinggi" {
+                newAssistanceUrgency = Urgency.high
+                urgencyIndicatorView.layer.backgroundColor = UIColor.ColorLibrary.highUrgency.cgColor
+            } else if currUrgency == "Sedang" {
+                newAssistanceUrgency = Urgency.medium
+                urgencyIndicatorView.layer.backgroundColor = UIColor.ColorLibrary.mediumUrgency.cgColor
+            } else {
+                newAssistanceUrgency = Urgency.low
+                urgencyIndicatorView.layer.backgroundColor = UIColor.ColorLibrary.lowUrgency.cgColor
+            }
+            
+        case genderTF :
+            let currGender = genderTF.text ?? ""
+            
+            if currGender == Gender.male.rawValue {
+                newAssistanceGenderPref = Gender.male
+            } else if currGender == Gender.female.rawValue {
+                newAssistanceGenderPref = Gender.female
+            } else {
+                newAssistanceGenderPref = nil
+            }
+            
+        case ageTF :
+            let currAge = ageTF.text ?? ""
+            
+            if currAge == AgePreference.youngAdult.rawValue {
+                newAssistanceAgePref = AgePreference.youngAdult
+            } else if currAge == AgePreference.middleAdult.rawValue {
+                newAssistanceAgePref = AgePreference.middleAdult
+            } else if currAge == AgePreference.lateAdult.rawValue {
+                newAssistanceAgePref = AgePreference.lateAdult
+            } else {
+                newAssistanceAgePref = nil
+            }
+
+        default :
+            break
+        }
+    }
+    
+    //MARK: - Tag List View Actions
+    func addTag() {
+        var duplicate: Bool = false
+        guard let newTag = infoTF.text else { return }
+        
+        for tag in newAssistanceInfo {
+            if newTag == tag {
+                duplicate = true
+            }
+        }
+        guard !duplicate else { return }
+        
+        currTags = newTag
+        newAssistanceInfo.append(newTag)
+        tagListView.addTag(newTag)
+        infoTF.resignFirstResponder()
+        infoTF.text = ""
+        
+        (newAssistanceInfo.count < 1) ? (infoSV.spacing = 0) : (infoSV.spacing = 5)
+    }
+    
+    func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        sender.removeTagView(tagView)
+        
+        for (index, arrayTitle) in newAssistanceInfo.enumerated() {
+            if title == arrayTitle {
+                newAssistanceInfo.remove(at: index)
+                (newAssistanceInfo.count < 1) ? (infoSV.spacing = 0) : (infoSV.spacing = 5)
+            }
+        }
+    }
+    
+    func setupLocationManager() {
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    //MARK: - Get Current location
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        newAssistanceCoordinate = locValue
+    }
+    
+    //MARK: - ImagePicker Handler
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else { return }
+        dismiss(animated: true)
+
+        currImage = image
+        guard let newImage = currImage else { return }
+        newAssistanceMediaImage.append(newImage)
+        
+        DispatchQueue.main.async {
+            self.mediaImageCollectionView.reloadData()
+        }
+    }
+}
+
+//MARK: - Alerts
+extension NewAssistanceVC {
+
+    func createAlert(){
+        let alert = UIAlertController(title: "Tambahkan Media", message: "", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Ambil Foto",
+                                      style: .default,
+                                      handler: { action in
+                                        ImageHelper.startMediaBrowser(delegate: self, sourceType: .camera)
+                                      }))
+        
+        alert.addAction(UIAlertAction(title: "Pilih dari Galeri",
+                                      style: .default,
+                                      handler: { action in
+                                        ImageHelper.startMediaBrowser(delegate: self, sourceType: .savedPhotosAlbum)
+                                      }))
+        
+        alert.addAction(UIAlertAction(title: "Batalkan", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
+    func createTitleEmpty(){
+        let alert = UIAlertController(title: "Judul Bantuan", message: "Judul Bantuan tidak boleh kosong", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
+    func createDescEmpty(){
+        let alert = UIAlertController(title: "Deskripsi Bantuan", message: "Judul Bantuan tidak boleh kosong", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
     }
     
     func dismissAlert() {
@@ -176,4 +449,39 @@ class NewAssistanceVC: UIViewController, UINavigationControllerDelegate, CLLocat
                                       handler: nil))
         present(alert, animated: true, completion: nil)
     }
+    
 }
+
+//MARK: -Keyboard Delegate
+extension NewAssistanceVC {
+   
+    func setupKeyboardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        else {
+            // if keyboard size is not available for some reason, dont do anything
+            return
+        }
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height , right: 0.0)
+        myScrollView.contentInset = contentInsets
+        myScrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        myScrollView.contentInset = contentInsets
+        myScrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    func setupKeyboardDismissMethod() {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+        myScrollView.keyboardDismissMode = .onDrag // or .interactive
+        urgencyIndicatorView.backgroundColor = UIColor.systemBlue
+    }
+}
+

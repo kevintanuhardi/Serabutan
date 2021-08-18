@@ -22,6 +22,7 @@ class RatingReviewVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var namaLbl: UILabel!
     @IBOutlet weak var reviewTextView: UITextView!
+    @IBOutlet weak var verified: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +37,12 @@ class RatingReviewVC: UIViewController, UITextViewDelegate {
     // Set Displayed Stars (ratings)
     @IBAction func buttonTapped(_ sender: UIButton) {
         for button in bintangBtn {
-            button.imageView?.contentMode = .scaleToFill
+            let config = UIImage.SymbolConfiguration(scale: .large)
             if button.tag <= sender.tag {
-                button.setImage(UIImage.init(named: "star.fill"), for: .normal)
+                button.setImage(UIImage(systemName: "star.fill", withConfiguration: config), for: .normal)
                 button.tintColor = .systemYellow
             } else {
-                button.setImage(UIImage.init(named: "star.fill"), for: .normal)
+                button.setImage(UIImage(systemName: "star.fill", withConfiguration: config), for: .normal)
                 button.tintColor = .ColorLibrary.mediumGrey
             }
             reviewPoint = sender.tag

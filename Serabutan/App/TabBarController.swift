@@ -28,44 +28,43 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         (loggedUser >= DummyData.shared.getUserProfile().count) ? (loggedUser -= 1) : (loggedUser += 0)
         UserDefaults.standard.set(loggedUser, forKey: "loggedUser")
         profileVC.user = DummyData.shared.getUserProfile()[loggedUser]
-        
+                
         viewControllers = [
-            createNavController(for: HomeVC(), title: "Home", image: UIImage(systemName: "house")!, tag: 0),
-            createNavController(for: ActivityVC(), title: "Aktivitas", image: UIImage(systemName: "text.book.closed")!, tag: 1),
+            createNavController(for: HomeVC(), title: "Home", image: UIImage(systemName: "house"), tag: 0),
+            createNavController(for: ActivityVC(), title: "Aktivitas", image: UIImage(systemName: "text.book.closed"), tag: 1),
             createNavController(for: HomeVC(), title: "", image: UIImage(), tag: 2),
-            createNavController(for: UIViewController(), title: "Notifikasi", image: UIImage(systemName: "bell")!, tag: 3),
-            createNavController(for: profileVC, title: "Profil", image: UIImage(systemName: "person")!, tag: 4)
+            createNavController(for: UIViewController(), title: "Notifikasi", image: UIImage(systemName: "bell"), tag: 3),
+            createNavController(for: profileVC, title: "Profil", image: UIImage(systemName: "person"), tag: 4)
         ]
     }
     
     private func setupMiddleButton() {
         let button = UIButton()
-        button.setImage(UIImage(named: "AddButton"), for: .normal)
+        button.setImage(UIImage(named: "addButton"), for: .normal)
         button.sizeToFit()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(buatPermohonan), for: .touchUpInside)
 
         tabBar.addSubview(button)
         tabBar.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
+        tabBar.centerYAnchor.constraint(equalTo: tabBar.centerYAnchor).isActive = true
     }
     
     @objc private func buatPermohonan() {
         let buatPermohonan = NewAssistanceVC()
 		buatPermohonan.delegate = self
         let buatPermohonanController = UINavigationController.init(rootViewController: buatPermohonan)
-//        self.navigationController?.pushViewController(buatPermohonanController, animated: true)
         self.show(buatPermohonanController, sender: self)
     }
     
     fileprivate func createNavController(for rootViewController: UIViewController,
                                          title: String,
-                                         image: UIImage,
+                                         image: UIImage?,
                                          tag: Int) -> UIViewController {
         
         let navController = UINavigationController(rootViewController: rootViewController)
         navController.tabBarItem = UITabBarItem(title: title, image: image, tag: tag)
         navController.navigationBar.prefersLargeTitles = false
-//        rootViewController.navigationItem.title = title
         return navController
     }
 }
@@ -76,7 +75,6 @@ extension TabBarController: NewAssitanceDelegate {
 
 		let detailVC = DetailBantuanVC()
 		detailVC.selectedJob = job
-		(self.selectedViewController as! UINavigationController ).pushViewController(detailVC, animated: true)
+        (self.selectedViewController as? UINavigationController)?.pushViewController(detailVC, animated: true)
 	}
-	
 }
