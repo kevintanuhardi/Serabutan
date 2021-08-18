@@ -54,6 +54,10 @@ extension FormulirProfilVC: UIPickerViewDataSource {
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         textField.superview?.animateBorder(false, type: .border)
         
+        if textField == namaLengkapTxt {
+           newName = namaLengkapTxt.text
+        }
+        
         if textField == genderTxt {
             let currGender = genderTxt.text
             
