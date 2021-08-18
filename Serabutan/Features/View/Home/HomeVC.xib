@@ -29,18 +29,9 @@
                 </mapView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uw-o4-AVy">
                     <rect key="frame" x="344" y="54" width="50" height="50"/>
-                    <state key="normal" image="filterButton">
-                        <attributedString key="attributedTitle"/>
-                    </state>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tXv-KB-etQ">
-                    <rect key="frame" x="284" y="54" width="50" height="50"/>
                     <state key="normal" image="searchButton">
                         <attributedString key="attributedTitle"/>
                     </state>
-                    <connections>
-                        <action selector="searchBarTapped:" destination="-1" eventType="touchUpInside" id="zV9-Nf-DBb"/>
-                    </connections>
                 </button>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzE-8V-MLj">
                     <rect key="frame" x="0.0" y="642" width="414" height="220"/>
@@ -101,8 +92,6 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tzE-8V-MLj" secondAttribute="bottom" id="30I-q9-2eE"/>
                 <constraint firstItem="tzE-8V-MLj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Dix-X6-XNW"/>
                 <constraint firstItem="2uw-o4-AVy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Fb0-OC-JXJ"/>
-                <constraint firstItem="tXv-KB-etQ" firstAttribute="centerY" secondItem="2uw-o4-AVy" secondAttribute="centerY" id="J8W-Ap-93k"/>
-                <constraint firstItem="2uw-o4-AVy" firstAttribute="leading" secondItem="tXv-KB-etQ" secondAttribute="trailing" constant="10" id="Ui6-Lf-V6E"/>
                 <constraint firstItem="tzE-8V-MLj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="baB-Fn-bC4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2uw-o4-AVy" secondAttribute="trailing" constant="20" id="hgb-4r-hJf"/>
             </constraints>
@@ -111,7 +100,6 @@
     </objects>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
-        <image name="filterButton" width="50" height="50"/>
         <image name="searchButton" width="50" height="50"/>
         <namedColor name="AccentColor">
             <color red="0.72549019607843135" green="0.21568627450980393" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
