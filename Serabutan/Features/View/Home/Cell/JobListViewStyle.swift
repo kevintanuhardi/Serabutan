@@ -9,13 +9,16 @@ import Foundation
 import UIKit
 
 extension JobListCell {
-    func setViewStyling(){
+    func setViewStyling() {
         setStatusView()
         setMainView()
         setFont()
+        
+        // Custom View for Dark Mode
+        setDarkView()
     }
     
-    func setStatusView(){
+    func setStatusView() {
         statusView.layer.masksToBounds = true
         statusView.layer.borderWidth = 0.5
         statusView.layer.cornerRadius = statusView.frame.height / 2
@@ -24,7 +27,14 @@ extension JobListCell {
         posterImage.layer.cornerRadius = posterImage.frame.height / 2
     }
     
-    func setStatusView(urgency: Urgency){
+    func setDarkView() {
+        if traitCollection.userInterfaceStyle == .dark {
+            statusLabel.textColor = .ColorLibrary.white
+            mainView.layer.borderWidth = 0
+        }
+    }
+    
+    func setStatusView(urgency: Urgency) {
         
         var colorSolid = UIColor()
         var colorTransparent = UIColor()
@@ -50,14 +60,14 @@ extension JobListCell {
         
     }
     
-    func setMainView(){
+    func setMainView() {
         mainView.layer.masksToBounds = true
         mainView.layer.borderWidth = 0.5
         mainView.layer.cornerRadius = 5
         mainView.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
     }
     
-    func setFont(){
+    func setFont() {
         // Default Card
         statusLabel.font = .FontLibrary.caption1
         headerLabel.font = .FontLibrary.body
@@ -68,7 +78,7 @@ extension JobListCell {
         
     }
     
-    func setColor(){
+    func setColor() {
         titleLabel.tintColor = .ColorLibrary.customBlack
         posterLabel.tintColor = .ColorLibrary.customBlack
         

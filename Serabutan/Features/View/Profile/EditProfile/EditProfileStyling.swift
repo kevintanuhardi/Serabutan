@@ -22,6 +22,9 @@ extension EditProfileVC {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.ColorLibrary.customBlack]
         
         setNavigationItems()
+        
+        // Custom View for Dark Mode
+        setDarkView()
     }
     
     func setNavigationItems() {
@@ -81,6 +84,13 @@ extension EditProfileVC {
         tempName = fullName.text
         tempAvatar = profileImage.image
         tempDescription = descriptionTextView.text
+    }
+    
+    func setDarkView() {
+        if traitCollection.userInterfaceStyle == .dark {
+            self.view.backgroundColor = .ColorLibrary.customBlackBackground
+            navigationController?.navigationBar.barTintColor = .ColorLibrary.customBlackBackground
+        }
     }
     
     // MARK: - Alert

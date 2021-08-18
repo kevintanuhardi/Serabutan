@@ -170,11 +170,6 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
     @IBAction func shareButtonAction(_sender: Any){
         setupOtherData()
         createNewJob()
-        let latestDummyData = DummyData.shared.getJobsList()
-        self.dismiss(animated: true, completion: {
-            guard let lastJob = latestDummyData.last else {return}
-            self.delegate?.navigateToDetailProduct(job: lastJob)
-        })
     }
     
     func setupOtherData(){
@@ -185,10 +180,8 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
     func createNewJob(){
         if (titleTF.text?.isEmpty ?? true) || titleTF.text == "" || titleTF.text == "\n" {
             createTitleEmpty()
-            titleTF.becomeFirstResponder()
         } else if (descTV.text?.isEmpty ?? true) || descTV.text == "" || descTV.text == "\n" {
             createDescEmpty()
-            descTV.becomeFirstResponder()
         } else {
             guard let jobPosterId = newAssistanceJobPosterId else { return }
             
@@ -209,6 +202,13 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
                            agePreference: newAssistanceAgePref)
             
             DummyData.shared.addNewJob(job: job)
+            
+            // Segue
+            let latestDummyData = DummyData.shared.getJobsList()
+            self.dismiss(animated: true, completion: {
+                guard let lastJob = latestDummyData.last else {return}
+                self.delegate?.navigateToDetailProduct(job: lastJob)
+            })
         }
     }
     
@@ -336,7 +336,8 @@ extension NewAssistanceVC: TagListViewDelegate, UITextFieldDelegate, UITextViewD
     //MARK: - Tag List View Actions
     func addTag() {
         var duplicate: Bool = false
-        guard let newTag = infoTF.text else { return }
+        guard let newTag = infoTF.text,
+              (newTag != "" && newTag.isEmpty == false) else { return }
         
         for tag in newAssistanceInfo {
             if newTag == tag {
@@ -404,13 +405,13 @@ extension NewAssistanceVC {
         
         alert.addAction(UIAlertAction(title: "Ambil Foto",
                                       style: .default,
-                                      handler: { action in
+                                      handler: { _ in
                                         ImageHelper.startMediaBrowser(delegate: self, sourceType: .camera)
                                       }))
         
         alert.addAction(UIAlertAction(title: "Pilih dari Galeri",
                                       style: .default,
-                                      handler: { action in
+                                      handler: { _ in
                                         ImageHelper.startMediaBrowser(delegate: self, sourceType: .savedPhotosAlbum)
                                       }))
         
@@ -419,20 +420,24 @@ extension NewAssistanceVC {
         self.present(alert, animated: true)
     }
     
-    func createTitleEmpty(){
-        let alert = UIAlertController(title: "Judul Bantuan", message: "Judul Bantuan tidak boleh kosong", preferredStyle: .alert)
+    func createTitleEmpty() {
+        let alert = UIAlertController(title: "", message: "Judul Bantuan tidak boleh kosong", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
+            self.titleTF.becomeFirstResponder()
+        }))
         
-        self.present(alert, animated: true)
+        present(alert, animated: true, completion: nil)
     }
     
-    func createDescEmpty(){
-        let alert = UIAlertController(title: "Deskripsi Bantuan", message: "Judul Bantuan tidak boleh kosong", preferredStyle: .alert)
+    func createDescEmpty() {
+        let alert = UIAlertController(title: "", message: "Judul Bantuan tidak boleh kosong", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
+            self.descTV.becomeFirstResponder()
+        }))
         
-        self.present(alert, animated: true)
+        present(alert, animated: true, completion: nil)
     }
     
     func dismissAlert() {

@@ -35,6 +35,7 @@
 		79E67E7926B1B2410009F3C6 /* RatingReviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */; };
 		79FAF9CF26B87682009BF31F /* DetailBantuanNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FAF9CE26B87682009BF31F /* DetailBantuanNavigation.swift */; };
 		9022D9BB26CBFDDF00803BBB /* RatingReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9022D9BA26CBFDDF00803BBB /* RatingReviewVC.swift */; };
+		9022D9BC26CC6FE900803BBB /* AssistanceListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC25226B2490F0005FFE3 /* AssistanceListTableView.swift */; };
 		902E92FD26CB56770009B17F /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902E92FC26CB56770009B17F /* TableViewHelper.swift */; };
 		9036228F26BAF73000577D43 /* DetailBantuanStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9036228E26BAF73000577D43 /* DetailBantuanStyling.swift */; };
 		9036229126BB7E2000577D43 /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9036229026BB7E2000577D43 /* CustomCollectionView.swift */; };
@@ -70,7 +71,6 @@
 		90DCB12F26B6EAC4002145C1 /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DCB12E26B6EAC4002145C1 /* CustomStackView.swift */; };
 		90E9C98826B39DE500165319 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9C98626B39DE500165319 /* ReviewTableViewCell.swift */; };
 		90E9C98926B39DE500165319 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E9C98726B39DE500165319 /* ReviewTableViewCell.xib */; };
-		90EF604726C790D000CF5973 /* AssistanceListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC25226B2490F0005FFE3 /* AssistanceListTableView.swift */; };
 		90EF604826C790D000CF5973 /* AssistanceListStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76047BF26AF3CBB00535995 /* AssistanceListStyling.swift */; };
 		90EF604926C790D700CF5973 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4126AC97F1000478AA /* TagCollectionViewCell.swift */; };
 		90EF604A26C790DB00CF5973 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7AE4526AE4E83000478AA /* Enum.swift */; };
@@ -139,7 +139,7 @@
 		189FC4AC26B69D5500662C88 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = Serabutan/Helper/Constant.swift; sourceTree = SOURCE_ROOT; };
 		18B7273326B90F760005DBCA /* HomeVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		18BEF23B26A911E10029CEA1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = Serabutan/Features/View/Home/HomeVC.swift; sourceTree = SOURCE_ROOT; };
-		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = Serabutan/Features/View/Home/HomeVC.xib; sourceTree = SOURCE_ROOT; };
+		18BEF23C26A911E10029CEA1 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeVC.xib; path = serabutan/Features/View/Home/HomeVC.xib; sourceTree = SOURCE_ROOT; };
 		18C477C326C8BC5B007D89E8 /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeCollectionView.swift; path = Serabutan/Features/View/Home/HomeCollectionView.swift; sourceTree = SOURCE_ROOT; };
 		18C477C526C8BCFE007D89E8 /* HomeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeMapView.swift; path = Serabutan/Features/View/Home/HomeMapView.swift; sourceTree = SOURCE_ROOT; };
 		18C477C726C92215007D89E8 /* HomeNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeNavigation.swift; path = Serabutan/Features/View/Home/HomeNavigation.swift; sourceTree = SOURCE_ROOT; };
@@ -511,9 +511,9 @@
 		90A0AEF726BC25B600510A8E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				90A0AEFF26BC270200510A8E /* JobListCell.xib */,
 				90A0AEFE26BC270200510A8E /* JobListCell.swift */,
 				90A0AF0226BC2CCA00510A8E /* JobListViewStyle.swift */,
-				90A0AEFF26BC270200510A8E /* JobListCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -573,8 +573,8 @@
 			isa = PBXGroup;
 			children = (
 				90A0AEF726BC25B600510A8E /* Cell */,
-				18BEF23B26A911E10029CEA1 /* HomeVC.swift */,
 				18BEF23C26A911E10029CEA1 /* HomeVC.xib */,
+				18BEF23B26A911E10029CEA1 /* HomeVC.swift */,
 				18C477C326C8BC5B007D89E8 /* HomeCollectionView.swift */,
 				18C477C526C8BCFE007D89E8 /* HomeMapView.swift */,
 				18C477C726C92215007D89E8 /* HomeNavigation.swift */,
@@ -847,12 +847,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9022D9BC26CC6FE900803BBB /* AssistanceListTableView.swift in Sources */,
 				90EF604B26C790E000CF5973 /* FilterPopUpStyling.swift in Sources */,
 				90EF604A26C790DB00CF5973 /* Enum.swift in Sources */,
 				90EF604926C790D700CF5973 /* TagCollectionViewCell.swift in Sources */,
 				902E92FD26CB56770009B17F /* TableViewHelper.swift in Sources */,
-				90EF604726C790D000CF5973 /* AssistanceListTableView.swift in Sources */,
-				90EF604726C790D000CF5973 /* AssistanceListTableView.swift in Sources */,
 				90EF604826C790D000CF5973 /* AssistanceListStyling.swift in Sources */,
 				9060D42526C0088C002243BC /* EditProfileStyling.swift in Sources */,
 				90DCB12F26B6EAC4002145C1 /* CustomStackView.swift in Sources */,

@@ -44,8 +44,10 @@ extension HistoryActivityVC: UITableViewDelegate, UITableViewDataSource {
         cell.compensationLabel.text = StringFormatter().priceFormatting(amount: data.price)
         cell.posterImage.image = poster.avatar
         cell.posterLabel.text = poster.name
+        cell.verifiedLogo.isHidden = !poster.isVerified
         cell.historyHelperImage.image = helper?.avatar
         cell.historyHelperNameLabel.text = helper?.name
+        cell.historyHelperVerifiedLogo.isHidden = !(helper?.isVerified ?? false)
         
         return cell
     }

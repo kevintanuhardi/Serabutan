@@ -41,6 +41,10 @@ class ReviewTableViewCell: UITableViewCell {
         profileImage.layer.cornerRadius = profileImage.frame.height / 2
         profileImage.layer.masksToBounds = true
         separatorView.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
+        
+        if traitCollection.userInterfaceStyle == .dark {
+            cellView.layer.borderWidth = 0
+        }
     }
     
     // Set the amount of filled stars in each review

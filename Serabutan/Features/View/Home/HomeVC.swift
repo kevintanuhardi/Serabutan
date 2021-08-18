@@ -89,6 +89,10 @@ class HomeVC: UIViewController {
         self.navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+
+        if traitCollection.userInterfaceStyle == .dark {
+            blurView.effect = UIBlurEffect(style: .systemChromeMaterialDark)
+        }
     }
     
     @IBAction func searchBarTapped(_ sender: Any) {

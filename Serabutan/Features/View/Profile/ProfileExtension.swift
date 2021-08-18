@@ -24,6 +24,12 @@ extension ProfileVC {
         headerView.backgroundColor = .ColorLibrary.lightGrey
         headerView.addSubview(label)
         headerView.tag = 99
+        
+        // Setup View for Dark Mode
+        if traitCollection.userInterfaceStyle == .dark {
+            headerView.backgroundColor = .ColorLibrary.customBlackBackground
+        }
+        
         return headerView
     }
     
@@ -32,7 +38,7 @@ extension ProfileVC {
         guard let reviewee = user else { fatalError("No user was found.") }
         let reviewCount = database.getUserReview(reviewee: reviewee).count
         if reviewCount > 0 {
-            tableView.tableFooterView = nil
+            tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 10))
             return 1
         } else {
             tableView.EmptyMessage("Belum ada aktivitas")

@@ -558,7 +558,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="4WI-ae-CDB"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mgk-vr-dWV">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mgk-vr-dWV">
                                                         <size key="itemSize" width="100" height="100"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -575,14 +575,10 @@
                                                     <rect key="frame" x="0.0" y="27" width="100" height="100"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bU-62-jrx">
-                                                            <rect key="frame" x="37.666666666666664" y="37.666666666666742" width="25" height="25"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="25" id="7qj-KA-2Od"/>
-                                                                <constraint firstAttribute="width" constant="25" id="O7e-5S-5Fy"/>
-                                                            </constraints>
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" title="Button">
+                                                            <state key="normal">
                                                                 <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                                                             </state>
                                                             <connections>
@@ -592,9 +588,13 @@
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
+                                                        <constraint firstItem="5bU-62-jrx" firstAttribute="top" secondItem="5MV-rH-juI" secondAttribute="top" id="8DJ-yY-4yb"/>
+                                                        <constraint firstItem="5bU-62-jrx" firstAttribute="leading" secondItem="5MV-rH-juI" secondAttribute="leading" id="CFV-bK-0Wy"/>
                                                         <constraint firstAttribute="width" constant="100" id="Dxe-PI-97m"/>
                                                         <constraint firstItem="5bU-62-jrx" firstAttribute="centerX" secondItem="5MV-rH-juI" secondAttribute="centerX" id="MUP-hF-6NV"/>
+                                                        <constraint firstAttribute="trailing" secondItem="5bU-62-jrx" secondAttribute="trailing" id="Ppv-Q6-p6h"/>
                                                         <constraint firstItem="5bU-62-jrx" firstAttribute="centerY" secondItem="5MV-rH-juI" secondAttribute="centerY" id="h8D-wu-FTU"/>
+                                                        <constraint firstAttribute="bottom" secondItem="5bU-62-jrx" secondAttribute="bottom" id="q3A-dZ-MIm"/>
                                                         <constraint firstAttribute="height" constant="100" id="wxz-QR-p7f"/>
                                                     </constraints>
                                                 </view>
