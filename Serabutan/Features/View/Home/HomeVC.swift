@@ -46,7 +46,6 @@ class HomeVC: UIViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		guard let latestLocation = currentCoordinate else { return }
 		homeVM.fetchNearbyJob(coordinate: latestLocation)
-		print("jobList", jobList.count)
 	}
     
     func loadMapData() {
