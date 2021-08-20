@@ -102,7 +102,7 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func searchBarTapped(_ sender: Any) {
-		navToListAssitance()
+		navToSearchBar()
     }
     
     @IBAction func showAll(_ sender: Any) {
