@@ -21,7 +21,8 @@ class HomeVC: UIViewController {
     @IBOutlet weak var jobListingColView: UICollectionView!
     @IBOutlet weak var showAllButton: UIButton!
     @IBOutlet weak var blurView: UIVisualEffectView!
-    
+	@IBOutlet weak var searchBarView: UIView!
+	
     var currentCoordinate: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
@@ -94,10 +95,10 @@ class HomeVC: UIViewController {
         self.navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
-    }
-    
-    @IBAction func searchBarTapped(_ sender: Any) {
-		navToListAssitance()
+		
+		searchBarView.layer.cornerRadius = 20
+		let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.navToListAssitance))
+		searchBarView.addGestureRecognizer(gesture)
     }
     
     @IBAction func showAll(_ sender: Any) {

@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,6 +15,7 @@
                 <outlet property="blurView" destination="tzE-8V-MLj" id="FMq-vn-gIS"/>
                 <outlet property="jobListingColView" destination="oeA-LH-5QS" id="crR-pp-y53"/>
                 <outlet property="mapView" destination="HXt-UA-hch" id="Qa3-53-cry"/>
+                <outlet property="searchBarView" destination="arg-fM-Wn2" id="ENy-8X-SRI"/>
                 <outlet property="showAllButton" destination="meb-V3-mEf" id="INa-qo-XZL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="NeF-BU-tQ8"/>
             </connections>
@@ -27,12 +29,6 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </mapView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uw-o4-AVy">
-                    <rect key="frame" x="344" y="54" width="50" height="50"/>
-                    <state key="normal" image="searchButton">
-                        <attributedString key="attributedTitle"/>
-                    </state>
-                </button>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzE-8V-MLj">
                     <rect key="frame" x="0.0" y="642" width="414" height="220"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cj5-Ot-Fe7">
@@ -85,30 +81,63 @@
                     </constraints>
                     <blurEffect style="regular"/>
                 </visualEffectView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="arg-fM-Wn2" userLabel="SearchBarView">
+                    <rect key="frame" x="20" y="51" width="374" height="40"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nKF-9Z-2js">
+                            <rect key="frame" x="337.5" y="10.5" width="24.5" height="18.5"/>
+                            <color key="tintColor" name="DarkGrey"/>
+                            <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cari bantuan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eus-e9-t0i">
+                            <rect key="frame" x="15" y="8" width="97" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" systemColor="systemGray3Color"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Eus-e9-t0i" secondAttribute="bottom" constant="8" id="DkJ-sB-mnD"/>
+                        <constraint firstItem="nKF-9Z-2js" firstAttribute="top" secondItem="arg-fM-Wn2" secondAttribute="top" constant="12" id="Vsy-86-DLC"/>
+                        <constraint firstAttribute="bottom" secondItem="nKF-9Z-2js" secondAttribute="bottom" constant="12" id="Y2O-Af-LRa"/>
+                        <constraint firstItem="Eus-e9-t0i" firstAttribute="top" secondItem="arg-fM-Wn2" secondAttribute="top" constant="8" id="d13-aQ-WT0"/>
+                        <constraint firstItem="Eus-e9-t0i" firstAttribute="leading" secondItem="arg-fM-Wn2" secondAttribute="leading" constant="15" id="rjV-1K-FQ2"/>
+                        <constraint firstAttribute="trailing" secondItem="nKF-9Z-2js" secondAttribute="trailing" constant="12" id="u7K-In-N6v"/>
+                        <constraint firstAttribute="height" constant="40" id="v3N-wU-TB3"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tzE-8V-MLj" secondAttribute="bottom" id="30I-q9-2eE"/>
                 <constraint firstItem="tzE-8V-MLj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Dix-X6-XNW"/>
-                <constraint firstItem="2uw-o4-AVy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Fb0-OC-JXJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="arg-fM-Wn2" secondAttribute="trailing" constant="20" id="N8f-4m-YKH"/>
                 <constraint firstItem="tzE-8V-MLj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="baB-Fn-bC4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2uw-o4-AVy" secondAttribute="trailing" constant="20" id="hgb-4r-hJf"/>
+                <constraint firstItem="arg-fM-Wn2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="7" id="hxH-td-FnM"/>
+                <constraint firstItem="arg-fM-Wn2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="oai-w0-YBG"/>
             </constraints>
             <point key="canvasLocation" x="-136.23188405797103" y="129.91071428571428"/>
         </view>
     </objects>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
-        <image name="searchButton" width="50" height="50"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <namedColor name="AccentColor">
             <color red="0.72549019607843135" green="0.21568627450980393" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="CustomBlack">
             <color red="0.18823529411764706" green="0.16078431372549021" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="DarkGrey">
+            <color red="0.49411764705882355" green="0.49411764705882355" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -14,7 +14,7 @@ extension HomeVC {
 	   self.navigationController?.pushViewController(detailBantuan, animated: true)
 	}
 	
-	func navToListAssitance() {
+	@objc func navToListAssitance() {
 		let showAll = AssistanceListVC()
 		showAll.searchBar.becomeFirstResponder()
 		self.navigationController?.pushViewController(showAll, animated: true)
