@@ -94,6 +94,7 @@ extension ProfileVC {
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard let reviewee = user, database.getUserReview(reviewee: reviewee).count > 0 else { return }
+        
         if scrollView.contentOffset.y > 0 {
             bottomConstraint.constant = -(profileBio.frame.height + totalDibantu.frame.height + 5)
             UIView.animate(withDuration: 0.5, animations: {

@@ -10,7 +10,6 @@ import UIKit
 class OngoingActivityVC: UIViewController {
     
     @IBOutlet weak var ongoingActivityTable: UITableView!
-    @IBOutlet weak var noOngoingActivityLabel: UILabel!
     
     let refreshControl = UIRefreshControl()
     var ongoingVM = OngoingActivityVM()

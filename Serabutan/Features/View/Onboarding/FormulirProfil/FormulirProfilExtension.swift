@@ -46,14 +46,17 @@ extension FormulirProfilVC: UIPickerViewDataSource {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == namaLengkapTxt {
-            let currName = namaLengkapTxt.text!
-            newName = currName
+           newName = namaLengkapTxt.text
         }
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         textField.superview?.animateBorder(false, type: .border)
+        
+        if textField == namaLengkapTxt {
+           newName = namaLengkapTxt.text
+        }
         
         if textField == genderTxt {
             let currGender = genderTxt.text

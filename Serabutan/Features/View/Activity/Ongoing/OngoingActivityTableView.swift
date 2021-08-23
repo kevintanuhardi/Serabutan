@@ -38,7 +38,7 @@ extension OngoingActivityVC: UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel.text = data.title
         cell.headerLabel.text = StringFormatter().distance(data.distance)
         cell.compensationLabel.text = StringFormatter().priceFormatting(amount: data.price)
-        cell.posterImage.image = poster.avatar
+        cell.posterImage.image = poster.avatar ?? UIImage(named: "avatarIcon")
         cell.posterLabel.text = poster.name
         cell.timeElapsedLabel.text = StringFormatter().relativeDateFormatter(date: data.postingDate)
         cell.verifiedLogo.isHidden = !data.jobPosterId.isVerified
@@ -51,7 +51,7 @@ extension OngoingActivityVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.availableView.isHidden = true
             cell.ongoingHelperView.isHidden = false
-            cell.ongoingHelperImage.image = helper?.avatar
+            cell.ongoingHelperImage.image = helper?.avatar ?? UIImage(named: "avatarIcon")
             cell.ongoingHelperNameLabel.text = helper?.name
         }
        

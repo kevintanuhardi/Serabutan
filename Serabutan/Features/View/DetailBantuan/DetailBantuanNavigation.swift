@@ -31,12 +31,13 @@ extension DetailBantuanVC {
     }
     
     func sendWhatsApp(template: Bool) {
+        guard let poster = selectedJob?.jobPosterId.name else { return }
         var message: String?
         let phoneNumber: Int = 6281910077402
         
         if template {
             message = """
-            Halo Pak/Bu \(String(describing: selectedJob?.jobPosterId.name)),
+            Halo Pak/Bu \(poster),
             saya \(DummyData.shared.getUserProfile()[currentUser].name) dari BantuinApp bersedia membantu Bapak/Ibu untuk \(selectedJob?.title ?? "Untitled Bantuan").
             Bagaimana saya bisa membantu? 🙂
             """
