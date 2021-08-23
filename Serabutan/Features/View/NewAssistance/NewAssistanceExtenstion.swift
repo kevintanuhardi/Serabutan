@@ -1,24 +1,46 @@
 //
-//  NewAssistancePickerView.swift
+//  NewAssistanceExtenstion.swift
 //  Serabutan
 //
-//  Created by Dimas Pramudya Satria H on 07/08/21.
+//  Created by Dimas Pramudya Satria H on 23/08/21.
 //
 
 import Foundation
 import UIKit
 
+//MARK: - CollectionView
+extension NewAssistanceVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return newAssistanceMediaImage.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = mediaImageCollectionView.dequeueReusableCell(withReuseIdentifier: ImageCarouselCVC.identifier, for: indexPath) as? ImageCarouselCVC else { fatalError("Table View Dequeue Error")}
+        cell.imageView.image = newAssistanceMediaImage[indexPath.row]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //        self.newAssistanceMediaImage.remove(at: indexPath.row)
+        //        self.mediaImageCollectionView.deleteItems(at: [indexPath])
+        //        self.mediaImageCollectionView.reloadData()
+    }
+     
+}
+
+//MARK: - Picker View
 extension NewAssistanceVC: UIPickerViewDataSource, UIPickerViewDelegate{
     
     func createPickerUrgency(){
-        let toolbar = UIToolbar()
+        let toolbar = UIToolbar()//
         toolbar.sizeToFit()
         
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonUrgency))
         toolbar.setItems([spaceButton, doneButton], animated: true)
         
-        urgencyTF.inputAccessoryView = toolbar
+        urgencyTF.inputAccessoryView = toolbar//
         urgencyTF.inputView = urgencyPickerView
         urgencyPickerView.delegate = self
         urgencyPickerView.dataSource = self
@@ -32,14 +54,14 @@ extension NewAssistanceVC: UIPickerViewDataSource, UIPickerViewDelegate{
     }
     
     func createPickerGender(){
-        let toolbar = UIToolbar()
+        let toolbar = UIToolbar()//
         toolbar.sizeToFit()
         
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonGender))
         toolbar.setItems([spaceButton, doneButton], animated: true)
         
-        genderTF.inputAccessoryView = toolbar
+        genderTF.inputAccessoryView = toolbar//
         genderTF.inputView = genderPickerView
         genderPickerView.delegate = self
         genderPickerView.dataSource = self
@@ -48,7 +70,7 @@ extension NewAssistanceVC: UIPickerViewDataSource, UIPickerViewDelegate{
     }
     
     @objc func doneButtonGender(){
-        genderTF.text = selectedValueGender
+        genderTF.text = selectedValueGender//
         ageTF.becomeFirstResponder()
     }
     
@@ -60,7 +82,7 @@ extension NewAssistanceVC: UIPickerViewDataSource, UIPickerViewDelegate{
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonTappedAge))
         toolbar.setItems([spaceButton, doneButton], animated: true)
         
-        ageTF.inputAccessoryView = toolbar
+        ageTF.inputAccessoryView = toolbar//
         ageTF.inputView = agePickerView
         agePickerView.delegate = self
         agePickerView.dataSource = self
@@ -117,5 +139,37 @@ extension NewAssistanceVC: UIPickerViewDataSource, UIPickerViewDelegate{
         default:
             print("No Data Selected")
         }
+    }
+}
+
+//MARK: -Keyboard Delegate
+extension NewAssistanceVC {
+   
+    func setupKeyboardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        else {
+            // if keyboard size is not available for some reason, dont do anything
+            return
+        }
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height , right: 0.0)
+        myScrollView.contentInset = contentInsets
+        myScrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        myScrollView.contentInset = .zero
+        myScrollView.scrollIndicatorInsets = .zero
+    }
+    
+    func setupKeyboardDismissMethod() {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+        myScrollView.keyboardDismissMode = .onDrag
+        urgencyIndicatorView.backgroundColor = UIColor.systemBlue
     }
 }

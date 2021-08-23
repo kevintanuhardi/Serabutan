@@ -90,8 +90,8 @@ extension NewAssistanceVC {
         view.backgroundColor = .white
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.setBackgroundImage(UIColor.clear.as1ptImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIColor.ColorLibrary.mediumGrey.as1ptImage()
+        self.navigationController?.navigationBar.setBackgroundImage(UIColor.clear.setupmodalBottomBorder(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIColor.ColorLibrary.mediumGrey.setupmodalBottomBorder()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.title = "Buat Permintaan Bantuan"
     }
@@ -118,13 +118,4 @@ extension NewAssistanceVC {
     }
 }
 
-extension UIColor {
-    func as1ptImage() -> UIImage {
-        UIGraphicsBeginImageContext(CGSize(width: 0.5, height: 0.5))
-        setFill()
-        UIGraphicsGetCurrentContext()?.fill(CGRect(x: 0, y: 0, width: 0.5, height: 0.5))
-        let image = UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
-        UIGraphicsEndImageContext()
-        return image
-    }
-}
+

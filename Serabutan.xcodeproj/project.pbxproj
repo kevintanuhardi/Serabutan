@@ -35,7 +35,7 @@
 		79E67E7926B1B2410009F3C6 /* RatingReviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79E67E7726B1B2410009F3C6 /* RatingReviewVC.xib */; };
 		79FAF9CF26B87682009BF31F /* DetailBantuanNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FAF9CE26B87682009BF31F /* DetailBantuanNavigation.swift */; };
 		9022D9BB26CBFDDF00803BBB /* RatingReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9022D9BA26CBFDDF00803BBB /* RatingReviewVC.swift */; };
-		9022D9BC26CC6FE900803BBB /* AssistanceListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC25226B2490F0005FFE3 /* AssistanceListTableView.swift */; };
+		9022D9BC26CC6FE900803BBB /* AssistanceListExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC25226B2490F0005FFE3 /* AssistanceListExtension.swift */; };
 		902E92FD26CB56770009B17F /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902E92FC26CB56770009B17F /* TableViewHelper.swift */; };
 		9036228F26BAF73000577D43 /* DetailBantuanStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9036228E26BAF73000577D43 /* DetailBantuanStyling.swift */; };
 		9036229126BB7E2000577D43 /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9036229026BB7E2000577D43 /* CustomCollectionView.swift */; };
@@ -87,12 +87,12 @@
 		C744D7DE26B2D324009E36B7 /* AssistanceTableViewStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7DD26B2D324009E36B7 /* AssistanceTableViewStyling.swift */; };
 		C744D7E526B2DA49009E36B7 /* FilterPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */; };
 		C744D7E626B2DA49009E36B7 /* FilterPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */; };
-		C75CACD826BEBF420074B55D /* NAPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75CACD726BEBF420074B55D /* NAPickerView.swift */; };
-		C79063E826B3BE7500AE7687 /* NACollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79063E726B3BE7500AE7687 /* NACollectionView.swift */; };
+		C76C21FC26D3DD87005D24E4 /* NewAssistanceExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76C21FB26D3DD87005D24E4 /* NewAssistanceExtenstion.swift */; };
+		C76C21FE26D3DE41005D24E4 /* ModalTitleBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76C21FD26D3DE41005D24E4 /* ModalTitleBorder.swift */; };
 		C7BD8BA826BFF8BE00A0399C /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD8BA726BFF8BE00A0399C /* GenderPicker.swift */; };
 		C7CCC24526B199DD0005FFE3 /* NewAssistanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */; };
 		C7CCC24626B199DD0005FFE3 /* NewAssistanceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */; };
-		C7CCC24826B19A660005FFE3 /* NAAssitanceStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24726B19A660005FFE3 /* NAAssitanceStyle.swift */; };
+		C7CCC24826B19A660005FFE3 /* NewAssitanceStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24726B19A660005FFE3 /* NewAssitanceStyle.swift */; };
 		C7CCC24C26B1DB590005FFE3 /* AssistanceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */; };
 		C7CCC24D26B1DB590005FFE3 /* AssistanceListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */; };
 		C7CCC25026B1DBD80005FFE3 /* AssistanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC24E26B1DBD80005FFE3 /* AssistanceTableViewCell.swift */; };
@@ -106,7 +106,7 @@
 		C7E3402926C9696600410C7F /* OngoingActivityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3402826C9696600410C7F /* OngoingActivityTableView.swift */; };
 		C7E3402B26C969EB00410C7F /* HistoryActivityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3402A26C969EB00410C7F /* HistoryActivityTableView.swift */; };
 		C7E3402D26C98FE100410C7F /* OngoingActivityVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3402C26C98FE100410C7F /* OngoingActivityVM.swift */; };
-		C7E3402F26C9974F00410C7F /* NANavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3402E26C9974F00410C7F /* NANavigation.swift */; };
+		C7E3402F26C9974F00410C7F /* NewAssistanceNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3402E26C9974F00410C7F /* NewAssistanceNavigation.swift */; };
 		C7FE979A26BA65F900B27160 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FE979926BA65F900B27160 /* StringFormatter.swift */; };
 		F981FF6B26BA90EE00F0ACE5 /* MulaiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981FF6A26BA90EE00F0ACE5 /* MulaiVC.swift */; };
 		F981FF6E26BA914300F0ACE5 /* MulaiVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F981FF6D26BA914300F0ACE5 /* MulaiVC.xib */; };
@@ -201,18 +201,18 @@
 		C744D7E326B2DA49009E36B7 /* FilterPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpVC.swift; path = serabutan/Features/View/ListBantuan/Filter/FilterPopUpVC.swift; sourceTree = SOURCE_ROOT; };
 		C744D7E426B2DA49009E36B7 /* FilterPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FilterPopUpVC.xib; path = serabutan/Features/View/ListBantuan/Filter/FilterPopUpVC.xib; sourceTree = SOURCE_ROOT; };
 		C744D7E726B2F127009E36B7 /* FilterPopUpStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterPopUpStyling.swift; path = serabutan/Features/View/ListBantuan/Filter/FilterPopUpStyling.swift; sourceTree = SOURCE_ROOT; };
-		C75CACD726BEBF420074B55D /* NAPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NAPickerView.swift; path = serabutan/Features/View/NewAssistance/NAPickerView.swift; sourceTree = SOURCE_ROOT; };
 		C76047BF26AF3CBB00535995 /* AssistanceListStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListStyling.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListStyling.swift; sourceTree = SOURCE_ROOT; };
-		C79063E726B3BE7500AE7687 /* NACollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NACollectionView.swift; path = serabutan/Features/View/NewAssistance/NACollectionView.swift; sourceTree = SOURCE_ROOT; };
+		C76C21FB26D3DD87005D24E4 /* NewAssistanceExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanceExtenstion.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanceExtenstion.swift; sourceTree = SOURCE_ROOT; };
+		C76C21FD26D3DE41005D24E4 /* ModalTitleBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModalTitleBorder.swift; path = Serabutan/Helper/ModalTitleBorder.swift; sourceTree = SOURCE_ROOT; };
 		C7BD8BA726BFF8BE00A0399C /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GenderPicker.swift; path = Serabutan/Features/View/Onboarding/FormulirProfil/GenderPicker.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanceVC.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanceVC.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewAssistanceVC.xib; path = Serabutan/Features/View/NewAssistance/NewAssistanceVC.xib; sourceTree = SOURCE_ROOT; };
-		C7CCC24726B19A660005FFE3 /* NAAssitanceStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NAAssitanceStyle.swift; path = serabutan/Features/View/NewAssistance/NAAssitanceStyle.swift; sourceTree = SOURCE_ROOT; };
+		C7CCC24726B19A660005FFE3 /* NewAssitanceStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssitanceStyle.swift; path = serabutan/Features/View/NewAssistance/NewAssitanceStyle.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListVC.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListVC.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssistanceListVC.xib; path = Serabutan/Features/View/ListBantuan/AssistanceListVC.xib; sourceTree = SOURCE_ROOT; };
 		C7CCC24E26B1DBD80005FFE3 /* AssistanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceTableViewCell.swift; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC24F26B1DBD80005FFE3 /* AssistanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssistanceTableViewCell.xib; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableViewCell.xib; sourceTree = SOURCE_ROOT; };
-		C7CCC25226B2490F0005FFE3 /* AssistanceListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListTableView.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListTableView.swift; sourceTree = SOURCE_ROOT; };
+		C7CCC25226B2490F0005FFE3 /* AssistanceListExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceListExtension.swift; path = Serabutan/Features/View/ListBantuan/AssistanceListExtension.swift; sourceTree = SOURCE_ROOT; };
 		C7CCC25426B26CFA0005FFE3 /* AssistanceTableConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistanceTableConfig.swift; path = Serabutan/Features/View/ListBantuan/Cell/AssistanceCell/AssistanceTableConfig.swift; sourceTree = SOURCE_ROOT; };
 		C7D7AE4126AC97F1000478AA /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagCollectionViewCell.swift; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/TagCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C7D7AE4226AC97F1000478AA /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TagCollectionViewCell.xib; path = Serabutan/Features/View/ListBantuan/Cell/TagCell/TagCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
@@ -224,7 +224,7 @@
 		C7E3402826C9696600410C7F /* OngoingActivityTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OngoingActivityTableView.swift; path = Serabutan/Features/View/Activity/Ongoing/OngoingActivityTableView.swift; sourceTree = SOURCE_ROOT; };
 		C7E3402A26C969EB00410C7F /* HistoryActivityTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryActivityTableView.swift; path = Serabutan/Features/View/Activity/History/HistoryActivityTableView.swift; sourceTree = SOURCE_ROOT; };
 		C7E3402C26C98FE100410C7F /* OngoingActivityVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OngoingActivityVM.swift; path = Serabutan/Features/ViewModel/OngoingActivityVM.swift; sourceTree = SOURCE_ROOT; };
-		C7E3402E26C9974F00410C7F /* NANavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NANavigation.swift; path = Serabutan/Features/View/NewAssistance/NANavigation.swift; sourceTree = SOURCE_ROOT; };
+		C7E3402E26C9974F00410C7F /* NewAssistanceNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAssistanceNavigation.swift; path = Serabutan/Features/View/NewAssistance/NewAssistanceNavigation.swift; sourceTree = SOURCE_ROOT; };
 		C7FE979926BA65F900B27160 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StringFormatter.swift; path = Serabutan/Helper/StringFormatter.swift; sourceTree = SOURCE_ROOT; };
 		F981FF6A26BA90EE00F0ACE5 /* MulaiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MulaiVC.swift; path = serabutan/Features/View/Onboarding/Mulai/MulaiVC.swift; sourceTree = SOURCE_ROOT; };
 		F981FF6D26BA914300F0ACE5 /* MulaiVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MulaiVC.xib; path = serabutan/Features/View/Onboarding/Mulai/MulaiVC.xib; sourceTree = SOURCE_ROOT; };
@@ -377,6 +377,7 @@
 				C7FE979926BA65F900B27160 /* StringFormatter.swift */,
 				90D9B44926C5108F00CABA6F /* FloatingNotification.swift */,
 				902E92FC26CB56770009B17F /* TableViewHelper.swift */,
+				C76C21FD26D3DE41005D24E4 /* ModalTitleBorder.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -587,10 +588,9 @@
 			children = (
 				C7CCC24426B199DD0005FFE3 /* NewAssistanceVC.xib */,
 				C7CCC24326B199DD0005FFE3 /* NewAssistanceVC.swift */,
-				C7E3402E26C9974F00410C7F /* NANavigation.swift */,
-				C7CCC24726B19A660005FFE3 /* NAAssitanceStyle.swift */,
-				C75CACD726BEBF420074B55D /* NAPickerView.swift */,
-				C79063E726B3BE7500AE7687 /* NACollectionView.swift */,
+				C7E3402E26C9974F00410C7F /* NewAssistanceNavigation.swift */,
+				C7CCC24726B19A660005FFE3 /* NewAssitanceStyle.swift */,
+				C76C21FB26D3DD87005D24E4 /* NewAssistanceExtenstion.swift */,
 			);
 			path = NewAssistance;
 			sourceTree = "<group>";
@@ -649,9 +649,9 @@
 			children = (
 				C7CCC24B26B1DB590005FFE3 /* AssistanceListVC.xib */,
 				C7CCC24A26B1DB590005FFE3 /* AssistanceListVC.swift */,
-				C7CCC25226B2490F0005FFE3 /* AssistanceListTableView.swift */,
 				C76047BF26AF3CBB00535995 /* AssistanceListStyling.swift */,
 				C7E3402226C9527300410C7F /* AssistanceListNavigation.swift */,
+				C7CCC25226B2490F0005FFE3 /* AssistanceListExtension.swift */,
 				C7E3402126C94A2900410C7F /* Filter */,
 				C7D7AE3626AC96CA000478AA /* Cell */,
 			);
@@ -847,7 +847,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9022D9BC26CC6FE900803BBB /* AssistanceListTableView.swift in Sources */,
+				9022D9BC26CC6FE900803BBB /* AssistanceListExtension.swift in Sources */,
 				90EF604B26C790E000CF5973 /* FilterPopUpStyling.swift in Sources */,
 				90EF604A26C790DB00CF5973 /* Enum.swift in Sources */,
 				90EF604926C790D700CF5973 /* TagCollectionViewCell.swift in Sources */,
@@ -864,6 +864,7 @@
 				C74228AB26BA3EE8003DD169 /* HistoryActivityVC.swift in Sources */,
 				9022D9BB26CBFDDF00803BBB /* RatingReviewVC.swift in Sources */,
 				90D9B43826C4A16E00CABA6F /* DetailBantuanExtension.swift in Sources */,
+				C76C21FE26D3DE41005D24E4 /* ModalTitleBorder.swift in Sources */,
 				9083DB1C26B7B4DF00D1E75F /* ProfileStatistic.swift in Sources */,
 				18BEF23D26A911E10029CEA1 /* HomeVC.swift in Sources */,
 				F981FF7526BA982D00F0ACE5 /* InputNoTelpVC.swift in Sources */,
@@ -878,6 +879,7 @@
 				90D9B44426C4ADDF00CABA6F /* CustomNotification.swift in Sources */,
 				18B7273426B90F760005DBCA /* HomeVM.swift in Sources */,
 				C7CCC25026B1DBD80005FFE3 /* AssistanceTableViewCell.swift in Sources */,
+				C76C21FC26D3DD87005D24E4 /* NewAssistanceExtenstion.swift in Sources */,
 				1853414526AC472C0027C0F3 /* Job.swift in Sources */,
 				90584E2026B274A7004C225B /* ProfileVC.swift in Sources */,
 				907F9DD426B6C5ED00EF9F51 /* EditProfileVC.swift in Sources */,
@@ -885,14 +887,12 @@
 				1853413D26AC23470027C0F3 /* UIImageExt.swift in Sources */,
 				C7CCC24526B199DD0005FFE3 /* NewAssistanceVC.swift in Sources */,
 				185D12BB26A7C09000F6105C /* AppDelegate.swift in Sources */,
-				C7CCC24826B19A660005FFE3 /* NAAssitanceStyle.swift in Sources */,
+				C7CCC24826B19A660005FFE3 /* NewAssitanceStyle.swift in Sources */,
 				C7E3402526C954B600410C7F /* AssistanceListVM.swift in Sources */,
 				185D12BD26A7C09000F6105C /* SceneDelegate.swift in Sources */,
 				C7E3402926C9696600410C7F /* OngoingActivityTableView.swift in Sources */,
-				C79063E826B3BE7500AE7687 /* NACollectionView.swift in Sources */,
-				C7E3402F26C9974F00410C7F /* NANavigation.swift in Sources */,
+				C7E3402F26C9974F00410C7F /* NewAssistanceNavigation.swift in Sources */,
 				90D9B43226C495ED00CABA6F /* DoneKeyboardButton.swift in Sources */,
-				C75CACD826BEBF420074B55D /* NAPickerView.swift in Sources */,
 				C7D7AE4826AE5040000478AA /* BantuanModel.swift in Sources */,
 				9036229126BB7E2000577D43 /* CustomCollectionView.swift in Sources */,
 				907F9DCF26B6625A00EF9F51 /* Review.swift in Sources */,
