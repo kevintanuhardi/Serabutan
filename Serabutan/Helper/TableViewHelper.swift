@@ -11,7 +11,7 @@ import UIKit
 extension UITableView {
     
     func EmptyMessage(_ message: String) {
-        let rect = CGRect(x: 0, y: 0, width: self.frame.width, height: self.bounds.height / 1.5)
+        let rect = CGRect(x: 0, y: 0, width: self.frame.width, height: self.bounds.height / 1.25)
         let messageLabel = UILabel(frame: rect)
         messageLabel.text = message
         messageLabel.textColor = .ColorLibrary.darkGrey

@@ -45,6 +45,13 @@ class AssistanceListVC: UIViewController, AssistanceListViewModelDelegate {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.async {
+            self.searchBar.searchBar.becomeFirstResponder()
+        }
+    }
+    
     func subscribeViewModel(){
         assistanceListVM.bindAssistanceListViewModelToController = {
             self.bindData()
@@ -140,10 +147,12 @@ extension AssistanceListVC: UITextFieldDelegate, UISearchBarDelegate, UISearchRe
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.searchTextField.animateBorder(true, type: .border)
+        searchBar.dropShadow(opacity: 0, offset: 0, scale: true)
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBar.searchTextField.animateBorder(false, type: .border)
+        searchBar.dropShadow(opacity: 0.25, offset: 0, scale: true)
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -163,8 +172,10 @@ extension AssistanceListVC: UITextFieldDelegate, UISearchBarDelegate, UISearchRe
                 return true
             }
         }
-        
-        assistanceTable.reloadData()
+        assistanceTable.reloadSections([0], with: .automatic)
+//        UIView.transition(with: assistanceTable, duration: 1.0, options: ., animations: {self.assistanceTable.reloadData()}, completion: nil)
+
+//        assistanceTable.reloadData()
     }
     
 }

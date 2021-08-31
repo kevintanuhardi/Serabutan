@@ -45,9 +45,11 @@ extension AssistanceListVC{
         searchBar.searchBar.placeholder = "Cari Bantuan"
         searchBar.searchBar.searchTextField.layer.borderWidth = 0.5
         searchBar.searchBar.searchTextField.layer.borderColor = UIColor.ColorLibrary.mediumGrey.cgColor
-        searchBar.searchBar.searchTextField.layer.cornerRadius = 18
+        searchBar.searchBar.searchTextField.layer.cornerRadius = 5
         searchBar.searchBar.searchTextField.layer.masksToBounds = true
         searchBar.searchBar.setSearchFieldBackgroundImage(UIImage(), for: .normal)
+        searchBar.searchBar.searchTextField.backgroundColor = .ColorLibrary.white
+        searchBar.searchBar.dropShadow(opacity: 0.25, offset: 0, scale: true)
     }
     
 }
