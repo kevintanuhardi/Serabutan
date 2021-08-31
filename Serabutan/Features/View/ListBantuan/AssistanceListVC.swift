@@ -24,10 +24,15 @@ class AssistanceListVC: UIViewController, AssistanceListViewModelDelegate {
     
     var user = UserDefaults.standard.integer(forKey: "loggedUser")
     
+    var isSearch : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTable()
         subscribeViewModel()
+        
+        searchBar.isActive = true
+        
         assistanceListVM.fetchAssistanceList()
         searchResultJob = jobList
         sortedFilteredJob = jobList
@@ -42,7 +47,17 @@ class AssistanceListVC: UIViewController, AssistanceListViewModelDelegate {
         super.viewWillAppear(animated)
         assistanceTable.reloadData()
         setupView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        if isSearch == true{
+            DispatchQueue.main.async{
+                self.searchBar.searchBar.becomeFirstResponder()
+                print("asdsadasd")
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -177,6 +192,12 @@ extension AssistanceListVC: UITextFieldDelegate, UISearchBarDelegate, UISearchRe
 
 //        assistanceTable.reloadData()
     }
+    
+    func didPresentSearchController(_ searchController: UISearchController) {
+            searchController.searchBar.becomeFirstResponder()
+            searchController.isActive = true
+            print("adwdwafad")
+        }
     
 }
 
